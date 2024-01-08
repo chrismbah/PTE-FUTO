@@ -31,7 +31,7 @@ export default function SignUp() {
               </label>
             </div>
           </div>
-          <div className="grid">
+          <div className="grid md:grid-cols-2 md:gap-6">
             <div className="relative z-0 w-full mb-5 group">
               <input
                 type="reg"
@@ -48,6 +48,22 @@ export default function SignUp() {
               >
                 Reg No.
               </label>
+            </div>
+            <div className="relative z-0 w-full mb-5 group">
+              <label htmlFor="underline_select" className="sr-only">
+                Level
+              </label>
+              <select
+                id="underline_select"
+                className="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
+              >
+                <option>Select Your Level</option>
+                <option value="100L">100L</option>
+                <option value="200L">200L</option>
+                <option value="300L">300L</option>
+                <option value="400L">400L</option>
+                <option value="500L">500L</option>
+              </select>
             </div>
           </div>
           <div className="relative z-0 w-full mb-5 group">
