@@ -13,13 +13,12 @@ export default function Nav() {
         fluid
         rounded
         theme={customNavTheme}
-        className="fixed w-full shadow-sm"
+        className="fixed w-full shadow-sm z-[99999999]"
       >
         <Navbar.Brand href="/" className="md:w-[30%] w-[50%]">
           <div className="flex ">
             <img
               src={logo}
-              // src="../../public/logo.png"
               className="mr-1 sm:mr-3 h-10 ss:h-14 sm:h-16"
               alt="PTE Logo"
             />
@@ -39,7 +38,7 @@ export default function Nav() {
           </Button>
           <Navbar.Toggle className="ml-2 focus:outline-green1" />
         </div>
-        <Navbar.Collapse className="xmd:block xmd:w-auto">
+        <Navbar.Collapse className="xmd:block xmd:w-auto z-[99999999]">
           <Navbar.Link href="#" active>
             Home
           </Navbar.Link>
