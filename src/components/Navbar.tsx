@@ -4,6 +4,7 @@ import { customButtonTheme } from "../themes/customButtton";
 import { customNavTheme } from "../themes/customNav";
 import { customDropdownTheme } from "../themes/customDropdown";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo/logo.png"
 
 export default function Nav() {
   return (
@@ -17,11 +18,12 @@ export default function Nav() {
         <Navbar.Brand href="/" className="md:w-[30%] w-[50%]">
           <div className="flex ">
             <img
-              src="../../public/logo.png"
+              src={logo}
+              // src="../../public/logo.png"
               className="mr-1 sm:mr-3 h-10 ss:h-14 sm:h-16"
               alt="PTE Logo"
             />
-            <div className=" w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base md:text-lg font-bold dark:text-white">
+            <div className=" w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base md:text-lg font-[800] dark:text-white">
               Polymer and Textile Engineering, FUTO
             </div>
           </div>
