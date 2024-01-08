@@ -41,6 +41,7 @@ export default {
       xss: '0.6rem',
       ss: '0.7rem',
       sm: '0.8rem',
+      xs: '0.9rem',
       base: '1rem',
       md: '1.15rem',
       xl: '1.25rem',
