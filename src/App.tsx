@@ -1,23 +1,12 @@
-import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Login from "./pages/auth/Login";
-import SignUp from "./pages/auth/SignUp";
+import AppRoutes from "./routes/AppRoutes";
+import ErrorBoundary from "./pages/error/error-boundries/ErrorBoundary"; // Assuming a custom ErrorBoundary component
 
 export default function App() {
-  const Login = lazy(() => import("./pages/auth/Login"));
-  const SignUp = lazy(() => import("./pages/auth/SignUp"));
   return (
-    <div>
-      <Router>
-        <Navbar />
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Routes>
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </Suspense>
-      </Router>
+    <div className="font-dmSans">
+      <ErrorBoundary> {/* Custom fallback */}
+        <AppRoutes />
+      </ErrorBoundary>
     </div>
   );
 }
