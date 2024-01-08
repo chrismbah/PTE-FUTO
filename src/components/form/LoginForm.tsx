@@ -8,7 +8,7 @@ export default function LoginForm() {
   return (
     <div className="w-full min-h-screen flex items-center justify-center sm:justify-start section ">
       <div className="">
-        <form className="p-7 ss:p-8 max-w-lg sm:min-w-[35rem] bg-white shadow-md rounded-lg">
+        <form className="p-3 ss:p-7 max-w-lg sm:min-w-[35rem] bg-white shadow-md rounded-lg">
             <div className="flex items-center justify-center mb-1 ">
                 <img src={logo} alt="PTE Logo" className=" w-[65px] xss:w-[80px] h-auto " />
             </div>
