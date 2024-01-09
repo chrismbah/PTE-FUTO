@@ -2,18 +2,17 @@ import { lazy, Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "../components/Navbar";
 import NotFound from "../pages/error/404/NotFound";
-import SignUp from "../pages/auth/signup/SignUp";
-import Login from "../pages/auth/login/Login";
+import Spinner from "../components/loaders/Spinner";
 
 const AppRoutes = () => {
   const [user] = useState(true);
-  // const Login = lazy(() => import("../pages/auth/login/Login"));
-  // const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
+  const Login = lazy(() => import("../pages/auth/login/Login"));
+  const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
   const Home = lazy(() => import("../pages/home/Home"));
   return (
     <>
       <Nav />
-      <Suspense fallback={"Loading..."}>
+      <Suspense fallback={<Spinner/>}>
         <Routes>
           {user ? (
             <>

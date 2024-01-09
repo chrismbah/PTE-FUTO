@@ -64,13 +64,13 @@ export default function Login() {
                 >
                   Login
                 </Button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  New Student?{" "}
+                <p className="text-sm font-light text-gray-500">
+                  New Student ?{" "}
                   <a
                     href="/signup"
                     className="font-medium text-green1 hover:underline dark:text-primary-500"
                   >
-                    Sign Up here
+                    Sign Up
                   </a>
                 </p>
               </form>
