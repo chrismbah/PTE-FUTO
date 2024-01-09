@@ -1,7 +1,7 @@
 import logo from "../../../assets/logo/logo.png";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
+// import { yupResolver } from "@hookform/resolvers/yup";
 import { ISignUpForm } from "../../../models/form";
 import { Link } from "react-router-dom";
 export default function SignUp() {
@@ -17,10 +17,14 @@ export default function SignUp() {
   // })
 
   const { register, handleSubmit } = useForm<ISignUpForm>();
+
+  const onSignUpSubmit = (data: ISignUpForm) => {
+    console.log(data);
+  };
   return (
     <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center section pt-20">
       <div className=" bg-white rounded-lg shadow dark:border md:mt-0 w-[32rem] px-6 py-4 sm:px-8 sm:py-4">
-        <form className="">
+        <form onSubmit={handleSubmit(onSignUpSubmit)}>
           <div className="flex flex-col items-center justify-center">
             <img src={logo} alt="PTE LOGO" className="w-14 h-14" />
             <div className="text-center mb-4">
@@ -49,13 +53,13 @@ export default function SignUp() {
             <div className="relative z-0 w-full mb-4 group">
               <input
                 type="text"
-                id="floating_first_name"
+                id="floating_last_name"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
                 placeholder=" "
                 {...register("lastName")}
               />
               <label
-                htmlFor="floating_first_name"
+                htmlFor="floating_last_name"
                 className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Last Name
@@ -65,7 +69,7 @@ export default function SignUp() {
           <div className="grid md:grid-cols-2 md:gap-6">
             <div className="relative z-0 w-full mb-4 group">
               <input
-                type="reg"
+                type="number"
                 id="floating_phone"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
                 placeholder=" "
@@ -83,11 +87,12 @@ export default function SignUp() {
                 Level
               </label>
               <select
+                // defaultValue={"Select Your Level"}
                 id="underline_select"
                 className="block py-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                 {...register("level")}
               >
-                <option selected>Select Your Level</option>
+                <option selected value="" disabled>Select Your Level</option>
                 <option value="100L">100L</option>
                 <option value="200L">200L</option>
                 <option value="300L">300L</option>
