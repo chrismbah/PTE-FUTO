@@ -9,3 +9,6 @@
 .section{
     @apply px-3 sm:px-10 py-10
 }
+.form-error-message{
+    @apply text-ss text-red-600
+}
