@@ -1,30 +1,48 @@
+import { useState } from "react";
 import logo from "../../../assets/logo/logo.png";
 import { useForm } from "react-hook-form";
-// import * as yup from "yup";
-// import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { ISignUpForm } from "../../../models/form";
 import { Link } from "react-router-dom";
+import { signUpSchema } from "../../../validation";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../config/firebase";
+import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
+import {useNavigate} from "react-router-dom"
 export default function SignUp() {
-  // const schema = yup.object().shape({
-  //   fullName: yup.string().required("Please input your full name"),
-  //   email: yup.string().email().required("Please input a correct email"),
-  //   age: yup.number().positive().integer().min(18).required("Please put in your age"),
-  //   password: yup.string().min(6).max(20).required("Please input a strong password"),
-  //   confirmPassword: yup
-  //     .string()
-  //     .oneOf([yup.ref("password"), null], "Passwords dont match")
-  //     .required(),
-  // })
+  const [loading, setLoading] = useState<boolean>(false);
+  const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ISignUpForm>({ resolver: yupResolver(signUpSchema) });
 
-  const { register, handleSubmit } = useForm<ISignUpForm>();
-
-  const onSignUpSubmit = (data: ISignUpForm) => {
-    console.log(data);
+  const handleSignUpSubmit = async (data: ISignUpForm) => {
+    setLoading(true)
+    try {
+      console.log(data);
+      const { email, password } = data;
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential;
+      console.log(user);
+      setLoading(false)
+      navigate("/");
+      reset();
+    } catch (error) {
+      console.log(error);
+      setLoading(false)
+    }
   };
   return (
     <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center section pt-20">
-      <div className=" bg-white rounded-lg shadow dark:border md:mt-0 w-[32rem] px-6 py-4 sm:px-8 sm:py-4">
-        <form onSubmit={handleSubmit(onSignUpSubmit)}>
+      <div className=" bg-white rounded-lg shadow dark:border my-10 md:mt-0 w-[32rem] px-6 py-4 sm:px-8 sm:py-4">
+        <form onSubmit={handleSubmit(handleSignUpSubmit)}>
           <div className="flex flex-col items-center justify-center">
             <img src={logo} alt="PTE LOGO" className="w-14 h-14" />
             <div className="text-center mb-4">
@@ -43,6 +61,9 @@ export default function SignUp() {
                 placeholder=" "
                 {...register("firstName")}
               />
+              {errors.firstName && (
+                <p className="form-error-message">{errors.firstName.message}</p>
+              )}
               <label
                 htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -58,6 +79,10 @@ export default function SignUp() {
                 placeholder=" "
                 {...register("lastName")}
               />
+              {errors.lastName && (
+                <p className="form-error-message">{errors.lastName.message}</p>
+              )}
+
               <label
                 htmlFor="floating_last_name"
                 className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -79,7 +104,7 @@ export default function SignUp() {
                 htmlFor="floating_regNo"
                 className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Reg No.
+                Reg No. ( optional )
               </label>
             </div>
             <div className="relative z-0 w-full mb-4 group">
@@ -87,18 +112,24 @@ export default function SignUp() {
                 Level
               </label>
               <select
-                // defaultValue={"Select Your Level"}
                 id="underline_select"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                 {...register("level")}
               >
-                <option selected value="" disabled>Select Your Level</option>
+                <option selected value="" disabled>
+                  Select Your Level
+                </option>
+                <option value="aspirant">Aspirant</option>
                 <option value="100L">100L</option>
                 <option value="200L">200L</option>
                 <option value="300L">300L</option>
                 <option value="400L">400L</option>
                 <option value="500L">500L</option>
+                <option value="other">Other</option>
               </select>
+              {errors.level && (
+                <p className="form-error-message">{errors.level.message}</p>
+              )}
             </div>
           </div>
           <div className="relative z-0 w-full mb-4 group">
@@ -109,6 +140,10 @@ export default function SignUp() {
               placeholder=" "
               {...register("email")}
             />
+            {errors.email && (
+              <p className="form-error-message">{errors.email.message}</p>
+            )}
+
             <label
               htmlFor="floating_email"
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -125,6 +160,10 @@ export default function SignUp() {
                 placeholder=" "
                 {...register("password")}
               />
+              {errors.password && (
+                <p className="form-error-message">{errors.password.message}</p>
+              )}
+
               <label
                 htmlFor="floating_password"
                 className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -140,6 +179,12 @@ export default function SignUp() {
                 placeholder=" "
                 {...register("confirmPassword")}
               />
+              {errors.confirmPassword && (
+                <p className="form-error-message">
+                  {errors.confirmPassword.message}
+                </p>
+              )}
+
               <label
                 htmlFor="floating_repeat_password"
                 className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -150,9 +195,9 @@ export default function SignUp() {
           </div>
           <button
             type="submit"
-            className="mb-4 text-white bg-green1 hover:bg-green2  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            className="mb-4 text-white bg-green1 hover:bg-green2  font-medium rounded-lg text-sm w-full md:w-auto px-5 py-2.5 text-center"
           >
-            Sign Up
+            {loading ? <ButtonSpinner/> : "Sign Up"}
           </button>
           <div className="pt-3 ">
             <p className="text-sm font-light text-gray-500">
