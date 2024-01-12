@@ -6,10 +6,10 @@ export const CustomToaster = () => {
       containerStyle={{
         // Nav bar blocks toast default display
         top: 100,
-        right: 10,
+        // left: 70
       }}
       toastOptions={{
-        duration: 5000,
+        duration: 2000,
       }}
     />
   );

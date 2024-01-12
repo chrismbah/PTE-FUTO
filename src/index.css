@@ -12,3 +12,6 @@
 .form-error-message{
     @apply text-ss text-red-600
 }
+.notification-message{
+    @apply text-ss ss:text-xs 
+}

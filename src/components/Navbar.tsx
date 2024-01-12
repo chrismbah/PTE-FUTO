@@ -5,8 +5,11 @@ import { customNavTheme } from "../themes/customNav";
 import { customDropdownTheme } from "../themes/customDropdown";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo/logo.png"
+import {useAuthState} from "react-firebase-hooks/auth"
+import {auth} from "../config/firebase"
 
 export default function Nav() {
+  const [user] = useAuthState(auth)
   return (
     <nav className="">
       <Navbar
@@ -28,14 +31,16 @@ export default function Nav() {
           </div>
         </Navbar.Brand>
         <div className="flex md:order-2">
-          <Button
+          {user ?  <div>
+            <img src={logo} alt="" />
+          </div> : <Button
             theme={customButtonTheme}
             color="primary"
             size="md"
             className="focus:outline-none"
           >
             <Link to={"/login"}>Log In</Link>
-          </Button>
+          </Button>}
           <Navbar.Toggle className="ml-2 focus:outline-green1" />
         </div>
         <Navbar.Collapse className="xmd:block xmd:w-auto z-[99999999]">
