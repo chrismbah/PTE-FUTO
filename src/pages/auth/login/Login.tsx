@@ -27,8 +27,6 @@ export default function Login() {
       console.log(data);
       const { email, password } = data;
       await signInWithEmailAndPassword(auth, email, password);
-      // const user = userCredential;
-      // console.log(user);
       navigate("/");
       reset();
       useToast("success", `Login Successful. Welcome back ${email}`);

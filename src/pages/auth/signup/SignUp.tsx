@@ -12,8 +12,6 @@ import { collection, addDoc } from "firebase/firestore";
 import { useToast} from "../../../hooks/useToast";
 
 export default function SignUp() {
-  const [loading, setLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,25 +19,32 @@ export default function SignUp() {
     reset,
   } = useForm<ISignUpForm>({ resolver: yupResolver(signUpSchema) });
 
+  const [loading, setLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const userInfoRef = collection(db, "userInfo")
+
   const handleSignUpSubmit = async (data: ISignUpForm) => {
     setLoading(true);
     try {
       const { email, password, regNo, firstName, lastName, level } = data;
 
-      //Stores user info in firestore database
-      await createUserWithEmailAndPassword(auth, email, password);
-      await addDoc(collection(db, "userInfo"), {
+      //*Stores user info in firestore database
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      const userID = user.user.uid
+      // console.log(userID)
+
+      await addDoc(userInfoRef, {
+        userID: userID,
         firstName: firstName,
         lastName: lastName,
         email: email,
         regNo: regNo,
         level: level,
       });
-
       setLoading(false);
       navigate("/");
       reset();
-      //Notify user of registeration
+      //! Notify user of registeration
       useToast("success", "Registeration Successful");
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {
