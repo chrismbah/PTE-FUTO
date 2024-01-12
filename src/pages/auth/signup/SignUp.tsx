@@ -9,7 +9,7 @@ import { signUpSchema } from "../../../validation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import toast from "react-hot-toast";
+import { useToast} from "../../../hooks/useToast";
 
 export default function SignUp() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -39,16 +39,16 @@ export default function SignUp() {
       setLoading(false);
       navigate("/");
       reset();
-      toast.success("Registeration Successsful!!");
-    } catch (error:any) {
+      //Notify user of registeration
+      useToast("success", "Registeration Successful");
+    } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {
-        toast.error("Email account already in use");
+        useToast("error", "Email Account already in use");
       } else {
-        toast.error("An error occurred. Please try again.");
+        useToast("error", "Something went wrong. Please try again");
       }
       setLoading(false);
     }
-  
   };
   return (
     <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center section pt-20">

@@ -10,7 +10,7 @@ import { auth } from "../../../config/firebase";
 import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { useToast } from "../../../hooks/useToast";
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -22,24 +22,27 @@ export default function Login() {
   } = useForm<ILoginForm>({ resolver: yupResolver(logInSchema) });
 
   const handleLoginSubmit = async (data: ILoginForm) => {
-      setLoading(true)
-      try {
-        console.log(data);
-        const { email, password } = data;
-        const userCredential = await signInWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        const user = userCredential;
-        console.log(user);
-        navigate("/");
-        reset();
-      } catch (error) {
-        console.log(error);
-        setLoading(false)
+    setLoading(true);
+    try {
+      console.log(data);
+      const { email, password } = data;
+      await signInWithEmailAndPassword(auth, email, password);
+      // const user = userCredential;
+      // console.log(user);
+      navigate("/");
+      reset();
+      useToast("success", `Login Successful. Welcome back ${email}`);
+    } catch (error:any) {
+      console.log(error);
+      if (error.code == "auth/invalid-credential") {
+        useToast("error", "Invalid Email or Password.");
       }
-    };
+      else{
+        useToast("error", "Something went wrong. Please try again")
+      }
+      setLoading(false);
+    }
+  };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
