@@ -3,7 +3,7 @@ export default function ButtonSpinner() {
         <div role="status">
           <svg
             aria-hidden="true"
-            className="inline w-4 h-4 md:w-5 md:h-5 text-white animate-spin dark:text-gray-600 fill-white"
+            className="inline w-4 h-4 md:w-5 md:h-5 text-green1 animate-spin dark:text-gray-600 fill-white"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
