@@ -1,15 +1,19 @@
 "use client";
-import { Dropdown, Navbar, Button } from "flowbite-react";
+import { Dropdown, Navbar, Button, Avatar } from "flowbite-react";
 import { customButtonTheme } from "../themes/customButtton";
 import { customNavTheme } from "../themes/customNav";
 import { customDropdownTheme } from "../themes/customDropdown";
+import { customAvatar } from "../themes/customAvatar";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo/logo.png"
-import {useAuthState} from "react-firebase-hooks/auth"
-import {auth} from "../config/firebase"
+import logo from "../assets/logo/logo.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../config/firebase";
+import userProfileIcon from "../assets/svg/profile/userProfile.svg";
+import ButtonSpinner from "./loaders/ButtonSpinner";
+
 
 export default function Nav() {
-  const [user] = useAuthState(auth)
+  const [user, loading] = useAuthState(auth);
   return (
     <nav className="">
       <Navbar
@@ -31,28 +35,67 @@ export default function Nav() {
           </div>
         </Navbar.Brand>
         <div className="flex md:order-2">
-          {user ?  <div>
-            <img src={logo} alt="" />
-          </div> : <Button
-            theme={customButtonTheme}
-            color="primary"
-            size="md"
-            className="focus:outline-none"
-          >
-            <Link to={"/login"}>Log In</Link>
-          </Button>}
-          <Navbar.Toggle className="ml-2 focus:outline-green1" />
+          {user ? (
+            <Dropdown
+              arrowIcon={false}
+              inline
+              label={
+                <Avatar
+                  alt="User Profile"
+                  img={userProfileIcon}
+                  rounded
+                  theme={customAvatar}
+                  size={"md"}
+                />
+              }
+            >
+              <Dropdown.Header>
+                <span className="block text-sm">Bonnie Green</span>
+                <span className="block truncate text-sm font-medium">
+                  name@flowbite.com
+                </span>
+              </Dropdown.Header>
+              <Dropdown.Item>Dashboard</Dropdown.Item>
+              <Dropdown.Item>Settings</Dropdown.Item>
+              <Dropdown.Item>Earnings</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item>Sign out</Dropdown.Item>
+            </Dropdown>
+          ) : loading ? <ButtonSpinner/> : (
+            <Button
+              theme={customButtonTheme}
+              color="primary"
+              size="md"
+              className="focus:outline-none"
+            >
+              <Link to={"/login"}>Log In</Link>
+            </Button>
+          )}
+          <Navbar.Toggle className="ml-2 focus:outline-green1 w-9 h-9" />
         </div>
         <Navbar.Collapse className="xmd:block xmd:w-auto z-[99999999]">
-          <Navbar.Link href="#" active>
+          <Navbar.Link href="/" active>
             Home
           </Navbar.Link>
-          <Navbar.Link href="/">About</Navbar.Link>
-          <Navbar.Link href="#">
+          <Navbar.Link >
             <Dropdown
               arrowIcon={true}
               inline
-              label={"Alumini"}
+              label={"About"}
+              theme={customDropdownTheme}
+            >
+              <Dropdown.Item>About Us</Dropdown.Item>
+              <Dropdown.Item>Our Mission</Dropdown.Item>
+              <Dropdown.Item>Our Vision</Dropdown.Item>
+              {/* <Dropdown.Divider /> */}
+              {/* <Dropdown.Item>Student Bodies</Dropdown.Item> */}
+            </Dropdown>
+          </Navbar.Link>
+          <Navbar.Link>
+            <Dropdown
+              arrowIcon={true}
+              inline
+              label={"Academics"}
               theme={customDropdownTheme}
             >
               <Dropdown.Item>About Us</Dropdown.Item>
@@ -62,8 +105,22 @@ export default function Nav() {
               <Dropdown.Item>Student Bodies</Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
-
-          <Navbar.Link href="#">Contact</Navbar.Link>
+          <Navbar.Link >
+            <Dropdown
+              arrowIcon={true}
+              inline
+              label={"Students"}
+              theme={customDropdownTheme}
+            >
+              <Dropdown.Item>About Us</Dropdown.Item>
+              <Dropdown.Item>Our Mission</Dropdown.Item>
+              <Dropdown.Item>Our Vision</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item>Student Bodies</Dropdown.Item>
+            </Dropdown>
+          </Navbar.Link>
+          <Navbar.Link href="/">Blog</Navbar.Link>
+          <Navbar.Link href="/">Events</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </nav>
