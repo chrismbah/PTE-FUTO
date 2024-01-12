@@ -9,8 +9,7 @@ import logo from "../assets/logo/logo.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config/firebase";
 import userProfileIcon from "../assets/svg/profile/userProfile.svg";
-import ButtonSpinner from "./loaders/ButtonSpinner";
-
+import  NavSpinner  from "./loaders/NavSpinner";
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
@@ -39,6 +38,7 @@ export default function Nav() {
             <Dropdown
               arrowIcon={false}
               inline
+              className="z-[99999999999]"
               label={
                 <Avatar
                   alt="User Profile"
@@ -56,12 +56,11 @@ export default function Nav() {
                 </span>
               </Dropdown.Header>
               <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
+              <Dropdown.Item>Profile</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item>Sign out</Dropdown.Item>
             </Dropdown>
-          ) : loading ? <ButtonSpinner/> : (
+          ) : loading ? <NavSpinner/> : (
             <Button
               theme={customButtonTheme}
               color="primary"
