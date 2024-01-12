@@ -1,19 +1,19 @@
 import { useState } from "react";
 import logo from "../../../assets/logo/logo.png";
+import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ISignUpForm } from "../../../models/form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signUpSchema } from "../../../validation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../config/firebase";
-import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
-import {useNavigate} from "react-router-dom"
-
+import { auth, db } from "../../../config/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 export default function SignUp() {
   const [loading, setLoading] = useState<boolean>(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -22,24 +22,33 @@ export default function SignUp() {
   } = useForm<ISignUpForm>({ resolver: yupResolver(signUpSchema) });
 
   const handleSignUpSubmit = async (data: ISignUpForm) => {
-    setLoading(true)
+    setLoading(true);
     try {
-      console.log(data);
-      const { email, password } = data;
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential;
-      console.log(user);
-      setLoading(false)
+      const { email, password, regNo, firstName, lastName, level } = data;
+
+      //Stores user info in firestore database
+      await createUserWithEmailAndPassword(auth, email, password);
+      await addDoc(collection(db, "userInfo"), {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        regNo: regNo,
+        level: level,
+      });
+
+      setLoading(false);
       navigate("/");
       reset();
-    } catch (error) {
-      console.log(error);
-      setLoading(false)
+      toast.success("Registeration Successsful!!");
+    } catch (error:any) {
+      if (error.code === "auth/email-already-in-use") {
+        toast.error("Email account already in use");
+      } else {
+        toast.error("An error occurred. Please try again.");
+      }
+      setLoading(false);
     }
+  
   };
   return (
     <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center section pt-20">
@@ -199,7 +208,7 @@ export default function SignUp() {
             type="submit"
             className="mb-4 text-white bg-green1 hover:bg-green2  font-medium rounded-lg text-sm w-full md:w-auto px-5 py-2.5 text-center"
           >
-            {loading ? <ButtonSpinner/> : "Sign Up"}
+            {loading ? <ButtonSpinner /> : "Sign Up"}
           </button>
           <div className="pt-3 ">
             <p className="text-sm font-light text-gray-500">
