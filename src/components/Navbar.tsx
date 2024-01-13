@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { Dropdown, Navbar, Button, Avatar } from "flowbite-react";
 import { customButtonTheme } from "../themes/customButtton";
 import { customNavTheme } from "../themes/customNav";
@@ -9,10 +10,19 @@ import logo from "../assets/logo/logo.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config/firebase";
 import userProfileIcon from "../assets/svg/profile/userProfile.svg";
-import  NavSpinner  from "./loaders/NavSpinner";
+import NavSpinner from "./loaders/NavSpinner";
+import { useGetUserInfo } from "../hooks/useGetUserInfo";
+import { useSignOutUser } from "../hooks/useSignOutUser";
+
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
+  const {signOutLoading, signOutUser} = useSignOutUser()
+  const { getUserInfo, studentDetails } = useGetUserInfo();
+  useEffect(() => {
+    getUserInfo();
+  }, [user]);
+
   return (
     <nav className="">
       <Navbar
@@ -50,17 +60,22 @@ export default function Nav() {
               }
             >
               <Dropdown.Header>
-                <span className="block text-sm">Bonnie Green</span>
+                <span className="block text-sm">
+                  {" "}
+                  {studentDetails?.firstName} {studentDetails?.lastName}
+                </span>
                 <span className="block truncate text-sm font-medium">
-                  name@flowbite.com
+                  {studentDetails?.email},
                 </span>
               </Dropdown.Header>
               <Dropdown.Item>Dashboard</Dropdown.Item>
               <Dropdown.Item>Profile</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item>Sign out</Dropdown.Item>
+              <Dropdown.Item onClick={signOutUser}>{signOutLoading? "Signing Out....": "SignOut"}</Dropdown.Item>
             </Dropdown>
-          ) : loading ? <NavSpinner/> : (
+          ) : loading ? (
+            <NavSpinner />
+          ) : (
             <Button
               theme={customButtonTheme}
               color="primary"
@@ -76,7 +91,7 @@ export default function Nav() {
           <Navbar.Link href="/" active>
             Home
           </Navbar.Link>
-          <Navbar.Link >
+          <Navbar.Link>
             <Dropdown
               arrowIcon={true}
               inline
@@ -104,7 +119,7 @@ export default function Nav() {
               <Dropdown.Item>Student Bodies</Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
-          <Navbar.Link >
+          <Navbar.Link>
             <Dropdown
               arrowIcon={true}
               inline

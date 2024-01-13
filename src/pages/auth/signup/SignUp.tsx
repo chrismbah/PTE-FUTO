@@ -9,7 +9,7 @@ import { signUpSchema } from "../../../validation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { useToast} from "../../../hooks/useToast";
+import { useToast } from "../../../hooks/useToast";
 
 export default function SignUp() {
   const {
@@ -21,7 +21,7 @@ export default function SignUp() {
 
   const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
-  const userInfoRef = collection(db, "userInfo")
+  const userInfoRef = collection(db, "userInfo");
 
   const handleSignUpSubmit = async (data: ISignUpForm) => {
     setLoading(true);
@@ -30,7 +30,7 @@ export default function SignUp() {
 
       //*Stores user info in firestore database
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      const userID = user.user.uid
+      const userID = user.user.uid;
       // console.log(userID)
 
       await addDoc(userInfoRef, {
@@ -44,7 +44,8 @@ export default function SignUp() {
       setLoading(false);
       navigate("/");
       reset();
-      //! Notify user of registeration
+
+      //! Notifying user of registeration
       useToast("success", "Registeration Successful");
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {

@@ -12,7 +12,9 @@ import {
 import { StudentDetails } from "../models/studentDetails";
 
 export const useGetUserInfo = () => {
-  const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(null);
+  const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(
+    null
+  );
   const [user] = useAuthState(auth);
   const userID = user?.uid;
 
