@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^3.3.4",
     "firebase": "^10.7.1",
     "flowbite-react": "^0.7.2",
+    "ldrs": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
