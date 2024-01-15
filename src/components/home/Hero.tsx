@@ -3,9 +3,9 @@ import hero from "../../assets/svg/home/hero.svg";
 export default function Hero() {
   return (
     <div className="hero section">
-      <div className="section-flex-between">
+      <div className="section-flex-between flex-wrap">
         <div>
-          <h4 className="text-xl">Welcome to</h4>
+          <p className="text-xl">Welcome to</p>
           <h1>Polymer and Textile Engineering, FUTO</h1>
           <h2>Federal University of Technology, Owerri</h2>
           <p>
