@@ -3,17 +3,21 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "../components/Navbar";
 import NotFound from "../pages/error/404/NotFound";
 import Spinner from "../components/loaders/Spinner";
+import { BounceLoader } from "../components/loaders/BounceLoader";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {auth} from "../config/firebase"
 
 const AppRoutes = () => {
-  const [user] = useState(true);
+  // const [user] = useAuthState(auth);
+  const [user] = useState(true)
   const Login = lazy(() => import("../pages/auth/login/Login"));
   const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
   const Home = lazy(() => import("../pages/home/Home"));
   return (
-    <>
+    <div className="">
       <Nav />
-      <Suspense fallback={<Spinner/>}>
-        <Routes>
+      <Suspense fallback={<BounceLoader/>}>
+        <Routes> 
           {user ? (
             <>
               <Route path="/" element={<Home />} />
@@ -26,7 +30,7 @@ const AppRoutes = () => {
           )}
         </Routes>
       </Suspense>
-    </>
+    </div>
   );
 };
 export default AppRoutes;
