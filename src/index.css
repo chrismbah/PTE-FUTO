@@ -3,15 +3,28 @@
 @tailwind components;
 @tailwind utilities;
 
+h1{
+    @apply text-4xl
+}
+h2{
+    @apply text-3xl
+}
 .auth-btn{
  @apply bg-green1 hover:bg-green2 text-white font-semibold ss:text-base ss:px-4 ss:py-2 text-sm px-3 py-1 rounded-md 
 }
-.section{
+.auth-section{
     @apply px-3 sm:px-10 py-10
 }
+.section{
+    @apply px-3 sm:px-10 py-20
+}
+
 .form-error-message{
     @apply text-ss text-red-600
 }
 .notification-message{
     @apply text-ss ss:text-xs 
+}
+.section-flex-between{
+    @apply flex items-center justify-between
 }

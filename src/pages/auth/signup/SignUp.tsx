@@ -57,7 +57,7 @@ export default function SignUp() {
     }
   };
   return (
-    <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center section pt-20">
+    <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center auth-section pt-20">
       <div className=" bg-white rounded-lg shadow dark:border my-10 md:mt-0 w-[32rem] px-6 py-4 sm:px-8 sm:py-4">
         <form onSubmit={handleSubmit(handleSignUpSubmit)}>
           <div className="flex flex-col items-center justify-center">
