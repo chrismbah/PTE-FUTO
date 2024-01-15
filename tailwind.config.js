@@ -36,6 +36,7 @@ export default {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+      '3xl': '1700px'
     },
     fontSize: {
       xss: '0.6rem',
@@ -44,6 +45,7 @@ export default {
       xs: '0.9rem',
       base: '1rem',
       md: '1.15rem',
+      lg: '1.20rem',
       xl: '1.25rem',
       '2xl': '1.563rem',
       '3xl': '1.953rem',

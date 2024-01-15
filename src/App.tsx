@@ -6,8 +6,6 @@ export default function App() {
   return (
     <div className="font-dmSans">
       <ErrorBoundary>
-        {" "}
-        {/* Custom fallback */}
         <AppRoutes />
         <CustomToaster />
       </ErrorBoundary>
