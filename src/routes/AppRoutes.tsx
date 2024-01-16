@@ -2,10 +2,10 @@ import { lazy, Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "../components/Navbar";
 import NotFound from "../pages/error/404/NotFound";
-import Spinner from "../components/loaders/Spinner";
+// import Spinner from "../components/loaders/Spinner";
 import { BounceLoader } from "../components/loaders/BounceLoader";
-import { useAuthState } from "react-firebase-hooks/auth";
-import {auth} from "../config/firebase"
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import {auth} from "../config/firebase"
 
 const AppRoutes = () => {
   // const [user] = useAuthState(auth);

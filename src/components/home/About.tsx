@@ -1,7 +1,7 @@
 import vision from "../../assets/svg/home/vision.svg";
 export default function About() {
   return (
-    <div className="box-width ">
+    <div className="box-width">
       <div className="section-flex-between">
         <div>
           <img src={vision} alt="Our Vision" className="w-[800px]" />
