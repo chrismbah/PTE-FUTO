@@ -9,22 +9,27 @@
 h2{
     @apply text-3xl
 } */
+.box-width{
+    @apply 2xl:max-w-[1380px] w-full mx-auto
+}
 .auth-btn{
  @apply bg-green1 hover:bg-green2 text-white font-semibold ss:text-base ss:px-4 ss:py-2 text-sm px-3 py-1 rounded-md 
 }
 .auth-section{
     @apply px-3 sm:px-10 py-10
 }
-.section{
+.hero-section{
     @apply px-3 sm:px-14 sm:py-28 py-20
 }
-
+.flex-between{
+    @apply flex items-center justify-between
+}
+.section-flex-between{
+    @apply flex items-center justify-between flex-col md:flex-row gap-4 md:gap-0
+}
 .form-error-message{
     @apply text-ss text-red-600
 }
 .notification-message{
     @apply text-ss ss:text-xs 
-}
-.flex-between{
-    @apply flex items-center justify-between
 }
