@@ -26,7 +26,7 @@ export default function Hero() {
           </Button>
         </div>
         <div className="col">
-          <img src={hero} alt="School Image" className="w-[500px] xmd:w-[800px] xmd:min-w-[500px]" />
+          <img src={hero} alt="School Image" className="w-[500px] xmd:w-[900px] xmd:min-w-[600px]" />
         </div>
       </div>
     </div>
