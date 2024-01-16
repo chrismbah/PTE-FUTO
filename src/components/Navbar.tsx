@@ -13,7 +13,7 @@ import userProfileIcon from "../assets/svg/profile/userProfile.svg";
 import NavSpinner from "./loaders/NavSpinner";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
 import { useSignOutUser } from "../hooks/useSignOutUser";
-import userAvatar from "../assets/svg/profile/userAvatar.svg"
+// import userAvatar from "../assets/svg/profile/userAvatar.svg"
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
