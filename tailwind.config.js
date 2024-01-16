@@ -26,7 +26,7 @@ export default {
       'md': '890px',
       // => @media (min-width: 768px) { ... }
 
-      // 'xmd': '890px',
+      'xmd': '1010px',
 
       'lg': '1057px',
       // => @media (min-width: 1024px) { ... }
