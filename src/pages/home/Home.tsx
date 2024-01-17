@@ -4,6 +4,7 @@ import CalculateGP from "../../components/home/CalculateGP";
 import LearningResources from "../../components/home/LearningResources";
 import CourseOutline from "../../components/home/CourseOutline"
 import Blog from "../../components/home/Blog";
+import Events from "../../components/home/Events";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
      <LearningResources />
      <CourseOutline />
      <Blog />
+     <Events />
     </>
   );
 }

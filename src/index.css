@@ -45,3 +45,6 @@ h3{
 .notification-message{
     @apply text-ss ss:text-xs 
 }
+.bar-style{
+    @apply h-[2px] w-10 bg-yellow-300
+}

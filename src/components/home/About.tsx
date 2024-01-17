@@ -13,7 +13,7 @@ export default function About() {
           </div>
           <div className="flex flex-col items-start gap-12">
             <div>
-              <div className="h-[2px] w-10 bg-green1" />
+              <div className="bar-style" />
               <h3>Our Mission</h3>
               <p className="section-p">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
@@ -24,7 +24,7 @@ export default function About() {
               </p>
             </div>
             <div>
-              <div className="h-[2px] w-10 bg-green1" />
+              <div className="bar-style" />
               <h3>Our Vision</h3>
               <p className="section-p">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime

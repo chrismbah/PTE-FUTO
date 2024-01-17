@@ -8,10 +8,11 @@ export default function CourseOutline() {
     <div className="box-width">
       <div className="section section-flex-between">
         <div className="w-full">
+          <div className="bar-style" />
           <h2 className="mb-5">Course Outlines</h2>
           <p className="mb-5">
-            Our commitment to FUTO's Polymer and Textile Engineering students includes{" "}
-            <br />
+            Our commitment to FUTO's Polymer and Textile Engineering students
+            includes <br />
             providing a carefully curated collection of course outlines. <br />
             These materials are specifically designed to empower students with
             the <br />

@@ -16,6 +16,7 @@ export default function LearningResources() {
             />
           </div>
           <div className="w-full">
+            <div className="bar-style" />
             <h2 className="mb-5">Learning Resources</h2>
             <p className="mb-5">
               Explore expert-curated learning materials, including textbooks,
