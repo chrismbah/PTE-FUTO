@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div className="hero-section box-width">
-      <div className="section-flex-between">
+      <div className="section-flex-between gap-4">
         <div className="w-full">
           {/* <p className="text-xl">Welcome to</p> */}
           <h1 className="text-green1 xl:text-5xl lg:text-4xl text-3xl  font-semibold">

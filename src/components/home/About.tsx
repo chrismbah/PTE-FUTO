@@ -3,7 +3,7 @@ export default function About() {
   return (
     <div className="bg-gray-50">
       <div className="box-width">
-        <div className="section section-flex-between-reverse gap-4">
+        <div className="section section-flex-between-reverse">
           <div>
             <img
               src={vision}
