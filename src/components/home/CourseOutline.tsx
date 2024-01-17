@@ -20,7 +20,7 @@ export default function CourseOutline() {
             academic journey.
           </p>
           <Button theme={customButtonTheme} size={"lg"} color="primary">
-            <Link to="/calculate-gp">Get Course Outline</Link>
+            <Link to="/">Get Course Outline</Link>
           </Button>
         </div>
         <div>

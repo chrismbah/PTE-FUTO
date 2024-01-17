@@ -30,7 +30,6 @@ const AppRoutes = () => {
           )}
         </Routes>
       </Suspense>
-      <Footer />
     </div>
   );
 };
