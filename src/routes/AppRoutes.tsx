@@ -6,6 +6,7 @@ import NotFound from "../pages/error/404/NotFound";
 import { BounceLoader } from "../components/loaders/BounceLoader";
 // import { useAuthState } from "react-firebase-hooks/auth";
 // import {auth} from "../config/firebase"
+
 const AppRoutes = () => {
   // const [user] = useAuthState(auth);
   const [user] = useState(true);
@@ -23,7 +24,7 @@ const AppRoutes = () => {
               <Route path="/" element={<Home />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/gpa-calculator" element={<GPACalculator />} />
+              <Route path="/calculate-gpa" element={<GPACalculator />} />
               <Route path="*" element={<NotFound />} />
             </>
           ) : (

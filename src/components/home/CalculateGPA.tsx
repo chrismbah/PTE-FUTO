@@ -17,7 +17,7 @@ export default function CalculateGP() {
             performance and commitment to excellence.
           </p>
           <Button theme={customButtonTheme} size={"lg"} color="primary">
-            <Link to="/gpa-calculator">Calculate Here</Link>
+            <Link to="/calculate-gpa">Calculate Here</Link>
           </Button>
         </div>
         <div>
