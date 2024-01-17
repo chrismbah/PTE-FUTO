@@ -16,7 +16,7 @@ h3{
     @apply text-xs xss:text-base
 }
 .box-width{
-    @apply 2xl:max-w-[1380px] w-full mx-auto
+    @apply 2xl:max-w-[1320px] w-full mx-auto
 }
 .auth-btn{
  @apply bg-green1 hover:bg-green2 text-white font-semibold ss:text-base ss:px-4 ss:py-2 text-sm px-3 py-1 rounded-md 
@@ -28,7 +28,7 @@ h3{
     @apply px-3 sm:px-14 sm:pt-40 sm:pb-36 py-20
 }
 .section{
-    @apply px-3 sm:px-14 sm:py-12 py-8
+    @apply px-3 xsm:px-14 xsm:py-12 py-8
 }
 .flex-between{
     @apply flex items-center justify-between
@@ -46,5 +46,5 @@ h3{
     @apply text-ss ss:text-xs 
 }
 .bar-style{
-    @apply h-[2px] w-10 bg-yellow-300
+    @apply h-[2px] w-10 bg-yellow1
 }

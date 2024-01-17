@@ -1,23 +1,23 @@
 "use client";
 import { useEffect } from "react";
 import { Dropdown, Navbar, Button, Avatar } from "flowbite-react";
-import { customButtonTheme } from "../themes/customButtton";
-import { customNavTheme } from "../themes/customNav";
-import { customDropdownTheme } from "../themes/customDropdown";
-import { customAvatar } from "../themes/customAvatar";
+import { customButtonTheme } from "../../themes/customButtton";
+import { customNavTheme } from "../../themes/customNav";
+import { customDropdownTheme } from "../../themes/customDropdown";
+import { customAvatar } from "../../themes/customAvatar";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo/logo.png";
+import logo from "../../assets/logo/logo.png";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../config/firebase";
-import userProfileIcon from "../assets/svg/profile/userProfile.svg";
-import NavSpinner from "./loaders/NavSpinner";
-import { useGetUserInfo } from "../hooks/useGetUserInfo";
-import { useSignOutUser } from "../hooks/useSignOutUser";
+import { auth } from "../../config/firebase";
+import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
+import NavSpinner from "../loaders/NavSpinner";
+import { useGetUserInfo } from "../../hooks/useGetUserInfo";
+import { useSignOutUser } from "../../hooks/useSignOutUser";
 // import userAvatar from "../assets/svg/profile/userAvatar.svg"
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
-  const {signOutLoading, signOutUser} = useSignOutUser()
+  const { signOutLoading, signOutUser } = useSignOutUser();
   const { getUserInfo, studentDetails } = useGetUserInfo();
   useEffect(() => {
     getUserInfo();
@@ -71,7 +71,9 @@ export default function Nav() {
               <Dropdown.Item>Dashboard</Dropdown.Item>
               <Dropdown.Item>Profile</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item onClick={signOutUser}>{signOutLoading? "Signing Out....": "SignOut"}</Dropdown.Item>
+              <Dropdown.Item onClick={signOutUser}>
+                {signOutLoading ? "Signing Out...." : "SignOut"}
+              </Dropdown.Item>
             </Dropdown>
           ) : loading ? (
             <NavSpinner />

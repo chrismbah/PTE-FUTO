@@ -9,6 +9,7 @@ export default {
     colors: {
       'green1': '#00875a',
       'green2': '#21875a',
+      'yellow1': '#ecd504'
     },
     fontFamily: {
       dmSans: ['Dm Sans', 'sans-serif'],
@@ -22,6 +23,7 @@ export default {
 
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
+      'xsm': '750px',
 
       'md': '890px',
       // => @media (min-width: 768px) { ... }
