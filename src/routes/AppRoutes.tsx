@@ -13,7 +13,9 @@ const AppRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login/Login"));
   const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
   const Home = lazy(() => import("../pages/home/Home"));
-  const GPACalculator = lazy(() => import("../pages/academics/cgpa/CalculateGPA"));
+  const GPACalculator = lazy(
+    () => import("../pages/academics/cgpa/CalculateGPA")
+  );
   return (
     <div className="">
       <Nav />

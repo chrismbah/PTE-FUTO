@@ -18,6 +18,8 @@ export default {
       poppins: ['Poppins', 'serif']
     },
     screens: {
+      'min': '300px',
+
       'xss': '368px',
 
       'ss': '450px',
