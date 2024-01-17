@@ -23,7 +23,7 @@ export default function SignUp() {
   const navigate = useNavigate();
   const userInfoRef = collection(db, "userInfo");
 
-  const handleSignUpSubmit = async (data: ISignUpForm) => {
+  const signUpUser = async (data: ISignUpForm) => {
     setLoading(true);
     try {
       const { email, password, regNo, firstName, lastName, level } = data;
@@ -58,8 +58,8 @@ export default function SignUp() {
   };
   return (
     <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center auth-section pt-20">
-      <div className=" bg-white rounded-lg shadow dark:border my-10 md:mt-0 w-[32rem] px-6 py-4 sm:px-8 sm:py-4">
-        <form onSubmit={handleSubmit(handleSignUpSubmit)}>
+      <div className=" bg-white rounded-lg shadow my-10 md:mt-0 w-[32rem] px-6 py-4 sm:px-8 sm:py-4">
+        <form onSubmit={handleSubmit(signUpUser)}>
           <div className="flex flex-col items-center justify-center">
             <img src={logo} alt="PTE LOGO" className="w-14 h-14" />
             <div className="text-center mb-4">
