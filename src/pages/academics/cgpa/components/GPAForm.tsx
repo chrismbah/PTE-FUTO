@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function GPAForm() {
   const [level, setLevel] = useState<string>("");
   const [semester, setSemester] = useState<string>("");
-  const [showCustomInput, setShowCustomInput] = useState(false);
   return (
     <div className="">
       <div className="grid ss:grid-cols-2 gap-4 mb-4">
@@ -47,7 +46,9 @@ export default function GPAForm() {
       </div>
 
       <div className="grid xss:grid-cols-3 gap-4">
-        <div className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-green1 focus:border-green1 block w-full p-2.5">
+        <div 
+            // className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-green1 focus:border-green1 block w-full p-2.5"
+        >
           <label
             htmlFor=""
             className="block mb-2 text-sm font-medium text-gray-900 "
@@ -56,7 +57,7 @@ export default function GPAForm() {
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-green1 focus:border-green1 block w-full p-2.5"
+            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
           >
             <option selected>Select Course</option>
             <option value="US">United States</option>
@@ -65,10 +66,11 @@ export default function GPAForm() {
             <option value="DE">Germany</option>
           </select>
           <input
-            className="bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-green1 focus:border-green1 block w-full p-2.5"
+            className="bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
             type="text"
-            placeholder="PTE 304"
+            placeholder="eg. PTE 304"
             onChange={(e) => setLevel(e.target.value)}
+            // value={}
           />
         </div>{" "}
         <div>
