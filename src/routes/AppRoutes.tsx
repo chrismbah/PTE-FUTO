@@ -6,7 +6,6 @@ import NotFound from "../pages/error/404/NotFound";
 import { BounceLoader } from "../components/loaders/BounceLoader";
 // import { useAuthState } from "react-firebase-hooks/auth";
 // import {auth} from "../config/firebase"
-import Footer from "../components/footer/Footer";
 const AppRoutes = () => {
   // const [user] = useAuthState(auth);
   const [user] = useState(true);
