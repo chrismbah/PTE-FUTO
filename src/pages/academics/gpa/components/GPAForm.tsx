@@ -2,14 +2,37 @@ import { useGPAContext } from "../../../../context/GPAContext";
 import CourseOptions from "./course-options/CourseOptions";
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../../../themes/customButtton";
-
+import { levelCourses } from "../../../../utils/academics/cgpa/courses";
 export default function GPAForm() {
   const values = useGPAContext();
-  const {  setLevel, setSemester, unit, setUnit, course, setCourse } = values;
+  const {
+    setLevel,
+    level,
+    semester,
+    setSemester,
+    unit,
+    setUnit,
+    course,
+    setCourse,
+  } = values;
+  const handleCourseChange = (e: any) => {
+    const selectedCourse = e.target.value;
+    setCourse(selectedCourse);
+    const selectedUnit =
+      levelCourses[level][semester].courses.find(
+        (courseInfo) => courseInfo.course === selectedCourse
+      )?.unit || "";
+    setUnit(selectedUnit);
+    e.target.value = "";
+  };
+  const handleUnitChange = (e: any) => {
+    setUnit(e.target.value);
+    e.target.value = "";
+  };
 
   return (
-    <div >
-      <div className="grid ss:grid-cols-2 gap-4 mb-4">
+    <div>
+      <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
           <label
             htmlFor="level"
@@ -49,7 +72,7 @@ export default function GPAForm() {
         </div>
       </div>
 
-      <div className="grid xss:grid-cols-4 gap-2 xss:gap-4">
+      <div className="grid xxss:grid-cols-4 gap-2 xss:gap-4">
         <div>
           <label
             htmlFor=""
@@ -60,9 +83,11 @@ export default function GPAForm() {
           <select
             id=""
             className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
-            onChange={(e)=>setCourse(e.target.value)}
+            onChange={handleCourseChange}
           >
-            <option defaultValue="">Select Course</option>
+            <option value="" disabled selected>
+              Select Course
+            </option>
             <CourseOptions />
           </select>
           <input
@@ -70,8 +95,7 @@ export default function GPAForm() {
             type="text"
             placeholder="eg. PTE 304"
             value={course}
-            onChange={(e)=>setCourse(e.target.value)}
-
+            onChange={(e) => setCourse(e.target.value)}
           />
         </div>{" "}
         <div>
@@ -79,14 +103,14 @@ export default function GPAForm() {
             htmlFor=""
             className="block mb-2 text-sm font-medium text-gray-900 "
           >
-            Credit Unit
+            Unit
           </label>
           <select
             id=""
             className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
-            onChange={(e)=>setUnit(e.target.value)}
+            onChange={handleUnitChange}
           >
-            <option defaultValue="">Select Unit</option>
+            <option value="" disabled selected>Select Unit</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -103,8 +127,7 @@ export default function GPAForm() {
             type="text"
             placeholder="eg. 4"
             value={unit}
-            onChange={(e)=>setUnit(e.target.value)}
-
+            onChange={(e) => setUnit(e.target.value)}
           />
         </div>
         <div>
@@ -127,8 +150,15 @@ export default function GPAForm() {
             <option value="F">F</option>
           </select>
         </div>
-         <div className="xss:pt-7">
-          <Button theme={customButtonTheme} color="primary" size="sm" className="p-1.5 w-full">Add</Button>
+        <div className="xxss:pt-7">
+          <Button
+            theme={customButtonTheme}
+            color="primary"
+            size="sm"
+            className="p-1.5 w-full"
+          >
+            Add
+          </Button>
         </div>
       </div>
     </div>
