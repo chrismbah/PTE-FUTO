@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import type {
   GPAContextProviderProps,
-  GPAContextValueProps,
+  // GPAContextValueProps,
 } from "../models/gpa";
 
 export const GPAContext = createContext<any | null>(null);
