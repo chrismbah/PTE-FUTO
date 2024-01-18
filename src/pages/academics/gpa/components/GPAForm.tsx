@@ -32,7 +32,7 @@ export default function GPAForm() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="grid xxss:grid-cols-2 gap-4 mb-4">
         <div>
           <label
             htmlFor="level"
@@ -42,7 +42,7 @@ export default function GPAForm() {
           </label>
           <select
             id="level"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 xss:p-2.5"
             onChange={(e) => setLevel(e.target.value)}
           >
             <option defaultValue="">Select Level</option>
@@ -62,7 +62,7 @@ export default function GPAForm() {
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 xss:p-2.5"
             onChange={(e) => setSemester(e.target.value)}
           >
             <option defaultValue="">Select Semester</option>
@@ -82,7 +82,7 @@ export default function GPAForm() {
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
+            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             onChange={handleCourseChange}
           >
             <option value="" disabled selected>
@@ -91,7 +91,7 @@ export default function GPAForm() {
             <CourseOptions />
           </select>
           <input
-            className="bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
+            className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             type="text"
             placeholder="eg. PTE 304"
             value={course}
@@ -107,10 +107,12 @@ export default function GPAForm() {
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
+            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             onChange={handleUnitChange}
           >
-            <option value="" disabled selected>Select Unit</option>
+            <option value="" disabled selected>
+              Select Unit
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -123,7 +125,7 @@ export default function GPAForm() {
             <option value="10">10</option>
           </select>
           <input
-            className="bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
+            className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             type="text"
             placeholder="eg. 4"
             value={unit}
