@@ -46,5 +46,5 @@ h3{
     @apply text-ss ss:text-xs 
 }
 .bar-style{
-    @apply h-[2px] w-10 bg-yellow1
+    @apply h-[2px] w-10 bg-green1
 }
