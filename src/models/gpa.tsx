@@ -24,6 +24,11 @@ export interface CourseGrades {
   unit: number;
   grade: string;
 }
-export interface CourseSelectedProps{
-  courseInfo: CourseGrades
+export interface CourseSelectedProps {
+  courseInfo: CourseGrades;
 }
+
+// export type GradeValues = {
+//   string: number;
+// };
+export type GradeValues = Record<string, number>;

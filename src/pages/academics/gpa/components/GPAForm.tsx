@@ -1,9 +1,10 @@
-import CourseOptions from "./course-options/CourseOptions";
+import CourseOptions from "./CourseOptions";
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../../../themes/customButtton";
-import { CourseSelected } from "./course-info/CourseSelected";
+import { CourseSelected } from "./CourseSelected";
 import { CourseGrades } from "../../../../models/gpa";
 import { useComputeGPA } from "../../../../hooks/useComputeGPA";
+import { useEffect } from "react";
 
 export default function GPAForm() {
   const {
@@ -19,8 +20,11 @@ export default function GPAForm() {
     handleUnitChange,
     handleGradeChange,
     addCourseGrade,
+    computeGPA,
   } = useComputeGPA();
-
+  useEffect(() => {
+    computeGPA();
+  }, [courseGrades]);
   return (
     <div>
       <div className="grid xxss:grid-cols-2 gap-4 mb-4">
@@ -110,12 +114,16 @@ export default function GPAForm() {
             <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
           </select>
           <input
             className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             type="text"
             placeholder="eg. 4"
             value={unit}
+            min="0"
+            max="8"
             onChange={(e) => setUnit(e.target.value)}
           />
         </div>
@@ -145,7 +153,7 @@ export default function GPAForm() {
             className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             type="text"
             value={grade}
-            // placeholder="eg. 4"
+            readOnly
           />
         </div>
         <div className="xxss:pt-7">
@@ -163,7 +171,7 @@ export default function GPAForm() {
       {courseGrades.length > 0 && (
         <div className="relative overflow-x-auto sm:rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-sm ss:text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="pl-2 py-3">
                   COURSE
