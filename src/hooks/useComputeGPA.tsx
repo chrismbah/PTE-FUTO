@@ -2,7 +2,7 @@ import { useGPAContext } from "../context/GPAContext";
 import { levelCourses } from "../utils/academics/cgpa/courses";
 import { useToast } from "./useToast";
 import { CourseGrades, GradeValues } from "../models/gpa";
-import {v4 as uuid} from "uuid"
+// import {v4 as uuid} from "uuid"
 
 export const useComputeGPA = () => {
   const {
