@@ -1,11 +1,11 @@
 import { useGPAContext } from "../context/GPAContext";
 import { levelCourses } from "../utils/academics/cgpa/courses";
 import { useToast } from "./useToast";
-
+import { CourseGrades, GradeValues } from "../models/gpa";
 export const useComputeGPA = () => {
   const {
-    setLevel,
     level,
+    setLevel,
     semester,
     setSemester,
     unit,
@@ -16,7 +16,22 @@ export const useComputeGPA = () => {
     setGrade,
     courseGrades,
     setCourseGrades,
+    totalUnits,
+    setTotalUnits,
+    totalGradePoints,
+    setTotalGradePoints,
+    studentGPA,
+    setStudentGPA,
   } = useGPAContext();
+
+  const gradeValues: GradeValues = {
+    A: 5,
+    B: 4,
+    C: 3,
+    D: 2,
+    E: 1,
+    F: 0,
+  };
 
   const handleCourseChange = (e: any) => {
     const selectedCourse = e.target.value;
@@ -37,14 +52,37 @@ export const useComputeGPA = () => {
     e.target.value = "";
   };
 
+  const computeGPA = () => {
+    const totalUnits = courseGrades.reduce(
+      (acc: number, courseGrade: CourseGrades) => {
+        return acc + Number(courseGrade.unit);
+      },
+      0
+    );
+
+    const totalGradePoints = courseGrades.reduce(
+      (acc: number, courseGrade: CourseGrades) => {
+        return acc + courseGrade.unit * gradeValues[courseGrade.grade];
+      },
+      0
+    );
+
+    const GPA = (totalGradePoints / totalUnits).toFixed(2);
+
+    setTotalUnits(totalUnits);
+    setTotalGradePoints(totalGradePoints);
+    setStudentGPA(GPA);
+  };
+
   const addCourseGrade = () => {
     if (course && unit && grade) {
       setCourseGrades([...courseGrades, { course, unit, grade }]);
       console.log(courseGrades);
+      useToast("success", `${course} with credit unit ${unit} and grade "${grade}" Added Successfully`);
       setCourse("");
       setUnit("");
       setGrade("");
-      useToast("success", "Course Added Successfully");
+      computeGPA();
     } else {
       switch (true) {
         case course === "":
@@ -69,6 +107,7 @@ export const useComputeGPA = () => {
     handleUnitChange,
     handleGradeChange,
     addCourseGrade,
+    computeGPA,
     level,
     setLevel,
     setSemester,
@@ -78,5 +117,9 @@ export const useComputeGPA = () => {
     grade,
     unit,
     setUnit,
+    totalUnits,
+    totalGradePoints,
+    studentGPA,
+
   };
 };
