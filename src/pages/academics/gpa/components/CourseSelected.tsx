@@ -14,8 +14,8 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
       <td className="px-6 py-0">{unit}</td>
       <td className="px-6 py-0">{grade}</td>
       <td className="px-6 py-0 text-right">
-        <a href="#" className="font-medium text-green1 hover:underline">
-          Edit
+        <a href="#" className="font-medium text-red-600 hover:underline">
+          Delete
         </a>
       </td>
     </tr>

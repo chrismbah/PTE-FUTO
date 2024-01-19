@@ -2,11 +2,12 @@ import GPAForm from "./components/GPAForm";
 // import page from "../../../assets/svg/background/page-turner.svg"
 import { useComputeGPA } from "../../../hooks/useComputeGPA";
 import { GPAMessage } from "./components/GPAMessage";
+import Footer from "../../../components/footer/Footer";
 export default function CalculateGPA() {
   const { studentGPA } = useComputeGPA();
   return (
     <div className="bg-[url('../../../assets/svg/background/page-turner.svg')] min-h-screen w-full">
-      <div className="bg-gray-50 w-full min-h-screen flex items-center justify-center px-3 sm:px-10 py-10 pt-20">
+      <div className="bg-gray-50 w-full min-h-[95vh] flex items-center justify-center px-3 sm:px-10 py-10 pt-20">
         <div className="bg-white p-5 sm:p-8 shadow-sm max-w-[700px]">
           <div className="flex justify-between items-center mb-2 flex-col xss:flex-row ">
             <h3 className="w-full xss:w-auto">GPA Calculator</h3>
@@ -30,6 +31,7 @@ export default function CalculateGPA() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -2,6 +2,8 @@ import { useGPAContext } from "../context/GPAContext";
 import { levelCourses } from "../utils/academics/cgpa/courses";
 import { useToast } from "./useToast";
 import { CourseGrades, GradeValues } from "../models/gpa";
+import {v4 as uuid} from "uuid"
+
 export const useComputeGPA = () => {
   const {
     level,
@@ -78,7 +80,10 @@ export const useComputeGPA = () => {
     if (course && unit && grade) {
       setCourseGrades([...courseGrades, { course, unit, grade }]);
       console.log(courseGrades);
-      useToast("success", `${course} with credit unit ${unit} and grade "${grade}" Added Successfully`);
+      useToast(
+        "success",
+        `${course} with credit unit ${unit} and grade "${grade}" Added Successfully`
+      );
       setCourse("");
       setUnit("");
       setGrade("");
@@ -120,6 +125,5 @@ export const useComputeGPA = () => {
     totalUnits,
     totalGradePoints,
     studentGPA,
-
   };
 };
