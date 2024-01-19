@@ -18,3 +18,12 @@ export type LevelCourses = {
     };
   };
 };
+
+export interface CourseGrades {
+  course: string;
+  unit: number;
+  grade: string;
+}
+export interface CourseSelectedProps{
+  courseInfo: CourseGrades
+}

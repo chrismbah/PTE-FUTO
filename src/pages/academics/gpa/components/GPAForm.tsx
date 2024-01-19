@@ -1,34 +1,25 @@
-import { useGPAContext } from "../../../../context/GPAContext";
 import CourseOptions from "./course-options/CourseOptions";
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../../../themes/customButtton";
-import { levelCourses } from "../../../../utils/academics/cgpa/courses";
+import { CourseSelected } from "./course-info/CourseSelected";
+import { CourseGrades } from "../../../../models/gpa";
+import { useComputeGPA } from "../../../../hooks/useComputeGPA";
+
 export default function GPAForm() {
-  const values = useGPAContext();
   const {
-    setLevel,
-    level,
-    semester,
-    setSemester,
     unit,
     setUnit,
+    setLevel,
+    grade,
     course,
     setCourse,
-  } = values;
-  const handleCourseChange = (e: any) => {
-    const selectedCourse = e.target.value;
-    setCourse(selectedCourse);
-    const selectedUnit =
-      levelCourses[level][semester].courses.find(
-        (courseInfo) => courseInfo.course === selectedCourse
-      )?.unit || "";
-    setUnit(selectedUnit);
-    e.target.value = "";
-  };
-  const handleUnitChange = (e: any) => {
-    setUnit(e.target.value);
-    e.target.value = "";
-  };
+    setSemester,
+    courseGrades,
+    handleCourseChange,
+    handleUnitChange,
+    handleGradeChange,
+    addCourseGrade,
+  } = useComputeGPA();
 
   return (
     <div>
@@ -72,7 +63,7 @@ export default function GPAForm() {
         </div>
       </div>
 
-      <div className="grid xxss:grid-cols-4 gap-2 xss:gap-4">
+      <div className="grid xxss:grid-cols-4 gap-2 xss:gap-4 mb-4">
         <div>
           <label
             htmlFor=""
@@ -119,10 +110,6 @@ export default function GPAForm() {
             <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
           </select>
           <input
             className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
@@ -141,9 +128,12 @@ export default function GPAForm() {
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-2.5"
+            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
+            onChange={handleGradeChange}
           >
-            <option defaultValue="">Select Grade</option>
+            <option value="" disabled selected>
+              Select Grade
+            </option>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
@@ -151,6 +141,12 @@ export default function GPAForm() {
             <option value="E">E</option>
             <option value="F">F</option>
           </select>
+          <input
+            className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
+            type="text"
+            value={grade}
+            // placeholder="eg. 4"
+          />
         </div>
         <div className="xxss:pt-7">
           <Button
@@ -158,11 +154,42 @@ export default function GPAForm() {
             color="primary"
             size="sm"
             className="p-1.5 w-full"
+            onClick={addCourseGrade}
           >
             Add
           </Button>
         </div>
       </div>
+      {courseGrades.length > 0 && (
+        <div className="relative overflow-x-auto sm:rounded-lg">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className="pl-2 py-3">
+                  COURSE
+                </th>
+                <th scope="col" className="pl-2 py-3">
+                  UNIT
+                </th>
+                <th scope="col" className="pl-2 py-3">
+                  GRADE
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  <span className="sr-only">Edit</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {courseGrades.map((courseInfo: CourseGrades) => (
+                <CourseSelected
+                  key={courseInfo.course}
+                  courseInfo={courseInfo}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,8 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import type {
-  GPAContextProviderProps,
-  // GPAContextValueProps,
-} from "../models/gpa";
+import type { GPAContextProviderProps, CourseGrades } from "../models/gpa";
 
 export const GPAContext = createContext<any | null>(null);
 
@@ -17,6 +14,8 @@ export default function GPAContextProvider({
   const [semester, setSemester] = useState<string>("");
   const [course, setCourse] = useState<string>("");
   const [unit, setUnit] = useState<string>("");
+  const [grade, setGrade] = useState<string>("");
+  const [courseGrades, setCourseGrades] = useState<CourseGrades[] | null>([]);
 
   const GPAContextValue = {
     level,
@@ -27,6 +26,10 @@ export default function GPAContextProvider({
     setUnit,
     course,
     setCourse,
+    grade,
+    setGrade,
+    courseGrades,
+    setCourseGrades,
   };
   return (
     <GPAContext.Provider value={GPAContextValue}>
