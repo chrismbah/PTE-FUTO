@@ -9,9 +9,9 @@ export default function CalculateGPA() {
     <div className="bg-[url('../../../assets/svg/background/page-turner.svg')] min-h-screen w-full">
       <div className="bg-gray-50 w-full min-h-[95vh] flex items-center justify-center px-3 sm:px-10 py-10 pt-20">
         <div className="bg-white p-5 sm:p-8 shadow-sm max-w-[700px] ">
-          <div className="flex justify-between items-center mb-2 flex-col xxss:flex-row ">
-            <h3 className="w-full xss:w-auto">GPA Calculator</h3>
-            <div className="w-full xss:w-auto">
+          <div className="flex justify-between items-center mb-2 flex-col xxss:flex-row xxss:gap-2">
+            <h3 className="w-full xxss:w-auto">GPA Calculator</h3>
+            <div className="w-full xxss:w-auto">
               {" "}
               <div className="text-xs">
                 Your GPA:{" "}
