@@ -9,7 +9,7 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
   const { deleteCourseGrade, editCourseGrade } = useComputeGPA();
 
   return (
-    <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+    <tr className="bg-white border-b">
       <th
         scope="row"
         className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -25,14 +25,22 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
             onClick={() => editCourseGrade(id)}
           >
             <span className="hidden ss:block">Edit</span>{" "}
-            <img src={EditIcon} alt="Edit" className="w-4 block ss:hidden" />
+            <div className="hover:underline">
+              <img src={EditIcon} alt="Edit" className="w-4 block ss:hidden" />
+            </div>
           </button>
           <button
             className="font-medium text-red-600 hover:underline"
             onClick={() => deleteCourseGrade(id)}
           >
             <span className="hidden ss:block">Delete</span>{" "}
-            <img src={TrashIcon} alt="Delete" className="w-4 block ss:hidden" />
+            <div className="hover:bg-gray-50 p-2 rounded-full">
+              <img
+                src={TrashIcon}
+                alt="Delete"
+                className="w-4 block ss:hidden"
+              />
+            </div>
           </button>
         </div>
       </td>
