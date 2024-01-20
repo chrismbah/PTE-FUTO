@@ -25,7 +25,7 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
             onClick={() => editCourseGrade(id)}
           >
             <span className="hidden ss:block">Edit</span>{" "}
-            <div className="hover:underline">
+            <div className="hover:bg-gray-50 w-4 rounded-full">
               <img src={EditIcon} alt="Edit" className="w-4 block ss:hidden" />
             </div>
           </button>
@@ -34,11 +34,11 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
             onClick={() => deleteCourseGrade(id)}
           >
             <span className="hidden ss:block">Delete</span>{" "}
-            <div className="hover:bg-gray-50 p-2 rounded-full">
+            <div className="hover:bg-gray-50 w-4 rounded-full">
               <img
                 src={TrashIcon}
                 alt="Delete"
-                className="w-4 block ss:hidden"
+                className=" block ss:hidden"
               />
             </div>
           </button>
