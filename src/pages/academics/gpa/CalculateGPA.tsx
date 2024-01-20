@@ -22,7 +22,7 @@ export default function CalculateGPA() {
               <GPAMessage />
             </div>
           </div>
-          <p className="mb-4 text-xs sm:text-base">
+          <p className="mb-4 text-sm sm:text-base">
             Track your progress, strategize your efforts, and conquer your
             coursework.{" "}
           </p>

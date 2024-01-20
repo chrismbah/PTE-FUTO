@@ -1,6 +1,4 @@
 import CourseOptions from "./CourseOptions";
-import { Button } from "flowbite-react";
-import { customButtonTheme } from "../../../../themes/customButtton";
 import { CourseSelected } from "./CourseSelected";
 import { CourseGrades } from "../../../../models/gpa";
 import { useComputeGPA } from "../../../../hooks/useComputeGPA";
@@ -20,7 +18,7 @@ export default function GPAForm() {
     handleUnitChange,
     handleGradeChange,
     addCourseGrade,
-    computeGPA,
+    computeGPA, clearCourseGrades
   } = useComputeGPA();
   useEffect(() => {
     computeGPA();
@@ -127,7 +125,7 @@ export default function GPAForm() {
             onChange={(e) => setUnit(e.target.value)}
           />
         </div>
-        <div>
+        <div className="mb-2 xxss:mb-0 ">
           <label
             htmlFor=""
             className="block mb-2 text-sm font-medium text-gray-900 "
@@ -156,16 +154,19 @@ export default function GPAForm() {
             readOnly
           />
         </div>
-        <div className="xxss:pt-7">
-          <Button
-            theme={customButtonTheme}
-            color="primary"
-            size="sm"
-            className="p-1.5 w-full"
+        <div className="xxss:pt-7 flex flex-col gap-2.5">
+          <button
+            className="gpa-btn bg-green1 hover:bg-green2"
             onClick={addCourseGrade}
           >
             Add
-          </Button>
+          </button>
+          <button
+            className="gpa-btn bg-red-600 hover:bg-red-700"
+            onClick={clearCourseGrades}
+          >
+            Clear
+          </button>
         </div>
       </div>
       {courseGrades.length > 0 && (
@@ -188,11 +189,8 @@ export default function GPAForm() {
               </tr>
             </thead>
             <tbody>
-              {courseGrades.map((courseInfo: CourseGrades, index:number) => (
-                <CourseSelected
-                  key={index}
-                  courseInfo={courseInfo}
-                />
+              {courseGrades.map((courseInfo: CourseGrades, index: number) => (
+                <CourseSelected key={index} courseInfo={courseInfo} />
               ))}
             </tbody>
           </table>

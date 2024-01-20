@@ -96,7 +96,7 @@ export const useComputeGPA = () => {
         setCourse("");
         setGrade("");
         setUnit("");
-        useToast("success", "Course Edited")
+        useToast("success", "Course Edited");
       } else {
         const newCourseGrades = { id: uuid(), course, unit, grade };
         setCourseGrades([...courseGrades, newCourseGrades]);
@@ -135,11 +135,11 @@ export const useComputeGPA = () => {
       return courseGrade.id !== id;
     });
     setCourseGrades(newCourseGrades);
-    useToast("success", "Course Deleted")
-    setUnit("")
-    setGrade("")
-    setCourse("")
-    setEditing(false)
+    useToast("success", "Course Deleted");
+    setUnit("");
+    setGrade("");
+    setCourse("");
+    setEditing(false);
   };
 
   const editCourseGrade = (id: string) => {
@@ -156,6 +156,15 @@ export const useComputeGPA = () => {
     setEditing(true);
   };
 
+  const clearCourseGrades = () => {
+    if (courseGrades.length <= 0) {
+      useToast("error", "No Courses Available");
+      return
+    }
+      setCourseGrades([]);
+      useToast("success", "Courses Cleared.");
+  };
+
   return {
     handleCourseChange,
     handleUnitChange,
@@ -163,6 +172,7 @@ export const useComputeGPA = () => {
     addCourseGrade,
     deleteCourseGrade,
     editCourseGrade,
+    clearCourseGrades,
     computeGPA,
     level,
     setLevel,
@@ -170,12 +180,14 @@ export const useComputeGPA = () => {
     courseGrades,
     course,
     setCourse,
-    grade, setGrade,
+    grade,
+    setGrade,
     unit,
     setUnit,
     totalUnits,
     totalGradePoints,
     studentGPA,
-    editID, editing
+    editID,
+    editing,
   };
 };
