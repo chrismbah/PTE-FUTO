@@ -19,6 +19,8 @@ export default function GPAContextProvider({
   const [totalUnits, setTotalUnits] = useState<number>(0);
   const [totalGradePoints, setTotalGradePoints] = useState<number>(0);
   const [studentGPA, setStudentGPA] = useState<number>(0);
+  const [editing, setEditing] = useState<boolean>(false);
+  const [editID, setEditID] = useState<string>("");
 
   const GPAContextValue = {
     level,
@@ -39,6 +41,10 @@ export default function GPAContextProvider({
     setTotalGradePoints,
     studentGPA,
     setStudentGPA,
+    editing,
+    setEditing,
+    editID,
+    setEditID,
   };
   return (
     <GPAContext.Provider value={GPAContextValue}>

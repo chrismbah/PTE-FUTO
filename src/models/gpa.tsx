@@ -20,6 +20,7 @@ export type LevelCourses = {
 };
 
 export interface CourseGrades {
+  id:string;
   course: string;
   unit: number;
   grade: string;

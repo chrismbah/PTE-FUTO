@@ -119,7 +119,7 @@ export default function GPAForm() {
           </select>
           <input
             className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
-            type="text"
+            type="number"
             placeholder="eg. 4"
             value={unit}
             min="0"
@@ -176,7 +176,7 @@ export default function GPAForm() {
                 <th scope="col" className="pl-2 py-3">
                   COURSE
                 </th>
-                <th scope="col" className="pl-2 py-3">
+                <th scope="col" className="pl-4 py-3">
                   UNIT
                 </th>
                 <th scope="col" className="pl-2 py-3">
@@ -188,9 +188,9 @@ export default function GPAForm() {
               </tr>
             </thead>
             <tbody>
-              {courseGrades.map((courseInfo: CourseGrades) => (
+              {courseGrades.map((courseInfo: CourseGrades, index:number) => (
                 <CourseSelected
-                  key={courseInfo.course}
+                  key={index}
                   courseInfo={courseInfo}
                 />
               ))}

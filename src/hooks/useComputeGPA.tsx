@@ -2,7 +2,7 @@ import { useGPAContext } from "../context/GPAContext";
 import { levelCourses } from "../utils/academics/cgpa/courses";
 import { useToast } from "./useToast";
 import { CourseGrades, GradeValues } from "../models/gpa";
-// import {v4 as uuid} from "uuid"
+import { v4 as uuid } from "uuid";
 
 export const useComputeGPA = () => {
   const {
@@ -24,6 +24,10 @@ export const useComputeGPA = () => {
     setTotalGradePoints,
     studentGPA,
     setStudentGPA,
+    editing,
+    setEditing,
+    editID,
+    setEditID,
   } = useGPAContext();
 
   const gradeValues: GradeValues = {
@@ -46,7 +50,8 @@ export const useComputeGPA = () => {
     e.target.value = "";
   };
   const handleUnitChange = (e: any) => {
-    setUnit(e.target.value);
+    const selectedUnit = e.target.value;
+    setUnit(selectedUnit);
     e.target.value = "";
   };
   const handleGradeChange = (e: any) => {
@@ -77,17 +82,32 @@ export const useComputeGPA = () => {
   };
 
   const addCourseGrade = () => {
-    if (course && unit && grade) {
-      setCourseGrades([...courseGrades, { course, unit, grade }]);
-      console.log(courseGrades);
-      useToast(
-        "success",
-        `${course} with credit unit ${unit} and grade "${grade}" Added Successfully`
-      );
-      setCourse("");
-      setUnit("");
-      setGrade("");
-      computeGPA();
+    if (course && unit > 0 && grade) {
+      if (editing) {
+        const updatedCourseGrades: CourseGrades[] = courseGrades.map(
+          (courseGrade: CourseGrades) => {
+            return courseGrade.id === editID
+              ? { ...courseGrade, course, grade, unit }
+              : courseGrade;
+          }
+        );
+        setCourseGrades(updatedCourseGrades);
+        setEditing(false);
+        setCourse("");
+        setGrade("");
+        setUnit("");
+        useToast("success", "Course Edited")
+      } else {
+        const newCourseGrades = { id: uuid(), course, unit, grade };
+        setCourseGrades([...courseGrades, newCourseGrades]);
+        useToast(
+          "success",
+          `${course} with credit unit ${unit} and grade "${grade}" Added Successfully`
+        );
+        setCourse("");
+        setUnit("");
+        setGrade("");
+      }
     } else {
       switch (true) {
         case course === "":
@@ -96,6 +116,9 @@ export const useComputeGPA = () => {
 
         case unit === "":
           useToast("error", "Please specify the course unit.");
+          break;
+        case unit < 0:
+          useToast("error", "Unit must be greater than 0.");
           break;
         case grade === "":
           useToast(
@@ -107,11 +130,39 @@ export const useComputeGPA = () => {
     }
   };
 
+  const deleteCourseGrade = (id: string) => {
+    const newCourseGrades = courseGrades.filter((courseGrade: CourseGrades) => {
+      return courseGrade.id !== id;
+    });
+    setCourseGrades(newCourseGrades);
+    useToast("success", "Course Deleted")
+    setUnit("")
+    setGrade("")
+    setCourse("")
+    setEditing(false)
+  };
+
+  const editCourseGrade = (id: string) => {
+    const editingCourseGrade: CourseGrades = courseGrades.find(
+      (courseGrade: CourseGrades) => {
+        return courseGrade.id === id;
+      }
+    );
+    const { course, grade, unit } = editingCourseGrade;
+    setEditID(id);
+    setCourse(course);
+    setGrade(grade);
+    setUnit(unit);
+    setEditing(true);
+  };
+
   return {
     handleCourseChange,
     handleUnitChange,
     handleGradeChange,
     addCourseGrade,
+    deleteCourseGrade,
+    editCourseGrade,
     computeGPA,
     level,
     setLevel,
@@ -119,11 +170,12 @@ export const useComputeGPA = () => {
     courseGrades,
     course,
     setCourse,
-    grade,
+    grade, setGrade,
     unit,
     setUnit,
     totalUnits,
     totalGradePoints,
     studentGPA,
+    editID, editing
   };
 };

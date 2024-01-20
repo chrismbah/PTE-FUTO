@@ -13,6 +13,6 @@ export const GPAMessage = () => {
   } else if (studentGPA >= 1.00 && studentGPA <= 1.49) {
     return <div className="text-sm">Pass</div>;
   } else if (studentGPA >= 0.00 && studentGPA <= 0.99) {
-    return <div className="text-sm">Fail</div>;
+    return <div className="text-sm text-red-600">Fail</div>;
   }
 };
