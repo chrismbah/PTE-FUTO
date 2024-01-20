@@ -114,7 +114,9 @@ export default function Nav() {
               label={"Academics"}
               theme={customDropdownTheme}
             >
-              <Dropdown.Item>About Us</Dropdown.Item>
+              <Dropdown.Item>
+                <Link to={"/calculate-gpa"}>GPA Calculator</Link>
+              </Dropdown.Item>
               <Dropdown.Item>Our Mission</Dropdown.Item>
               <Dropdown.Item>Our Vision</Dropdown.Item>
               <Dropdown.Divider />
