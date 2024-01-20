@@ -158,11 +158,14 @@ export const useComputeGPA = () => {
 
   const clearCourseGrades = () => {
     if (courseGrades.length <= 0) {
-      useToast("error", "No Courses Available");
-      return
-    }
+      useToast("error", "No Courses To Clear");
+    } else if (courseGrades.length === 1) {
+      setCourseGrades([]);
+      useToast("success", "Course Cleared.");
+    } else {
       setCourseGrades([]);
       useToast("success", "Courses Cleared.");
+    }
   };
 
   return {
