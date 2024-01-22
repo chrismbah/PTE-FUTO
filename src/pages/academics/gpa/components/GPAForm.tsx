@@ -154,7 +154,7 @@ export default function GPAForm() {
             readOnly
           />
         </div>
-        <div className="xxss:pt-7 flex flex-col gap-2.5">
+        <div className="xxss:pt-7 flex flex-col gap-1.5">
           <button
             className="gpa-btn bg-green1 hover:bg-green2"
             onClick={addCourseGrade}

@@ -49,5 +49,5 @@ h3{
     @apply h-[2px] w-10 bg-green1
 }
 .gpa-btn{
-    @apply text-sm px-3 py-1.5 xss:py-2.5  text-white font-semibold w-full rounded-lg
+    @apply text-sm px-3 py-[7px] xss:py-2.5  text-white font-semibold w-full rounded-lg
 }
