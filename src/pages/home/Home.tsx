@@ -2,7 +2,7 @@ import Hero from "../../components/home/Hero";
 import About from "../../components/home/About";
 import CalculateGPA from "../../components/home/CalculateGPA";
 import LearningResources from "../../components/home/LearningResources";
-import CourseOutline from "../../components/home/CourseOutline"
+import CourseOutlines from "../../components/home/CourseOutlines"
 import Blog from "../../components/home/Blog";
 import Events from "../../components/home/Events";
 import Footer from "../../components/footer/Footer"
@@ -12,8 +12,8 @@ export default function Home() {
      <Hero />
      <About />
      <CalculateGPA />
+     <CourseOutlines />
      <LearningResources />
-     <CourseOutline />
      <Blog />
      <Events />
      <Footer />

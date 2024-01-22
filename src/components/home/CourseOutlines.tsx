@@ -3,7 +3,7 @@ import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
 import courseOutline from "../../assets/svg/home/courseOutline.svg";
 
-export default function CourseOutline() {
+export default function CourseOutlines() {
   return (
     <div className="box-width">
       <div className="section section-flex-between">
@@ -20,7 +20,7 @@ export default function CourseOutline() {
             academic journey.
           </p>
           <Button theme={customButtonTheme} size={"lg"} color="primary">
-            <Link to="/">Get Course Outline</Link>
+            <Link to="/course-outlines">Get Course Outlines</Link>
           </Button>
         </div>
         <div>

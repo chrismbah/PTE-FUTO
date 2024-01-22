@@ -15,6 +15,7 @@ const AppRoutes = () => {
   const CalculateGPA = lazy(
     () => import("../pages/academics/gpa/CalculateGPA")
   );
+  const CourseOutlines = lazy(()=>import("../pages/academics/course-outlines/CourseOutline"))
   return (
     <div className="">
       <Nav />
@@ -23,13 +24,14 @@ const AppRoutes = () => {
           {user ? (
             <>
               <Route path="/" element={<Home />} />
+              <Route path="/course-outlines" element={<CourseOutlines/>}/>
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
               <Route path="/calculate-gpa" element={<CalculateGPA />} />
               <Route path="*" element={<NotFound />} />
             </>
           ) : (
-            <Route path="*" element={<NotFound />}></Route>
+            <Route path="*" element={<NotFound />}/>
           )}
         </Routes>
       </Suspense>
