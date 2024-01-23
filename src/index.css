@@ -37,10 +37,10 @@ h3{
     @apply flex items-center justify-between
 }
 .section-flex-between{
-    @apply flex items-center justify-between flex-col xmd:flex-row gap-4 md:gap-0
+    @apply flex items-center justify-between flex-col mmd:flex-row gap-4 md:gap-0
 }
 .section-flex-between-reverse{
-    @apply flex items-center justify-between flex-col-reverse xmd:flex-row gap-6 md:gap-0
+    @apply flex items-center justify-between flex-col-reverse mmd:flex-row gap-6 md:gap-0
 }
 .form-error-message{
     @apply text-ss text-red-600

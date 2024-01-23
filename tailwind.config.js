@@ -30,11 +30,13 @@ export default {
 
       'md': '890px',
       // => @media (min-width: 768px) { ... }
+      'mmd': '980px',
 
       'xmd': '1010px',
 
       'lg': '1057px',
       // => @media (min-width: 1024px) { ... }
+      'xlg': '1150px',
 
       'xl': '1280px',
       // => @media (min-width: 1280px) { ... }

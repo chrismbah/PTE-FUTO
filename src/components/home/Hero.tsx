@@ -1,7 +1,10 @@
-import hero from "../../assets/svg/home/hero.svg";
+// import hero from "../../assets/svg/home/hero.svg";
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
+import heroAnimation from "../../utils/animation/hero.json"
+import Lottie from "lottie-react"
+
 export default function Hero() {
   return (
     <div className="hero-section box-width">
@@ -22,11 +25,12 @@ export default function Hero() {
             thriving community.
           </p>
           <Button theme={customButtonTheme} color="primary" size={"lg"}>
-            <Link to={"/"}>Get started</Link>
+            <Link to={"/"}>Get Started</Link>
           </Button>
         </div>
-        <div className="col">
-          <img src={hero} alt="School Image" className="w-[500px] xmd:w-[900px] xmd:min-w-[600px]" />
+        <div className=" max-w-[400px]  xl:max-w-[1000px]">
+          <Lottie loop={true} animationData={heroAnimation} />
+          {/* <img src={hero} alt="School Image" className="w-[500px] xmd:w-[900px] xmd:min-w-[600px]" /> */}
         </div>
       </div>
     </div>
