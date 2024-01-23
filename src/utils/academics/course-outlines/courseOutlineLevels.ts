@@ -1,6 +1,3 @@
-import book1 from "../../../../public/icons/course-outline/levels/book1.png"
-
-
 export const courseOutlineLevels = [
   {
     level: "100",
@@ -19,12 +16,14 @@ export const courseOutlineLevels = [
     icon: "../../../../public/icons/course-outline/levels/book3.png",
     title: "300 Level",
     route: "/course-outlines/300-level/",
-  },{
+  },
+  {
     level: "400",
     icon: "../../../../public/icons/course-outline/levels/book4.png",
     title: "400 Level",
     route: "/course-outlines/400-level/",
-  },{
+  },
+  {
     level: "500",
     icon: "../../../../public/icons/course-outline/levels/book5.png",
     title: "500 Level",
