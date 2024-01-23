@@ -10,7 +10,6 @@ export default function Hero() {
     <div className="hero-section box-width">
       <div className="section-flex-between gap-4">
         <div className="w-full">
-          {/* <p className="text-xl">Welcome to</p> */}
           <h1 className="text-green1 xl:text-5xl lg:text-4xl text-3xl  font-semibold">
             Polymer and Textile Engineering, FUTO
           </h1>
@@ -28,7 +27,7 @@ export default function Hero() {
             <Link to={"/"}>Get Started</Link>
           </Button>
         </div>
-        <div className=" max-w-[400px]  xl:max-w-[1000px]">
+        <div className="max-w-[500px] mmd:max-w-[1000px] xlg:w-[900px]">
           <Lottie loop={true} animationData={heroAnimation} />
           {/* <img src={hero} alt="School Image" className="w-[500px] xmd:w-[900px] xmd:min-w-[600px]" /> */}
         </div>
