@@ -1,13 +1,15 @@
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
-import courseOutline from "../../assets/svg/home/courseOutline.svg";
+// import courseOutline from "../../assets/svg/home/courseOutline.svg";
+import Lottie from "lottie-react";
+import courseOutline from "../../utils/animation/courseOutline.json";
 
 export default function CourseOutlines() {
   return (
     <div className="bg-gray-50">
        <div className="box-width">
-      <div className="section section-flex-between-reverse">
+      <div className="section section-flex-between">
         <div className="w-full">
           <div className="bar-style" />
           <h2 className="mb-5">Course Outlines</h2>
@@ -24,13 +26,16 @@ export default function CourseOutlines() {
             <Link to="/course-outlines">Get Course Outlines</Link>
           </Button>
         </div>
-        <div>
+        <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[1000px]">
+            <Lottie loop={true} animationData={courseOutline} />
+          </div>
+        {/* <div>
           <img
             src={courseOutline}
             alt="Course Outline"
             className="w-[500px] xmd:w-[800px] xmd:min-w-[300px]"
           />
-        </div>
+        </div> */}
       </div>
     </div>
     </div>
