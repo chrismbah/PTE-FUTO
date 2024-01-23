@@ -5,8 +5,9 @@ import courseOutline from "../../assets/svg/home/courseOutline.svg";
 
 export default function CourseOutlines() {
   return (
-    <div className="box-width">
-      <div className="section section-flex-between">
+    <div className="bg-gray-50">
+       <div className="box-width">
+      <div className="section section-flex-between-reverse">
         <div className="w-full">
           <div className="bar-style" />
           <h2 className="mb-5">Course Outlines</h2>
@@ -32,5 +33,7 @@ export default function CourseOutlines() {
         </div>
       </div>
     </div>
+    </div>
+   
   );
 }
