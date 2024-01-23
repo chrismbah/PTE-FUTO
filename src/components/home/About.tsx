@@ -1,15 +1,21 @@
-import vision from "../../assets/svg/home/vision.svg";
+// import vision from "../../assets/svg/home/vision.svg";
+import Lottie from "lottie-react";
+import vision from "../../utils/animation/vision.json";
+
 export default function About() {
   return (
     <div className="bg-gray-50">
       <div className="box-width">
         <div className="section section-flex-between-reverse">
-          <div>
+          {/* <div>
             <img
               src={vision}
               alt="Our Vision"
               className="w-[500px] xmd:w-[700px] xmd:min-w-[400px]"
             />
+          </div> */}
+            <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[1000px]">
+            <Lottie loop={true} animationData={vision} />
           </div>
           <div className="flex flex-col items-start gap-12">
             <div>
