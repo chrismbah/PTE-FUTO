@@ -2,6 +2,8 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../pages/error/404/NotFound";
 import { BounceLoader } from "../components/loaders/BounceLoader";
+
+
 const AuthenticatedRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login/Login"));
   const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
@@ -33,7 +35,6 @@ const AuthenticatedRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="/calculate-gpa" element={<CalculateGPA />} />
         <Route path="/course-outlines" element={<CourseOutlines />}>
           <Route path="100-level" element={<CourseOutline100 />} />
@@ -42,6 +43,8 @@ const AuthenticatedRoutes = () => {
           <Route path="400-level" element={<CourseOutline400 />} />
           <Route path="500-level" element={<CourseOutline500 />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
     </Suspense>
   );
