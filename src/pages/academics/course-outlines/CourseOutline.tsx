@@ -1,7 +1,5 @@
 import { CourseOutlineCard } from "./CourseOutlineCard";
 import { courseOutlineLevels } from "../../../utils/academics/course-outlines/courseOutlineLevels";
-import { CourseOutlines } from "../../../models/courseOutline";
-
 
 export default function CourseOutline() {
   return (
@@ -17,7 +15,7 @@ export default function CourseOutline() {
         </div>
         <div className="grid items-center xsm:grid-cols-2 xlg:grid-cols-3 gap-6">
           {courseOutlineLevels.map(
-            (levelInfo: CourseOutlines, index: number) => {
+            (levelInfo, index) => {
               return <CourseOutlineCard key={index} {...levelInfo} />;
             }
           )}

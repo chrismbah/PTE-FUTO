@@ -13,7 +13,6 @@ import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
 import NavSpinner from "../loaders/NavSpinner";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 import { useSignOutUser } from "../../hooks/useSignOutUser";
-// import userAvatar from "../assets/svg/profile/userAvatar.svg"
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
@@ -117,7 +116,10 @@ export default function Nav() {
               <Dropdown.Item>
                 <Link to={"/calculate-gpa"}>GPA Calculator</Link>
               </Dropdown.Item>
-              <Dropdown.Item>Our Mission</Dropdown.Item>
+              <Dropdown.Item>
+                {" "}
+                <Link to={"/course-outlines"}> Course Outlines</Link>{" "}
+              </Dropdown.Item>
               <Dropdown.Item>Our Vision</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item>Student Bodies</Dropdown.Item>

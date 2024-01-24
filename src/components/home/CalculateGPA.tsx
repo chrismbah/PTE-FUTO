@@ -1,9 +1,9 @@
-// import calculateGP from "../../assets/svg/home/calculateGP.svg";
+import calculateGP from "../../assets/svg/home/calculateGP.svg";
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
-import Lottie from "lottie-react";
-import calculator from "../../utils/animation/calculator.json";
+// import Lottie from "lottie-react";
+// import calculator from "../../utils/animation/calculator.json";
 
 export default function CalculateGP() {
   return (
@@ -23,16 +23,16 @@ export default function CalculateGP() {
             <Link to="/calculate-gpa">Calculate Here</Link>
           </Button>
         </div>
-        <div className="max-w-[600px] xmd:w-[1200px]">
+        {/* <div className="max-w-[600px] xmd:w-[1200px]">
             <Lottie loop={true} animationData={calculator} />
-          </div>
-        {/* <div>
+          </div> */}
+        <div>
           <img
             src={calculateGP}
             alt="Calculate Your GP"
             className="w-[500px] xmd:w-[800px] xmd:min-w-[300px]"
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );
