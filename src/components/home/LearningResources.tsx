@@ -24,7 +24,7 @@ export default function LearningResources() {
               <Link to="/calculate-gp">Get Resources</Link>
             </Button>
           </div>
-          <div className="max-w-[500px] mmd:w-[700px] mmd:min-w-[400px]">
+          <div className="max-w-[400px] mmd:w-[700px] mmd:min-w-[400px]">
             <Lottie loop={true} animationData={learningAnimation} />
           </div>
         </div>
