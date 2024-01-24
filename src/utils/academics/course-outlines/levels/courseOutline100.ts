@@ -52,13 +52,13 @@ export const courseOutline100: CourseOutline = {
       },
       {
         courseCode: "IGB 101",
-        courseTitle: "Igbo",
+        courseTitle: "Igbo Language",
         creditUnit: 1,
         id: "IGB101",
       },
       {
         courseCode: "FRN 101",
-        courseTitle: "French",
+        courseTitle: "French Language",
         creditUnit: 1,
         id: "FRN101",
       },

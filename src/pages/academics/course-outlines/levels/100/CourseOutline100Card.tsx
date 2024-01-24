@@ -18,9 +18,9 @@ export const CourseOutline100Card: FC<CourseInfo> = ({
           {/* <span className="capitalize font-normal"></span>{" "} */}
         </h4>
        
-        <h4 className="font-semibold mb-4">
+        <h4 className="font-normal mb-4">
           CREDIT UNIT:{" "}
-          <span className="capitalize font-normal">{creditUnit}</span>{" "}
+          <span className="capitalize font-semibold">{creditUnit}</span>{" "}
         </h4>
 
         <button
