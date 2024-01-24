@@ -1,7 +1,7 @@
 export const courseOutlineLevels = [
   {
     level: "100",
-    icon: "../../../../public/icons/course-outline/levels/book1.png",
+    icon: "../../../assets/icons/course-outline/levels/book1.png",
     title: "100 Level",
     route: "/course-outlines/100-level",
   },
