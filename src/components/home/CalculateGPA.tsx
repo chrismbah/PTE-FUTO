@@ -23,7 +23,7 @@ export default function CalculateGP() {
             <Link to="/calculate-gpa">Calculate Here</Link>
           </Button>
         </div>
-        <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[1000px]">
+        <div className="w-[650px] xmd:w-[1200px]">
             <Lottie loop={true} animationData={calculator} />
           </div>
         {/* <div>

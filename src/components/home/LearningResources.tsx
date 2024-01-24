@@ -9,10 +9,8 @@ export default function LearningResources() {
   return (
     <div className="">
       <div className="box-width">
-        <div className="section section-flex-between-reverse">
-          <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[1000px]">
-            <Lottie loop={true} animationData={learningAnimation} />
-          </div>
+        <div className="section section-flex-between">
+       
           <div className="w-full">
             <div className="bar-style" />
             <h2 className="mb-5">Learning Resources</h2>
@@ -25,6 +23,9 @@ export default function LearningResources() {
             <Button theme={customButtonTheme} size={"lg"} color="primary">
               <Link to="/calculate-gp">Get Resources</Link>
             </Button>
+          </div>
+          <div className="w-[500px] mmd:w-[700px] mmd:min-w-[400px]">
+            <Lottie loop={true} animationData={learningAnimation} />
           </div>
         </div>
       </div>
