@@ -1,4 +1,3 @@
-// import vision from "../../assets/svg/home/vision.svg";
 import Lottie from "lottie-react";
 import vision from "../../utils/animation/vision.json";
 
@@ -7,14 +6,7 @@ export default function About() {
     <div className="bg-gray-50">
       <div className="box-width">
         <div className="section section-flex-between-reverse">
-          {/* <div>
-            <img
-              src={vision}
-              alt="Our Vision"
-              className="w-[500px] xmd:w-[700px] xmd:min-w-[400px]"
-            />
-          </div> */}
-            <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[1000px]">
+          <div className="w-[500px] mmd:w-[600px] mmd:min-w-[400px]">
             <Lottie loop={true} animationData={vision} />
           </div>
           <div className="flex flex-col items-start gap-12">
@@ -22,22 +14,24 @@ export default function About() {
               <div className="bar-style" />
               <h3>Our Mission</h3>
               <p className="section-p">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                tempore magni ad libero dolores! Perferendis culpa quibusdam{" "}
+                Empowering students to achieve academic excellence through
+                innovative learning resources and personalized support.
                 <br />
-                doloribus commodi accusantium magnam mollitia incidunt!
-                Voluptatibus nisi culpa dolor? Earum, delectus eaque.
+                We fuel academic pursuits through diverse resources, interactive
+                tools and tailored support systems.
               </p>
             </div>
             <div>
               <div className="bar-style" />
               <h3>Our Vision</h3>
               <p className="section-p">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                tempore magni ad libero dolores! Perferendis culpa quibusdam{" "}
-                <br />
-                doloribus commodi accusantium magnam mollitia incidunt!
-                Voluptatibus nisi culpa dolor? Earum, delectus eaque.
+                {/* To foster a community of lifelong learners who are equipped to
+                make meaningful contributions to their fields and society.
+                <br /> */}
+                Nurturing a vibrant community of curious learners equipped to
+                thrive in an ever-evolving world. We envision graduates not just
+                excelling in their chosen fields, <br /> but embracing lifelong
+                learning and becoming impactful contributors to society.
               </p>
             </div>
           </div>
