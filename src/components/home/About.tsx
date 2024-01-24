@@ -6,7 +6,7 @@ export default function About() {
     <div className="bg-gray-50">
       <div className="box-width">
         <div className="section section-flex-between-reverse">
-          <div className="max-w-[400px] mmd:w-[600px] mmd:min-w-[400px]">
+          <div className="max-w-[500px] mmd:max-w-[900px]  mmd:w-[800px] mmd:min-w-[450px]">
             <Lottie loop={true} animationData={vision} />
           </div>
           <div className="flex flex-col items-start gap-12">

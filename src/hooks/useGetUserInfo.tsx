@@ -41,5 +41,5 @@ export const useGetUserInfo = () => {
     }
   };
 
-  return { getUserInfo, studentDetails };
+  return { user, getUserInfo, studentDetails };
 };

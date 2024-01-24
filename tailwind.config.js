@@ -8,6 +8,7 @@ export default {
   theme: {
     colors: {
       'green1': '#00875a',
+      "green1a":"",
       'green2': '#21875a',
       'green3':'#1c3f21',
       'green4':'#6ebf63',
@@ -57,6 +58,7 @@ export default {
       md: '1.15rem',
       lg: '1.20rem',
       xl: '1.25rem',
+      xll: '1.4rem',
       '2xl': '1.563rem',
       '3xl': '1.953rem',
       '4xl': '2.441rem',

@@ -30,6 +30,9 @@ h3{
 .page-section{
     @apply px-3 sm:px-14 sm:py-24 py-20
 }
+.course-outline-section{
+    @apply px-3 ss:px-8 sm:px-14 sm:py-24 py-20
+}
 .section{
     @apply px-3 xsm:px-14 xsm:py-12 py-8
 }

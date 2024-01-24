@@ -6,7 +6,7 @@ export default function CourseOutline100() {
   const { semester, setSemester } = useCourseOutlineContext();
   return (
     <div className="box-width">
-      <div className="page-section">
+      <div className="course-outline-section">
         <div className="w-full flex items-center justify-center mb-6 flex-col">
           <h2 className="text-green1">Courses Offered for 100 Level</h2>
           <p className="text-center text-xs xsm:text-base font-[500]">
@@ -16,7 +16,7 @@ export default function CourseOutline100() {
           </p>
           <div className="flex items-center justify-center mt-2">
             <button
-              className={`p-3 ${
+              className={`p-3  rounded-l-lg ${
                 semester === "First" ? "bg-green1 text-white" : "bg-gray-50"
               } border-r-2 border-green1`}
               onClick={() => setSemester("First")}
@@ -25,7 +25,7 @@ export default function CourseOutline100() {
               1st Semester{" "}
             </button>{" "}
             <button
-              className={`p-3 ${
+              className={`p-3 rounded-r-lg ${
                 semester === "Second" ? "bg-green1 text-white" : "bg-gray-50"
               }`}
               onClick={() => setSemester("Second")}
@@ -35,7 +35,9 @@ export default function CourseOutline100() {
             </button>
           </div>
         </div>
-        <div className="grid items-center xsm:grid-cols-2 xlg:grid-cols-4 gap-6">
+        <div 
+        className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 xl:grid-cols-4 gap-4"
+        >
           {courseOutline100[semester].courseInfo.map((info, index) => (
             <CourseOutline100Card key={index} {...info} />
           ))}

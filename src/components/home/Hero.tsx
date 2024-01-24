@@ -2,10 +2,12 @@
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
-import heroAnimation from "../../utils/animation/hero.json"
-import Lottie from "lottie-react"
+import heroAnimation from "../../utils/animation/hero.json";
+import Lottie from "lottie-react";
+import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 
 export default function Hero() {
+  const { user } = useGetUserInfo();
   return (
     <div className="hero-section box-width">
       <div className="section-flex-between gap-4">
@@ -24,7 +26,9 @@ export default function Hero() {
             thriving community.
           </p>
           <Button theme={customButtonTheme} color="primary" size={"lg"}>
-            <Link to={"/"}>Get Started</Link>
+            <Link to={user ? "/dashboard" : "/signup"}>
+              {user ? "Go to Dashboard" : "Get Started"}
+            </Link>
           </Button>
         </div>
         <div className="max-w-[500px] mmd:max-w-[1000px] xlg:w-[900px]">
