@@ -1,6 +1,6 @@
 import { LevelCourses } from "../../../models/gpa";
 
-export const levelCourses:LevelCourses = {
+export const levelCourses: LevelCourses = {
   "100": {
     "1st": {
       courses: [
@@ -175,9 +175,12 @@ export const levelCourses:LevelCourses = {
           course: "CHM 204",
           unit: 3,
         },
+        {
+          course: "SIW 200",
+          unit: 1,
+        },
       ],
     },
-    // ... other semesters
   },
   "300": {
     "1st": {
@@ -258,9 +261,12 @@ export const levelCourses:LevelCourses = {
           course: "PTE 322",
           unit: 2,
         },
+        {
+          course: "SIW 300",
+          unit: 2,
+        },
       ],
     },
-    // ... other semesters
   },
   "400": {
     "1st": {

@@ -36,7 +36,7 @@ export default function CourseOutline100() {
           </div>
         </div>
         <div 
-        className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 xl:grid-cols-4 gap-4"
+        className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-4 max-w-[1200px] mx-auto"
         >
           {courseOutline100[semester].courseInfo.map((info, index) => (
             <CourseOutline100Card key={index} {...info} />

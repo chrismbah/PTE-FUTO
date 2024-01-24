@@ -14,7 +14,7 @@ export interface CourseInfo {
   courseCode: string;
   courseTitle: string;
   creditUnit: number;
-  // route: string;
+  id: string;
 }
   
 export interface CourseOutline {
