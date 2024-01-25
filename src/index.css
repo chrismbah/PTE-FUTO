@@ -5,7 +5,17 @@
 
 
 .shadow-1{
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    /* border-radius: 50px; */
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  29px 29px 58px #d9d9d9,-29px -29px 58px #ffffff;
+}
+.glass-card{
+    background: rgba( 205, 181, 225, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 14px );
+    -webkit-backdrop-filter: blur( 14px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 h1{
@@ -62,3 +72,6 @@ h3{
 .gpa-btn{
     @apply text-sm px-3 py-[7px] xss:py-2.5  text-white font-semibold w-full rounded-lg
 }
+
+
+

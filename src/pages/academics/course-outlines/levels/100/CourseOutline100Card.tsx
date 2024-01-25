@@ -11,7 +11,7 @@ export const CourseOutline100Card: FC<CourseInfo> = ({
   id,
 }) => {
   return (
-    <div className="relative max-w-auto xsm:max-w-[400px] h-[220px] p-6 border border-gray-200 rounded-lg shadow-lg">
+    <div className="relative max-w-auto xsm:max-w-[400px] h-[220px] p-6 shadow-1">
       <div className="relative h-full">
         <h4 className="font-semibold text-xl">
           {courseTitle}
