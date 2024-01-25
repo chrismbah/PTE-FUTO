@@ -9,7 +9,7 @@ export default function About() {
           <div className="max-w-[500px] mmd:max-w-[900px]  mmd:w-[800px] mmd:min-w-[450px]">
             <Lottie loop={true} animationData={vision} />
           </div>
-          <div className="flex flex-col items-start gap-12">
+          <div className="flex flex-col items-start gap-8 xlg:gap-12">
             <div>
               <div className="bar-style" />
               <h3>Our Mission</h3>
@@ -25,9 +25,6 @@ export default function About() {
               <div className="bar-style" />
               <h3>Our Vision</h3>
               <p className="section-p">
-                {/* To foster a community of lifelong learners who are equipped to
-                make meaningful contributions to their fields and society.
-                <br /> */}
                 Nurturing a vibrant community of curious learners equipped to
                 thrive in an ever-evolving world. We envision graduates not just
                 excelling in their chosen fields, <br /> but embracing lifelong

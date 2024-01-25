@@ -3,128 +3,148 @@ export const courseOutline200: CourseOutline = {
   First: {
     courseInfo: [
       {
-        courseCode: "MTH 101",
-        courseTitle: "Elementary Mathematics",
+        courseCode: "MTH 203",
+        courseTitle: "Ordinary Differential Equations (ODE)",
+        creditUnit: 3,
+        id: "MTH203",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "STA 211",
+        courseTitle: "Introduction to Statistics and Probabilty",
+        creditUnit: 3,
+        id: "STA211",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "ENG 203",
+        courseTitle: "Engineering Drawing III",
+        creditUnit: 1,
+        id: "ENG203",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "CSC 201",
+        courseTitle: "Computer and Application I",
         creditUnit: 4,
-        id: "MTH101",
+        id: "CSC201",
+        option: "MANDATORY"
       },
       {
-        courseCode: "PHY 101",
-        courseTitle: "General Physics I",
-        creditUnit: 3,
-        id: "PHY101",
+        courseCode: "GST 201",
+        courseTitle: "Social Science II",
+        creditUnit: 1,
+        id: "GST201",
+        option: "MANDATORY"
       },
       {
-        courseCode: "CHM 101",
-        courseTitle: "General Chemistry I",
-        creditUnit: 3,
-        id: "CHM101",
+        courseCode: "ENG 201",
+        courseTitle: "Workshop Practice III",
+        creditUnit: 1,
+        id: "ENG201",
+        option: "MANDATORY"
       },
       {
-        courseCode: "BIO 103",
-        courseTitle: "Biology For Physical Sciences",
+        courseCode: "ENG 207",
+        courseTitle: "Introduction to Engineering Materials I",
         creditUnit: 2,
-        id: "BIO103",
+        id: "ENG207",
+        option: "MANDATORY"
       },
       {
-        courseCode: "ENG 101",
-        courseTitle: "Workshop Practice I",
-        creditUnit: 1,
-        id: "ENG101",
+        courseCode: "ENG 209",
+        courseTitle: "Engineering Thermodynamics I",
+        creditUnit: 3,
+        id: "ENG209",
+        option: "MANDATORY"
       },
       {
-        courseCode: "ENG 103",
-        courseTitle: "Engineering Drawing I",
-        creditUnit: 1,
-        id: "ENG103",
-      },
-      {
-        courseCode: "GST 101",
-        courseTitle: "Use Of English I",
+        courseCode: "ENG 213",
+        courseTitle: "Engineering Mechanics I - Statics",
         creditUnit: 2,
-        id: "GST101",
+        id: "ENG213",
+        option: "MANDATORY"
       },
       {
-        courseCode: "GST 103",
-        courseTitle: "Philosophy And Logic",
+        courseCode: "ENG 217",
+        courseTitle: "Engineers In The Society",
         creditUnit: 1,
-        id: "GST103",
-      },
-      {
-        courseCode: "IGB 101",
-        courseTitle: "Igbo Language",
-        creditUnit: 1,
-        id: "IGB101",
-      },
-      {
-        courseCode: "FRN 101",
-        courseTitle: "French Language",
-        creditUnit: 1,
-        id: "FRN101",
+        id: "ENG207",
+        option: "MANDATORY"
       },
     ],
   },
   Second: {
     courseInfo: [
       {
-        courseCode: "MTH 102",
-        courseTitle: "Elementary Mathematics II",
-        creditUnit: 4,
-        id: "MTH102",
-      },
-      {
-        courseCode: "PHY 102",
-        courseTitle: "General Physics II",
+        courseCode: "MTH 202",
+        courseTitle: "Mathematical Methods II",
         creditUnit: 3,
-        id: "PHY102",
+        id: "MTH202",
+        option: "MANDATORY"
       },
       {
-        courseCode: "CHM 102",
-        courseTitle: "General Chemistry II",
+        courseCode: "ENG 206",
+        courseTitle: "Workshop Practice IV",
+        creditUnit: 1,
+        id: "ENG206",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "ENG 208",
+        courseTitle: "Introduction to Engineering Materials",
+        creditUnit: 2,
+        id: "ENG208",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "ENG 212",
+        courseTitle: "Engineering Economy",
+        creditUnit: 2,
+        id: "ENG212",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "ENG 214",
+        courseTitle: "Computer Programming for Engineering Application",
+        creditUnit: 2,
+        id: "ENG214",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "ENG 224",
+        courseTitle: "Engineering Mechanics II - Dynamics ",
+        creditUnit: 2,
+        id: "ENG224",
+        option: "MANDATORY"
+      },
+      {
+        courseCode: "ENG 226",
+        courseTitle: "Introduction to Electrical and Electronic Engineering",
         creditUnit: 3,
-        id: "CHM102",
+        id: "ENG226",
+        option: "MANDATORY"
       },
       {
-        courseCode: "ENG 102",
-        courseTitle: "Workshop Practice II",
-        creditUnit: 1,
-        id: "ENG102",
+        courseCode: "PTE 202",
+        courseTitle: "Introduction To Polymer and Textile Engineering",
+        creditUnit: 3,
+        id: "PTE202",
+        option: "MANDATORY"
       },
       {
-        courseCode: "ENG 104",
-        courseTitle: "Engineering Drawing II",
-        creditUnit: 1,
-        id: "ENG104",
-      },
-      {
-        courseCode: "GST 102",
-        courseTitle: "Use Of English II",
+        courseCode: "CHM 204",
+        courseTitle: "Organic Chemistry I",
         creditUnit: 2,
-        id: "GST102",
+        id: "CHM204",
+        option: "MANDATORY"
       },
       {
-        courseCode: "GST 108",
-        courseTitle: "Social Science I",
+        courseCode: "SIW 200",
+        courseTitle: "Second year Long Vacation SIWES",
         creditUnit: 2,
-        id: "GST108",
-      },
-      {
-        courseCode: "GST 110",
-        courseTitle: "Philosophy And Logic II",
-        creditUnit: 1,
-        id: "GST110",
-      },
-      {
-        courseCode: "IGB 102",
-        courseTitle: "Igbo Language II",
-        creditUnit: 1,
-        id: "IGB102",
-      },
-      {
-        courseCode: "FRN 102",
-        courseTitle: "French Language",
-        creditUnit: 1,
-        id: "FRN102",
+        id: "SIW200",
+        option: "MANDATORY"
       },
     ],
   },
