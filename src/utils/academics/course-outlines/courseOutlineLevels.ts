@@ -13,7 +13,7 @@ export const courseOutlineLevels = [
   },
   {
     level: "300",
-    icon: "../../../../public/icons/course-outline/levels/book3.png",
+    icon: "../../../assets/icons/course-outline/levels/book3.png",
     title: "300 Level",
     route: "/course-outlines/300-level",
   },
