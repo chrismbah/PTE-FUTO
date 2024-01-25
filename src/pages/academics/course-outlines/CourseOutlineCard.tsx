@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { CourseOutlines } from "../../../models/courseOutline";
 import { Link } from "react-router-dom";
-import hsh from "../../../assets/icons/course-outline/levels/book1.png"
+// import hsh from "../../../assets/icons/course-outline/levels/book1.png"
 export const CourseOutlineCard: FC<CourseOutlines> = ({
   icon,
   title,
