@@ -10,7 +10,7 @@ export default function CourseOutline400() {
           <h2 className="text-green1 text-center">Courses Offered for 400 Level</h2>
           <p className="text-center text-xs xsm:text-base font-[500]">
             The details for 400 Level{" "}
-            <span className="text-green1 text-capitalize">{semester400L}</span>{" "}
+            <span className="text-green1 text-capitalize">{semester400L === "First" ? "Harmattan" : "Rain"}</span>{" "}
             Semester courses are as follows
           </p>
           <div className="flex items-center justify-center my-2">
@@ -34,7 +34,7 @@ export default function CourseOutline400() {
             </button>
           </div>
         </div>
-        <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-4 max-w-[1200px] mx-auto">
+        <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
           {courseOutline400[semester400L].courseInfo.map((info, index) => (
             <CourseOutline400Card key={index} {...info} />
           ))}

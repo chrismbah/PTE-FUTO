@@ -8,18 +8,9 @@
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  29px 29px 58px #d9d9d9,-29px -29px 58px #ffffff;
 }
-.shadow-2{
-    background: linear-gradient(45deg, #ffffff, #e6e6e6);
-    box-shadow:  29px -29px 58px #d9d9d9,-29px 29px 58px #ffffff;
-}
-.shadow-3{
-background: #ffffff;
-box-shadow: inset -29px -29px 58px #d9d9d9,
-            inset 29px 29px 58px #ffffff;
-}
-.shadow-4{
-background: linear-gradient(315deg, #ffffff, #e6e6e6);
-box-shadow:  -9px -9px 58px #d9d9d9, 9px 9px 58px #ffffff;
+.shadow-1a{
+    background: linear-gradient(45deg, #e6e6e6, #ffffff);
+    box-shadow:  5px -5px 35px #ededed, -5px 5px 35px #ffffff;
 }
 .glass-card{
     background: rgba( 205, 181, 225, 0.2 );

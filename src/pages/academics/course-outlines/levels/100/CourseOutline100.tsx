@@ -11,7 +11,7 @@ export default function CourseOutline100() {
           <h2 className="text-green1 text-center">Courses Offered for 100 Level</h2>
           <p className="text-center text-xs xsm:text-base font-[500]">
             The details for 100 Level {" "} 
-            <span className="text-green1 text-capitalize">{semester100L}</span>{" "}
+            <span className="text-green1 text-capitalize">{semester100L === "First" ? "Harmattan" : "Rain"}</span>{" "}
             Semester courses are as follows
           </p>
           <div className="flex items-center justify-center my-2">

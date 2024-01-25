@@ -9,7 +9,9 @@ export const CourseOutlineCard: FC<CourseOutlines> = ({
 }) => {
   return (
     <Link to={route}>
-      <div className="max-w-auto xsm:max-w-[460px] p-6 bg-white shadow-1 rounded-lg hover:-translate-y-px">
+      <div 
+      className="max-w-auto xsm:max-w-[460px] p-6 bg-white shadow-1 rounded-lg transition duration-200 ease-in hover:-translate-y-2"
+      >
         <img src={icon} alt="Book" className="w-16 h-16" />
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {title}
@@ -21,7 +23,7 @@ export const CourseOutlineCard: FC<CourseOutlines> = ({
         </p>
         <a
           href={route}
-          className="font-[600] items-center text-green2 hover:underline"
+          className="font-[600] items-center text-green2"
         >
           Check Course Outline
         </a>

@@ -2,7 +2,7 @@ import { FC } from "react"
 import { CourseInfo } from "../../../../../models/courseOutline"
 import { Link } from "react-router-dom"
 
-export const CourseOutline400Card:FC<CourseInfo> = ({courseCode, courseTitle, id, creditUnit}) => {
+export const CourseOutline500Card:FC<CourseInfo> = ({courseCode, courseTitle, id, creditUnit}) => {
   return (
     <Link to={`/course-outlines/400-level/${id}`}>
     <div className=" relative max-w-auto xsm:max-w-[400px] h-[220px] p-7 shadow-1a rounded-lg hover:-translate-y-px">

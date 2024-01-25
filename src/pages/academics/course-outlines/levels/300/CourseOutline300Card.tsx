@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export const CourseOutline300Card:FC<CourseInfo> = ({courseCode, courseTitle, id, creditUnit}) => {
   return (
     <Link to={`/course-outlines/300-level/${id}`}>
-    <div className=" relative max-w-auto xsm:max-w-[400px] h-[220px] p-7 shadow-1 rounded-lg hover:-translate-y-px">
+    <div className=" relative max-w-auto xsm:max-w-[400px] h-[220px] p-7 shadow-1a rounded-lg hover:-translate-y-px">
       <div className="h-full">
         <h4 className="font-bold text-md ss:text-xl">{courseTitle}</h4>
         <h4 className="font-semibold mb-4">
