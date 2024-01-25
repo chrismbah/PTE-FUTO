@@ -39,7 +39,7 @@ export const courseOutline500: CourseOutline = {
       },
       {
         courseCode: "PTE 521",
-        courseTitle: "Polymer Processing Engineering technology III",
+        courseTitle: "Polymer Processing Engineering Technology III",
         creditUnit: 3,
         id: "PTE521",
         option: "ELECTIVE",

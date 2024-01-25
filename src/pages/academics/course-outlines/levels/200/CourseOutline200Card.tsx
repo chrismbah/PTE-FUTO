@@ -7,19 +7,22 @@ export const CourseOutline200Card: FC<CourseInfo> = ({
   courseTitle,
   id,
   creditUnit,
+  option,
 }) => {
   return (
     <Link to={`/course-outlines/200-level/${id}`}>
-      <div 
-      className=" relative max-w-auto xsm:max-w-[400px] h-[220px] transition-transform duration-200 ease-in p-7 shadow-1a rounded-lg hover:-translate-y-2"
-
-      >
+      <div className=" relative max-w-auto xsm:max-w-[400px] h-[220px] transition-transform duration-200 ease-in p-7 shadow-1a rounded-lg hover:-translate-y-2">
         <div className="h-full">
           <h4 className="font-bold text-md ss:text-xl">{courseTitle}</h4>
-          <h4 className="font-semibold mb-4">
+          <h4 className="font-semibold">
             CREDIT UNIT:{" "}
             <span className="capitalize font-semibold">{creditUnit}</span>{" "}
           </h4>
+          {option === "ELECTIVE" && (
+            <span className="py-1 px-2 bg-green1/80 text-white rounded-md text-xss font-bold">
+              {option}
+            </span>
+          )}
           <button
             className="transition-colors duration-150 ease-in-out absolute inset-x-0 bottom-0 w-full
        text-green1 font-bold p-3 border-t-2 border-t-gray-400 "

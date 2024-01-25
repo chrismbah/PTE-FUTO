@@ -7,17 +7,14 @@ import { customDropdownTheme } from "../../themes/customDropdown";
 import { customAvatar } from "../../themes/customAvatar";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../config/firebase";
 import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
-import NavSpinner from "../loaders/NavSpinner";
+import loadingProfileIcon from "../../assets/svg/profile/loadingUserProfile.svg";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 import { useSignOutUser } from "../../hooks/useSignOutUser";
 
 export default function Nav() {
-  const [user, loading] = useAuthState(auth);
   const { signOutLoading, signOutUser } = useSignOutUser();
-  const { getUserInfo, studentDetails } = useGetUserInfo();
+  const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
   useEffect(() => {
     getUserInfo();
   }, [user]);
@@ -75,7 +72,13 @@ export default function Nav() {
               </Dropdown.Item>
             </Dropdown>
           ) : loading ? (
-            <NavSpinner />
+            <Avatar
+              alt="User Profile"
+              img={loadingProfileIcon}
+              rounded
+              theme={customAvatar}
+              size={"md"}
+            />
           ) : (
             <Button
               theme={customButtonTheme}

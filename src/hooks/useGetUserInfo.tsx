@@ -15,7 +15,7 @@ export const useGetUserInfo = () => {
   const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(
     null
   );
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const userID = user?.uid;
 
   const userInfoRef = collection(db, "userInfo");
@@ -36,10 +36,8 @@ export const useGetUserInfo = () => {
         email: email,
         level: level,
       });
-    } else {
-      console.log("User ID not yet available.");
     }
   };
 
-  return { user, getUserInfo, studentDetails };
+  return { user,loading, getUserInfo, studentDetails };
 };
