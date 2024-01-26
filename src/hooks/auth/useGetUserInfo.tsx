@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "../config/firebase";
+import { auth, db } from "../../config/firebase";
 import {
   collection,
   query,
@@ -9,7 +9,7 @@ import {
   //   deleteDoc,
   //   doc,
 } from "firebase/firestore";
-import { StudentDetails } from "../models/studentDetails";
+import { StudentDetails } from "../../models/studentDetails";
 
 export const useGetUserInfo = () => {
   const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(
@@ -39,5 +39,5 @@ export const useGetUserInfo = () => {
     }
   };
 
-  return { user,loading, getUserInfo, studentDetails };
+  return { user, loading, getUserInfo, studentDetails };
 };

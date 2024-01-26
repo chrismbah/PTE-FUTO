@@ -5,42 +5,17 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { logInSchema } from "../../../validation";
 import { ILoginForm } from "../../../models/form";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../config/firebase";
 import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useToast } from "../../../hooks/useToast";
+import useLoginUser from "../../../hooks/auth/useLoginUser";
+
 export default function Login() {
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const { loading, loginUser } = useLoginUser();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<ILoginForm>({ resolver: yupResolver(logInSchema) });
 
-  const handleLoginSubmit = async (data: ILoginForm) => {
-    setLoading(true);
-    try {
-      console.log(data);
-      const { email, password } = data;
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/");
-      reset();
-      useToast("success", `Login Successful.`);
-    } catch (error:any) {
-      console.log(error);
-      if (error.code == "auth/invalid-credential") {
-        useToast("error", "Invalid Email or Password.");
-      }
-      else{
-        useToast("error", "Something went wrong. Please try again")
-      }
-      setLoading(false);
-    }
-  };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
@@ -60,7 +35,7 @@ export default function Login() {
 
             <form
               className="space-y-4 md:space-y-6"
-              onSubmit={handleSubmit(handleLoginSubmit)}
+              onSubmit={handleSubmit(loginUser)}
             >
               <div>
                 <label
@@ -105,7 +80,6 @@ export default function Login() {
                 color="primary"
                 size={"md"}
                 type="submit"
-                // className="w-[100px] text-white bg-green1 hover:bg-green2 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 {loading ? <ButtonSpinner /> : "Login"}
               </Button>

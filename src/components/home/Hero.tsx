@@ -4,7 +4,7 @@ import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
 import heroAnimation from "../../utils/animation/hero.json";
 import Lottie from "lottie-react";
-import { useGetUserInfo } from "../../hooks/useGetUserInfo";
+import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 
 export default function Hero() {
   const { user } = useGetUserInfo();

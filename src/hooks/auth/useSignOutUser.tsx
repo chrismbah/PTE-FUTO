@@ -15,7 +15,7 @@ export const useSignOutUser = () => {
       await signOut(auth);
       setOpenModal(false);
       setLoading(false);
-      useToast("success", "Sign Out Successful");
+      useToast("success","Signed out successfully. Until next time 🚀");
       navigate("/login");
     } catch (err) {
       console.error("Sign-out error:", err);

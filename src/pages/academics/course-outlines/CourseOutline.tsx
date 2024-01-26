@@ -1,5 +1,5 @@
 import { CourseOutlineCard } from "./CourseOutlineCard";
-import { courseOutlineLevels } from "../../../utils/academics/course-outlines/courseOutlineLevels";
+import { courseOutlineLevels } from "../../../utils/academics/course-outlines";
 
 export default function CourseOutline() {
   return (

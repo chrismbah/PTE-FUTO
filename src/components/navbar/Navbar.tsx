@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
 import loadingProfileIcon from "../../assets/svg/profile/loadingUserProfile.svg";
-import { useGetUserInfo } from "../../hooks/useGetUserInfo";
+import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { useModalContext } from "../../context/Modal";
 import { SignOutModal } from "../modal/SignOutModal";
 
 export default function Nav() {
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
-  const {  setOpenModal } = useModalContext();
+  const { setOpenModal } = useModalContext();
   useEffect(() => {
     getUserInfo();
   }, [user]);
@@ -69,7 +69,7 @@ export default function Nav() {
               <Dropdown.Item>Profile</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item onClick={() => setOpenModal(true)}>
-                SignOut
+                Sign Out
               </Dropdown.Item>
             </Dropdown>
           ) : loading ? (

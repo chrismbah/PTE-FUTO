@@ -9,7 +9,7 @@ export const CustomToaster = () => {
         // left: 70
       }}
       toastOptions={{
-        duration: 2000,
+        duration: 3000,
       }}
     />
   );

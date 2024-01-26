@@ -12,14 +12,7 @@
     background: linear-gradient(45deg, #e6e6e6, #ffffff);
     box-shadow:  5px -5px 35px #ededed, -5px 5px 35px #ffffff;
 }
-.glass-card{
-    background: rgba( 205, 181, 225, 0.2 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 14px );
-    -webkit-backdrop-filter: blur( 14px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
+
 
 h1{
     @apply text-4xl
@@ -49,7 +42,7 @@ h3{
     @apply px-3 sm:px-14 sm:py-24 py-20
 }
 .course-outline-section{
-    @apply px-3 ss:px-8 sm:px-14 sm:py-24 py-20
+    @apply px-3 xxss:px-6 ss:px-8 sm:px-14 sm:py-24 py-20
 }
 .section{
     @apply px-3 xsm:px-14 xsm:py-12 py-8
