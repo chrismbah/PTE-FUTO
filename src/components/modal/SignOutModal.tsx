@@ -4,7 +4,7 @@ import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useModalContext } from "../../context/Modal";
 import { useSignOutUser } from "../../hooks/auth/useSignOutUser";
 import SignOutSpinner from "../loaders/SignOutSpinner";
-// import cancel from "../../../svg/icons/cancel.svg"
+import cancel from "../../assets/svg/icons/cancel.svg"
 
 export const SignOutModal = () => {
   const { openModal, setOpenModal } = useModalContext();
@@ -18,10 +18,10 @@ export const SignOutModal = () => {
   }, [openModal]);
   return (
     <>
-      <div className={`${openModal?"block" : "hidden"} z-[999999] bg-black/50 fixed top-0 right-0 left-0 z-50 h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}>
-        <div className="bg-white rounded-lg p-16 text-center relative">
-          <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400" />
-          <h3 className="mb-5 text-md font-normal text-gray-500">
+      <div className={`${openModal?"block" : "hidden"} z-[999999] bg-black/50 fixed top-0 right-0 left-0  min-h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}>
+        <div className="bg-white rounded-lg p-4 ss:p-7 md:p-16 text-center relative">
+          <HiOutlineExclamationCircle className="mx-auto mb-4 h-10 w-10 xsm:h-14 xsm:w-14 xmd:h-16 xmd:w-16  text-gray-400" />
+          <h3 className="mb-5 text-sm ss:text-base md:text-lg font-normal text-black">
             Are you sure you want to sign out?
           </h3>
           <div className="flex justify-center gap-4">
@@ -32,8 +32,8 @@ export const SignOutModal = () => {
               No, cancel
             </Button>
           </div>
-          <button className="font-bold p-3 rounded-sm absolute top-0 right-0 hover:bg-gray-50">
-            {/* <img src={cancel} alt="X" className="w-8 h-8" /> */}
+          <button className="font-bold p-2 rounded-lg absolute top-2 right-2 hover:bg-gray-50" onClick={()=>setOpenModal(false)}>
+            <img src={cancel} alt="X" className="w-5 h-5" />
           </button>
         </div>
       </div>
