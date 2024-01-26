@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { Dropdown, Navbar, Button, Avatar, Modal } from "flowbite-react";
+import { Dropdown, Navbar, Button, Avatar } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { customNavTheme } from "../../themes/customNav";
 import { customDropdownTheme } from "../../themes/customDropdown";
@@ -10,15 +10,12 @@ import logo from "../../assets/logo/logo.png";
 import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
 import loadingProfileIcon from "../../assets/svg/profile/loadingUserProfile.svg";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
-import { useSignOutUser } from "../../hooks/auth/useSignOutUser";
-import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useModalContext } from "../../context/Modal";
 import { SignOutModal } from "../modal/SignOutModal";
 
 export default function Nav() {
-  const { signOutUser } = useSignOutUser();
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
-  const { openModal, setOpenModal } = useModalContext();
+  const {  setOpenModal } = useModalContext();
   useEffect(() => {
     getUserInfo();
   }, [user]);
