@@ -1,9 +1,9 @@
-export default function ButtonSpinner() {
+export default function SignOutSpinner() {
     return (
         <div role="status">
           <svg
             aria-hidden="true"
-            className="inline w-4 h-4 md:w-5 md:h-5 text-transparent animate-spin dark:text-gray-600 fill-white"
+            className="inline w-4 h-4 md:w-5 md:h-5 text-transparent animate-spin fill-white"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

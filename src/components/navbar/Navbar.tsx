@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { Dropdown, Navbar, Button, Avatar } from "flowbite-react";
+import { Dropdown, Navbar, Button, Avatar, Modal } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { customNavTheme } from "../../themes/customNav";
 import { customDropdownTheme } from "../../themes/customDropdown";
@@ -10,11 +10,15 @@ import logo from "../../assets/logo/logo.png";
 import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
 import loadingProfileIcon from "../../assets/svg/profile/loadingUserProfile.svg";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
-import { useSignOutUser } from "../../hooks/useSignOutUser";
+import { useSignOutUser } from "../../hooks/auth/useSignOutUser";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { useModalContext } from "../../context/Modal";
+import { SignOutModal } from "../modal/SignOutModal";
 
 export default function Nav() {
-  const { signOutLoading, signOutUser } = useSignOutUser();
+  const { signOutUser } = useSignOutUser();
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
+  const { openModal, setOpenModal } = useModalContext();
   useEffect(() => {
     getUserInfo();
   }, [user]);
@@ -25,7 +29,7 @@ export default function Nav() {
         fluid
         rounded
         theme={customNavTheme}
-        className="fixed w-full shadow-sm z-[99999999]"
+        className="fixed w-full shadow-sm z-[9999]"
       >
         <Navbar.Brand href="/" className="md:w-[30%] w-[50%]">
           <div className="flex ">
@@ -44,7 +48,7 @@ export default function Nav() {
             <Dropdown
               arrowIcon={false}
               inline
-              className="z-[99999999999]"
+              className="z-[9999999]"
               label={
                 <Avatar
                   alt="User Profile"
@@ -67,8 +71,8 @@ export default function Nav() {
               <Dropdown.Item>Dashboard</Dropdown.Item>
               <Dropdown.Item>Profile</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item onClick={signOutUser}>
-                {signOutLoading ? "Signing Out...." : "SignOut"}
+              <Dropdown.Item onClick={() => setOpenModal(true)}>
+                SignOut
               </Dropdown.Item>
             </Dropdown>
           ) : loading ? (
@@ -105,8 +109,6 @@ export default function Nav() {
               <Dropdown.Item>About Us</Dropdown.Item>
               <Dropdown.Item>Our Mission</Dropdown.Item>
               <Dropdown.Item>Our Vision</Dropdown.Item>
-              {/* <Dropdown.Divider /> */}
-              {/* <Dropdown.Item>Student Bodies</Dropdown.Item> */}
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link>
@@ -146,6 +148,7 @@ export default function Nav() {
           <Navbar.Link href="/">Events</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
+      <SignOutModal />
     </nav>
   );
 }

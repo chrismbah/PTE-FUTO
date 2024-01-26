@@ -29,7 +29,7 @@ export default function Login() {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
       reset();
-      useToast("success", `Login Successful. Welcome back ${email}`);
+      useToast("success", `Login Successful.`);
     } catch (error:any) {
       console.log(error);
       if (error.code == "auth/invalid-credential") {

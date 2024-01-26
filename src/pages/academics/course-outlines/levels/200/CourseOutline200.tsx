@@ -7,14 +7,18 @@ export default function CourseOutline200() {
     <div className="box-width">
       <div className="course-outline-section">
         <div className="w-full flex items-center justify-center mb-6 flex-col">
-          <h2 className="text-green1 text-center">Courses Offered for 200 Level</h2>
+          <h2 className="text-green1 text-center">
+            Courses Offered for 200 Level
+          </h2>
           <p className="text-center text-xs xsm:text-base font-[500]">
             The details for 200 Level{" "}
-            <span className="text-green1 text-capitalize">{semester200L === "First" ? "Harmattan" : "Rain"}</span>{" "}
+            <span className="text-green1 text-capitalize">
+              {semester200L === "First" ? "Harmattan" : "Rain"}
+            </span>{" "}
             Semester courses are as follows
           </p>
           <div className="flex items-center justify-center my-2">
-          <button
+            <button
               className={`p-2 text-sm rounded-l-lg ${
                 semester200L === "First" ? "bg-green1 text-white" : "bg-gray-50"
               } border-r-2 border-green1`}
@@ -25,7 +29,9 @@ export default function CourseOutline200() {
             </button>{" "}
             <button
               className={`p-2 text-sm rounded-r-lg ${
-                semester200L === "Second" ? "bg-green1 text-white" : "bg-gray-50"
+                semester200L === "Second"
+                  ? "bg-green1 text-white"
+                  : "bg-gray-50"
               }`}
               onClick={() => setSemester200L("Second")}
             >
