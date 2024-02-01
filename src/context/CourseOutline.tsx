@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import type { CourseOutlineContextProviderProps } from "../models/courseOutline";
+import type { CourseOutlineContextProviderProps } from "../models/academics/courseOutline";
 
 export const CourseOutlineContext = createContext<any | null>(null);
 
@@ -10,6 +10,7 @@ export function useCourseOutlineContext() {
 export default function CourseOutlineContextProvider({
   children,
 }: CourseOutlineContextProviderProps) {
+  const [semester, setSemester] = useState<string>("First");
   const [semester100L, setSemester100L] = useState<string>("First");
   const [semester200L, setSemester200L] = useState<string>("First");
   const [semester300L, setSemester300L] = useState<string>("First");
@@ -27,6 +28,7 @@ export default function CourseOutlineContextProvider({
     setSemester400L,
     semester500L,
     setSemester500L,
+    semester, setSemester
   };
   return (
     <CourseOutlineContext.Provider value={CourseOutlineContextValue}>

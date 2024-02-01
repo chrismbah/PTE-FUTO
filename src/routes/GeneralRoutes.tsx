@@ -4,50 +4,33 @@ import NotFound from "../pages/error/404/NotFound";
 import { BounceLoader } from "../components/loaders/BounceLoader";
 
 const GeneralRoutes = () => {
-  const Login = lazy(() => import("../pages/auth/login/Login"));
-  const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
+  const Login = lazy(() => import("../pages/auth/login"));
+  const SignUp = lazy(() => import("../pages/auth/signup"));
   const Home = lazy(() => import("../pages/home/Home"));
   const CalculateGPA = lazy(
     () => import("../pages/academics/gpa/CalculateGPA")
   );
-  const CourseOutlines = lazy(
+  const CourseOutline = lazy(
     () => import("../pages/academics/course-outlines/CourseOutline")
   );
-  const CourseOutline100 = lazy(
-    () =>
-      import("../pages/academics/course-outlines/levels/100/CourseOutline100")
+  const CoursesOutline = lazy(
+    () => import("../pages/academics/course-outlines/CoursesOutline")
   );
-  const CourseOutline200 = lazy(
-    () =>
-      import("../pages/academics/course-outlines/levels/200/CourseOutline200")
+  const CourseInfo = lazy(
+    () => import("../pages/academics/course-outlines/CourseInfo")
   );
-  const CourseOutline300 = lazy(
-    () =>
-      import("../pages/academics/course-outlines/levels/300/CourseOutline300")
-  );
-  const CourseOutline400 = lazy(
-    () =>
-      import("../pages/academics/course-outlines/levels/400/CourseOutline400")
-  );
-  const CourseOutline500 = lazy(
-    () =>
-      import("../pages/academics/course-outlines/levels/500/CourseOutline500")
-  );
+
   return (
     <Suspense fallback={<BounceLoader />}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="/calculate-gpa" element={<CalculateGPA />} />
-        <Route path="/course-outlines" element={<CourseOutlines />}>
-          <Route path="/100-level" element={<CourseOutline100 />} />
-          <Route path="/200-level" element={<CourseOutline200 />} />
-          <Route path="/300-level" element={<CourseOutline300 />} />
-          <Route path="/400-level" element={<CourseOutline400 />} />
-          <Route path="/500-level" element={<CourseOutline500 />} />
-        </Route>
+        <Route path="/course-outlines" element={<CourseOutline />} />
+        <Route path="/course-outlines/:level" element={<CoursesOutline />} />
+        <Route path="/course-outlines/:level/:id" element={<CourseInfo />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

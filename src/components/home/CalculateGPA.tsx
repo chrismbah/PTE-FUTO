@@ -1,3 +1,4 @@
+"use client";
 import calculateGP from "../../assets/svg/home/calculateGP.svg";
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
@@ -11,8 +12,8 @@ export default function CalculateGP() {
       <div className="section section-flex-between">
         <div className="w-full">
           <div className="bar-style" />
-          <h2 className="mb-5">Calculate Your GPA</h2>
-          <p className="mb-5">
+          <h2 className="mb-1 md:mb-4">Calculate Your GPA</h2>
+          <p className="section-p mb-5">
             Here you can track your academic progress and plan your journey at{" "}
             <br />
             Polymer and Textile Engineering FUTO. Your CGPA is key, reflecting

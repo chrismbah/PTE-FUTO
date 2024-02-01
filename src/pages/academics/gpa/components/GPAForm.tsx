@@ -1,6 +1,6 @@
 import CourseOptions from "./CourseOptions";
 import { CourseSelected } from "./CourseSelected";
-import { CourseGrades } from "../../../../models/gpa";
+import { CourseGrades } from "../../../../models/academics/gpa";
 import { useComputeGPA } from "../../../../hooks/useComputeGPA";
 import { useEffect } from "react";
 
@@ -18,7 +18,8 @@ export default function GPAForm() {
     handleUnitChange,
     handleGradeChange,
     addCourseGrade,
-    computeGPA, clearCourseGrades
+    computeGPA,
+    clearCourseGrades,
   } = useComputeGPA();
   useEffect(() => {
     computeGPA();

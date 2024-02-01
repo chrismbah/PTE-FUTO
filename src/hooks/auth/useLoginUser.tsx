@@ -21,7 +21,7 @@ export default function useLoginUser() {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
       reset();
-      useToast("success", `Login Successful, Good to have you back!`);
+      useToast("success", `Login Successful. Good to have you back!`);
     } catch (error: any) {
       console.log(error);
       if (error.code == "auth/invalid-credential") {

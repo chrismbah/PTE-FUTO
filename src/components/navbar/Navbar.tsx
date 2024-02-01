@@ -8,13 +8,18 @@ import { customAvatar } from "../../themes/customAvatar";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
-import loadingProfileIcon from "../../assets/svg/profile/loadingUserProfile.svg";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { useModalContext } from "../../context/Modal";
 import { SignOutModal } from "../modal/SignOutModal";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Nav() {
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
+  const firstName = studentDetails?.firstName;
+  const lastName = studentDetails?.lastName;
+  const email = studentDetails?.email;
+
   const { setOpenModal } = useModalContext();
   useEffect(() => {
     getUserInfo();
@@ -48,7 +53,7 @@ export default function Nav() {
               className="z-[9999999]"
               label={
                 <Avatar
-                  alt="User Profile"
+                  alt="User"
                   img={userProfileIcon}
                   rounded
                   theme={customAvatar}
@@ -58,11 +63,12 @@ export default function Nav() {
             >
               <Dropdown.Header>
                 <span className="block text-sm">
-                  {" "}
-                  {studentDetails?.firstName} {studentDetails?.lastName}
+                  {/* {loading ? "Loading..." : firstName? firstName   + lastName : "Sorry could not get student info."} */}
+                  {studentDetails ? firstName : "Loading..."}{" "}
+                  {studentDetails && lastName}
                 </span>
                 <span className="block truncate text-sm font-medium">
-                  {studentDetails?.email},
+                  {studentDetails && email}
                 </span>
               </Dropdown.Header>
               <Dropdown.Item>Dashboard</Dropdown.Item>
@@ -73,12 +79,9 @@ export default function Nav() {
               </Dropdown.Item>
             </Dropdown>
           ) : loading ? (
-            <Avatar
-              alt="User Profile"
-              img={loadingProfileIcon}
-              rounded
-              theme={customAvatar}
-              size={"md"}
+            <Skeleton
+              circle={true}
+              className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
             />
           ) : (
             <Button
@@ -87,7 +90,7 @@ export default function Nav() {
               size="md"
               className="focus:outline-none"
             >
-              <Link to={"/login"}>Log In</Link>
+              <Link to={"/login"}>Login</Link>
             </Button>
           )}
           <Navbar.Toggle className="ml-2 focus:outline-green1 w-9 h-9" />
@@ -116,13 +119,15 @@ export default function Nav() {
               theme={customDropdownTheme}
             >
               <Dropdown.Item>
-                <Link to={"/calculate-gpa"}>GPA Calculator</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                {" "}
                 <Link to={"/course-outlines"}> Course Outlines</Link>{" "}
               </Dropdown.Item>
-              <Dropdown.Item>Our Vision</Dropdown.Item>
+              <Dropdown.Item>
+                <Link to={"/learning-resources"}>Learning Resources</Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link to={"/calculate-gpa"}>GPA Calculator</Link>
+              </Dropdown.Item>
+
               <Dropdown.Divider />
               <Dropdown.Item>Student Bodies</Dropdown.Item>
             </Dropdown>

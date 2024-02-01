@@ -18,7 +18,7 @@ export default function Hero() {
           <h2 className="mb-3 xl:text-4xl lg:text-3xl md:text-2xl text-xl font-[500]">
             Federal University of Technology, Owerri
           </h2>
-          <p className="xl:text-lg text-base md:mb-7 mb-4">
+          <p className="section-p mb-4">
             Here, you can access course outlines, learning materials, calculate{" "}
             <br />
             your CGPA, stay updated with the latest news, and connect with a{" "}

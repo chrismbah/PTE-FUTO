@@ -1,4 +1,4 @@
-import { LevelCourses } from "../../../models/gpa";
+import { LevelCourses } from "../../../models/academics/gpa";
 
 export const levelCourses: LevelCourses = {
   "100": {

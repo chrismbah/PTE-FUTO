@@ -17,8 +17,8 @@ export default function Blog() {
           </div>
           <div className="w-full">
             <div className="bar-style" />
-            <h2 className="mb-5">Blog</h2>
-            <p className="mb-5">
+            <h2 className="mb-1 md:mb-4">Blog</h2>
+            <p className="section-p mb-5">
             Your go-to source for cutting-edge Polymer and Textile Engineering news. <br />
             Stay ahead with our coverage of tech advances, research, and industry trends. <br />
             Our expert team curates articles on renewables, EVs, robotics, and more. Trust our accurate, <br />

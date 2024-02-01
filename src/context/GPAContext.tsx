@@ -1,5 +1,8 @@
 import { createContext, useContext, useState } from "react";
-import type { GPAContextProviderProps, CourseGrades } from "../models/gpa";
+import type {
+  GPAContextProviderProps,
+  CourseGrades,
+} from "../models/academics/gpa";
 
 export const GPAContext = createContext<any | null>(null);
 

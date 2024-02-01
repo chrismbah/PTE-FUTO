@@ -9,8 +9,8 @@ export default function Events() {
       <div className="section section-flex-between">
         <div className="w-full">
           <div className="bar-style" />
-          <h2 className="mb-5">Events</h2>
-          <p className="mb-5">
+          <h2 className="mb-1 md:mb-4">Events</h2>
+          <p className="section-p mb-5">
             At Polymer and Textile Engineering FUTO, we believe in learning
             beyond the <br />
             classroom. Explore our diverse range of events, connecting passions

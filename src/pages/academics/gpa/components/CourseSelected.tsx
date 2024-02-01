@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CourseSelectedProps } from "../../../../models/gpa";
+import { CourseSelectedProps } from "../../../../models/academics/gpa";
 import { useComputeGPA } from "../../../../hooks/useComputeGPA";
 import TrashIcon from "../../../../assets/svg/icons/trash.svg";
 import EditIcon from "../../../../assets/svg/icons/edit.svg";
@@ -35,11 +35,7 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
           >
             <span className="hidden ss:block">Delete</span>{" "}
             <div className="hover:scale-90 w-4 rounded-full">
-              <img
-                src={TrashIcon}
-                alt="Delete"
-                className=" block ss:hidden"
-              />
+              <img src={TrashIcon} alt="Delete" className=" block ss:hidden" />
             </div>
           </button>
         </div>
