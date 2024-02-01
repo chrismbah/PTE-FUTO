@@ -55,7 +55,7 @@ export default function CourseInfo() {
                 {Number(courseInfo.creditUnit) > 1 ? "Units" : "Unit"}
               </p>
               {"  "}
-              <span>{courseInfo?.creditUnits}</span>
+              <span>{courseInfo.creditUnits}</span>
             </div>
             <h4 className="text-center font-semibold text-md sm:text-2xl">
               COURSE OUTLINE
