@@ -68,7 +68,7 @@ export default function CourseInfo() {
                 </h4>
                 <p className="mb-1 sm:mb-3 font-[300] text-sm sm:text-xs text-gray-600">
                   {courseInfo.preRequisite} 
-                </p>
+                </p> 
               </>
             )}
             {courseInfo.info.map(({ heading, content }, index) => (
