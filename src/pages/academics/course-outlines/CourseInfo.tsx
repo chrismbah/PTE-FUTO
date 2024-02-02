@@ -37,7 +37,7 @@ export default function CourseInfo() {
       <div className="flex items-center justify-center">
         {courseInfo ? (
           <div className="max-w-[950px] px-3 pt-20 pb-8 xsm:px-10 xsm:pt-24 xsm:pb-10">
-            <div className=" shadow-2 px-3 pt-10 pb-8 xsm:px-10  ">
+            <div className=" shadow-2 px-3 pt-10 pb-8 xsm:px-10 border-2 border-gray-200">
                 <div className="flex-center gap-0 ss:gap-3 flex-wrap">
                   <div className="flex-center">
                     <img

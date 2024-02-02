@@ -12,7 +12,7 @@ export const CourseOutlineCard: FC<CourseOutlines> = ({
     <Link to={`/course-outlines/${level}`}>
       <div
         className="max-w-auto xsm:max-w-[460px] p-6
-       bg-white shadow-1 transition duration-200 ease-in hover:shadow-md"
+       bg-white shadow-1 transition duration-200 ease-in hover:shadow-md border-2 border-gray-200"
       >
         <img src={icon} alt="Book" className="w-16 h-16" />
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">

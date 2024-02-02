@@ -16,7 +16,7 @@ export const CourseOutlineCard: FC<CourseInfo> = ({
     <Link to={`/course-outlines/${level}/${id}`}>
       <div
         className="bg-white hover:shadow-md transition duration-200 ease-in py-6 
-          px-4 h-[230px] sm:max-w-full mmd:max-w-[360px] relative shadow-1"
+          px-4 h-[230px] sm:max-w-full mmd:max-w-[360px] relative shadow-1a border-2 border-gray-200"
       >
         <div className="">
           <h4 className="font-semibold text-md ss:text-lg">{courseTitle}</h4>

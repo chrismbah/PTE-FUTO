@@ -349,198 +349,98 @@ export const courseInfo300: CourseInfo = {
       info: [
         {
           heading: "General",
-          content: "Yarn packages; Various systems of yarn preparation. Details of non-automatic winding machines; precision winding, beam and sectional warping processes and mechanisms"
+          content:
+            "Yarn packages; Various systems of yarn preparation. Details of non-automatic winding machines; precision winding, beam and sectional warping processes and mechanisms. Automatic choose cone and pirn winding machines; sizing machines, size mixture for different materials. Methods of drawing in, twisting and knotting. Tappet shedding. Picking and shuttle flight control, shuttle boxes. ",
+        },
+        {
+          heading: null,
+          content:
+            "Warp protector and weft stop motions. Loom drives and brakes. Dobby negative and positive dobbins; Multiple box motions ordinary, cross-bordered and fine pitch jaquards and their mechanisms. Narrow fabric looms. Essential requirements for filament weaving; modern developments in non-conventional weaving machinery.",
         },
       ],
     },
-    ENG101: {
-      courseCode: "ENG 101",
-      courseTitle: "WORKSHOP PRATICE I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
+    PTE310: {
+      courseCode: "PTE 310",
+      courseTitle: "POLYMER PROCESSING ENGINEERING TECHNOLOGY I",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
+      preRequisite: "PTE 202",
       info: [
         {
           heading: "General",
           content:
-            "Use of engineering measuring instruments: callipers, e.g. Venier Callipers; Giages, e.g. Micrometers; Screw Guage and other devices. Introduction to hand tools, profieciency in the use of wood planers, Hand sawsanders and pattern making.",
-        },
-        {
-          heading: "Sheet Metal Work",
-          content:
-            "Production of sheet metal products-layout, cutting, shaping, simple bend theory etc.",
-        },
-        {
-          heading: "Introduction to Joining Techniques",
-          content:
-            "Soldering, Brazing, Fusion welding, fastening and Assembly. Basic woodworking priniciples and tools finishing and evaluation of finished products.",
+            "The properties, methods of manufacture and applications of synthetic resins compounding and processing of plastics and elastomers; Compression moulding, Injection Moulding, Vaccum forming, plasticization, blowing, calendaring, casting, extrusion foaming, fillers, plasticizers, additives, properties of thermoplastic testing.",
         },
       ],
     },
-    GST101: {
-      courseCode: "GST 101",
-      courseTitle: "THE USE OF ENGLISH",
+    PTE314: {
+      courseCode: "PTE 314",
+      courseTitle: "MAN-MADE FIBRE PRODUCTION",
       creditUnit: 2,
-      creditUnits: "(1, 1, 0)",
-      preRequisite: null,
+      creditUnits: "(2, 0, 0)",
+      preRequisite: "PTE 202",
       info: [
         {
           heading: "General",
           content:
-            "Use of library. Use of words and sentence construction. Functions of sentences, purpose structure, correct use of verbs (Action Words)",
+            "Introduction to production of man-made fibres. Principles of melt spinning, dry spinning and wet spinning. Viscosity of melts and solutions. Drawing of fibres, equipments for man-made fibre production. Main features of production of some important man-made fibres, eg Viscose, Cellulose Acetate, Polyamides, Polyesters, and Polurethane fibres.",
         },
       ],
     },
-    FRN101: {
-      courseCode: "FRN 101",
-      courseTitle: "FRENCH LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(1, 0, 0)",
-      preRequisite: null,
+    PTE316: {
+      courseCode: "PTE 316",
+      courseTitle: "FINISHING PROCESSES OF TEXTILES",
+      creditUnit: 2,
+      creditUnits: "(1, 0, 1)",
+      preRequisite: "PTE 202",
       info: [
         {
           heading: "General",
           content:
-            "The course will introduce the students to the basics of French Language such as greeting in French, French Alphabets, vowels, pronuncation, and accents. The students will also learn the components of French grammar such as the articles, verbs etc",
-        },
-      ],
-    },
-    ENG103: {
-      courseCode: "ENG 103",
-      courseTitle: "ENGINEERING DARWING I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "General",
-          content:
-            "Introduction to Engineering Tools. Planning and Layout of Engineering Drawing. Engineering Drawing Concept. Introduction to Dimensioning types; Dimensioning of circles, holes radii, tolerancing. Descriptive Geometry. Freehand Sketching.",
+            "Preparatory processes eg singeing, de-sizing, scouring, bleaching: batch and continous processes; classification of dyes and intermediates; winch, jig and padding; printing types and styles; Principles and practice of finishing of fabrics, cotton, rayon, and wool; Classification of various finishes, finishing machineries, mangles and their functions, drying machines, stentering, damping and calendaring. Mechanisms of setting fibres.",
         },
         {
           heading: null,
           content:
-            "Introduction to Drawing/Drafting Software and CAD basic tools. Orthographic multi view projection. Construction of plane shapes using CAD construction techniques.",
+            "Diffusion of gases through films and relating of the diffusion co-effecients with film structure. Diffusion of dyes into films (VLF) equation, high tenacity of fibres polyethylene fibres modacrylics, flourine containing fibres (Nomex Kevlar)",
+        },
+      ],
+    },
+    PTE322: {
+      courseCode: "PTE 322",
+      courseTitle: "ANALYSIS AND TESTING OF POLYMERICS AND TEXTILES",
+      creditUnit: 2,
+      creditUnits: "(1, 0, 1)",
+      preRequisite: "PTE 202",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Introduction to testing of polymerics and textiles. Properties of fibres, yarns, fabrics and polymerics and their relevance in assessing the performance of the materials (polymerics and textiles) during and after manufacture.Measurement of length, fineness, crimp, and foreign matter content of fibres. Measurement of dimensions of polymerics; tensile testing.",
         },
         {
           heading: null,
           content:
-            "Presentation of data and results. Using charts and graphs etc by basic tools; Computer Software. Further dimensioning addition of dimensions to drawing using CAD",
+            "Principles of operations of mechanics to CRT, CRL, CRE Tensile Testing machines for fibres, yarns and fabrics; stress-strain relations, impact tests abrasion tear resistance, hardness, optical properties, tests associated with fabrics handle such as compressibility; rigidity and drape.",
+        },
+        {
+          heading: null,
+          content:
+            "testing of fabrics for endurance properties such as bursting strength, air permeability, shrinkage, dye fastness, and thermal transmission. Eveness testing of silver and yarns, analysis of periodic variation of the products.",
         },
       ],
     },
-    GST103: {
-      courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    SIW300: {
+      courseCode: "SIW 300",
+      courseTitle: "THIRD YEAR LONG VACATION SIWES",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 0)",
       preRequisite: null,
       info: [
         {
-          heading: "Philosophising on Philosophy",
+          heading: "General",
           content:
-            " Introduction, Removing the mental cobwebs; Philosophy as a form of Knowing; Philosophy and Non-Philosophy; Philosophy and Science; Philosophy and Philosophies",
-        },
-        {
-          heading: "Branches of Philosophy",
-          content:
-            "Metaphysics; Epistemology; Logic; Ethics: General Ethics,Special Ethics, Human Act, Freedom",
-        },
-        {
-          heading: "History of Philosophy Acient Period",
-          content:
-            "Problem of Presocratic Philosophers, Anaximander; Pythagoras, Zeno, Anaxagoras, The Mind and Matter, Sophists",
-        },
-        {
-          heading:
-            "The Golden Age of Greek Philosophy: Socrates, Plato, Aristotle, and Plotinus",
-          content:
-            "Socrates (469 - 399 BCE), Philosophy as a way of life; Ignorance: The cause of wrong doing; The socratic irony; Knowledge as reminiscence; The socratic method; Aristotle (384 -322 BCE); His Philosophy, Aristotle's Logic; Syllogism; His Metaphysics; Happiness, Knowledge",
-        },
-        {
-          heading: "Medieval Philosophy",
-          content:
-            " Introduction; Background of Study; The dark ages; Philosophy in te dark ages; Eras of medieval christian thought; Boethius; Augustine on the existence of God; Attributes of God ",
-        },
-        {
-          heading: "Renaissance Intermission",
-          content:
-            "Renaissance Humanism, Renaissance Art, Architecture, and Science; Renaissance Exploratipon; The protestant reformation; Martin Luther; Francis Bacon; Philosopher of Science",
-        },
-        {
-          heading: "Modern Philosophy",
-          content:
-            "Background to Modern Philosophy; the impacct factors of modern philosophy; The epistemological turn; Epistemology; The existence of God; Mind and Body relation",
-        },
-        {
-          heading: "Contemporary Philosophy and Personailties",
-          content:
-            "Introduction, Historical Overview of Contemporary Philosophy, Basic Tenets of contemporary philosophy, Karl Marx (1818-1883), Marx on economics, Marx Critique of capitalism, Marx on theory of history; Friedrich Nietzsche (1844-1900), His critique of Religion and Morality; His will to power ",
-        },
-        {
-          heading: "Systems of Philosophy",
-          content:
-            "Introduction, Skepticism: Basic tenets, Kinds, Destructive Skepticism, Universal Skepticism, Partial, Constructive Skepticism; Rationalism, Histprical Survey of Rationalism",
-        },
-        {
-          heading: "Some Philosophical Problems",
-          content:
-            "Mind Body relationship, The prolem of universals, Problem of permanence and change or Reality and Appearance; The problem of free will; The problem of evil; The existence of God.",
-        },
-        {
-          heading: "Logic",
-          content:
-            "Brief Historical Development of Logic; The nature and definition of logic; The nature of arguments; Types of Arguments in Logic; Sygollism; Fallacies in Logic; Truth functions and connection of propositions; The value of logic",
-        },
-      ],
-    },
-    IGB101: {
-      courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "Introduction",
-          content:
-            "Nenke nkowa banyere ndi igbo, Nkowa Asusu, uru asusu bara, Mmalite edemede asusu igbo, mkparita uka banyere ndi malitere odide na ogugu asusu igbo dika, Ida Ward, Olauda Equiano, Oldendorp, n'oge ochichindi beke",
-        },
-        {
-          heading: "Mkpuruedemede Igbo ( Otografi onwu )",
-          content: "Ndeputa na nguputa mkpuru edemede igbo na usoro odide",
-        },
-        {
-          heading: "Nkejiasusu Igbo",
-          content:
-            "Mkpoaha n aomumaatu ya; Njuajuju Nnochiaha; Onuougu; Ngwaa; Njiko; Mbuuzo; Nkowaaha; Nkwuwa; Ntimkpu",
-        },
-        {
-          heading: "Akaraedemede",
-          content: `Nkowa ihe bu akara edemede nakwa uru ha bara n'edemede Igbo. Kpom (.) na ebe ndi a na-etinya ha; Rikom (,); Rikomelu ("); Kpom Kpom (:); Akaraajuju (?); Akaramkpu(!). `,
-        },
-        {
-          heading: "Nkebiokwu Igbo",
-          content:
-            "Gini bu nkebiokwu? Nkebiuokwu di iche iche; Omumaatu nkebiokwu di iche iche",
-        },
-        {
-          heading: "Nkebiahiri Igbo",
-          content:
-            "Nkowa ihe bu nkebiahiriokwu; Nkebiahiriokwu di iche iche; Omumaatu nkebiahiriokwu di iche iche",
-        },
-        {
-          heading: "Ahiirokwu Igbo Igbo",
-          content:
-            "Nkowa ihe bu ahiriokwu na odidi ha ahirimfe; ahirirnha; ahiriukwu; ahirimgbagwo",
-        },
-        {
-          heading: "Udi Ahiriokwui di iche iche",
-          content: "Ahirincho; Ahirinkwusa; Ahirinitmiwu",
-        },
-        {
-          heading: "Asusu Igbo dika, Asusu svo",
-          content: "Omumaatu ahiriokwu ndi na egosiputa aha, ngwaa na nnara",
+            "Here 3rd year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
         },
       ],
     },

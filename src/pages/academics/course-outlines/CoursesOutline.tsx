@@ -20,17 +20,17 @@ export default function CoursesOutline() {
             <h2 className="text-green1 text-center">
               Courses Offered for {level} Level
             </h2>
-            <p className="text-center text-xs xsm:text-base font-[500]">
-              The details for 100 Level{" "}
+            {/* <p className="text-center text-xs xsm:text-base font-[500]">
+              The details for{" "}
               <span className="text-green1 font-semibold">
                 {semester === "First" ? "Harmattan" : "Rain"}
               </span>{" "}
               Semester courses are as follows
-            </p>
+            </p> */}
             <div className="flex items-center justify-center my-2">
               <button
                 className={`p-2 text-sm shadow-1 ${
-                  semester === "First" ? " border-4 border-green1 shadow-1 font-bold rounded-md" : "bg-gray-50"
+                  semester === "First" ? " border-2 border-green1 shadow-1 font-bold rounded-md" : "bg-gray-50"
                 }`}
                 onClick={() => setSemester("First")}
               >
@@ -39,7 +39,7 @@ export default function CoursesOutline() {
               </button>{" "}
               <button
                 className={`p-2 text-sm shadow-1  ${
-                  semester === "Second" ? "border-4 border-green1 shadow-1 font-bold  rounded-md" : "bg-gray-50"
+                  semester === "Second" ? "border-2 border-green1 shadow-1 font-bold  rounded-md" : "bg-gray-50"
                 }`}
                 onClick={() => setSemester("Second")}
               >

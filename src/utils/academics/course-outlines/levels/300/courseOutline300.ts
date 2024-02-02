@@ -113,7 +113,7 @@ export const courseOutline300: CourseOutline = {
       },
       {
         courseCode: "PTE 316",
-        courseTitle: "Chemical Processing Of Textiles",
+        courseTitle: "Finishing Processes Of Textiles",
         creditUnit: 2,
         id: "PTE316",
         option: "MANDATORY",
@@ -129,7 +129,7 @@ export const courseOutline300: CourseOutline = {
         courseCode: "SIW 300",
         courseTitle: "Third Year Long Vacation SIWES",
         creditUnit: 2,
-        id: "PTE322",
+        id: "SIW300",
         option: "MANDATORY",
       },
     ],
