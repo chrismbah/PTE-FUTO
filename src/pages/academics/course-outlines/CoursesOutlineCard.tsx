@@ -25,7 +25,7 @@ export const CourseOutlineCard: FC<CourseInfo> = ({
               Course Code:{" "}
               <span className="capitalize font-semibold">{courseCode}</span>{" "}
             </h4>
-            <span className="py-1 px-2 bg-gray-500 text-black text-xss font-[900] shadow-3">
+            <span className="py-1 px-2 bg-gray-500 text-green1 text-xss font-[900] shadow-3">
               {option}
             </span>
           </div>
