@@ -1,4 +1,3 @@
-import { isNull } from "util";
 import { CourseInfo } from "../../../../../../models/academics/courseInfo";
 export const courseInfo300: CourseInfo = {
   First: {
