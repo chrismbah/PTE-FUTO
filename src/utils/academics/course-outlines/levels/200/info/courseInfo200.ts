@@ -220,7 +220,7 @@ export const courseInfo200: CourseInfo = {
       preRequisite: null,
       info: [
         {
-          heading: "Science, Technology and Engineering",
+          heading: "General",
           content:
             "Definitions, historical development of engineering, science and technology. The Engineering family: The Engineer, Technologist, Technician, Artisans and Craftsmen. Roles of Engineers in the society; In space travel missions, oil and gas productin operations, politics, law medicine, education etc.",
         },
@@ -459,53 +459,17 @@ export const courseInfo200: CourseInfo = {
         },
       ],
     },
-    IGB101: {
-      courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    SIW200: {
+      courseCode: "SIW 200",
+      courseTitle: "SECOND YEAR LONG VACATION SIWES",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 0)",
       preRequisite: null,
       info: [
         {
-          heading: "Introduction",
+          heading: "General",
           content:
-            "Nenke nkowa banyere ndi igbo, Nkowa Asusu, uru asusu bara, Mmalite edemede asusu igbo, mkparita uka banyere ndi malitere odide na ogugu asusu igbo dika, Ida Ward, Olauda Equiano, Oldendorp, n'oge ochichindi beke",
-        },
-        {
-          heading: "Mkpuruedemede Igbo ( Otografi onwu )",
-          content: "Ndeputa na nguputa mkpuru edemede igbo na usoro odide",
-        },
-        {
-          heading: "Nkejiasusu Igbo",
-          content:
-            "Mkpoaha n aomumaatu ya; Njuajuju Nnochiaha; Onuougu; Ngwaa; Njiko; Mbuuzo; Nkowaaha; Nkwuwa; Ntimkpu",
-        },
-        {
-          heading: "Akaraedemede",
-          content: `Nkowa ihe bu akara edemede nakwa uru ha bara n'edemede Igbo. Kpom (.) na ebe ndi a na-etinya ha; Rikom (,); Rikomelu ("); Kpom Kpom (:); Akaraajuju (?); Akaramkpu(!). `,
-        },
-        {
-          heading: "Nkebiokwu Igbo",
-          content:
-            "Gini bu nkebiokwu? Nkebiuokwu di iche iche; Omumaatu nkebiokwu di iche iche",
-        },
-        {
-          heading: "Nkebiahiri Igbo",
-          content:
-            "Nkowa ihe bu nkebiahiriokwu; Nkebiahiriokwu di iche iche; Omumaatu nkebiahiriokwu di iche iche",
-        },
-        {
-          heading: "Ahiirokwu Igbo Igbo",
-          content:
-            "Nkowa ihe bu ahiriokwu na odidi ha ahirimfe; ahirirnha; ahiriukwu; ahirimgbagwo",
-        },
-        {
-          heading: "Udi Ahiriokwui di iche iche",
-          content: "Ahirincho; Ahirinkwusa; Ahirinitmiwu",
-        },
-        {
-          heading: "Asusu Igbo dika, Asusu svo",
-          content: "Omumaatu ahiriokwu ndi na egosiputa aha, ngwaa na nnara",
+            "Here 2nd year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
         },
       ],
     },

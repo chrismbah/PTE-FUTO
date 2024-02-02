@@ -82,10 +82,14 @@ export default function CourseInfo() {
                   key={index}
                   className="py-2 mb-2 border-b-2 border-gray-200"
                 >
-                  {heading && (
+                  {heading && heading === "General" ? (
                     <div className="text-base sm:text-md font-semibold">
                       {heading}
                       <div className="bar-style2 mb-2 font-normal" />
+                    </div>
+                  ) : (
+                    <div className="text-base sm:text-md font-semibold">
+                      {heading}
                     </div>
                   )}
                   <div className="text-sm sm:text-base"> {content}</div>

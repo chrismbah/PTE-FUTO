@@ -448,7 +448,7 @@ export const courseInfo100: CourseInfo = {
     },
     IGB102: {
       courseCode: "IGB 102",
-      courseTitle: "Introducion to Igbo History, Culture, and Literature I",
+      courseTitle: "Introduction to Igbo History, Culture, and Literature I",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,

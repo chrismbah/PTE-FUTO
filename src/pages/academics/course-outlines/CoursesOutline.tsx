@@ -29,17 +29,17 @@ export default function CoursesOutline() {
             </p>
             <div className="flex items-center justify-center my-2">
               <button
-                className={`p-2 text-sm rounded-l-lg ${
-                  semester === "First" ? "bg-green1 text-white" : "bg-gray-50"
-                } border-r-2 border-green1`}
+                className={`p-2 text-sm shadow-1 ${
+                  semester === "First" ? "bg-gray-50 border-2 border-green1 shadow-1 font-semibold" : "bg-gray-50"
+                }`}
                 onClick={() => setSemester("First")}
               >
                 {" "}
                 1st Semester{" "}
               </button>{" "}
               <button
-                className={`p-2 text-sm rounded-r-lg ${
-                  semester === "Second" ? "bg-green1 text-white" : "bg-gray-50"
+                className={`p-2 text-sm shadow-1  ${
+                  semester === "Second" ? "bg-gray-50 border-2 border-green1 shadow-1 font-semibold" : "bg-gray-50"
                 }`}
                 onClick={() => setSemester("Second")}
               >
