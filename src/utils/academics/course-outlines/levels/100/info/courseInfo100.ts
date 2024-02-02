@@ -146,7 +146,7 @@ export const courseInfo100: CourseInfo = {
     },
     GST103: {
       courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
+      courseTitle: "PHILOSOPHY AND LOGIC I",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,
@@ -211,7 +211,7 @@ export const courseInfo100: CourseInfo = {
     },
     IGB101: {
       courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE I",
+      courseTitle: "INTRODUCTION TO IGBO HISTORY, CULTURE, AND LITERATURE I",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,
@@ -424,7 +424,7 @@ export const courseInfo100: CourseInfo = {
     },
     GST110: {
       courseCode: "GST 110",
-      courseTitle: "Philosophy and Logic II",
+      courseTitle: "PHILOSOPHY AND LOGIC II",
       creditUnit: 1,
       creditUnits: "(1, 0, 0)",
       preRequisite: null,
@@ -448,7 +448,7 @@ export const courseInfo100: CourseInfo = {
     },
     IGB102: {
       courseCode: "IGB 102",
-      courseTitle: "Introduction to Igbo History, Culture, and Literature I",
+      courseTitle: "INTRODUCTION TO IGBO HISTORY, CULTURE, AND LITERATURE II",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,

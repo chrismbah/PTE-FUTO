@@ -1,3 +1,4 @@
+import { isNull } from "util";
 import { CourseInfo } from "../../../../../../models/academics/courseInfo";
 export const courseInfo300: CourseInfo = {
   First: {
@@ -178,215 +179,178 @@ export const courseInfo300: CourseInfo = {
       info: [
         {
           heading: "General",
-          content: "Initiation mechanism ("
+          content:
+            "Initiation mechanism (free radical, cationic, anionic stereo-specific) in the polymerization reactions through functional groups and multiple bounds, (vinyl and diene); ring opening, polymer modification, living polymers; Distribution between chain and step growth kinetics, Kinetics of vinyl polymerization and polycondensation.",
+        },
+        {
+          heading: null,
+          content:
+            "Methods of determination deviation of equipments, parameters of polymerization. Auto-acceleration, chain transfer, inhibitors, retarders. Raw materials, polymerization techniques and properties of polyethylene, polypropylene, polystyrene, poly vinylchloride, poly vinyl acetate, poly vinyl alcohol, poly methyl methacrylate, polyamides, polyethers, polysters, polyurethane. Polymer characterization: essentaial characteristics of fibre forming polymers.",
         },
       ],
     },
-    ENG103: {
-      courseCode: "ENG 103",
-      courseTitle: "ENGINEERING DARWING I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    PTE303: {
+      courseCode: "PTE 303",
+      courseTitle: "POLYMER PHYSICS",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 0)",
+      preRequisite: "PTE 202",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Polymer chain structure; Isomerism and regularity geometrical optical and substitution isomerism; branching in poly ethylene, PVC and Poly Vinyl Acetate. Physical techniques to study polymer structures in solution, in the amorphous and crystalline states (Vibratinal, UV, IR, NMR and Roman Spectroscopy, VX-ray and neutron scattering, DFA, TGA).",
+        },
+        {
+          heading: null,
+          content:
+            "Molecular weight types and methods of determining molecular weight distriubutions and polydispersity index (PDI). Co-polymerization types, monomer reactivity rations, kinetics, and instantaneous composition of feed.",
+        },
+      ],
+    },
+    PTE307: {
+      courseCode: "PTE 307",
+      courseTitle: "YARN MANUFACTURE",
+      creditUnit: 2,
+      creditUnits: "(1, 0, 1)",
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Introduction to Engineering Tools. Planning and Layout of Engineering Drawing. Engineering Drawing Concept. Introduction to Dimensioning types; Dimensioning of circles, holes radii, tolerancing. Descriptive Geometry. Freehand Sketching.",
+            "Principles of opening and cleaning. Blending, detailed study of blow room machinery for different varieties and grades of cotton; recent developments. Principle of carding systems, principles of roller drafting, detailed study of drawing frame mechanisms. Drafting systems, developments.",
         },
         {
           heading: null,
           content:
-            "Introduction to Drawing/Drafting Software and CAD basic tools. Orthographic multi view projection. Construction of plane shapes using CAD construction techniques.",
-        },
-        {
-          heading: null,
-          content:
-            "Presentation of data and results. Using charts and graphs etc by basic tools; Computer Software. Further dimensioning addition of dimensions to drawing using CAD",
-        },
-      ],
-    },
-    GST103: {
-      courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "Philosophising on Philosophy",
-          content:
-            " Introduction, Removing the mental cobwebs; Philosophy as a form of Knowing; Philosophy and Non-Philosophy; Philosophy and Science; Philosophy and Philosophies",
-        },
-        {
-          heading: "Branches of Philosophy",
-          content:
-            "Metaphysics; Epistemology; Logic; Ethics: General Ethics,Special Ethics, Human Act, Freedom",
-        },
-        {
-          heading: "History of Philosophy Acient Period",
-          content:
-            "Problem of Presocratic Philosophers, Anaximander; Pythagoras, Zeno, Anaxagoras, The Mind and Matter, Sophists",
-        },
-        {
-          heading:
-            "The Golden Age of Greek Philosophy: Socrates, Plato, Aristotle, and Plotinus",
-          content:
-            "Socrates (469 - 399 BCE), Philosophy as a way of life; Ignorance: The cause of wrong doing; The socratic irony; Knowledge as reminiscence; The socratic method; Aristotle (384 -322 BCE); His Philosophy, Aristotle's Logic; Syllogism; His Metaphysics; Happiness, Knowledge",
-        },
-        {
-          heading: "Medieval Philosophy",
-          content:
-            " Introduction; Background of Study; The dark ages; Philosophy in te dark ages; Eras of medieval christian thought; Boethius; Augustine on the existence of God; Attributes of God ",
-        },
-        {
-          heading: "Renaissance Intermission",
-          content:
-            "Renaissance Humanism, Renaissance Art, Architecture, and Science; Renaissance Exploratipon; The protestant reformation; Martin Luther; Francis Bacon; Philosopher of Science",
-        },
-        {
-          heading: "Modern Philosophy",
-          content:
-            "Background to Modern Philosophy; the impacct factors of modern philosophy; The epistemological turn; Epistemology; The existence of God; Mind and Body relation",
-        },
-        {
-          heading: "Contemporary Philosophy and Personailties",
-          content:
-            "Introduction, Historical Overview of Contemporary Philosophy, Basic Tenets of contemporary philosophy, Karl Marx (1818-1883), Marx on economics, Marx Critique of capitalism, Marx on theory of history; Friedrich Nietzsche (1844-1900), His critique of Religion and Morality; His will to power ",
-        },
-        {
-          heading: "Systems of Philosophy",
-          content:
-            "Introduction, Skepticism: Basic tenets, Kinds, Destructive Skepticism, Universal Skepticism, Partial, Constructive Skepticism; Rationalism, Histprical Survey of Rationalism",
-        },
-        {
-          heading: "Some Philosophical Problems",
-          content:
-            "Mind Body relationship, The prolem of universals, Problem of permanence and change or Reality and Appearance; The problem of free will; The problem of evil; The existence of God.",
-        },
-        {
-          heading: "Logic",
-          content:
-            "Brief Historical Development of Logic; The nature and definition of logic; The nature of arguments; Types of Arguments in Logic; Sygollism; Fallacies in Logic; Truth functions and connection of propositions; The value of logic",
-        },
-      ],
-    },
-    IGB101: {
-      courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "Introduction",
-          content:
-            "Nenke nkowa banyere ndi igbo, Nkowa Asusu, uru asusu bara, Mmalite edemede asusu igbo, mkparita uka banyere ndi malitere odide na ogugu asusu igbo dika, Ida Ward, Olauda Equiano, Oldendorp, n'oge ochichindi beke",
-        },
-        {
-          heading: "Mkpuruedemede Igbo ( Otografi onwu )",
-          content: "Ndeputa na nguputa mkpuru edemede igbo na usoro odide",
-        },
-        {
-          heading: "Nkejiasusu Igbo",
-          content:
-            "Mkpoaha n aomumaatu ya; Njuajuju Nnochiaha; Onuougu; Ngwaa; Njiko; Mbuuzo; Nkowaaha; Nkwuwa; Ntimkpu",
-        },
-        {
-          heading: "Akaraedemede",
-          content: `Nkowa ihe bu akara edemede nakwa uru ha bara n'edemede Igbo. Kpom (.) na ebe ndi a na-etinya ha; Rikom (,); Rikomelu ("); Kpom Kpom (:); Akaraajuju (?); Akaramkpu(!). `,
-        },
-        {
-          heading: "Nkebiokwu Igbo",
-          content:
-            "Gini bu nkebiokwu? Nkebiuokwu di iche iche; Omumaatu nkebiokwu di iche iche",
-        },
-        {
-          heading: "Nkebiahiri Igbo",
-          content:
-            "Nkowa ihe bu nkebiahiriokwu; Nkebiahiriokwu di iche iche; Omumaatu nkebiahiriokwu di iche iche",
-        },
-        {
-          heading: "Ahiirokwu Igbo Igbo",
-          content:
-            "Nkowa ihe bu ahiriokwu na odidi ha ahirimfe; ahirirnha; ahiriukwu; ahirimgbagwo",
-        },
-        {
-          heading: "Udi Ahiriokwui di iche iche",
-          content: "Ahirincho; Ahirinkwusa; Ahirinitmiwu",
-        },
-        {
-          heading: "Asusu Igbo dika, Asusu svo",
-          content: "Omumaatu ahiriokwu ndi na egosiputa aha, ngwaa na nnara",
+            "Objectives of combing, comber lap preparation; working principles of drafting, twisting and winding, recent developments. Detailed study of ring frame mechanisms; Recent developments in design an doperations, various systems of doubting production of folded yarns; fancy yarns, sewing thread manufacture, reeling paste spinning.",
         },
       ],
     },
   },
   Second: {
-    MTH102: {
-      courseCode: "MTH 101",
-      courseTitle: "ELEMENTARY MATHEMATICS I",
-      creditUnits: "(3, 1, 0)",
-      creditUnit: 4,
-      preRequisite: "Credit 0'Level Math.",
-      info: [
-        {
-          heading: "General",
-          content:
-            "Number systems. Indices. Surds and logarithms. Polynomials. Reminder and factor theorems. Polynomial equations. Rational functions. Partial fractions. Fields ordered fields. Inequalities. Mathematical induction. Permutation and combinations. Binomial theorem. Sequences and series. The Quadratic equation and functions. Relation between the roots and the coefficients. Complex numbers. Addition, subtraction, multiplication and division. Argand diagram. De Movers theorem, nth root of complex numbers. ",
-        },
-        {
-          heading: null,
-          content:
-            " Elementary set theory. Venn diagrams and applications. DeMorgan’s law. Trigonometry. Elementary properties of basic trigonometric functions. Additional formulae and basic identities. Sine and cosine formulae. Half angle formulae. Area of a triangle. Solution of trigonometric equations. Inverse trigonometric functions. Functions, concept and notation examples. Composition, exponential and logarithmic functions. Graphs and properties. ",
-        },
-        {
-          heading: null,
-          content:
-            " Limit and continuity. Techniques for finding limits. The derivative calculation for first principles. Techniques of differentiation. Chain rule order derivatives. Mean value theorem. Applications. Indeterminate forms and L’hospital rule. Tayior and Machlaurin’s series. Curve sketching. Integration as reverse of differentiation, as area, as limit of finite sums. Definite integrals. Properties of definite integrals. Applications.",
-        },
-      ],
-    },
-    PHY101: {
-      courseCode: "PHY 101",
-      courseTitle: "GENERAL PHYSICS I",
-      creditUnit: 4,
+    ENG304: {
+      courseCode: "ENG 304",
+      courseTitle: "HEAT AND MASS TRANSFER",
       creditUnits: "(2, 1, 1)",
-      preRequisite:
-        "Credit 0'Level Physics and Math and concurrent registeration in MTH 101.",
-      info: [
-        {
-          heading: "General",
-          content:
-            "Space and Time, unit and dimensions; vectors; kinematics, Newton's law; Galileon invariance, statics and dynamics of particles; universal gravitation; work and potential energy; conservation of energy and momentum; rigid bodies; fluid mechanics. Thermal Physics; Thermal properties including elementary thermodynamics and Kinetics Theory.",
-        },
-      ],
-    },
-    CHM101: {
-      courseCode: "CHM 101",
-      courseTitle: "GENERAL CHEMISTRY I",
       creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite: "Credit 0'Level Chemistry",
+      preRequisite: null,
       info: [
         {
-          heading: "General",
+          heading: "Heat Transfer by Conduction",
           content:
-            "Atomic structure and the periodic classification of the elements; ionic and covalent bonding including the effect of dipole-dipole interacting on physical properties. Redox reactions and the concept of oxidation numbers; introduction to gas Kinetics; introduction to nuclear chemistry. Solids and lattices structure; acid-base reactions; general principles of extraction metals.",
+            "Heat transfer by conduction. mas diffusion. Steady and unsteady state transfer in 1-D, in 3-D geometries. Systems with heat source. Heeat transfer in extended surfaces. Combined modes. Thermal conductivity principles, theorems and computer simulations of Heat and Mass transfer",
+        },
+        {
+          heading: "Heat Transfer by Convection",
+          content:
+            "Convection of heat and mass. Introduction to boundary layer. Forced and free convection of ducts and over surfaces. Condensation.",
+        },
+        {
+          heading: "Heat Transfer by Radiation",
+          content:
+            "Radiation heat exchange between black and grey bodies. Configuration factor algebra. Heat exchanger LMTED, NTU effectivesness",
+        },
+        {
+          heading: "Laboratory",
+          content:
+            "Measurement of conductivities of various materials and the rate of heat condition in steady and unsteady state. Determination of convective heat transfer co-effecient performance.",
         },
       ],
     },
-    BIO103: {
-      courseCode: "BIO 103",
-      courseTitle: "BIOLOGY FOR PHYSICAL SCIENCES",
-      creditUnit: 3,
-      creditUnits: "(2, 0, 1)",
+    ENS302: {
+      courseCode: "ENS 302",
+      courseTitle: "BUSINESS CREATION, GROWTH AND CORPORATE GOVERNANCE",
+      creditUnits: "(1, 0, 1)",
+      creditUnit: 2,
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Scientific methods and the characterictics of living and non-living things. Cell and Tissue biology. Elements of biological chemistry and cellular metabolism. Taxonomy of living things, heredity and evolution. Elements of ecology and types of habitats",
+            "This course will be taught using the normal lecture approach. In addition, mentoring and practicals in busness growth models as well as bestv practices and ethics in business management will b eemployed by facilitators. A book of readings is to provide some inmsights and guides to students. the course outline is made up of 13 topics as follows:",
+        },
+        {
+          heading: "1. Concept of Business an dnew value creation",
+          content: null,
+        },
+        {
+          heading: "2. Introduction to theories of growth",
+          content: null,
+        },
+        {
+          heading: "3. Business Strategy",
+          content: null,
+        },
+        {
+          heading: "4. Sources of capital",
+          content: null,
+        },
+        {
+          heading: "5. Principles of Marketing",
+          content: null,
+        },
+        {
+          heading: "6. Business Ethics and Social Responsibility",
+          content: null,
+        },
+        {
+          heading:
+            "7. Opportunity sets and expansion considerations (E-Commerce, E-Business, E-Trade)",
+          content: null,
+        },
+        {
+          heading:
+            "8. The Scientist/Engineer as an Entrepreneur; opportunities and challenges",
+          content: null,
+        },
+        {
+          heading: "9. Managing transition (Start up, growth)",
+          content: null,
+        },
+        {
+          heading: "10. Basic Accounting literacy",
+          content: null,
+        },
+        {
+          heading:
+            "11. Feasibility and Viabilty Studies including issues in cash flow analysis",
+          content: null,
+        },
+        {
+          heading: "12. Crafting Busjiness Plans",
+          content: null,
+        },
+        {
+          heading: "13. Corporate Givernance and Change Management",
+          content: null,
+        },
+      ],
+    },
+    PTE302: {
+      courseCode: "PTE 302",
+      courseTitle: "CHEMISTRY OF ELASTOMERS",
+      creditUnit: 2,
+      creditUnits: "(1, 0, 1)",
+      preRequisite: null,
+      info: [
+        {
+          heading: "General",
+          content:
+            "Raw materials sources, manufacture, cross-linking and properties of the following elastomers: Polyisoprene (natural and synthetic); Butadiene: SBR, thermoplastic elestomer; Ethylene propylene rubber; Polyisobtylene: Butyl Rubber; Neoprene: Acrylic elastomers; Nitrile riubbers; Flourinated rubbers; Chlorosulphonated polyethylene rubber; polyether rubber.",
+        },
+      ],
+    },
+    PTE308: {
+      courseCode: "PTE 308",
+      courseTitle: "WEAVING MECHANISMS",
+      creditUnit: 2,
+      creditUnits: "(1, 0, 1)",
+      preRequisite: "PTE 202, PTE 307",
+      info: [
+        {
+          heading: "General",
+          content: "Yarn packages; Various systems of yarn preparation. Details of non-automatic winding machines; precision winding, beam and sectional warping processes and mechanisms"
         },
       ],
     },

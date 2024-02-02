@@ -62,7 +62,7 @@ export const courseOutline300: CourseOutline = {
         courseCode: "PTE 307",
         courseTitle: "Yarn Manufacture",
         creditUnit: 2,
-        id: "PTE 307",
+        id: "PTE307",
         option: "MANDATORY",
       },
     ],

@@ -60,7 +60,7 @@ export const courseOutline100: CourseOutline = {
       },
       {
         courseCode: "IGB 101",
-        courseTitle: "Igbo Language",
+        courseTitle: "Introduction to Igbo History, Culture and Literature I",
         creditUnit: 1,
         id: "IGB101",
         option: "ELECTIVE",
@@ -134,7 +134,7 @@ export const courseOutline100: CourseOutline = {
       },
       {
         courseCode: "IGB 102",
-        courseTitle: "Igbo Language II",
+        courseTitle: "Introduction to Igbo History, Culture and Literature II",
         creditUnit: 1,
         id: "IGB102",
         option: "ELECTIVE",

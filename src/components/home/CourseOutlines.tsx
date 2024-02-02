@@ -7,7 +7,7 @@ import courseOutline from "../../utils/animation/courseOutline.json";
 
 export default function CourseOutlines() {
   return (
-    <div className="bg-gray-50">
+    <div className="home-gray-bg">
       <div className="box-width">
         <div className="section section-flex-between-reverse">
           <div className="max-w-[500px] mmd:w-[700px] mmd:min-w-[400px]">
@@ -26,9 +26,11 @@ export default function CourseOutlines() {
               information they need to make well-informed decisions about their
               academic journey.
             </p>
-            <Button theme={customButtonTheme} size={"lg"} color="primary">
-              <Link to="/course-outlines">Get Course Outlines</Link>
-            </Button>
+            <Link to="/course-outlines">
+              <Button theme={customButtonTheme} size={"lg"} color="primary">
+                Get Course Outlines 
+              </Button>
+            </Link>
           </div>
           {/* <div>
           <img

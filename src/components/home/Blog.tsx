@@ -5,7 +5,7 @@ import blog from "../../assets/svg/home/blog.svg";
 
 export default function Blog() {
   return (
-    <div className="bg-gray-50">
+    <div className="home-gray-bg">
       <div className="box-width">
         <div className="section section-flex-between-reverse">
           <div>

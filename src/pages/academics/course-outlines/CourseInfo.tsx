@@ -38,15 +38,14 @@ export default function CourseInfo() {
         {courseInfo ? (
           <div className="max-w-[950px] px-3 pt-20 pb-8 xsm:px-10 xsm:pt-24 xsm:pb-10">
             <div className=" shadow-2 px-3 pt-10 pb-8 xsm:px-10  ">
-              <div className="flex items-center justify-center">
                 <div className="flex-center gap-0 ss:gap-3 flex-wrap">
                   <div className="flex-center">
                     <img
                       src={file}
                       alt="Book"
-                      className="w-10 sm:w-10 sm:mr-1"
+                      className="w-10 sm:w-12 sm:mr-0"
                     />
-                    <h3 className="text-lg xss:text-xl sm:text-2xl font-[600]">
+                    <h3 className="text-lg xss:text-xl sm:text-2xl font-[600] text-center">
                       {courseInfo.courseTitle}
                     </h3>{" "}
                   </div>
@@ -54,7 +53,6 @@ export default function CourseInfo() {
                     ({courseInfo.courseCode})
                   </h3>
                 </div>
-              </div>
               <div className="flex-center gap-3 font-[400] text-xs sm:text-lg mb-1 sm:mb-2">
                 <p>
                   Credit Unit - {courseInfo.creditUnit}{" "}
