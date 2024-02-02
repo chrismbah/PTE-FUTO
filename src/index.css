@@ -8,9 +8,16 @@
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  29px 29px 58px #d9d9d9,-29px -29px 58px #ffffff;
 }
-.shadow-1a{
-    background: linear-gradient(45deg, #e6e6e6, #ffffff);
-    box-shadow:  5px -5px 20px #ededed, -5px 5px 20px #ffffff;
+
+.shadow-2{
+background: linear-gradient(225deg, #dfe1e3, #ffffff);
+box-shadow:  -5px 5px 32px #eef0f2,
+             5px -5px 32px #ffffff;
+}
+.shadow-3{
+background: linear-gradient(145deg, #dfe1e3, #ffffff);
+box-shadow:  20px 20px 60px #d3d5d6,
+             -20px -20px 60px #ffffff;
 }
 
 

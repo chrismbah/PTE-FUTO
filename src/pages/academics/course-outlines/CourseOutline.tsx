@@ -1,5 +1,6 @@
 import { CourseOutlineCard } from "./CourseOutlineCard";
 import { courseOutlineLevels } from "../../../utils/academics/course-outlines";
+import Footer from "../../../components/footer/Footer";
 
 export default function CourseOutline() {
   return (
@@ -21,6 +22,7 @@ export default function CourseOutline() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

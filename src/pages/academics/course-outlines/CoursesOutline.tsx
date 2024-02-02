@@ -6,6 +6,7 @@ import { courseOutline400 } from "../../../utils/academics/course-outlines/level
 import { courseOutline500 } from "../../../utils/academics/course-outlines/levels/500/courseOutline500";
 import { CourseOutlineCard } from "./CoursesOutlineCard";
 import { useParams } from "react-router-dom";
+import Footer from "../../../components/footer/Footer";
 
 export default function CoursesOutline() {
   const { level } = useParams();
@@ -76,6 +77,7 @@ export default function CoursesOutline() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
