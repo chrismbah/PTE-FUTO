@@ -9,7 +9,6 @@ import file from "/icons/course-outline/levels/file.png";
 import { useCourseOutlineContext } from "../../../context/CourseOutline";
 import { ICourseInfo } from "../../../models/academics/courseInfo";
 import { BounceLoader } from "../../../components/loaders/BounceLoader";
-import Footer from "../../../components/footer/Footer";
 
 export default function CourseInfo() {
   const { id, level } = useParams<string>();
@@ -33,8 +32,8 @@ export default function CourseInfo() {
   }, [level, id]);
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="flex items-center justify-center">
+    <div className="bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen">
         {courseInfo ? (
           <div className="max-w-[950px] px-3 pt-20 pb-8 xsm:px-10 xsm:pt-24 xsm:pb-10">
             <div className=" shadow-2 px-3 pt-10 pb-8 xsm:px-10 border-2 border-gray-200">
@@ -99,8 +98,6 @@ export default function CourseInfo() {
           <BounceLoader />
         )}
       </div>
-
-      <Footer />
     </div>
   );
 }

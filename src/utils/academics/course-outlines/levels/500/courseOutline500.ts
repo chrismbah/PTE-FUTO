@@ -13,6 +13,13 @@ export const courseOutline500: CourseOutline = {
         courseCode: "PTE 503",
         courseTitle: "Polymer Chain Properties and Solutions",
         creditUnit: 2,
+        id: "PTE503",
+        option: "MANDATORY",
+      },
+      {
+        courseCode: "PTE 507",
+        courseTitle: "Engineering Technology of Elastomers",
+        creditUnit: 3,
         id: "PTE507",
         option: "MANDATORY",
       },
@@ -32,7 +39,7 @@ export const courseOutline500: CourseOutline = {
       },
       {
         courseCode: "PTE 515",
-        courseTitle: "Project 1",
+        courseTitle: "Research Project I",
         creditUnit: 3,
         id: "PTE515",
         option: "MANDATORY",
@@ -53,7 +60,7 @@ export const courseOutline500: CourseOutline = {
       },
       {
         courseCode: "PTE 527",
-        courseTitle: "Injcetion Moulding",
+        courseTitle: "Injection Mouldings",
         creditUnit: 3,
         id: "PTE527",
         option: "ELECTIVE",

@@ -24,10 +24,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://futo.edu.ng/"
-                    className="hover:underline"
-                  >
+                  <a href="https://futo.edu.ng/" className="hover:underline">
                     FUTO Website
                   </a>
                 </li>
@@ -43,7 +40,7 @@ export default function Footer() {
                     href="https://github.com/themesberg/flowbite"
                     className="hover:underline"
                   >
-                    Blogs
+                    Blog
                   </a>
                 </li>
                 <li>
@@ -57,9 +54,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase ">
-                Legal
-              </h2>
+              <h2 className="mb-6 text-sm font-semibold uppercase ">Legal</h2>
               <ul className="text-white dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
@@ -77,13 +72,18 @@ export default function Footer() {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-white sm:text-center dark:text-gray-400">
-            © 2024{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
-              PTE-FUTO
-            </a>
-            . All Rights Reserved.
-          </span>
+          <div className="flex flex-col justify-start items-start">
+            <span className="text-sm text-white sm:text-center dark:text-gray-400">
+              © 2024{" "}
+              <a href="/" className="hover:underline">
+                PTE-FUTO.
+              </a>
+            </span>
+            <span className="text-sm text-white sm:text-center">
+              Created and Designed by <a href="https://chrismbah.vercel.app/" target="_" className="hover:underline">Christian Mbah.</a>  All Rights Reserved.
+            </span>
+          </div>
+
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a
               href="#"
