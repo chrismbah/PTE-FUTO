@@ -138,6 +138,25 @@ export const courseInfo500: CourseInfo = {
         },
       ],
     },
+    PTE527: {
+      courseCode: "PTE 523",
+      courseTitle: "INJECTION MOULDINGS",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
+      preRequisite: null,
+      info: [
+        {
+          heading: "General",
+          content:
+            "Introduction to Injection Molding, History and Applications of Injection Molding,Types of Injection Molding Machines,Components of an Injection Molding Machine. Polymer Materials for Injection Molding, Polymer Structure and Properties, Rheological Behavior of Polymer Material Selection for Injection Molding, Additives and Colorant, Injection Mold Design, Mold Design Principles, Gate Design and Runner Systems, Cooling Channel Design, Mold Materials and Manufacturing",
+        },
+        {
+          heading: null,
+          content:
+            "Injection Molding Processes, Process Stages: Plasticization, Injection, Packing, Holding, Cooling, Process Parameters and their Influence, Process Optimization and Control, Quality Control and Troubleshooting, Common Injection Molding Defects, Quality Control Technique, Troubleshooting Procedure Advanced Topics in Injection Molding, Multi-Component Molding, Micro Injection Molding, Sustainable Injection Molding"
+        },
+      ],
+    },
     PTE523: {
       courseCode: "PTE 523",
       courseTitle: "PULP AND PAPER TECHNOLOGY",
@@ -197,38 +216,28 @@ export const courseInfo500: CourseInfo = {
         },
       ],
     },
-    PHY101: {
-      courseCode: "PHY 101",
-      courseTitle: "GENERAL PHYSICS I",
-      creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite:
-        "Credit 0'Level Physics and Math and concurrent registeration in MTH 101.",
+    PTE502: {
+      courseCode: "PTE 502",
+      courseTitle: "POLYMER PROCCESSING ENGINEERING TECHNOLOGY IV",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
+      preRequisite: "PTE 401",
       info: [
         {
           heading: "General",
           content:
-            "Space and Time, unit and dimensions; vectors; kinematics, Newton's law; Galileon invariance, statics and dynamics of particles; universal gravitation; work and potential energy; conservation of energy and momentum; rigid bodies; fluid mechanics. Thermal Physics; Thermal properties including elementary thermodynamics and Kinetics Theory.",
+            "Polymeric engineering materials: review of effets of polymerization, molecular weight, structure and composites, review of foaming processes; engineering design of plastics, design practice and procedures.",
         },
-      ],
-    },
-    CHM101: {
-      courseCode: "CHM 101",
-      courseTitle: "GENERAL CHEMISTRY I",
-      creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite: "Credit 0'Level Chemistry",
-      info: [
         {
           heading: "General",
           content:
-            "Atomic structure and the periodic classification of the elements; ionic and covalent bonding including the effect of dipole-dipole interacting on physical properties. Redox reactions and the concept of oxidation numbers; introduction to gas Kinetics; introduction to nuclear chemistry. Solids and lattices structure; acid-base reactions; general principles of extraction metals.",
+            "Design of moulds for compression, injection and thermoforming, laminating moulding processes, dead load, vacuum bagging inflatable bag moulding, fibre spray gum moulding. Review of thermoplastic processing; Continous extrusion blow moulding, injection blow moulding, thermoplastic foam processing.",
         },
       ],
     },
-    BIO103: {
-      courseCode: "BIO 103",
-      courseTitle: "BIOLOGY FOR PHYSICAL SCIENCES",
+    PTE504: {
+      courseCode: "PTE 504",
+      courseTitle: "MODERN YARN PRODUCTION",
       creditUnit: 3,
       creditUnits: "(2, 0, 1)",
       preRequisite: null,
@@ -236,59 +245,83 @@ export const courseInfo500: CourseInfo = {
         {
           heading: "General",
           content:
-            "Scientific methods and the characterictics of living and non-living things. Cell and Tissue biology. Elements of biological chemistry and cellular metabolism. Taxonomy of living things, heredity and evolution. Elements of ecology and types of habitats",
+            "Detailed study of the operation of cotton system machines for manufacture of blended yarns; problems of blending; blended yarn properties and fabric performance. Open ended spinnin, twistless spinning, self-twist spinning and other latest techniques of yarn formation. Tpw conversion procsses. Principle of texturisation, texturing method and their applications; process variable and their effects on properties of textured yarns.",
         },
       ],
     },
-    ENG101: {
-      courseCode: "ENG 101",
-      courseTitle: "WORKSHOP PRATICE I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    PTE506: {
+      courseCode: "PTE 504",
+      courseTitle: "COLORATION AND FINISHING OF POLYMERICS AND TEXTILES",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
+      preRequisite: "PTE 316",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Introduction to the theory of deying thermodynamics, kinetics and dye polymers interactions role of fibre structure in dyeing. Dyeing of man made fibres, blends; recent advances in the technology of dyeing. Machines used for printing. Dyeing, ageing, steaming, faults in printing, transfer printing.",
+        },
+        {
+          heading: "General",
+          content:
+            "Sauforization, easy care finishes, wash-wear/ durable press cellulosic; root and mildew proofing, water proofing, water repellent finishes. Flame proofing, setting of synthetic fibres, systems of fabric casting and lamination. Fine structure of cotton and rayons, theories of fibre structure, moisture absorption by films and fibres, heat absorption and melting.",
+        },
+      ],
+    },
+    PTE512: {
+      courseCode: "PTE 512",
+      courseTitle: "THEORY OF TEXTILE STRUCTURES",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 0)",
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Use of engineering measuring instruments: callipers, e.g. Venier Callipers; Giages, e.g. Micrometers; Screw Guage and other devices. Introduction to hand tools, profieciency in the use of wood planers, Hand sawsanders and pattern making.",
+            "Simple geometry of single and ply yarns. Yarn diameter and density; theoretical treatment of yarn strength and irregularity; Elements of fabrics geometry. Cloth setting theories. Pierces equations and later modifications.",
         },
         {
-          heading: "Sheet Metal Work",
+          heading: null,
           content:
-            "Production of sheet metal products-layout, cutting, shaping, simple bend theory etc.",
-        },
-        {
-          heading: "Introduction to Joining Techniques",
-          content:
-            "Soldering, Brazing, Fusion welding, fastening and Assembly. Basic woodworking priniciples and tools finishing and evaluation of finished products.",
+            "Relation of fabric properties to simple geometry. Crimp interchange in woven fabric, cover factor. Tensile modules of plain fabrics, fabric stiffness, barding rigidity.",
         },
       ],
     },
-    GST101: {
-      courseCode: "GST 101",
-      courseTitle: "THE USE OF ENGLISH",
+    PTE522: {
+      courseCode: "PTE 522",
+      courseTitle: "ADHESIVE AND COATING TECHNOLOGY",
+      creditUnit: 3,
+      creditUnits: "(2, 1, 0)",
+      preRequisite: "PTE 410",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Theories of adhesion: mechanical, adsorption, diffusion and electrostatic; wetting of surface, contract angle, critical surface tension, basic thermodynamic considerations, antiphobic systems; classifications of adhesives: storage life, viscosity, rate of spread, solid content, PH, flash point, degree of tachness blocking.",
+        },
+        {
+          heading: null,
+          content:
+            "Strength of adhesives, ASTM tests on stage life, working life, coverage, blocking lack curing rate; selected adhesive materials: formaldehyde based resins, animal and vegetable polymers, hot melts, rubbers, vinyl polyamides and polyesters. Design of adhesive bonds for rigid and flexible materials.",
+        },
+      ],
+    },
+    PTE524: {
+      courseCode: "PTE 524",
+      courseTitle: "COLOUR TECHNOLOGY",
       creditUnit: 2,
       creditUnits: "(1, 1, 0)",
-      preRequisite: null,
+      preRequisite: "PTE 316",
       info: [
         {
           heading: "General",
           content:
-            "Use of library. Use of words and sentence construction. Functions of sentences, purpose structure, correct use of verbs (Action Words)",
+            "Review of printing process, chemistry and physics of thickness, binder, processes involved in solvent dyeing. Automatic control of dyeing machines and production sequences, illumination for color discrimination, visual and instrumental color matching, space dyeing computer techniques.",
         },
-      ],
-    },
-    FRN101: {
-      courseCode: "FRN 101",
-      courseTitle: "FRENCH LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(1, 0, 0)",
-      preRequisite: null,
-      info: [
         {
-          heading: "General",
+          heading: null,
           content:
-            "The course will introduce the students to the basics of French Language such as greeting in French, French Alphabets, vowels, pronuncation, and accents. The students will also learn the components of French grammar such as the articles, verbs etc",
+            "Color measurement: principles, nature of the color mixing; symbols and nomenclatures used in color. CIE cpecification and chromaticity diagrams. Munk analysis of colored materials.",
         },
       ],
     },
