@@ -1,4 +1,4 @@
-import { CourseInfo } from "../../../../../../models/academics/courseInfo";
+import { CourseInfo } from "../../../../../../models/academics/course-outline/courseInfo";
 export const courseInfo100: CourseInfo = {
   First: {
     PHY101: {

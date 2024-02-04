@@ -1,4 +1,4 @@
-import { CourseOutline } from "../../../../../models/academics/courseOutline";
+import { CourseOutline } from "../../../../../models/academics/course-outline/courseOutline";
 export const courseOutline300: CourseOutline = {
   First: {
     courseInfo: [

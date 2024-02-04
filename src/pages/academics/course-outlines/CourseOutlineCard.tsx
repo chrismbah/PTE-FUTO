@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CourseOutlines } from "../../../models/academics/courseOutline";
+import { CourseOutlines } from "../../../models/academics/course-outline/courseOutline";
 import { Link } from "react-router-dom";
 import arrow from "../../../assets/svg/icons/arrowRight.svg";
 
@@ -24,8 +24,7 @@ export const CourseOutlineCard: FC<CourseOutlines> = ({
           decisions about your academic journey.
         </p>
         <div className="font-[600] inline-flex justify-start items-center text-green2">
-          Check Course Outline{" "}
-          <img src={arrow} alt=">" className="w-6" />
+          Check Course Outline <img src={arrow} alt=">" className="w-6" />
         </div>
       </div>
     </Link>

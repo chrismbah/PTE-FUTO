@@ -1,4 +1,4 @@
-import { CourseInfo } from "../../../../../../models/academics/courseInfo";
+import { CourseInfo } from "../../../../../../models/academics/course-outline/courseInfo";
 export const courseInfo500: CourseInfo = {
   First: {
     PTE501: {
@@ -153,7 +153,7 @@ export const courseInfo500: CourseInfo = {
         {
           heading: null,
           content:
-            "Injection Molding Processes, Process Stages: Plasticization, Injection, Packing, Holding, Cooling, Process Parameters and their Influence, Process Optimization and Control, Quality Control and Troubleshooting, Common Injection Molding Defects, Quality Control Technique, Troubleshooting Procedure Advanced Topics in Injection Molding, Multi-Component Molding, Micro Injection Molding, Sustainable Injection Molding"
+            "Injection Molding Processes, Process Stages: Plasticization, Injection, Packing, Holding, Cooling, Process Parameters and their Influence, Process Optimization and Control, Quality Control and Troubleshooting, Common Injection Molding Defects, Quality Control Technique, Troubleshooting Procedure Advanced Topics in Injection Molding, Multi-Component Molding, Micro Injection Molding, Sustainable Injection Molding",
         },
       ],
     },
@@ -195,6 +195,30 @@ export const courseInfo500: CourseInfo = {
         },
       ],
     },
+    PTE529: {
+      courseCode: "PTE 529",
+      courseTitle: "FOAM TECHNOLOGY",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
+      preRequisite: null,
+      info: [
+        {
+          heading: "General",
+          content:
+            "Definition of cellular materials and foam. Properties and applications, types: Flexible, rigid and syntactic foams, microstructure: open-cell and closed cell foams. Chemistry of cellular foams, Polyurethane foams, Polyvinyl Chloride (PVC) foams, latex foams, Polystyrene, Polyethylene, Polypropylene foams.",
+        },
+        {
+          heading: "Foam additives",
+          content:
+            "Chemical blowing agents and their reactions, organic and inorganic blowing agents and reactions. Physical blowing agents. Use of supercritical CO2. Synchronization of foaming and curing.",
+        },
+        {
+          heading: "Foams and emulsion",
+          content:
+            "Thermodynamics and kinetics of foaming. Gas liquid and Gas solid interphases / mixtures. Rheology in foaming processes and foams. Characterization of properties determination, tensile properties, bulk modulus, storage modulus and acoustic properties. Buoyancy tests. Advanced foaming technology. Pourable foams and major industrial applications. Plant layout for expanded polymer products and foams; extrusion and injection moulding expanded polymers.",
+        },
+      ],
+    },
   },
   Second: {
     PTE534: {
@@ -229,7 +253,7 @@ export const courseInfo500: CourseInfo = {
             "Polymeric engineering materials: review of effets of polymerization, molecular weight, structure and composites, review of foaming processes; engineering design of plastics, design practice and procedures.",
         },
         {
-          heading: "General",
+          heading: null,
           content:
             "Design of moulds for compression, injection and thermoforming, laminating moulding processes, dead load, vacuum bagging inflatable bag moulding, fibre spray gum moulding. Review of thermoplastic processing; Continous extrusion blow moulding, injection blow moulding, thermoplastic foam processing.",
         },
@@ -262,7 +286,7 @@ export const courseInfo500: CourseInfo = {
             "Introduction to the theory of deying thermodynamics, kinetics and dye polymers interactions role of fibre structure in dyeing. Dyeing of man made fibres, blends; recent advances in the technology of dyeing. Machines used for printing. Dyeing, ageing, steaming, faults in printing, transfer printing.",
         },
         {
-          heading: "General",
+          heading: null,
           content:
             "Sauforization, easy care finishes, wash-wear/ durable press cellulosic; root and mildew proofing, water proofing, water repellent finishes. Flame proofing, setting of synthetic fibres, systems of fabric casting and lamination. Fine structure of cotton and rayons, theories of fibre structure, moisture absorption by films and fibres, heat absorption and melting.",
         },
@@ -325,142 +349,83 @@ export const courseInfo500: CourseInfo = {
         },
       ],
     },
-    ENG103: {
-      courseCode: "ENG 103",
-      courseTitle: "ENGINEERING DARWING I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    PTE528: {
+      courseCode: "PTE 528",
+      courseTitle: "GLASS TECHNOLOGY",
+      creditUnit: 3,
+      creditUnits: "(2, 1, 0)",
+      preRequisite: null,
+      info: [
+        {
+          heading: "Basic definition of glass materials and types.",
+          content:
+            "Types of glasses; silicate glasses, chalcogenide glass, borosicate glasses, phosphor glasses and polymer glasses. Specialty glasses, Functional glasses and hybrids (organic-inorganic hybrids). Glass for photonic applications; optical wave guides, advanced glasses and lasers. Optic fibre technology",
+        },
+        {
+          heading: null,
+          content:
+            "Glass for biological applications, bio-glasses, specialty glasses. Glass made via synthetic routes, Sol gel technique and thin films. Glass properties and characterization techniques. Glass characterization, concept of glass transition temperature and its measurement using DSC, TGA. Other characterization techniques including XRD, photoluminescence, NMR, Vibrational Spectroscopy, FTIR and Raman Spectroscopy. Experimental glass preparation techniques for Sol Gel derived glasses, thin films, monoliths and bulk. Glass formulation and preparation.",
+        },
+      ],
+    },
+    PTE516: {
+      courseCode: "PTE 516",
+      courseTitle: "RESEARCH PROJECTS II",
+      creditUnit: 2,
+      creditUnits: "(0, 0, 2)",
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Introduction to Engineering Tools. Planning and Layout of Engineering Drawing. Engineering Drawing Concept. Introduction to Dimensioning types; Dimensioning of circles, holes radii, tolerancing. Descriptive Geometry. Freehand Sketching.",
+            "Each students will be assigned a research supervisor who will be responsible for the overall supervision of the project. Students will work independently in one area of polymer and fibre science and technology. The results of the project will be written up in the form of a dissertation",
+        },
+      ],
+    },
+    PTE526: {
+      courseCode: "PTE 526",
+      courseTitle: "POLYMER IN MEDICINE AND SPECIALTY USES",
+      creditUnit: 3,
+      creditUnits: "(2, 1, 0)",
+      preRequisite: null,
+      info: [
+        {
+          heading: "General",
+          content:
+            " Biocompatible Polymers: Materials selection for medical devices and implants. Biocompatibility testing and regulatory requirements. Degradation and sterilization of biomaterials. Polymers in Drug Delivery: Controlled release mechanisms using polymers. Design of targeted drug delivery systems. Biodegradable polymers for drug delivery applications. Polymers in Tissue Engineering: Scaffolds and hydrogels for tissue regeneration.",
         },
         {
           heading: null,
           content:
-            "Introduction to Drawing/Drafting Software and CAD basic tools. Orthographic multi view projection. Construction of plane shapes using CAD construction techniques.",
-        },
-        {
-          heading: null,
-          content:
-            "Presentation of data and results. Using charts and graphs etc by basic tools; Computer Software. Further dimensioning addition of dimensions to drawing using CAD",
+            "Polymers for cell culture and manipulation. Tissue engineering applications in various medical fields. Special Uses of Polymers. Polymers for energy storage and conversion (e.g., batteries, solar cells). Conductive polymers for electronics and sensors. Membranes for filtration and separation processes. Future Trends in Polymer Applications. Emerging technologies and their impact on polymer innovation. Ethical considerations and challenges in specialized polymer usage. Sustainability and future directions in polymer development.",
         },
       ],
     },
-    GST103: {
-      courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    PTE530: {
+      courseCode: "PTE 530",
+      courseTitle: "RECYCLING TECHNOLOGY",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
       preRequisite: null,
       info: [
         {
-          heading: "Philosophising on Philosophy",
+          heading: "General",
           content:
-            " Introduction, Removing the mental cobwebs; Philosophy as a form of Knowing; Philosophy and Non-Philosophy; Philosophy and Science; Philosophy and Philosophies",
-        },
-        {
-          heading: "Branches of Philosophy",
-          content:
-            "Metaphysics; Epistemology; Logic; Ethics: General Ethics,Special Ethics, Human Act, Freedom",
-        },
-        {
-          heading: "History of Philosophy Acient Period",
-          content:
-            "Problem of Presocratic Philosophers, Anaximander; Pythagoras, Zeno, Anaxagoras, The Mind and Matter, Sophists",
-        },
-        {
-          heading:
-            "The Golden Age of Greek Philosophy: Socrates, Plato, Aristotle, and Plotinus",
-          content:
-            "Socrates (469 - 399 BCE), Philosophy as a way of life; Ignorance: The cause of wrong doing; The socratic irony; Knowledge as reminiscence; The socratic method; Aristotle (384 -322 BCE); His Philosophy, Aristotle's Logic; Syllogism; His Metaphysics; Happiness, Knowledge",
-        },
-        {
-          heading: "Medieval Philosophy",
-          content:
-            " Introduction; Background of Study; The dark ages; Philosophy in te dark ages; Eras of medieval christian thought; Boethius; Augustine on the existence of God; Attributes of God ",
-        },
-        {
-          heading: "Renaissance Intermission",
-          content:
-            "Renaissance Humanism, Renaissance Art, Architecture, and Science; Renaissance Exploratipon; The protestant reformation; Martin Luther; Francis Bacon; Philosopher of Science",
-        },
-        {
-          heading: "Modern Philosophy",
-          content:
-            "Background to Modern Philosophy; the impacct factors of modern philosophy; The epistemological turn; Epistemology; The existence of God; Mind and Body relation",
-        },
-        {
-          heading: "Contemporary Philosophy and Personailties",
-          content:
-            "Introduction, Historical Overview of Contemporary Philosophy, Basic Tenets of contemporary philosophy, Karl Marx (1818-1883), Marx on economics, Marx Critique of capitalism, Marx on theory of history; Friedrich Nietzsche (1844-1900), His critique of Religion and Morality; His will to power ",
-        },
-        {
-          heading: "Systems of Philosophy",
-          content:
-            "Introduction, Skepticism: Basic tenets, Kinds, Destructive Skepticism, Universal Skepticism, Partial, Constructive Skepticism; Rationalism, Histprical Survey of Rationalism",
-        },
-        {
-          heading: "Some Philosophical Problems",
-          content:
-            "Mind Body relationship, The prolem of universals, Problem of permanence and change or Reality and Appearance; The problem of free will; The problem of evil; The existence of God.",
-        },
-        {
-          heading: "Logic",
-          content:
-            "Brief Historical Development of Logic; The nature and definition of logic; The nature of arguments; Types of Arguments in Logic; Sygollism; Fallacies in Logic; Truth functions and connection of propositions; The value of logic",
+            "Introduction to Polymer and Textile Recycling: Importance of recycling in a sustainable society. Types of polymer and textile waste and their sources. Challenges and opportunities in recycling different materials.Polymer Recycling Technologies: Mechanical recycling: size reduction, sorting, cleaning, and reprocessing. Chemical recycling: depolymerization and repolymerization methods. Other recycling technologies: biodegradation, pyrolysis, etc. Textile Recycling Technologies: Mechanical recycling of fibers and fabrics. Chemical recycling of textile waste. Downcycling and upcycling of textile materials.",
         },
       ],
     },
-    IGB101: {
-      courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    PTE532: {
+      courseCode: "PTE 321",
+      courseTitle: "DESIGN",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 1)",
       preRequisite: null,
       info: [
         {
-          heading: "Introduction",
+          heading: "General",
           content:
-            "Nenke nkowa banyere ndi igbo, Nkowa Asusu, uru asusu bara, Mmalite edemede asusu igbo, mkparita uka banyere ndi malitere odide na ogugu asusu igbo dika, Ida Ward, Olauda Equiano, Oldendorp, n'oge ochichindi beke",
-        },
-        {
-          heading: "Mkpuruedemede Igbo ( Otografi onwu )",
-          content: "Ndeputa na nguputa mkpuru edemede igbo na usoro odide",
-        },
-        {
-          heading: "Nkejiasusu Igbo",
-          content:
-            "Mkpoaha n aomumaatu ya; Njuajuju Nnochiaha; Onuougu; Ngwaa; Njiko; Mbuuzo; Nkowaaha; Nkwuwa; Ntimkpu",
-        },
-        {
-          heading: "Akaraedemede",
-          content: `Nkowa ihe bu akara edemede nakwa uru ha bara n'edemede Igbo. Kpom (.) na ebe ndi a na-etinya ha; Rikom (,); Rikomelu ("); Kpom Kpom (:); Akaraajuju (?); Akaramkpu(!). `,
-        },
-        {
-          heading: "Nkebiokwu Igbo",
-          content:
-            "Gini bu nkebiokwu? Nkebiuokwu di iche iche; Omumaatu nkebiokwu di iche iche",
-        },
-        {
-          heading: "Nkebiahiri Igbo",
-          content:
-            "Nkowa ihe bu nkebiahiriokwu; Nkebiahiriokwu di iche iche; Omumaatu nkebiahiriokwu di iche iche",
-        },
-        {
-          heading: "Ahiirokwu Igbo Igbo",
-          content:
-            "Nkowa ihe bu ahiriokwu na odidi ha ahirimfe; ahirirnha; ahiriukwu; ahirimgbagwo",
-        },
-        {
-          heading: "Udi Ahiriokwui di iche iche",
-          content: "Ahirincho; Ahirinkwusa; Ahirinitmiwu",
-        },
-        {
-          heading: "Asusu Igbo dika, Asusu svo",
-          content: "Omumaatu ahiriokwu ndi na egosiputa aha, ngwaa na nnara",
+            "Fundamentals of Design Thinking: User-centered design, problem-solving approaches, design thinking tools. Material selection based on functional and aesthetic requirements. Sustainability considerations in design decisions. Polymer Design: Structure-property relationships in polymers. Design of polymer blends and composites for specific applications. Computer-aided design tools for polymer materials. Textile Design: Fiber properties and their influence on fabric performance. Weaving, knitting, and other textile fabrication techniques. Design of functional textiles for various applications.",
         },
       ],
     },

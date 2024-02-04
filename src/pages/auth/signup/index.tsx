@@ -2,7 +2,7 @@ import logo from "../../../assets/logo/logo.png";
 import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ISignUpForm } from "../../../models/form";
+import { ISignUpForm } from "../../../models/auth/form";
 import { Link } from "react-router-dom";
 import { signUpSchema } from "../../../validation";
 import useSignUpUser from "../../../hooks/auth/useSignUpUser";

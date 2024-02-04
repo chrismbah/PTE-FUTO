@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ILoginForm } from "../../models/form";
+import { ILoginForm } from "../../models/auth/form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";

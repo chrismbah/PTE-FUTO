@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { AppProviderProps } from "../models/provider";
+import { AppProviderProps } from "../models/provider/provider";
 import GPAContextProvider from "../context/GPAContext";
 import ModalContextProvider from "../context/Modal";
 import CourseOutlineContextProvider from "../context/CourseOutline";

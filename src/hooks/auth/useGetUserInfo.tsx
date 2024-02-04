@@ -9,7 +9,7 @@ import {
   //   deleteDoc,
   //   doc,
 } from "firebase/firestore";
-import { StudentDetails } from "../../models/academics/studentDetails";
+import { StudentDetails } from "../../models/auth/studentDetails";
 
 export const useGetUserInfo = () => {
   const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(

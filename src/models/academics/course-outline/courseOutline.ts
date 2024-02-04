@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 export interface CourseOutlines {
   icon: string;
   level: string;
-  route: string;
   title: string;
 }
 

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CourseInfo } from "../../../models/academics/courseOutline";
+import { CourseInfo } from "../../../models/academics/course-outline/courseOutline";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Button } from "flowbite-react";

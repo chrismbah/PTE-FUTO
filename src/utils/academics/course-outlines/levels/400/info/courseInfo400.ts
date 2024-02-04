@@ -1,4 +1,4 @@
-import { CourseInfo } from "../../../../../../models/academics/courseInfo";
+import { CourseInfo } from "../../../../../../models/academics/course-outline/courseInfo";
 export const courseInfo400: CourseInfo = {
   First: {
     PTE401: {
@@ -164,9 +164,9 @@ export const courseInfo400: CourseInfo = {
       info: [
         {
           heading: "General",
-          content: 
-          "Here 4th year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
-        }
+          content:
+            "Here 4th year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
+        },
       ],
     },
     SIW401: {
@@ -179,7 +179,7 @@ export const courseInfo400: CourseInfo = {
         {
           heading: "General",
           content:
-          "Here 4th year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
+            "Here 4th year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
         },
       ],
     },

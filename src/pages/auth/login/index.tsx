@@ -4,7 +4,7 @@ import { customButtonTheme } from "../../../themes/customButtton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { logInSchema } from "../../../validation";
-import { ILoginForm } from "../../../models/form";
+import { ILoginForm } from "../../../models/auth/form";
 import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
 import useLoginUser from "../../../hooks/auth/useLoginUser";
 
