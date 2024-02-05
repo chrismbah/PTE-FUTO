@@ -10,6 +10,7 @@ export interface CourseCard {
 
 export interface Course {
   courseCode: string;
+  courseTitle: string;
   id: string;
 }
   

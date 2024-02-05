@@ -1,4 +1,4 @@
-import { useGPAContext } from "../../../../context/GPAContext";
+import { useGPAContext } from "../../../../context/GPA";
 import { levelCourses } from "../../../../utils/academics/cgpa/courses";
 
 export default function CourseOptions() {
