@@ -33,7 +33,7 @@ const AuthenticatedRoutes = () => {
         <Route path="/course-outlines/:level" element={<CoursesOutline />} />
         <Route path="/course-outlines/:level/:id" element={<CourseInfo />} />
         <Route path="/learning-resources" element={<LearningResources />} />
-        <Route path="/learning-resources/:level" element={<LearningResources />} />
+        <Route path="/learning-resources/:level" element={<LearningResourcesCourses />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

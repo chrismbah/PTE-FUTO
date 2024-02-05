@@ -42,6 +42,9 @@ h3{
 .box-width{
     @apply 2xl:max-w-[1420px] w-full mx-auto
 }
+.box-width2{
+    @apply xl:max-w-[1280px] w-full mx-auto
+}
 .auth-btn{
  @apply bg-green1 hover:bg-green2 text-white font-semibold ss:text-base ss:px-4 ss:py-2 text-sm px-3 py-1 rounded-md 
 }

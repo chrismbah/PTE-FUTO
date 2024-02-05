@@ -42,7 +42,7 @@ export default function Login() {
                   htmlFor="email"
                   className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white"
                 >
-                  Your email
+                  Your Email
                 </label>
                 <input
                   type="email"
