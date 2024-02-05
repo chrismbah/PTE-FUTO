@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
-import { useToast } from "../useToast";
+import { useToast } from "../notification/useToast";
 import { useNavigate } from "react-router-dom";
 import { useModalContext } from "../../context/Modal";
 export const useSignOutUser = () => {
@@ -16,7 +16,7 @@ export const useSignOutUser = () => {
       setOpenModal(false);
       setLoading(false);
       navigate("/login");
-      useToast("success","Signed out successfully. Until next time 🚀");
+      useToast("success", "Signed out successfully. Until next time 🚀");
     } catch (err) {
       console.error("Sign-out error:", err);
       useToast("error", "Someting went wrong. Please try again");

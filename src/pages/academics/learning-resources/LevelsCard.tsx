@@ -5,16 +5,14 @@ import { Link } from "react-router-dom";
 
 export const LevelsCard: FC<LevelCard> = ({ level, title, desc }) => {
   return (
-    <div
-      className="hover:scale-110 p-4 transition-transform duration-300 h-[300px]"
-    >
-      <Link to={`/learning-resources/${level}`}>
+    <Link to={`/learning-resources/${level}`}>
+      <div className=" hover:bg-gray-100 rounded-lg ease-in p-2 hover:scale-105 transition duration-200">
         <div className="flex items-center justify-center">
-          <img src={folder} alt="folder" className="w-36" />
+          <img src={folder} alt="folder" className="w-32" />
         </div>
         <h4 className="text-center font-semibold text-2xl">{title}</h4>
         <p className="text-center font-medium">{desc}</p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };

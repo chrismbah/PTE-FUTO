@@ -8,7 +8,7 @@ export default function CourseOutline() {
       <div className="box-width ">
         <div className="page-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
-            <h2 className="text-green1 text-center">Course Outlines</h2>
+            <h2 className="text-green1 text-center font-semibold">Course Outlines</h2>
             <p className="text-center text-xs xsm:text-base">
               Discover the depth and focus of our courses through detailed
               descriptions of curriculum <br />

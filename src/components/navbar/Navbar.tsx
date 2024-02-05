@@ -50,7 +50,7 @@ export default function Nav() {
             <Dropdown
               arrowIcon={false}
               inline
-              className="z-[9999999]"
+              className="z-[9999999] "
               label={
                 <Avatar
                   alt="User"

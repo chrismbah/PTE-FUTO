@@ -5,43 +5,43 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "MTH 101",
-          id: "MTH101",
+          id: "MTH 101",
         },
         {
           courseCode: "PHY 101",
-          id: "PHY101",
+          id: "PHY 101",
         },
         {
           courseCode: "CHM 101",
-          id: "CHM101",
+          id: "CHM 101",
         },
         {
           courseCode: "BIO 103",
-          id: "BIO103",
+          id: "BIO 103",
         },
         {
           courseCode: "ENG 101",
-          id: "ENG101",
+          id: "ENG 101",
         },
         {
           courseCode: "ENG 103",
-          id: "ENG103",
+          id: "ENG 103",
         },
         {
           courseCode: "GST 101",
-          id: "GST101",
+          id: "GST 101",
         },
         {
           courseCode: "GST 103",
-          id: "GST103",
+          id: "GST 103",
         },
         {
           courseCode: "IGB 101",
-          id: "IGB101",
+          id: "IGB 101",
         },
         {
           courseCode: "FRN 101",
-          id: "FRN101",
+          id: "FRN 101",
         },
       ],
     },
@@ -49,43 +49,43 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "MTH 102",
-          id: "MTH102",
+          id: "MTH 102",
         },
         {
           courseCode: "PHY 102",
-          id: "PHY102",
+          id: "PHY 102",
         },
         {
           courseCode: "CHM 102",
-          id: "CHM102",
+          id: "CHM 102",
         },
         {
           courseCode: "ENG 102",
-          id: "ENG102",
+          id: "ENG 102",
         },
         {
           courseCode: "ENG 104",
-          id: "ENG104",
+          id: "ENG 104",
         },
         {
           courseCode: "GST 102",
-          id: "GST102",
+          id: "GST 102",
         },
         {
           courseCode: "GST 108",
-          id: "GST108",
+          id: "GST 108",
         },
         {
           courseCode: "GST 110",
-          id: "GST110",
+          id: "GST 110",
         },
         {
           courseCode: "IGB 102",
-          id: "IGB102",
+          id: "IGB 102",
         },
         {
           courseCode: "FRN 102",
-          id: "FRN102",
+          id: "FRN 102",
         },
       ],
     },
@@ -95,43 +95,43 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "MTH 203",
-          id: "MTH203",
+          id: "MTH 203",
         },
         {
           courseCode: "STA 211",
-          id: "STA211",
+          id: "STA 211",
         },
         {
           courseCode: "ENG 203",
-          id: "ENG203",
+          id: "ENG 203",
         },
         {
           courseCode: "CSC 201",
-          id: "CSC201",
+          id: "CSC 201",
         },
         {
           courseCode: "GST 201",
-          id: "GST201",
+          id: "GST 201",
         },
         {
           courseCode: "ENG 201",
-          id: "ENG201",
+          id: "ENG 201",
         },
         {
           courseCode: "ENG 207",
-          id: "ENG207",
+          id: "ENG 207",
         },
         {
           courseCode: "ENG 209",
-          id: "ENG209",
+          id: "ENG 209",
         },
         {
           courseCode: "ENG 213",
-          id: "ENG213",
+          id: "ENG 213",
         },
         {
           courseCode: "ENG 217",
-          id: "ENG217",
+          id: "ENG 217",
         },
       ],
     },
@@ -139,43 +139,39 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "MTH 202",
-          id: "MTH202",
+          id: "MTH 202",
         },
         {
           courseCode: "ENG 206",
-          id: "ENG206",
+          id: "ENG 206",
         },
         {
           courseCode: "ENG 208",
-          id: "ENG208",
+          id: "ENG 208",
         },
         {
           courseCode: "ENG 212",
-          id: "ENG212",
+          id: "ENG 212",
         },
         {
           courseCode: "ENG 214",
-          id: "ENG214",
+          id: "ENG 214",
         },
         {
           courseCode: "ENG 224",
-          id: "ENG224",
+          id: "ENG 224",
         },
         {
           courseCode: "ENG 226",
-          id: "ENG226",
+          id: "ENG 226",
         },
         {
           courseCode: "PTE 202",
-          id: "PTE202",
+          id: "PTE 202",
         },
         {
           courseCode: "CHM 204",
-          id: "CHM204",
-        },
-        {
-          courseCode: "SIW 200",
-          id: "SIW200",
+          id: "CHM 204",
         },
       ],
     },
@@ -185,39 +181,39 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "ENS 301",
-          id: "ENS301",
+          id: "ENS 301",
         },
         {
           courseCode: "ENG 305",
-          id: "ENG305",
+          id: "ENG 305",
         },
         {
           courseCode: "ENG 307",
-          id: "ENG307",
+          id: "ENG 307",
         },
         {
           courseCode: "ENG 309",
-          id: "ENG309",
+          id: "ENG 309",
         },
         {
           courseCode: "ENG 311",
-          id: "ENG311",
+          id: "ENG 311",
         },
         {
           courseCode: "ENG 317",
-          id: "ENG317",
+          id: "ENG 317",
         },
         {
           courseCode: "PTE 301",
-          id: "PTE301",
+          id: "PTE 301",
         },
         {
           courseCode: "PTE 303",
-          id: "PTE303",
+          id: "PTE 303",
         },
         {
           courseCode: "PTE 307",
-          id: "PTE307",
+          id: "PTE 307",
         },
       ],
     },
@@ -225,35 +221,35 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "ENG 304",
-          id: "ENG304",
+          id: "ENG 304",
         },
         {
           courseCode: "ENG 308",
-          id: "ENG308",
+          id: "ENG 308",
         },
         {
           courseCode: "ENS 302",
-          id: "ENS302",
+          id: "ENS 302",
         },
         {
           courseCode: "PTE302",
-          id: "PTE302",
+          id: "PTE 302",
         },
         {
           courseCode: "PTE 310",
-          id: "PTE310",
+          id: "PTE 310",
         },
         {
           courseCode: "PTE 314",
-          id: "PTE314",
+          id: "PTE 314",
         },
         {
           courseCode: "PTE 316",
-          id: "PTE316",
+          id: "PTE 316",
         },
         {
           courseCode: "PTE 322",
-          id: "PTE322",
+          id: "PTE 322",
         },
       ],
     },
@@ -263,35 +259,35 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "ENG 405",
-          id: "ENG405",
+          id: "ENG 405",
         },
         {
           courseCode: "PTE 401",
-          id: "PTE401",
+          id: "PTE 401",
         },
         {
           courseCode: "PTE 403",
-          id: "PTE403",
+          id: "PTE 403",
         },
         {
           courseCode: "PTE 405",
-          id: "PTE405",
+          id: "PTE 405",
         },
         {
           courseCode: "PTE 407",
-          id: "PTE407",
+          id: "PTE 407",
         },
         {
           courseCode: "PTE 409",
-          id: "PTE409",
+          id: "PTE 409",
         },
         {
           courseCode: "PTE 411",
-          id: "PTE411",
+          id: "PTE 411",
         },
         {
           courseCode: "PTE 413",
-          id: "PTE413",
+          id: "PTE 413",
         },
       ],
     },
@@ -304,51 +300,43 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "PTE 501",
-          id: "PTE501",
+          id: "PTE 501",
         },
         {
           courseCode: "PTE 503",
-          id: "PTE503",
+          id: "PTE 503",
         },
         {
           courseCode: "PTE 507",
-          id: "PTE507",
+          id: "PTE 507",
         },
         {
           courseCode: "PTE 509",
-          id: "PTE509",
-        },
-        {
-          courseCode: "PTE 513",
-          id: "PTE513",
-        },
-        {
-          courseCode: "PTE 515",
-          id: "PTE515",
+          id: "PTE 509",
         },
         {
           courseCode: "PTE 521",
-          id: "PTE521",
+          id: "PTE 521",
         },
         {
           courseCode: "PTE 523",
-          id: "PTE523",
+          id: "PTE 523",
         },
         {
           courseCode: "PTE 527",
-          id: "PTE527",
+          id: "PTE 527",
         },
         {
           courseCode: "PTE 529",
-          id: "PTE529",
+          id: "PTE 529",
         },
         {
           courseCode: "PTE 531",
-          id: "PTE531",
+          id: "PTE 531",
         },
         {
           courseCode: "PTE 533",
-          id: "PTE533",
+          id: "PTE 533",
         },
       ],
     },
@@ -356,51 +344,47 @@ export const courses: Courses = {
       courseCodes: [
         {
           courseCode: "PTE 502",
-          id: "PTE502",
+          id: "PTE 502",
         },
         {
           courseCode: "PTE 504",
-          id: "PTE504",
+          id: "PTE 504",
         },
         {
           courseCode: "PTE 506",
-          id: "PTE506",
+          id: "PTE 506",
         },
         {
           courseCode: "PTE 512",
-          id: "PTE512",
-        },
-        {
-          courseCode: "PTE 516",
-          id: "PTE516",
+          id: "PTE 512",
         },
         {
           courseCode: "PTE 534",
-          id: "PTE534",
+          id: "PTE 534",
         },
         {
           courseCode: "PTE 522",
-          id: "PTE522",
+          id: "PTE 522",
         },
         {
           courseCode: "PTE 524",
-          id: "PTE524",
+          id: "PTE 524",
         },
         {
           courseCode: "PTE 526",
-          id: "PTE526",
+          id: "PTE 526",
         },
         {
           courseCode: "PTE 528",
-          id: "PTE528",
+          id: "PTE 528",
         },
         {
           courseCode: "PTE 530",
-          id: "PTE530",
+          id: "PTE 530",
         },
         {
           courseCode: "PTE 532",
-          id: "PTE532",
+          id: "PTE 532",
         },
       ],
     },

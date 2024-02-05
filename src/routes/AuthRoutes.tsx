@@ -19,9 +19,17 @@ const AuthenticatedRoutes = () => {
   const CourseInfo = lazy(
     () => import("../pages/academics/course-outlines/CourseInfo")
   );
-  const LearningResources = lazy(()=>import("../pages/academics/learning-resources/LearningResources"))
-  const LearningResourcesCourses = lazy(()=>import("../pages/academics/learning-resources/LearningResourcesCourses"))
-
+  const LearningResources = lazy(
+    () => import("../pages/academics/learning-resources/LearningResources")
+  );
+  const LearningResourcesCourses = lazy(
+    () =>
+      import("../pages/academics/learning-resources/LearningResourcesCourses")
+  );
+  const LearningResourcesContent = lazy(
+    () =>
+      import("../pages/academics/learning-resources/LearningResourcesContent")
+  );
   return (
     <Suspense fallback={<BounceLoader />}>
       <Routes>
@@ -33,7 +41,14 @@ const AuthenticatedRoutes = () => {
         <Route path="/course-outlines/:level" element={<CoursesOutline />} />
         <Route path="/course-outlines/:level/:id" element={<CourseInfo />} />
         <Route path="/learning-resources" element={<LearningResources />} />
-        <Route path="/learning-resources/:level" element={<LearningResourcesCourses />} />
+        <Route
+          path="/learning-resources/:level"
+          element={<LearningResourcesCourses />}
+        />{" "}
+        <Route
+          path="/learning-resources/:level/:id"
+          element={<LearningResourcesContent />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
