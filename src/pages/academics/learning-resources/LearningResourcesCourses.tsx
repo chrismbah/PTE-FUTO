@@ -26,17 +26,17 @@ export default function LearningResourcesCourses() {
           </h4>
           <div className="mb-16 grid items-center xxss:grid-cols-2 ss:grid-cols-3 sm:grid-cols-4 mmd:grid-cols-5 gap-4 ">
             {level &&
-              courses[level]["First"].courseCodes.map((info, i) => (
+              courses[level]["First"].courseInfo.map((info, i) => (
                 <CoursesCard key={i} {...info} />
               ))}
           </div>
-          {level && courses[level]["Second"].courseCodes.length > 0 ? (
+          {level && courses[level]["Second"].courseInfo.length > 0 ? (
             <>
               <h4 className="text-md font-bold mb-2">
                 Second Semseter <div className="bar-style" />
               </h4>
               <div className="grid items-center xxss:grid-cols-2 ss:grid-cols-3 sm:grid-cols-4 mmd:grid-cols-5 gap-3 ">
-                {courses[level]["Second"].courseCodes.map((info, i) => (
+                {courses[level]["Second"].courseInfo.map((info, i) => (
                   <CoursesCard key={i} {...info} />
                 ))}
               </div>

@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../pages/error/404/NotFound";
-import { BounceLoader } from "../components/loaders/BounceLoader";
+import { BounceLoader } from "../components/loaders/FullBounceLoader";
 
 const AuthenticatedRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login"));
@@ -30,6 +30,9 @@ const AuthenticatedRoutes = () => {
     () =>
       import("../pages/academics/learning-resources/LearningResourcesContent")
   );
+  const Content = lazy(
+    () => import("../pages/academics/learning-resources/Content")
+  );
   return (
     <Suspense fallback={<BounceLoader />}>
       <Routes>
@@ -46,9 +49,11 @@ const AuthenticatedRoutes = () => {
           element={<LearningResourcesCourses />}
         />{" "}
         <Route
-          path="/learning-resources/:level/:id"
+          path="/learning-resources/:level/:id/:courseTitle"
           element={<LearningResourcesContent />}
         />
+        {/* <Route path=":resourceType" element={<Content />} /> */}
+        {/* </Route> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

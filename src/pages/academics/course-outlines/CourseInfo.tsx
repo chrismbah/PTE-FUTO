@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import file from "/icons/course-outline/levels/file.png";
 import { useCourseOutlineContext } from "../../../context/CourseOutline";
 import { ICourseInfo } from "../../../models/academics/course-outline/courseInfo";
-import { BounceLoader } from "../../../components/loaders/BounceLoader";
+import { BounceLoader } from "../../../components/loaders/FullBounceLoader";
 
 export default function CourseInfo() {
   const { id, level } = useParams<string>();

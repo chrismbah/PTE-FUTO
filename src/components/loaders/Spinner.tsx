@@ -1,6 +1,5 @@
 export default function Spinner() {
   return (
-    <div className="text-center flex items-center justify-center h-screen w-full">
       <div role="status">
         <svg
           aria-hidden="true"
@@ -20,6 +19,5 @@ export default function Spinner() {
         </svg>
         <span className="sr-only">Loading...</span>
       </div>
-    </div>
   );
 }

@@ -27,8 +27,20 @@ export default function CoursesOutline() {
               </span>{" "}
               Semester courses are as follows
             </p>
-            <div className="flex items-center justify-center my-2">
+            <div className="flex items-center justify-center my-2 gap-1">
               <button
+                onClick={() => setSemester("First")}
+                className={`p-2 text-ss sm:text-xs rounded-md ${semester === "First" ? "bg-green1 text-white" : "bg-gray-100"} font-semibold transition duration-100`}
+              >
+                1st Semester
+              </button>
+              <button
+                onClick={() => setSemester("Second")}
+                className={`p-2 text-ss sm:text-xs rounded-md ${semester === "Second" ? "bg-green1 text-white" : "bg-gray-100"} font-semibold transition duration-100`}
+              >
+                2nd Semester
+              </button>
+              {/* <button
                 className={`p-2 text-sm shadow-1a transition duration-300 ${
                   semester === "First" ? " border-2 border-green1 shadow-1 font-bold" : "bg-gray-50"
                 }`}
@@ -45,7 +57,7 @@ export default function CoursesOutline() {
               >
                 {" "}
                 2nd Semester{" "}
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="grid items-center ss:px-8 sm:px-0 sm:grid-cols-2 mmd:grid-cols-3 gap-6 max-w-[1100px] mx-auto">

@@ -23,9 +23,9 @@ export const SignOutModal = () => {
           openModal ? "block" : "hidden"
         } z-[999999] bg-black/50 backdrop-blur-sm fixed top-0 right-0 left-0  min-h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}
       >
-        <div className="bg-white rounded-lg p-4 ss:p-7 md:p-16 text-center relative">
+        <div className="bg-white rounded-lg px-5 py-7 ss:p-7 md:p-16 text-center relative">
           <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 xmd:h-16 xmd:w-16  text-gray-400" />
-          <h3 className="mb-5 text-base md:text-lg font-normal text-black">
+          <h3 className="mb-5 text-[15px] sm:text-base md:text-lg font-normal text-black">
             Are you sure you want to sign out?
           </h3>
           <div className="flex justify-center gap-4">
