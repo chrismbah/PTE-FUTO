@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { CourseCard } from "../../../models/academics/learning-resources";
-import files from "../../../assets/icons/learning-resources/files2.png";
+import file from "../../../assets/svg/icons/file.svg";
 import { Link, useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
+// import Lottie from "lottie-react";
+// import fileAnimation from "../../../utils/animation/file.json";
 export const CoursesCard: FC<CourseCard> = ({
   id,
   courseCode,
@@ -13,17 +14,19 @@ export const CoursesCard: FC<CourseCard> = ({
   const { level } = useParams();
   return (
     <Link to={`/learning-resources/${level}/${id}/${courseTitle}`}>
-          <div
-      className="max-w-[300px] ss:max-w-[900px] py-2 flex items-center justify-center flex-col rounded-lg
-       hover:bg-gray-100 transition duration-300 cursor-pointer"
-    >
-      { files ? <img src={files} alt={courseCode} className=" w-24 ss:w-28 sm:w-32" /> : <Skeleton /> }
-      <p className="text-center font-[500] text-base sm:text-md">
-        {courseCode}
-        {/* <div className="bar-style" /> */}
-      </p>
-    </div>
-    </Link>
+      <div
+        className="w-full py-2 flex items-center justify-center flex-col rounded-lg
+        hover:bg-gray-100 border-2 border-transparent hover:border-green1"
+      >
+        <div className="w-[40%] sm:w-[35%]">
+          {/* <Lottie loop={false} animationData={fileAnimation} /> */}
 
+          <img src={file} alt="file" className="w-full" />
+        </div>
+        <p className="text-center font-[500] text-base sm:text-md">
+          {courseCode}
+        </p>
+      </div>
+    </Link>
   );
 };

@@ -4,21 +4,23 @@ import { LevelCard } from "../../../models/academics/learning-resources";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import Lottie from "lottie-react";
+import folderAnimation from "../../../utils/animation/folder.json";
+
 export const LevelsCard: FC<LevelCard> = ({ level, title, desc }) => {
   return (
     <Link to={`/learning-resources/${level}`}>
-      <div className="max-w-[300px] ss:max-w-[900px] mx-auto hover:bg-gray-100 rounded-lg ease-in p-2 hover:scale-105 transition duration-200">
+      <div className="w-full mx-auto hover:bg-gray-100 rounded-lg p-2">
         <div className="flex items-center justify-center">
-          {folder ? (
-            <img src={folder} alt="folder" className=" w-28 md:w-32" />
-          ) : (
-            <Skeleton />
-          )}
+          {/* <img src={folder} alt="folder" className=" w-28 md:w-32" /> */}
+          <div className="w-[40%] sm:w-[40%]">
+            <Lottie loop={false} animationData={folderAnimation} />
+          </div>
         </div>
-        <h4 className="text-center font-semibold text-lg sm:text-xl md:text-2xl">
-          {title}
+        <h4 className="text-center font-semibold sm:text-md md:text-lg">
+          {title.toUpperCase()}
         </h4>
-        <p className="text-center font-medium text-sm sm:text-xs">{desc}</p>
+        <p className="text-center font-medium text-xss sm:text-sm">{desc}</p>
       </div>
     </Link>
   );

@@ -10,7 +10,7 @@ export default function LearningResourcesContent() {
         <div className="page-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
             <h2 className="text-green1 text-center font-semibold">
-              {id} E-Book Download
+              {id} E-BOOK DOWNLOAD
             </h2>
             <p className="text-center">
               Checkout all Textbooks, Handouts , Lecture Notes and Past Questions relating to <br />{" "}

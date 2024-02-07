@@ -26,3 +26,9 @@ export interface Courses {
     };
   }
   }
+
+  export interface Content {
+    name: string;
+    size: number;
+    path: string;
+  }

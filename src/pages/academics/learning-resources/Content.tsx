@@ -8,7 +8,7 @@ import { ContentCard } from "./ContentCard";
 
 interface FileMetadata {
   name: string;
-  // path: string;
+  path: string;
   size: number;
 }
 export default function Content() {
@@ -32,7 +32,7 @@ export default function Content() {
           const metadata = await getMetadata(itemRef);
           return {
             name: metadata.name,
-            // path: metadata.fullPath,
+            path: metadata.fullPath,
             size: metadata.size,
           };
         })
@@ -50,25 +50,24 @@ export default function Content() {
     fetchFiles();
   }, [resourcesType]);
 
-
   return (
     <div className="mt-6">
       {loading ? (
-        <BounceLoader />
+        <div>
+          <BounceLoader />
+        </div>
       ) : files.length === 0 ? (
         <p>
-          Sorry, {id} {resourcesType} is not available now{" "}
+          Sorry, {id} {resourcesType} are not available now
         </p>
       ) : (
-        files.length > 0 &&
-        <div className="grid items-center grid-cols-3 gap-4">
-          {
-              files.map((info,i) => (
-                <ContentCard key={i} {...info}  />
-              ))
-          }
-        </div>
-      
+        files.length > 0 && (
+          <div className="grid items-center xss:grid-cols-2 sm:grid-cols-3 gap-4">
+            {files.map((info, i) => (
+              <ContentCard key={i} {...info} />
+            ))}
+          </div>
+        )
       )}
     </div>
   );

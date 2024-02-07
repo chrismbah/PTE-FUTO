@@ -1,4 +1,4 @@
-import { Courses } from "../../../../models/academics/learning-resources";
+import { Courses } from "../../../models/academics/learning-resources";
 export const courses: Courses = {
   100: {
     First: {
@@ -99,7 +99,8 @@ export const courses: Courses = {
         },
         {
           courseCode: "IGB 102",
-          courseTitle: "Introduction to Igbo History, Culture and Literature II",
+          courseTitle:
+            "Introduction to Igbo History, Culture and Literature II",
           id: "IGB 102",
         },
         {
@@ -109,7 +110,6 @@ export const courses: Courses = {
         },
       ],
     },
-  
   },
   200: {
     First: {
@@ -320,7 +320,6 @@ export const courses: Courses = {
         },
       ],
     },
-  
   },
   400: {
     First: {
@@ -381,7 +380,6 @@ export const courses: Courses = {
         },
       ],
     },
-  
   },
   500: {
     First: {
@@ -512,5 +510,5 @@ export const courses: Courses = {
         },
       ],
     },
-    },
+  },
 };
