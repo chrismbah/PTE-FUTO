@@ -13,7 +13,7 @@ export default function LearningResources() {
             Find textbooks, handouts, past questions, and study tips organized by level for easy access.
             </p>
           </div>
-          <div className="grid items-center ss:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid items-center grid-cols-2 ss:grid-cols-3 md:grid-cols-4 gap-6">
             {learningResourcesLevels.map((info, index) => (
               <LevelsCard key={index} {...info} />
             ))}

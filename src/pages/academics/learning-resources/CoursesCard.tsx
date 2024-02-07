@@ -18,7 +18,7 @@ export const CoursesCard: FC<CourseCard> = ({
         className="w-full py-2 flex items-center justify-center flex-col rounded-lg
         hover:bg-gray-100 border-2 border-transparent hover:border-green1"
       >
-        <div className="w-[40%] sm:w-[35%]">
+        <div className="w-[40%] sm:w-[32%]">
           {/* <Lottie loop={false} animationData={fileAnimation} /> */}
 
           <img src={file} alt="file" className="w-full" />
