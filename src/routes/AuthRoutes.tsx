@@ -30,9 +30,6 @@ const AuthenticatedRoutes = () => {
     () =>
       import("../pages/academics/learning-resources/LearningResourcesContent")
   );
-  const Content = lazy(
-    () => import("../pages/academics/learning-resources/Content")
-  );
   return (
     <Suspense fallback={<BounceLoader />}>
       <Routes>
