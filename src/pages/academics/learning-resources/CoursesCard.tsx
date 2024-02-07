@@ -2,7 +2,7 @@ import { FC } from "react";
 import { CourseCard } from "../../../models/academics/learning-resources";
 import file from "../../../assets/svg/icons/file.svg";
 import { Link, useParams } from "react-router-dom";
-import Skeleton from "react-loading-skeleton";
+// import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 // import Lottie from "lottie-react";
 // import fileAnimation from "../../../utils/animation/file.json";
