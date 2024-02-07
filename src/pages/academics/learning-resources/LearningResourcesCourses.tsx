@@ -14,10 +14,7 @@ export default function LearningResourcesCourses() {
               {level} LEVEL LEARNING RESOURCES
             </h2>
             <p className="heading-p">
-              {`Download essential study resources compiled just for ${level === "100" ? "Freshers" : level === "500" ? "Final year students" : `${level} level students`}`}{" "}
-              <br />
-              Find textbooks, handouts, notes and past questions, and study tips
-              organized by level for easy access.
+              {`Download textbooks, handouts, notes and past questions, and study tips compiled just for ${level === "100" ? "Freshers" : level === "500" ? "Final year students" : `${level} level students`}`}{" "}
             </p>
           </div>
           <h4 className="text-base font-bold mb-4 sm:text-md">

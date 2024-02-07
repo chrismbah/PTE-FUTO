@@ -11,12 +11,14 @@ export interface CourseCard {
   id: string;
   courseCode: string;
   courseTitle: string;
+  tip: string;
 }
 
 export interface Course {
   courseCode: string;
   courseTitle: string;
   id: string;
+  tip: string;
 }
   
 export interface Courses {

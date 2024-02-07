@@ -1,22 +1,35 @@
 import { FC } from "react";
 import { CourseCard } from "../../../models/academics/learning-resources";
 import file from "../../../assets/svg/icons/file.svg";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 // import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 // import Lottie from "lottie-react";
 // import fileAnimation from "../../../utils/animation/file.json";
+import { useLearningResourcesContext } from "../../../context/LearningResources";
+import { useNavigate } from "react-router-dom";
+
 export const CoursesCard: FC<CourseCard> = ({
   id,
   courseCode,
   courseTitle,
+  tip,
 }) => {
   const { level } = useParams();
+  const { setStudyTip } = useLearningResourcesContext();
+  const navigate = useNavigate();
+  setStudyTip(tip);
+
+  const goToCourse = () => {
+    setStudyTip(tip);
+    navigate(`/learning-resources/${level}/${id}/${courseTitle}`);
+  };
+
   return (
-    <Link to={`/learning-resources/${level}/${id}/${courseTitle}`}>
       <div
+        onClick={goToCourse}
         className="w-full py-2 flex items-center justify-center flex-col rounded-lg
-        hover:bg-gray-100 border-2 border-transparent hover:border-green1"
+        hover:bg-gray-100 border-2 border-transparent hover:border-green1 cursor-pointer"
       >
         <div className="w-[35%] xxss:w-[50%] sm:w-[30%]">
           {/* <Lottie loop={false} animationData={fileAnimation} /> */}
@@ -27,6 +40,5 @@ export const CoursesCard: FC<CourseCard> = ({
           {courseCode}
         </p>
       </div>
-    </Link> 
   );
 };

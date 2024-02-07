@@ -3,7 +3,9 @@ import { useLearningResourcesContext } from "../../../context/LearningResources"
 import Content from "./Content";
 export default function LearningResourcesContent() {
   const { id, courseTitle } = useParams();
-  const {  resourcesType, setResourcesType } = useLearningResourcesContext();
+  const {  resourcesType, setResourcesType,
+    //  studyTip
+     } = useLearningResourcesContext();
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width2">

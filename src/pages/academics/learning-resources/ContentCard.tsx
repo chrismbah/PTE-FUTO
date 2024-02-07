@@ -42,7 +42,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
     });
   };
   return (
-    <div className="w-full h-[80px] ss:h-[100px] bg-white shadow-md rounded-md p-2 ss:p-4 ">
+    <div className="w-full h-[75px] ss:h-[100px] shadow-md bg-white hover:shadow-lg transition duration-150 rounded-md p-2 ss:p-4 ">
       <div className="relative h-full">
         <p className="text-sm ss:text-base font-semibold ">{name}</p>
         <span className="text-ss font-[500] absolute bottom-0 left-0 text-gray-700">

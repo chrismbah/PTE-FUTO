@@ -11,10 +11,12 @@ export default function LearningResourcesContextProvider({
   children,
 }: LearningResourcesContextProviderProps) {
   const [resourcesType, setResourcesType] = useState<string>("handouts");
+  const [studyTip, setStudyTip] = useState<string>("");
 
   const LearningResourcesContextValue = {
     resourcesType,
     setResourcesType,
+    studyTip, setStudyTip
   };
   return (
     <LearningResourcesContext.Provider value={LearningResourcesContextValue}>
