@@ -23,10 +23,10 @@ export const CoursesCard: FC<CourseCard> = ({
 
           <img src={file} alt="file" className="w-full" />
         </div>
-        <p className="text-center font-[500] text-base sm:text-md">
+        <p className="text-center font-[500] text-base sm:text-base">
           {courseCode}
         </p>
       </div>
-    </Link>
+    </Link> 
   );
 };
