@@ -6,6 +6,8 @@ import { Content } from "../../../models/academics/learning-resources";
 import { useToast } from "../../../hooks/notification/useToast";
 import fileDownloadIcon from "../../../assets/svg/icons/fileDownload.svg";
 import Spinner from "../../../components/loaders/Spinner";
+import {Tooltip} from "flowbite-react"
+import { customTooltipTheme } from "../../../themes/customTooltip";
 
 export const ContentCard: FC<Content> = ({ name, size, path }) => {
   const [fileLoading, setFileLoading] = useState(false);
@@ -34,28 +36,29 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
 
   const downloadResources = () => {
     useToast("promise", null, downloadFile(), {
-      loadingMsg: "File downloading...",
+      loadingMsg: "Downloading...",
       successMsg: "File Downloaded. Happy Learning!",
-      errorMsg: "Error downloading file. Please try again",
+      errorMsg: "Something went wrong. Please try again",
     });
   };
   return (
-    <div className="w-full h-[100px] bg-white shadow-md rounded-md p-4 ">
+    <div className="w-full h-[80px] ss:h-[100px] bg-white shadow-md rounded-md p-2 ss:p-4 ">
       <div className="relative h-full">
-        <p className="text-basee font-semibold ">{name}</p>
-        <span className="text-ss font-bold absolute bottom-0 left-0">
+        <p className="text-sm ss:text-base font-semibold ">{name}</p>
+        <span className="text-ss font-[500] absolute bottom-0 left-0 text-gray-700">
           {convertBytesToMB(size)} MB
         </span>
-        <button
-          onClick={downloadResources}
-          className="p-2 rounded-lg text-white absolute bottom-0 right-0"
-        >
+        <div className="absolute bottom-0 right-0">
           {fileLoading ? (
             <Spinner />
           ) : (
-            <img src={fileDownloadIcon} alt="Download" className="w-8" />
+            <Tooltip content="Download" animation="duration-500" theme={customTooltipTheme}>
+               <button onClick={downloadResources}>
+              <img src={fileDownloadIcon} alt="Download" className="w-6" />
+            </button>
+            </Tooltip>
           )}
-        </button>
+        </div>
       </div>
     </div>
   );

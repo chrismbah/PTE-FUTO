@@ -57,9 +57,7 @@ h3{
 .page-section{
     @apply px-3 sm:px-14 sm:py-24 py-20
 }
-.heading-p{
-    
-}
+
 .course-outline-section{
     @apply px-3 xxss:px-6 ss:px-8 sm:px-14 sm:py-24 py-20
 }
@@ -93,6 +91,8 @@ h3{
 .gpa-btn{
     @apply text-sm px-3 py-[7px] xss:py-2.5  text-white font-semibold w-full rounded-lg
 }
-
+.heading-p{
+    @apply text-gray-800 text-center text-xs xsm:text-base font-[500]
+}
 
 

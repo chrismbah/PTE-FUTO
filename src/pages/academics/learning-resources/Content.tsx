@@ -53,12 +53,18 @@ export default function Content() {
   return (
     <div className="mt-6">
       {loading ? (
-        <div>
+        <div className="mt-10 w-full h-full flex items-center justify-center">
           <BounceLoader />
         </div>
       ) : files.length === 0 ? (
-        <p>
-          Sorry, {id} {resourcesType} are not available now
+        <p className="w-full text-sm ss:text-base text-gray-500 font-[400] text-center mt-4 uppercase">
+          Sorry, {id}{" "}
+          {resourcesType === "textbooks"
+            ? "Textbooks"
+            : resourcesType === "pastquestions"
+              ? "Past Questions"
+              : "Handouts"}{" "}
+          are not available now.
         </p>
       ) : (
         files.length > 0 && (

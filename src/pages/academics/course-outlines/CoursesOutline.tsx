@@ -20,7 +20,7 @@ export default function CoursesOutline() {
             <h2 className="text-green1 text-center font-semibold">
               Courses Offered for {level} Level
             </h2>
-            <p className="text-center text-xs xsm:text-base font-[500]">
+            <p className="heading-p">
               The details for{" "}
               <span className="text-green1 font-semibold">
                 {semester === "First" ? "Harmattan" : "Rain"}
@@ -40,24 +40,6 @@ export default function CoursesOutline() {
               >
                 2nd Semester
               </button>
-              {/* <button
-                className={`p-2 text-sm shadow-1a transition duration-300 ${
-                  semester === "First" ? " border-2 border-green1 shadow-1 font-bold" : "bg-gray-50"
-                }`}
-                onClick={() => setSemester("First")}
-              >
-                {" "}
-                1st Semester{" "}
-              </button>{" "}
-              <button
-                className={`p-2 text-sm shadow-1a transition duration-300  ${
-                  semester === "Second" ? "border-2 border-green1 shadow-1 font-bold " : "bg-gray-50"
-                }`}
-                onClick={() => setSemester("Second")}
-              >
-                {" "}
-                2nd Semester{" "}
-              </button> */}
             </div>
           </div>
           <div className="grid items-center ss:px-8 sm:px-0 sm:grid-cols-2 mmd:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
