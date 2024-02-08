@@ -3,12 +3,7 @@ import { useParams } from "react-router-dom";
 import { useLearningResourcesContext } from "../../../context/LearningResources";
 import Content from "./Content";
 import StudyTip from "./StudyTip"
-import {
-  Popover,
-  PopoverHandler,
-  PopoverContent,
-  Button,
-} from "@material-tailwind/react";
+
 
 export default function LearningResourcesContent() {
   const { id, courseTitle } = useParams();
@@ -48,7 +43,7 @@ export default function LearningResourcesContent() {
             >
               Textbooks
             </button>
-            <div className="relatiive">
+            <div className="relative">
             <button
               onClick={() => setResourcesType("pastquestions")}
               className={`${resourcesType === "pastquestions" ? "bg-green1 text-white" : "bg-gray-100"} 
