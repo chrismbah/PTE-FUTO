@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import type { ModalContextProviderProps } from "../models/modal";
+import type { ModalContextProviderProps } from "../models/layout/modal";
 
 export const ModalContext = createContext<any | null>(null);
 

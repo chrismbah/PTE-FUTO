@@ -1,5 +1,6 @@
 import { CourseOutlineCard } from "./CourseOutlineCard";
 import { courseOutlineLevels } from "../../../utils/academics/course-outlines";
+import Footer from "../../../components/footer/Footer";
 
 export default function CourseOutline() {
   return (
@@ -7,8 +8,8 @@ export default function CourseOutline() {
       <div className="box-width ">
         <div className="page-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
-            <h2 className="text-green1 text-center">Course Outlines</h2>
-            <p className="text-center text-xs xsm:text-base">
+            <h2 className="text-green1 text-center font-semibold">Course Outlines</h2>
+            <p className="heading-p">
               Discover the depth and focus of our courses through detailed
               descriptions of curriculum <br />
               and learning objectives, presented by level for your convenience.
@@ -21,6 +22,7 @@ export default function CourseOutline() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

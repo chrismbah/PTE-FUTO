@@ -7,7 +7,7 @@ import { customDropdownTheme } from "../../themes/customDropdown";
 import { customAvatar } from "../../themes/customAvatar";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
-import userProfileIcon from "../../assets/svg/profile/userProfile.svg";
+import userProfileIcon from "../../assets/svg/icons/userProfile.svg";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { useModalContext } from "../../context/Modal";
 import { SignOutModal } from "../modal/SignOutModal";
@@ -50,7 +50,7 @@ export default function Nav() {
             <Dropdown
               arrowIcon={false}
               inline
-              className="z-[9999999]"
+              className="z-[9999999] "
               label={
                 <Avatar
                   alt="User"

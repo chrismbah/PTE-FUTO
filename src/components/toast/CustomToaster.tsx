@@ -11,6 +11,7 @@ export const CustomToaster = () => {
       toastOptions={{
         duration: 3000,
       }}
+      position="top-right"
     />
   );
 };

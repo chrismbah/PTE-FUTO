@@ -8,7 +8,6 @@ export default {
   theme: {
     colors: {
       'green1': '#00875a',
-      "green1a":"",
       'green2': '#21875a',
       'green3':'#1c3f21',
       'green4':'#6ebf63',
@@ -25,6 +24,8 @@ export default {
       'xss': '368px',
 
       'ss': '450px',
+
+      'sss': "545px",
 
       'sm': '640px',
       // => @media (min-width: 640px) { ... }

@@ -1,4 +1,4 @@
-import { CourseOutline } from "../../../../../models/academics/courseOutline";
+import { CourseOutline } from "../../../../../models/academics/course-outline/courseOutline";
 export const courseOutline300: CourseOutline = {
   First: {
     courseInfo: [
@@ -62,7 +62,7 @@ export const courseOutline300: CourseOutline = {
         courseCode: "PTE 307",
         courseTitle: "Yarn Manufacture",
         creditUnit: 2,
-        id: "PTE 307",
+        id: "PTE307",
         option: "MANDATORY",
       },
     ],
@@ -113,7 +113,7 @@ export const courseOutline300: CourseOutline = {
       },
       {
         courseCode: "PTE 316",
-        courseTitle: "Chemical Processing Of Textiles",
+        courseTitle: "Finishing Processes Of Textiles",
         creditUnit: 2,
         id: "PTE316",
         option: "MANDATORY",
@@ -129,7 +129,7 @@ export const courseOutline300: CourseOutline = {
         courseCode: "SIW 300",
         courseTitle: "Third Year Long Vacation SIWES",
         creditUnit: 2,
-        id: "PTE322",
+        id: "SIW300",
         option: "MANDATORY",
       },
     ],

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import type { CourseOutlineContextProviderProps } from "../models/academics/courseOutline";
+import type { CourseOutlineContextProviderProps } from "../models/academics/course-outline/courseOutline";
 
 export const CourseOutlineContext = createContext<any | null>(null);
 
@@ -28,7 +28,8 @@ export default function CourseOutlineContextProvider({
     setSemester400L,
     semester500L,
     setSemester500L,
-    semester, setSemester
+    semester,
+    setSemester,
   };
   return (
     <CourseOutlineContext.Provider value={CourseOutlineContextValue}>

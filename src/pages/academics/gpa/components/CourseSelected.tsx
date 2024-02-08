@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { CourseSelectedProps } from "../../../../models/academics/gpa";
-import { useComputeGPA } from "../../../../hooks/useComputeGPA";
+import { useComputeGPA } from "../../../../hooks/academics/useComputeGPA";
 import TrashIcon from "../../../../assets/svg/icons/trash.svg";
 import EditIcon from "../../../../assets/svg/icons/edit.svg";
 

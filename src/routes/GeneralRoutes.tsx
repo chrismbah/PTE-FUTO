@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../pages/error/404/NotFound";
-import { BounceLoader } from "../components/loaders/BounceLoader";
+import { BounceLoader } from "../components/loaders/FullBounceLoader";
 
 const GeneralRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login"));

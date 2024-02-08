@@ -1,62 +1,75 @@
-import { CourseInfo } from "../../../../../../models/academics/courseInfo";
+import { CourseInfo } from "../../../../../../models/academics/course-outline/courseInfo";
 export const courseInfo400: CourseInfo = {
   First: {
-    MTH101: {
-      courseCode: "MTH 101",
-      courseTitle: "ELEMENTARY MATHEMATICS I",
-      creditUnits: "(3, 1, 0)",
-      creditUnit: 4,
-      preRequisite: "Credit 0'Level Math.",
+    PTE401: {
+      courseCode: "PTE 401",
+      courseTitle: "POLYMER PROCESSING ENGINEERING TECHNOLOGY II",
+      creditUnits: "(2, 0, 1)",
+      creditUnit: 3,
+      preRequisite: "PTE 310",
       info: [
         {
           heading: "General",
           content:
-            "Number systems. Indices. Surds and logarithms. Polynomials. Reminder and factor theorems. Polynomial equations. Rational functions. Partial fractions. Fields ordered fields. Inequalities. Mathematical induction. Permutation and combinations. Binomial theorem. Sequences and series. The Quadratic equation and functions. Relation between the roots and the coefficients. Complex numbers. Addition, subtraction, multiplication and division. Argand diagram. De Movers theorem, nth root of complex numbers. ",
+            "Introduction to mathematical modeling and mathematical analysis of pressures; objectives, capillary/rheometry-shear viscosity, its representation an dmeasurement as a function of shear rate, pressure and temperature; elasticity, extensional viscosity extrudate swell, entry losses, flow in tubes and channels, flow in dies.  Melt viscometry, factors affecting viscosities of polymer melts",
+        },
+        {
+          heading: "Foam Production",
+          content:
+            "Methods of foaming and foam moulding processes, characterization of foams, cutting, shaping and bonding of plastics, cementing, welding, heat sealing, machinig decorating and finishing, painting, coating, coloring, texturing and design. Polymers for making foams: PVC, polyurethane and elastomers.",
+        },
+      ],
+    },
+    PTE405: {
+      courseCode: "PTE 405",
+      courseTitle: "ENGINEERING PROPERTIES OF BULK POLYMERS",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 0)",
+      preRequisite: "PTE 303",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Phase states and phase transitions: 1st and 2nd Order transitions, concept of Tg; Crystal structures and theoretical calculations of Tg; Theoretical calculations of Tg; Crystal structures of polymers, single crystals, melt crystals, mechanism and kinetics of polymer crystallization. Thermodynamics of melting an dcrystallization of polymers.",
         },
         {
           heading: null,
           content:
-            " Elementary set theory. Venn diagrams and applications. DeMorgan’s law. Trigonometry. Elementary properties of basic trigonometric functions. Additional formulae and basic identities. Sine and cosine formulae. Half angle formulae. Area of a triangle. Solution of trigonometric equations. Inverse trigonometric functions. Functions, concept and notation examples. Composition, exponential and logarithmic functions. Graphs and properties. ",
-        },
-        {
-          heading: null,
-          content:
-            " Limit and continuity. Techniques for finding limits. The derivative calculation for first principles. Techniques of differentiation. Chain rule order derivatives. Mean value theorem. Applications. Indeterminate forms and L’hospital rule. Tayior and Machlaurin’s series. Curve sketching. Integration as reverse of differentiation, as area, as limit of finite sums. Definite integrals. Properties of definite integrals. Applications.",
+            "Degree of crystallinity and methods of determination. Orientation and drawing. Structural determinants of mechanical properties, melting points plasticization, reinforcements, cross-linking, co-polymerization and melt viscosity. Property requirements and utilization. Effect of chemical structure of crystallinity, viscous flow, rubber elasticity and viscoelasticity.",
         },
       ],
     },
-    PHY101: {
-      courseCode: "PHY 101",
-      courseTitle: "GENERAL PHYSICS I",
-      creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite:
-        "Credit 0'Level Physics and Math and concurrent registeration in MTH 101.",
+    PTE407: {
+      courseCode: "PTE 407",
+      courseTitle: "NON-WOVEN FACBRIC TECHNOLOGY",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 0)",
+      preRequisite: "PTE 307/ PTE 308",
       info: [
         {
           heading: "General",
           content:
-            "Space and Time, unit and dimensions; vectors; kinematics, Newton's law; Galileon invariance, statics and dynamics of particles; universal gravitation; work and potential energy; conservation of energy and momentum; rigid bodies; fluid mechanics. Thermal Physics; Thermal properties including elementary thermodynamics and Kinetics Theory.",
+            "Classification, definitions and uses, economics of non-woven fabrics; preparation of webs and sheets opening, binding and mixing equipment; Formation of parallel-laid, cross-laid, random-laid webs; equipment, limitations, speed, weight limits and web control; specifications of typical machines and webs; spun bonding, methods of yarn sheet preparation. Composite properties in relation to process variables.",
         },
       ],
     },
-    CHM101: {
-      courseCode: "CHM 101",
-      courseTitle: "GENERAL CHEMISTRY I",
-      creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite: "Credit 0'Level Chemistry",
+    PTE409: {
+      courseCode: "PTE 409",
+      courseTitle: "KNITTING TECHNOLOGY",
+      creditUnit: 3,
+      creditUnits: "(2, 1, 0)",
+      preRequisite: "PTE 307/ PTE 308/ PTE 202",
       info: [
         {
           heading: "General",
           content:
-            "Atomic structure and the periodic classification of the elements; ionic and covalent bonding including the effect of dipole-dipole interacting on physical properties. Redox reactions and the concept of oxidation numbers; introduction to gas Kinetics; introduction to nuclear chemistry. Solids and lattices structure; acid-base reactions; general principles of extraction metals.",
+            "Weft knitting: Definition, characteristics of weft knitted fabrics; machines used for knitting; straight-bar, flat-bar, v-bar, single cylinder, cylinder and dial; stitches eg. Plain, Jersey, Rib, Purl, Interlock and their decorations.",
         },
       ],
     },
-    BIO103: {
-      courseCode: "BIO 103",
-      courseTitle: "BIOLOGY FOR PHYSICAL SCIENCES",
+    PTE411: {
+      courseCode: "PTE 411",
+      courseTitle: "POLYMER RHEOLOGY",
       creditUnit: 3,
       creditUnits: "(2, 0, 1)",
       preRequisite: null,
@@ -64,458 +77,109 @@ export const courseInfo400: CourseInfo = {
         {
           heading: "General",
           content:
-            "Scientific methods and the characterictics of living and non-living things. Cell and Tissue biology. Elements of biological chemistry and cellular metabolism. Taxonomy of living things, heredity and evolution. Elements of ecology and types of habitats",
+            "Review of Laminar and Turbulent flow, steady flow, Reynolds number. Newtonian flow; Flow along a channel of uniform cross section, fluid flow between parallel plates, equation of capillary viscometry, solution viscosity, cone and plate rotational viscometer, Cup and Bob Viscometer, falling index, ubbelohde and ostwalde capillary viscmometers",
+        },
+        {
+          heading: null,
+          content:
+            "Non parallel plates, pseudo plasticity, dilatancy, thixotropy, rheopetic and bingham fluids. Visco elasticty. Creep deformation and stress relaxation, rheological systems and properties. Deformation of polymer solids, Maxwell and Voight models, 3-parameter models.",
         },
       ],
     },
-    ENG101: {
-      courseCode: "ENG 101",
-      courseTitle: "WORKSHOP PRATICE I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    PTE413: {
+      courseCode: "PTE 413",
+      courseTitle: "PVC TECHNOLOGY",
+      creditUnit: 3,
+      creditUnits: "(2, 1, 0)",
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Use of engineering measuring instruments: callipers, e.g. Venier Callipers; Giages, e.g. Micrometers; Screw Guage and other devices. Introduction to hand tools, profieciency in the use of wood planers, Hand sawsanders and pattern making.",
+            "Historical account of PVC, Manufacturing of Vinyl chloride monomer throug acetylene, ethylene and oxychlorination. Types of PVC: Suspension grades, emulsion (E or P) grades. Polymerization techniques. Properties and uses of PVC cable insulation, chemical plant, leather clothes, packages, toys.",
         },
         {
-          heading: "Sheet Metal Work",
+          heading: null,
           content:
-            "Production of sheet metal products-layout, cutting, shaping, simple bend theory etc.",
+            "Co-polymers of PVC and their uses, structure of PVC; Particle size distribution. Stabilization and additives (blowing agents substrates, fillers, plasticizers). Plastisol technology for leather cloth calendaring, formation, mixing coating, curing, chemical embossing.",
         },
         {
-          heading: "Introduction to Joining Techniques",
+          heading: "Processes: Blow moulding for making PVC bottles",
           content:
-            "Soldering, Brazing, Fusion welding, fastening and Assembly. Basic woodworking priniciples and tools finishing and evaluation of finished products.",
+            "Thermoforming to make thin walled containers eg. cups, large scale mouldings eg boats, garage doors, domestic baths; skin and blister packaging of household goods eg nails, screws, displozable razors soft toys. Compression moulding, Injection moulding for shoe slides.",
         },
       ],
     },
-    GST101: {
-      courseCode: "GST 101",
-      courseTitle: "THE USE OF ENGLISH",
+    PTE403: {
+      courseCode: "PTE 403",
+      courseTitle: "QUALITY CONTROL IN POLYMER AND TEXTILE INDISTRY",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
+      preRequisite: "PTE 322",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Defintion of quality control, organizations and functions, significance and importance of testing polymers, fibres, yarns, fabrics, dyestuffs, chemicals and auxillaries; importance of keeping standards and factors responsible for deviaton from standards.",
+        },
+        {
+          heading: null,
+          content:
+            "Quality control in polymer processing, yarn manufacture; control of counts, yarn strength and evenness. Statistical interpretation of data. Measurement and control of quality in winding, warping, sizing, drawing-in and weaving. Wash, stain, light fastness of finished goods.",
+        },
+      ],
+    },
+    ENG405: {
+      courseCode: "ENG 405",
+      courseTitle: "ENGINEERING MANAGEMENT AND LAW",
       creditUnit: 2,
       creditUnits: "(1, 1, 0)",
       preRequisite: null,
       info: [
         {
-          heading: "General",
+          heading: "Organizational Structure and Management",
           content:
-            "Use of library. Use of words and sentence construction. Functions of sentences, purpose structure, correct use of verbs (Action Words)",
+            "Conversion of Engineer to Engineer into managemenr. Managerial functions: functions, principles and techniques of planning, forecasting, organizing techniques activities; project selection and ,manageent. Leadership, styles of leadership and management. Techniques in engineering management, motivation, appraisal, participative and control techniques, personnel management. Management Information System (MIS).",
         },
-      ],
-    },
-    FRN101: {
-      courseCode: "FRN 101",
-      courseTitle: "FRENCH LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(1, 0, 0)",
-      preRequisite: null,
-      info: [
         {
-          heading: "General",
+          heading: "Law",
           content:
-            "The course will introduce the students to the basics of French Language such as greeting in French, French Alphabets, vowels, pronuncation, and accents. The students will also learn the components of French grammar such as the articles, verbs etc",
-        },
-      ],
-    },
-    ENG103: {
-      courseCode: "ENG 103",
-      courseTitle: "ENGINEERING DARWING I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "General",
-          content:
-            "Introduction to Engineering Tools. Planning and Layout of Engineering Drawing. Engineering Drawing Concept. Introduction to Dimensioning types; Dimensioning of circles, holes radii, tolerancing. Descriptive Geometry. Freehand Sketching.",
+            "Professional ethics and conducts. Definition and Specifications; Tenders, Bonds, Construction Forms. Applications of business laws to engineering. Patents and Inventions, trademarks, Copyrights, Contracts and contracts documents. ",
         },
         {
           heading: null,
           content:
-            "Introduction to Drawing/Drafting Software and CAD basic tools. Orthographic multi view projection. Construction of plane shapes using CAD construction techniques.",
-        },
-        {
-          heading: null,
-          content:
-            "Presentation of data and results. Using charts and graphs etc by basic tools; Computer Software. Further dimensioning addition of dimensions to drawing using CAD",
-        },
-      ],
-    },
-    GST103: {
-      courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "Philosophising on Philosophy",
-          content:
-            " Introduction, Removing the mental cobwebs; Philosophy as a form of Knowing; Philosophy and Non-Philosophy; Philosophy and Science; Philosophy and Philosophies",
-        },
-        {
-          heading: "Branches of Philosophy",
-          content:
-            "Metaphysics; Epistemology; Logic; Ethics: General Ethics,Special Ethics, Human Act, Freedom",
-        },
-        {
-          heading: "History of Philosophy Acient Period",
-          content:
-            "Problem of Presocratic Philosophers, Anaximander; Pythagoras, Zeno, Anaxagoras, The Mind and Matter, Sophists",
-        },
-        {
-          heading:
-            "The Golden Age of Greek Philosophy: Socrates, Plato, Aristotle, and Plotinus",
-          content:
-            "Socrates (469 - 399 BCE), Philosophy as a way of life; Ignorance: The cause of wrong doing; The socratic irony; Knowledge as reminiscence; The socratic method; Aristotle (384 -322 BCE); His Philosophy, Aristotle's Logic; Syllogism; His Metaphysics; Happiness, Knowledge",
-        },
-        {
-          heading: "Medieval Philosophy",
-          content:
-            " Introduction; Background of Study; The dark ages; Philosophy in te dark ages; Eras of medieval christian thought; Boethius; Augustine on the existence of God; Attributes of God ",
-        },
-        {
-          heading: "Renaissance Intermission",
-          content:
-            "Renaissance Humanism, Renaissance Art, Architecture, and Science; Renaissance Exploratipon; The protestant reformation; Martin Luther; Francis Bacon; Philosopher of Science",
-        },
-        {
-          heading: "Modern Philosophy",
-          content:
-            "Background to Modern Philosophy; the impacct factors of modern philosophy; The epistemological turn; Epistemology; The existence of God; Mind and Body relation",
-        },
-        {
-          heading: "Contemporary Philosophy and Personailties",
-          content:
-            "Introduction, Historical Overview of Contemporary Philosophy, Basic Tenets of contemporary philosophy, Karl Marx (1818-1883), Marx on economics, Marx Critique of capitalism, Marx on theory of history; Friedrich Nietzsche (1844-1900), His critique of Religion and Morality; His will to power ",
-        },
-        {
-          heading: "Systems of Philosophy",
-          content:
-            "Introduction, Skepticism: Basic tenets, Kinds, Destructive Skepticism, Universal Skepticism, Partial, Constructive Skepticism; Rationalism, Histprical Survey of Rationalism",
-        },
-        {
-          heading: "Some Philosophical Problems",
-          content:
-            "Mind Body relationship, The prolem of universals, Problem of permanence and change or Reality and Appearance; The problem of free will; The problem of evil; The existence of God.",
-        },
-        {
-          heading: "Logic",
-          content:
-            "Brief Historical Development of Logic; The nature and definition of logic; The nature of arguments; Types of Arguments in Logic; Sygollism; Fallacies in Logic; Truth functions and connection of propositions; The value of logic",
-        },
-      ],
-    },
-    IGB101: {
-      courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "Introduction",
-          content:
-            "Nenke nkowa banyere ndi igbo, Nkowa Asusu, uru asusu bara, Mmalite edemede asusu igbo, mkparita uka banyere ndi malitere odide na ogugu asusu igbo dika, Ida Ward, Olauda Equiano, Oldendorp, n'oge ochichindi beke",
-        },
-        {
-          heading: "Mkpuruedemede Igbo ( Otografi onwu )",
-          content: "Ndeputa na nguputa mkpuru edemede igbo na usoro odide",
-        },
-        {
-          heading: "Nkejiasusu Igbo",
-          content:
-            "Mkpoaha n aomumaatu ya; Njuajuju Nnochiaha; Onuougu; Ngwaa; Njiko; Mbuuzo; Nkowaaha; Nkwuwa; Ntimkpu",
-        },
-        {
-          heading: "Akaraedemede",
-          content: `Nkowa ihe bu akara edemede nakwa uru ha bara n'edemede Igbo. Kpom (.) na ebe ndi a na-etinya ha; Rikom (,); Rikomelu ("); Kpom Kpom (:); Akaraajuju (?); Akaramkpu(!). `,
-        },
-        {
-          heading: "Nkebiokwu Igbo",
-          content:
-            "Gini bu nkebiokwu? Nkebiuokwu di iche iche; Omumaatu nkebiokwu di iche iche",
-        },
-        {
-          heading: "Nkebiahiri Igbo",
-          content:
-            "Nkowa ihe bu nkebiahiriokwu; Nkebiahiriokwu di iche iche; Omumaatu nkebiahiriokwu di iche iche",
-        },
-        {
-          heading: "Ahiirokwu Igbo Igbo",
-          content:
-            "Nkowa ihe bu ahiriokwu na odidi ha ahirimfe; ahirirnha; ahiriukwu; ahirimgbagwo",
-        },
-        {
-          heading: "Udi Ahiriokwui di iche iche",
-          content: "Ahirincho; Ahirinkwusa; Ahirinitmiwu",
-        },
-        {
-          heading: "Asusu Igbo dika, Asusu svo",
-          content: "Omumaatu ahiriokwu ndi na egosiputa aha, ngwaa na nnara",
+            " Engineering business types, the responsibilities; professional liability, negligence, abritation, the engineer as an expert witness. Public work Acts and Compensation Acts.",
         },
       ],
     },
   },
   Second: {
-    MTH102: {
-      courseCode: "MTH 101",
-      courseTitle: "ELEMENTARY MATHEMATICS I",
-      creditUnits: "(3, 1, 0)",
-      creditUnit: 4,
-      preRequisite: "Credit 0'Level Math.",
-      info: [
-        {
-          heading: "General",
-          content:
-            "Number systems. Indices. Surds and logarithms. Polynomials. Reminder and factor theorems. Polynomial equations. Rational functions. Partial fractions. Fields ordered fields. Inequalities. Mathematical induction. Permutation and combinations. Binomial theorem. Sequences and series. The Quadratic equation and functions. Relation between the roots and the coefficients. Complex numbers. Addition, subtraction, multiplication and division. Argand diagram. De Movers theorem, nth root of complex numbers. ",
-        },
-        {
-          heading: null,
-          content:
-            " Elementary set theory. Venn diagrams and applications. DeMorgan’s law. Trigonometry. Elementary properties of basic trigonometric functions. Additional formulae and basic identities. Sine and cosine formulae. Half angle formulae. Area of a triangle. Solution of trigonometric equations. Inverse trigonometric functions. Functions, concept and notation examples. Composition, exponential and logarithmic functions. Graphs and properties. ",
-        },
-        {
-          heading: null,
-          content:
-            " Limit and continuity. Techniques for finding limits. The derivative calculation for first principles. Techniques of differentiation. Chain rule order derivatives. Mean value theorem. Applications. Indeterminate forms and L’hospital rule. Tayior and Machlaurin’s series. Curve sketching. Integration as reverse of differentiation, as area, as limit of finite sums. Definite integrals. Properties of definite integrals. Applications.",
-        },
-      ],
-    },
-    PHY101: {
-      courseCode: "PHY 101",
-      courseTitle: "GENERAL PHYSICS I",
-      creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite:
-        "Credit 0'Level Physics and Math and concurrent registeration in MTH 101.",
-      info: [
-        {
-          heading: "General",
-          content:
-            "Space and Time, unit and dimensions; vectors; kinematics, Newton's law; Galileon invariance, statics and dynamics of particles; universal gravitation; work and potential energy; conservation of energy and momentum; rigid bodies; fluid mechanics. Thermal Physics; Thermal properties including elementary thermodynamics and Kinetics Theory.",
-        },
-      ],
-    },
-    CHM101: {
-      courseCode: "CHM 101",
-      courseTitle: "GENERAL CHEMISTRY I",
-      creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite: "Credit 0'Level Chemistry",
-      info: [
-        {
-          heading: "General",
-          content:
-            "Atomic structure and the periodic classification of the elements; ionic and covalent bonding including the effect of dipole-dipole interacting on physical properties. Redox reactions and the concept of oxidation numbers; introduction to gas Kinetics; introduction to nuclear chemistry. Solids and lattices structure; acid-base reactions; general principles of extraction metals.",
-        },
-      ],
-    },
-    BIO103: {
-      courseCode: "BIO 103",
-      courseTitle: "BIOLOGY FOR PHYSICAL SCIENCES",
-      creditUnit: 3,
-      creditUnits: "(2, 0, 1)",
+    SIW400: {
+      courseCode: "SIW 400",
+      courseTitle: "FOURTH YEAR LONG VACATION SIWES",
+      creditUnits: "(6, 0, 0)",
+      creditUnit: 6,
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Scientific methods and the characterictics of living and non-living things. Cell and Tissue biology. Elements of biological chemistry and cellular metabolism. Taxonomy of living things, heredity and evolution. Elements of ecology and types of habitats",
+            "Here 4th year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
         },
       ],
     },
-    ENG101: {
-      courseCode: "ENG 101",
-      courseTitle: "WORKSHOP PRATICE I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "General",
-          content:
-            "Use of engineering measuring instruments: callipers, e.g. Venier Callipers; Giages, e.g. Micrometers; Screw Guage and other devices. Introduction to hand tools, profieciency in the use of wood planers, Hand sawsanders and pattern making.",
-        },
-        {
-          heading: "Sheet Metal Work",
-          content:
-            "Production of sheet metal products-layout, cutting, shaping, simple bend theory etc.",
-        },
-        {
-          heading: "Introduction to Joining Techniques",
-          content:
-            "Soldering, Brazing, Fusion welding, fastening and Assembly. Basic woodworking priniciples and tools finishing and evaluation of finished products.",
-        },
-      ],
-    },
-    GST101: {
-      courseCode: "GST 101",
-      courseTitle: "THE USE OF ENGLISH",
+    SIW401: {
+      courseCode: "SIW 401",
+      courseTitle: "FOURTH YEAR LONG VACATION SIWES",
       creditUnit: 2,
-      creditUnits: "(1, 1, 0)",
+      creditUnits: "(2, 0, 0)",
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Use of library. Use of words and sentence construction. Functions of sentences, purpose structure, correct use of verbs (Action Words)",
-        },
-      ],
-    },
-    FRN101: {
-      courseCode: "FRN 101",
-      courseTitle: "FRENCH LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(1, 0, 0)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "General",
-          content:
-            "The course will introduce the students to the basics of French Language such as greeting in French, French Alphabets, vowels, pronuncation, and accents. The students will also learn the components of French grammar such as the articles, verbs etc",
-        },
-      ],
-    },
-    ENG103: {
-      courseCode: "ENG 103",
-      courseTitle: "ENGINEERING DARWING I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "General",
-          content:
-            "Introduction to Engineering Tools. Planning and Layout of Engineering Drawing. Engineering Drawing Concept. Introduction to Dimensioning types; Dimensioning of circles, holes radii, tolerancing. Descriptive Geometry. Freehand Sketching.",
-        },
-        {
-          heading: null,
-          content:
-            "Introduction to Drawing/Drafting Software and CAD basic tools. Orthographic multi view projection. Construction of plane shapes using CAD construction techniques.",
-        },
-        {
-          heading: null,
-          content:
-            "Presentation of data and results. Using charts and graphs etc by basic tools; Computer Software. Further dimensioning addition of dimensions to drawing using CAD",
-        },
-      ],
-    },
-    GST103: {
-      courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "Philosophising on Philosophy",
-          content:
-            " Introduction, Removing the mental cobwebs; Philosophy as a form of Knowing; Philosophy and Non-Philosophy; Philosophy and Science; Philosophy and Philosophies",
-        },
-        {
-          heading: "Branches of Philosophy",
-          content:
-            "Metaphysics; Epistemology; Logic; Ethics: General Ethics,Special Ethics, Human Act, Freedom",
-        },
-        {
-          heading: "History of Philosophy Acient Period",
-          content:
-            "Problem of Presocratic Philosophers, Anaximander; Pythagoras, Zeno, Anaxagoras, The Mind and Matter, Sophists",
-        },
-        {
-          heading:
-            "The Golden Age of Greek Philosophy: Socrates, Plato, Aristotle, and Plotinus",
-          content:
-            "Socrates (469 - 399 BCE), Philosophy as a way of life; Ignorance: The cause of wrong doing; The socratic irony; Knowledge as reminiscence; The socratic method; Aristotle (384 -322 BCE); His Philosophy, Aristotle's Logic; Syllogism; His Metaphysics; Happiness, Knowledge",
-        },
-        {
-          heading: "Medieval Philosophy",
-          content:
-            " Introduction; Background of Study; The dark ages; Philosophy in te dark ages; Eras of medieval christian thought; Boethius; Augustine on the existence of God; Attributes of God ",
-        },
-        {
-          heading: "Renaissance Intermission",
-          content:
-            "Renaissance Humanism, Renaissance Art, Architecture, and Science; Renaissance Exploratipon; The protestant reformation; Martin Luther; Francis Bacon; Philosopher of Science",
-        },
-        {
-          heading: "Modern Philosophy",
-          content:
-            "Background to Modern Philosophy; the impacct factors of modern philosophy; The epistemological turn; Epistemology; The existence of God; Mind and Body relation",
-        },
-        {
-          heading: "Contemporary Philosophy and Personailties",
-          content:
-            "Introduction, Historical Overview of Contemporary Philosophy, Basic Tenets of contemporary philosophy, Karl Marx (1818-1883), Marx on economics, Marx Critique of capitalism, Marx on theory of history; Friedrich Nietzsche (1844-1900), His critique of Religion and Morality; His will to power ",
-        },
-        {
-          heading: "Systems of Philosophy",
-          content:
-            "Introduction, Skepticism: Basic tenets, Kinds, Destructive Skepticism, Universal Skepticism, Partial, Constructive Skepticism; Rationalism, Histprical Survey of Rationalism",
-        },
-        {
-          heading: "Some Philosophical Problems",
-          content:
-            "Mind Body relationship, The prolem of universals, Problem of permanence and change or Reality and Appearance; The problem of free will; The problem of evil; The existence of God.",
-        },
-        {
-          heading: "Logic",
-          content:
-            "Brief Historical Development of Logic; The nature and definition of logic; The nature of arguments; Types of Arguments in Logic; Sygollism; Fallacies in Logic; Truth functions and connection of propositions; The value of logic",
-        },
-      ],
-    },
-    IGB101: {
-      courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "Introduction",
-          content:
-            "Nenke nkowa banyere ndi igbo, Nkowa Asusu, uru asusu bara, Mmalite edemede asusu igbo, mkparita uka banyere ndi malitere odide na ogugu asusu igbo dika, Ida Ward, Olauda Equiano, Oldendorp, n'oge ochichindi beke",
-        },
-        {
-          heading: "Mkpuruedemede Igbo ( Otografi onwu )",
-          content: "Ndeputa na nguputa mkpuru edemede igbo na usoro odide",
-        },
-        {
-          heading: "Nkejiasusu Igbo",
-          content:
-            "Mkpoaha n aomumaatu ya; Njuajuju Nnochiaha; Onuougu; Ngwaa; Njiko; Mbuuzo; Nkowaaha; Nkwuwa; Ntimkpu",
-        },
-        {
-          heading: "Akaraedemede",
-          content: `Nkowa ihe bu akara edemede nakwa uru ha bara n'edemede Igbo. Kpom (.) na ebe ndi a na-etinya ha; Rikom (,); Rikomelu ("); Kpom Kpom (:); Akaraajuju (?); Akaramkpu(!). `,
-        },
-        {
-          heading: "Nkebiokwu Igbo",
-          content:
-            "Gini bu nkebiokwu? Nkebiuokwu di iche iche; Omumaatu nkebiokwu di iche iche",
-        },
-        {
-          heading: "Nkebiahiri Igbo",
-          content:
-            "Nkowa ihe bu nkebiahiriokwu; Nkebiahiriokwu di iche iche; Omumaatu nkebiahiriokwu di iche iche",
-        },
-        {
-          heading: "Ahiirokwu Igbo Igbo",
-          content:
-            "Nkowa ihe bu ahiriokwu na odidi ha ahirimfe; ahirirnha; ahiriukwu; ahirimgbagwo",
-        },
-        {
-          heading: "Udi Ahiriokwui di iche iche",
-          content: "Ahirincho; Ahirinkwusa; Ahirinitmiwu",
-        },
-        {
-          heading: "Asusu Igbo dika, Asusu svo",
-          content: "Omumaatu ahiriokwu ndi na egosiputa aha, ngwaa na nnara",
+            "Here 4th year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
         },
       ],
     },

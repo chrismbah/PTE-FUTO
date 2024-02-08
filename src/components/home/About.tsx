@@ -3,7 +3,7 @@ import vision from "../../utils/animation/vision.json";
 
 export default function About() {
   return (
-    <div className="bg-gray-50">
+    <div className="home-gray-bg">
       <div className="box-width">
         <div className="section section-flex-between-reverse">
           <div className="max-w-[500px] mmd:max-w-[900px]  mmd:w-[800px] mmd:min-w-[450px]">

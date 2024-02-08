@@ -1,15 +1,19 @@
 import { FC } from "react";
-import { CourseOutlines } from "../../../models/academics/courseOutline";
+import { CourseOutlines } from "../../../models/academics/course-outline/courseOutline";
 import { Link } from "react-router-dom";
+import arrow from "../../../assets/svg/icons/arrowRight.svg";
+
 export const CourseOutlineCard: FC<CourseOutlines> = ({
   icon,
   title,
   level,
-  route,
 }) => {
   return (
     <Link to={`/course-outlines/${level}`}>
-      <div className="max-w-auto xsm:max-w-[460px] p-6 bg-white shadow-1 transition duration-200 ease-in hover:shadow-md">
+      <div
+        className="max-w-auto xsm:max-w-[460px] p-6
+       bg-white shadow-1 transition duration-200 ease-in hover:shadow-md border-2 border-gray-200"
+      >
         <img src={icon} alt="Book" className="w-16 h-16" />
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {title}
@@ -19,9 +23,9 @@ export const CourseOutlineCard: FC<CourseOutlines> = ({
           Level students, providing essential information to make informed
           decisions about your academic journey.
         </p>
-        <a href={route} className="font-[600] items-center text-green2">
-          Check Course Outline
-        </a>
+        <div className="font-[600] inline-flex justify-start items-center text-green2">
+          Check Course Outline <img src={arrow} alt=">" className="w-6" />
+        </div>
       </div>
     </Link>
   );

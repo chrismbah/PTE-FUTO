@@ -1,6 +1,21 @@
-import { CourseInfo } from "../../../../../../models/academics/courseInfo";
+import { CourseInfo } from "../../../../../../models/academics/course-outline/courseInfo";
 export const courseInfo100: CourseInfo = {
   First: {
+    PHY101: {
+      courseCode: "PHY 101",
+      courseTitle: "GENERAL PHYSICS I",
+      creditUnit: 4,
+      creditUnits: "(2, 1, 1)",
+      preRequisite:
+        "Credit 0'Level Physics and Math and concurrent registeration in MTH 101.",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Space and Time, unit and dimensions; vectors; kinematics, Newton's law; Galileon invariance, statics and dynamics of particles; universal gravitation; work and potential energy; conservation of energy and momentum; rigid bodies; fluid mechanics. Thermal Physics; Thermal properties including elementary thermodynamics and Kinetics Theory.",
+        },
+      ],
+    },
     MTH101: {
       courseCode: "MTH 101",
       courseTitle: "ELEMENTARY MATHEMATICS I",
@@ -22,21 +37,6 @@ export const courseInfo100: CourseInfo = {
           heading: null,
           content:
             " Limit and continuity. Techniques for finding limits. The derivative calculation for first principles. Techniques of differentiation. Chain rule order derivatives. Mean value theorem. Applications. Indeterminate forms and L’hospital rule. Tayior and Machlaurin’s series. Curve sketching. Integration as reverse of differentiation, as area, as limit of finite sums. Definite integrals. Properties of definite integrals. Applications.",
-        },
-      ],
-    },
-    PHY101: {
-      courseCode: "PHY 101",
-      courseTitle: "GENERAL PHYSICS I",
-      creditUnit: 4,
-      creditUnits: "(2, 1, 1)",
-      preRequisite:
-        "Credit 0'Level Physics and Math and concurrent registeration in MTH 101.",
-      info: [
-        {
-          heading: "General",
-          content:
-            "Space and Time, unit and dimensions; vectors; kinematics, Newton's law; Galileon invariance, statics and dynamics of particles; universal gravitation; work and potential energy; conservation of energy and momentum; rigid bodies; fluid mechanics. Thermal Physics; Thermal properties including elementary thermodynamics and Kinetics Theory.",
         },
       ],
     },
@@ -146,7 +146,7 @@ export const courseInfo100: CourseInfo = {
     },
     GST103: {
       courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
+      courseTitle: "PHILOSOPHY AND LOGIC I",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,
@@ -211,7 +211,7 @@ export const courseInfo100: CourseInfo = {
     },
     IGB101: {
       courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE I",
+      courseTitle: "INTRODUCTION TO IGBO HISTORY, CULTURE, AND LITERATURE I",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,
@@ -394,7 +394,8 @@ export const courseInfo100: CourseInfo = {
       info: [
         {
           heading: "General",
-          content: "Here the students will be drilled in French Grammar proper, dialogue an dother oral exercise. The student will also be introduced into reading, starting with France Afrique Book 1. At the end of this course the students should be able to speak baisc French and be able to tell time in French. "
+          content:
+            "Here the students will be drilled in French Grammar proper, dialogue an dother oral exercise. The student will also be introduced into reading, starting with France Afrique Book 1. At the end of this course the students should be able to speak baisc French and be able to tell time in French. ",
         },
       ],
     },
@@ -424,7 +425,7 @@ export const courseInfo100: CourseInfo = {
     },
     GST110: {
       courseCode: "GST 110",
-      courseTitle: "Philosophy and Logic II",
+      courseTitle: "PHILOSOPHY AND LOGIC II",
       creditUnit: 1,
       creditUnits: "(1, 0, 0)",
       preRequisite: null,
@@ -448,7 +449,7 @@ export const courseInfo100: CourseInfo = {
     },
     IGB102: {
       courseCode: "IGB 102",
-      courseTitle: "Introducion to Igbo History, Culture, and Literature I",
+      courseTitle: "INTRODUCTION TO IGBO HISTORY, CULTURE, AND LITERATURE II",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,

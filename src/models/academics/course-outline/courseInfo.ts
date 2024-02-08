@@ -1,6 +1,6 @@
 export interface CourseContent {
   heading: string | null;
-  content: string;
+  content: string | null;
 }
 
 export interface CourseInfo {

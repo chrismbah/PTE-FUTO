@@ -1,9 +1,9 @@
-import { CourseInfo } from "../../../../../../models/academics/courseInfo";
+import { CourseInfo } from "../../../../../../models/academics/course-outline/courseInfo";
 export const courseInfo200: CourseInfo = {
   First: {
     MTH203: {
       courseCode: "MTH 203",
-      courseTitle: "Ordinary Differential Equations",
+      courseTitle: "ORDINARY DIFFERENTIAL EQUATIONS",
       creditUnits: "(3, 1, 0)",
       creditUnit: 4,
       preRequisite: "Credit 0'Level Math.",
@@ -220,7 +220,7 @@ export const courseInfo200: CourseInfo = {
       preRequisite: null,
       info: [
         {
-          heading: "Science, Technology and Engineering",
+          heading: "General",
           content:
             "Definitions, historical development of engineering, science and technology. The Engineering family: The Engineer, Technologist, Technician, Artisans and Craftsmen. Roles of Engineers in the society; In space travel missions, oil and gas productin operations, politics, law medicine, education etc.",
         },
@@ -324,9 +324,9 @@ export const courseInfo200: CourseInfo = {
         },
       ],
     },
-    ENG101: {
-      courseCode: "ENG 101",
-      courseTitle: "WORKSHOP PRATICE I",
+    ENG206: {
+      courseCode: "ENG 206",
+      courseTitle: "WORKSHOP PRATICE IV",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: null,
@@ -334,83 +334,118 @@ export const courseInfo200: CourseInfo = {
         {
           heading: "General",
           content:
-            "Use of engineering measuring instruments: callipers, e.g. Venier Callipers; Giages, e.g. Micrometers; Screw Guage and other devices. Introduction to hand tools, profieciency in the use of wood planers, Hand sawsanders and pattern making.",
+            "Manufacture of simple Engineering/Technology products to specofications using machinery foundry, welding and woodworking technologies. Introduction to Computer Aided Design/Drawing (CAD/CAM). Inspection and testing of the manufacturing products for accuracy, appropriate equipment and methods.",
         },
         {
-          heading: "Sheet Metal Work",
+          heading: "Manufacturing Processes and Methods",
           content:
-            "Production of sheet metal products-layout, cutting, shaping, simple bend theory etc.",
+            "For Manufacturing Engineering and Technology. Products to specifications: Applications of safety in the workshop, safety on the job, safety in the modern Engineering workshop, personal grooming, housekeeping, and fire prevention techniques. Introduction to Computer Numerical Control (CNC), Machinig for the manufacture of Engineering and Technology Products. Machinig and Machining sequence of operations, How to machine a workpiece held on the chuck. Machining external and internal diameters in machine chuck.",
         },
         {
-          heading: "Introduction to Joining Techniques",
+          heading: "Measurement",
           content:
-            "Soldering, Brazing, Fusion welding, fastening and Assembly. Basic woodworking priniciples and tools finishing and evaluation of finished products.",
+            "The use of measuring instrument for manufacturing, inspection an control of dimensions to specifications, metric (decimal) systems, dual system of measurement, symbols for use wit S.I quantities. Basic measurement. Inch measurement, metric measurement, metric system, fractional measurement, use of steel rules, metric and fractional steel rules. Precison measuring instruments: Venier Callipers, Micrometers, square and surface plates, machinists combination square ability to test the acxcuracy of micrometers.",
+        },
+        {
+          heading: "Applications of basic Foundry Technolgy",
+          content:
+            "Use of foundry machinery and equipment to manufacture desired products in the workshop. Basic steps in making sand castings, sand testing, mixing of sands, preparation of moulds.",
+        },
+        {
+          heading: "Patterns",
+          content:
+            "Patterns making solid, split, sweep patterns, hoisting gates and risers. Prototype patterns, Gated patterns, match plate patterns, average linear shrinkage of castings, cleaning and inspection.",
+        },
+        {
+          heading: "Applications of Welding Technology Techniques",
+          content:
+            "To manufacture Engineering and Technology products to specification in the workshop etc. Application of joinig methods, techniques, snd procedures to achieve the manufacturing of engineering and technology products to specification using the lastes welding technology techniques eg. Electric Arc Welding, Gas Welding etc",
         },
       ],
     },
-    GST101: {
-      courseCode: "GST 101",
-      courseTitle: "THE USE OF ENGLISH",
+    ENG214: {
+      courseCode: "ENG 214",
+      courseTitle: "COMPUTER PROGRAMMING FOR ENGINEERING APPLICATIONS",
       creditUnit: 2,
-      creditUnits: "(1, 1, 0)",
+      creditUnits: "(1, 0, 1)",
       preRequisite: null,
       info: [
         {
           heading: "General",
           content:
-            "Use of library. Use of words and sentence construction. Functions of sentences, purpose structure, correct use of verbs (Action Words)",
-        },
-      ],
-    },
-    FRN101: {
-      courseCode: "FRN 101",
-      courseTitle: "FRENCH LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(1, 0, 0)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "General",
-          content:
-            "The course will introduce the students to the basics of French Language such as greeting in French, French Alphabets, vowels, pronuncation, and accents. The students will also learn the components of French grammar such as the articles, verbs etc",
-        },
-      ],
-    },
-    ENG103: {
-      courseCode: "ENG 103",
-      courseTitle: "ENGINEERING DARWING I",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
-      preRequisite: null,
-      info: [
-        {
-          heading: "General",
-          content:
-            "Introduction to Engineering Tools. Planning and Layout of Engineering Drawing. Engineering Drawing Concept. Introduction to Dimensioning types; Dimensioning of circles, holes radii, tolerancing. Descriptive Geometry. Freehand Sketching.",
+            "Introduction to C/C++ programming language. The MAIN() function, comment lines, types conversions, constants, expression. The PRINTF function. The SCANF function. The assignment statement formatted input and output statement. Arithmetic operators. The IF Statement. Comparison operators, Logical operators. ",
         },
         {
           heading: null,
+
           content:
-            "Introduction to Drawing/Drafting Software and CAD basic tools. Orthographic multi view projection. Construction of plane shapes using CAD construction techniques.",
-        },
-        {
-          heading: null,
-          content:
-            "Presentation of data and results. Using charts and graphs etc by basic tools; Computer Software. Further dimensioning addition of dimensions to drawing using CAD",
+            "Nested IF ELSE statements, UNARY Operators, Ternary Operators. Bitwise operators, Combined operators, Table of priority of C/C++ operators. The While loop, The Do While Loop, The For Loop statement, The Nested Loops, unconditional program branching. The Go To statement, The Continue statement, the Break and Switch statement. Applications of C/C++ programming languages in solving engineering problems. ",
         },
       ],
     },
-    GST103: {
-      courseCode: "GST 103",
-      courseTitle: "Philosophy and Logic",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    ENG224: {
+      courseCode: "ENG 224",
+      courseTitle: "ENGINEERING MECHANICS II (DYNAMICS)",
+      creditUnit: 2,
+      creditUnits: "(1, 0, 1)",
       preRequisite: null,
       info: [
         {
-          heading: "Philosophising on Philosophy",
+          heading: "General",
           content:
-            " Introduction, Removing the mental cobwebs; Philosophy as a form of Knowing; Philosophy and Non-Philosophy; Philosophy and Science; Philosophy and Philosophies",
+            "Newtonian principles of dynamics of particles and rigid bodies applied to one dimensional and two-dimensional motions: Force system resultants structural analysis, kinematics and kinetics of particles and rigid bodies motions; Methods of impulse and momentum, linear and angular momentum, work and energy. Relative motion concepts. Computer applications and simulation of engineering mechanics and dynamics.",
+        },
+        {
+          heading: "Laboratory",
+          content:
+            "Experiments illustrating dynamics of particles and rigid bodies, material elasticity, friction and machines.",
+        },
+      ],
+    },
+    ENG226: {
+      courseCode: "ENG 226",
+      courseTitle: "INTRODUCTION TO ELECTRICAL AND ELECTRONICS ENGINEERING",
+      creditUnit: 3,
+      creditUnits: "(1, 1, 1)",
+      preRequisite: "MTH 101, MTH 102, PHY 102",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Review of Electrostatics amd Electromagnetism. Transient and steady state analysis of circuits; network theorems and techniques, passive and active circuits and building blockc, sinusoidal analysis and phase.",
+        },
+        {
+          heading: "Transformers",
+          content: "Principle of Operators",
+        },
+        {
+          heading: "Electrical Mechanics",
+          content:
+            "Principles and Operations of electrical machines, principles and operation of electrical machines motors generators, single and poly-phase systems. Introduction to electronic circuits and devices, P.N. junction, junction diode.",
+        },
+        {
+          heading: "Transistors",
+          content:
+            "Bipolar transistor field effect transistors (FETS). Introduction to Integrated Circuit (C) Design ",
+        },
+        {
+          heading: "Laboratory",
+          content:
+            "Analogue and Digital instrumentation and systems application of operational amplifiers, associated laboratory experiments.",
+        },
+      ],
+    },
+    PTE202: {
+      courseCode: "PTE 202",
+      courseTitle: "INTRODUCTION TO POLYMER AND TEXTILE ENGINEERING",
+      creditUnit: 3,
+      creditUnits: "(2, 0, 1)",
+      preRequisite: null,
+      info: [
+        {
+          heading: "General",
+          content:
+            "Survey of the structre and statistics of polymer and textile indiustries; small and large companies, horizontal and vertical integration, General plant layouts and rubber, fibre and textile ,manufacture; processing and fabrication. Technical services for plant and sales various allied industries plastics. Plant, resins, rubber, textile, foam, adhesive, paper.",
         },
         {
           heading: "Branches of Philosophy",
@@ -418,100 +453,23 @@ export const courseInfo200: CourseInfo = {
             "Metaphysics; Epistemology; Logic; Ethics: General Ethics,Special Ethics, Human Act, Freedom",
         },
         {
-          heading: "History of Philosophy Acient Period",
+          heading: "Classification of Polymers",
           content:
-            "Problem of Presocratic Philosophers, Anaximander; Pythagoras, Zeno, Anaxagoras, The Mind and Matter, Sophists",
-        },
-        {
-          heading:
-            "The Golden Age of Greek Philosophy: Socrates, Plato, Aristotle, and Plotinus",
-          content:
-            "Socrates (469 - 399 BCE), Philosophy as a way of life; Ignorance: The cause of wrong doing; The socratic irony; Knowledge as reminiscence; The socratic method; Aristotle (384 -322 BCE); His Philosophy, Aristotle's Logic; Syllogism; His Metaphysics; Happiness, Knowledge",
-        },
-        {
-          heading: "Medieval Philosophy",
-          content:
-            " Introduction; Background of Study; The dark ages; Philosophy in te dark ages; Eras of medieval christian thought; Boethius; Augustine on the existence of God; Attributes of God ",
-        },
-        {
-          heading: "Renaissance Intermission",
-          content:
-            "Renaissance Humanism, Renaissance Art, Architecture, and Science; Renaissance Exploratipon; The protestant reformation; Martin Luther; Francis Bacon; Philosopher of Science",
-        },
-        {
-          heading: "Modern Philosophy",
-          content:
-            "Background to Modern Philosophy; the impacct factors of modern philosophy; The epistemological turn; Epistemology; The existence of God; Mind and Body relation",
-        },
-        {
-          heading: "Contemporary Philosophy and Personailties",
-          content:
-            "Introduction, Historical Overview of Contemporary Philosophy, Basic Tenets of contemporary philosophy, Karl Marx (1818-1883), Marx on economics, Marx Critique of capitalism, Marx on theory of history; Friedrich Nietzsche (1844-1900), His critique of Religion and Morality; His will to power ",
-        },
-        {
-          heading: "Systems of Philosophy",
-          content:
-            "Introduction, Skepticism: Basic tenets, Kinds, Destructive Skepticism, Universal Skepticism, Partial, Constructive Skepticism; Rationalism, Histprical Survey of Rationalism",
-        },
-        {
-          heading: "Some Philosophical Problems",
-          content:
-            "Mind Body relationship, The prolem of universals, Problem of permanence and change or Reality and Appearance; The problem of free will; The problem of evil; The existence of God.",
-        },
-        {
-          heading: "Logic",
-          content:
-            "Brief Historical Development of Logic; The nature and definition of logic; The nature of arguments; Types of Arguments in Logic; Sygollism; Fallacies in Logic; Truth functions and connection of propositions; The value of logic",
+            "Survey of type of fibres an dtextiles. Structure of polymers , techniques of polymer formation (bullk, suspension, solution); molecular weight concept. Raw materials: Coal, petroleum, natural gas, proteins, cotton, natural rubbers.",
         },
       ],
     },
-    IGB101: {
-      courseCode: "IGB 101",
-      courseTitle: "IGBO LANGUAGE",
-      creditUnit: 1,
-      creditUnits: "(0, 0, 1)",
+    SIW200: {
+      courseCode: "SIW 200",
+      courseTitle: "SECOND YEAR LONG VACATION SIWES",
+      creditUnit: 2,
+      creditUnits: "(2, 0, 0)",
       preRequisite: null,
       info: [
         {
-          heading: "Introduction",
+          heading: "General",
           content:
-            "Nenke nkowa banyere ndi igbo, Nkowa Asusu, uru asusu bara, Mmalite edemede asusu igbo, mkparita uka banyere ndi malitere odide na ogugu asusu igbo dika, Ida Ward, Olauda Equiano, Oldendorp, n'oge ochichindi beke",
-        },
-        {
-          heading: "Mkpuruedemede Igbo ( Otografi onwu )",
-          content: "Ndeputa na nguputa mkpuru edemede igbo na usoro odide",
-        },
-        {
-          heading: "Nkejiasusu Igbo",
-          content:
-            "Mkpoaha n aomumaatu ya; Njuajuju Nnochiaha; Onuougu; Ngwaa; Njiko; Mbuuzo; Nkowaaha; Nkwuwa; Ntimkpu",
-        },
-        {
-          heading: "Akaraedemede",
-          content: `Nkowa ihe bu akara edemede nakwa uru ha bara n'edemede Igbo. Kpom (.) na ebe ndi a na-etinya ha; Rikom (,); Rikomelu ("); Kpom Kpom (:); Akaraajuju (?); Akaramkpu(!). `,
-        },
-        {
-          heading: "Nkebiokwu Igbo",
-          content:
-            "Gini bu nkebiokwu? Nkebiuokwu di iche iche; Omumaatu nkebiokwu di iche iche",
-        },
-        {
-          heading: "Nkebiahiri Igbo",
-          content:
-            "Nkowa ihe bu nkebiahiriokwu; Nkebiahiriokwu di iche iche; Omumaatu nkebiahiriokwu di iche iche",
-        },
-        {
-          heading: "Ahiirokwu Igbo Igbo",
-          content:
-            "Nkowa ihe bu ahiriokwu na odidi ha ahirimfe; ahirirnha; ahiriukwu; ahirimgbagwo",
-        },
-        {
-          heading: "Udi Ahiriokwui di iche iche",
-          content: "Ahirincho; Ahirinkwusa; Ahirinitmiwu",
-        },
-        {
-          heading: "Asusu Igbo dika, Asusu svo",
-          content: "Omumaatu ahiriokwu ndi na egosiputa aha, ngwaa na nnara",
+            "Here 2nd year students are required to participate in SIWES (Students Industrial Work Experience Scheme) which involves attending orientation, finding an approved placement relating to their course work, and working there for a designated period. During this time, students are obligated to perform relevant tasks, communicate with their institution, and adhere to workplace rules. Afterwards, they submit a report, present their findings, and discuss their experience with advisors.",
         },
       ],
     },

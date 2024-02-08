@@ -1,10 +1,9 @@
 export default function Spinner() {
   return (
-    <div className="text-center flex items-center justify-center h-screen w-full">
       <div role="status">
         <svg
           aria-hidden="true"
-          className="inline w-12 h-12 text-gray-200 animate-spin dark:text-gray-600 fill-green1"
+          className="inline w-6 text-gray-200 animate-spin dark:text-gray-600 fill-green1"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +19,5 @@ export default function Spinner() {
         </svg>
         <span className="sr-only">Loading...</span>
       </div>
-    </div>
   );
 }

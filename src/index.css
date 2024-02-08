@@ -9,16 +9,29 @@
     box-shadow:  29px 29px 58px #d9d9d9,-29px -29px 58px #ffffff;
 }
 .shadow-1a{
-    background: linear-gradient(45deg, #e6e6e6, #ffffff);
-    box-shadow:  5px -5px 20px #ededed, -5px 5px 20px #ffffff;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  0px 0px 0px #d9d9d9,-29px -29px 58px #ffffff;
 }
 
+.shadow-2{
+background: linear-gradient(225deg, #dfe1e3, #ffffff);
+box-shadow:  -5px 5px 32px #eef0f2,
+             5px -5px 32px #ffffff;
+}
+.shadow-3{
+background: linear-gradient(145deg, #dfe1e3, #ffffff);
+box-shadow:  20px 20px 60px #d3d5d6,
+             -20px -20px 60px #ffffff;
+}
+.home-gray-bg{
+    @apply shadow-1a bg-gray-50
+}
 
 h1{
     @apply text-4xl
 }
 h2{
-    @apply text-2xl md:text-3xl font-[500]
+    @apply text-2xl md:text-3xl font-[600]
 }
 h3{
     @apply text-xl sm:text-2xl font-[500]
@@ -28,6 +41,9 @@ h3{
 }
 .box-width{
     @apply 2xl:max-w-[1420px] w-full mx-auto
+}
+.box-width2{
+    @apply xl:max-w-[1280px] w-full mx-auto
 }
 .auth-btn{
  @apply bg-green1 hover:bg-green2 text-white font-semibold ss:text-base ss:px-4 ss:py-2 text-sm px-3 py-1 rounded-md 
@@ -41,6 +57,7 @@ h3{
 .page-section{
     @apply px-3 sm:px-14 sm:py-24 py-20
 }
+
 .course-outline-section{
     @apply px-3 xxss:px-6 ss:px-8 sm:px-14 sm:py-24 py-20
 }
@@ -71,23 +88,11 @@ h3{
 .bar-style2{
     @apply h-[2px] w-[90px] bg-green1
 }
-.bar-style3{
-    @apply after:absolute after:bottom-0 after:left-0 after:content-[""] after:block after:w-full after:h-[2px] after:bg-green1
-    /* .links a.active::after{
-        position: absolute;
-        bottom: 0;
-        left:0;
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--color-primary-100);
-        transition: var(--transition-3);
-      } */
-}
 .gpa-btn{
     @apply text-sm px-3 py-[7px] xss:py-2.5  text-white font-semibold w-full rounded-lg
 }
-
+.heading-p{
+    @apply text-gray-800 text-center text-xs xsm:text-base font-[500]
+}
 
 

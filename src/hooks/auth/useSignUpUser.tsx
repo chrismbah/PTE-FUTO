@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ISignUpForm } from "../../models/form";
+import { ISignUpForm } from "../../models/auth/form";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { signUpSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useToast } from "../useToast";
+import { useToast } from "../notification/useToast";
 
 export default function useSignUpUser() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -38,7 +38,10 @@ export default function useSignUpUser() {
       setLoading(false);
       reset();
       navigate("/");
-      useToast("success", "Registeration Successful. Explore, learn, and enjoy your stay.");
+      useToast(
+        "success",
+        "Registeration Successful. Explore, learn, and enjoy your stay."
+      );
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {
         useToast("error", "Email Account already in use");
@@ -49,5 +52,5 @@ export default function useSignUpUser() {
     }
   };
 
-  return {signUpUser, loading};
+  return { signUpUser, loading };
 }
