@@ -8,25 +8,22 @@ export default function StudyTip() {
 
   return (
     <>
-      <div>
+      <div className="">
         <div onClick={() => setToggleTip(!toggleTip)} className="relative">
-          <InfoIcon />
+          <InfoIcon style="w-5 h-5 ms-2  cursor-pointer text-gray-400 hover:text-gray-500" />
         </div>
         <div
-          className={`${toggleTip ? "hidden" : "block"} absolute -right-[350%] transition duration-300 ease-in-out `}
+          className={`${toggleTip ? "opacity-100 z-50" : "opacity-0 z-[-9]"} 
+          rounded-lg border border-gray-300 absolute top-8 right-[] xsm:-left-[360%] transition duration-300 ease-in-out `}
         >
-          <div className="flex items-center justify-center w-full">
-            <div
-              className={`font-dmSans w-64 text-sm border-4 border-gray-600 text-gray-500 dark:text-gray-40`}
-            >
-              <div className="border-b border-gray-200 bg-gray-100 px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
-                <h4 className="font-semibold text-gray-900 dark:text-white">
-                  Learning Tip
-                </h4>
-              </div>
-              <div className="px-3 py-2">
-                <p>{studyTip}</p>
-              </div>
+          <div className="w-40 xsm:w-64 text-sm">
+            <div className=" rounded-t-lg px-3 py-2 bg-gray-100">
+              <h4 className="font-semibold text-ss  sss:text-sm xsm:text-base text-gray-900">
+                Learning Tip
+              </h4>
+            </div>
+            <div className="px-3 py-2 bg-white rounded-b-lg ">
+              <p className="text-ss font-medium text-gray-600">{studyTip}</p>
             </div>
           </div>
         </div>

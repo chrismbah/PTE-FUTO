@@ -1,7 +1,13 @@
-export const InfoIcon = () => {
+import {FC} from "react"
+interface StyleProp{
+  style: string
+}
+export const InfoIcon: FC<StyleProp> = () => {
+  
   return (
     <svg
     className="w-5 h-5 ms-2  cursor-pointer text-gray-400 hover:text-gray-500"
+    // className={style}
     aria-hidden="true"
     fill="currentColor"
     viewBox="0 0 20 20"

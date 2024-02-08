@@ -20,7 +20,7 @@ export default function LearningResourcesCourses() {
           <h4 className="text-base font-bold mb-4 sm:text-md">
             First Semester <div className="bar-style" />
           </h4>
-          <div className="mb-16 grid items-center  grid-cols-2 xxss:grid-cols-3 ss:grid-cols-4 mmd:grid-cols-5 gap-4 ">
+          <div className="mb-16  grid items-center grid-cols-2 xss:grid-cols-3 sss:grid-cols-4 mmd:grid-cols-5 gap-4">
             {level &&
               courses[level]["First"].courseInfo.map((info, i) => (
                 <CoursesCard key={i} {...info} />
@@ -31,7 +31,7 @@ export default function LearningResourcesCourses() {
               <h4 className="text-md font-bold mb-2">
                 Second Semseter <div className="bar-style" />
               </h4>
-              <div className="mb-16 grid items-center grid-cols-2 xxss:grid-cols-3 ss:grid-cols-4 mmd:grid-cols-5 gap-4 ">
+              <div className="mb-16 grid items-center grid-cols-2 xss:grid-cols-3 sss:grid-cols-4 mmd:grid-cols-5 gap-4 ">
                 {courses[level]["Second"].courseInfo.map((info, i) => (
                   <CoursesCard key={i} {...info} />
                 ))}
