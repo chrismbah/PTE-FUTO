@@ -28,9 +28,14 @@ export interface Courses {
     };
   }
   }
-
   export interface Content {
     name: string;
     size: number;
     path: string;
   }
+  
+export interface FileMetadata {
+  name: string;
+  path: string;
+  size: number;
+}

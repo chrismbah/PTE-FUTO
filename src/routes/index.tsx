@@ -10,7 +10,7 @@ const AppRoutes = () => {
   const [user] = useState(true);
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       {user ? <AuthenticatedRoutes /> : <GeneralRoutes />}
     </>
   );

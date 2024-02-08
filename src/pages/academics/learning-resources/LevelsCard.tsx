@@ -8,7 +8,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 export const LevelsCard: FC<LevelCard> = ({ level, title, desc }) => {
   return (
     <Link to={`/learning-resources/${level}`}>
-      <div className="w-full mx-auto hover:bg-gray-100 border-2 border-transparent hover:border-green1 rounded-lg p-2">
+      <div className="w-full py-8 mx-auto hover:bg-gray-100 border-2 border-transparent hover:border-green1 rounded-lg p-2">
         <div className="flex items-center justify-center">
           <div className="w-[80px] sm:w-[95px]">
           <img src={folder} alt="folder" className="w-full" />

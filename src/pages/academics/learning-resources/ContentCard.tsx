@@ -6,7 +6,7 @@ import { Content } from "../../../models/academics/learning-resources";
 import { useToast } from "../../../hooks/notification/useToast";
 import fileDownloadIcon from "../../../assets/svg/icons/fileDownload.svg";
 import Spinner from "../../../components/loaders/Spinner";
-import {Tooltip} from "flowbite-react"
+import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";
 
 export const ContentCard: FC<Content> = ({ name, size, path }) => {
@@ -42,9 +42,9 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
     });
   };
   return (
-    <div className="w-full h-[75px] ss:h-[100px] shadow-md bg-white hover:shadow-lg transition duration-150 rounded-md p-2 ss:p-4 ">
+    <div className="w-full h-[75px] sss:h-[105px] shadow-md bg-white hover:shadow-lg transition duration-150 rounded-md p-2 ss:p-4 ">
       <div className="relative h-full">
-        <p className="text-sm ss:text-base font-semibold ">{name}</p>
+        <p className="text-ss  sss:text-sm xsm:text-base font-semibold ">{name}</p>
         <span className="text-ss font-[500] absolute bottom-0 left-0 text-gray-700">
           {convertBytesToMB(size)} MB
         </span>
@@ -52,10 +52,18 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
           {fileLoading ? (
             <Spinner />
           ) : (
-            <Tooltip content="Download" animation="duration-500" theme={customTooltipTheme}>
-               <button onClick={downloadResources}>
-              <img src={fileDownloadIcon} alt="Download" className="w-6" />
-            </button>
+            <Tooltip
+              content="Download"
+              animation="duration-500"
+              theme={customTooltipTheme}
+            >
+              <button onClick={downloadResources}>
+                <img
+                  src={fileDownloadIcon}
+                  alt="Download"
+                  className="mt-1 w-5 md:w-6"
+                />
+              </button>
             </Tooltip>
           )}
         </div>

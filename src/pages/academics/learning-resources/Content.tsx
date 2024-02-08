@@ -5,12 +5,10 @@ import { useParams } from "react-router-dom";
 import { useLearningResourcesContext } from "../../../context/LearningResources";
 import { BounceLoader } from "../../../components/loaders/BounceLoader";
 import { ContentCard } from "./ContentCard";
+import fileSearch from "../../../assets/svg/fileSearch.svg";
+import fileError from "../../../assets/svg/fileError.svg";
+import { FileMetadata } from "../../../models/academics/learning-resources";
 
-interface FileMetadata {
-  name: string;
-  path: string;
-  size: number;
-}
 export default function Content() {
   const { level, id } = useParams();
   const { resourcesType } = useLearningResourcesContext();
@@ -22,6 +20,7 @@ export default function Content() {
   );
   const [files, setFiles] = useState<FileMetadata[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchFiles = async () => {
     try {
@@ -42,6 +41,7 @@ export default function Content() {
       console.log(files);
     } catch (error) {
       setLoading(false);
+      setError(true);
       console.error("Error fetching files:", error);
     }
   };
@@ -51,27 +51,45 @@ export default function Content() {
   }, [resourcesType]);
 
   return (
-    <div className="mt-6">
+    <div className="w-full h-full mt-6 md:px-4 ">
       {loading ? (
-        <div className="mt-10 w-full h-full flex items-center justify-center">
+        <div className="mt-10 flex items-center justify-center ">
           <BounceLoader />
         </div>
       ) : files.length === 0 ? (
-        <p className="w-full text-sm ss:text-base text-gray-500 font-[500] text-center mt-4 ">
-          Sorry, {id}{" "}
-          {resourcesType === "textbooks"
-            ? "Textbooks"
-            : resourcesType === "pastquestions"
-              ? "Past Questions"
-              : "Handouts"}{" "}
-          are not available.
-        </p>
+        <div className="flex items-center justify-center flex-col">
+          <img
+            src={fileSearch}
+            alt="File not available"
+            className=" w-full ss:w-[400px]"
+          />
+          <p className="text-sm ss:text-base text-gray-500 font-[500] text-center ">
+            Sorry, {id}{" "}
+            {resourcesType === "textbooks"
+              ? "Textbooks"
+              : resourcesType === "pastquestions"
+                ? "Past Questions"
+                : "Handouts"}{" "}
+            are not available.
+          </p>
+        </div>
+      ) : files.length > 0 ? (
+        <div className="grid items-center xss:grid-cols-2 sm:grid-cols-3 gap-4">
+          {files.map((info, i) => (
+            <ContentCard key={i} {...info} />
+          ))}
+        </div>
       ) : (
-        files.length > 0 && (
-          <div className="grid items-center xss:grid-cols-2 sm:grid-cols-3 gap-4">
-            {files.map((info, i) => (
-              <ContentCard key={i} {...info} />
-            ))}
+        error && (
+          <div className="flex items-center justfiy-center">
+            <img
+              src={fileError}
+              alt="Error."
+              className=" w-full ss:w-[450px]"
+            />
+            <p className="text-sm ss:text-base text-gray-500 font-[500] text-center ">
+              Oops, something went wrong. Please try again.
+            </p>
           </div>
         )
       )}
