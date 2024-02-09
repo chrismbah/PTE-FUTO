@@ -1,9 +1,9 @@
-"use client";
 import { useParams } from "react-router-dom";
 import { useLearningResourcesContext } from "../../../context/LearningResources";
 import Content from "./Content";
 import StudyTip from "./StudyTip";
-import Footer from "../../../components/footer/Footer";
+// import Footer from "../../../components/footer/Footer";
+
 export default function LearningResourcesContent() {
   const { id, courseTitle } = useParams();
   const { resourcesType, setResourcesType } = useLearningResourcesContext();
@@ -57,7 +57,7 @@ export default function LearningResourcesContent() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function LearningResources() {
           <div className="w-full flex items-center justify-center mb-6 flex-col">
             <h2 className="text-green1 text-center font-semibold">Learning Resources</h2>
             <p className="heading-p">
-            Find textbooks, handouts, past questions, and study tips organized by level for easy access.
+            Find textbooks,lecturers handouts, past questions, lecture notes, and study tips organized by level for easy access.
             </p>
           </div>
           <div className="grid items-center ss:grid-cols-2 md:grid-cols-3 gap-6">
