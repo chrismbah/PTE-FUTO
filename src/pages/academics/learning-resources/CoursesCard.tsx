@@ -26,7 +26,7 @@ export const CoursesCard: FC<CourseCard> = ({
       className="w-full h-[160px] p-4 flex items-center justify-center flex-col rounded-lg
         hover:bg-gray-100 border-2 border-transparent hover:border-green1 cursor-pointer"
     >
-      <div className="h-2/3 mb-1">
+      <div className="h-2/3 mb-1 flex flex-col items-center justify-center">
         {file ? (
           <img src={file} alt="file" className="w-[45px] xsm:w-[60px]" />
         ) : (

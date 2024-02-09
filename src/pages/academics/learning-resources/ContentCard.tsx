@@ -29,8 +29,8 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
       console.log(blob);
       setFileLoading(false);
     } catch (error) {
-      console.error("Error downloading file:", error);
       setFileLoading(false);
+      useToast("error", "Something went wrong. Pease try again", null, null)
     }
   };
 
@@ -42,9 +42,9 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
     });
   };
   return (
-    <div className="w-full h-[75px] sss:h-[105px] shadow-md bg-white hover:shadow-lg transition duration-150 rounded-md p-2 ss:p-4 ">
-      <div className="relative h-full">
-        <p className="text-ss  sss:text-sm xsm:text-base font-semibold ">{name}</p>
+    <div className="w-full h-[100px] sss:h-[140px] border border-gray-300 hover:bg-gray-100 hover:border-green1 cursor-pointer transition duration-150 rounded-md p-2 ss:p-4 ">
+      <div className="relative h-full w-full">
+        <p className="text-ss  sss:text-sm xsm:text-base font-semibold text-wrap ">{name}</p>
         <span className="text-ss font-[500] absolute bottom-0 left-0 text-gray-700">
           {convertBytesToMB(size)} MB
         </span>

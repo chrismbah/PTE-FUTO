@@ -24,6 +24,7 @@ export default function Content() {
 
   const fetchFiles = async () => {
     try {
+      setError(false)
       setLoading(true);
       const res = await listAll(learningResourcesRef);
       const fileList = await Promise.all(
@@ -40,8 +41,9 @@ export default function Content() {
       setLoading(false);
       console.log(files);
     } catch (error) {
-      setLoading(false);
       setError(true);
+      setLoading(false);
+      // setError(true);
       console.error("Error fetching files:", error);
     }
   };
@@ -50,13 +52,24 @@ export default function Content() {
     fetchFiles();
   }, [resourcesType]);
 
-  return (
-    <div className="w-full h-full mt-6 md:px-4 ">
-      {loading ? (
-        <div className="mt-10 flex items-center justify-center ">
-          <BounceLoader />
+  if (loading) {
+    return (
+      <div className="mt-10 flex items-center justify-center ">
+        <BounceLoader />
+      </div>
+    );
+  } else if (files.length === 0) {
+    if (error) {
+      return (
+        <div className="flex items-center justfiy-center flex-col">
+          <img src={fileError} alt="Error." className=" w-full ss:w-[450px]" />
+          <p className="text-sm ss:text-base text-gray-500 font-[500] text-center ">
+            Oops, something went wrong. Please try again.
+          </p>
         </div>
-      ) : files.length === 0 ? (
+      );
+    } else {
+      return (
         <div className="flex items-center justify-center flex-col">
           <img
             src={fileSearch}
@@ -73,26 +86,15 @@ export default function Content() {
             are not available.
           </p>
         </div>
-      ) : files.length > 0 ? (
-        <div className="grid items-center xss:grid-cols-2 sm:grid-cols-3 gap-4">
-          {files.map((info, i) => (
-            <ContentCard key={i} {...info} />
-          ))}
-        </div>
-      ) : (
-        error && (
-          <div className="flex items-center justfiy-center">
-            <img
-              src={fileError}
-              alt="Error."
-              className=" w-full ss:w-[450px]"
-            />
-            <p className="text-sm ss:text-base text-gray-500 font-[500] text-center ">
-              Oops, something went wrong. Please try again.
-            </p>
-          </div>
-        )
-      )}
-    </div>
-  );
+      );
+    }
+  } else if (files.length > 0) {
+    return (
+      <div className="grid items-center xss:grid-cols-2 sm:grid-cols-3 gap-4">
+        {files.map((info, i) => (
+          <ContentCard key={i} {...info} />
+        ))}
+      </div>
+    );
+  }
 }

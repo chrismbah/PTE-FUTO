@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useLearningResourcesContext } from "../../../context/LearningResources";
 import Content from "./Content";
 import StudyTip from "./StudyTip";
-
+import Footer from "../../../components/footer/Footer";
 export default function LearningResourcesContent() {
   const { id, courseTitle } = useParams();
   const { resourcesType, setResourcesType } = useLearningResourcesContext();
@@ -20,11 +20,11 @@ export default function LearningResourcesContent() {
               Checkout all Textbooks, Handouts , Lecture Notes and Past
               Questions relating to <br />{" "}
               <span className="font-semibold">
-                {id} ( {courseTitle} )
+                {id} - {courseTitle}
               </span>{" "}
             </p>
           </div>
-          <div className="flex items-center justify-center flex-wrap xxss:flex-nowrap gap-3 relative">
+          <div className="flex items-center justify-center flex-wrap xxss:flex-nowrap gap-1 xss:gap-3 relative">
             <button
               onClick={() => setResourcesType("handouts")}
               className={`${resourcesType === "handouts" ? "bg-green1 text-white" : "bg-gray-100"} 
@@ -47,14 +47,17 @@ export default function LearningResourcesContent() {
               >
                 Past Questions
               </button>
-              <div className="absolute -top-2 -right-8">
+              <div className="absolute -top-2 -right-5 xss:-right-8">
                 <StudyTip />
               </div>
             </div>
           </div>
-          <Content />
+          <div className="w-full h-full mt-6 px-5 md:px-3 ">
+            <Content />
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

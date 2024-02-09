@@ -8,8 +8,8 @@ interface Messages {
 export const useToast = (
   state: string | null,
   message?: string | null,
-  promiseFn?: Promise<void>,
-  promiseMessages?: Messages
+  promiseFn?: Promise<void> | null,
+  promiseMessages?: Messages | null
 ) => {
   if (state === "error") {
     return toast.error(<p className="notification-message">{message}</p>);
