@@ -13,9 +13,9 @@ export default function LearningResourcesContent() {
       <div className="box-width2">
         <div className="page-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
-            <h2 className="text-green1 text-center font-semibold w-full">
+            <h5 className="text-green1 text-center uppercase font-bold text-xl ss:text-xll w-full">
               {id} E-BOOK DOWNLOAD
-            </h2>
+            </h5>
             <p className="heading-p">
               Checkout all Textbooks, Handouts , Lecture Notes and Past
               Questions relating to <br />{" "}

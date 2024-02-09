@@ -27,12 +27,8 @@ export const CoursesCard: FC<CourseCard> = ({
         hover:bg-gray-100 border-2 border-transparent hover:border-green1 cursor-pointer"
     >
       <div className="h-2/3 mb-1 flex flex-col items-center justify-center">
-        {file ? (
           <img src={file} alt="file" className="w-[45px] xsm:w-[60px]" />
-        ) : (
-          <div className="bg-gray-400 w-full h-full"></div>
-        )}
-        <p className="text-center font-[500] text-base sm:text-base">
+        <p className="text-center font-semibold text-xs sm:text-base">
           {courseCode}
         </p>
       </div>

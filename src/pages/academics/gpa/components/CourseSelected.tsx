@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { CourseSelectedProps } from "../../../../models/academics/gpa";
 import { useComputeGPA } from "../../../../hooks/academics/useComputeGPA";
-import TrashIcon from "../../../../assets/svg/icons/trash.svg";
-import EditIcon from "../../../../assets/svg/icons/edit.svg";
-
+import { EditIcon } from "../../../../components/icons/EditIcon";
+import { TrashIcon } from "../../../../components/icons/TrashIcon";
 export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
   const { id, course, unit, grade } = courseInfo;
   const { deleteCourseGrade, editCourseGrade } = useComputeGPA();
@@ -26,7 +25,7 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
           >
             <span className="hidden ss:block">Edit</span>{" "}
             <div className="hover:scale-90 w-4 rounded-full">
-              <img src={EditIcon} alt="Edit" className="w-4 block ss:hidden" />
+              <EditIcon className="w-4 block ss:hidden" />
             </div>
           </button>
           <button
@@ -35,7 +34,7 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
           >
             <span className="hidden ss:block">Delete</span>{" "}
             <div className="hover:scale-90 w-4 rounded-full">
-              <img src={TrashIcon} alt="Delete" className=" block ss:hidden" />
+              <TrashIcon className="block ss:hidden" />
             </div>
           </button>
         </div>

@@ -14,7 +14,7 @@ export default function StudyTip() {
     <>
       <div className="">
         <div onClick={() => setToggleTip(!toggleTip)} className="relative">
-          <InfoIcon style="w-5 h-5 ms-2  cursor-pointer text-gray-400 hover:text-gray-500" />
+          <InfoIcon className="w-5 h-5 ms-2  cursor-pointer text-gray-400 hover:text-gray-500" />
         </div>
         <div
           className={`${toggleTip ? "opacity-100 z-[5]" : "opacity-0 z-[-5]"} 

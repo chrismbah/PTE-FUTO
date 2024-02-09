@@ -24,7 +24,7 @@ box-shadow:  20px 20px 60px #d3d5d6,
              -20px -20px 60px #ffffff;
 }
 .home-gray-bg{
-    @apply shadow-1a bg-gray-50
+    @apply bg-gray-50
 }
 
 h1{

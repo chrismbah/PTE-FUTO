@@ -10,14 +10,14 @@ export default function LearningResourcesCourses() {
       <div className="box-width2">
         <div className="page-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
-            <h2 className="text-green1 text-center">
-              {level} LEVEL LEARNING RESOURCES
-            </h2>
+            <h5 className="text-green1 text-center uppercase font-bold text-xl ss:text-xll">
+              {level} Level Learning Resources
+            </h5>
             <p className="heading-p">
               {`Download textbooks, handouts, notes and past questions, and study tips compiled just for ${level === "100" ? "Freshers" : level === "500" ? "Final year students" : `${level} level students`}`}{" "}
             </p>
           </div>
-          <h4 className="text-base font-bold mb-4 sm:text-md">
+          <h4 className="text-base font-bold mb-2 sm:text-md">
             First Semester <div className="bar-style" />
           </h4>
           <div className="mb-16  grid items-center grid-cols-2 xss:grid-cols-3 sss:grid-cols-4 mmd:grid-cols-5 gap-4">
@@ -28,7 +28,7 @@ export default function LearningResourcesCourses() {
           </div>
           {level && courses[level]["Second"].courseInfo.length > 0 ? (
             <>
-              <h4 className="text-md font-bold mb-2">
+              <h4 className="text-base font-bold mb-2 sm:text-md">
                 Second Semseter <div className="bar-style" />
               </h4>
               <div className="mb-16 grid items-center grid-cols-2 xss:grid-cols-3 sss:grid-cols-4 mmd:grid-cols-5 gap-4 ">

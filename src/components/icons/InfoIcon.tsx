@@ -1,13 +1,11 @@
 import {FC} from "react"
-interface StyleProp{
-  style: string
-}
-export const InfoIcon: FC<StyleProp> = () => {
+import { StyleProp } from "../../models/style"
+
+export const InfoIcon: FC<StyleProp> = ({className}) => {
   
   return (
     <svg
-    className="w-4 h-4 xxss:w-5 xxss:h-5 ms-2  cursor-pointer text-gray-400 hover:text-gray-500"
-    // className={style}
+    className={className}
     aria-hidden="true"
     fill="currentColor"
     viewBox="0 0 20 20"
