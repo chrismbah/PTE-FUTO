@@ -37,13 +37,13 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
 
   const downloadResources = () => {
     useToast("promise", null, downloadFile(), {
-      loadingMsg: "Downloading...",
-      successMsg: "File Downloaded. Happy Learning!",
+      loadingMsg: "Please wait...",
+      successMsg: "File Downloading. Happy Learning!",
       errorMsg: "Something went wrong. Please try again",
     });
   };
   return (
-    <div className="w-full h-[100px] sss:h-[140px] border bg-gray-100 border-gray-300
+    <div className="w-full h-[100px] sss:h-[140px] border border-gray-300
       hover:bg-gray-100 hover:border-green1 transition duration-150 rounded-md p-2 ss:p-4 ">
       <div className="relative h-full w-full">
         <p className="text-ss  sss:text-sm xsm:text-base font-semibold text-wrap ">{name}</p>

@@ -14,8 +14,8 @@ export default function useLoginUser() {
   const { reset } = useForm<ILoginForm>({ resolver: yupResolver(logInSchema) });
 
   const loginUser = async (data: ILoginForm) => {
-    setLoading(true);
     try {
+      setLoading(true);
       console.log(data);
       const { email, password } = data;
       await signInWithEmailAndPassword(auth, email, password);

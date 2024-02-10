@@ -146,8 +146,8 @@ export default function Nav() {
               <Dropdown.Item>Student Bodies</Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
-          <Navbar.Link href="/">Blog</Navbar.Link>
-          <Navbar.Link href="/">Events</Navbar.Link>
+          <Navbar.Link href="/blog">Blog</Navbar.Link>
+          <Navbar.Link href="/events">Events</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
       <SignOutModal />

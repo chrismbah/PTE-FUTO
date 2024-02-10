@@ -2,9 +2,6 @@ import { FC } from "react";
 import folder from "../../../assets/svg/icons/folder.svg";
 import { LevelCard } from "../../../models/academics/learning-resources";
 import { Link } from "react-router-dom";
-// import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-
 export const LevelsCard: FC<LevelCard> = ({ level, title, desc }) => {
   return (
     <Link to={`/learning-resources/${level}`}>
@@ -14,7 +11,7 @@ export const LevelsCard: FC<LevelCard> = ({ level, title, desc }) => {
           <img src={folder} alt="folder" className="w-full" />
           </div>
         </div>
-        <h4 className=" flex items-center justify-center mb-2 text-center
+        <h4 className="flex items-center justify-center mb-2 text-center
            font-semibold text-xs md:text-base">
           <div className="h-[3px] w-[30%] bg-green1"/> {title.toUpperCase()}
         </h4>

@@ -22,7 +22,6 @@ export default function useSignUpUser() {
     setLoading(true);
     try {
       const { email, password, regNo, firstName, lastName, level } = data;
-
       //*Stores user info in firestore database
       const user = await createUserWithEmailAndPassword(auth, email, password);
       const userID = user.user.uid;

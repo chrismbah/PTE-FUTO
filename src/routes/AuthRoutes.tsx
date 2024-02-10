@@ -30,6 +30,8 @@ const AuthenticatedRoutes = () => {
     () =>
       import("../pages/academics/learning-resources/LearningResourcesContent")
   );
+  const Blog = lazy(() => import("../pages/misc/blog/Blog"));
+
   return (
     <Suspense fallback={<BounceLoader />}>
       <Routes>
@@ -49,8 +51,7 @@ const AuthenticatedRoutes = () => {
           path="/learning-resources/:level/:id/:courseTitle"
           element={<LearningResourcesContent />}
         />
-        {/* <Route path=":resourceType" element={<Content />} /> */}
-        {/* </Route> */}
+        <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
