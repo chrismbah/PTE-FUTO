@@ -4,7 +4,6 @@ import { storage } from "../../../config/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Content } from "../../../models/academics/learning-resources";
 import { useToast } from "../../../hooks/notification/useToast";
-import fileDownloadIcon from "../../../assets/svg/icons/fileDownload.svg";
 import Spinner from "../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";
