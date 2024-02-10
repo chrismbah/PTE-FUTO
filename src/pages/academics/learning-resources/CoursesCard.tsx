@@ -3,7 +3,7 @@ import { CourseCard } from "../../../models/academics/learning-resources";
 import file from "../../../assets/svg/icons/file.svg";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useLocalStorage } from "../../../hooks/useLocalStorage";
+import { useLocalStorage } from "../../../hooks/misc/storage/useLocalStorage";
 
 export const CoursesCard: FC<CourseCard> = ({
   id,
@@ -27,7 +27,7 @@ export const CoursesCard: FC<CourseCard> = ({
         hover:bg-gray-100 border-2 border-transparent hover:border-green1 cursor-pointer"
     >
       <div className="h-2/3 mb-1 flex flex-col items-center justify-center">
-          <img src={file} alt="file" className="w-[45px] xsm:w-[60px]" />
+        <img src={file} alt="file" className="w-[45px] xsm:w-[60px]" />
         <p className="text-center font-semibold text-xs sm:text-base">
           {courseCode}
         </p>

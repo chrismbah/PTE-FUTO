@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { InfoIcon } from "../../../components/icons/InfoIcon";
-import { useLocalStorage } from "../../../hooks/useLocalStorage";
+import { useLocalStorage } from "../../../hooks/misc/storage/useLocalStorage";
 
 export default function StudyTip() {
   const [toggleTip, setToggleTip] = useState(false);
-  const {getDataFromStorage} = useLocalStorage()
-  const [studyTip, setStudyTip] = useState("")
-  useEffect(()=>{
-   setStudyTip(getDataFromStorage("studyTip"))
-  }, [])
+  const { getDataFromStorage } = useLocalStorage();
+  const [studyTip, setStudyTip] = useState("");
+  useEffect(() => {
+    setStudyTip(getDataFromStorage("studyTip"));
+  }, []);
 
   return (
     <>
@@ -27,7 +27,9 @@ export default function StudyTip() {
               </h4>
             </div>
             <div className="px-3 py-2 bg-white rounded-b-lg text-gray-800 ">
-              <p className="text-ss sm:text-sm font-medium text-gray-600">{studyTip}</p>
+              <p className="text-ss sm:text-sm font-medium text-gray-600">
+                {studyTip}
+              </p>
             </div>
           </div>
         </div>

@@ -6,8 +6,6 @@ import {
   query,
   where,
   getDocs,
-  //   deleteDoc,
-  //   doc,
 } from "firebase/firestore";
 import { StudentDetails } from "../../models/auth/studentDetails";
 
@@ -27,7 +25,7 @@ export const useGetUserInfo = () => {
   const getUserInfo = async () => {
     if (userInfoDoc) {
       const userInfo = await getDocs(userInfoDoc);
-      const userFields = userInfo.docs[0].data();
+      const userFields = userInfo?.docs[0].data();
       const { firstName, lastName, regNo, email, level } = userFields;
       setStudentDetails({
         firstName: firstName,
