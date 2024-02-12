@@ -4,7 +4,7 @@ import { FC } from "react";
 import { BlogPostProp } from "../../../../models/misc/blog";
 export const TopPosts: FC<BlogPostProp> = ({ blogPosts }) => {
   return (
-    <div className=" h-[500px] md:h-[632px] w-full bg-white border border-gray-200 rounded-lg shadow">
+    <div className=" h-[500px] md:h-[680px] w-full bg-white border border-gray-200 rounded-lg shadow">
       <Carousel slideInterval={2000} indicators={false}>
         {blogPosts
           ?.filter((post) => post.postType === "top-stories")

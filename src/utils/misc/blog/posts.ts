@@ -96,7 +96,8 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p bold",
-        content: "What are your thoughts on the ban? Does it offer more pros than cons? Share your thoughts in the comments section"
+        content:
+          "What are your thoughts on the ban? Does it offer more pros than cons? Share your thoughts in the comments section",
       },
     ],
   },
@@ -279,19 +280,104 @@ export const posts: BlogPost[] = [
   },
   {
     author: "Prideful Sin",
-    title: "Myths and Facts about Polymer Engineering: Debunking Common Misconceptions",
+    title:
+      "Myths and Facts about Polymer Engineering: Debunking Common Misconceptions",
     postType: "featured",
     sampleImg: "img/blog-posts/post3/sample-1.jpg",
     contents: [
       {
         type: "p",
-        content: "Polymer engineering, the science and art of creating and manipulating plastics, touches our lives in countless ways. Yet, shrouded in complexity and often misunderstood, it is riddled with misconceptions that hinder public understanding and appreciation. Let's debunk some of the most common myths and shine a light on the fascinating world of polymer engineering!"
+        content:
+          "Polymer engineering, the science and art of creating and manipulating plastics, touches our lives in countless ways. Yet, shrouded in complexity and often misunderstood, it is riddled with misconceptions that hinder public understanding and appreciation. Let's debunk some of the most common myths and shine a light on the fascinating world of polymer engineering!",
       },
       {
         type: "h1",
-        content: ""
-      }
-    ]
-  }
-  
+        content: "Myth 1: All Plastics are Bad for the Environment.",
+      },
+      {
+        type: "p",
+        content:
+          "Fact: While plastic pollution poses a significant challenge, not all plastics are created equal. Biodegradable and compostable polymers offer sustainable alternatives, and advancements in recycling are improving plastic's circularity. Responsible usage and innovation go a long way.",
+      },
+      {
+        type: "h1",
+        content:
+          "Myth 2: Polymer Engineering is Just Making 'Nylon' and Packaging.",
+      },
+      {
+        type: "p",
+        content:
+          "Fact: From lightweight aircraft components to life-saving medical devices, advanced polymer composites pave the way for high-performance applications. From water purification membranes to self-healing materials, the field's impact stretches far beyond everyday household items.",
+      },
+      {
+        type: "h1",
+        content: "Myth 3: Polymers are Inert and Lack Functionality.",
+      },
+      {
+        type: "p",
+        content:
+          "Fact: Polymers boast incredible versatility. They can be conductive, flame-retardant, biodegradable, or shape-shifting. Polymer engineers tailor them for specific functionalities, like biocompatibility for implants or conductivity for electronics.",
+      },
+      {
+        type: "h1",
+        content: "Myth 4: Polymer Engineering is a Dead-End Field.",
+      },
+      {
+        type: "p",
+        content:
+          "Fact: The field is constantly evolving! With breakthroughs in nanocomposites, biomimicry, and self-assembly, polymer engineers are at the forefront of developing solutions for energy, clean water, and sustainable infrastructure.",
+      },
+      {
+        type: "h1",
+        content: "Myth 5: Working with Polymers is Messy and Hazardous.",
+      },
+      {
+        type: "p",
+        content:
+          "Fact: Modern polymer synthesis and processing facilities prioritize safety and sustainability. While certain precautions are necessary, advancements in materials and techniques minimize risks.",
+      },
+      {
+        type: "h1",
+        content: "Beyond the Myths: The Reality of Polymer Engineering",
+      },
+      {
+        type: "p",
+        content:
+          "Polymer engineers are problem-solvers and innovators, using their expertise to address global challenges. They create materials that are:",
+      },
+      {
+        type: "list",
+        content: [
+          {
+            type: "p",
+            content:
+              "Lightweight and strong: Enabling fuel-efficient vehicles and aerospace advancements.",
+          },
+          {
+            type: "p",
+            content:
+              "Biocompatible and durable: Revolutionizing medical devices and implants.",
+          },
+          {
+            type: "p",
+            content:
+              "Smart and responsive: Integrating sensors and self-healing capabilities.",
+          },
+          {
+            type: "p",
+            content:
+              "Sustainable and circular: Developing bio-based and recyclable polymers.",
+          },
+        ],
+      },
+      {
+        type: "p",
+        content: "By understanding the science behind polymers and appreciating the dedication of polymer engineers, we can cultivate a more informed and responsible relationship with these materials. Join the conversation about responsible plastic use, support sustainable innovations, and celebrate the fascinating world of polymer engineering!"
+      },
+      {
+        type: "p bold",
+        content: "Feel fre to share your thoughts in the comment section!"
+      },
+    ],
+  },
 ];

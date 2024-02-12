@@ -9,7 +9,7 @@ export const FeaturedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
         .map(({ title, sampleImg, contents, date, author }, i) => (
           <div
             key={i}
-            className="mb-4 md:h-[200px] flex flex-col-reverse items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 "
+            className="mb-4 md:h-[220px] flex flex-col-reverse items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 "
           >
             <div className="flex items-start flex-col justify-between p-4 leading-normal w-full md:w-2/3 md:h-full">
               <div>
