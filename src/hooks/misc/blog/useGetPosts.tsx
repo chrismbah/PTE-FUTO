@@ -3,6 +3,7 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import { IBlogPost } from "../../../models/misc/blog";
 import { posts } from "../../../utils/misc/blog/posts";
 import { db } from "../../../config/firebase";
+import { getCurrentDate } from "../../../helpers/formatDate";
 
 export const  useGetPosts =()=> {
   const [blogPosts, setBlogPosts] = useState<IBlogPost[] | null>(null);
@@ -11,7 +12,7 @@ export const  useGetPosts =()=> {
   const addPosts = async () => {
     try {
       for (const post of posts) {
-        await addDoc(postsRef, post);
+        await addDoc(postsRef, {...post, date: getCurrentDate()});
         console.log("Post added")
       }
     } catch (err) {
@@ -19,7 +20,6 @@ export const  useGetPosts =()=> {
     }
     finally{
       getPosts();
-
     }
   };
 

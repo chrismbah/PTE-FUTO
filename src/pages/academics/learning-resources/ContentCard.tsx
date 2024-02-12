@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { convertBytesToMB } from "../../../helpers/convertBytesToMb";
+import { convertBytes } from "../../../helpers/convertBytes";
 import { storage } from "../../../config/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Content } from "../../../models/academics/learning-resources";
@@ -13,6 +13,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
   const [fileLoading, setFileLoading] = useState(false);
   const storageRef = ref(storage);
   const learningResourcesRef = ref(storageRef, path);
+  const dataSize = convertBytes(size)
 
   const downloadFile = async () => {
     try {
@@ -37,7 +38,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
   const downloadResources = () => {
     useToast("promise", null, downloadFile(), {
       loadingMsg: "Please wait...",
-      successMsg: "File Downloading. Happy Learning!",
+      successMsg: "File Downloading...",
       errorMsg: "Something went wrong. Please try again",
     });
   };
@@ -47,7 +48,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
       <div className="relative h-full w-full">
         <p className="text-ss  sss:text-sm xsm:text-base font-semibold text-wrap ">{name}</p>
         <span className="text-ss font-[500] absolute bottom-0 left-0 text-gray-700">
-          {convertBytesToMB(size)} MB
+          {dataSize}
         </span>
         <div className="absolute bottom-0 right-0">
           {fileLoading ? (
