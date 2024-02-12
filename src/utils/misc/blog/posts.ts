@@ -277,5 +277,21 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    author: "Prideful Sin",
+    title: "Myths and Facts about Polymer Engineering: Debunking Common Misconceptions",
+    postType: "featured",
+    sampleImg: "img/blog-posts/post3/sample-1.jpg",
+    contents: [
+      {
+        type: "p",
+        content: "Polymer engineering, the science and art of creating and manipulating plastics, touches our lives in countless ways. Yet, shrouded in complexity and often misunderstood, it is riddled with misconceptions that hinder public understanding and appreciation. Let's debunk some of the most common myths and shine a light on the fascinating world of polymer engineering!"
+      },
+      {
+        type: "h1",
+        content: ""
+      }
+    ]
+  }
   
 ];
