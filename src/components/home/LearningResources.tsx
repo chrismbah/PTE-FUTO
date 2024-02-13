@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import Lottie from "lottie-react";
-import learningAnimation from "../../data/animation/learning.json";
+import learningAnimation from "../../json/animation/learning.json";
 import { useNavigateAuthUser } from "../../hooks/auth/useNavigateAuthUser";
 
 export default function LearningResources() {

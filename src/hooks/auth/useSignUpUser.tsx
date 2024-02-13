@@ -7,7 +7,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { signUpSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useToast } from "../notification/useToast";
+import { useToast } from "../../helpers/useToast";
+
 
 export default function useSignUpUser() {
   const [loading, setLoading] = useState<boolean>(false);

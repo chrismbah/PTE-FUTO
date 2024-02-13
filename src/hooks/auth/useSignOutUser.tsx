@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
-import { useToast } from "../notification/useToast";
+import { useToast } from "../../helpers/useToast";
 import { useNavigate } from "react-router-dom";
 import { useModalContext } from "../../context/Modal";
 export const useSignOutUser = () => {

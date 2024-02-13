@@ -3,7 +3,7 @@ import { convertBytes } from "../../../helpers/convertBytes";
 import { storage } from "../../../config/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Content } from "../../../models/academics/learning-resources";
-import { useToast } from "../../../hooks/notification/useToast";
+import { useToast } from "../../../routes/useToast";
 import Spinner from "../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";
@@ -13,7 +13,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
   const [fileLoading, setFileLoading] = useState(false);
   const storageRef = ref(storage);
   const learningResourcesRef = ref(storageRef, path);
-  const dataSize = convertBytes(size)
+  const dataSize = convertBytes(size);
 
   const downloadFile = async () => {
     try {
@@ -31,7 +31,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
       setFileLoading(false);
     } catch (error) {
       setFileLoading(false);
-      useToast("error", "Something went wrong. Pease try again", null, null)
+      useToast("error", "Something went wrong. Pease try again", null, null);
     }
   };
 
@@ -43,10 +43,14 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
     });
   };
   return (
-    <div className="w-full h-[100px] sss:h-[140px] border border-gray-300
-      hover:bg-gray-100 hover:border-green1 transition duration-150 rounded-md p-2 ss:p-4 ">
+    <div
+      className="w-full h-[100px] sss:h-[140px] border border-gray-300
+      hover:bg-gray-100 hover:border-green1 transition duration-150 rounded-md p-2 ss:p-4 "
+    >
       <div className="relative h-full w-full">
-        <p className="text-ss  sss:text-sm xsm:text-base font-semibold text-wrap ">{name}</p>
+        <p className="text-ss  sss:text-sm xsm:text-base font-semibold text-wrap ">
+          {name}
+        </p>
         <span className="text-ss font-[500] absolute bottom-0 left-0 text-gray-700">
           {dataSize}
         </span>

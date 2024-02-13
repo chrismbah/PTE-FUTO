@@ -3,7 +3,7 @@ import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
 // import courseOutline from "../../assets/svg/home/courseOutline.svg";
 import Lottie from "lottie-react";
-import courseOutline from "../../data/animation/courseOutline.json";
+import courseOutline from "../../json/animation/courseOutline.json";
 
 export default function CourseOutlines() {
   return (

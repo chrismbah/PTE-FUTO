@@ -1,6 +1,6 @@
 import { useGetUserInfo } from "./useGetUserInfo";
 import { useNavigate } from "react-router-dom";
-import { useToast } from "../notification/useToast";
+import { useToast } from "../../helpers/useToast";
 
 export const useNavigateAuthUser = () => {
   const { user } = useGetUserInfo();

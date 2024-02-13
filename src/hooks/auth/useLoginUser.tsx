@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useToast } from "../notification/useToast";
+import { useToast } from "../../helpers/useToast";
 import { logInSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 
