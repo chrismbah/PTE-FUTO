@@ -1,17 +1,19 @@
 export interface BlogPost {
+  no:number;
   author: string;
   title: string;
-  postType: string;
+  postType: "top" | "featured" | "others";
   sampleImg: string;
   contents: ContentBlock[];
 }
 
 interface ContentBlock {
-  type: "p" | "p bold" | "h1" | "img" | "list";
+  type: "p" | "p-bold" | "h1" | "h2" | "img" | "list";
   content: string | { type: string, content: string }[] ; // Handling nested lists
 } 
   export interface IBlogPost {
     id: string;
+    no: number;
     author: string;
     date: string;
     title: string; 

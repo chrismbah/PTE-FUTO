@@ -1,41 +1,51 @@
 import { FC } from "react";
 import { BlogPostProp } from "../../../../models/misc/blog";
+import { Link } from "react-router-dom";
 
 export const FeaturedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
   return (
-    <div>
-      {blogPosts
-        ?.filter((post) => post.postType === "featured")
-        .map(({ title, sampleImg, contents, date, author }, i) => (
-          <div
-            key={i}
-            className="mb-4 md:h-[220px] flex flex-col-reverse items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 "
-          >
-            <div className="flex items-start flex-col justify-between p-4 leading-normal w-full md:w-2/3 md:h-full">
-              <div>
-                <h5 className="mb-2 text-md md:text-base lg:text-lg xlg:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {title}
-                </h5>
-                <p className="mb-3 font-normal text-gray-700 md:text-sm xl:text-xs">
-                  {typeof contents[0].content === "string" &&
-                    contents[0].content.split(" ").slice(0, 15).join(" ")}
-                  ...
-                </p>
+    <>
+      {blogPosts.length > 0 && (
+        <div className="grid md:grid-cols-2 gap-4">
+          {blogPosts
+            .filter((post) => post.postType === "featured")
+            .map(({ title, sampleImg, contents, date, author, id }, i) => (
+              <Link to={`/blog/posts/${title}/${id}`}>
+                <div
+                key={i}
+                className="group overflow-hidden min-h-[150px] flex items-center flex-row md:flex-col md:h-[500px] w-full bg-white border border-gray-200 rounded-lg shadow"
+              >
+                <img
+                  className="object-cover rounded-none rounded-l-lg md:rounded-t-lg h-full w-1/3 md:h-3/5 md:w-full duration-300 ease-in-out transform group-hover:scale-105"
+                  src={sampleImg}
+                  alt={title}
+                />
+                <div className="p-2 sm:p-5 h-full w-2/3 md:h-2/5 md:w-full flex flex-col justify-between">
+                  <div>
+                    <h5 className="mb-2 text-ss xss:text-sm md:text-lg lg:text-xl xlg:text-xll font-bold tracking-tight text-gray-900 dark:text-white">
+                      {title}
+                    </h5>
+                    <p className="mb-3 font-normal hidden md:block text-ss xl:text-xs text-gray-700 dark:text-gray-400">
+                      {typeof contents[0].content === "string" &&
+                        contents[0].content.split(" ").slice(0, 25).join(" ")}
+                      ...
+                    </p>{" "}
+                    <p className="mb-3 font-normal block md:hidden text-xss xss:text-ss xl:text-xs text-gray-700 dark:text-gray-400">
+                      {typeof contents[0].content === "string" &&
+                        contents[0].content.split(" ").slice(0, 20).join(" ")}
+                      ...
+                    </p>{" "}
+                  </div>
+                  <p className="font-normal text-gray-500 text-sss sm:text-xss lg:text-xs flex items-end">
+                    {author} on {date}
+                  </p>
+                </div>
               </div>
 
-              <p className="font-normal text-gray-500 text-ss lg:text-sm flex items-end">
-                {author} on {date}
-              </p>
-            </div>
-            <img
-              className="object-cover h-full overflow-hidden rounded-t-lg md:rounded-none md:rounded-r-lg md:w-1/3"
-              src={sampleImg}
-              alt={title}
-            />
-          </div>
-        ))}
-    </div>
+              </Link>
+                          ))}
+        </div>
+      )}
+    </>
   );
 };
-{
-}

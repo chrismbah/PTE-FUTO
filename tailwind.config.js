@@ -51,6 +51,7 @@ export default {
       '3xl': '1700px'
     },
     fontSize: {
+      sss: '0.5rem',
       xss: '0.6rem',
       ss: '0.7rem',
       sm: '0.8rem',
