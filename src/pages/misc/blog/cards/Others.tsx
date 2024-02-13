@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
   return (
-    <>
+    <div>
       {blogPosts
         ?.filter((post) => post.postType === "others")
         .map(({ title, sampleImg, contents, date, author, id }, i) => (
@@ -38,7 +38,7 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
           </Link>
           
         ))}
-    </>
+    </div>
   );
 };
 {
