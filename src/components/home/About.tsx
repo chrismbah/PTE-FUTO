@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import vision from "../../utils/animation/vision.json";
+import vision from "../../data/animation/vision.json";
 
 export default function About() {
   return (

@@ -1,6 +1,6 @@
 import Footer from "../../../components/footer/Footer";
 import { LevelsCard } from "./LevelsCard";
-import { learningResourcesLevels } from "../../../utils/academics/learning-resources/levels";
+import { learningResourcesLevels } from "../../../data/academics/learning-resources/levels";
 export default function LearningResources() {
   return (
     <div className="min-h-screen bg-gray-50">

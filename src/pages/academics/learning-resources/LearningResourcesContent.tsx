@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useLearningResourcesContext } from "../../../context/LearningResources";
 import Content from "./Content";
 import StudyTip from "./StudyTip";
-// import Footer from "../../../components/footer/Footer";
 
 export default function LearningResourcesContent() {
   const { id, courseTitle } = useParams();

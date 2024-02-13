@@ -1,5 +1,5 @@
 import { CourseOutlineCard } from "./CourseOutlineCard";
-import { courseOutlineLevels } from "../../../utils/academics/course-outlines";
+import { courseOutlineLevels } from "../../../data/academics/course-outlines";
 import Footer from "../../../components/footer/Footer";
 
 export default function CourseOutline() {

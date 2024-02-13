@@ -2,7 +2,7 @@
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
-import heroAnimation from "../../utils/animation/hero.json";
+import heroAnimation from "../../data/animation/hero.json";
 import Lottie from "lottie-react";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 

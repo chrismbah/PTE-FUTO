@@ -1,9 +1,9 @@
 import { useCourseOutlineContext } from "../../../context/CourseOutline";
-import { courseOutline100 } from "../../../utils/academics/course-outlines/levels/100/courseOutline100";
-import { courseOutline200 } from "../../../utils/academics/course-outlines/levels/200/courseOutline200";
-import { courseOutline300 } from "../../../utils/academics/course-outlines/levels/300/courseOutline300";
-import { courseOutline400 } from "../../../utils/academics/course-outlines/levels/400/courseOutline400";
-import { courseOutline500 } from "../../../utils/academics/course-outlines/levels/500/courseOutline500";
+import { courseOutline100 } from "../../../data/academics/course-outlines/levels/100/courseOutline100";
+import { courseOutline200 } from "../../../data/academics/course-outlines/levels/200/courseOutline200";
+import { courseOutline300 } from "../../../data/academics/course-outlines/levels/300/courseOutline300";
+import { courseOutline400 } from "../../../data/academics/course-outlines/levels/400/courseOutline400";
+import { courseOutline500 } from "../../../data/academics/course-outlines/levels/500/courseOutline500";
 import { CourseOutlineCard } from "./CoursesOutlineCard";
 import { useParams } from "react-router-dom";
 import Footer from "../../../components/footer/Footer";

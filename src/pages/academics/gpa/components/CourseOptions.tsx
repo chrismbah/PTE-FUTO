@@ -1,5 +1,5 @@
 import { useGPAContext } from "../../../../context/GPA";
-import { levelCourses } from "../../../../utils/academics/cgpa/courses";
+import { levelCourses } from "../../../../data/academics/cgpa/courses";
 
 export default function CourseOptions() {
   const { level, semester } = useGPAContext();

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { courseInfo100 } from "../../../utils/academics/course-outlines/levels/100/info/courseInfo100";
-import { courseInfo200 } from "../../../utils/academics/course-outlines/levels/200/info/courseInfo200";
-import { courseInfo300 } from "../../../utils/academics/course-outlines/levels/300/info/courseInfo300";
-import { courseInfo400 } from "../../../utils/academics/course-outlines/levels/400/info/courseInfo400";
-import { courseInfo500 } from "../../../utils/academics/course-outlines/levels/500/info/courseInfo500";
+import { courseInfo100 } from "../../../data/academics/course-outlines/levels/100/info/courseInfo100";
+import { courseInfo200 } from "../../../data/academics/course-outlines/levels/200/info/courseInfo200";
+import { courseInfo300 } from "../../../data/academics/course-outlines/levels/300/info/courseInfo300";
+import { courseInfo400 } from "../../../data/academics/course-outlines/levels/400/info/courseInfo400";
+import { courseInfo500 } from "../../../data/academics/course-outlines/levels/500/info/courseInfo500";
 import { useParams } from "react-router-dom";
 import file from "/icons/course-outline/levels/file.png";
 import { useCourseOutlineContext } from "../../../context/CourseOutline";

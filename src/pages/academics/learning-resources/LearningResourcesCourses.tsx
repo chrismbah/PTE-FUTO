@@ -1,4 +1,4 @@
-import { courses } from "../../../utils/academics/learning-resources/courses";
+import { courses } from "../../../data/academics/learning-resources/courses";
 import { useParams } from "react-router-dom";
 import { CoursesCard } from "./CoursesCard";
 import Footer from "../../../components/footer/Footer";
