@@ -7,10 +7,13 @@ export interface BlogPost {
   contents: ContentBlock[];
 }
 
-interface ContentBlock {
+export interface ContentBlock {
   type: "p" | "p-bold" | "h1" | "h2" | "img" | "list";
-  content: string | { type: string, content: string }[] ; // Handling nested lists
-} 
+  content: string | { type: "p" | "h2" , content: string }[] ; // Handling nested lists
+}
+export interface ContentBlockProp{
+  contents: ContentBlock[]
+}
   export interface IBlogPost {
     id: string;
     no: number;

@@ -7,8 +7,8 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
     <div>
       {blogPosts
         ?.filter((post) => post.postType === "others")
-        .map(({ title, sampleImg, contents, date, author, id }, i) => (
-          <Link to={`/blog/posts/${title}/${id}`}>
+        .map(({ title, sampleImg, contents, date,postType, author, id }, i) => (
+          <Link to={`/blog/posts/${title}/${id}/${postType}`}>
             <div
             key={i}
             className="overflow-hidden cursor-pointer group mb-4 max-h-[400px] md:h-[160px] flex flex-col-reverse items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 "
@@ -25,7 +25,7 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                 </p>
               </div>
 
-              <p className="font-normal text-gray-500 text-ss lg:text-sm flex items-end">
+              <p className="font-normal text-gray-500 text-ss lg:text-[10px] flex items-end">
                 {author} on {date}
               </p>
             </div>

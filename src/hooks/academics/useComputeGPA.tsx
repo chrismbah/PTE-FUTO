@@ -1,6 +1,6 @@
 import { useGPAContext } from "../../context/GPA";
-import { levelCourses } from "../../utils/academics/cgpa/courses";
-import { useToast } from "../../routes/useToast";
+import { levelCourses } from "../../data/academics/cgpa/courses";
+import { useToast } from "../../helpers/useToast";
 import { CourseGrades, GradeValues } from "../../models/academics/gpa";
 import { v4 as uuid } from "uuid";
 

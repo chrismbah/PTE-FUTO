@@ -6,7 +6,7 @@ export const posts: BlogPost[] = [
     title:
       "Lagos Takes a Stand: Examining the Ban on Styrofoam Single-Use Plastics",
     postType: "top",
-    sampleImg: "img/blog-posts/post1/sample.jpg",
+    sampleImg: "/img/blog-posts/post1/sample.jpg",
     contents: [
       {
         type: "p",
@@ -108,7 +108,7 @@ export const posts: BlogPost[] = [
     title:
       "Nanotechnology in Polymers: Shaping the Next Generation of Textiles",
     postType: "others",
-    sampleImg: "img/blog-posts/post2/sample.jpg",
+    sampleImg: "/img/blog-posts/post2/sample.jpg",
     contents: [
       {
         type: "p",
@@ -121,12 +121,12 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        content:
+        content: 
           "Nanotechnology deals with manipulating matter at the nanoscale, where one nanometer is a billionth of a meter. At this microscopic level, materials exhibit unique properties that differ significantly from their bulk counterparts. By incorporating nanoparticles into polymers, scientists can create novel textiles with tailored functions and enhanced performance.        ",
       },
       {
         type: "img",
-        content: "img/blog-posts/post2/nanotext.jpg",
+        content: "/img/blog-posts/post2/nanotext.jpg",
       },
       {
         type: "h1",
@@ -180,7 +180,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "img",
-        content: "img/blog-posts/post2/smart-textile.jpeg",
+        content: "/img/blog-posts/post2/smart-textile.jpeg",
       },
       {
         type: "h1",
@@ -225,7 +225,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "img",
-        content: "img/blog-posts/post2/smart-athlete.jpg",
+        content: "/img/blog-posts/post2/smart-athlete.jpg",
       },
       {
         type: "h1",
@@ -286,7 +286,7 @@ export const posts: BlogPost[] = [
     title:
       "Myths and Facts about Polymer Engineering: Debunking Misconceptions",
     postType: "others",
-    sampleImg: "img/blog-posts/post3/sample.jpg",
+    sampleImg: "/img/blog-posts/post3/sample.jpg",
     contents: [
       {
         type: "p",
@@ -389,7 +389,7 @@ export const posts: BlogPost[] = [
     author: "Mr. PET",
     title: "From Birth to Reuse: My Plastic Bottle Story",
     postType: "others",
-    sampleImg: "img/blog-posts/post4/sample.jpeg",
+    sampleImg: "/img/blog-posts/post4/sample.jpeg",
     contents: [
       {
         type: "p",
@@ -450,9 +450,9 @@ export const posts: BlogPost[] = [
   {
     no: 5,
     author: "Chris Mbah",
-    title: "The Love Mirror: We Accept The Love We Think We Deserve",
+    title: "Perception: We Accept The Love We Think We Deserve",
     postType: "featured",
-    sampleImg: "img/blog-posts/post5/sample.jpg",
+    sampleImg: "/img/blog-posts/post5/sample.jpg",
     contents: [
       {
         type: "p",
@@ -582,9 +582,9 @@ export const posts: BlogPost[] = [
   {
     no: 6,
     author: "Chris Mbah",
-    title: "School Na Scam? Hold On Let's Talk ",
+    title: "'School Na Scam': Hold On Let's Talk",
     postType: "top",
-    sampleImg: "img/blog-posts/post6/sample.png",
+    sampleImg: "/img/blog-posts/post6/sample.png",
     contents: [
       {
         type: "p",
@@ -688,7 +688,7 @@ export const posts: BlogPost[] = [
     author: "Alastor",
     title: "One Piece: Navigating The Grand Line",
     postType: "featured",
-    sampleImg: "img/blog-posts/post7/sample2.jpeg",
+    sampleImg: "/img/blog-posts/post7/sample2.jpeg",
     contents: [
       {
         type: "p",

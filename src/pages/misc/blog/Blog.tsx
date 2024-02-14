@@ -1,20 +1,20 @@
 import { useEffect } from "react";
-import { useGetPosts } from "../../../hooks/misc/blog/useGetPosts";
+import { useFetchBlogPosts } from "../../../hooks/misc/blog/useFetchBlogPosts";
 import { TopPosts } from "./cards/Top";
 import { OthersPosts } from "./cards/Others";
 import { FeaturedPosts } from "./cards/Featured";
 import Footer from "../../../components/footer/Footer";
 
 export default function Blog() {
-  const { blogPosts, getPosts, addPosts } = useGetPosts();
+  const { blogPosts, fetchBlogPosts, addPosts } = useFetchBlogPosts();
   useEffect(() => {
-    getPosts();
+    fetchBlogPosts();
   }, []);
   return (
     <div className="min-h-screen">
       <div className="box-width">
         <div className="blog-section">
-          <h2 className="py-3 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
+          <h2 className="py-3 text-gray-800 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
             Latest Articles
           </h2>
           {blogPosts && blogPosts.length > 0 && (
@@ -29,14 +29,13 @@ export default function Blog() {
               <FeaturedPosts blogPosts={blogPosts} />
             </>
           )}
-
         </div>
         <button
           className="bg-green1 text-white rounded-md p-4 hover:p-6"
           onClick={addPosts}
         >
           Add Posts
-        </button>
+        </button>{" "}
       </div>
       <Footer />
     </div>
