@@ -4,31 +4,30 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const PopularPosts = () => {
-  const { postID } = useParams();
+  const { postID, postType } = useParams();
   const { fetchPopularPosts, popularPosts } = useFetchBlogPosts();
 
   useEffect(() => {
-    if (postID) {
+    if (postID && postType) {
       fetchPopularPosts(postID);
     }
-  }, []);
+  }, [postID]);
 
   return (
     <>
       {popularPosts && (
         <div>
-            <h2 className="text-lg font-semibold mb-2">Popular Posts</h2>
+            <h2 className="text-lg font-semibold mb-4 text-green1">Popular Posts</h2>
           {popularPosts.map(
             ({ title, sampleImg, date, author, postType, id }, i) => {
               return (
-                <Link to={`/blog/posts/${title}/${id}/${postType}`}>
+                <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
                   <div
-                    key={i}
-                    className="overflow-hidden cursor-pointer group mb-4 max-h-[300px] md:h-[130px] flex flex-col-reverse items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 "
+                    className="overflow-hidden cursor-pointer group mb-4 h-[160px] md:h-[140px] flex  items-center bg-white border border-gray-200 rounded-lg shadow flex-row w-full hover:bg-gray-100 "
                   >
-                    <div className="flex items-start flex-col justify-between p-4 leading-normal w-full md:w-2/3 md:h-full">
+                    <div className="flex items-start flex-col justify-between p-4 leading-normal w-2/3 h-full">
                       <div>
-                        <h5 className="mb-2 text-base md:text-ss lg:text-xs font-bold tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="mb-2 text-base md:text-ss lg:text-xs font-bold tracking-tight text-gray-900 ">
                           {title}
                         </h5>
                       </div>
@@ -37,7 +36,7 @@ export const PopularPosts = () => {
                       </p>
                     </div>
                     <img
-                      className="object-cover h-full w-full transition-all duration-300 ease-in-out transform group-hover:scale-105  overflow-hidden rounded-t-lg md:h-full md:rounded-none md:rounded-r-lg md:w-1/3"
+                      className="object-cover transition-all duration-300 ease-in-out transform group-hover:scale-105  overflow-hidden h-full rounded-none rounded-r-lg w-1/3"
                       src={sampleImg}
                       alt={title}
                     />

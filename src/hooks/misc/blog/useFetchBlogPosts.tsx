@@ -54,6 +54,7 @@ export const useFetchBlogPosts = () => {
       setRelatedPosts(relatedList)
       setLoading(false);
       console.log("Blogs fetched");
+      console.log(relatedPosts)
     } catch (err) {
       setError(true);
       console.log(err);

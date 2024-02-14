@@ -1,18 +1,17 @@
 import { FC } from "react";
 import { ContentBlockProp } from "../../../../models/misc/blog";
 export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
-  return contents.map((info) => {
-    const { type, content } = info;
+  return contents.map(({type, content}, i) => {
     if (type === "h1" && typeof content === "string") {
-      return <h1 className="text-xl font-semibold my-2">{content}</h1>;
+      return <h1 key={i} className="text-xl font-semibold my-2">{content}</h1>;
     } else if (type === "h2" && typeof content === "string") {
-      return <h2 className="text-xl font-semibold my-2">{content}</h2>;
+      return <h2 key={i} className="text-xl font-semibold my-2">{content}</h2>;
     } else if (type === "p" && typeof content === "string") {
-      return <p className="leading-relaxed text-gray-800 my-2">{content}</p>;
+      return <p  key={i}className="leading-relaxed text-gray-800 my-2">{content}</p>;
     } else if (type === "p-bold" && typeof content === "string") {
-      return <p className=" font-semibold leading-relaxed text-gray-800 my-2">{content}</p>;
+      return <p  key={i}className=" font-semibold leading-relaxed text-gray-800 my-2">{content}</p>;
     } else if (type === "img" && typeof content === "string") {
-      return <img src={content} alt="NO IMAGE OHHHHH" className="my-2" />;
+      return <img key={i} src={content} alt="NO IMAGE OHHHHH" className="my-2" />;
     } else if (type === "list" && typeof content != "string") {
       return (
         <ul>

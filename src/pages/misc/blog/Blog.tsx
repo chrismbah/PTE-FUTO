@@ -14,8 +14,8 @@ export default function Blog() {
     <div className="min-h-screen">
       <div className="box-width">
         <div className="blog-section">
-          <h2 className="py-3 text-gray-800 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
-            Latest Articles
+          <h2 className="py-3 text-green2 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
+            Top Articles
           </h2>
           {blogPosts && blogPosts.length > 0 && (
             <>
@@ -23,7 +23,7 @@ export default function Blog() {
                 <TopPosts blogPosts={blogPosts} />
                 <OthersPosts blogPosts={blogPosts} />
               </div>
-              <h2 className="py-3 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
+              <h2 className="text-green2 py-3 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
                 Featured
               </h2>
               <FeaturedPosts blogPosts={blogPosts} />
