@@ -11,7 +11,7 @@ export default function Blog() {
     fetchBlogPosts();
   }, []);
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <div className="box-width">
         <div className="blog-section">
           <h2 className="py-3 text-green2 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">

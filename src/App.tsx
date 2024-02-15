@@ -4,8 +4,9 @@ import { CustomToaster } from "./components/toast/CustomToaster";
 import AppProvider from "./provider";
 
 export default function App() {
+ 
   return (
-    <div className="font-dmSans">
+    <div className="font-dmSans scroll-smooth">
       <ErrorBoundary>
         <AppProvider>
           <AppRoutes />
