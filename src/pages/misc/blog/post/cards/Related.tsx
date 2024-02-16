@@ -9,8 +9,8 @@ export const RelatedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
         return (
           <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
             <div className="mb-4 ">
-              <div className="overflow-hidden cursor-pointer group h-[120px] sm:h-[160px] md:h-[140px] flex items-center flex-row gap-2 w-full rounded-lg ">
-                <div className="flex items-start flex-col justify-between py-2 sm:py-4 leading-normal w-2/3 h-full">
+              <div className="overflow-hidden cursor-pointer group h-[120px] sm:h-[140px] md:h-[110px] flex items-center flex-row gap-2 w-full rounded-lg ">
+                <div className="flex items-start flex-col justify-between leading-normal w-2/3 h-full">
                   <div>
                     <h5 className="mb-2 group-hover:underline text-sm md:text-ss lg:text-xs font-bold tracking-tight text-gray-900 ">
                       {title}

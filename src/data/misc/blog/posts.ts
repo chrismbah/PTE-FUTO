@@ -330,7 +330,7 @@ export const posts: BlogPost[] = [
   },
   {
     no: 3,
-    author: "Alastor",
+    author: "Chris Mbah",
     title:
       "Myths and Facts about Polymer Engineering: Debunking Misconceptions",
     postType: "others",
@@ -341,6 +341,7 @@ export const posts: BlogPost[] = [
         content:
           "Polymer engineering, the science and art of creating and manipulating plastics, touches our lives in countless ways. Yet, shrouded in complexity and often misunderstood, it is riddled with misconceptions that hinder public understanding and appreciation. Let's debunk some of the most common myths and shine a light on the fascinating world of polymer engineering!",
       },
+  
       {
         type: "h1",
         content: "Myth 1: Plastics are Bad for the Environment.",
@@ -361,6 +362,10 @@ export const posts: BlogPost[] = [
           "FACT: From lightweight aircraft components to life-saving medical devices, advanced polymer composites pave the way for high-performance applications. From water purification membranes to self-healing materials, the field's impact stretches far beyond everyday household items.",
       },
       {
+        type: "img",
+        content: "/img/blog-posts/post3/machine1.jpg"
+      },
+      {
         type: "h1",
         content: "Myth 3: Polymers are Inert and Lack Functionality.",
       },
@@ -368,6 +373,10 @@ export const posts: BlogPost[] = [
         type: "p",
         content:
           "FACT: Polymers boast incredible versatility. They can be conductive, flame-retardant, biodegradable, or shape-shifting. Polymer engineers tailor them for specific functionalities, like biocompatibility for implants or conductivity for electronics.",
+      },
+      {
+        type: "img",
+        content: "/img/blog-posts/post3/molecule1.jpeg"
       },
       {
         type: "h1",
@@ -379,13 +388,8 @@ export const posts: BlogPost[] = [
           "FACT: The field is constantly evolving! With breakthroughs in nanocomposites, biomimicry, and self-assembly, polymer engineers are at the forefront of developing solutions for energy, clean water, and sustainable infrastructure.",
       },
       {
-        type: "h1",
-        content: "Myth 5: Working with Polymers is Messy and Hazardous.",
-      },
-      {
-        type: "p",
-        content:
-          "FACT: Modern polymer synthesis and processing facilities prioritize safety and sustainability. While certain precautions are necessary, advancements in materials and techniques minimize risks.",
+        type: "img",
+        content: "/img/blog-posts/post3/engineer.jpg"
       },
       {
         type: "h1",
@@ -467,6 +471,10 @@ export const posts: BlogPost[] = [
           "I started out as a blob of goo, hot and melted, in a big factory. They shaped me into a smooth bottle with a cool cap, ready to hold something. It gave me a purpose and I loved it. Then, I got filled with water, dreaming of quenching someone's thirst on a hot day.",
       },
       {
+        type:"img", 
+        content: "/img/blog-posts/post4/pet-made.jpeg"
+      },
+      {
         type: "p",
         content:
           "My first meeting with humans was awesome! They grabbed me excitedly, and I went on a cool ride to a busy market. Everyone cheered when they saw me, and I felt proud to finally do my job. But wait, that didn't last long...",
@@ -477,6 +485,10 @@ export const posts: BlogPost[] = [
           "I got emptied in a flash, tossed aside like an old toy. Was this it? My so-called 'purpose' was to get tossed away and that's it? The ground was rough, the sun was mean, and everything I saw was dusty and yucky. I spent days like this, scared of ending up in a giant pile of trash forever.",
       },
       {
+        type:"img", 
+        content: "/img/blog-posts/post4/pet-sad.jpeg"
+      },
+      {
         type: "p",
         content:
           "Was this the end of my story? A lot of feelings rushed through my head; rage, anger sadness, depression, betrayal, denial. I thought it was truly the end for me. I looked to my side and I saw other bottles as well. They looked hopeless and depressed. I wondered if this was the end for all of us.",
@@ -485,6 +497,10 @@ export const posts: BlogPost[] = [
         type: "p",
         content:
           "But then, something amazing happened! Big hands picked me up and put me with other bottles, all hoping for a second chance. We hopped on a truck and went to a special place where everything whizzed and clanged. It was scary, but weirdly exciting too!",
+      },
+      {
+        type:"img", 
+        content: "/img/blog-posts/post4/pet-recycled.jpeg"
       },
       {
         type: "p",
@@ -500,6 +516,10 @@ export const posts: BlogPost[] = [
         type: "p",
         content:
           "When you're finished with me, please don't throw me away! Look for the green bin with the heart – that's my happy place. If you put me there, I get a chance to become something useful again. It's like magic, but better for the planet!",
+      },
+      {
+        type:"img", 
+        content: "/img/blog-posts/post4/pet-happy.jpeg"
       },
       {
         type: "p",
@@ -587,6 +607,10 @@ export const posts: BlogPost[] = [
         content: "So, how can we break this cycle?",
       },
       {
+        type: "img",
+        content: "/img/blog-posts/post5/thinking.jpg"
+      },
+      {
         type: "list",
         content: [
           {
@@ -597,6 +621,10 @@ export const posts: BlogPost[] = [
             type: "p",
             content:
               " The first step is honest self-awareness. Explore your beliefs about yourself and love. What messages do you tell yourself about your worthiness? Are there past experiences shaping your choices?",
+          },
+          {
+            type: "img",
+            content: "/img/blog-posts/post5/reflection1.jpeg"
           },
           {
             type: "h2",
@@ -642,6 +670,10 @@ export const posts: BlogPost[] = [
           "Remember, changing our internal mirrors takes time and effort. Be patient with yourself, celebrate every step forward, and don't be afraid to seek help. You deserve a love that reflects your true worth, and with self-compassion and awareness, you can create the fulfilling connection you've always desired.",
       },
       {
+        type: "img",
+        content: "/img/blog-posts/post5/proud.png"
+      },
+      {
         type: "p-bold",
         content:
           "You are worthy of love. Choose to see yourself in the light you deserve.",
@@ -661,6 +693,10 @@ export const posts: BlogPost[] = [
           "The phrase 'School Na Scam' (School is a scam) is a popular saying, particularly among Nigerian youths and it often stems from frustration with the education system's challenges as well as the country's challenges.",
       },
       {
+        type: "img",
+        content: "/img/blog-posts/post6/students.jpg"
+      },
+      {
         type: "p-bold",
         content:
           "So first things first let me cut to the chase: School is NOT a scam.",
@@ -674,6 +710,10 @@ export const posts: BlogPost[] = [
         type: "p",
         content:
           "Now that I've gotten that out of my system let me back my statement as well as debunking some common misconceptions about education.",
+      },
+      {
+        type: "img",
+        content: "/img/blog-posts/post6/grad-students.jpeg"
       },
       {
         type: "h1",
@@ -694,6 +734,7 @@ export const posts: BlogPost[] = [
         content:
           "No. No it's not lmaoo. While good grades are important, they're not the sole indicator of success. Education exposes you to diverse knowledge, ignites curiosity, and fosters personal growth. It's about acquiring the tools to navigate the world, not just memorizing facts for exams.",
       },
+     
       {
         type: "h1",
         content: "Misconception 3: Education is useless in Nigeria",
@@ -725,6 +766,10 @@ export const posts: BlogPost[] = [
               "Unlike the 'do or die' pressure of networking in adult jobs, school brings together diverse and talented people who are more open to making friends and connections. It's easier to chat with classmates, join clubs, and build relationships without feeling all stressed out.",
           },
           {
+            type: "img",
+            content: "/img/blog-posts/post6/students.jpg"
+          },
+          {
             type: "h2",
             content: "Intellectual Development",
           },
@@ -744,6 +789,10 @@ export const posts: BlogPost[] = [
         type: "p",
         content:
           "Are there a lot of issues with the way formal education is currently being approached? Yes. Can things be done better? Absolutely! But does that mean School na Scam? No and Never.",
+      },
+      {
+        type: "img",
+        content: "/img/blog-posts/post6/thinking.webp"
       },
       {
         type: "p-bold",
@@ -810,11 +859,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "The world of One Piece is filled with powerful figures, including the Shichibukai (Warlords), Yonko (Emperors), and the World Government (Admirals, Gorosei and The One Who Sits Ontop). These groups play crucial roles in the balance of power, and the Straw Hat Pirates find themselves entangled in their conflicts.",
+          "The world of One Piece is filled with powerful figures, including the Shichibukai (Warlords), Yonko (Emperors), and the World Government (Marines, Cipher Pol, Admirals, Gorosei and The One Who Sits Ontop). These groups play crucial roles in the balance of power, and the Straw Hat Pirates find themselves entangled in their conflicts.",
       },
       {
         type: "img",
-        content: "/img/blog-posts/post7/luffy-gear2.webp"
+        content: "/img/blog-posts/post7/luffy-gear2.jpeg"
       },
       {
         type: "h1",
