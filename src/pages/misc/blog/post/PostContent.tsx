@@ -31,7 +31,10 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
       );
     } else if (type === "img" && typeof content === "string") {
       return (
-        <img key={i} src={content} alt="NO IMAGE OHHHHH" className="my-4 w-full sm:w-[350px] rounded-md" />
+        <div className="w-full flex items-center justify-center">
+        <img key={i} src={content} alt="no-img" className="my-4 w-full sm:w-[400px] rounded-md" />
+
+        </div>
       );
     } else if (type === "list" && typeof content != "string") {
       return (
@@ -46,7 +49,10 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
                     <p className=" text-gray-800 text-sm sm:text-base mb-2">
                       {content}
                     </p>
-                  : type === "img" && <img src={content} className="my-3 w-full sm:w-[350px] rounded-md" />
+                  : type === "img" && <div className="w-full flex items-center justify-center">
+                  <img key={i} src={content} alt="no-img" className="my-4 w-full sm:w-[400px] rounded-md" />
+          
+                  </div>
                 }
               </li>
             );
