@@ -1,4 +1,4 @@
-import { BlogPost } from "../../../models/misc/blog";
+import { BlogPost } from "../../../models/misc/blog/blogPosts";
 export const posts: BlogPost[] = [
   {
     no: 1,
@@ -11,7 +11,39 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Lagos, the bustling megacity of Nigeria, has taken a bold step towards curbing plastic pollution with its recent ban on styrofoam and other single-use plastics. This ambitious move, implemented on January 31, 2024, sent shockwaves through the state, sparking both applause and concern. Let's delve deeper into this crucial decision and its potential impact.",
+          "Lagos, the megacity of Nigeria, has taken a bold step towards curbing plastic pollution with its recent ban on styrofoam and other single-use plastics. This ambitious move, implemented on January 31, 2024, sent shockwaves through the state, sparking both applause and concern. Let's dive deeper into what this 'Styrofoam' plastic is all about, the crucial decision to curb it and its potential impact.",
+      },
+      {
+        type: "h1",
+        content: 'What is "Styrofoam" ?',
+      },
+      {
+        type: "p",
+        content:
+          "Polystyrene is a synthetic polymer that can take multiple chemical forms. And while most of the world calls it by its name, in Nigeria, we’re more familiar with the term “Styrofoam” to describe any size, shape, or makeup of this puffed-up plastic.",
+      },
+      {
+        type: "img",
+        content: "/img/blog-posts/post1/styrene.png",
+      },
+      {
+        type: "p",
+        content:
+          "What you likely call 'Styrofoam' is actually expanded polystyrene (EPS), a plastic material frequently used to create a variety of consumer products. Polystyrene is preferred in the packaging and food industries because it's lightweight (95% air!), has insulation properties that keep food and drinks hot or cold, and is durable enough to protect items during shipping.",
+      },
+      {
+        type: "p",
+        content:
+          "While polystyrene is known to be cost-effective, it's unfortunately very difficult and costly to recycle",
+      },
+      {
+        type: "img",
+        content: "/img/blog-posts/post1/styrofoam-plates.webp",
+      },
+      {
+        type: "p-bold",
+        content:
+          "What was the main reason Lagos Government banned this plastic you might ask?",
       },
       {
         type: "h1",
@@ -24,7 +56,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "img",
-        content: "../img.jpg",
+        content: "/img/blog-posts/post1/styrofoam-clogged-drainage.jpg",
       },
       {
         type: "h1",
@@ -34,6 +66,10 @@ export const posts: BlogPost[] = [
         type: "p",
         content:
           "The Lagos State Waste Management Authority (LAWMA) hold the responsibility for enforcing the ban. Violators face fines and confiscation of banned items. However, concerns linger about the effectiveness of enforcement, particularly considering the widespread use of these materials and the potential economic hardship the ban might bring to some businesses and individuals.",
+      },
+      {
+        type: "img",
+        content: "/img/blog-posts/post1/lawma.jpg",
       },
       {
         type: "h1",
@@ -57,6 +93,10 @@ export const posts: BlogPost[] = [
               "They see it as a crucial step towards a cleaner and healthier Lagos, praising the government's commitment to environmental protection.",
           },
           {
+            type: "img",
+            content: "/img/blog-posts/post1/support-styrofoam-ban.jpg",
+          },
+          {
             type: "h2",
             content:
               "Businesses and individuals reliant on banned materials express concerns:",
@@ -65,6 +105,10 @@ export const posts: BlogPost[] = [
             type: "p",
             content:
               "They worry about the economic impact, particularly the availability and affordability of suitable alternatives. Additionally, some highlight the need for comprehensive support and awareness campaigns to ensure a smooth transition.",
+          },
+          {
+            type: "img",
+            content: "/img/blog-posts/post1/styrofoam-traders.jpeg",
           },
         ],
       },
@@ -87,6 +131,10 @@ export const posts: BlogPost[] = [
           "While the ban is specific to Lagos, it sends a powerful message across Nigeria and beyond. It serves as a precedent for other regions struggling with plastic pollution, demonstrating the potential for impactful action even amidst challenges.",
       },
       {
+        type: "img",
+        content: "/img/blog-posts/post1/lawma2.webp",
+      },
+      {
         type: "h1",
         content: "Wrapping Up:",
       },
@@ -98,7 +146,7 @@ export const posts: BlogPost[] = [
       {
         type: "p-bold",
         content:
-          "What are your thoughts on the ban? Does it offer more pros than cons? Share your thoughts in the comments section",
+          "What are your thoughts on the ban? Does it offer more pros than cons? Share your thoughts in the comment section",
       },
     ],
   },
@@ -121,7 +169,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        content: 
+        content:
           "Nanotechnology deals with manipulating matter at the nanoscale, where one nanometer is a billionth of a meter. At this microscopic level, materials exhibit unique properties that differ significantly from their bulk counterparts. By incorporating nanoparticles into polymers, scientists can create novel textiles with tailored functions and enhanced performance.        ",
       },
       {
@@ -295,12 +343,12 @@ export const posts: BlogPost[] = [
       },
       {
         type: "h1",
-        content: "Myth 1: All Plastics are Bad for the Environment.",
+        content: "Myth 1: Plastics are Bad for the Environment.",
       },
       {
         type: "p",
         content:
-          "Fact: While plastic pollution poses a significant challenge, not all plastics are created equal. Biodegradable and compostable polymers offer sustainable alternatives, and advancements in recycling are improving plastic's circularity. Responsible usage and innovation go a long way.",
+          "FACT: While plastic pollution poses a significant challenge, not all plastics are created equal. Biodegradable and compostable polymers offer sustainable alternatives, and advancements in recycling are improving plastic's circularity. Responsible usage and innovation go a long way.",
       },
       {
         type: "h1",
@@ -310,7 +358,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Fact: From lightweight aircraft components to life-saving medical devices, advanced polymer composites pave the way for high-performance applications. From water purification membranes to self-healing materials, the field's impact stretches far beyond everyday household items.",
+          "FACT: From lightweight aircraft components to life-saving medical devices, advanced polymer composites pave the way for high-performance applications. From water purification membranes to self-healing materials, the field's impact stretches far beyond everyday household items.",
       },
       {
         type: "h1",
@@ -319,7 +367,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Fact: Polymers boast incredible versatility. They can be conductive, flame-retardant, biodegradable, or shape-shifting. Polymer engineers tailor them for specific functionalities, like biocompatibility for implants or conductivity for electronics.",
+          "FACT: Polymers boast incredible versatility. They can be conductive, flame-retardant, biodegradable, or shape-shifting. Polymer engineers tailor them for specific functionalities, like biocompatibility for implants or conductivity for electronics.",
       },
       {
         type: "h1",
@@ -328,7 +376,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Fact: The field is constantly evolving! With breakthroughs in nanocomposites, biomimicry, and self-assembly, polymer engineers are at the forefront of developing solutions for energy, clean water, and sustainable infrastructure.",
+          "FACT: The field is constantly evolving! With breakthroughs in nanocomposites, biomimicry, and self-assembly, polymer engineers are at the forefront of developing solutions for energy, clean water, and sustainable infrastructure.",
       },
       {
         type: "h1",
@@ -337,7 +385,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Fact: Modern polymer synthesis and processing facilities prioritize safety and sustainability. While certain precautions are necessary, advancements in materials and techniques minimize risks.",
+          "FACT: Modern polymer synthesis and processing facilities prioritize safety and sustainability. While certain precautions are necessary, advancements in materials and techniques minimize risks.",
       },
       {
         type: "h1",
@@ -352,24 +400,41 @@ export const posts: BlogPost[] = [
         type: "list",
         content: [
           {
-            type: "p",
+            type: "p-bold",
             content:
-              "Lightweight and strong: Enabling fuel-efficient vehicles and aerospace advancements.",
+              "Lightweight and strong",
           },
           {
             type: "p",
             content:
-              "Biocompatible and durable: Revolutionizing medical devices and implants.",
+              "Enabling fuel-efficient vehicles and aerospace advancements.",
           },
           {
+            type: "p-bold",
+            content:
+              "Biocompatible and durable",
+          }, {
             type: "p",
             content:
-              "Smart and responsive: Integrating sensors and self-healing capabilities.",
+              "Revolutionizing medical devices and implants.",
           },
           {
+            type: "p-bold",
+            content:
+              "Smart and responsive",
+          },{
             type: "p",
             content:
-              "Sustainable and circular: Developing bio-based and recyclable polymers.",
+              "Integrating sensors and self-healing capabilities.",
+          },
+          {
+            type: "p-bold",
+            content:
+              "Sustainable and circular",
+          }, {
+            type: "p",
+            content:
+              "Developing bio-based and recyclable polymers.",
           },
         ],
       },
@@ -380,7 +445,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p-bold",
-        content: "Feel fre to share your thoughts in the comment section!",
+        content: "Feel free to share your thoughts in the comment section!",
       },
     ],
   },
@@ -442,7 +507,7 @@ export const posts: BlogPost[] = [
           "So, remember my story, friends. Choose the blue bin, recycle whenever you can, and let's work together to make a world where plastic bottles like me have happy endings, not scary trashy ones. We can do it!",
       },
       {
-        type: "p",
+        type: "p-bold",
         content: "See you later guys!",
       },
     ],
@@ -457,7 +522,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Have you ever wondered why some people seem to attract amazing, healthy relationships, while others struggle with patterns of unhealthy or unfulfilling connections? The answer might lie in a powerful, yet often unrecognized, truth: ",
+          "Have you ever wondered why some people seem to attract amazing, healthy relationships, while others struggle with patterns of unhealthy or unfulfilling connections? The answer might lie in a powerful, yet often unrecognized truth: ",
       },
       {
         type: "p-bold",
@@ -467,6 +532,10 @@ export const posts: BlogPost[] = [
         type: "p",
         content:
           "Think of it like a mirror. Our self-worth, shaped by past experiences, beliefs, and even subconscious thoughts, reflects back the kind of love we believe we are worthy of receiving. If we see ourselves as flawed, undeserving, or incapable of true connection, the mirror might show us distant partners, emotionally unavailable relationships, or even cycles of pain and rejection.",
+      },
+      {
+        type: "img",
+        content: "/img/blog-posts/post5/self-esteem.jpg"
       },
       {
         type: "h1",
@@ -604,7 +673,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Now that I've gotten that out of my system let me back my statement up by debunking some common misconceptions.",
+          "Now that I've gotten that out of my system let me back my statement as well as debunking some common misconceptions about education.",
       },
       {
         type: "h1",
@@ -623,7 +692,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "While good grades are important, they're not the sole indicator of success. Education exposes you to diverse knowledge, ignites curiosity, and fosters personal growth. It's about acquiring the tools to navigate the world, not just memorizing facts for exams.",
+          "No. No it's not lmaoo. While good grades are important, they're not the sole indicator of success. Education exposes you to diverse knowledge, ignites curiosity, and fosters personal growth. It's about acquiring the tools to navigate the world, not just memorizing facts for exams.",
       },
       {
         type: "h1",

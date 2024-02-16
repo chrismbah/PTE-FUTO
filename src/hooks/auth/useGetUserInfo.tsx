@@ -37,5 +37,5 @@ export const useGetUserInfo = () => {
     }
   };
 
-  return { user, loading, getUserInfo, studentDetails };
+  return { user, userID, loading, getUserInfo, studentDetails };
 };

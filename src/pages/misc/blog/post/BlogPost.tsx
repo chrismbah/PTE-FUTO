@@ -31,20 +31,20 @@ export default function BlogPost() {
 
   useEffect(() => {
     if (postID && postType) {
-      fetchBlogPost(postID);
-      fetchPopularPosts(postID, postType);
-      fetchRelatedPosts(postID, postType);
+      try {
+        fetchBlogPost(postID);
+        fetchPopularPosts(postID, postType);
+        fetchRelatedPosts(postID, postType);
+      } finally {
+        window.scroll(0, 0);
+      }
     }
-
-    // if(isOffline){
-    //   useToast("error", "You are currently offline.")
-    // }
   }, [postID]);
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="box-width">
-        <div className="px-3 py-20 sm:px-16 md:px-40 sm:py-24">
+      <div className="box-width2">
+        <div className="px-3 py-20 sm:px-10 lg:px-12 sm:py-24">
           {/* <img
                 src={blogPost.sampleImg}
                 alt={blogPost.title}
@@ -53,7 +53,7 @@ export default function BlogPost() {
           {/* <p>{blogPost.author}</p>
               <p>{blogPost.title}</p> */}
           {/* <p>{blogPost.no}</p> */}
-          <div className=" sticky grid md:grid-cols-5 gap-6">
+          <div className="sticky grid md:grid-cols-5 gap-4">
             <div className="md:col-span-3">
               {blogPostLoading && (
                 <>
@@ -84,56 +84,68 @@ export default function BlogPost() {
                   <Skeleton
                     count={3}
                     className="h-[10px] rounded-lg w-full md:w-[70%]"
+                  />{" "}
+                  <Skeleton
+                    count={1}
+                    className="h-[10px] rounded-lg w-full md:w-[60%]"
+                  />{" "}
+                  <Skeleton
+                    count={3}
+                    className="h-[10px] rounded-lg w-full md:w-[75%]"
                   />
                 </>
               )}
               {blogPostError && "Something went wrong!"}
               {!blogPostLoading && !blogPostError && blogPost && (
                 <div className="bg-white shadow rounded-lg p-4">
-                <PostContent contents={blogPost.contents} />                
+                  <PostContent contents={blogPost.contents} />
                 </div>
               )}
             </div>
             <div className="md:col-span-2">
               <CommentSection />
-              <h2 className="text-lg pb-1 border-b border-b-gray-200 font-semibold mb-4 text-green1">
-                Related Posts
-              </h2>
-              {relatedPostsLoading && (
-                <Skeleton
-                  className="mb-4 h-[100px] sm:h-[160px] md:h-[140px] w-full rounded-lg "
-                  count={2}
-                />
-              )}
-              {relatedPostsError ||
-                (relatedPosts &&
-                  relatedPosts?.length < 1 &&
-                  "Something went wrong. Please try again.")}
-              {!relatedPostsLoading &&
-                !relatedPostsError &&
-                relatedPosts &&
-                relatedPosts?.length > 0 && (
-                  <RelatedPosts blogPosts={relatedPosts} />
+              <div className="mb-4 bg-white shadow rounded-lg p-4">
+                <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
+                  Related Posts
+                </h2>
+                {relatedPostsLoading && (
+                  <Skeleton
+                    className="mb-4 h-[100px] sm:h-[160px] md:h-[140px] w-full rounded-lg "
+                    count={2}
+                  />
                 )}
-              <h2 className="text-lg pb-1 border-b border-b-gray-200 font-semibold mb-4 text-green1">
-                Popular Posts
-              </h2>
-              {popularPostsLoading && (
-                <Skeleton
-                  className="mb-4 h-[100px] sm:h-[160px] md:h-[140px] w-full rounded-lg "
-                  count={2}
-                />
-              )}
-              {popularPostsError ||
-                (popularPosts &&
-                  popularPosts?.length < 1 &&
-                  "Something went wrong. Please try again.")}
-              {!popularPostsLoading &&
-                !popularPostsError &&
-                popularPosts &&
-                popularPosts?.length > 0 && (
-                  <PopularPosts blogPosts={popularPosts} /> 
+                {relatedPostsError ||
+                  (relatedPosts &&
+                    relatedPosts?.length < 1 &&
+                    "Something went wrong. Please try again.")}
+                {!relatedPostsLoading &&
+                  !relatedPostsError &&
+                  relatedPosts &&
+                  relatedPosts?.length > 0 && (
+                    <RelatedPosts blogPosts={relatedPosts} />
+                  )}
+              </div>
+              <div className="mb-4 bg-white shadow rounded-lg p-4">
+                <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
+                  Popular Posts
+                </h2>
+                {popularPostsLoading && (
+                  <Skeleton
+                    className="mb-4 h-[100px] sm:h-[160px] md:h-[140px] w-full rounded-lg "
+                    count={2}
+                  />
                 )}
+                {popularPostsError ||
+                  (popularPosts &&
+                    popularPosts?.length < 1 &&
+                    "Something went wrong. Please try again.")}
+                {!popularPostsLoading &&
+                  !popularPostsError &&
+                  popularPosts &&
+                  popularPosts?.length > 0 && (
+                    <PopularPosts blogPosts={popularPosts} />
+                  )}
+              </div>
             </div>
           </div>
         </div>

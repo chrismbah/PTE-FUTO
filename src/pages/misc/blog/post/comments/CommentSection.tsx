@@ -1,17 +1,27 @@
-import { useGetUserInfo } from "../../../../../hooks/auth/useGetUserInfo";
-import userProfile from "../../../../../assets/svg/icons/userProfile.svg"
+// import { useGetUserInfo } from "../../../../../hooks/auth/useGetUserInfo";
+import userProfile from "../../../../../assets/svg/icons/userProfile.svg";
+import { PaperPlaneIcon } from "../../../../../components/icons/PaperPlaneIcon";
 export default function CommentSection() {
-    const {user} = useGetUserInfo()
+  //   const { user } = useGetUserInfo();
   return (
     <div className="mb-4 bg-white shadow rounded-lg p-4">
-      <h2 className="text-lg font-semibold mb-4 text-green1">
-        Top Comments
+      <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
+        Comments
       </h2>
       <div className="flex justify-start items-start gap-1">
-        <img src={userProfile} alt="user" className="w-10" />
-        <textarea name="" id="" className="w-full min-h-24 max-h-36 focus:outline-none
-             focus:border-none border border-gray-300 placeholder:text-gray-400   
-             placeholder:font-light placeholder:text-xs rounded-lg" placeholder="Enter your comment..."></textarea>
+        <img src={userProfile} alt="user" className="w-10 sm:w-12" />
+        <textarea
+          className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-sm sm:text-base
+             focus:border-green2 border border-gray-200 placeholder:text-gray-400 focus:ring-0  
+             placeholder:font-light placeholder:text-sm sm:placeholder:text-xs rounded-lg resize-none"
+          placeholder="Write your thoughts here..."
+        ></textarea>
+        <button
+          type="submit"
+          className="inline-flex justify-center p-2 text-green1 rounded-full cursor-pointer hover:bg-blue-100 pr-1"
+        >
+          <PaperPlaneIcon />
+        </button>
       </div>
     </div>
   );

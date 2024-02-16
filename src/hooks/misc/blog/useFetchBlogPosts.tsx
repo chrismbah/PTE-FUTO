@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { collection, addDoc, getDocs, getDoc, doc } from "firebase/firestore";
-import { IBlogPost, BlogPost } from "../../../models/misc/blog";
+import { IBlogPost, BlogPost } from "../../../models/misc/blog/blogPosts";
 import { posts } from "../../../data/misc/blog/posts";
 import { db } from "../../../config/firebase";
 import { getCurrentDate } from "../../../helpers/formatDate";
 // import { useNetworkNotifications } from "../../network/useNetworkNotifications";
-// import { useToast } from "../../../helpers/useToast";
+import { useToast } from "../../../helpers/useToast";
 
 export const useFetchBlogPosts = () => {
   // const { isOffline } = useNetworkNotifications();
@@ -66,8 +66,14 @@ export const useFetchBlogPosts = () => {
         console.log("Doc doesnt exist");
       }
     } catch (error: any) {
-      setBlogPostLoading(false)
+      setBlogPostLoading(false);
       setBlogPostError(true);
+      if (error.code === "unavailable") {
+        useToast(
+          "error",
+          "Sorry, an error occured. Please check your network connection."
+        );
+      }
       console.log(error);
     }
   };
