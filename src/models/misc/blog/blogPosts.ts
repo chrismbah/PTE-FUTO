@@ -5,6 +5,14 @@ export interface BlogPost {
   postType: "top" | "featured" | "others";
   sampleImg: string;
   contents: ContentBlock[];
+}export interface TBlogPost {
+  no:number;
+  author: string;
+  title: string;
+  postType: "top" | "featured" | "others";
+  sampleImg: string;
+  contents: ContentBlock[];
+  date: string;
 }
 
 export interface ContentBlock {

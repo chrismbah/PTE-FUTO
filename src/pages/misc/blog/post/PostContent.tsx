@@ -36,7 +36,7 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
 
         </div>
       );
-    } else if (type === "list" && typeof content != "string") {
+    } else if (type === "list" && typeof content !== "string") {
       return (
         <ul>
           {content.map(({ type, content }, i) => {
@@ -46,8 +46,8 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
                   <h2 className="text-xs sm:text-md font-semibold">-{content}</h2>
                  : 
                   type === "p" ? 
-                    <p className=" text-gray-800 text-ss sm:text-xs mb-2">
-                      -{content}
+                    <p className=" text-gray-800 text-sm sm:text-base mb-2">
+                      {content}
                     </p>
                   : type === "img" && <div className="w-full flex items-center justify-center">
                   <img key={i} src={content} alt="no-img" className="my-4 w-full sm:w-[400px] rounded-md" />

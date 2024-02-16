@@ -45,11 +45,6 @@ export default function BlogPost() {
     <div className="min-h-screen bg-gray-50">
       <div className="box-width2">
         <div className="px-3 py-20 sm:px-10 lg:px-12 sm:py-24">
-          {/* <img
-                src={blogPost.sampleImg}
-                alt={blogPost.title}
-                className="w-[350px] mb-3 rounded-lg"
-              /> */}
           {/* <p>{blogPost.author}</p>
               <p>{blogPost.title}</p> */}
           {/* <p>{blogPost.no}</p> */}
@@ -98,7 +93,19 @@ export default function BlogPost() {
               {blogPostError && "Something went wrong!"}
               {!blogPostLoading && !blogPostError && blogPost && (
                 <div className="bg-white shadow rounded-lg p-4">
+                  <h1 className="text-base sm:text-xl md:text-2xl font-semibold mb-3">{blogPost?.title}</h1>
+                  <div className="w-full flex items-center justify-center">
+                    <img
+                      src={blogPost?.sampleImg}
+                      alt={blogPost?.title}
+                      className="w-[450px] h-72 mb-3 rounded-lg"
+                    />
+                  </div>
                   <PostContent contents={blogPost.contents} />
+                  <div className="mt-4 flex items-center gap-2">
+                    <p className="font-[500] text-green2 text-xs md:text-md">{blogPost?.author},</p>
+                    <p className="text-gray-500 text-xs font-light">{blogPost?.date}</p>
+                  </div>
                 </div>
               )}
             </div>

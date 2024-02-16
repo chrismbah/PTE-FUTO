@@ -18,7 +18,7 @@ export default function CommentSection() {
         ></textarea>
         <button
           type="submit"
-          className="inline-flex justify-center mt-2 px-2 py-1 sm:p-2 text-green1 rounded-full cursor-pointer hover:bg-blue-100 pr-1"
+          className="inline-flex justify-center mt-2 px-2 py-1 sm:p-2 text-green1 rounded-md cursor-pointer hover:bg-blue-100 pr-1"
         >
           <PaperPlaneIcon className="w-[15px] sm:w-5 sm:h-5 ml-1"/>
         </button>

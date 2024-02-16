@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { collection, addDoc, getDocs, getDoc, doc } from "firebase/firestore";
-import { IBlogPost, BlogPost } from "../../../models/misc/blog/blogPosts";
+import { IBlogPost, TBlogPost } from "../../../models/misc/blog/blogPosts";
 import { posts } from "../../../data/misc/blog/posts";
 import { db } from "../../../config/firebase";
 import { getCurrentDate } from "../../../helpers/formatDate";
@@ -10,7 +10,7 @@ import { useToast } from "../../../helpers/useToast";
 export const useFetchBlogPosts = () => {
   // const { isOffline } = useNetworkNotifications();
   const [blogPosts, setBlogPosts] = useState<IBlogPost[] | null>(null);
-  const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
+  const [blogPost, setBlogPost] = useState<TBlogPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<IBlogPost[] | null>(null);
   const [popularPosts, setPopularPosts] = useState<IBlogPost[] | null>(null);
   const [blogPostsLoading, setBlogPostsLoading] = useState(true);
@@ -58,7 +58,7 @@ export const useFetchBlogPosts = () => {
     try {
       const postSnap = await getDoc(postRef);
       if (postSnap.exists()) {
-        const postData = postSnap.data() as BlogPost;
+        const postData = postSnap.data() as TBlogPost;
         setBlogPost(postData);
         setBlogPostLoading(false);
       } else {
