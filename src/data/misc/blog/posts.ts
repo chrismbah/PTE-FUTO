@@ -693,10 +693,6 @@ export const posts: BlogPost[] = [
           "The phrase 'School Na Scam' (School is a scam) is a popular saying, particularly among Nigerian youths and it often stems from frustration with the education system's challenges as well as the country's challenges.",
       },
       {
-        type: "img",
-        content: "/img/blog-posts/post6/students.jpg"
-      },
-      {
         type: "p-bold",
         content:
           "So first things first let me cut to the chase: School is NOT a scam.",

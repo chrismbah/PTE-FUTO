@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { collection, addDoc, getDocs, getDoc, doc } from "firebase/firestore";
-import { IBlogPost, TBlogPost } from "../../../models/misc/blog/blogPosts";
-import { posts } from "../../../data/misc/blog/posts";
-import { db } from "../../../config/firebase";
-import { getCurrentDate } from "../../../helpers/formatDate";
+import { IBlogPost, TBlogPost } from "../../../../models/misc/blog/blogPosts";
+import { posts } from "../../../../data/misc/blog/posts";
+import { db } from "../../../../config/firebase";
+import { getCurrentDate } from "../../../../helpers/formatDate";
 // import { useNetworkNotifications } from "../../network/useNetworkNotifications";
-import { useToast } from "../../../helpers/useToast";
+import { useToast } from "../../../../helpers/useToast";
 
 export const useFetchBlogPosts = () => {
   // const { isOffline } = useNetworkNotifications();

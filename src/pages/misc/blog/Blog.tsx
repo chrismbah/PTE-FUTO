@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useFetchBlogPosts } from "../../../hooks/misc/blog/useFetchBlogPosts";
+import { useFetchBlogPosts } from "./hooks/useFetchBlogPosts";
 import { TopPosts } from "./cards/Top";
 import { OthersPosts } from "./cards/Others";
 import { FeaturedPosts } from "./cards/Featured";

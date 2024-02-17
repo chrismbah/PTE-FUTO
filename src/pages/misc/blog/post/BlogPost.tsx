@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useFetchBlogPosts } from "../../../../hooks/misc/blog/useFetchBlogPosts";
+import { useFetchBlogPosts } from "../hooks/useFetchBlogPosts";
 import { useParams } from "react-router-dom";
 import { PostContent } from "./PostContent";
 import { PopularPosts } from "./cards/Popular";
@@ -10,6 +10,7 @@ import Footer from "../../../../components/footer/Footer";
 import CommentSection from "./comments/CommentSection";
 // import { useNetworkNotifications } from "../../../../hooks/network/useNetworkNotifications";
 // import { useToast } from "../../../../helpers/useToast";
+import { WriteIcon } from "../../../../components/icons/WriteIcon";
 
 export default function BlogPost() {
   const {
@@ -31,13 +32,13 @@ export default function BlogPost() {
 
   useEffect(() => {
     if (postID && postType) {
-      try {
-        fetchBlogPost(postID);
-        fetchPopularPosts(postID, postType);
-        fetchRelatedPosts(postID, postType);
-      } finally {
-        window.scroll(0, 0);
-      }
+      // try {
+      fetchBlogPost(postID);
+      fetchPopularPosts(postID, postType);
+      fetchRelatedPosts(postID, postType);
+      // } finally {
+      //   window.scroll(0, 0);
+      // }
     }
   }, [postID]);
 
@@ -45,9 +46,6 @@ export default function BlogPost() {
     <div className="min-h-screen bg-gray-50">
       <div className="box-width2">
         <div className="px-3 py-20 sm:px-10 lg:px-12 sm:py-24">
-          {/* <p>{blogPost.author}</p>
-              <p>{blogPost.title}</p> */}
-          {/* <p>{blogPost.no}</p> */}
           <div className="sticky grid md:grid-cols-5 gap-4">
             <div className="md:col-span-3">
               {blogPostLoading && (
@@ -93,31 +91,39 @@ export default function BlogPost() {
               {blogPostError && "Something went wrong!"}
               {!blogPostLoading && !blogPostError && blogPost && (
                 <div className="bg-white shadow rounded-lg p-4">
-                  <h1 className="text-base sm:text-xl md:text-2xl font-semibold mb-3">{blogPost?.title}</h1>
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 w-full text-center">
+                    {blogPost?.title}
+                  </h1>
                   <div className="w-full flex items-center justify-center">
                     <img
                       src={blogPost?.sampleImg}
                       alt={blogPost?.title}
-                      className="w-[450px] h-72 mb-3 rounded-lg"
+                      className="w-[550px] mb-3 rounded-lg"
                     />
                   </div>
                   <PostContent contents={blogPost.contents} />
-                  <div className="mt-4 flex items-center gap-2">
-                    <p className="font-[500] text-green2 text-xs md:text-md">{blogPost?.author},</p>
-                    <p className="text-gray-500 text-xs font-light">{blogPost?.date}</p>
+                  <div className="mt-6">
+                    <div className="flex items-center gap-1">
+                      <WriteIcon className="text-green2 w-4 h-4" />
+                      <p className="font-satisfy md:text-md mt-1 text-gray-500">
+                        {blogPost?.author}
+                      </p>
+                    </div>
+                    <p className="text-gray-500 font-inter text-xss sm:text-sm md:text-xs font-[400]">
+                      {blogPost?.date}
+                    </p>
                   </div>
                 </div>
               )}
             </div>
-            <div className="md:col-span-2">
-              <CommentSection />
+            <div className="md:col-span-2 flex flex-col-reverse md:flex-col">
               <div className="mb-4 bg-white shadow rounded-lg p-4">
                 <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
                   Related Posts
                 </h2>
                 {relatedPostsLoading && (
                   <Skeleton
-                    className="mb-4 h-[100px] sm:h-[160px] md:h-[140px] w-full rounded-lg "
+                    className="mb-4 h-[120px] sm:h-[140px] md:h-[110px] w-full rounded-lg "
                     count={2}
                   />
                 )}
@@ -138,7 +144,7 @@ export default function BlogPost() {
                 </h2>
                 {popularPostsLoading && (
                   <Skeleton
-                    className="mb-4 h-[100px] sm:h-[160px] md:h-[140px] w-full rounded-lg "
+                    className="mb-4 h-[120px] sm:h-[140px] md:h-[110px] w-full rounded-lg "
                     count={2}
                   />
                 )}
@@ -153,6 +159,7 @@ export default function BlogPost() {
                     <PopularPosts blogPosts={popularPosts} />
                   )}
               </div>
+              <CommentSection />
             </div>
           </div>
         </div>

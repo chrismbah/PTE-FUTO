@@ -16,7 +16,8 @@ export default {
     fontFamily: {
       dmSans: ['Dm Sans', 'sans-serif'],
       inter: ['Inter', 'serif'],
-      poppins: ['Poppins', 'serif']
+      poppins: ['Poppins', 'serif'],
+      satisfy: ['Satisfy', 'serif']
     },
     screens: {
       'xxss': '300px',

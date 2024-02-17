@@ -10,7 +10,7 @@ export default function CommentSection() {
       </h2>
       <div className="flex justify-start items-start gap-1">
         <img src={userProfile} alt="user" className="w-10 sm:w-12" />
-        <textarea
+        <textarea maxLength={120}
           className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-sm sm:text-base
              focus:border-green2 border border-gray-300 placeholder:text-gray-300 focus:ring-0  
              placeholder:font-light placeholder:text-ss sm:placeholder:text-xs rounded-lg resize-none"
