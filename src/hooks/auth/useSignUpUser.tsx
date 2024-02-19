@@ -8,6 +8,8 @@ import { useForm } from "react-hook-form";
 import { signUpSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useToast } from "../../helpers/useToast";
+import { getCurrentDate } from "../../helpers/formatDate";
+import { getCurrentTime } from "../../helpers/getCurrentTime";
 
 
 export default function useSignUpUser() {
@@ -26,7 +28,6 @@ export default function useSignUpUser() {
       //*Stores user info in firestore database
       const user = await createUserWithEmailAndPassword(auth, email, password);
       const userID = user.user.uid;
-
       await addDoc(userInfoRef, {
         userID: userID,
         firstName: firstName,
@@ -34,6 +35,8 @@ export default function useSignUpUser() {
         email: email,
         regNo: regNo,
         level: level,
+        registeredDate: getCurrentDate(),
+        registeredTime: getCurrentTime()
       });
       setLoading(false);
       reset();

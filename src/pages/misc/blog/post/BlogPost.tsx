@@ -11,6 +11,8 @@ import CommentSection from "./comments/CommentSection";
 // import { useNetworkNotifications } from "../../../../hooks/network/useNetworkNotifications";
 // import { useToast } from "../../../../helpers/useToast";
 import { WriteIcon } from "../../../../components/icons/WriteIcon";
+import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
+import { useBlogComments } from "../hooks/useBlogComments";
 
 export default function BlogPost() {
   const {
@@ -27,18 +29,22 @@ export default function BlogPost() {
     relatedPostsLoading,
     relatedPostsError,
   } = useFetchBlogPosts();
+  const {getUserInfo} = useGetUserInfo()
   const { postID, postType } = useParams();
+  const {getPostComments} = useBlogComments()
   // const { isOffline } = useNetworkNotifications()
 
   useEffect(() => {
     if (postID && postType) {
-      // try {
-      fetchBlogPost(postID);
-      fetchPopularPosts(postID, postType);
-      fetchRelatedPosts(postID, postType);
-      // } finally {
-      //   window.scroll(0, 0);
-      // }
+      try {
+        fetchBlogPost(postID);
+        fetchPopularPosts(postID, postType);
+        fetchRelatedPosts(postID, postType);
+        getUserInfo()
+        getPostComments()
+      } finally {
+        window.scroll(0, 0);
+      }
     }
   }, [postID]);
 

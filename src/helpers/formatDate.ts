@@ -13,3 +13,6 @@ export function getCurrentDate() {
     return `${day}${ordinalIndicator} ${month}, ${year}`;
   }
   
+export function getFormattedDate(){
+  
+}

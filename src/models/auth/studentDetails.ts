@@ -4,4 +4,8 @@ export interface StudentDetails{
     regNo?: string | undefined;
     level: string;
     email: string;
+    loginDate: string;
+    loginTime: string;
+    registeredDate: string,
+    registeredTime: string
 }
