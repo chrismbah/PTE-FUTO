@@ -8,13 +8,19 @@ import { customTooltipTheme } from "../../../../../themes/customTooltip";
 // import { Comments } from "./Comments";
 
 export default function CommentSection() {
-  const { addUserComment, userComment, setUserComment, getPostComments, blogComments } = useBlogComments();
-    const {  getUserInfo } = useGetUserInfo();
+  const {
+    addUserComment,
+    userComment,
+    setUserComment,
+    getPostComments,
+    // blogComments,
+  } = useBlogComments();
+  const { getUserInfo } = useGetUserInfo();
   useEffect(() => {
     getUserInfo();
     getPostComments();
   }, []);
-  
+
   return (
     <div className="mb-4 bg-white shadow rounded-lg p-4 sticky top-24">
       <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
