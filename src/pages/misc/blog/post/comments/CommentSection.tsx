@@ -54,7 +54,8 @@ export default function CommentSection() {
         </Tooltip>
       </div>
       {
-        !postCommentsLoading && !postCommentsError && postComments &&  postComments.length > 0 && <Comments postComments={postComments}/>
+        !postCommentsLoading && !postCommentsError && postComments &&  postComments.length > 0 && 
+        <Comments postComments={postComments}/>
       }
       {
         postCommentsLoading && <p className="w-full text-xs text-gray-500 text-center py-2">Loading Comments...</p>

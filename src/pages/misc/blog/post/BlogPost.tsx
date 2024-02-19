@@ -56,7 +56,7 @@ export default function BlogPost() {
           <div className="sticky grid md:grid-cols-5 gap-4">
             <div className="md:col-span-3">
               {blogPostLoading && (
-                <>
+                <div className="p-4">
                   <Skeleton className="h-[12px] w-[75%] md:w-36" />
                   <Skeleton
                     count={3}
@@ -93,7 +93,7 @@ export default function BlogPost() {
                     count={3}
                     className="h-[10px] rounded-lg w-full md:w-[75%]"
                   />
-                </>
+                </div>
               )}
               {blogPostError && "Something went wrong!"}
               {!blogPostLoading && !blogPostError && blogPost && (
@@ -123,7 +123,7 @@ export default function BlogPost() {
                 </div>
               )}
             </div>
-            <div className="md:col-span-2 flex flex-col-reverse md:flex-col">
+            <div className=" md:col-span-2 flex flex-col-reverse md:flex-col">
               <div className="mb-4 bg-white shadow rounded-lg p-4">
                 <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
                   Related Posts

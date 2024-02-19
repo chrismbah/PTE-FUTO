@@ -8,6 +8,7 @@ import { IPostComment } from "../../../../models/misc/blog/postComments";
 import { useToast } from "../../../../helpers/useToast";
 // import { getCurrentDate } from "../../../../helpers/formatDate";
 import { v4 as uuid } from "uuid";
+import { getCurrentDateInShortFormat } from "../../../../helpers/formatDate";
 
 export const useBlogComments = () => {
   const { postID } = useParams();
@@ -17,7 +18,7 @@ export const useBlogComments = () => {
   const [postCommentsLoading, setPostCommentsLoading] = useState<boolean>(true);
   const [postCommentsError, setPostCommentsError] = useState<boolean>(false);
   const currentTime = getCurrentTime();
-  // const dateObject = new Date(comment.time);
+  const currentDate = getCurrentDateInShortFormat()
   const { userID, studentDetails } = useGetUserInfo();
 
   const getPostComments = async () => {
@@ -67,15 +68,18 @@ export const useBlogComments = () => {
     try {
       if (studentDetails && postID && userID) {
         if (userComment !== "") {
-          const { firstName, lastName } = studentDetails;
+          const { firstName, lastName, email } = studentDetails;
           const commentInfo: IPostComment = {
             postID: postID,
             userID: userID,
             commentID: uuid(),
             firstName: firstName,
             lastName: lastName,
+            email: email,
             comment: userComment,
             time: currentTime,
+            date:  currentDate, 
+            timeStamp: new Date()
           };
           await addDoc(commentsRef, commentInfo);
           useToast("success", "Comment added successfully!");

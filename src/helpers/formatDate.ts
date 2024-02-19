@@ -1,3 +1,4 @@
+
 export function getCurrentDate() {
     const today = new Date();
     const day = today.getDate();
@@ -12,7 +13,11 @@ export function getCurrentDate() {
   
     return `${day}${ordinalIndicator} ${month}, ${year}`;
   }
-  
-export function getFormattedDate(){
-  
+export function getCurrentDateInShortFormat(): string {
+  const today = new Date();
+  const day = today.getDate().toString().padStart(2, "0"); // Ensure two digits (0-padded)
+  const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(today);
+  const year = today.getFullYear();
+  return `${day} ${month}, ${year}`;
 }
+
