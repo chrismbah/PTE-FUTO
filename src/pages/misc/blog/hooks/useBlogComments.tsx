@@ -4,19 +4,24 @@ import { getCurrentTime } from "../../../../helpers/getCurrentTime";
 import { useParams } from "react-router-dom";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../../../config/firebase";
-import { IBlogComment } from "../../../../models/misc/blog/blogComments";
+import { IPostComment } from "../../../../models/misc/blog/postComments";
 import { useToast } from "../../../../helpers/useToast";
 // import { getCurrentDate } from "../../../../helpers/formatDate";
+import { v4 as uuid } from "uuid";
 
 export const useBlogComments = () => {
   const { postID } = useParams();
   const commentsRef = collection(db, "postsComments");
   const [userComment, setUserComment] = useState<string>("");
-  const [blogComments, setBlogComments] = useState<IBlogComment[] | null>(null);
+  const [postComments, setPostComments] = useState<IPostComment[] | null>(null);
+  const [postCommentsLoading, setPostCommentsLoading] = useState<boolean>(true);
+  const [postCommentsError, setPostCommentsError] = useState<boolean>(false);
   const currentTime = getCurrentTime();
+  // const dateObject = new Date(comment.time);
   const { userID, studentDetails } = useGetUserInfo();
 
   const getPostComments = async () => {
+    setPostCommentsLoading(true)
     try {
       if (postID) {
         const postCommentsRef = query(
@@ -26,8 +31,31 @@ export const useBlogComments = () => {
         const data = await getDocs(postCommentsRef);
         const comments = data.docs.map((doc) => ({
           ...doc.data(),
-        })) as IBlogComment[];
-        setBlogComments(comments);
+        })) as IPostComment[];
+
+        setPostComments(comments);
+        setPostCommentsLoading(false)
+        console.log(comments);
+      }
+    } catch (err) {
+      setPostCommentsError(true)
+      console.log("Couldnt get comments");
+    }
+  };
+
+  
+  const quickGetPostComments = async () => {
+    try {
+      if (postID) {
+        const postCommentsRef = query(
+          commentsRef,
+          where("postID", "==", postID)
+        );
+        const data = await getDocs(postCommentsRef);
+        const comments = data.docs.map((doc) => ({
+          ...doc.data(),
+        })) as IPostComment[];
+        setPostComments(comments);
         console.log(comments);
       }
     } catch (err) {
@@ -40,9 +68,10 @@ export const useBlogComments = () => {
       if (studentDetails && postID && userID) {
         if (userComment !== "") {
           const { firstName, lastName } = studentDetails;
-          const commentInfo: IBlogComment = {
+          const commentInfo: IPostComment = {
             postID: postID,
             userID: userID,
+            commentID: uuid(),
             firstName: firstName,
             lastName: lastName,
             comment: userComment,
@@ -51,6 +80,8 @@ export const useBlogComments = () => {
           await addDoc(commentsRef, commentInfo);
           useToast("success", "Comment added successfully!");
           setUserComment("");
+          quickGetPostComments();
+          console.log(userID, studentDetails, postID);
         } else {
           useToast("error", "Please add a comment");
           console.log(userID, studentDetails, postID);
@@ -62,17 +93,15 @@ export const useBlogComments = () => {
     } catch (err) {
       console.log("Error adding comment");
       useToast("error", "Something went wrong. Please try again");
-    }
-    finally{
-        getPostComments()
-    }
+    } 
   };
 
   return {
     setUserComment,
     userComment,
-    blogComments,
+    postComments,
     addUserComment,
     getPostComments,
+    postCommentsLoading, postCommentsError
   };
 };

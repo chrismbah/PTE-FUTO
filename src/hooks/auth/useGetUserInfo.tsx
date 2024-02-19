@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../config/firebase";
 import {
@@ -16,15 +16,11 @@ export const useGetUserInfo = () => {
   );
   const [user, loading] = useAuthState(auth);
   const userID = user?.uid;
-
   const userInfoRef = collection(db, "userInfo");
 
-  const userInfoDoc = userID
-    ? query(userInfoRef, where("userID", "==", userID))
-    : null;
-
   const getUserInfo = async () => {
-    if (userInfoDoc) {
+    if (userID) {
+      const userInfoDoc = query(userInfoRef, where("userID", "==", userID))
       const userInfo = await getDocs(userInfoDoc);
       const userFields = userInfo?.docs[0].data(); // Expecting a single field in the array
       const { firstName, lastName, regNo, email, level, registeredDate, registeredTime } = userFields;
@@ -39,11 +35,16 @@ export const useGetUserInfo = () => {
         registeredDate: registeredDate,
         registeredTime: registeredTime
       });
+      console.log(studentDetails)
     }
     else{
       console.log("Couldnt find user")
     }
   };
+
+  useEffect(()=>{
+    getUserInfo()
+  }, [userID])
 
   return { user, userID, loading, getUserInfo, studentDetails };
 };

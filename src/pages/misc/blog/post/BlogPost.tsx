@@ -8,8 +8,6 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Footer from "../../../../components/footer/Footer";
 import CommentSection from "./comments/CommentSection";
-// import { useNetworkNotifications } from "../../../../hooks/network/useNetworkNotifications";
-// import { useToast } from "../../../../helpers/useToast";
 import { WriteIcon } from "../../../../components/icons/WriteIcon";
 import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { useBlogComments } from "../hooks/useBlogComments";
@@ -29,10 +27,9 @@ export default function BlogPost() {
     relatedPostsLoading,
     relatedPostsError,
   } = useFetchBlogPosts();
-  const {getUserInfo} = useGetUserInfo()
+  const { getUserInfo } = useGetUserInfo();
   const { postID, postType } = useParams();
-  const {getPostComments} = useBlogComments()
-  // const { isOffline } = useNetworkNotifications()
+  const { getPostComments } = useBlogComments();
 
   useEffect(() => {
     if (postID && postType) {
@@ -40,13 +37,17 @@ export default function BlogPost() {
         fetchBlogPost(postID);
         fetchPopularPosts(postID, postType);
         fetchRelatedPosts(postID, postType);
-        getUserInfo()
-        getPostComments()
+        getPostComments();
       } finally {
         window.scroll(0, 0);
       }
     }
+    getPostComments();
   }, [postID]);
+
+  useEffect(()=>{
+    getUserInfo()
+  }, [])
 
   return (
     <div className="min-h-screen bg-gray-50">
