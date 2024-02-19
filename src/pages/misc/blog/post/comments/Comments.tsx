@@ -7,7 +7,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
     <div>
       {postComments.map(({ firstName, lastName, comment, time, date }, i) => {
         return (
-          <div key={i} className="flex items-start pb-1 w-full gap-1 mb-1">
+          <div key={i} className="flex items-start pb-1 w-full gap-1 mb-2">
             <img src={userProfile} alt="profile" className="w-10 sm:w-12" />
             <div className="flex flex-col border-b border-gray-100 pb-2 w-[90%]">
               <div className="flex gap-3 items-center justify-start">
