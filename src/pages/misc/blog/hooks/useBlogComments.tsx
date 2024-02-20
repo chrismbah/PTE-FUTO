@@ -33,6 +33,7 @@ export const useBlogComments = () => {
         const comments = data.docs.map((doc) => ({
           ...doc.data(),
         }))as IPostComment[];
+        setUserComment("")
         setPostComments(comments);
         setPostCommentsLoading(false)
         console.log(comments);

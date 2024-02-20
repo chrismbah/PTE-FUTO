@@ -35,7 +35,7 @@ export default function CommentSection() {
           maxLength={180}
           value={userComment}
           onChange={(e) => setUserComment(e.target.value)}
-          className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-[11px] sm:text-[12px]
+          className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-[10px] sm:text-[12px]
              focus:border-green2 border border-gray-400 placeholder:text-gray-300 focus:ring-0  
              placeholder:font-light placeholder:text-xss sm:placeholder:text-sm rounded-lg resize-none"
           placeholder="Write your thoughts here..."
@@ -60,7 +60,7 @@ export default function CommentSection() {
         postComments &&
         postComments.length > 0 && <Comments postComments={postComments} />}
       {postCommentsLoading && (
-          <div className="flex items-start pb-1 w-full gap-2 mb-2 px-2">
+          <div className="flex items-start pb-1 w-full gap-2 mb-2 px-1 sm:px-2">
             <Skeleton
               circle={true}
               className="h-7 w-7 sm:h-9 sm:w-9"
