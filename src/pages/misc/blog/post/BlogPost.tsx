@@ -11,6 +11,8 @@ import CommentSection from "./comments/CommentSection";
 import { WriteIcon } from "../../../../components/icons/WriteIcon";
 import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { useBlogComments } from "../hooks/useBlogComments";
+// import { DeleteCommentModal } from "../../../../components/modal/DeleteCommentModal";
+// import { useModalContext } from "../../../../context/Modal";
 
 export default function BlogPost() {
   const {
@@ -172,6 +174,7 @@ export default function BlogPost() {
         </div>
       </div>
       <Footer />
+      {/* <DeleteCommentModal /> */}
     </div>
   );
 }

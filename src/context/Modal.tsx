@@ -10,11 +10,13 @@ export function useModalContext() {
 export default function ModalContextProvider({
   children,
 }: ModalContextProviderProps) {
-  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [openSignOutModal, setOpenSignOutModal] = useState<boolean>(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
 
   const ModalContextValue = {
-    openModal,
-    setOpenModal,
+    openSignOutModal,
+    setOpenSignOutModal,
+    openDeleteModal, setOpenDeleteModal
   };
   return (
     <ModalContext.Provider value={ModalContextValue}>

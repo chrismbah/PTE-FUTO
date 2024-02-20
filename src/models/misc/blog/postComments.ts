@@ -1,6 +1,6 @@
 export interface IPostComment {
-    postID : string,
-    userID: string,
+    commentPostID : string,
+    commentUserID: string,
     commentID: string;
     firstName: string,
     lastName: string,

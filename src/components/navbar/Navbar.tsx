@@ -20,7 +20,7 @@ export default function Nav() {
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
 
-  const { setOpenModal } = useModalContext();
+  const { setOpenSignOutModal } = useModalContext();
   useEffect(() => {
     getUserInfo();
   }, [user]);
@@ -74,7 +74,7 @@ export default function Nav() {
               <Dropdown.Item>Dashboard</Dropdown.Item>
               <Dropdown.Item>Profile</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item onClick={() => setOpenModal(true)}>
+              <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
                 Sign Out
               </Dropdown.Item>
             </Dropdown>
