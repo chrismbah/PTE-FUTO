@@ -32,8 +32,7 @@ export const useBlogComments = () => {
         const data = await getDocs(postCommentsRef);
         const comments = data.docs.map((doc) => ({
           ...doc.data(),
-        })) as IPostComment[];
-
+        }))as IPostComment[];
         setPostComments(comments);
         setPostCommentsLoading(false)
         console.log(comments);
@@ -56,6 +55,7 @@ export const useBlogComments = () => {
         const comments = data.docs.map((doc) => ({
           ...doc.data(),
         })) as IPostComment[];
+        // const sortedComments = comments
         setPostComments(comments);
         console.log(comments);
       }

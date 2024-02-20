@@ -57,41 +57,41 @@ export default function BlogPost() {
             <div className="md:col-span-3">
               {blogPostLoading && (
                 <div className="p-4">
-                  <Skeleton className="h-[12px] w-[75%] md:w-36" />
+                  <Skeleton className="h-[8px] md:h-[12px] w-[75%] md:w-36" />
                   <Skeleton
                     count={3}
-                    className=" h-[10px] rounded-lg w-full md:w-[80%]"
+                    className=" h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[80%]"
                   />
-                  <Skeleton className=" w-[85%] h-[12px] md:w-40" />
+                  <Skeleton className=" w-[85%] h-[6px] sm:h-[8px] md:h-[12px] md:w-40" />
                   <Skeleton
                     count={1}
-                    className="h-[10px] rounded-lg w-[80%] md:w-[75%]"
+                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-[80%] md:w-[75%]"
                   />
                   <Skeleton
                     count={3}
-                    className="h-[10px] rounded-lg w-[90%] md:w-[85%]"
+                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-[90%] md:w-[85%]"
                   />
                   <Skeleton
                     count={2}
-                    className="h-[10px] rounded-lg w-[92%] md:w-[90%]"
+                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-[92%] md:w-[90%]"
                   />
-                  <Skeleton className=" w-[70%] md:w-32 h-[12px]" />
+                  <Skeleton className=" w-[70%] md:w-32 h-[6px] sm:h-[8px] md:h-[12px]" />
                   <Skeleton
                     count={3}
-                    className="h-[10px] rounded-lg w-full md:w-[65%]"
+                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[65%]"
                   />{" "}
-                  <Skeleton className=" w-[80%] md:w-16 h-[12px]" />
+                  <Skeleton className=" w-[80%] md:w-16 h-[6px] sm:h-[8px] md:h-[12px]" />
                   <Skeleton
                     count={3}
-                    className="h-[10px] rounded-lg w-full md:w-[70%]"
+                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[70%]"
                   />{" "}
                   <Skeleton
                     count={1}
-                    className="h-[10px] rounded-lg w-full md:w-[60%]"
+                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[60%]"
                   />{" "}
                   <Skeleton
                     count={3}
-                    className="h-[10px] rounded-lg w-full md:w-[75%]"
+                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[75%]"
                   />
                 </div>
               )}

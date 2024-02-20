@@ -5,22 +5,24 @@ import { useBlogComments } from "../../hooks/useBlogComments";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../../../themes/customTooltip";
 import { Comments } from "./Comments";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function CommentSection() {
   const { postID } = useParams();
-  const { 
+  const {
     addUserComment,
-    userComment, 
-    setUserComment, 
-    postComments, 
-    getPostComments, 
-    postCommentsLoading, 
-    postCommentsError
-   } = useBlogComments();
-  useEffect(()=>{
+    userComment,
+    setUserComment,
+    postComments,
+    getPostComments,
+    postCommentsLoading,
+    postCommentsError,
+  } = useBlogComments();
+  useEffect(() => {
     getPostComments();
-  }, [postID])
+  }, [postID]);
 
   return (
     <div className="mb-4 bg-white shadow rounded-lg p-4 md:sticky md:top-24">
@@ -33,9 +35,9 @@ export default function CommentSection() {
           maxLength={180}
           value={userComment}
           onChange={(e) => setUserComment(e.target.value)}
-          className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-sm sm:text-xs
+          className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-[11px] sm:text-[12px]
              focus:border-green2 border border-gray-400 placeholder:text-gray-300 focus:ring-0  
-             placeholder:font-light placeholder:text-ss sm:placeholder:text-sm rounded-lg resize-none"
+             placeholder:font-light placeholder:text-xss sm:placeholder:text-sm rounded-lg resize-none"
           placeholder="Write your thoughts here..."
         ></textarea>
 
@@ -53,15 +55,30 @@ export default function CommentSection() {
           </button>
         </Tooltip>
       </div>
-      {
-        !postCommentsLoading && !postCommentsError && postComments &&  postComments.length > 0 && 
-        <Comments postComments={postComments}/>
-      }
-      {
-        postCommentsLoading && <p className="w-full text-xs text-gray-500 text-center py-2">Loading Comments...</p>
-      }   {
-        postCommentsError && !postCommentsLoading && <p>Error loading Comments...</p>
-      }
+      {!postCommentsLoading &&
+        !postCommentsError &&
+        postComments &&
+        postComments.length > 0 && <Comments postComments={postComments} />}
+      {postCommentsLoading && (
+          <div className="flex items-start pb-1 w-full gap-2 mb-2 px-2">
+            <Skeleton
+              circle={true}
+              className="h-7 w-7 sm:h-9 sm:w-9"
+            />
+            <div className="flex flex-col border-b border-gray-100 pb-2 w-[90%] overflow-x-hidden">
+              <div className="flex gap-4 items-center justify-start">
+                  <Skeleton className="w-[60px] h-[6px] sm:w-[100px] md:h-[8px]" />
+                <Skeleton className="w-[30px] h-[6px] sm:w-[50px] md:h-[8px]" />
+              </div>
+              <div className="w-full">
+                <Skeleton className="w-[70%] h-[6px] sm:h-[8px]" />
+              </div>
+            </div>
+          </div>
+      )}
+      {postCommentsError && !postCommentsLoading && (
+        <p className="text-gray-500 w-full text-center text-ss sm:text-sm">Error loading comments...</p>
+      )}
     </div>
   );
 }
