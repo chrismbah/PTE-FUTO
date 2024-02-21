@@ -33,12 +33,11 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
       return (
         <div className="w-full flex items-center justify-center">
         <img key={i} src={content} alt="no-img" className="my-4 w-full sm:w-[400px] rounded-md" />
-
         </div>
       );
     } else if (type === "list" && typeof content !== "string") {
       return (
-        <ul>
+        <ul key={i}>
           {content.map(({ type, content }, i) => {
             return (
               <li key={i}>

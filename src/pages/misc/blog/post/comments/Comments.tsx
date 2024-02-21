@@ -45,7 +45,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                       • {time}, {date}
                     </span>
                   </div>
-                  {commentUserID === userID && (
+                  {userID && commentUserID === userID && (
                     <>
                       <Popover
                         animate={{
@@ -76,7 +76,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                   </p>
                 </div>
               </div>
-              <DeleteCommentModal commentID={commentID} />
+              <DeleteCommentModal commentID={commentID} commentUserID={commentUserID} />
             </div>
           );
         }

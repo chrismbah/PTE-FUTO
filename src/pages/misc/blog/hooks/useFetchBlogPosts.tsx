@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { collection, addDoc, getDocs, getDoc, doc } from "firebase/firestore";
 import { IBlogPost, TBlogPost } from "../../../../models/misc/blog/blogPosts";
-import { posts } from "../../../../data/misc/blog/posts";
+import { post } from "../../../../data/misc/blog/posts";
 import { db } from "../../../../config/firebase";
 import { getCurrentDate } from "../../../../helpers/formatDate";
 // import { useNetworkNotifications } from "../../network/useNetworkNotifications";
@@ -26,10 +26,10 @@ export const useFetchBlogPosts = () => {
 
   const addPosts = async () => {
     try {
-      for (const post of posts) {
+      // for (const post of posts) {
         await addDoc(postsRef, { ...post, date: getCurrentDate() });
         console.log("Post added");
-      }
+      // }
     } catch (err) {
       console.error("Error adding posts:", err);
     } finally {

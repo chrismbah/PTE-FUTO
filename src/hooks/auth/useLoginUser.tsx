@@ -16,7 +16,6 @@ export default function useLoginUser() {
   const loginUser = async (data: ILoginForm) => {
     try {
       setLoading(true);
-      console.log(data);
       const { email, password } = data;
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");

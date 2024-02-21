@@ -7,19 +7,20 @@ import { useModalContext } from "../../context/Modal";
 export const useSignOutUser = () => {
   const navigate = useNavigate();
   const [signOutLoading, setLoading] = useState(false);
-  const { setOpenModal } = useModalContext();
+  const { setOpenSignOutModal } = useModalContext();
 
   const signOutUser = async () => {
     setLoading(true);
     try {
       await signOut(auth);
-      setOpenModal(false);
+      setOpenSignOutModal(false);
       setLoading(false);
       navigate("/login");
       useToast("success", "Signed out successfully. Until next time 🚀");
     } catch (err) {
       console.error("Sign-out error:", err);
       useToast("error", "Someting went wrong. Please try again");
+      setOpenSignOutModal(false);
     }
   };
 

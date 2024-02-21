@@ -8,9 +8,10 @@ import { useBlogComments } from "../../pages/misc/blog/hooks/useBlogComments";
 
 interface ModalProp {
   commentID: string
+  commentUserID: string
 }
 
-export const DeleteCommentModal:FC<ModalProp> = ({commentID}) => {
+export const DeleteCommentModal:FC<ModalProp> = ({commentID, commentUserID}) => {
   const { openDeleteModal, setOpenDeleteModal } = useModalContext();
   const { deleteUserComment, deleteCommentLoading, updatePostComments } = useBlogComments()
   useEffect(() => {
@@ -21,11 +22,6 @@ export const DeleteCommentModal:FC<ModalProp> = ({commentID}) => {
     }
   }, [openDeleteModal]);
 
-  const deleteComment = ()=>{
-    deleteUserComment(commentID)
-    setOpenDeleteModal(false)
-    updatePostComments()
-  }
   return (
     <>
       <div
@@ -38,7 +34,7 @@ export const DeleteCommentModal:FC<ModalProp> = ({commentID}) => {
             Are you sure you want to delete this comment?
           </h3>
           <div className="flex justify-center gap-4">
-            <Button color="failure" onClick={deleteComment}>
+            <Button color="failure" onClick={()=>deleteUserComment(commentID, commentUserID)}>
               {deleteCommentLoading ? <SignOutSpinner /> : "Delete"}
             </Button>
             <Button color="gray" onClick={() => setOpenDeleteModal(false)}>

@@ -8,7 +8,6 @@ import { Comments } from "./Comments";
 import { useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-// import { DeleteModal } from "../../../../../components/modal/DeleteModal";
 
 export default function CommentSection() {
   const { postID } = useParams();
@@ -79,7 +78,6 @@ export default function CommentSection() {
           Error loading comments...
         </p>
       )}
-      {/* <DeleteModal/> */}
     </div>
   );
 }

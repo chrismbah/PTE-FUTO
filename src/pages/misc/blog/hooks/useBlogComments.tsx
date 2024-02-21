@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { getCurrentTime } from "../../../../helpers/getCurrentTime";
 import { useParams } from "react-router-dom";
@@ -10,6 +10,7 @@ import {
   where,
   deleteDoc,
   doc,
+  onSnapshot,
 } from "firebase/firestore";
 import { db } from "../../../../config/firebase";
 import { IPostComment } from "../../../../models/misc/blog/postComments";
@@ -19,7 +20,7 @@ import { getCurrentDateInShortFormat } from "../../../../helpers/formatDate";
 import { useModalContext } from "../../../../context/Modal";
 
 export const useBlogComments = () => {
-  const {setOpenDeleteModal } = useModalContext();
+  const { setOpenDeleteModal } = useModalContext();
   const { postID } = useParams();
   const commentsRef = collection(db, "postsComments");
   const [userComment, setUserComment] = useState<string>("");
@@ -55,7 +56,20 @@ export const useBlogComments = () => {
       console.log("Couldnt get comments");
     }
   };
-
+  const fetchPostComments = async () => {
+    const commentsRef = collection(db, "postsComments");
+    const commentsQuery = query(
+      commentsRef,
+      where("commentPostID", "==", postID)
+    );
+    onSnapshot(commentsQuery, (querySnapshot) => {
+      const updatedComments: IPostComment[] = [];
+      querySnapshot.forEach((doc) => {
+        updatedComments.push({ ...doc.data() } as IPostComment);
+      });
+      setPostComments(updatedComments);
+    });
+  };
   const updatePostComments = async () => {
     try {
       if (postID) {
@@ -80,7 +94,7 @@ export const useBlogComments = () => {
       if (studentDetails && postID && userID) {
         if (userComment !== "") {
           const { firstName, lastName, email } = studentDetails;
-          const commentID = uuid()
+          const commentID = uuid();
           const commentInfo: IPostComment = {
             commentPostID: postID,
             commentUserID: userID,
@@ -93,7 +107,7 @@ export const useBlogComments = () => {
             date: currentDate,
             timeStamp: new Date(),
           };
-          await setDoc(doc(db, "postsComments", commentID ), commentInfo);
+          await setDoc(doc(db, "postsComments", commentID), commentInfo);
           setUserComment("");
           useToast("success", "Comment added successfully!");
           updatePostComments();
@@ -109,23 +123,41 @@ export const useBlogComments = () => {
     }
   };
 
-  const deleteUserComment = async (commentID: string) => {
-    setDeleteCommentLoading(true);
-    try {
-      await deleteDoc(doc(commentsRef, commentID));
-      useToast("success", "Comment Deleted successfully!");
-      console.log("Done !!!!");
-      setDeleteCommentLoading(false)
-    } catch (err) {
-      setDeleteCommentLoading(false)
-      setDeleteCommentError(true)
-      console.log("Error deleting comment");
-    } finally {
-      setOpenDeleteModal(false)
-      // getPostComments();
-      console.log("Updated comments");
-    }
+  const deleteUserComment = async (commentID: string, commentUserID:string) => {
+        if(commentUserID === userID){
+          setDeleteCommentLoading(true);
+          try{
+            await deleteDoc(doc(commentsRef, commentID));
+            updatePostComments()
+            setOpenDeleteModal(false);
+            useToast("success", "Comment Deleted successfully!");
+            console.log("Done !!!!");
+            setDeleteCommentLoading(false);
+            console.log(userComment)
+          }catch(err){
+            setDeleteCommentLoading(false);
+            setDeleteCommentError(true);
+            console.log("Error deleting comment");
+          }
+        }
+        
   };
+
+  useEffect(() => {
+    const commentsQuery = query(
+      commentsRef,
+      where("commentPostID", "==", postID)
+    );
+    const unsubscribe = onSnapshot(commentsQuery, (querySnapshot) => {
+      const updatedComments: IPostComment[] = [];
+      querySnapshot.forEach((doc) => {
+        updatedComments.push({ ...doc.data() } as IPostComment);
+      });
+      setPostComments(updatedComments);
+    });
+
+    return () => unsubscribe(); // Clean up listener on unmount
+  }, []);
 
   return {
     setUserComment,
@@ -135,6 +167,9 @@ export const useBlogComments = () => {
     getPostComments,
     postCommentsLoading,
     postCommentsError,
-    deleteUserComment, deleteCommentLoading, deleteCommentError, updatePostComments
+    deleteUserComment,
+    deleteCommentLoading,
+    deleteCommentError,
+    updatePostComments,fetchPostComments
   };
 };

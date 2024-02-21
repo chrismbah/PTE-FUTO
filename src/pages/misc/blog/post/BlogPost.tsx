@@ -12,7 +12,7 @@ import { WriteIcon } from "../../../../components/icons/WriteIcon";
 import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { useBlogComments } from "../hooks/useBlogComments";
 // import { DeleteCommentModal } from "../../../../components/modal/DeleteCommentModal";
-// import { useModalContext } from "../../../../context/Modal";
+import { useModalContext } from "../../../../context/Modal";
 
 export default function BlogPost() {
   const {
@@ -31,7 +31,8 @@ export default function BlogPost() {
   } = useFetchBlogPosts();
   const { getUserInfo } = useGetUserInfo();
   const { postID, postType } = useParams();
-  const { getPostComments } = useBlogComments();
+  const { getPostComments, fetchPostComments } = useBlogComments();
+  const { openDeleteModal } = useModalContext();
 
   useEffect(() => {
     if (postID && postType) {
@@ -45,11 +46,18 @@ export default function BlogPost() {
       }
     }
     getPostComments();
+    console.log("Debugging")
   }, [postID]);
 
   useEffect(()=>{
     getUserInfo()
   }, [])
+
+  useEffect(()=>{
+    fetchPostComments()
+    console.log("Hello There")
+  }, [openDeleteModal])
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -100,7 +108,7 @@ export default function BlogPost() {
               {blogPostError && "Something went wrong!"}
               {!blogPostLoading && !blogPostError && blogPost && (
                 <div className="bg-white shadow rounded-lg p-4">
-                  <h1 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 w-full text-center">
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 w-full">
                     {blogPost?.title}
                   </h1>
                   <div className="w-full flex items-center justify-center">
