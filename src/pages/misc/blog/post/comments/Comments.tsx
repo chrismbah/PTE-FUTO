@@ -37,11 +37,11 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                 <div className="flex items-start justify-between">
                   <div className="flex gap-3 items-center sm:mt-0">
                     <div className="">
-                      <p className="text-xss xxss:text-ss sm:text-xs md:text-[12px]  text-green3">
+                      <p className="text-xss xxss:text-ss sm:text-xs md:text-[12px]  text-green1">
                         {firstName} {lastName}
                       </p>
                     </div>
-                    <span className="text-xss xxss:text-ss sm:text-sm font-[300] md:text-xss lg:text-ss text-gray-500 pt-[2px] sm:pt-0">
+                    <span className="text-xss xxss:text-ss sm:text-sm font-[300] md:text-xss lg:text-ss text-gray-500 sm:pt-0">
                       • {time}, {date}
                     </span>
                   </div>
