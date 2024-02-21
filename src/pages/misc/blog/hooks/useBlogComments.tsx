@@ -18,10 +18,12 @@ import { useToast } from "../../../../helpers/useToast";
 import { v4 as uuid } from "uuid";
 import { getCurrentDateInShortFormat } from "../../../../helpers/formatDate";
 import { useModalContext } from "../../../../context/Modal";
+import { useNavigate } from "react-router-dom";
 
 export const useBlogComments = () => {
   const { setOpenDeleteModal } = useModalContext();
   const { postID } = useParams();
+  const navigate = useNavigate();
   const commentsRef = collection(db, "postsComments");
   const [userComment, setUserComment] = useState<string>("");
   const [postComments, setPostComments] = useState<IPostComment[] | null>(null);
@@ -91,31 +93,36 @@ export const useBlogComments = () => {
 
   const addUserComment = async () => {
     try {
-      if (studentDetails && postID && userID) {
-        if (userComment !== "") {
-          const { firstName, lastName, email } = studentDetails;
-          const commentID = uuid();
-          const commentInfo: IPostComment = {
-            commentPostID: postID,
-            commentUserID: userID,
-            commentID: commentID,
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            comment: userComment,
-            time: currentTime,
-            date: currentDate,
-            timeStamp: new Date(),
-          };
-          await setDoc(doc(db, "postsComments", commentID), commentInfo);
-          setUserComment("");
-          useToast("success", "Comment added successfully!");
-          updatePostComments();
+      if (userID) {
+        if (studentDetails && postID) {
+          if (userComment !== "") {
+            const { firstName, lastName, email } = studentDetails;
+            const commentID = uuid();
+            const commentInfo: IPostComment = {
+              commentPostID: postID,
+              commentUserID: userID,
+              commentID: commentID,
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              comment: userComment,
+              time: currentTime,
+              date: currentDate,
+              timeStamp: new Date(),
+            };
+            await setDoc(doc(db, "postsComments", commentID), commentInfo);
+            setUserComment("");
+            useToast("success", "Comment added successfully!");
+            updatePostComments();
+          } else {
+            useToast("error", "Please add a comment");
+          }
         } else {
-          useToast("error", "Please add a comment");
+          useToast("error", "Something went wrong. Please try again");
         }
       } else {
-        useToast("error", "Something went wrong");
+        navigate("/login");
+        useToast("success", "Please login to comment on this post");
       }
     } catch (err) {
       console.log("Error adding comment");
@@ -123,24 +130,28 @@ export const useBlogComments = () => {
     }
   };
 
-  const deleteUserComment = async (commentID: string, commentUserID:string) => {
-        if(commentUserID === userID){
-          setDeleteCommentLoading(true);
-          try{
-            await deleteDoc(doc(commentsRef, commentID));
-            updatePostComments()
-            setOpenDeleteModal(false);
-            useToast("success", "Comment Deleted successfully!");
-            console.log("Done !!!!");
-            setDeleteCommentLoading(false);
-            console.log(userComment)
-          }catch(err){
-            setDeleteCommentLoading(false);
-            setDeleteCommentError(true);
-            console.log("Error deleting comment");
-          }
-        }
-        
+  const deleteUserComment = async (
+    commentID: string,
+    commentUserID: string
+  ) => {
+    if (commentUserID === userID) {
+      setDeleteCommentLoading(true);
+      try {
+        await deleteDoc(doc(commentsRef, commentID));
+        updatePostComments();
+        setOpenDeleteModal(false);
+        useToast("success", "Comment deleted successfully!");
+        console.log("Done !!!!");
+        setDeleteCommentLoading(false);
+        console.log(userComment);
+      } catch (err) {
+        setDeleteCommentLoading(false);
+        setDeleteCommentError(true);
+        console.log("Error deleting comment");
+      }
+    } else {
+      useToast("error", "Comment is not yours??");
+    }
   };
 
   useEffect(() => {
@@ -170,6 +181,7 @@ export const useBlogComments = () => {
     deleteUserComment,
     deleteCommentLoading,
     deleteCommentError,
-    updatePostComments,fetchPostComments
+    updatePostComments,
+    fetchPostComments,
   };
 };

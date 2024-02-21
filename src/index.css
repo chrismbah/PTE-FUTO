@@ -84,7 +84,7 @@ h3{
     @apply text-ss text-red-600
 }
 .notification-message{
-    @apply text-ss ss:text-xs 
+    @apply text-ss ss:text-sm 
 }
 .bar-style{
     @apply h-[3px] w-10 bg-green1
