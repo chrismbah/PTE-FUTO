@@ -13,7 +13,7 @@ interface ModalProp {
 
 export const DeleteCommentModal:FC<ModalProp> = ({commentID, commentUserID}) => {
   const { openDeleteModal, setOpenDeleteModal } = useModalContext();
-  const { deleteUserComment, deleteCommentLoading, updatePostComments } = useBlogComments()
+  const { deleteUserComment, deleteCommentLoading } = useBlogComments()
   useEffect(() => {
     if (openDeleteModal) {
       document.body.style.overflow = "hidden";
