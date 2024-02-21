@@ -17,11 +17,11 @@ import { IPostComment } from "../../../../models/misc/blog/postComments";
 import { useToast } from "../../../../helpers/useToast";
 import { v4 as uuid } from "uuid";
 import { getCurrentDateInShortFormat } from "../../../../helpers/formatDate";
-import { useModalContext } from "../../../../context/Modal";
+// import { useModalContext } from "../../../../context/Modal";
 import { useNavigate } from "react-router-dom";
 
 export const useBlogComments = () => {
-  const { setOpenDeleteModal } = useModalContext();
+  // const { setOpenDeleteModal } = useModalContext();
   const { postID } = useParams();
   const navigate = useNavigate();
   const commentsRef = collection(db, "postsComments");
@@ -136,15 +136,19 @@ export const useBlogComments = () => {
   ) => {
     if (commentUserID === userID) {
       setDeleteCommentLoading(true);
+      console.log(commentUserID, userID)
+      console.log(commentID)
       try {
         await deleteDoc(doc(commentsRef, commentID));
         updatePostComments();
-        setOpenDeleteModal(false);
-        useToast("success", "Comment deleted successfully!");
+        // setOpenDeleteModal(false);
+        useToast("success", "Comment deleted.");
         console.log("Done !!!!");
         setDeleteCommentLoading(false);
         console.log(userComment);
       } catch (err) {
+        // setOpenDeleteModal(false)
+        useToast("error", "Could'nt delete comment")
         setDeleteCommentLoading(false);
         setDeleteCommentError(true);
         console.log("Error deleting comment");

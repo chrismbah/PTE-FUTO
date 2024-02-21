@@ -10,10 +10,12 @@ import {
   PopoverContent,
 } from "@material-tailwind/react";
 import { DeleteCommentModal } from "../../../../../components/modal/DeleteCommentModal";
+import { useBlogComments } from "../../hooks/useBlogComments";
 
 export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
   const { userID } = useGetUserInfo();
-  const { setOpenDeleteModal, openDeleteModal } = useModalContext();
+  const {  openDeleteModal } = useModalContext();
+  const {deleteUserComment} = useBlogComments()
 
   return (
     <div>
@@ -59,7 +61,8 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                           </button>
                         </PopoverHandler>
                         <PopoverContent
-                          onClick={() => setOpenDeleteModal(true)}
+                          // onClick={() => setOpenDeleteModal(true)}
+                          onClick={()=>deleteUserComment(commentID, commentUserID)}
                           placeholder={""}
                           className={` ${openDeleteModal ? "hidden" : "block"} cursor-pointer shadow font-dmSans p-2 md:p-3 text-[10px] sm:text-sm hover:bg-gray-100 rounded-lg`}
                         >

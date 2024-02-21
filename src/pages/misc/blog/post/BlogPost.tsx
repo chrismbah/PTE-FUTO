@@ -67,7 +67,7 @@ export default function BlogPost() {
             <div className="md:col-span-3">
               {blogPostLoading && (
                 <div className="p-4">
-                  <Skeleton className="h-[10px] md:h-[15px] w-[75%] md:w-[90%]" />
+                  <Skeleton className="h-[10px] md:h-[15px] w-full md:w-[90%]" />
                   {/* <Skeleton className="h-[8px] md:h-[12px] w-full md:w-[90%]" /> */}
                   <Skeleton
                     count={3}
