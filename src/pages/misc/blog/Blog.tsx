@@ -4,9 +4,15 @@ import { TopPosts } from "./cards/Top";
 import { OthersPosts } from "./cards/Others";
 import { FeaturedPosts } from "./cards/Featured";
 import Footer from "../../../components/footer/Footer";
-
+import { BounceLoader } from "../../../components/loaders/BounceLoader";
 export default function Blog() {
-  const { blogPosts, fetchBlogPosts, addPosts } = useFetchBlogPosts();
+  const {
+    blogPosts,
+    blogPostsLoading,
+    blogPostsError,
+    fetchBlogPosts,
+    addPosts,
+  } = useFetchBlogPosts();
   useEffect(() => {
     fetchBlogPosts();
   }, []);
@@ -28,6 +34,11 @@ export default function Blog() {
               </h2>
               <FeaturedPosts blogPosts={blogPosts} />
             </>
+          )}
+          {blogPostsLoading && !blogPosts && !blogPostsError && (
+            <div className="w-full h-[55vh] flex items-center justify-center">
+              <BounceLoader />
+            </div>
           )}
         </div>
         <button

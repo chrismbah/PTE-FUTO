@@ -13,6 +13,7 @@ import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { useBlogComments } from "../hooks/useBlogComments";
 // import { DeleteCommentModal } from "../../../../components/modal/DeleteCommentModal";
 import { useModalContext } from "../../../../context/Modal";
+import PostSkeleton from "./skeleton/PostSkeleton";
 
 export default function BlogPost() {
   const {
@@ -46,18 +47,17 @@ export default function BlogPost() {
       }
     }
     getPostComments();
-    console.log("Debugging")
+    console.log("Debugging");
   }, [postID]);
 
-  useEffect(()=>{
-    getUserInfo()
-  }, [])
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
-  useEffect(()=>{
-    fetchPostComments()
-    console.log("Hello There")
-  }, [openDeleteModal])
-
+  useEffect(() => {
+    fetchPostComments();
+    console.log("Hello There");
+  }, [openDeleteModal]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -66,44 +66,8 @@ export default function BlogPost() {
           <div className="sticky grid md:grid-cols-5 gap-4">
             <div className="md:col-span-3">
               {blogPostLoading && (
-                <div className="p-4">
-                  <Skeleton className="h-[10px] md:h-[15px] w-full md:w-[90%]" />
-                  {/* <Skeleton className="h-[8px] md:h-[12px] w-full md:w-[90%]" /> */}
-                  <Skeleton
-                    count={3}
-                    className=" h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[80%]"
-                  />
-                  <Skeleton className=" w-[85%] h-[6px] sm:h-[8px] md:h-[12px] md:w-40" />
-                  <Skeleton
-                    count={1}
-                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-[80%] md:w-[75%]"
-                  />
-                  <Skeleton
-                    count={3}
-                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-[90%] md:w-[85%]"
-                  />
-                  <Skeleton
-                    count={2}
-                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-[92%] md:w-[90%]"
-                  />
-                  <Skeleton className=" w-[70%] md:w-32 h-[6px] sm:h-[8px] md:h-[12px]" />
-                  <Skeleton
-                    count={3}
-                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[65%]"
-                  />{" "}
-                  <Skeleton className=" w-[80%] md:w-16 h-[6px] sm:h-[8px] md:h-[12px]" />
-                  <Skeleton
-                    count={3}
-                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[70%]"
-                  />{" "}
-                  <Skeleton
-                    count={1}
-                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[60%]"
-                  />{" "}
-                  <Skeleton
-                    count={3}
-                    className="h-[6px] sm:h-[8px] md:h-[10px] rounded-lg w-full md:w-[75%]"
-                  />
+                <div className="bg-white shadow rounded-lg p-4">
+                  <PostSkeleton/>
                 </div>
               )}
               {blogPostError && "Something went wrong!"}
@@ -141,7 +105,7 @@ export default function BlogPost() {
                 </h2>
                 {relatedPostsLoading && (
                   <Skeleton
-                    className="mb-4 h-[120px] sm:h-[140px] md:h-[110px] w-full rounded-lg "
+                    className="mb-4 h-[110px] sm:h-[130px] md:h-[100px] w-full rounded-lg "
                     count={2}
                   />
                 )}
@@ -162,7 +126,7 @@ export default function BlogPost() {
                 </h2>
                 {popularPostsLoading && (
                   <Skeleton
-                    className="mb-4 h-[120px] sm:h-[140px] md:h-[110px] w-full rounded-lg "
+                    className="mb-4 h-[110px] sm:h-[130px] md:h-[100px] w-full rounded-lg "
                     count={2}
                   />
                 )}

@@ -8,28 +8,25 @@ import { getCurrentDate } from "../../../../helpers/formatDate";
 import { useToast } from "../../../../helpers/useToast";
 
 export const useFetchBlogPosts = () => {
-  // const { isOffline } = useNetworkNotifications();
   const [blogPosts, setBlogPosts] = useState<IBlogPost[] | null>(null);
   const [blogPost, setBlogPost] = useState<TBlogPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<IBlogPost[] | null>(null);
   const [popularPosts, setPopularPosts] = useState<IBlogPost[] | null>(null);
   const [blogPostsLoading, setBlogPostsLoading] = useState(true);
+  const [blogPostsError, setBlogPostsError] = useState(false);
   const [blogPostLoading, setBlogPostLoading] = useState(true);
   const [popularPostsLoading, setPopularPostsLoading] = useState(true);
   const [relatedPostsLoading, setRelatedPostsLoading] = useState(true);
   const [blogPostError, setBlogPostError] = useState(false);
   const [popularPostsError, setPopularPostsError] = useState(false);
   const [relatedPostsError, setRelatedPostsError] = useState(false);
-  const [error, setError] = useState(false);
 
   const postsRef = collection(db, "blogPosts");
 
   const addPosts = async () => {
     try {
-      // for (const post of posts) {
         await addDoc(postsRef, { ...post, date: getCurrentDate() });
         console.log("Post added");
-      // }
     } catch (err) {
       console.error("Error adding posts:", err);
     } finally {
@@ -44,11 +41,11 @@ export const useFetchBlogPosts = () => {
         ...doc.data(),
         id: doc.id,
       })) as IBlogPost[];
-      setBlogPosts(list);
       setBlogPostsLoading(false);
+      setBlogPosts(list);
       console.log("Blogs fetched");
     } catch (err) {
-      setError(true);
+      setBlogPostsError(true);
       console.log(err);
     }
   };
@@ -119,7 +116,6 @@ export const useFetchBlogPosts = () => {
   };
 
   return {
-    error,
     blogPosts,
     blogPost,
     relatedPosts,
@@ -133,6 +129,7 @@ export const useFetchBlogPosts = () => {
     blogPostLoading,
     popularPostsLoading,
     relatedPostsLoading,
+    blogPostsError,
     blogPostError,
     popularPostsError,
     relatedPostsError,
