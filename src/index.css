@@ -24,6 +24,9 @@ background: linear-gradient(145deg, #dfe1e3, #ffffff);
 box-shadow:  20px 20px 60px #d3d5d6,
              -20px -20px 60px #ffffff;
 }
+.shadow-4{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
 .home-gray-bg{
     @apply bg-gray-50
 }
@@ -38,7 +41,7 @@ h3{
     @apply text-xl sm:text-2xl font-[500]
 }
 .section-p{
-    @apply text-xs xss:text-base
+    @apply text-sm xss:text-base
 }
 .box-width{
     @apply 2xl:max-w-[1420px] w-full mx-auto

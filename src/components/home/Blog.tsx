@@ -20,16 +20,19 @@ export default function Blog() {
             <div className="bar-style" />
             <h2 className="mb-1 md:mb-4">Blog</h2>
             <p className="section-p mb-5">
-              Your go-to source for cutting-edge Polymer and Textile Engineering
-              news. <br />
-              Stay ahead with our coverage of tech advances, research, and
-              industry trends. <br />
-              Our expert team curates articles on renewables, EVs, robotics, and
-              more. Trust our accurate, <br />
-              reliable content for informed decisions.Join our vibrant community
-              to fuel your success.
+              Your go-to source for informative Polymer and Textile Engineering
+              articles. <br />
+              Stay ahead with our coverage of , artficial intelligence, tech advances and
+              miscellanous content. <br />
+              Trust our accurate, reliable content for informed decisions.{" "}
+              <br /> Join our vibrant community to fuel your success.
             </p>
-            <Button theme={customButtonTheme} size={"lg"} color="primary" onClick={()=>navigateAuthUser("/blog")}>
+            <Button
+              theme={customButtonTheme}
+              size={"lg"}
+              color="primary"
+              onClick={() => navigateAuthUser("/blog")}
+            >
               Read Blog
             </Button>
           </div>
