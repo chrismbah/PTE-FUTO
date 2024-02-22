@@ -57,7 +57,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                       >
                         <PopoverHandler>
                           <button className="p-[1.5px] hover:bg-gray-100 rounded-full relative">
-                            <ThreeVerticalDotsIcon className="w-4 h-4 sm:w-6 sm:h-6" />
+                            <ThreeVerticalDotsIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                           </button>
                         </PopoverHandler>
                         <PopoverContent

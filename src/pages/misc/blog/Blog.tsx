@@ -4,7 +4,8 @@ import { TopPosts } from "./cards/Top";
 import { OthersPosts } from "./cards/Others";
 import { FeaturedPosts } from "./cards/Featured";
 import Footer from "../../../components/footer/Footer";
-import { BounceLoader } from "../../../components/loaders/BounceLoader";
+import LogoSpinner from "../../../components/loaders/LogoSpinner";
+
 export default function Blog() {
   const {
     blogPosts,
@@ -30,14 +31,14 @@ export default function Blog() {
                 <OthersPosts blogPosts={blogPosts} />
               </div>
               <h2 className="text-green2 py-3 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
-                Featured
+                Don't Miss
               </h2>
               <FeaturedPosts blogPosts={blogPosts} />
             </>
           )}
           {blogPostsLoading && !blogPosts && !blogPostsError && (
-            <div className="w-full h-[55vh] flex items-center justify-center">
-              <BounceLoader />
+            <div className="w-full h-[65vh] flex items-center justify-center">
+              <LogoSpinner />
             </div>
           )}
         </div>

@@ -28,7 +28,7 @@ export const TopPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                           <h5 className="mb-2 text-base md:text-lg lg:text-xl xlg:text-xll font-bold tracking-tight text-gray-900 dark:text-white">
                             {title}
                           </h5>
-                          <p className="mb-3 font-normal text-sm xl:text-xs text-gray-700 dark:text-gray-400">
+                          <p className="mb-3 font-normal text-sm xl:text-xs text-gray-900 dark:text-gray-400">
                             {typeof contents[0].content === "string" &&
                               contents[0].content
                                 .split(" ")
@@ -37,7 +37,7 @@ export const TopPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                             ...
                           </p>{" "}
                         </div>
-                        <p className="font-normal text-gray-500 text-ss lg:text-xs flex items-end">
+                        <p className="font-[600] text-gray-600 text-ss lg:text-xs flex items-end">
                           {author} on {date}
                         </p>
                       </div>

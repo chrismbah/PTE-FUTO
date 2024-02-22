@@ -73,15 +73,27 @@ export default function BlogPost() {
               {blogPostError && "Something went wrong!"}
               {!blogPostLoading && !blogPostError && blogPost && (
                 <div className="bg-white shadow rounded-lg p-4">
-                  <h1 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 w-full">
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-semibold w-full">
                     {blogPost?.title}
                   </h1>
+                  <div className="mb-3">
+                    <div className="flex items-center gap-1">
+                      <WriteIcon className="text-green2 w-4 h-4" />
+                      <p className="font-satisfy md:text-md mt-1 text-gray-500">
+                        {blogPost?.author}
+                      </p>
+                    </div>
+                    <p className="text-gray-500 font-inter text-xss sm:text-sm md:text-xs font-[400]">
+                      Last Updated: {blogPost?.date}
+                    </p>
+                  </div>
                   <div className="w-full flex items-center justify-center">
                     <img
                       src={blogPost?.sampleImg}
                       alt={blogPost?.title}
-                      className="w-[550px] mb-3 rounded-lg"
+                      className="w-full mb-3 rounded-lg"
                     />
+                    
                   </div>
                   <PostContent contents={blogPost.contents} />
                   <div className="mt-6">

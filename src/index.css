@@ -59,7 +59,7 @@ h3{
     @apply px-3 sm:px-14 sm:py-24 py-20
 }
 .blog-section{
-    @apply px-3 py-20 sm:px-16 md:px-14 sm:py-24 
+    @apply px-3 py-20 sm:px-8 md:px-14 sm:py-24 
 
 }
 .course-outline-section{

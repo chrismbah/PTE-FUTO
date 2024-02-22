@@ -37,7 +37,9 @@ export const useFetchBlogPosts = () => {
     setBlogPostsLoading(true);
     try {
       const data = await getDocs(postsRef);
-      const list = data.docs.map((doc) => ({
+      const list = data.docs
+      .sort(() => 0.5 - Math.random())
+      .map((doc) => ({
         ...doc.data(),
         id: doc.id,
       })) as IBlogPost[];

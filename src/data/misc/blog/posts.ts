@@ -1,116 +1,161 @@
 import { BlogPost } from "../../../models/misc/blog/blogPosts";
 export const post: BlogPost = {
   no: 8,
-  author: "John Doe",
+  author: "Chris Mbah",
   title: "Future of AI (Artificial Intelligence): What Lies Ahead",
   postType: "top",
-  sampleImg: "/img/blog-posts/post7/sample2.jpeg",
+  sampleImg: "/img/blog-posts/post8/ai-hand.webp",
   contents: [
     {
       type: "p",
       content:
-        "Welcome to the exciting world of One Piece! I will try to give a summary of the entirety of the One Piece anime series which revolves around epic journey of Monkey D. Luffy and his crew as they sail the Grand Line in search of the legendary treasure known as One Piece.",
+        "Artificial intelligence (AI) is still in its early stages, and what we have now is kind of like a student who's good at specific things, but not a master of everything yet. This is why some call it 'weak AI.'",
+    },
+    {
+      type: "p",
+      content:
+        "However, people are working hard to build a more advanced AI that can learn and think like humans do. This is called 'strong AI' and it's like imagining a future where the student becomes a genius who can excel at anything.",
+    },
+    {
+      type: "p",
+      content:
+        "While AI can already beat humans in certain tasks like playing chess, experts believe it's far from being smarter than us in everything. But in the future, it might be able to do things we can't even imagine.",
     },
     {
       type: "img",
-      content: "/img/blog-posts/post7/luffy-wanted.webp",
+      content: "/img/blog-posts/post8/ai-brain.jpg",
     },
     {
       type: "h1",
-      content: "The Beginning of the Adventure",
+      content: "Growth of AI",
     },
     {
       type: "p",
       content:
-        "Meet the kid with the straw hat, Monkey D. Luffy, a young and ambitious pirate with a dream to become the Pirate King. He gains the power of the Gum-Gum Fruit after greedily eating a devil fruit ( well to be fair he was like 6 years old ), turning his body into rubber but making him unable to swim. Luffy sets sail with his crew, The 'Straw Hat' Pirates on the Going Merry Ship towards the Grand Line to find the ultimate treasure, The One Piece.",
+        "Befоre delving intо the future оf АI, it's imроrtаnt tо first grаsр whаt Аrtifiсiаl Intelligenсe is аnd where it's сurrently аt. 'AI is the аbility оf mасhines оr соmрuter-соntrоlled rоbоts tо exeсute tаsks thаt аre аssосiаted with intelligenсe.' Аs а result, АI is а brаnсh оf соmрuter sсienсe whоse gоаl is tо сreаte intelligent mасhines thаt саn reрliсаte humаn behаviоur.",
+    },
+    {
+      type: "h1",
+      content: "What Did the Future of AI Look Like 10 Years Ago?",
+    },
+    {
+      type: "p",
+      content:
+        "People have been dreaming and fearing 'thinking machines' for years, even before we called them AI. Back then, everyone imagined AI as robots looking just like us. But this focus on human-like AI made us miss the fact that AI has been around for a while!",
+    },
+    {
+      type: "p",
+      content:
+        "Sure, AI beating humans at chess, Go, or translation gets all the attention, but it's been quietly working in factories and other industries since the 1980s! It's not all robots walking around; AI can be invisible but still helpful.",
     },
     {
       type: "img",
-      content: "/img/blog-posts/post7/luffy1.jpeg",
+      content: "/img/blog-posts/post8/ai-vs-man.webp",
     },
     {
       type: "h1",
-      content: "The Grand Line - A Dangerous Sea",
+      content: "Evolution of AI",
     },
     {
       type: "p",
       content:
-        "The Grand Line is a mysterious and dangerous sea that challenges every pirate who dares to traverse it. Luffy's crew, the Straw Hat Pirates, encounters various islands, each with its own unique challenges, powerful enemies, and secrets.",
+        "Alan Turing, a pioneer in computer science, predicted back in 1947 that people would soon talk about machines thinking without batting an eye. And he wasn't wrong! Just like any new discovery, things that seemed impossible once become everyday realities. It's amazing how fast things change!",
+    },
+    {
+      type: "p",
+      content:
+        "The idea of thinking machines has been around for ages, even in stories and myths. But the term 'artificial intelligence' was first used in the 1950s. Since then, AI has come a long way, both in its technology and how it's used.",
+    },
+    {
+      type: "p",
+      content:
+        "For a while, everyone was focused on neural networks, but then machine learning started taking off in the 80s and 90s. As people learned more and used it more, machine learning evolved into something even cooler called 'deep learning'.  New things are being discovered about AI all the time, pushing the boundaries of what's possible.",
     },
     {
       type: "h1",
-      content: "The Straw Hat Crew",
+      content: "The Future of AI",
     },
     {
       type: "p",
       content:
-        "Joining Luffy on his adventure are Zoro, the swordsman; Nami, the navigator; Usopp, the sniper; Sanji, the cook; Chopper, the doctor; Robin, the archaeologist; Franky, the shipwright; Brook, the musician; and Jimbei, the helmsman (He's got that dawg in him). Together, they form an extraordinary crew with diverse abilities and personalities.",
+        "Artificial intelligence is poised to revolutionize the world, impacting everything from healthcare and education to finance and even warfare. While its potential is immense, it's crucial to acknowledge the challenges it presents.",
     },
     {
-      type: "img",
-      content: "/img/blog-posts/post7/crew.webp",
-    },
-    {
-      type: "h1",
-      content: "Shichibukai, Yonko, and the World Government",
+      type: "h2",
+      content: "Healthcare",
     },
     {
       type: "p",
       content:
-        "The world of One Piece is filled with powerful figures, including the Shichibukai (Warlords), Yonko (Emperors), and the World Government (Marines, Cipher Pol, Admirals, Gorosei and The One Who Sits Ontop). These groups play crucial roles in the balance of power, and the Straw Hat Pirates find themselves entangled in their conflicts.",
+        "AI could diagnose diseases based on data from wearables or medical history, potentially democratizing healthcare access. However, privacy concerns and ethical biases in algorithms need addressing.",
     },
     {
-      type: "img",
-      content: "/img/blog-posts/post7/luffy-gear2.jpeg",
-    },
-    {
-      type: "h1",
-      content: "The Great Pirate Era and Marineford War",
+      type: "h2",
+      content: "Education",
     },
     {
       type: "p",
       content:
-        "As Luffy's reputation grows, the world enters the Great Pirate Era. The crew faces intense challenges, including the Marineford War, where powerful forces clash, leading to significant consequences for the world and the crew.",
+        " AI could personalize learning, tailoring experiences to individual needs and abilities. But ensuring inclusivity and avoiding teacher displacement requires careful planning.",
     },
     {
-      type: "img",
-      content: "/img/blog-posts/post7/luffy-marineford.webp",
-    },
-    {
-      type: "h1",
-      content: "The Road Poneglyphs and the Void Century",
+      type: "h2",
+      content: "Finance",
     },
     {
       type: "p",
       content:
-        "Luffy learns about the Road Poneglyphs, ancient stones that reveal the location of the elusive One Piece. The crew delves into the mysteries of the Void Century, a hidden period in history with profound implications for the world.",
-    },
-
-    {
-      type: "h1",
-      content: "Wano Country",
+        " AI algorithms can analyze vast data sets, potentially improving investment strategies and fraud detection. However, job losses and potential biases in AI systems need consideration.",
     },
     {
-      type: "p",
-      content:
-        "The Straw Hat Pirates arrive at Wano Country, a land ruled by the powerful Kaido and his crew. In a grand showdown, alliances form, secrets are revealed, and the fate of the world hangs in the balance as Luffy faces his greatest challenges yet.",
-    },
-    {
-      type: "img",
-      content: "/img/blog-posts/post7/luffy-wano.jpg",
+      type: "h2",
+      content: "Military & Cybersecurity",
     },
     {
       type: "p",
       content:
-        "Obviously these are just bits and pieces of the hefty 1000+ episodes but i promise you the episodes are worth it. I'm currently halfway through the series and I am glad it hasnt ended yet.",
+        "AI-powered weapons systems raise ethical concerns about autonomous decision-making and the potential for misuse. Meanwhile, AI can bolster cybersecurity, but explainability of algorithms is crucial to ensure trust.",
     },
     {
-      type: "img",
-      content: "/img/blog-posts/post7/luffy-gear5.webp",
+      type: "h2",
+      content: "Transportation",
+    },
+    {
+      type: "p",
+      content:
+        "Self-driving cars are no longer science fiction. By 2025, a significant portion of vehicles might have AI features, raising questions about infrastructure and safety regulations.",
+    },
+    {
+      type: "h2",
+      content: "Advertisement",
+    },
+    {
+      type: "p",
+      content: " AI can analyze data to create targeted campaigns, saving companies money and reaching the right audience. However, privacy concerns and potential manipulation need to be addressed."
     },
     {
       type: "p-bold",
-      content: "Watch One Piece guys!! Trust me its the best!",
+      content: "Overall, AI offers incredible opportunities, but it comes with responsibility."
+    },
+    {
+      type: "h1",
+      content: "Impact of AI"
+    },
+    {
+      type: "p",
+      content: "Robots taking over? Not quite! AI is actually poised to boost our workplaces by taking on the tedious and dangerous tasks. This frees up humans to focus on what they do best: creative and empathetic work. Imagine happier, more fulfilled employees doing jobs that truly matter to them!"
+    },
+    {
+      type: "p",
+      content: "Healthcare is getting a major upgrade thanks to AI. With its superhuman monitoring and diagnosis skills, AI can help hospitals and clinics run smoother and save money. It can even personalize medicine and treatment plans, making healthcare more effective and accessible for everyone"
+    },
+    {
+      type: "img",
+      content: "/img/blog-posts/post8/ai-networks.webp",
+    },
+    {
+      type: "p-bold",
+      content: "Basically, AI is here to help us, not replace us. It's about working smarter, not harder, and creating a future where both humans and technology thrive."
     },
   ],
 };

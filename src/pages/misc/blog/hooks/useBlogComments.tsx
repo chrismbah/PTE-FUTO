@@ -92,28 +92,33 @@ export const useBlogComments = () => {
   };
 
   const addUserComment = async () => {
-    try {
       if (userID) {
         if (studentDetails && postID) {
           if (userComment !== "") {
-            const { firstName, lastName, email } = studentDetails;
-            const commentID = uuid();
-            const commentInfo: IPostComment = {
-              commentPostID: postID,
-              commentUserID: userID,
-              commentID: commentID,
-              firstName: firstName,
-              lastName: lastName,
-              email: email,
-              comment: userComment,
-              time: currentTime,
-              date: currentDate,
-              timeStamp: new Date(),
-            };
-            await setDoc(doc(db, "postsComments", commentID), commentInfo);
-            setUserComment("");
-            useToast("success", "Comment added successfully!");
-            updatePostComments();
+            try{
+              const { firstName, lastName, email } = studentDetails;
+              const commentID = uuid();
+              const commentInfo: IPostComment = {
+                commentPostID: postID,
+                commentUserID: userID,
+                commentID: commentID,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                comment: userComment,
+                time: currentTime,
+                date: currentDate,
+                timeStamp: new Date(),
+              };
+              await setDoc(doc(db, "postsComments", commentID), commentInfo);
+              setUserComment("");
+              useToast("success", "Comment added successfully!");
+              updatePostComments();
+            }
+            catch(err){
+              useToast("error", "Couldn't post comment. Please check your network connection and try again.")
+            }
+            
           } else {
             useToast("error", "Please add a comment");
           }
@@ -124,10 +129,6 @@ export const useBlogComments = () => {
         navigate("/login");
         useToast("success", "Please login to comment on this post");
       }
-    } catch (err) {
-      console.log("Error adding comment");
-      useToast("error", "Something went wrong. Please try again");
-    }
   };
 
   const deleteUserComment = async (

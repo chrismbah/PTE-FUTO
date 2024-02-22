@@ -19,14 +19,14 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                     <h5 className="mb-2 text-base md:text-ss lg:text-xs font-bold tracking-tight text-gray-900 dark:text-white">
                       {title}
                     </h5>
-                    <p className="mb-3 font-normal text-gray-700 text-sm md:text-ss xmd:text-ss xl:text-sm">
+                    <p className="mb-3 font-normal text-gray-900 text-sm md:text-ss xmd:text-ss xl:text-sm">
                       {typeof contents[0].content === "string" &&
                         contents[0].content.split(" ").slice(0, 15).join(" ")}
                       ...
                     </p>
                   </div>
 
-                  <p className="font-normal text-gray-500 text-ss lg:text-[10px] flex items-end">
+                  <p className="font-[600] text-gray-600 text-ss lg:text-[10px] flex items-end">
                     {author} on {date}
                   </p>
                 </div>

@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../pages/error/404/NotFound";
 // import { BounceLoader } from "../components/loaders/FullBounceLoader";
-import LogoSpinner from "../components/loaders/LogoSpinner";
+import LogoSpinner from "../components/loaders/FullLogoSpinner";
 
 const AuthenticatedRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login"));
