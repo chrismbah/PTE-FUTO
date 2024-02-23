@@ -8,52 +8,95 @@ export default function Gallery() {
   return (
     <div className="">
       <div className="box-width">
-        <div className="section">
-          <h2 className="text-center">Gallery</h2>
-          <h3 className="text-base sm:text-md md:text-lg font-[500] mb-3 text-center">
+        <div className="px-6 ss:px-10 sm:px-4 xsm:px-14 xsm:py-16 xsm:pb-32 py-8">
+          <div className="bar-style" />
+          <h2 className="">Gallery</h2>
+          <h3 className="text-base sm:text-md md:text-lg font-[500] mb-3">
             Explore the view
           </h3>
           <div className="grid gap-4">
             <div className="grid xlg:grid-cols-4 gap-4">
-              <div className="transition duration-300 ease-in-out relative cursor-pointer group bg-gray-50 h-[230px] sm:h-[300px] rounded-lg overflow-hidden">
-                <img
-                  className="h-full object-cover w-full"
-                  src={img2}
-                  alt="img1"
-                />
-                <div className="bg-black/20 backdrop-blur-sm absolute bottom-0 left-0 h-0 hidden group-hover:flex group-hover:h-full group-hover:w-full items-center justify-center overflow-hidden ">
-                  <p className="text-xs text-white">FUTO's Front Entrance</p>
+              <div className="group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
+                <div className="h-[230px] sm:h-[300px]">
+                  <img
+                    src={img2}
+                    alt="img1"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
+                  <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Federal University of Technology, Owerri ( FUTO ) Main
+                    Entrance.
+                  </p>
                 </div>
               </div>
-              <div className="bg-gray-50 h-[230px] sm:h-[300px] rounded-lg overflow-hidden">
-                <img
-                  className="h-full object-cover w-full"
-                  src={img3}
-                  alt="img1"
-                />
+              <div className="group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
+                <div className="h-[230px] sm:h-[300px]">
+                  <img
+                    src={img3}
+                    alt="img3"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
+                  <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Polymer and Textile Engineering Department Lecture Hall 1.
+                  </p>
+                </div>
               </div>
-              <div className="sm:col-span-2 bg-gray-50 h-[230px] sm:h-[300px] rounded-lg overflow-hidden">
-                <img
-                  className="h-full object-cover w-full"
-                  src={img5}
-                  alt="img1"
-                />
+              <div className="sm:col-span-2 group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
+                <div className="h-[230px] sm:h-[300px]">
+                  <img
+                    src={img5}
+                    alt="img3"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
+                  <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Federal University of Technology, Owerri ( FUTO ) Senate
+                    Building.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="grid sm:grid-cols-5 gap-4">
-              <div className="bg-gray-50 h-[230px] sm:h-[300px] rounded-lg overflow-hidden sm:col-span-2">
-                <img
-                  className="h-full object-cover w-full"
-                  src={img4}
-                  alt="img1"
-                />
+              <div className="sm:col-span-2 group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
+                <div className="h-[230px] sm:h-[300px]">
+                  <img
+                    src={img4}
+                    alt="img3"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
+                  <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    School of Engineering and Engineering Technology ( SEET )
+                    Faculty Building.
+                  </p>
+                </div>
               </div>
-              <div className="bg-gray-50 h-[230px] sm:h-[300px] rounded-lg overflow-hidden sm:col-span-3">
-                <img
-                  className="h-full object-cover w-full"
-                  src={img1}
-                  alt="img1"
-                />
+
+              <div className="sm:col-span-3 group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
+                <div className="h-[230px] sm:h-[300px]">
+                  <img
+                    src={img1}
+                    alt="img3"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
+                  <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Aerial View of Federal University of Technology, Owerri (
+                    FUTO ).
+                  </p>
+                </div>
               </div>
             </div>
           </div>
