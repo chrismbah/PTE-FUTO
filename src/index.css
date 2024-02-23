@@ -99,7 +99,7 @@ h3{
     @apply text-sm px-3 py-[7px] xss:py-2.5  text-white font-semibold w-full rounded-lg
 }
 .heading-p{
-    @apply text-gray-800 text-center text-xs xsm:text-base font-[500]
+    @apply text-gray-800 text-center text-sm xsm:text-xs font-[500]
 }
 
 

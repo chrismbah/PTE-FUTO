@@ -10,12 +10,8 @@ export default function Home() {
      <Hero />
      <About />
      <Services />
-     {/* <CalculateGPA /> */}
-     {/* <CourseOutlines /> */}
-     {/* <LearningResources /> */}
      <Gallery />
      <Blog />
-     <h2 className="mb-1 md:mb-4">Gallery</h2>
      <Footer />
     </>
   );

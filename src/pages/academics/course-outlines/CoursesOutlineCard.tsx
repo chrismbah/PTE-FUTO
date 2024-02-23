@@ -15,17 +15,17 @@ export const CourseOutlineCard: FC<CourseInfo> = ({
   return (
     <Link to={`/course-outlines/${level}/${id}`}>
       <div
-        className="bg-white hover:shadow-2xl transition duration-200 ease-in py-6 
-          px-4 h-[230px] sm:max-w-full mmd:max-w-[360px] relative shadow-2 border-2 border-gray-200"
+        className="bg-gray-50 hover:shadow-md transition duration-200 ease-in py-6 
+          px-4 h-[230px] sm:max-w-full mmd:max-w-[360px] relative shadow-4 rounded-lg"
       >
         <div className="">
           <h4 className="font-semibold text-md ss:text-lg">{courseTitle}</h4>
           <div className="mb-6">
-            <h4>
+            <h4 className="font-[500]">
               Course Code:{" "}
               <span className="capitalize font-semibold">{courseCode}</span>{" "}
             </h4>
-            <span className="py-1 px-2 bg-gray-500 text-green1 text-xss font-[900] shadow-3">
+            <span className=" text-green1 text-xss font-[900] ">
               {option}
             </span>
           </div>

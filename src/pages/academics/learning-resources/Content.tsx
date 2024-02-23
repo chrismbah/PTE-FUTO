@@ -6,7 +6,6 @@ import { useLearningResourcesContext } from "../../../context/LearningResources"
 import { BounceLoader } from "../../../components/loaders/BounceLoader";
 import { ContentCard } from "./ContentCard";
 import fileSearch from "../../../assets/svg/fileSearch.svg";
-import fileError from "../../../assets/svg/fileError.svg";
 import { FileMetadata } from "../../../models/academics/learning-resources";
 
 export default function Content() {
@@ -62,7 +61,6 @@ export default function Content() {
     if (error) {
       return (
         <div className="flex items-center justfiy-center flex-col">
-          <img src={fileError} alt="Error." className=" w-full ss:w-[450px]" />
           <p className="text-sm ss:text-base text-gray-500 font-[500] text-center ">
             Oops, something went wrong. Please try again.
           </p>

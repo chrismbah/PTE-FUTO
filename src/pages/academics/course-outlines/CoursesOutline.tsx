@@ -17,7 +17,7 @@ export default function CoursesOutline() {
       <div className="box-width">
         <div className="course-outline-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
-            <h2 className="text-green1 text-center font-semibold">
+            <h2 className="text-green1 text-center font-bold text-xl ss:text-xll">
               Courses Offered for {level} Level
             </h2>
             <p className="heading-p">

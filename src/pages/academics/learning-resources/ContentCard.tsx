@@ -31,7 +31,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
       setFileLoading(false);
     } catch (error) {
       setFileLoading(false);
-      useToast("error", "Something went wrong. Pease try again", null, null);
+      useToast("error", "Something went wrong. Pease try again");
     }
   };
 

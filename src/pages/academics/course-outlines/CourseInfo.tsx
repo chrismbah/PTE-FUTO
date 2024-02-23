@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 import file from "/icons/course-outline/levels/file.png";
 import { useCourseOutlineContext } from "../../../context/CourseOutline";
 import { ICourseInfo } from "../../../models/academics/course-outline/courseInfo";
-import { BounceLoader } from "../../../components/loaders/FullBounceLoader";
 
 export default function CourseInfo() {
   const { id, level } = useParams<string>();
@@ -34,9 +33,9 @@ export default function CourseInfo() {
   return (
     <div className="bg-gray-50">
       <div className="flex items-center justify-center min-h-screen">
-        {courseInfo ? (
-          <div className="max-w-[950px] px-3 pt-20 pb-8 xsm:px-10 xsm:pt-24 xsm:pb-10">
-            <div className=" shadow-2 px-3 pt-10 pb-8 xsm:px-10 border-2 border-gray-200">
+        {courseInfo && 
+          <div className="max-w-[950px] px-3 pt-20 pb-8 xsm:px-10 xsm:pt-24 xsm:pb-10 ">
+            <div className=" shadow-4 px-3 pt-10 pb-8 xsm:px-10 rounded-lg">
               <div className="flex-center gap-0 ss:gap-3 flex-wrap">
                 <div className="flex-center">
                   <img src={file} alt="Book" className="w-10 sm:w-12 sm:mr-0" />
@@ -73,7 +72,7 @@ export default function CourseInfo() {
               {courseInfo.info.map(({ heading, content }, index) => (
                 <div
                   key={index}
-                  className="py-2 mb-2 border-b-2 border-gray-200"
+                  className="py-2 mb-2 border-b border-gray-200"
                 >
                   {heading && heading === "General" ? (
                     <div className="text-base sm:text-md font-semibold">
@@ -90,9 +89,7 @@ export default function CourseInfo() {
               ))}
             </div>
           </div>
-        ) : (
-          <BounceLoader />
-        )}
+        }
       </div>
     </div>
   );

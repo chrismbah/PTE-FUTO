@@ -20,7 +20,7 @@ export default function StudyTip() {
           className={`${toggleTip ? "opacity-100 z-[5]" : "opacity-0 z-[-5]"} 
           rounded-lg absolute top-10 right-4  xsm:-left-[360%] transition duration-300 ease-in-out `}
         >
-          <div className="w-40 xsm:w-64 text-sm border-gray-300 border shadow-md rounded-lg">
+          <div className="w-52 xsm:w-64 text-sm border-gray-300 border shadow-md rounded-lg">
             <div className=" rounded-t-lg px-3 py-2  border-b border-gray-200 bg-gray-100">
               <h4 className="font-semibold text-ss  sss:text-sm xsm:text-xs">
                 Learning Tip

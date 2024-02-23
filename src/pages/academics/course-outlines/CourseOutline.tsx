@@ -1,14 +1,20 @@
+import {useEffect} from "react"
 import { CourseOutlineCard } from "./CourseOutlineCard";
 import { courseOutlineLevels } from "../../../data/academics/course-outlines";
 import Footer from "../../../components/footer/Footer";
 
 export default function CourseOutline() {
+
+  useEffect(()=>{
+    window.scroll(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width ">
         <div className="page-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
-            <h2 className="text-green1 text-center font-semibold">Course Outlines</h2>
+            <h2 className="text-green1 text-center font-bold text-xl ss:text-xll">Course Outlines</h2>
             <p className="heading-p">
               Discover the depth and focus of our courses through detailed
               descriptions of curriculum <br />

@@ -17,7 +17,7 @@ export const services = [
     icon: "icons/home/resources.svg",
     color: "dark-green",
     title: "Learning Resources",
-    desc: "Compiled learning materials including textbooks, lecture notes, handouts and manuals available for download aid students learning experience.",
+    desc: "Compiled learning materials including textbooks, lecture notes, handouts and manuals available for download to aid students learning experience.",
     link: "/learning-resources"
 },
 ];
