@@ -9,7 +9,8 @@ import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 export default function Hero() {
   const { user } = useGetUserInfo();
   return (
-    <div className="hero-section box-width">
+    <div className="home-gray-bg">
+      <div className="hero-section box-width">
       <div className="section-flex-between gap-4">
         <div className="w-full">
           <h1 className="text-green1 xl:text-5xl lg:text-4xl text-3xl  font-semibold">
@@ -37,5 +38,7 @@ export default function Hero() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }

@@ -15,6 +15,7 @@ export default function Home() {
      {/* <LearningResources /> */}
      <Gallery />
      <Blog />
+     <h2 className="mb-1 md:mb-4">Gallery</h2>
      <Footer />
     </>
   );
