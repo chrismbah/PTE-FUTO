@@ -12,7 +12,7 @@ export default function About() {
         <div className="section flex items-center justify-between mmd:flex-row">
           <div className="basis-2/5">
             <div className="bar-style" />
-            <h2>About Us</h2>
+            <h2>About Us</h2>    
             <p className="text-gray-700 font-[500] text-xs mb-2">
               Empowering students to achieve academic excellence through
               learning resources and personalized support.
