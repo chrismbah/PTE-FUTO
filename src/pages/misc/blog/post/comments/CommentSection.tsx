@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import userProfile from "../../../../../assets/svg/icons/userProfile.svg";
 import { PaperPlaneIcon } from "../../../../../components/icons/PaperPlaneIcon";
@@ -37,7 +38,7 @@ export default function CommentSection() {
           onChange={(e) => setUserComment(e.target.value)}
           className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-[12px]
              focus:border-green2 border border-gray-400 placeholder:text-gray-300 focus:ring-0  
-             placeholder:font-light placeholder:text-ss sm:placeholder:text-sm rounded-lg resize-none"
+             placeholder:font-normal placeholder:text-ss sm:placeholder:text-sm rounded-lg resize-none"
           placeholder="Write your thoughts here..."
         ></textarea>
 

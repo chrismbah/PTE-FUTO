@@ -3,7 +3,6 @@ import { PostCommentsProp } from "../../../../../models/misc/blog/postComments";
 import userProfile from "../../../../../assets/svg/icons/userProfile.svg";
 import { ThreeVerticalDotsIcon } from "../../../../../components/icons/ThreeVerticalDotsIcon";
 import { useGetUserInfo } from "../../../../../hooks/auth/useGetUserInfo";
-import { useModalContext } from "../../../../../context/Modal";
 import {
   Popover,
   PopoverHandler,
@@ -14,8 +13,7 @@ import { useBlogComments } from "../../hooks/useBlogComments";
 
 export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
   const { userID } = useGetUserInfo();
-  const {  openDeleteModal } = useModalContext();
-  const {deleteUserComment} = useBlogComments()
+  const { deleteUserComment } = useBlogComments();
 
   return (
     <div>
@@ -61,10 +59,11 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                           </button>
                         </PopoverHandler>
                         <PopoverContent
-                          // onClick={() => setOpenDeleteModal(true)}
-                          onClick={()=>deleteUserComment(commentID, commentUserID)}
+                          onClick={() =>
+                            deleteUserComment(commentID, commentUserID)
+                          }
                           placeholder={""}
-                          className={` ${openDeleteModal ? "hidden" : "block"} cursor-pointer shadow font-dmSans p-2 md:p-3 text-[10px] sm:text-sm hover:bg-gray-100 rounded-lg`}
+                          className={` cursor-pointer shadow font-dmSans p-2 md:p-3 text-[10px] sm:text-sm hover:bg-gray-100 rounded-lg`}
                         >
                           Delete
                         </PopoverContent>
@@ -72,14 +71,16 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                     </>
                   )}
                 </div>
-
                 <div className="w-full">
                   <p className="text-xss xxss:text-sm sm:text-xs md:text-[12px] break-all ">
                     {comment}
                   </p>
                 </div>
               </div>
-              <DeleteCommentModal commentID={commentID} commentUserID={commentUserID} />
+              <DeleteCommentModal
+                commentID={commentID}
+                commentUserID={commentUserID}
+              />
             </div>
           );
         }

@@ -13,7 +13,7 @@ export default function Services() {
               Our Services
             </h2>
             <h3 className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3">
-              What we offer our students
+              What we Offer Our Students
             </h3>
           </div>
 

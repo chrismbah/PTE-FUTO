@@ -41,7 +41,7 @@ h3{
     @apply text-xl sm:text-2xl font-[500]
 }
 .section-p{
-    @apply text-sm xss:text-base
+    @apply text-sm xss:text-xs md:text-base text-gray-800
 }
 .box-width{
     @apply 2xl:max-w-[1420px] w-full mx-auto
@@ -54,9 +54,6 @@ h3{
 }
 .auth-section{
     @apply px-3 sm:px-10 py-10
-}
-.hero-section{
-    @apply px-3 xsm:px-14 sm:pt-24 mmd:pt-16 sm:pb-36 py-20
 }
 .page-section{
     @apply px-3 sm:px-14 sm:py-24 py-20

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useFetchBlogPosts } from "./hooks/useFetchBlogPosts";
 import { TopPosts } from "./cards/Top";
@@ -31,8 +32,9 @@ export default function Blog() {
             </>
           )}
           {blogPostsLoading && !blogPosts && !blogPostsError && (
-            <div className="w-full h-[65vh] flex items-center justify-center">
+            <div className="w-full h-[65vh] flex items-center justify-center flex-col">
               <Spinner />
+              <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">Loading Posts...</p>
             </div>
           )}
         </div>

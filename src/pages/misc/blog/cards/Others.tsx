@@ -42,5 +42,4 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
     </div>
   );
 };
-{
-}
+

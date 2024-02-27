@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useFetchBlogPosts } from "../hooks/useFetchBlogPosts";
 import { useParams } from "react-router-dom";
@@ -11,8 +12,6 @@ import CommentSection from "./comments/CommentSection";
 import { WriteIcon } from "../../../../components/icons/WriteIcon";
 import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { useBlogComments } from "../hooks/useBlogComments";
-// import { DeleteCommentModal } from "../../../../components/modal/DeleteCommentModal";
-import { useModalContext } from "../../../../context/Modal";
 import PostSkeleton from "./skeleton/PostSkeleton";
 
 export default function BlogPost() {
@@ -32,8 +31,7 @@ export default function BlogPost() {
   } = useFetchBlogPosts();
   const { getUserInfo } = useGetUserInfo();
   const { postID, postType } = useParams();
-  const { getPostComments, fetchPostComments } = useBlogComments();
-  const { openDeleteModal } = useModalContext();
+  const { getPostComments } = useBlogComments();
 
   useEffect(() => {
     if (postID && postType) {
@@ -54,10 +52,6 @@ export default function BlogPost() {
     getUserInfo();
   }, []);
 
-  useEffect(() => {
-    fetchPostComments();
-    console.log("Hello There");
-  }, [openDeleteModal]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -67,7 +61,7 @@ export default function BlogPost() {
             <div className="md:col-span-3">
               {blogPostLoading && (
                 <div className="bg-white shadow rounded-lg p-4">
-                  <PostSkeleton/>
+                  <PostSkeleton />
                 </div>
               )}
               {blogPostError && "Something went wrong!"}
@@ -93,20 +87,8 @@ export default function BlogPost() {
                       alt={blogPost?.title}
                       className="w-full mb-3 rounded-lg"
                     />
-                    
                   </div>
                   <PostContent contents={blogPost.contents} />
-                  <div className="mt-6">
-                    <div className="flex items-center gap-1">
-                      <WriteIcon className="text-green2 w-4 h-4" />
-                      <p className="font-satisfy md:text-md mt-1 text-gray-500">
-                        {blogPost?.author}
-                      </p>
-                    </div>
-                    <p className="text-gray-500 font-inter text-xss sm:text-sm md:text-xs font-[400]">
-                      {blogPost?.date}
-                    </p>
-                  </div>
                 </div>
               )}
             </div>
@@ -159,7 +141,6 @@ export default function BlogPost() {
         </div>
       </div>
       <Footer />
-      {/* <DeleteCommentModal /> */}
     </div>
   );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { getCurrentTime } from "../../../../helpers/getCurrentTime";
@@ -17,11 +18,9 @@ import { IPostComment } from "../../../../models/misc/blog/postComments";
 import { notifyUser } from "../../../../helpers/notifyUser";
 import { v4 as uuid } from "uuid";
 import { getCurrentDateInShortFormat } from "../../../../helpers/formatDate";
-// import { useModalContext } from "../../../../context/Modal";
 import { useNavigate } from "react-router-dom";
 
 export const useBlogComments = () => {
-  // const { setOpenDeleteModal } = useModalContext();
   const { postID } = useParams();
   const navigate = useNavigate();
   const commentsRef = collection(db, "postsComments");
@@ -72,24 +71,6 @@ export const useBlogComments = () => {
       setPostComments(updatedComments);
     });
   };
-  const updatePostComments = async () => {
-    try {
-      if (postID) {
-        const postCommentsRef = query(
-          commentsRef,
-          where("commentPostID", "==", postID)
-        );
-        const data = await getDocs(postCommentsRef);
-        const comments = data.docs.map((doc) => ({
-          ...doc.data(),
-        })) as IPostComment[];
-        setPostComments(comments);
-        console.log(comments);
-      }
-    } catch (err) {
-      console.log("Couldn't get comments");
-    }
-  };
 
   const addUserComment = async () => {
     if (userID) {
@@ -113,7 +94,7 @@ export const useBlogComments = () => {
             await setDoc(doc(db, "postsComments", commentID), commentInfo);
             setUserComment("");
             notifyUser("success", "Comment added successfully!");
-            updatePostComments();
+            
           } catch (err) {
             notifyUser(
               "error",
@@ -142,21 +123,14 @@ export const useBlogComments = () => {
       console.log(commentID);
       try {
         await deleteDoc(doc(commentsRef, commentID));
-        updatePostComments();
-        // setOpenDeleteModal(false);
         notifyUser("success", "Comment deleted.");
-        console.log("Done !!!!");
+        getPostComments()
         setDeleteCommentLoading(false);
-        console.log(userComment);
       } catch (err) {
-        // setOpenDeleteModal(false)
         notifyUser("error", "Could'nt delete comment");
         setDeleteCommentLoading(false);
         setDeleteCommentError(true);
-        console.log("Error deleting comment");
       }
-    } else {
-      notifyUser("error", "Comment is not yours??");
     }
   };
 
@@ -173,7 +147,7 @@ export const useBlogComments = () => {
       setPostComments(updatedComments);
     });
 
-    return () => unsubscribe(); // Clean up listener on unmount
+    return () => unsubscribe();
   }, []);
 
   return {
@@ -187,7 +161,6 @@ export const useBlogComments = () => {
     deleteUserComment,
     deleteCommentLoading,
     deleteCommentError,
-    updatePostComments,
     fetchPostComments,
   };
 };
