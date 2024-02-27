@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { CourseSelectedProps } from "../../../../models/academics/gpa";
-import { useComputeGPA } from "../../../../hooks/academics/useComputeGPA";
+import { useComputeGPA } from "../hooks/useComputeGPA";
 import { EditIcon } from "../../../../components/icons/EditIcon";
 import { TrashIcon } from "../../../../components/icons/TrashIcon";
 export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {

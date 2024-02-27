@@ -3,7 +3,7 @@ import { convertBytes } from "../../../helpers/convertBytes";
 import { storage } from "../../../config/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Content } from "../../../models/academics/learning-resources";
-import { useToast } from "../../../helpers/useToast";
+import { useToast } from "../../../helpers/notifyUser";
 import Spinner from "../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";

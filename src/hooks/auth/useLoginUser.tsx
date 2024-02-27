@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useToast } from "../../helpers/useToast";
+import { notifyUser } from "../../helpers/notifyUser";
 import { logInSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -20,13 +20,13 @@ export default function useLoginUser() {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
       reset();
-      useToast("success", `Login Successful. Good to have you back!`);
+      notifyUser("success", `Login Successful. Good to have you back!`);
     } catch (error: any) {
       console.log(error);
       if (error.code == "auth/invalid-credential") {
-        useToast("error", "Invalid Email or Password.");
+        notifyUser("error", "Invalid Email or Password.");
       } else {
-        useToast("error", "Something went wrong. Please try again");
+        notifyUser("error", "Something went wrong. Please try again");
       }
       setLoading(false);
     }

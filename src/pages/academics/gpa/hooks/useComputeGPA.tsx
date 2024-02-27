@@ -1,7 +1,7 @@
-import { useGPAContext } from "../../context/GPA";
-import { levelCourses } from "../../data/academics/cgpa/courses";
-import { useToast } from "../../helpers/useToast";
-import { CourseGrades, GradeValues } from "../../models/academics/gpa";
+import { useGPAContext } from "../../../../context/GPA";
+import { levelCourses } from "../../../../data/academics/cgpa/courses";
+import { notifyUser } from "../../../../helpers/notifyUser";
+import { CourseGrades, GradeValues } from "../../../../models/academics/gpa";
 import { v4 as uuid } from "uuid";
 
 export const useComputeGPA = () => {
@@ -96,11 +96,11 @@ export const useComputeGPA = () => {
         setCourse("");
         setGrade("");
         setUnit("");
-        useToast("success", "Course Edited");
+        notifyUser("success", "Course Edited");
       } else {
         const newCourseGrades = { id: uuid(), course, unit, grade };
         setCourseGrades([...courseGrades, newCourseGrades]);
-        useToast(
+        notifyUser(
           "success",
           `${course} with credit unit ${unit} and grade "${grade}" Added Successfully`
         );
@@ -111,17 +111,17 @@ export const useComputeGPA = () => {
     } else {
       switch (true) {
         case course === "":
-          useToast("error", "Please select a course from the list.");
+          notifyUser("error", "Please select a course from the list.");
           break;
 
         case unit === "":
-          useToast("error", "Please specify the course unit.");
+          notifyUser("error", "Please specify the course unit.");
           break;
         case unit < 0:
-          useToast("error", "Unit must be greater than 0.");
+          notifyUser("error", "Unit must be greater than 0.");
           break;
         case grade === "":
-          useToast(
+          notifyUser(
             "error",
             "Please enter the grade you received for this course."
           );
@@ -135,7 +135,7 @@ export const useComputeGPA = () => {
       return courseGrade.id !== id;
     });
     setCourseGrades(newCourseGrades);
-    useToast("success", "Course Deleted");
+    notifyUser("success", "Course Deleted");
     setUnit("");
     setGrade("");
     setCourse("");
@@ -158,13 +158,13 @@ export const useComputeGPA = () => {
 
   const clearCourseGrades = () => {
     if (courseGrades.length <= 0) {
-      useToast("error", "No Courses To Clear");
+      notifyUser("error", "No Courses To Clear");
     } else if (courseGrades.length === 1) {
       setCourseGrades([]);
-      useToast("success", "Course Cleared.");
+      notifyUser("success", "Course Cleared.");
     } else {
       setCourseGrades([]);
-      useToast("success", "Courses Cleared.");
+      notifyUser("success", "Courses Cleared.");
     }
   };
 

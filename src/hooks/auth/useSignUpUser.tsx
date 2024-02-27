@@ -7,10 +7,9 @@ import { collection, addDoc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { signUpSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useToast } from "../../helpers/useToast";
+import { notifyUser } from "../../helpers/notifyUser";
 import { getCurrentDate } from "../../helpers/formatDate";
 import { getCurrentTime } from "../../helpers/getCurrentTime";
-
 
 export default function useSignUpUser() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -36,20 +35,20 @@ export default function useSignUpUser() {
         regNo: regNo,
         level: level,
         registeredDate: getCurrentDate(),
-        registeredTime: getCurrentTime()
+        registeredTime: getCurrentTime(),
       });
       setLoading(false);
       reset();
       navigate("/");
-      useToast(
+      notifyUser(
         "success",
         "Registeration Successful. Explore, learn, and enjoy your stay."
       );
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {
-        useToast("error", "Email Account already in use");
+        notifyUser("error", "Email Account already in use");
       } else {
-        useToast("error", "Something went wrong. Please try again");
+        notifyUser("error", "Something went wrong. Please try again");
       }
       setLoading(false);
     }

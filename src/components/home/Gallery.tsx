@@ -8,16 +8,16 @@ export default function Gallery() {
   return (
     <div className="">
       <div className="box-width">
-        <div className="px-6 ss:px-10 sm:px-4 xsm:px-14 xsm:py-16 xsm:pb-32 py-8">
+        <div className="section">
           <div className="bar-style" />
           <h2 className="">Gallery</h2>
-          <h3 className="text-xs ss:text-base sm:text-md md:text-lg font-[500] mb-3 text-gray-800">
+          <h3 className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3">
             Explore the view
           </h3>
-          <div className="grid gap-4">
+          <div className="grid gap-4 px-3 sm:px-0">
             <div className="grid xlg:grid-cols-4 gap-4">
               <div className="group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                <div className="h-[250px] sm:h-[300px]">
+                <div className="h-[230px] sm:h-[300px]">
                   <img
                     src={img2}
                     alt="img1"
@@ -33,7 +33,7 @@ export default function Gallery() {
                 </div>
               </div>
               <div className="group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                <div className="h-[250px] sm:h-[300px]">
+                <div className="h-[230px] sm:h-[300px]">
                   <img
                     src={img3}
                     alt="img3"
@@ -48,7 +48,7 @@ export default function Gallery() {
                 </div>
               </div>
               <div className="sm:col-span-2 group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                <div className="h-[250px] sm:h-[300px]">
+                <div className="h-[230px] sm:h-[300px]">
                   <img
                     src={img5}
                     alt="img3"
@@ -66,7 +66,7 @@ export default function Gallery() {
             </div>
             <div className="grid sm:grid-cols-5 gap-4">
               <div className="sm:col-span-2 group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                <div className="h-[250px] sm:h-[300px]">
+                <div className="h-[230px] sm:h-[300px]">
                   <img
                     src={img4}
                     alt="img3"
@@ -83,7 +83,7 @@ export default function Gallery() {
               </div>
 
               <div className="sm:col-span-3 group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                <div className="h-[250px] sm:h-[300px]">
+                <div className="h-[230px] sm:h-[300px]">
                   <img
                     src={img6}
                     alt="img3"

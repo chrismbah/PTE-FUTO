@@ -1,8 +1,8 @@
 import GPAForm from "./components/GPAForm";
-import { useComputeGPA } from "../../../hooks/academics/useComputeGPA";
+import { useComputeGPA } from "./hooks/useComputeGPA";
 import { GPAMessage } from "./components/GPAMessage";
 import { Link } from "react-router-dom";
-import {ArrowLeftIcon} from "../../../components/icons/ArrowLeftIcon"
+import { ArrowLeftIcon } from "../../../components/icons/ArrowLeftIcon";
 export default function CalculateGPA() {
   const { studentGPA } = useComputeGPA();
   return (
@@ -12,9 +12,9 @@ export default function CalculateGPA() {
           <div className="flex justify-between items-center mb-2 flex-col xxss:flex-row xxss:gap-2 mt-4 sm:mt-2">
             <h3 className="flex items-center justify-start w-full ">
               {" "}
-                <Link to="/">
-                  <ArrowLeftIcon className="w-5 sm:w-7 mr-1" />
-                </Link>{" "}
+              <Link to="/">
+                <ArrowLeftIcon className="w-5 sm:w-7 mr-1" />
+              </Link>{" "}
               GPA Calculator
             </h3>
             <div className="w-full xxss:w-auto">

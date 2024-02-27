@@ -5,7 +5,7 @@ import { post } from "../../../../data/misc/blog/posts";
 import { db } from "../../../../config/firebase";
 import { getCurrentDate } from "../../../../helpers/formatDate";
 // import { useNetworkNotifications } from "../../network/useNetworkNotifications";
-import { useToast } from "../../../../helpers/useToast";
+import { notifyUser } from "../../../../helpers/notifyUser";
 
 export const useFetchBlogPosts = () => {
   const [blogPosts, setBlogPosts] = useState<IBlogPost[] | null>(null);
@@ -64,11 +64,11 @@ export const useFetchBlogPosts = () => {
         setBlogPost(null);
         console.log("Doc doesnt exist");
       }
-    } catch (error: any) {
+    } catch (error:any) {
       setBlogPostLoading(false);
       setBlogPostError(true);
       if (error.code === "unavailable") {
-        useToast(
+        notifyUser(
           "error",
           "Sorry, an error occured. Please check your network connection."
         );

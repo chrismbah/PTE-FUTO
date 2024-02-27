@@ -1,6 +1,6 @@
 import { useGetUserInfo } from "./useGetUserInfo";
 import { useNavigate } from "react-router-dom";
-import { useToast } from "../../helpers/useToast";
+import { notifyUser } from "../../helpers/notifyUser";
 
 export const useNavigateAuthUser = () => {
   const { user } = useGetUserInfo();
@@ -10,7 +10,7 @@ export const useNavigateAuthUser = () => {
       navigate(route);
     } else {
       navigate("/login");
-      useToast("error", "Please login to access this feature");
+      notifyUser("error", "Please login to access this feature");
     }
   };
 

@@ -5,7 +5,7 @@ interface Messages {
   successMsg: string;
   errorMsg: string;
 }
-export const useToast = (
+export const notifyUser = (
   state: string | null,
   message?: string | null,
   promiseFn?: Promise<void> | null,

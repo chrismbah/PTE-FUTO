@@ -1,4 +1,4 @@
-import { useComputeGPA } from "../../../../hooks/academics/useComputeGPA";
+import { useComputeGPA } from "../hooks/useComputeGPA";
 
 export const GPAMessage = () => {
   const { studentGPA } = useComputeGPA();

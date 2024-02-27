@@ -14,7 +14,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../../../config/firebase";
 import { IPostComment } from "../../../../models/misc/blog/postComments";
-import { useToast } from "../../../../helpers/useToast";
+import { notifyUser } from "../../../../helpers/notifyUser";
 import { v4 as uuid } from "uuid";
 import { getCurrentDateInShortFormat } from "../../../../helpers/formatDate";
 // import { useModalContext } from "../../../../context/Modal";
@@ -92,43 +92,44 @@ export const useBlogComments = () => {
   };
 
   const addUserComment = async () => {
-      if (userID) {
-        if (studentDetails && postID) {
-          if (userComment !== "") {
-            try{
-              const { firstName, lastName, email } = studentDetails;
-              const commentID = uuid();
-              const commentInfo: IPostComment = {
-                commentPostID: postID,
-                commentUserID: userID,
-                commentID: commentID,
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                comment: userComment,
-                time: currentTime,
-                date: currentDate,
-                timeStamp: new Date(),
-              };
-              await setDoc(doc(db, "postsComments", commentID), commentInfo);
-              setUserComment("");
-              useToast("success", "Comment added successfully!");
-              updatePostComments();
-            }
-            catch(err){
-              useToast("error", "Couldn't post comment. Please check your network connection and try again.")
-            }
-            
-          } else {
-            useToast("error", "Please add a comment");
+    if (userID) {
+      if (studentDetails && postID) {
+        if (userComment !== "") {
+          try {
+            const { firstName, lastName, email } = studentDetails;
+            const commentID = uuid();
+            const commentInfo: IPostComment = {
+              commentPostID: postID,
+              commentUserID: userID,
+              commentID: commentID,
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              comment: userComment,
+              time: currentTime,
+              date: currentDate,
+              timeStamp: new Date(),
+            };
+            await setDoc(doc(db, "postsComments", commentID), commentInfo);
+            setUserComment("");
+            notifyUser("success", "Comment added successfully!");
+            updatePostComments();
+          } catch (err) {
+            notifyUser(
+              "error",
+              "Couldn't post comment. Please check your network connection and try again."
+            );
           }
         } else {
-          useToast("error", "Something went wrong. Please try again");
+          notifyUser("error", "Please add a comment");
         }
       } else {
-        navigate("/login");
-        useToast("success", "Please login to comment on this post");
+        notifyUser("error", "Something went wrong. Please try again");
       }
+    } else {
+      navigate("/login");
+      notifyUser("success", "Please login to comment on this post");
+    }
   };
 
   const deleteUserComment = async (
@@ -137,25 +138,25 @@ export const useBlogComments = () => {
   ) => {
     if (commentUserID === userID) {
       setDeleteCommentLoading(true);
-      console.log(commentUserID, userID)
-      console.log(commentID)
+      console.log(commentUserID, userID);
+      console.log(commentID);
       try {
         await deleteDoc(doc(commentsRef, commentID));
         updatePostComments();
         // setOpenDeleteModal(false);
-        useToast("success", "Comment deleted.");
+        notifyUser("success", "Comment deleted.");
         console.log("Done !!!!");
         setDeleteCommentLoading(false);
         console.log(userComment);
       } catch (err) {
         // setOpenDeleteModal(false)
-        useToast("error", "Could'nt delete comment")
+        notifyUser("error", "Could'nt delete comment");
         setDeleteCommentLoading(false);
         setDeleteCommentError(true);
         console.log("Error deleting comment");
       }
     } else {
-      useToast("error", "Comment is not yours??");
+      notifyUser("error", "Comment is not yours??");
     }
   };
 

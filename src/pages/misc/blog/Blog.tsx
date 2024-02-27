@@ -4,16 +4,10 @@ import { TopPosts } from "./cards/Top";
 import { OthersPosts } from "./cards/Others";
 import { FeaturedPosts } from "./cards/Featured";
 import Footer from "../../../components/footer/Footer";
-import LogoSpinner from "../../../components/loaders/LogoSpinner";
-
+import Spinner from "../../../components/loaders/Spinner";
 export default function Blog() {
-  const {
-    blogPosts,
-    blogPostsLoading,
-    blogPostsError,
-    fetchBlogPosts,
-    addPosts,
-  } = useFetchBlogPosts();
+  const { blogPosts, blogPostsLoading, blogPostsError, fetchBlogPosts } =
+    useFetchBlogPosts();
   useEffect(() => {
     fetchBlogPosts();
   }, []);
@@ -38,16 +32,10 @@ export default function Blog() {
           )}
           {blogPostsLoading && !blogPosts && !blogPostsError && (
             <div className="w-full h-[65vh] flex items-center justify-center">
-              <LogoSpinner />
+              <Spinner />
             </div>
           )}
         </div>
-        <button
-          className="bg-green1 text-white rounded-md p-4 hover:p-6"
-          onClick={addPosts}
-        >
-          Add Posts
-        </button>{" "}
       </div>
       <Footer />
     </div>
