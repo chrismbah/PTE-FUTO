@@ -3,7 +3,7 @@ import { convertBytes } from "../../../helpers/convertBytes";
 import { storage } from "../../../config/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Content } from "../../../models/academics/learning-resources";
-import { useToast } from "../../../helpers/notifyUser";
+import { notifyUser } from "../../../helpers/notifyUser";
 import Spinner from "../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";
@@ -31,12 +31,12 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
       setFileLoading(false);
     } catch (error) {
       setFileLoading(false);
-      useToast("error", "Something went wrong. Pease try again");
+      notifyUser("error", "Something went wrong. Pease try again");
     }
   };
 
   const downloadResources = () => {
-    useToast("promise", null, downloadFile(), {
+    notifyUser("promise", null, downloadFile(), {
       loadingMsg: "Please wait...",
       successMsg: "File Downloading...",
       errorMsg: "Something went wrong. Please try again",
