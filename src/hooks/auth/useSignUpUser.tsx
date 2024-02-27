@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { ISignUpForm } from "../../models/auth/form";
 import { createUserWithEmailAndPassword } from "firebase/auth";

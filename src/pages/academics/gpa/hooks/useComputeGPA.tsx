@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useGPAContext } from "../../../../context/GPA";
 import { levelCourses } from "../../../../data/academics/cgpa/courses";
 import { notifyUser } from "../../../../helpers/notifyUser";
