@@ -30,7 +30,8 @@ export default function CTANewsLetter() {
   const [subscribing, setSubscribing] = useState(false);
   const {
     register,
-    handleSubmit, reset,
+    handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(suscribeSchema) });
   const { getUserInfo, studentDetails, userID, user } = useGetUserInfo();
@@ -47,7 +48,11 @@ export default function CTANewsLetter() {
 
         const uniqueDocId = `sub-${userID}`;
         const querySnapshot = await getDocs(
-          query(collection(db, "suscribedUsers"), where("userID", "==", userID), where("email", "!=", data ))
+          query(
+            collection(db, "suscribedUsers"),
+            where("userID", "==", userID),
+            where("email", "!=", data)
+          )
         );
         if (querySnapshot.empty) {
           const suscribedUserInfo: ISuscribedUser = {
@@ -64,16 +69,15 @@ export default function CTANewsLetter() {
             suscribedUserInfo
           );
           setSubscribing(false);
-          reset()
+          reset();
           notifyUser("success", "Thank you for subscribing!");
-        }
-        else{
-          setSubscribing(false)
-          reset()
-          notifyUser("info", "You are already subscribed to our newsletter.")
+        } else {
+          setSubscribing(false);
+          reset();
+          notifyUser("info", "You are already subscribed to our newsletter.");
         }
       } else {
-        reset()
+        reset();
         notifyUser("error", "Please login to subscribe to out newsletter");
         navigate("/login");
       }
@@ -102,7 +106,10 @@ export default function CTANewsLetter() {
                 <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3 text-center">
                   Subscribe to our newletter and never miss and update from us
                 </p>
-                <form onSubmit={handleSubmit(suscribeUser)} className="w-full xsm:w-fit">
+                <form
+                  onSubmit={handleSubmit(suscribeUser)}
+                  className="w-full xsm:w-fit"
+                >
                   <div className="flex items-center flex-col gap-6 w-full">
                     <div className="flex w-full flex-col">
                       <div className="flex">
@@ -124,7 +131,7 @@ export default function CTANewsLetter() {
                     </div>
                     <button
                       type={!subscribing ? "submit" : "button"}
-                      className=" w-full font-semibold text-white bg-green1 border-0 outline-none p-2 xss:p-3 rounded-lg text-sm xss:text-base"
+                      className=" w-full font-semibold text-white bg-green1 border-0 outline-none p-3 rounded-lg text-sm xss:text-base"
                     >
                       {subscribing ? <Spinner /> : "Suscribe"}
                     </button>

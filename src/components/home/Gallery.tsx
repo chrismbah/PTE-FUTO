@@ -13,7 +13,7 @@ export default function Gallery() {
           <h3 className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3">
             Explore the view
           </h3>
-          <div className="grid gap-4 px-3 sm:px-0">
+          <div className="grid gap-4">
             <div className="grid xlg:grid-cols-4 gap-4">
               <div className="group relative items-center justify-center rounded-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
                 <div className="h-[230px] sm:h-[300px]">
