@@ -45,7 +45,7 @@ export default function Blog() {
                         <h5 className="mb-2 text-xs md:text-ss lg:text-xs font-bold tracking-tight text-gray-900 dark:text-white">
                           {title}
                         </h5>
-                        <p className="mb-1 font-normal text-gray-900 text-xss ss:text-sm md:text-ss xmd:text-ss xl:text-sm">
+                        <p className="mb-1 font-normal text-gray-900 text-ss ss:text-sm md:text-ss xmd:text-ss xl:text-sm">
                           {typeof contents[0].content === "string" &&
                             contents[0].content
                               .split(" ")
@@ -55,7 +55,7 @@ export default function Blog() {
                         </p>
                         <Link
                           to={`/blog/posts/${title}/${id}/${postType}`}
-                          className="font-[500] absolute bottom-0 left-0 underline text-xss ss:text-sm md:text-ss xmd:text-ss xl:text-sm hover:text-green1"
+                          className="font-[500] absolute bottom-0 left-0 underline text-ss ss:text-sm md:text-ss xmd:text-ss xl:text-sm hover:text-green1"
                         >
                           Read More...
                         </Link>
