@@ -11,7 +11,7 @@ export default function Gallery() {
         <div className="px-6 ss:px-10 sm:px-4 xsm:px-14 xsm:py-16 xsm:pb-32 py-8">
           <div className="bar-style" />
           <h2 className="">Gallery</h2>
-          <h3 className="text-base sm:text-md md:text-lg font-[500] mb-3">
+          <h3 className="text-xs ss:text-base sm:text-md md:text-lg font-[500] mb-3 text-gray-800">
             Explore the view
           </h3>
           <div className="grid gap-4">
@@ -24,7 +24,7 @@ export default function Gallery() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
                   <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Federal University of Technology, Owerri ( FUTO ) Main
@@ -40,7 +40,7 @@ export default function Gallery() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
                   <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Polymer and Textile Engineering Department Lecture Hall 1.
@@ -55,7 +55,7 @@ export default function Gallery() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
                   <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Federal University of Technology, Owerri ( FUTO ) Senate
@@ -73,7 +73,7 @@ export default function Gallery() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
                   <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     School of Engineering and Engineering Technology ( SEET )
@@ -90,7 +90,7 @@ export default function Gallery() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
                   <p className="text-xs text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Polymer and Textile Engineering Department Workshop 1

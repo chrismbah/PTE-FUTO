@@ -6,11 +6,9 @@ export default function Services() {
     <div className="home-gray-bg">
       <div className="box-width">
         <div className="px-6 ss:px-10 sm:px-4 xsm:px-14 xsm:py-16 xsm:pb-32 py-8">
-          <div className="flex items-center justify-center flex-col mb-1">
-          <h2 className="relative text-center ">Our Services</h2>
-          <div className="bar-style" />
-          </div>
-          <h3 className="text-base sm:text-md md:text-lg font-[500] mb-3 text-center">
+        <div className="bar-style" />
+          <h2>Our Services</h2>
+          <h3 className="text-xs ss:text-base sm:text-md md:text-lg font-[500] mb-3 text-gray-800">
             What we offer our students
           </h3>
           <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5">
