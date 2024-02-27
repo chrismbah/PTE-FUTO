@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-
+import { BlueInfoIcon } from "../components/icons/BlueInfoIcon";
 interface Messages {
   loadingMsg: string;
   successMsg: string;
@@ -15,6 +15,9 @@ export const notifyUser = (
     return toast.error(<p className="notification-message">{message}</p>);
   } else if (state === "success") {
     return toast.success(<p className="notification-message">{message}</p>);
+  }
+  else if(state === "info"){
+    return toast(<p className="notification-message">{message}</p>, {icon: <BlueInfoIcon className="w-5 h-5"/>})
   } else if(state === "promise") {
     return promiseFn && toast.promise(promiseFn, {
       loading: <p className="notification-message">{promiseMessages?.loadingMsg}</p>,

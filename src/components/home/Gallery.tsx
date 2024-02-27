@@ -6,10 +6,9 @@ import img6 from "../../assets/img/gallery/workshop.jpg";
 
 export default function Gallery() {
   return (
-    <div className="">
       <div className="box-width">
         <div className="section">
-          <div className="bar-style" />
+          <div className="bar-style"/>
           <h2 className="">Gallery</h2>
           <h3 className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3">
             Explore the view
@@ -101,6 +100,5 @@ export default function Gallery() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

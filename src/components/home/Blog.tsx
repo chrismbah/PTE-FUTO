@@ -10,7 +10,6 @@ import { useEffect } from "react";
 export default function Blog() {
   const { blogPosts, blogPostsLoading, blogPostsError, fetchBlogPosts } =
     useFetchBlogPosts();
-
   useEffect(() => {
     fetchBlogPosts();
   }, []);
@@ -31,9 +30,9 @@ export default function Blog() {
               blogPosts.filter((post)=>post.postType !== "featured")
               .sort(() => 0.5 - Math.random())
                 .slice(0, 3)
-                .map(({ title, sampleImg, contents, postType, id }) => {
+                .map(({ title, sampleImg, contents, postType, id }, i) => {
                   return (
-                    <Link to={`/blog/posts/${title}/${id}/${postType}`}>
+                    <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
                       <div className="w-full flex flex-col justify-start h-[350px] ss:h-[360px] md:h-[340px] relative">
                         <div className="w-full h-[230px] rounded-lg overflow-hidden mb-4">
                           <img

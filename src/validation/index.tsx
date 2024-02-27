@@ -24,3 +24,8 @@ export const logInSchema = yup.object().shape({
     .max(20, "Password should not be more than 20 characters")
     .required("Please input your password"),
 })
+
+export const suscribeSchema = yup.object().shape({
+  email: yup.string().email("Please input a correct email").required("Please input your email"),
+  
+}) 

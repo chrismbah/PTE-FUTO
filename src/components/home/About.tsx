@@ -8,7 +8,7 @@ export default function About() {
   return (
     <>
       <div className="box-width">
-        <div className="section flex items-center justify-between flex-col mmd:flex-row gap-4 py-10">
+        <div className="section flex items-center justify-between flex-col mmd:flex-row gap-6 py-10">
           <div className="w-full mmd:basis-2/5">
             <div className="bar-style" />
             <h2>About Us</h2>
@@ -20,7 +20,7 @@ export default function About() {
               <Lottie
                 loop={true}
                 animationData={glasses}
-                className="w-[90px]"
+                className="w-[70px] sm:w-[90px]"
               />
               <div>
                 <h4 className="text-green1 font-bold text-xs">Our Vision</h4>
@@ -34,7 +34,7 @@ export default function About() {
               <Lottie
                 loop={true}
                 animationData={consultation}
-                className="w-[90px]"
+                className="w-[70px] sm:w-[90px]"
               />
               <div>
                 <h4 className="text-green1 font-bold text-xs">Our Mission</h4>
@@ -45,7 +45,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="basis-3/5">
+          <div className="mmd:basis-3/5">
             <div className="flex gap-1 sm:gap-3">
               <div className="basis-1/2 flex items-center justify-center flex-col">
                 <div className="basis-2/3">
@@ -53,7 +53,7 @@ export default function About() {
                     <img
                       src={img2}
                       alt=""
-                      className="h-full w-full object-cover rounded-lg"
+                      className="h-full w-full object-cover rounded-lg bg-gray-100 "
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
                   </div>
@@ -65,7 +65,7 @@ export default function About() {
                     <img
                       src={img4}
                       alt=""
-                      className="h-full w-full object-cover rounded-lg"
+                      className="h-full w-full object-cover rounded-lg bg-gray-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
                   </div>
@@ -75,7 +75,7 @@ export default function About() {
                     <img
                       src={img3}
                       alt=""
-                      className="h-full w-full object-cover rounded-lg"
+                      className="h-full w-full object-cover rounded-lg bg-gray-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
                   </div>
@@ -121,7 +121,7 @@ export default function About() {
   //         <img
   //           src={img2}
   //           alt="about"
-  //           className="w-full h-full object-cover rounded-lg"
+  //           className="w-full h-full object-cover rounded-lg bg-gray-100"
   //         />
   //       </div>
   //       <div className="grid grid-row-3 gap-3">

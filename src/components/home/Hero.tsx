@@ -22,9 +22,8 @@ export default function Hero() {
             <p className="section-p mb-4">
               Explore detailed course outlines, access engaging learning
               materials, <br /> Calculate your GPA, stay ahead of the curve with
-              the latest news, <br className="hidden ss:block" /> and join a thriving community of fellow
-              learners.
-              {/* <br /> */}
+              the latest news, <br className="hidden ss:block" /> and join a
+              thriving community of fellow learners.
             </p>
             <Button theme={customButtonTheme} color="primary" size={"lg"}>
               <Link to={user ? "/dashboard" : "/signup"}>
@@ -33,7 +32,7 @@ export default function Hero() {
             </Button>
           </div>
           <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[800px]">
-            <Lottie loop={true} animationData={heroAnimation} />
+            <Lottie loop={false} animationData={heroAnimation} />
           </div>
         </div>
       </div>
