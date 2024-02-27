@@ -1,10 +1,10 @@
 import Lottie from "lottie-react";
 import consultation from "../../json/animation/consultation.json";
 import glasses from "../../json/animation/glasses.json";
-import img1 from "../../assets/img/gallery/aerial-view.jpeg";
-import img2 from "../../assets/img/gallery/login.webp";
-import img3 from "../../assets/img/gallery/aerial-view.jpeg";
-import cap from "../../assets/svg/icons/grad-cap.svg";
+// import img1 from "../../assets/img/gallery/aerial-view.jpeg";
+// import img2 from "../../assets/img/gallery/login.webp";
+// import img3 from "../../assets/img/gallery/aerial-view.jpeg";
+// import cap from "../../assets/svg/icons/grad-cap.svg";
 export default function About() {
   return (
     <div className="">
@@ -13,7 +13,7 @@ export default function About() {
           <div className="basis-2/5">
             <div className="bar-style" />
             <h2>About Us</h2>    
-            <p className="text-gray-700 font-[500] text-xs mb-2">
+            <p className="text-gray-700 font-[500] text-xs mb-4">
               Empowering students to achieve academic excellence through
               learning resources and personalized support.
             </p>
