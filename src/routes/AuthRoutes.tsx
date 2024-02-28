@@ -32,7 +32,9 @@ const AuthenticatedRoutes = () => {
       import("../pages/academics/learning-resources/LearningResourcesContent")
   );
   const Blog = lazy(() => import("../pages/misc/blog/Blog"));
-  const BlogPost = lazy(()=>import("../pages/misc/blog/post/BlogPost"))
+  const BlogPost = lazy(() => import("../pages/misc/blog/post/BlogPost"));
+  const StudentProfile = lazy(() => import("../pages/user/StudentProfile"));
+  const Dashboard = lazy(() => import("../pages/user/Dashboard"));
 
   return (
     <Suspense fallback={<LogoSpinner />}>
@@ -54,7 +56,12 @@ const AuthenticatedRoutes = () => {
           element={<LearningResourcesContent />}
         />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/posts/:title/:postID/:postType" element={<BlogPost />} />
+        <Route
+          path="/blog/posts/:title/:postID/:postType"
+          element={<BlogPost />}
+        />
+        <Route path="/profile" element={<StudentProfile />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

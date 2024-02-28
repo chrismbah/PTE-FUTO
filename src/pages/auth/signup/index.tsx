@@ -101,7 +101,7 @@ export default function SignUp() {
                 <option value="300L">300L</option>
                 <option value="400L">400L</option>
                 <option value="500L">500L</option>
-                <option value="other">Other</option>
+                <option value="other">Visitor</option>
               </select>
               {errors.level && (
                 <p className="form-error-message">{errors.level.message}</p>
