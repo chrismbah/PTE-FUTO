@@ -5,6 +5,9 @@ import userAvatar from "../../assets/svg/icons/userProfile.svg";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 // import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import Lottie from "lottie-react";
+import avatar from "../../json/animation/avatar.json";
+import { CalenderIcon } from "../../components/icons/CalenderIcon";
 
 export default function Profile() {
   const { getUserInfo, studentDetails } = useGetUserInfo();
@@ -18,17 +21,26 @@ export default function Profile() {
         <div className="page-section">
           <div className="w-full flex items-center justify-between flex-row">
             <div className="flex items-center">
-              <img src={userAvatar} alt="user-avatar" className="w-60" />
+              <Lottie
+                animationData={avatar}
+                loop={false}
+                className="w-48 mr-3"
+              />
               <div>
-                <p className="text-4xl font-bold ">
+                <p className="text-4xl font-bold">
                   {studentDetails?.firstName} {studentDetails?.lastName}
                 </p>
                 <p className="text-lg font-semibold capitalize">
                   Polymer and Textile Engineering · {studentDetails?.level}
                 </p>
-                <p className="text-base text-gray-800 font-[500] capitalize">
-                  Joined {studentDetails?.registeredDate}
-                </p>
+                <div className="flex items-center gap-2 mt-2">
+                  <div className="rounded-lg bg-gray-200 p-2">
+                    <CalenderIcon className="w-5" />
+                  </div>
+                  <p className="text-base text-gray-800 font-[500] capitalize">
+                    Joined {studentDetails?.registeredDate}
+                  </p>
+                </div>
               </div>
             </div>
             <div></div>
