@@ -33,8 +33,8 @@ export default function Blog() {
                 .map(({ title, sampleImg, contents, postType, id }, i) => {
                   return (
                     <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
-                      <div className="w-full flex flex-col justify-start h-[350px] ss:h-[360px] md:h-[340px] relative">
-                        <div className="w-full h-[230px] rounded-lg overflow-hidden mb-4">
+                      <div className="w-full flex flex-col justify-start h-[300px] ss:h-[360px] md:h-[340px] relative">
+                        <div className="w-full h-[180px] ss:h-[210px] md:h-[230px] rounded-lg overflow-hidden mb-4">
                           <img
                             src={sampleImg}
                             alt={title}

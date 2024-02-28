@@ -17,10 +17,10 @@ export default function Services() {
             </h3>
           </div>
 
-          <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5 px-3 sm:px-0">
+          <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5">
             {services.map(({ link, desc, icon, color, title }, i) => (
               <Link to={link} key={i} className="w-full">
-                <div className="bg-white rounded-lg shadow-4 hover:shadow-md transition-shadow duration-250 ease-in-out p-12 h-[230px] sm:h-[300px] flex flex-col justify-center items-center">
+                <div className="bg-white rounded-lg shadow-4 hover:shadow-md transition-shadow duration-250 ease-in-out p-12 h-[270px] sm:h-[300px] flex flex-col justify-center items-center">
                   <div
                     className={`${color === "dark-green" ? "bg-green1" : "bg-green5"} bg-green1 rounded-full p-3 mb-2`}
                   >
