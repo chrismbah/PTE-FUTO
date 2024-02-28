@@ -50,8 +50,8 @@ export default function CTANewsLetter() {
         const querySnapshot = await getDocs(
           query(
             collection(db, "suscribedUsers"),
-            where("userID", "==", userID),
-            where("email", "!=", data)
+            // where("userID", "==", userID),
+            where("email", "==", data)
           )
         );
         if (querySnapshot.empty) {
@@ -73,8 +73,7 @@ export default function CTANewsLetter() {
           notifyUser("success", "Thank you for subscribing!");
         } else {
           setSubscribing(false);
-          reset();
-          notifyUser("info", "You are already subscribed to our newsletter.");
+          notifyUser("info", "Email is already subscribed");
         }
       } else {
         reset();
@@ -84,6 +83,7 @@ export default function CTANewsLetter() {
     } catch (err: any) {
       setSubscribing(false);
       notifyUser("error", "Couldnt subscribe user. Something went wrong");
+      console.log(err)
     }
   };
   return (
@@ -91,15 +91,13 @@ export default function CTANewsLetter() {
       <div className="box-width">
         <div className="px-3 xsm:px-14 xsm:py-32 py-8">
           <div className="flex items-center justify-center flex-col">
-            <div className="flex items-center justify-center flex-col xsm:flex-row gap-8 shadow-4 mt-4 rounded-lg border border-gray-100 bg-white py-3 px-8 xss:py-4 w-full max-w-[1000px]">
-              <div>
+            <div className="flex items-center justify-center flex-col xsm:flex-row gap-4 shadow-4 mt-4 rounded-lg border border-gray-100 bg-white py-3 px-8 xss:py-4 w-full max-w-[900px]">
                 <Lottie
                   loop={true}
                   animationData={newsLetter}
-                  className="w-[240px] xsm:w-[300px]"
+                  className="w-[230px] xsm:w-[300px]"
                 />
-              </div>
-              <div className="flex items-center flex-col w-full">
+              <div className="flex items-center flex-col w-full p-4">
                 <h2 className="text-center text-lg sm:text-xl md:text-2xl font-[600]">
                   Get involved and stay informed
                 </h2>
@@ -112,9 +110,9 @@ export default function CTANewsLetter() {
                 >
                   <div className="flex items-center flex-col gap-6 w-full">
                     <div className="flex w-full flex-col">
-                      <div className="flex">
+                      <div className="flex w-full items-center">
                         <EmailIcon className="w-5 xss:w-7 mr-2 xss:mr-3" />
-                        <div className="">
+                        <div className="w-full">
                           <input
                             type="text"
                             className="w-full p-0 f0cus:py-2 focus:outline-none outline-none ring-0 border-0 focus:border-green2 focus:ring-0 placeholder:font-[500] font-[500] placeholder:text-sm xss:placeholder:text-xs text-gray-900 text-sm xss:text-xs border-b-transparent border-b-2 placeholder:text-gray-400"
