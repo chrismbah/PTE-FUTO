@@ -53,7 +53,7 @@ export default function About() {
                     <img
                       src={img2}
                       alt=""
-                      className="h-full w-full object-cover rounded-lg bg-gray-100 "
+                      className="h-[50%] w-full object-cover rounded-lg"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
                   </div>
@@ -65,9 +65,9 @@ export default function About() {
                     <img
                       src={img4}
                       alt=""
-                      className="h-full w-full object-cover rounded-lg bg-gray-100"
+                      className="h-[50%] w-full sm:w-[80%] object-cover rounded-lg "
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
+                    <div className="absolute w-full sm:w-[80%] inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
                   </div>
                 </div>
                 <div className="basis-3/5">
@@ -75,9 +75,9 @@ export default function About() {
                     <img
                       src={img3}
                       alt=""
-                      className="h-full w-full object-cover rounded-lg bg-gray-100"
+                      className="h-[50%] w-full sm:w-[80%] object-cover rounded-lg "
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
+                    <div className="absolute w-full sm:w-[80%] inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
                   </div>
                 </div>
               </div>
