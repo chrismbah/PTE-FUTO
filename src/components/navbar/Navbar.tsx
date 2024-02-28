@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useEffect } from "react";
 import { Dropdown, Navbar, Button, Avatar } from "flowbite-react";
@@ -62,17 +63,20 @@ export default function Nav() {
               }
             >
               <Dropdown.Header>
-                <span className="block text-sm">
-                  {/* {loading ? "Loading..." : firstName? firstName   + lastName : "Sorry could not get student info."} */}
-                  {studentDetails ? firstName : "Loading..."}{" "}
-                  {studentDetails && lastName}
+                <span className="block text-sm font-[600]">
+                  {studentDetails && firstName} {studentDetails && lastName}
                 </span>
-                <span className="block truncate text-sm font-medium">
+                <span className="block truncate text-sm">
                   {studentDetails && email}
                 </span>
               </Dropdown.Header>
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Profile</Dropdown.Item>
+              <Dropdown.Item>
+                <Link to={"/dashboard"}className="w-full text-left">Dashboard</Link>{" "}
+              </Dropdown.Item>
+              <Dropdown.Item>
+                {" "}
+                <Link to={"/profile"} className="w-full text-left">Profile</Link>{" "}
+              </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
                 Sign Out

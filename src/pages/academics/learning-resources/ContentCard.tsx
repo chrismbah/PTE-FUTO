@@ -4,7 +4,7 @@ import { storage } from "../../../config/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Content } from "../../../models/academics/learning-resources";
 import { notifyUser } from "../../../helpers/notifyUser";
-import Spinner from "../../../components/loaders/Spinner";
+import {Spinner} from "../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";
 import { FileDownloadIcon } from "../../../components/icons/FileDownloadIcon";
@@ -56,7 +56,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
         </span>
         <div className="absolute bottom-0 right-0">
           {fileLoading ? (
-            <Spinner />
+            <Spinner className="w-4 sm:w-6" />
           ) : (
             <Tooltip
               content="Download"

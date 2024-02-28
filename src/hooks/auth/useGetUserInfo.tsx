@@ -15,7 +15,7 @@ export const useGetUserInfo = () => {
   const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(
     null
   );
-  const [user, loading] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);
   const userID = user?.uid;
   const userInfoRef = collection(db, "userInfo");
 
@@ -47,5 +47,5 @@ export const useGetUserInfo = () => {
     getUserInfo()
   }, [userID])
 
-  return { user, userID, loading, getUserInfo, studentDetails };
+  return { user, userID, loading, error, getUserInfo, studentDetails };
 };
