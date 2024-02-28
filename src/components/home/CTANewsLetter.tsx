@@ -16,7 +16,7 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { notifyUser } from "../../helpers/notifyUser";
-import Spinner from "../loaders/Spinner";
+import { Spinner } from "../loaders/Spinner";
 import { useNavigate } from "react-router-dom";
 
 export default function CTANewsLetter() {
@@ -38,8 +38,7 @@ export default function CTANewsLetter() {
         const querySnapshot = await getDocs(
           query(
             collection(db, "suscribedUsers"),
-            where("userID", "==", userID),
-            // where("email", "==", email)
+            where("userID", "==", userID)
           )
         );
         if (querySnapshot.empty) {
@@ -94,7 +93,11 @@ export default function CTANewsLetter() {
                     onClick={suscribeUser}
                     className="w-full xsm:w-[70%] font-semibold text-white bg-green1 border-0 outline-none p-3 rounded-lg text-sm xss:text-base"
                   >
-                    {subscribing ? <Spinner /> : "Suscribe"}
+                    {subscribing ? (
+                      <Spinner className="w-4 sm:w-6" />
+                    ) : (
+                      "Suscribe"
+                    )}
                   </button>
                 </div>
               </div>

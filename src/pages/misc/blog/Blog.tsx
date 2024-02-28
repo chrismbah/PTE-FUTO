@@ -5,7 +5,9 @@ import { TopPosts } from "./cards/Top";
 import { OthersPosts } from "./cards/Others";
 import { FeaturedPosts } from "./cards/Featured";
 import Footer from "../../../components/footer/Footer";
-import Spinner from "../../../components/loaders/Spinner";
+import { Spinner } from "../../../components/loaders/Spinner";
+import { BadNetworkIcon } from "../../../components/icons/BadNetworkIcon";
+
 export default function Blog() {
   const { blogPosts, blogPostsLoading, blogPostsError, fetchBlogPosts } =
     useFetchBlogPosts();
@@ -32,9 +34,19 @@ export default function Blog() {
             </>
           )}
           {blogPostsLoading && !blogPosts && !blogPostsError && (
-            <div className="w-full h-[65vh] flex items-center justify-center flex-col">
-              <Spinner />
-              <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">Loading Posts...</p>
+            <div className="w-full h-[70vh] flex items-center justify-center flex-col">
+              <Spinner className="w-4 sm:w-8 md:w-10" />
+              <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-700 mt-2">
+                Loading Posts...
+              </p>
+            </div>
+          )}{" "}
+          {blogPostsError && !blogPostsLoading && !blogPosts && (
+            <div className="w-full h-[70vh] flex items-center justify-center flex-col">
+              <BadNetworkIcon className="w-4 sm:w-8 md:w-10" />
+              <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">
+                Couldn't get posts...
+              </p>
             </div>
           )}
         </div>

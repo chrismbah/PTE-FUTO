@@ -5,13 +5,18 @@ import { Link } from "react-router-dom";
 import { useFetchBlogPosts } from "../../pages/misc/blog/hooks/useFetchBlogPosts";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { BadNetworkIcon } from "../icons/BadNetworkIcon";
 
 import { useEffect } from "react";
 export default function Blog() {
-  const { blogPosts, blogPostsLoading, blogPostsError, fetchBlogPosts } =
-    useFetchBlogPosts();
+  const {
+    homeBlogPosts,
+    homeBlogPostsLoading,
+    homeBlogPostsError,
+    fetchHomeBlogPosts,
+  } = useFetchBlogPosts();
   useEffect(() => {
-    fetchBlogPosts();
+    fetchHomeBlogPosts();
   }, []);
   return (
     <div className="home-gray-bg">
@@ -26,9 +31,10 @@ export default function Blog() {
             </p>
           </div>
           <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5 mb-4">
-            {blogPosts &&
-              blogPosts.filter((post)=>post.postType !== "featured")
-              .sort(() => 0.5 - Math.random())
+            {homeBlogPosts &&
+              homeBlogPosts
+                .filter((post) => post.postType !== "featured")
+                .sort(() => 0.5 - Math.random())
                 .slice(0, 3)
                 .map(({ title, sampleImg, contents, postType, id }, i) => {
                   return (
@@ -63,7 +69,7 @@ export default function Blog() {
                   );
                 })}
           </div>
-          {blogPosts && blogPosts.length > 0 && (
+          {homeBlogPosts && homeBlogPosts.length > 0 && (
             <div className="w-full flex items-center justify-center mt-12">
               <Link to={"/blog"}>
                 <Button theme={customButtonTheme} size={"lg"} color="primary">
@@ -72,8 +78,8 @@ export default function Blog() {
               </Link>
             </div>
           )}
-          {blogPostsLoading && (
-            <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5 px-3 sm:px-0 mb-4">
+          {homeBlogPostsLoading && (
+            <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5 mb-4">
               <div>
                 <Skeleton className="h-[230px] mb-3 rounded-lg w-full" />
                 <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
@@ -94,10 +100,22 @@ export default function Blog() {
               </div>
             </div>
           )}
-
-          {
-            blogPostsError && <p className="text-gray-800 font-[500] text-sm sm:text-xs mmd:text-base">Sorry, Could'nt load posts at the moment</p>
-          }
+          {homeBlogPostsError && !homeBlogPostsLoading && (
+            <div className="w-full py-4 flex flex-col items-center justify-center">
+              <BadNetworkIcon className="h-8 sm:h-12" />
+              <p className="text-gray-800 font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+                Sorry, Could'nt load posts at the moment
+              </p>
+            </div>
+          )}{" "}
+          {homeBlogPosts && homeBlogPosts.length < 1 && (
+            <div className="w-full py-4 flex flex-col items-center justify-center">
+              <BadNetworkIcon className="h-8 sm:h-12" />
+              <p className="text-gray-800 font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+                Sorry, Could'nt load posts at the moment
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

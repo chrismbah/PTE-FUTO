@@ -1,20 +1,24 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import { collection, addDoc, getDocs, getDoc, doc } from "firebase/firestore";
+import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { IBlogPost, TBlogPost } from "../../../../models/misc/blog/blogPosts";
-import { post } from "../../../../data/misc/blog/posts";
+// import { post } from "../../../../data/misc/blog/posts";
 import { db } from "../../../../config/firebase";
-import { getCurrentDate } from "../../../../helpers/formatDate";
+// import { getCurrentDate } from "../../../../helpers/formatDate";
 // import { useNetworkNotifications } from "../../network/useNetworkNotifications";
 import { notifyUser } from "../../../../helpers/notifyUser";
 
 export const useFetchBlogPosts = () => {
   const [blogPosts, setBlogPosts] = useState<IBlogPost[] | null>(null);
+  const [homeBlogPosts, setHomeBlogPosts] = useState<IBlogPost[] | null>(null);
   const [blogPost, setBlogPost] = useState<TBlogPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<IBlogPost[] | null>(null);
   const [popularPosts, setPopularPosts] = useState<IBlogPost[] | null>(null);
   const [blogPostsLoading, setBlogPostsLoading] = useState(true);
+  const [homeBlogPostsLoading, setHomeBlogPostsLoading] = useState(true);
   const [blogPostsError, setBlogPostsError] = useState(false);
+  const [homeBlogPostsError, setHomeBlogPostsError] = useState(false);
   const [blogPostLoading, setBlogPostLoading] = useState(true);
   const [popularPostsLoading, setPopularPostsLoading] = useState(true);
   const [relatedPostsLoading, setRelatedPostsLoading] = useState(true);
@@ -24,32 +28,41 @@ export const useFetchBlogPosts = () => {
 
   const postsRef = collection(db, "blogPosts");
 
-  const addPosts = async () => {
-    try {
-        await addDoc(postsRef, { ...post, date: getCurrentDate() });
-        console.log("Post added");
-    } catch (err) {
-      console.error("Error adding posts:", err);
-    } finally {
-      fetchBlogPosts();
-    }
-  };
   const fetchBlogPosts = async () => {
     setBlogPostsLoading(true);
     try {
       const data = await getDocs(postsRef);
       const list = data.docs
-      .sort(() => 0.5 - Math.random())
-      .map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      })) as IBlogPost[];
+        .sort(() => 0.5 - Math.random())
+        .map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        })) as IBlogPost[];
       setBlogPostsLoading(false);
       setBlogPosts(list);
       console.log("Blogs fetched");
     } catch (err) {
+      setBlogPostsLoading(false);
       setBlogPostsError(true);
-      console.log(err);
+      notifyUser("error", "Sorry, couldn't get posts. Please try again");
+    }
+  };
+  const fetchHomeBlogPosts = async () => {
+    setHomeBlogPostsLoading(true);
+    try {
+      const data = await getDocs(postsRef);
+      const list = data.docs
+        .sort(() => 0.5 - Math.random())
+        .map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        })) as IBlogPost[];
+      setHomeBlogPostsLoading(false);
+      setHomeBlogPosts(list);
+
+    } catch (err) {
+      setHomeBlogPostsLoading(false);
+      setHomeBlogPostsError(true);
     }
   };
   const fetchBlogPost = async (id: string) => {
@@ -65,15 +78,10 @@ export const useFetchBlogPosts = () => {
         setBlogPost(null);
         console.log("Doc doesnt exist");
       }
-    } catch (error:any) {
+    } catch (error) {
       setBlogPostLoading(false);
       setBlogPostError(true);
-      if (error.code === "unavailable") {
-        notifyUser(
-          "error",
-          "Sorry, an error occured. Please check your network connection."
-        );
-      }
+      notifyUser("error", "Sorry, an error occured. Please try again");
       console.log(error);
     }
   };
@@ -123,11 +131,14 @@ export const useFetchBlogPosts = () => {
     blogPost,
     relatedPosts,
     popularPosts,
-    addPosts,
     fetchBlogPosts,
     fetchBlogPost,
     fetchPopularPosts,
     fetchRelatedPosts,
+    fetchHomeBlogPosts,
+    homeBlogPosts,
+    homeBlogPostsError,
+    homeBlogPostsLoading,
     blogPostsLoading,
     blogPostLoading,
     popularPostsLoading,

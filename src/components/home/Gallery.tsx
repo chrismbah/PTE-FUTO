@@ -22,11 +22,11 @@ export default function Gallery() {
             <div className="p-0 sm:p-6">
               <div className="columns-1 gap-2 xxss:columns-2 sm:gap-4 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-4 sm:[&>img:not(:first-child)]:mt-8">
                 <img
-                  className="rounded-lg min-h-[100px] object-cover"
+                  className="rounded-lg min-h-[100px] object-cover mt-7"
                   src={img1}
                 />
                 <img className="rounded-lg object-cover" src={img2} />
-                <img className="rounded-lg object-cover" src={img3} />
+                <img className="rounded-lg object-cover min-h-[110px]" src={img3} />
                 <img
                   className="rounded-lg object-cover min-h-[90px]"
                   src={img4}
@@ -47,7 +47,7 @@ export default function Gallery() {
                   className="rounded-lg object-cover min-h-[130px]"
                   src={img11}
                 />
-                <img className="rounded-lg object-cover" src={img12} alt="" />
+                <img className="rounded-lg object-cover min-h-[90px]" src={img12} alt="" />
               </div>
             </div>
           </div>
