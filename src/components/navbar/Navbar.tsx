@@ -15,11 +15,9 @@ import { useModalContext } from "../../context/Modal";
 import { SignOutModal } from "../modal/SignOutModal";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useUploadProfileImage } from "../../hooks/user-profile/useUploadProfileImage";
 
 export default function Nav() {
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
-  const { imageURL } = useUploadProfileImage()
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
