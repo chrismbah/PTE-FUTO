@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -27,8 +28,10 @@ export const useGetUserInfo = () => {
         level,
         registeredDate,
         registeredTime,
+        profileImageURL
       } = userFields;
       setStudentDetails({
+        userID: userID,
         firstName: firstName,
         lastName: lastName,
         regNo: regNo,
@@ -38,6 +41,7 @@ export const useGetUserInfo = () => {
         loginTime: getCurrentTime(),
         registeredDate: registeredDate,
         registeredTime: registeredTime,
+        profileImageURL: profileImageURL
       });
     }
   };

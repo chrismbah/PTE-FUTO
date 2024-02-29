@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
-// import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 import Lottie from "lottie-react";
 import avatar from "../../json/animation/avatar.json";
 import { CalenderIcon } from "../../components/icons/CalenderIcon";
@@ -11,73 +9,30 @@ import { EmailIcon } from "../../components/icons/socials/EmailIcon";
 import { GraduateCapIcon } from "../../components/icons/GraduateCapIcon";
 import { ClockIcon } from "../../components/icons/ClockIcon";
 import { RegisterIcon } from "../../components/icons/RegisterIcon";
-import { notifyUser } from "../../helpers/notifyUser";
+// import { notifyUser } from "../../helpers/notifyUser";
 import { UploadIcon } from "../../components/icons/UploadIcon";
-import { ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../../config/firebase";
+import { useUploadProfileImage } from "../../hooks/user-profile/useUploadProfileImage";
+// import { Spinner } from "../../components/loaders/Spinner";
+
 export default function Profile() {
-  const { getUserInfo, studentDetails, userID } = useGetUserInfo();
+  const { getUserInfo, studentDetails } = useGetUserInfo();
+  const {
+    // setImageFile,
+    imageFile,
+    uploadProgress,
+    // setUploadProgress,
+    uploadProfileImage,
+    // imageURL,
+    handleFileChange,
+    // updateUserProfileLink,
+  } = useUploadProfileImage();
   useEffect(() => {
     getUserInfo();
   }, []);
-  const [imageFile, setImageFile] = useState<File | null>(null);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  // const [uploadError, setUploadError] = useState<Error | null>(null);
-  // const [imageURL, setImageURL] = useState<string>("");
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files && e.target.files[0];
-    if (selectedFile && selectedFile.type.startsWith("image/")) {
-      setImageFile(selectedFile);
-      setUploadProgress(0);
-    } else {
-      notifyUser("error", "Please choose a valid image file (PNG or JPG).");
-      e.target.value = "";
-    }
-  };
-
-  const uploadProfileImage = async () => {
-    if (!imageFile) {
-      notifyUser("error", "Please select an image to upload.");
-      return;
-    }
-    try {
-      const storageRef = ref(
-        storage,
-        `profile-pictures/${studentDetails?.email}-${userID}/${imageFile.name}`
-      );
-      // Use the uploadBytesResumable function to upload the file to the storageRef
-      const uploadTask = uploadBytesResumable(storageRef, imageFile);
-      // listen to the state_changed event of the uploadTask
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          // calculate the percentage of upload
-          const percentage = Math.round(
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          );
-          // set the progress state with the percentage
-          setUploadProgress(percentage);
-        },
-        // Error callback
-        (err) => {
-          // setUploadError(err);
-          console.log(err);
-        },
-        // Success callback
-        async () => {
-          // get the download URL from the uploadTask's snapshot reference and set the url state
-          // await getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          //   // setImageURL(downloadURL);
-          // });
-        }
-      );
-      console.log("Image Uploaded");
-    } catch (error) {
-      console.error("Error uploading image:", error);
-      notifyUser("error", "Failed to upload image. Please try again.");
-    }
-  };
+  useEffect(() => {
+    getUserInfo()
+  }, [studentDetails]);
 
   const renderProgressBar = () => {
     if (imageFile) {
@@ -96,6 +51,36 @@ export default function Profile() {
     }
     return null;
   };
+  const renderProfileImage = () => {
+    if (studentDetails) {
+      if (studentDetails.profileImageURL?.length > 1) {
+        return (
+          <img
+            src={studentDetails.profileImageURL}
+            // src="https://firebasestorage.googleapis.com/v0/b/pte-futo.appspot.com/o/profile-pictures%2Fmbahchris46%40gmail.com-oA5XUzl101P7oq13HBCknrxne393%2Fsenate.jpg?alt=media&token=5509e857-fbf8-4fe6-9fd9-61cfa6b83cc5"
+            alt="Profile"
+            className="w-[200px] h-[200px] rounded-full"
+          />
+        );
+      } else {
+        return (
+          <Lottie
+            animationData={avatar}
+            loop={false}
+            className="w-32 sm:w-32 xsm:w-40 md:w-48 mr-3"
+          />
+        );
+      }
+    } else {
+      return (
+        <Lottie
+          animationData={avatar}
+          loop={false}
+          className="w-32 sm:w-32 xsm:w-40 md:w-48 mr-3"
+        />
+      );
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -103,18 +88,34 @@ export default function Profile() {
         <div className="page-section">
           <div className="w-full flex items-center justify-between flex-col md:flex-row gap-4">
             <div className="flex flex-col xss:flex-row items-center gap-3 w-full">
-              <Lottie
-                animationData={avatar}
-                loop={false}
-                className="w-32 sm:w-32 xsm:w-40 md:w-48 mr-3"
-              />
-              <div className="flex flex-col justify-center xss:justify-start w-full ">
-                <p className="text-lg sm:text-xl xsm:text-2xl md:text-3xl font-bold text-center xss:text-left">
+              {renderProfileImage()}
+              {/* {studentDetails && (
+                <img
+                  src={studentDetails.profileImageURL}
+                  alt=""
+                  className="w-[200px] h-[200px] rounded-full"
+                />
+              )} */}
+              {/* {studentDetails?.profileImageURL ? (
+                <img
+                  src={studentDetails.profileImageURL}
+                  alt="Profile"
+                  className="w-[200px] h-[200px] rounded-full"
+                />
+              ) : (
+                <Lottie
+                  animationData={avatar}
+                  loop={false}
+                  className="w-32 sm:w-32 xsm:w-40 md:w-48 mr-3"
+                />
+              )} */}
+              <div className="flex flex-col justify-center xss:justify-start md:w-full ">
+                <p className="text-xl sm:text-2xl xsm:text-3xl md:text-4xl font-bold text-center xss:text-left">
                   {studentDetails?.firstName} {studentDetails?.lastName}
                 </p>
-                <p className="text-ss sm:text-xs xsm:text-base md:text-lg font-semibold capitalize  text-center xss:text-left">
+                <p className="text-xs xsm:text-base md:text-md font-semibold capitalize  text-center xss:text-left">
                   Polymer and Textile Engineering ·{" "}
-                  <span className="text-green4">{studentDetails?.level}</span>
+                  <span className="text-green1">{studentDetails?.level}</span>
                 </p>
                 <div className="flex items-center justify-center xss:justify-start gap-1 sm:gap-2 sm:mt-2">
                   <div className="rounded-lg bg-gray-200 p-1 sm:p-2">
@@ -127,7 +128,7 @@ export default function Profile() {
               </div>
             </div>
             <div className="flex items-center justify-between flex-col w-full md:w-fit">
-              <p className="w-full text-left block text-ss sm:text-sm font-medium text-gray-900">
+              <p className="w-full text-left block text-xss ss:text-ss sm:text-sm font-medium text-gray-900">
                 Update Profile Picture
               </p>
               <div className="flex items-center gap-1 ss:gap-4 w-full flex-col ss:flex-row justify-start">
@@ -142,38 +143,38 @@ export default function Profile() {
                     />
                     <label
                       htmlFor="profile-input"
-                      className="block w-[150px] text-slate-500 py-2 px-4
-                          border-0 text-sm font-medium bg-black
-                        text-white hover:bg-black/70 cursor-pointer rounded-l-lg"
+                      className="block xxss:min-w-[90px] ss:min-w-[150px] text-slate-500 py-2 px-4
+                          border border-gray-500/60 text-ss ss:text-sm font-medium bg-gray-500/60
+                        text-white hover:bg-gray-500/50 hover:border-gray-500/50 cursor-pointer rounded-l-lg"
                     >
                       Choose Image
                     </label>
                   </div>
-                  <label className="text-sm text-slate-500 font-medium py-2 px-4 border border-gray-400 rounded-r-lg">
+                  <label className="text-ss ss:text-sm xxss:min-w-[90px] ss:min-w-[120px] text-slate-500 font-medium py-2 px-4 border border-gray-400 rounded-r-lg">
                     {imageFile ? imageFile.name : "No file chosen"}
                   </label>
                 </div>
                 <div className="w-full">
                   <button
                     onClick={uploadProfileImage}
-                    className="flex items-center group py-2 px-2 ss:px-4 transition duration-300 rounded-lg bg-green1 text-xss ss:text-ss sm:text-sm font-semibold text-white"
+                    className="xxss:min-w-[110px] ss:min-w-fit  flex items-center justify-center group py-2 px-2 ss:px-4 transition duration-300 rounded-lg bg-green1 text-ss sm:text-sm font-semibold text-white"
                   >
-                    <span>Upload</span>
-                    <UploadIcon className="w-2 sm:w-4 group-hover:animate-bounce inline ml-2 mb-1" />
+                    <span>Update</span>
+                    <UploadIcon className="w-3 ss:w-4 animate-bounce inline ml-2 ss:mb-1" />{" "}
                   </button>
                 </div>
               </div>
               <p
-                className="my-1 w-full text-left text-ss text-gray-500 "
+                className="my-1 w-full text-left text-xss ss:text-ss text-gray-500 "
                 id="file_input_help"
               >
-                PNG, JPG or WEBP Image.
+                PNG, JPG or WEBP Potrait Image.
               </p>
               {renderProgressBar()}
             </div>
           </div>
           <div className="md:pl-4 mt-5">
-            <h1 className="text-sm ss:text-xs xsm:text-base md:text-lg font-bold mb-2 sm:mb-3">
+            <h1 className="text-base xsm:text-md md:text-lg font-bold mb-2 sm:mb-3">
               Contact Information
             </h1>
             <div className="flex items-center gap-2 sm:gap-4 ">
@@ -181,15 +182,15 @@ export default function Profile() {
                 <EmailIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col items-center">
-                <p className="text-sm sm:text-base md:text-md font-semibold text-left w-full">
+                <p className="text-xs sm:text-base md:text-md font-semibold text-left w-full">
                   Email
                 </p>
-                <p className="text-ss sm:text-sm md:text-xs font-[500] text-gray-600 break-all">
+                <p className="text-sm sm:text-xs md:text-base font-[500] text-gray-600 break-all">
                   {studentDetails?.email}
                 </p>
               </div>
             </div>{" "}
-            <h1 className="text-sm ss:text-xs xsm:text-base md:text-lg font-bold mb-2 sm:mb-3 sm:mt-6 mt-9">
+            <h1 className="text-base xsm:text-md md:text-lg font-bold mb-2 sm:mb-3 sm:mt-6 mt-9">
               Academic Information
             </h1>
             <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
@@ -197,10 +198,10 @@ export default function Profile() {
                 <GraduateCapIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col">
-                <p className="text-sm sm:text-base md:text-md font-semibold text-left w-full">
+                <p className="text-xs sm:text-base md:text-md font-semibold text-left w-full">
                   Department
                 </p>
-                <p className="text-ss sm:text-sm md:text-xs font-[500] text-gray-600">
+                <p className="text-sm sm:text-xs md:text-base font-[500] text-gray-600">
                   Polymer and Textile Engineering
                 </p>
               </div>
@@ -210,10 +211,10 @@ export default function Profile() {
                 <ClockIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col">
-                <p className="text-sm sm:text-base md:text-md font-semibold text-left w-full">
+                <p className="text-xs sm:text-base md:text-md font-semibold text-left w-full">
                   Level
                 </p>
-                <p className="text-ss sm:text-sm md:text-xs font-[500] text-gray-600 text-left">
+                <p className="text-sm sm:text-xs md:text-base font-[500] text-gray-600 text-left">
                   {studentDetails?.level}
                 </p>
               </div>
@@ -223,10 +224,10 @@ export default function Profile() {
                 <RegisterIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col">
-                <p className="text-sm sm:text-base md:text-md font-semibold text-left w-full">
-                  Registeration Number
+                <p className="text-xs sm:text-base md:text-md font-semibold text-left w-full">
+                  Matriculation Number
                 </p>
-                <p className="text-ss sm:text-sm md:text-xs font-[500] text-gray-600 text-left">
+                <p className="text-sm sm:text-xs md:text-base font-[500] text-gray-600 text-left">
                   {studentDetails?.regNo || "None"}
                 </p>
               </div>

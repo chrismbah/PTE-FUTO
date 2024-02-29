@@ -1,22 +1,22 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { ISignUpForm } from "../../models/auth/form";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { signUpSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { notifyUser } from "../../helpers/notifyUser";
 import { getCurrentDate } from "../../helpers/formatDate";
 import { getCurrentTime } from "../../helpers/getCurrentTime";
+import { StudentDetails } from "../../models/auth/studentDetails";
 
 export default function useSignUpUser() {
   const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
-  const userInfoRef = collection(db, "userInfo");
-
   const { reset } = useForm<ISignUpForm>({
     resolver: yupResolver(signUpSchema),
   });
@@ -28,22 +28,26 @@ export default function useSignUpUser() {
       //*Stores user info in firestore database
       const user = await createUserWithEmailAndPassword(auth, email, password);
       const userID = user.user.uid;
-      await addDoc(userInfoRef, {
-        userID: userID,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        regNo: regNo,
-        level: level,
+      const userInfo: StudentDetails = {
+        userID,
+        firstName,
+        lastName,
+        email,
+        regNo,
+        level,
         registeredDate: getCurrentDate(),
         registeredTime: getCurrentTime(),
-      });
+        loginDate: getCurrentDate(),
+        loginTime: getCurrentTime(),
+        profileImageURL: "",
+      };
+      await setDoc(doc(db, "userInfo", userID), userInfo);
       setLoading(false);
       reset();
       navigate("/");
       notifyUser(
         "success",
-        "Registeration Successful. Explore, learn, and enjoy your stay."
+        "Registeration Successful. Explore and enjoy your stay."
       );
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {
