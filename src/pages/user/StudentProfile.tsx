@@ -87,7 +87,7 @@ export default function Profile() {
       <div className="box-width">
         <div className="page-section">
           <div className="w-full flex items-center justify-between flex-col md:flex-row gap-4">
-            <div className="flex flex-col xss:flex-row items-center gap-3 w-full">
+            <div className="flex flex-col xss:flex-row items-center gap-3 w-full md:w-fit">
               {renderProfileImage()}
               {/* {studentDetails && (
                 <img

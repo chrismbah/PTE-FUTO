@@ -3,7 +3,7 @@ export interface ISuscribedUser {
   firstName: string;
   lastName: string;
   email: string;
-  regNo?: string;
+  regNo?: string | number | null;
   level: string;
   timeStamp: Date;
 }
