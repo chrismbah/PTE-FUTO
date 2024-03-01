@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // import hero from "../../assets/svg/home/hero.svg";
 import { Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
@@ -7,7 +8,8 @@ import Lottie from "lottie-react";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 
 export default function Hero() {
-  const { user } = useGetUserInfo();
+  const { user, studentDetails } = useGetUserInfo();
+  
   return (
     <div className="home-gray-bg">
       <div className="px-3 xsm:px-14 sm:pt-24 mmd:pt-28 sm:pb-36 py-20 box-width">
@@ -26,8 +28,8 @@ export default function Hero() {
               thriving community of fellow learners.
             </p>
             <Button theme={customButtonTheme} color="primary" size={"lg"}>
-              <Link to={user ? "/dashboard" : "/signup"}>
-                {user ? "Go to Dashboard" : "Get Started"}
+              <Link to={user && studentDetails  ? "/dashboard" : "/signup"}>
+                {user && studentDetails ? "Go to Dashboard" : "Get Started"}
               </Link>
             </Button>
           </div>

@@ -35,6 +35,7 @@ const AuthenticatedRoutes = () => {
   const BlogPost = lazy(() => import("../pages/misc/blog/post/BlogPost"));
   const StudentProfile = lazy(() => import("../pages/user/StudentProfile"));
   const Dashboard = lazy(() => import("../pages/user/Dashboard"));
+  const ProjectTeam = lazy(()=>import("../pages/students/project-team/ProjectTeam"))
 
   return (
     <Suspense fallback={<LogoSpinner />}>
@@ -62,6 +63,7 @@ const AuthenticatedRoutes = () => {
         />
         <Route path="/profile" element={<StudentProfile />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/students/project-team" element={<ProjectTeam />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

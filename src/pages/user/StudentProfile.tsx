@@ -16,6 +16,9 @@ import {
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
+import { DeleteProfileImage } from "../../components/modal/DeleteProfileImage";
+import { useModalContext } from "../../context/Modal";
+
 
 export default function Profile() {
   const { getUserInfo, studentDetails } = useGetUserInfo();
@@ -23,11 +26,8 @@ export default function Profile() {
     imageFile,
     uploadProfileImage,
     handleFileChange,
-    deleteUserProfileImage,
   } = useUploadProfileImage();
-  useEffect(() => {
-    getUserInfo();
-  }, []);
+  const { setOpenDeleteProfileImageModal } = useModalContext()
 
   useEffect(() => {
     getUserInfo();
@@ -56,15 +56,19 @@ export default function Profile() {
                 }}
               >
                 <PopoverHandler>
-                  <button className="z-4 absolute top-8 right-1 bg-gray-100 hover:bg-gray-200 rounded-full p-0.5 border border-gray-200">
+                  <button
+                    className="z-4 absolute top-5 -right-1 xss:top-6 xss:right-1 sss:top-7 
+                    sss:right-1 sm:top-8 sm:right-1 bg-gray-50 hover:bg-gray-100 rounded-full 
+                    p-0.5 border border-gray-200"
+                  >
                     <ThreeVerticalDotsIcon
-                      className="w-5 h-5"
+                      className="h-3 w-3 sss:h-4 sss:w-4 sm:w-5 sm:h-5"
                       color="#0f172a"
                     />
                   </button>
                 </PopoverHandler>
                 <PopoverContent
-                  onClick={deleteUserProfileImage}
+                  onClick={()=>setOpenDeleteProfileImageModal(true)}
                   placeholder={""}
                   className={` cursor-pointer shadow font-dmSans p-2 text-[10px] bg-gray-50 sm:text-ss hover:bg-gray-100 rounded-lg`}
                 >
@@ -236,6 +240,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      <DeleteProfileImage />
     </div>
   );
 }

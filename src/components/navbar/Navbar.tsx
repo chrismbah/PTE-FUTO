@@ -63,7 +63,7 @@ export default function Nav() {
                   <>
                     <div
                       className="h-[34px] w-[34px] md:h-[36px] md:w-[36px] bg-gray-200 
-                       rounded-full border-[3px] border-green1 p-[1px]"
+                       rounded-full border-2 border-green1 p-0.5"
                     >
                       <img
                         src={studentDetails.profileImageURL}
@@ -98,11 +98,11 @@ export default function Nav() {
                   Sign Out
                 </Dropdown.Item>
               </Dropdown>
-            ) : (
+            ) : studentDetails ? (
               <Dropdown
                 arrowIcon={false}
                 inline
-                className="z-[9999999] "
+                className="z-[9999999]"
                 label={
                   <Lottie
                     animationData={avatar}
@@ -135,6 +135,11 @@ export default function Nav() {
                   Sign Out
                 </Dropdown.Item>
               </Dropdown>
+            ) : (
+              <Skeleton
+                circle={true}
+                className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
+              />
             )
           ) : (
             <Button
@@ -162,7 +167,7 @@ export default function Nav() {
             >
               <Dropdown.Item>About Us</Dropdown.Item>
               <Dropdown.Item>Our Mission</Dropdown.Item>
-              <Dropdown.Item>Our Vision</Dropdown.Item>
+              <Dropdown.Item>Admission</Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link>
@@ -181,9 +186,6 @@ export default function Nav() {
               <Dropdown.Item>
                 <Link to={"/calculate-gpa"}>GPA Calculator</Link>
               </Dropdown.Item>
-
-              <Dropdown.Divider />
-              <Dropdown.Item>Student Bodies</Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link>
@@ -193,11 +195,10 @@ export default function Nav() {
               label={"Students"}
               theme={customDropdownTheme}
             >
-              <Dropdown.Item>About Us</Dropdown.Item>
-              <Dropdown.Item>Our Mission</Dropdown.Item>
-              <Dropdown.Item>Our Vision</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item>Student Bodies</Dropdown.Item>
+              <Dropdown.Item>Class Representatives</Dropdown.Item>
+              <Dropdown.Item>
+                <Link to={"/students/project-team"}>Project Team</Link>
+              </Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link href="/blog">Blog</Navbar.Link>

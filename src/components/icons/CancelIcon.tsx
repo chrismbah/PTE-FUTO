@@ -27,14 +27,14 @@ export const CancelIcon:FC<StyleProp> = ({className}) => {
           stroke="none"
           strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         >
           {" "}
           <g
             id="ui-gambling-website-lined-icnos-casinoshunter"
             transform="translate(-869.000000, -159.000000)"
             fill="#1f2937"
-            fill-rule="nonzero"
+            fillRule="nonzero"
           >
             {" "}
             <g id="square-filled" transform="translate(50.000000, 120.000000)">

@@ -11,15 +11,18 @@ import {
 import { db, storage } from "../../config/firebase";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { updateDoc, doc } from "firebase/firestore";
+import { useModalContext } from "../../context/Modal";
+
 export const useUploadProfileImage = () => {
   const { getUserInfo, studentDetails, userID } = useGetUserInfo();
-  
+  const { setOpenDeleteProfileImageModal } = useModalContext();
 
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadError, setUploadError] = useState<Error | null>(null);
   const [imageURL, setImageURL] = useState<string | null>(null);
   const [imageFileID, setImageFileID] = useState<string | null>(null);
+  const [deletingProfileImage, setDeletingProfileImage] = useState(false);
 
   useEffect(() => {
     if (imageURL) {
@@ -27,26 +30,24 @@ export const useUploadProfileImage = () => {
     }
   }, [imageURL]);
 
-  // useEffect(()=>{
-  //   getUserInfo()
-  // },[imageFileID, imageURL])
-    useEffect(() => {
+  useEffect(() => {
     getUserInfo();
   }, [imageURL]);
-  useEffect(()=>{
-    getUserInfo()
-  },[])
-
-  
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files && e.target.files[0];
     if (selectedFile && selectedFile.type.startsWith("image/")) {
       setImageFile(selectedFile);
       setUploadProgress(0);
-      console.log(imageFile)
+      console.log(imageFile);
     } else {
-      notifyUser("error", "Please choose a valid image file (PNG, JPG or WEBP).");
+      notifyUser(
+        "error",
+        "Please choose a valid image file (PNG, JPG or WEBP)."
+      );
       e.target.value = "";
     }
   };
@@ -96,7 +97,7 @@ export const useUploadProfileImage = () => {
   };
   const updateUserProfileLink = async () => {
     if (userID && imageURL && imageURL.length > 1) {
-      try{
+      try {
         await updateDoc(doc(db, "userInfo", userID), {
           profileImageURL: imageURL,
           profileImageID: imageFileID,
@@ -104,15 +105,13 @@ export const useUploadProfileImage = () => {
         console.log("Done");
         console.log(imageURL);
         setImageFile(null);
-      }catch(err){
-        console.log("Error updating doc")
-        notifyUser("error", "Sorry couldn't update profile picture")
+      } catch (err) {
+        console.log("Error updating doc");
+        notifyUser("error", "Sorry couldn't update profile picture");
       }
-      
-
     } else {
       console.log("COULDN'T UPDATE DOC");
-      console.log(imageFile, imageURL?.length, imageURL  )
+      console.log(imageFile, imageURL?.length, imageURL);
     }
   };
   const deleteUserProfileImage = async () => {
@@ -122,11 +121,14 @@ export const useUploadProfileImage = () => {
         `profile-pictures/${studentDetails.email}-${userID}/${studentDetails.profileImageID}`
       );
       try {
+        setDeletingProfileImage(true);
         await deleteObject(userImageRef);
         await updateDoc(doc(db, "userInfo", userID), {
           profileImageURL: "",
-          profileImageID: ""
+          profileImageID: "",
         });
+        setDeletingProfileImage(false);
+        setOpenDeleteProfileImageModal(false)
         notifyUser("success", "Profile picture deleted");
       } catch (err) {
         console.log(err);
@@ -136,8 +138,6 @@ export const useUploadProfileImage = () => {
       console.log("Bug!!");
     }
   };
-  
-
 
   return {
     setImageFile,
@@ -149,6 +149,6 @@ export const useUploadProfileImage = () => {
     uploadProfileImage,
     handleFileChange,
     updateUserProfileLink,
-    deleteUserProfileImage,
+    deleteUserProfileImage, deletingProfileImage
   };
 };

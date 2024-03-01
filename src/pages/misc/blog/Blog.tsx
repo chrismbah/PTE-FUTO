@@ -37,7 +37,7 @@ export default function Blog() {
             <div className="w-full h-[70vh] flex items-center justify-center flex-col">
               <Spinner className="w-4 sm:w-8 md:w-10" />
               <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-700 mt-2">
-                Loading Posts...
+                Loading posts...
               </p>
             </div>
           )}{" "}
@@ -45,7 +45,7 @@ export default function Blog() {
             <div className="w-full h-[70vh] flex items-center justify-center flex-col">
               <BadNetworkIcon className="w-4 sm:w-8 md:w-10" />
               <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">
-                Couldn't get posts...
+                Sorry couldn't get posts. Please try again.
               </p>
             </div>
           )}
