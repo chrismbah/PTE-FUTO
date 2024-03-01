@@ -28,20 +28,22 @@ export const useGetUserInfo = () => {
         level,
         registeredDate,
         registeredTime,
-        profileImageURL
+        profileImageURL,
+        profileImageID,
       } = userFields;
       setStudentDetails({
-        userID: userID,
-        firstName: firstName,
-        lastName: lastName,
-        regNo: regNo,
-        email: email,
-        level: level,
+        userID,
+        firstName,
+        lastName,
+        regNo,
+        email,
+        level,
         loginDate: getCurrentDate(),
         loginTime: getCurrentTime(),
-        registeredDate: registeredDate,
-        registeredTime: registeredTime,
-        profileImageURL: profileImageURL
+        registeredDate,
+        registeredTime,
+        profileImageURL,
+        profileImageID,
       });
     }
   };

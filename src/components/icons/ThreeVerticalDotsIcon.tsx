@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from "react";
 import { StyleProp } from "../../models/style";
 
-export const ThreeVerticalDotsIcon: FC<StyleProp> = ({ className }) => {
+export const ThreeVerticalDotsIcon: FC<StyleProp> = ({ className, color }) => {
   return (
     <svg
       className={className}
@@ -11,7 +12,7 @@ export const ThreeVerticalDotsIcon: FC<StyleProp> = ({ className }) => {
       viewBox="0 0 256 256"
       id="Flat"
       xmlns="http://www.w3.org/2000/svg"
-      stroke="#000000"
+      stroke={color}
       stroke-width="6.656000000000001"
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

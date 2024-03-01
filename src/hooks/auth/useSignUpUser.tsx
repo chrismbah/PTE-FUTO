@@ -40,6 +40,7 @@ export default function useSignUpUser() {
         loginDate: getCurrentDate(),
         loginTime: getCurrentTime(),
         profileImageURL: "",
+        profileImageID: ""
       };
       await setDoc(doc(db, "userInfo", userID), userInfo);
       setLoading(false);

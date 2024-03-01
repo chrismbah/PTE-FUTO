@@ -2,21 +2,24 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { notifyUser } from "../../helpers/notifyUser";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+  deleteObject,
+} from "firebase/storage";
 import { db, storage } from "../../config/firebase";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { updateDoc, doc } from "firebase/firestore";
-
 export const useUploadProfileImage = () => {
   const { getUserInfo, studentDetails, userID } = useGetUserInfo();
-  useEffect(() => {
-    getUserInfo();
-  }, []);
+  
 
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadError, setUploadError] = useState<Error | null>(null);
   const [imageURL, setImageURL] = useState<string | null>(null);
+  const [imageFileID, setImageFileID] = useState<string | null>(null);
 
   useEffect(() => {
     if (imageURL) {
@@ -24,13 +27,26 @@ export const useUploadProfileImage = () => {
     }
   }, [imageURL]);
 
+  // useEffect(()=>{
+  //   getUserInfo()
+  // },[imageFileID, imageURL])
+    useEffect(() => {
+    getUserInfo();
+  }, [imageURL]);
+  useEffect(()=>{
+    getUserInfo()
+  },[])
+
+  
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files && e.target.files[0];
     if (selectedFile && selectedFile.type.startsWith("image/")) {
       setImageFile(selectedFile);
       setUploadProgress(0);
+      console.log(imageFile)
     } else {
-      notifyUser("error", "Please choose a valid image file (PNG or JPG).");
+      notifyUser("error", "Please choose a valid image file (PNG, JPG or WEBP).");
       e.target.value = "";
     }
   };
@@ -43,11 +59,12 @@ export const useUploadProfileImage = () => {
     if (userID) {
       try {
         notifyUser("success", "Uploading Image");
-        const storageRef = ref(
+        const userImageRef = ref(
           storage,
           `profile-pictures/${studentDetails?.email}-${userID}/${imageFile.name}`
         );
-        const uploadTask = uploadBytesResumable(storageRef, imageFile);
+        setImageFileID(imageFile.name);
+        const uploadTask = uploadBytesResumable(userImageRef, imageFile);
         uploadTask.on(
           "state_changed",
           (snapshot) => {
@@ -70,7 +87,6 @@ export const useUploadProfileImage = () => {
         );
         updateUserProfileLink();
         notifyUser("success", "File Uploaded");
-        setImageFile(null);
         console.log("Image Uploaded");
       } catch (error) {
         console.error("Error uploading image:", error);
@@ -80,15 +96,48 @@ export const useUploadProfileImage = () => {
   };
   const updateUserProfileLink = async () => {
     if (userID && imageURL && imageURL.length > 1) {
-      await updateDoc(doc(db, "userInfo", userID), {
-        profileImageURL: imageURL,
-      });
-      console.log("Done");
-      console.log(imageURL);
+      try{
+        await updateDoc(doc(db, "userInfo", userID), {
+          profileImageURL: imageURL,
+          profileImageID: imageFileID,
+        });
+        console.log("Done");
+        console.log(imageURL);
+        setImageFile(null);
+      }catch(err){
+        console.log("Error updating doc")
+        notifyUser("error", "Sorry couldn't update profile picture")
+      }
+      
+
     } else {
-      console.log("Oops somethings wrong");
+      console.log("COULDN'T UPDATE DOC");
+      console.log(imageFile, imageURL?.length, imageURL  )
     }
   };
+  const deleteUserProfileImage = async () => {
+    if (userID && studentDetails) {
+      const userImageRef = ref(
+        storage,
+        `profile-pictures/${studentDetails.email}-${userID}/${studentDetails.profileImageID}`
+      );
+      try {
+        await deleteObject(userImageRef);
+        await updateDoc(doc(db, "userInfo", userID), {
+          profileImageURL: "",
+          profileImageID: ""
+        });
+        notifyUser("success", "Profile picture deleted");
+      } catch (err) {
+        console.log(err);
+        notifyUser("error", "Something went wrong. Please try again");
+      }
+    } else {
+      console.log("Bug!!");
+    }
+  };
+  
+
 
   return {
     setImageFile,
@@ -100,5 +149,6 @@ export const useUploadProfileImage = () => {
     uploadProfileImage,
     handleFileChange,
     updateUserProfileLink,
+    deleteUserProfileImage,
   };
 };

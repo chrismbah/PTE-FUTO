@@ -2,19 +2,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useEffect } from "react";
-import { Dropdown, Navbar, Button, Avatar } from "flowbite-react";
+import { Dropdown, Navbar, Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { customNavTheme } from "../../themes/customNav";
 import { customDropdownTheme } from "../../themes/customDropdown";
-import { customAvatar } from "../../themes/customAvatar";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
-import userProfileIcon from "../../assets/svg/icons/userProfile.svg";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { useModalContext } from "../../context/Modal";
 import { SignOutModal } from "../modal/SignOutModal";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import Lottie from "lottie-react";
+import avatar from "../../json/animation/avatar.json";
 
 export default function Nav() {
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
@@ -42,7 +42,7 @@ export default function Nav() {
               className="mr-1 sm:mr-3 h-10 ss:h-14 sm:h-16"
               alt="PTE Logo"
             />
-            <div className=" w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base md:text-lg font-[800] dark:text-white">
+            <div className=" w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base md:text-lg font-[900]">
               Polymer and Textile Engineering, FUTO
             </div>
           </div>
@@ -60,13 +60,18 @@ export default function Nav() {
                 inline
                 className="z-[9999999] "
                 label={
-                  <Avatar
-                    alt="User"
-                    img={studentDetails.profileImageURL}
-                    rounded
-                    theme={customAvatar}
-                    size={"md"}
-                  />
+                  <>
+                    <div
+                      className="h-[34px] w-[34px] md:h-[36px] md:w-[36px] bg-gray-200 
+                       rounded-full border-[3px] border-green1 p-[1px]"
+                    >
+                      <img
+                        src={studentDetails.profileImageURL}
+                        alt="Profile"
+                        className="w-full h-full rounded-full"
+                      />
+                    </div>
+                  </>
                 }
               >
                 <Dropdown.Header>
@@ -99,12 +104,10 @@ export default function Nav() {
                 inline
                 className="z-[9999999] "
                 label={
-                  <Avatar
-                    alt="User"
-                    img={userProfileIcon}
-                    rounded
-                    theme={customAvatar}
-                    size={"md"}
+                  <Lottie
+                    animationData={avatar}
+                    loop={false}
+                    className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
                   />
                 }
               >
@@ -143,56 +146,7 @@ export default function Nav() {
               <Link to={"/login"}>Login</Link>
             </Button>
           )}
-          {/* {user ? (
-            <Dropdown
-              arrowIcon={false}
-              inline
-              className="z-[9999999] "
-              label={
-                <Avatar
-                  alt="User"
-                  img={userProfileIcon}
-                  rounded
-                  theme={customAvatar}
-                  size={"md"}
-                />
-              }
-            >
-              <Dropdown.Header>
-                <span className="block text-sm font-[600]">
-                  {studentDetails && firstName} {studentDetails && lastName}
-                </span>
-                <span className="block truncate text-sm">
-                  {studentDetails && email}
-                </span>
-              </Dropdown.Header>
-              <Dropdown.Item>
-                <Link to={"/dashboard"}className="w-full text-left">Dashboard</Link>{" "}
-              </Dropdown.Item>
-              <Dropdown.Item>
-                {" "}
-                <Link to={"/profile"} className="w-full text-left">Profile</Link>{" "}
-              </Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                Sign Out
-              </Dropdown.Item>
-            </Dropdown>
-          ) : loading ? (
-            <Skeleton
-              circle={true}
-              className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-            />
-          ) : (
-            <Button
-              theme={customButtonTheme}
-              color="primary"
-              size="md"
-              className="focus:outline-none"
-            >
-              <Link to={"/login"}>Login</Link>
-            </Button>
-          )} */}
+
           <Navbar.Toggle className="ml-2 focus:outline-green1 w-9 h-9" />
         </div>
         <Navbar.Collapse className="xmd:block xmd:w-auto z-[99999999]">
@@ -247,7 +201,6 @@ export default function Nav() {
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link href="/blog">Blog</Navbar.Link>
-          <Navbar.Link href="/events">Events</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
       <SignOutModal />
