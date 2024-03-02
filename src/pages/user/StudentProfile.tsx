@@ -11,7 +11,6 @@ import { ClockIcon } from "../../components/icons/ClockIcon";
 import { RegisterIcon } from "../../components/icons/RegisterIcon";
 import { EditProfileIcon } from "../../components/icons/EditProfileIcon";
 import { useUploadProfileImage } from "../../hooks/user-profile/useUploadProfileImage";
-import { ThreeVerticalDotsIcon } from "../../components/icons/ThreeVerticalDotsIcon";
 import {
   Popover,
   PopoverHandler,
