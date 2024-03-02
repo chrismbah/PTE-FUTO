@@ -14,7 +14,7 @@ import { SignOutModal } from "../modal/SignOutModal";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Lottie from "lottie-react";
-import avatar from "../../json/animation/avatar.json";
+import avatar from "../../json/animation/avatar1.json";
 
 export default function Nav() {
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
@@ -63,12 +63,12 @@ export default function Nav() {
                   <>
                     <div
                       className="h-[34px] w-[34px] md:h-[36px] md:w-[36px] bg-gray-200 
-                       rounded-full border-2 border-green1 p-0.5"
+                       rounded-full border border-green1 p-[1px]"
                     >
                       <img
                         src={studentDetails.profileImageURL}
                         alt="Profile"
-                        className="w-full h-full rounded-full"
+                        className="w-full h-full rounded-full object-cover"
                       />
                     </div>
                   </>

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
-import avatar from "../../json/animation/avatar.json";
+import avatar from "../../json/animation/avatar1.json";
 import { CalenderIcon } from "../../components/icons/CalenderIcon";
 import { EmailIcon } from "../../components/icons/socials/EmailIcon";
 import { GraduateCapIcon } from "../../components/icons/GraduateCapIcon";
@@ -45,7 +45,7 @@ export default function Profile() {
               <img
                 src={studentDetails.profileImageURL}
                 alt="Profile"
-                className="w-full h-full rounded-full"
+                className="w-full h-full rounded-full object-cover"
               />
 
               <Popover
@@ -59,7 +59,7 @@ export default function Profile() {
                   <button
                     className="z-4 absolute top-5 -right-1 xss:top-6 xss:right-1 sss:top-7 
                     sss:right-1 sm:top-8 sm:right-1 bg-gray-50 hover:bg-gray-100 rounded-full 
-                    p-0.5 border border-gray-200"
+                    p-0.5 border border-gray-100"
                   >
                     <ThreeVerticalDotsIcon
                       className="h-3 w-3 sss:h-4 sss:w-4 sm:w-5 sm:h-5"
@@ -83,8 +83,8 @@ export default function Profile() {
           <Lottie
             animationData={avatar}
             loop={false}
-            className="w-[150px]  xss:w-[180px] sss:w-[200px]
-              sm:w-[230px]"
+            className="w-[130px] xss:w-[150px]
+              sm:w-[180px] mmd:w-[280px]"
           />
         );
       }
@@ -113,7 +113,7 @@ export default function Profile() {
                   {studentDetails?.firstName} {studentDetails?.lastName}
                 </p>
                 <p className="text-sm xsm:text-xs font-semibold capitalize  text-center xss:text-left">
-                  Polymer and Textile Engineering ·{" "}
+                  {" "}
                   <span className="text-green1">{studentDetails?.level}</span>
                 </p>
                 <div className="flex items-center justify-center xss:justify-start gap-1 sm:gap-2 sm:mt-2">
@@ -182,7 +182,7 @@ export default function Profile() {
                 <EmailIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col items-center">
-                <p className="text-xs sm:text-base mmd:text-mmd font-semibold text-left w-full">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
                   Email
                 </p>
                 <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 break-all">
@@ -198,7 +198,7 @@ export default function Profile() {
                 <GraduateCapIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col">
-                <p className="text-xs sm:text-base mmd:text-mmd font-semibold text-left w-full">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
                   Department
                 </p>
                 <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600">
@@ -211,7 +211,7 @@ export default function Profile() {
                 <ClockIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col">
-                <p className="text-xs sm:text-base mmd:text-mmd font-semibold text-left w-full">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
                   Level
                 </p>
                 <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
@@ -224,7 +224,7 @@ export default function Profile() {
                 <RegisterIcon className="w-5 sm:w-8" />
               </div>
               <div className="flex flex-col">
-                <p className="text-xs sm:text-base mmd:text-mmd font-semibold text-left w-full">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
                   Matriculation Number
                 </p>
                 <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
