@@ -9,6 +9,7 @@ import { EmailIcon } from "../../components/icons/socials/EmailIcon";
 import { GraduateCapIcon } from "../../components/icons/GraduateCapIcon";
 import { ClockIcon } from "../../components/icons/ClockIcon";
 import { RegisterIcon } from "../../components/icons/RegisterIcon";
+import { EditProfileIcon } from "../../components/icons/EditProfileIcon";
 import { useUploadProfileImage } from "../../hooks/user-profile/useUploadProfileImage";
 import { ThreeVerticalDotsIcon } from "../../components/icons/ThreeVerticalDotsIcon";
 import {
@@ -59,10 +60,10 @@ export default function Profile() {
                   <button
                     className="z-4 absolute top-5 -right-1 xss:top-6 xss:right-1 sss:top-7 
                     sss:right-1 sm:top-8 sm:right-1 bg-gray-50 hover:bg-gray-100 rounded-full 
-                    p-0.5 border border-gray-100"
+                    p-1 border border-gray-100"
                   >
-                    <ThreeVerticalDotsIcon
-                      className="h-3 w-3 sss:h-4 sss:w-4 sm:w-5 sm:h-5"
+                    <EditProfileIcon
+                      className="h-3 w-3 sss:h-4 sss:w-4 sm:w-4 sm:h-4"
                       color="#0f172a"
                     />
                   </button>

@@ -42,7 +42,7 @@ export default function Gallery() {
                   src={img8}
                 />
                 <img className="rounded-lg object-cover" src={img9} />
-                <img className="rounded-lg object-cover" src={img10} />
+                <img className="rounded-lg object-cover min-h-[120px]" src={img10} />
                 <img
                   className="rounded-lg object-cover min-h-[130px]"
                   src={img11}
