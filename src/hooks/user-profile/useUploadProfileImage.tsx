@@ -28,14 +28,9 @@ export const useUploadProfileImage = () => {
     if (imageURL) {
       updateUserProfileLink();
     }
+    getUserInfo();
   }, [imageURL]);
 
-  useEffect(() => {
-    getUserInfo();
-  }, [imageURL]);
-  useEffect(() => {
-    getUserInfo();
-  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files && e.target.files[0];

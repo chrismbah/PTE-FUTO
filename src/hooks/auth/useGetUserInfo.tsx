@@ -19,7 +19,7 @@ export const useGetUserInfo = () => {
     if (userID) {
       const userInfoDoc = query(userInfoRef, where("userID", "==", userID));
       const userInfo = await getDocs(userInfoDoc);
-      const userFields = userInfo?.docs[0].data(); // Expecting a single field in the array
+      const userFields = userInfo?.docs[0].data();
       const {
         firstName,
         lastName,
@@ -48,7 +48,7 @@ export const useGetUserInfo = () => {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => { //!Important
     getUserInfo();
   }, [userID]);
 
