@@ -57,7 +57,7 @@ export default function Profile() {
               >
                 <PopoverHandler>
                   <button
-                    className="z-4 absolute top-5 -right-1 xss:top-6 xss:right-1 sss:top-7 
+                    className="z-4 absolute top-4 -right-1 xss:top-6 xss:right-0 sss:top-7 
                     sss:right-1 sm:top-8 sm:right-1 bg-gray-50 hover:bg-gray-100 rounded-full 
                     p-1 border border-gray-100"
                   >
@@ -100,7 +100,7 @@ export default function Profile() {
     }
   };
 
-  return (
+  return ( 
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
         <div className="px-3 sm:px-14 sm:py-[105px] py-20">
@@ -109,7 +109,7 @@ export default function Profile() {
               {renderProfileImage()}
 
               <div className="flex flex-col justify-center xss:justify-start mmd:w-full ">
-                <p className="text-xl sm:text-2xl xsm:text-3xl font-bold text-center xss:text-left">
+                <p className="text-xl ss:text-2xl xsm:text-3xl font-bold text-center xss:text-left">
                   {studentDetails?.firstName} {studentDetails?.lastName}
                 </p>
                 <p className="text-sm xsm:text-xs font-semibold capitalize  text-center xss:text-left">

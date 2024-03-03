@@ -1,19 +1,20 @@
 import Lottie from "lottie-react";
-import location from "../../../json/animation/location.json";
-import work from "../../../json/animation/work.json";
-import link from "../../../json/animation/link.json";
-import git from "../../../json/animation/git.json";
-import mail from "../../../json/animation/mail.json";
-import dev from "../../../json/animation/dev.json";
-import chris from "../../../assets/img/team/img6.jpg";
+import location from "../../json/animation/location.json";
+import work from "../../json/animation/work.json";
+import link from "../../json/animation/link.json";
+import git from "../../json/animation/git.json";
+import mail from "../../json/animation/mail.json";
+import dev from "../../json/animation/dev.json";
+import chris from "../../assets/img/team/img6.jpg";
 import { Link } from "react-router-dom";
-import futo from "../../../assets/img/gallery/front-gate2.jpg";
+import futo from "../../assets/img/gallery/front-gate2.jpg";
+import Footer from "../../components/footer/Footer";
 
 export default function ProjectTeam() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
-        <div className="px-3 sm:px-14 sm:pt-[115px] sm:pb-10">
+        <div className="px-3 sm:px-14 pt-[90px] sm:pt-[115px] sm:pb-10">
           <div className="flex items-center justify-center flex-col">
             <h2>
               <div className="bar-style" />
@@ -65,39 +66,55 @@ export default function ProjectTeam() {
                     loop={false}
                     className="w-[18px] ss:w-[20px] -mt-1"
                   />
-                  <p className="text-gray-900 font-semibold text-ss ss:text-sm sm:text-xs">
+                  <p className=" font-semibold text-ss ss:text-sm sm:text-xs">
                     Software Engineer · Web Developer
                   </p>
                 </div>
                 <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-4 pb-12 sm:pb-8">
                   <Link to="mailto:mbahchris46@gmail.com">
                     <div className="flex gap-1 items-center">
-                      <Lottie loop={false} animationData={mail} className="w-4 ss:w-5 sm:w-6" />
-                      <p className="text-gray-900 font-semibold text-xss ss:text-ss sm:text-sm">
+                      <Lottie
+                        loop={false}
+                        animationData={mail}
+                        className="w-4 ss:w-5 sm:w-6"
+                      />
+                      <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         Email
                       </p>
                     </div>
                   </Link>
                   <Link to="https://chrismbah.vercel.app">
                     <div className="flex gap-1 items-center">
-                      <Lottie loop={false} animationData={link} className="w-4 ss:w-5 sm:w-6" />
-                      <p className="text-gray-900 font-semibold text-xss ss:text-ss sm:text-sm">
+                      <Lottie
+                        loop={false}
+                        animationData={link}
+                        className="w-4 ss:w-5 sm:w-6"
+                      />
+                      <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         Portfolio
                       </p>
                     </div>
                   </Link>
                   <Link to="https://github.com/chrismbah">
                     <div className="flex gap-1 items-center">
-                      <Lottie loop={false} animationData={git} className="w-4 ss:w-5 sm:w-6"/>
-                      <p className="text-gray-900 font-semibold text-xss ss:text-ss sm:text-sm">
+                      <Lottie
+                        loop={false}
+                        animationData={git}
+                        className="w-4 ss:w-5 sm:w-6"
+                      />
+                      <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         Github
                       </p>
                     </div>
                   </Link>{" "}
                   <Link to="https://linkedin.com/in/mbah-chris">
                     <div className="flex gap-1 items-center">
-                      <Lottie loop={false} animationData={work} className="w-5" />
-                      <p className="text-gray-900 font-semibold text-xss ss:text-ss sm:text-sm">
+                      <Lottie
+                        loop={false}
+                        animationData={work}
+                        className="w-3 ss:w-4 sm:w-5"
+                      />
+                      <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         LinkedIn
                       </p>
                     </div>
@@ -108,6 +125,7 @@ export default function ProjectTeam() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

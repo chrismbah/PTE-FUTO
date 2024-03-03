@@ -35,7 +35,10 @@ const AuthenticatedRoutes = () => {
   const BlogPost = lazy(() => import("../pages/misc/blog/post/BlogPost"));
   const StudentProfile = lazy(() => import("../pages/user/StudentProfile"));
   const Dashboard = lazy(() => import("../pages/user/Dashboard"));
-  const ProjectTeam = lazy(()=>import("../pages/students/project-team/ProjectTeam"))
+  const ProjectTeam = lazy(() => import("../pages/students/ProjectTeam"));
+  const AboutUs = lazy(() => import("../pages/about/AboutUs"));
+  const PhilosophyAndObjectives = lazy(() => import("../pages/about/P&A"));
+  const Admission = lazy(() => import("../pages/about/Admission"));
 
   return (
     <Suspense fallback={<LogoSpinner />}>
@@ -64,6 +67,9 @@ const AuthenticatedRoutes = () => {
         <Route path="/profile" element={<StudentProfile />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/students/project-team" element={<ProjectTeam />} />
+        <Route path="/about/about-us" element={<AboutUs />} />
+        <Route path="/about/philosophy-and-objectives" element={<PhilosophyAndObjectives />} />
+        <Route path="/about/admission" element={<Admission />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

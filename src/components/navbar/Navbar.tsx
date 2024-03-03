@@ -15,6 +15,9 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Lottie from "lottie-react";
 import avatar from "../../json/animation/avatar1.json";
+import { SignOutIcon } from "../icons/nav/SignOutIcon";
+import { DashboardIcon } from "../icons/nav/DashboardIcon";
+import { ProfileIcon } from "../icons/nav/ProfileIcon";
 
 export default function Nav() {
   const { getUserInfo, studentDetails, user, loading } = useGetUserInfo();
@@ -42,7 +45,7 @@ export default function Nav() {
               className="mr-1 sm:mr-3 h-10 ss:h-14 sm:h-16"
               alt="PTE Logo"
             />
-            <div className=" w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base md:text-lg font-[900]">
+            <div className=" w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base lg:text-lg font-[900]">
               Polymer and Textile Engineering, FUTO
             </div>
           </div>
@@ -82,20 +85,15 @@ export default function Nav() {
                     {studentDetails && email}
                   </span>
                 </Dropdown.Header>
-                <Dropdown.Item>
-                  <Link to={"/dashboard"} className="w-full text-left">
-                    Dashboard
-                  </Link>{" "}
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  {" "}
-                  <Link to={"/profile"} className="w-full text-left">
-                    Profile
-                  </Link>{" "}
-                </Dropdown.Item>
+                <Link to={"/dashboard"}>
+                  <Dropdown.Item>Dashboard <DashboardIcon className="ml-1 w-5" /></Dropdown.Item>
+                </Link>
+                <Link to="/profile">
+                  <Dropdown.Item> Profile <ProfileIcon className="ml-1 w-3 -mt-0.5" /></Dropdown.Item>
+                </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  Sign Out
+                  Sign out <SignOutIcon className="ml-1 w-4" />
                 </Dropdown.Item>
               </Dropdown>
             ) : studentDetails ? (
@@ -165,9 +163,15 @@ export default function Nav() {
               label={"About"}
               theme={customDropdownTheme}
             >
-              <Dropdown.Item>About Us</Dropdown.Item>
-              <Dropdown.Item>Our Mission</Dropdown.Item>
-              <Dropdown.Item>Admission</Dropdown.Item>
+              <Link to={"/about/about-us"}>
+                <Dropdown.Item>About Us</Dropdown.Item>
+              </Link>
+              <Link to={"/about/philosophy-and-objectives"}>
+                <Dropdown.Item>Philosophy and Objectives</Dropdown.Item>
+              </Link>
+              <Link to={"/about/admission"}>
+                <Dropdown.Item>Admission</Dropdown.Item>
+              </Link>
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link>
@@ -177,15 +181,15 @@ export default function Nav() {
               label={"Academics"}
               theme={customDropdownTheme}
             >
-              <Dropdown.Item>
-                <Link to={"/course-outlines"}> Course Outlines</Link>{" "}
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to={"/learning-resources"}>Learning Resources</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to={"/calculate-gpa"}>GPA Calculator</Link>
-              </Dropdown.Item>
+              <Link to={"/calculate-gpa"}>
+                <Dropdown.Item>GPA Calculator</Dropdown.Item>
+              </Link>
+              <Link to={"/course-outlines"}>
+                <Dropdown.Item>Course Outlines</Dropdown.Item>
+              </Link>
+              <Link to={"/learning-resources"}>
+                <Dropdown.Item>Learning Resources</Dropdown.Item>
+              </Link>
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link>
@@ -195,10 +199,12 @@ export default function Nav() {
               label={"Students"}
               theme={customDropdownTheme}
             >
-              <Dropdown.Item>Class Representatives</Dropdown.Item>
-              <Dropdown.Item>
-                <Link to={"/students/project-team"}>Project Team</Link>
-              </Dropdown.Item>
+              <Link to={"students/class-representatives"}>
+                <Dropdown.Item>Class Representatives</Dropdown.Item>
+              </Link>
+              <Link to={"/students/project-team"}>
+                <Dropdown.Item>Project Team</Dropdown.Item>
+              </Link>
             </Dropdown>
           </Navbar.Link>
           <Navbar.Link href="/blog">Blog</Navbar.Link>
