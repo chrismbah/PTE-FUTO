@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useFetchBlogPosts } from "../hooks/useFetchBlogPosts";
@@ -10,26 +11,30 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Footer from "../../../../components/footer/Footer";
 import CommentSection from "./comments/CommentSection";
 import { WriteIcon } from "../../../../components/icons/WriteIcon";
-import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
+// import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { useBlogComments } from "../hooks/useBlogComments";
 import PostSkeleton from "./skeleton/PostSkeleton";
 
 export default function BlogPost() {
   const {
     fetchBlogPost,
-    fetchPopularPosts,
-    fetchRelatedPosts,
+    // fetchPopularPosts,
+    // fetchRelatedPosts,
     blogPost,
-    popularPosts,
-    relatedPosts,
+    fetchBlogPosts,
+    blogPosts,
+    blogPostsLoading,
+    blogPostsError,
+    // popularPosts,
+    // relatedPosts,
     blogPostLoading,
     blogPostError,
-    popularPostsLoading,
-    popularPostsError,
-    relatedPostsLoading,
-    relatedPostsError,
+    // popularPostsLoading,
+    // popularPostsError,
+    // relatedPostsLoading,
+    // relatedPostsError,
   } = useFetchBlogPosts();
-  const { getUserInfo } = useGetUserInfo();
+  // const { getUserInfo } = useGetUserInfo();
   const { postID, postType } = useParams();
   const { getPostComments } = useBlogComments();
 
@@ -37,20 +42,20 @@ export default function BlogPost() {
     if (postID && postType) {
       try {
         fetchBlogPost(postID);
-        fetchPopularPosts(postID, postType);
-        fetchRelatedPosts(postID, postType);
+        fetchBlogPosts()
+        // fetchPopularPosts(postID, postType);
+        // fetchRelatedPosts(postID, postType);
         getPostComments();
       } finally {
         window.scroll(0, 0);
       }
     }
-    getPostComments();
-    console.log("Debugging");
+    // getPostComments();
   }, [postID]);
 
-  useEffect(() => {
-    getUserInfo();
-  }, []);
+  // useEffect(() => {
+  //   getUserInfo();
+  // }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -96,42 +101,54 @@ export default function BlogPost() {
                 <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
                   Related Posts
                 </h2>
-                {relatedPostsLoading && (
+                {blogPostsLoading && (
                   <Skeleton
                     className="mb-4 h-[110px] sm:h-[130px] md:h-[100px] w-full rounded-lg "
                     count={2}
                   />
                 )}
-                {relatedPostsError ||
-                  (relatedPosts &&
-                    relatedPosts?.length < 1 &&
+                {blogPostsError ||
+                  (blogPosts &&
+                    blogPosts?.length < 1 &&
                     "Something went wrong. Please try again.")}
-                {!relatedPostsLoading &&
-                  !relatedPostsError &&
-                  relatedPosts &&
-                  relatedPosts?.length > 0 && (
-                    <RelatedPosts blogPosts={relatedPosts} />
+                {!blogPostsLoading &&
+                  !blogPostsError &&
+                  blogPosts &&
+                  blogPosts?.length > 0 &&
+                  postID &&
+                  postType && (
+                    <RelatedPosts
+                      blogPosts={blogPosts}
+                      postID={postID}
+                      postType={postType}
+                    />
                   )}
               </div>
               <div className="mb-4 bg-white shadow rounded-lg p-4">
                 <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
                   Popular Posts
                 </h2>
-                {popularPostsLoading && (
+                {blogPostsLoading && (
                   <Skeleton
                     className="mb-4 h-[110px] sm:h-[130px] md:h-[100px] w-full rounded-lg "
                     count={2}
                   />
                 )}
-                {popularPostsError ||
-                  (popularPosts &&
-                    popularPosts?.length < 1 &&
+                {blogPostsError ||
+                  (blogPosts &&
+                    blogPosts?.length < 1 &&
                     "Something went wrong. Please try again.")}
-                {!popularPostsLoading &&
-                  !popularPostsError &&
-                  popularPosts &&
-                  popularPosts?.length > 0 && (
-                    <PopularPosts blogPosts={popularPosts} />
+                {!blogPostsLoading &&
+                  !blogPostsError &&
+                  blogPosts &&
+                  blogPosts?.length > 0 &&
+                  postID &&
+                  postType && (
+                    <PopularPosts
+                      blogPosts={blogPosts}
+                      postID={postID}
+                      postType={postType}
+                    />
                   )}
               </div>
               <CommentSection />

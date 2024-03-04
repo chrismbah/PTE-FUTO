@@ -35,7 +35,7 @@ export default function Blog() {
           )}
           {blogPostsLoading && !blogPosts && !blogPostsError && (
             <div className="w-full h-[70vh] flex items-center justify-center flex-col">
-              <Spinner className="w-4 sm:w-8 md:w-10" />
+              <Spinner className="w-8 sm:w-8 md:w-10" />
               <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-700 mt-2">
                 Loading posts...
               </p>
@@ -43,9 +43,29 @@ export default function Blog() {
           )}{" "}
           {blogPostsError && !blogPostsLoading && !blogPosts && (
             <div className="w-full h-[70vh] flex items-center justify-center flex-col">
-              <BadNetworkIcon className="w-4 sm:w-8 md:w-10" />
-              <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">
-                Sorry couldn't get posts. Please try again.
+              <BadNetworkIcon className="w-10 sm:w-12 md:w-16" />
+              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+                Sorry, could'nt load posts at the moment.{" "}
+                <button
+                  className="underline hover:no-underline text-green1"
+                  onClick={() => window.location.reload()}
+                >
+                  Retry
+                </button>
+              </p>
+            </div>
+          )}
+          {blogPosts && blogPosts.length < 1 && (
+            <div className="w-full h-[70vh] flex items-center justify-center flex-col">
+              <BadNetworkIcon className="w-10 sm:w-12 md:w-16" />
+              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+                Sorry, could'nt load posts at the moment.{" "}
+                <button
+                  className="underline hover:no-underline text-green1"
+                  onClick={() => fetchBlogPosts()}
+                >
+                  Retry
+                </button>
               </p>
             </div>
           )}

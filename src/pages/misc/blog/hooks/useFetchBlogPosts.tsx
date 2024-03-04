@@ -3,10 +3,7 @@
 import { useState } from "react";
 import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { IBlogPost, TBlogPost } from "../../../../models/misc/blog/blogPosts";
-// import { post } from "../../../../data/misc/blog/posts";
 import { db } from "../../../../config/firebase";
-// import { getCurrentDate } from "../../../../helpers/formatDate";
-// import { useNetworkNotifications } from "../../network/useNetworkNotifications";
 import { notifyUser } from "../../../../helpers/notifyUser";
 
 export const useFetchBlogPosts = () => {
@@ -42,9 +39,10 @@ export const useFetchBlogPosts = () => {
       setBlogPosts(list);
       console.log("Blogs fetched");
     } catch (err) {
-      setBlogPostsLoading(false);
       setBlogPostsError(true);
-      notifyUser("error", "Sorry, couldn't get posts. Please try again");
+      notifyUser("error", "An error occured. Please try again");
+      setBlogPostsLoading(false);
+
     }
   };
   const fetchHomeBlogPosts = async () => {
@@ -81,71 +79,71 @@ export const useFetchBlogPosts = () => {
     } catch (error) {
       setBlogPostLoading(false);
       setBlogPostError(true);
-      notifyUser("error", "Sorry, an error occured. Please try again");
+      notifyUser("error", "An error occured. Please try again");
       console.log(error);
     }
   };
-  const fetchRelatedPosts = async (id: string, postType: string) => {
-    setRelatedPostsLoading(true);
-    try {
-      const data = await getDocs(postsRef);
-      const relatedPostList = data.docs
-        .filter((doc) => doc.id !== id && doc.data().postType === postType)
-        .map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        })) as IBlogPost[];
-      setRelatedPosts(relatedPostList);
-      setRelatedPostsLoading(false);
-      console.log("Blogs fetched");
-    } catch (err) {
-      setRelatedPostsLoading(false);
-      setRelatedPostsError(true);
-      console.log("Couldnt fetch related posts");
-    }
-  };
-  const fetchPopularPosts = async (id: string, postType: string) => {
-    setPopularPostsLoading(true);
-    try {
-      const data = await getDocs(postsRef);
-      const popularList = data.docs
-        .filter((doc) => doc.id !== id && doc.data().postType !== postType)
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 3)
-        .map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        })) as IBlogPost[];
-      setPopularPosts(popularList);
-      setPopularPostsLoading(false);
-      console.log("Blogs fetched");
-    } catch (err) {
-      setPopularPostsLoading(false);
-      setPopularPostsError(true);
-      console.log("Couldnt fetch related posts");
-    }
-  };
+  // const fetchRelatedPosts = async (id: string, postType: string) => {
+  //   setRelatedPostsLoading(true);
+  //   try {
+  //     const data = await getDocs(postsRef);
+  //     const relatedPostList = data.docs
+  //       .filter((doc) => doc.id !== id && doc.data().postType === postType)
+  //       .map((doc) => ({
+  //         ...doc.data(),
+  //         id: doc.id,
+  //       })) as IBlogPost[];
+  //     setRelatedPosts(relatedPostList);
+  //     setRelatedPostsLoading(false);
+  //     console.log("Blogs fetched");
+  //   } catch (err) {
+  //     setRelatedPostsLoading(false);
+  //     setRelatedPostsError(true);
+  //     console.log("Couldnt fetch related posts");
+  //   }
+  // };
+  // const fetchPopularPosts = async (id: string, postType: string) => {
+  //   setPopularPostsLoading(true);
+  //   try {
+  //     const data = await getDocs(postsRef);
+  //     const popularList = data.docs
+  //       .filter((doc) => doc.id !== id && doc.data().postType !== postType)
+  //       .sort(() => 0.5 - Math.random())
+  //       .slice(0, 3)
+  //       .map((doc) => ({
+  //         ...doc.data(),
+  //         id: doc.id,
+  //       })) as IBlogPost[];
+  //     setPopularPosts(popularList);
+  //     setPopularPostsLoading(false);
+  //     console.log("Blogs fetched");
+  //   } catch (err) {
+  //     setPopularPostsLoading(false);
+  //     setPopularPostsError(true);
+  //     console.log("Couldnt fetch related posts");
+  //   }
+  // };
 
   return {
     blogPosts,
     blogPost,
-    relatedPosts,
-    popularPosts,
+    // relatedPosts,
+    // popularPosts,
     fetchBlogPosts,
     fetchBlogPost,
-    fetchPopularPosts,
-    fetchRelatedPosts,
+    // fetchPopularPosts,
+    // fetchRelatedPosts,
     fetchHomeBlogPosts,
     homeBlogPosts,
     homeBlogPostsError,
     homeBlogPostsLoading,
     blogPostsLoading,
     blogPostLoading,
-    popularPostsLoading,
-    relatedPostsLoading,
+    // popularPostsLoading,
+    // relatedPostsLoading,
     blogPostsError,
     blogPostError,
-    popularPostsError,
-    relatedPostsError,
+    // popularPostsError,
+    // relatedPostsError,
   };
 };

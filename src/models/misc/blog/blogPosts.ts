@@ -35,4 +35,6 @@ export interface ContentBlockProp{
   }
   export interface BlogPostProp {
     blogPosts: IBlogPost[]
+    postID?:string
+    postType?: string
   }

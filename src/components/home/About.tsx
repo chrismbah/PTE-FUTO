@@ -20,7 +20,7 @@ export default function About() {
               <Lottie
                 loop={true}
                 animationData={glasses}
-                className="w-[70px] sm:w-[90px]"
+                className="w-[50px] ss:w-[70px] mmd:w-[90px]"
               />
               <div>
                 <h4 className="text-green1 font-bold text-xs">Our Vision</h4>
@@ -34,7 +34,7 @@ export default function About() {
               <Lottie
                 loop={true}
                 animationData={consultation}
-                className="w-[70px] sm:w-[90px]"
+                className="w-[50px] ss:w-[70px] mmd:w-[90px]"
               />
               <div>
                 <h4 className="text-green1 font-bold text-xs">Our Mission</h4>

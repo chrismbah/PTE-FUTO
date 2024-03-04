@@ -4,8 +4,12 @@
 @tailwind utilities;
 
 *{
-    font-family: "DM Sans";
+    font-family: "DM Sans", sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+/* *::selection{
+    background: green;
+    color:#fff;
+} */
 html{
     scroll-behavior: smooth;
 }
