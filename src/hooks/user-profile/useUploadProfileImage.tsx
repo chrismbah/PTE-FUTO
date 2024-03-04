@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { notifyUser } from "../../helpers/notifyUser";
 import {
   ref,
-  uploadBytesResumable,
+  uploadBytes,
   getDownloadURL,
   deleteObject,
 } from "firebase/storage";
@@ -31,7 +32,6 @@ export const useUploadProfileImage = () => {
     getUserInfo();
   }, [imageURL]);
 
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files && e.target.files[0];
     if (selectedFile && selectedFile.type.startsWith("image/")) {
@@ -54,39 +54,21 @@ export const useUploadProfileImage = () => {
     }
     if (userID) {
       try {
-        notifyUser("success", "Uploading Image");
+        notifyUser("loading", "Uploading Image");
         const userImageRef = ref(
           storage,
           `profile-pictures/${studentDetails?.email}-${userID}/${imageFile.name}`
         );
         setImageFileID(imageFile.name);
-        const uploadTask = uploadBytesResumable(userImageRef, imageFile);
-        uploadTask.on(
-          "state_changed",
-          (snapshot) => {
-            const percentage = Math.round(
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            );
-            setUploadProgress(percentage);
-          },
-          (err) => {
-            setUploadError(err);
-            console.log(err);
-          },
-          async () => {
-            await getDownloadURL(uploadTask.snapshot.ref).then(
-              (downloadURL) => {
-                setImageURL(downloadURL);
-              }
-            );
-          }
-        );
+        await uploadBytes(userImageRef, imageFile);
+        const downloadURL = await getDownloadURL(userImageRef);
+        setImageURL(downloadURL);
         updateUserProfileLink();
-        notifyUser("success", "File Uploaded");
+        notifyUser("success", "Image Uploaded");
         console.log("Image Uploaded");
-      } catch (error) {
-        console.error("Error uploading image:", error);
+      } catch (error:any) {
         notifyUser("error", "Failed to upload image. Please try again.");
+        setUploadError(error)
       }
     }
   };
@@ -99,14 +81,12 @@ export const useUploadProfileImage = () => {
         });
         console.log("Done");
         console.log(imageURL);
+        notifyUser("success", "Image Updated");
         setImageFile(null);
       } catch (err) {
         console.log("Error updating doc");
         notifyUser("error", "Sorry couldn't update profile picture");
       }
-    } else {
-      console.log("COULDN'T UPDATE DOC");
-      console.log(imageFile, imageURL?.length, imageURL);
     }
   };
   const deleteUserProfileImage = async () => {
@@ -123,11 +103,12 @@ export const useUploadProfileImage = () => {
           profileImageID: "",
         });
         setDeletingProfileImage(false);
-        setOpenDeleteProfileImageModal(false)
+        setOpenDeleteProfileImageModal(false);
         notifyUser("success", "Profile picture deleted");
       } catch (err) {
         console.log(err);
         notifyUser("error", "Something went wrong. Please try again");
+        setOpenDeleteProfileImageModal(false);
       }
     } else {
       console.log("Bug!!");
@@ -144,6 +125,7 @@ export const useUploadProfileImage = () => {
     uploadProfileImage,
     handleFileChange,
     updateUserProfileLink,
-    deleteUserProfileImage, deletingProfileImage
+    deleteUserProfileImage,
+    deletingProfileImage,
   };
 };

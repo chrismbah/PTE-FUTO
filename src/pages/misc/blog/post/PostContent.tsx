@@ -16,7 +16,10 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
       );
     } else if (type === "p" && typeof content === "string") {
       return (
-        <p key={i} className="leading-relaxed text-gray-800  text-sm sm:text-base mb-2">
+        <p
+          key={i}
+          className="leading-relaxed text-gray-700  text-sm sm:text-base mb-2"
+        >
           {content}
         </p>
       );
@@ -32,7 +35,12 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
     } else if (type === "img" && typeof content === "string") {
       return (
         <div className="w-full flex items-center justify-center">
-        <img key={i} src={content} alt="no-img" className="my-4 w-full sm:w-[400px] rounded-md" />
+          <img
+            key={i}
+            src={content}
+            alt="no-img"
+            className="my-4 w-full sm:w-[400px] rounded-md"
+          />
         </div>
       );
     } else if (type === "list" && typeof content !== "string") {
@@ -41,18 +49,26 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
           {content.map(({ type, content }, i) => {
             return (
               <li key={i}>
-                {type === "h2" ? 
-                  <h2 className="text-xs sm:text-md font-semibold">-{content}</h2>
-                 : 
-                  type === "p" ? 
-                    <p className=" text-gray-800 text-sm sm:text-base mb-2">
-                      {content}
-                    </p>
-                  : type === "img" && <div className="w-full flex items-center justify-center">
-                  <img key={i} src={content} alt="no-img" className="my-4 w-full sm:w-[400px] rounded-md" />
-          
-                  </div>
-                }
+                {type === "h2" ? (
+                  <h2 className="text-xs sm:text-md font-semibold">
+                    -{content}
+                  </h2>
+                ) : type === "p" ? (
+                  <p className=" text-gray-700 text-sm sm:text-base mb-2">
+                    {content}
+                  </p>
+                ) : (
+                  type === "img" && (
+                    <div className="w-full flex items-center justify-center">
+                      <img
+                        key={i}
+                        src={content}
+                        alt="no-img"
+                        className="my-4 w-full sm:w-[400px] rounded-md"
+                      />
+                    </div>
+                  )
+                )}
               </li>
             );
           })}

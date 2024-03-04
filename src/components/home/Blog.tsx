@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useFetchBlogPosts } from "../../pages/misc/blog/hooks/useFetchBlogPosts";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { BadNetworkIcon } from "../icons/BadNetworkIcon";
+import noBlog from "../../assets/svg/no-blog.svg";
 
 import { useEffect } from "react";
 export default function Blog() {
@@ -26,7 +26,7 @@ export default function Blog() {
             <h2>
               <div className="bar-style" /> Blog
             </h2>
-            <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-4">
+            <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs">
               Check out our Latest Articles and Blogs.
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function Blog() {
                   return (
                     <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
                       <div className="w-full flex flex-col justify-start h-[300px] ss:h-[360px] md:h-[340px] relative">
-                        <div className="w-full h-[180px] ss:h-[210px] md:h-[230px] rounded-lg overflow-hidden mb-4">
+                        <div className="w-full h-[180px] ss:h-[210px] md:h-[230px] rounded-lg overflow-hidden mb-4 bg-gray-100">
                           <img
                             src={sampleImg}
                             alt={title}
@@ -81,19 +81,19 @@ export default function Blog() {
           {homeBlogPostsLoading && (
             <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5 mb-4">
               <div>
-                <Skeleton className="h-[230px] mb-3 rounded-lg w-full" />
+                <Skeleton className="h-[180px] ss:h-[210px] md:h-[230px] mb-3 rounded-lg w-full" />
                 <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
                 <Skeleton className="h-[8px] md:h-[12px] w-[80%] md:w-[65%] mb-1 sm:mb-3" />
                 <Skeleton className="h-[6px] md:h-[10px] w-[100px]" />
               </div>{" "}
               <div>
-                <Skeleton className="h-[230px] mb-3 rounded-lg w-full" />
+                <Skeleton className="h-[180px] ss:h-[210px] md:h-[230px] mb-3 rounded-lg w-full" />
                 <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
                 <Skeleton className="h-[8px] md:h-[12px] w-[80%] md:w-[65%] mb-1 sm:mb-3" />
                 <Skeleton className="h-[6px] md:h-[10px] w-[100px]" />
               </div>{" "}
               <div>
-                <Skeleton className="h-[230px] mb-3 rounded-lg w-full" />
+                <Skeleton className="h-[180px] ss:h-[210px] md:h-[230px] mb-3 rounded-lg w-full" />
                 <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
                 <Skeleton className="h-[8px] md:h-[12px] w-[80%] md:w-[65%] mb-1 sm:mb-3" />
                 <Skeleton className="h-[6px] md:h-[10px] w-[100px]" />
@@ -101,18 +101,38 @@ export default function Blog() {
             </div>
           )}
           {homeBlogPostsError && !homeBlogPostsLoading && (
-            <div className="w-full py-4 flex flex-col items-center justify-center">
-              <BadNetworkIcon className="h-8 sm:h-12" />
-              <p className="text-gray-800 font-[500] text-ss sm:text-sm mmd:text-xs text-center">
-                Sorry, Could'nt load posts at the moment
+            <div className="w-full pb-4 flex flex-col items-center justify-center">
+              <img
+                src={noBlog}
+                alt=""
+                className="max-h-[200px] sm:max-h-[260px]"
+              />
+              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+                Sorry, Could'nt load posts at the moment.{" "}
+                <button
+                  className="underline hover:no-underline text-green1"
+                  onClick={() => fetchHomeBlogPosts()}
+                >
+                  Retry
+                </button>
               </p>
             </div>
           )}{" "}
           {homeBlogPosts && homeBlogPosts.length < 1 && (
-            <div className="w-full py-4 flex flex-col items-center justify-center">
-              <BadNetworkIcon className="h-8 sm:h-12" />
-              <p className="text-gray-800 font-[500] text-ss sm:text-sm mmd:text-xs text-center">
-                Sorry, Could'nt load posts at the moment
+            <div className="w-full pb-4 flex flex-col items-center justify-center">
+              <img
+                src={noBlog}
+                alt=""
+                className="max-h-[200px] sm:max-h-[260px]"
+              />
+              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+                Sorry, Could'nt load posts at the moment.{" "}
+                <button
+                  className="underline hover:no-underline text-green1"
+                  onClick={() => fetchHomeBlogPosts()}
+                >
+                  Retry
+                </button>
               </p>
             </div>
           )}

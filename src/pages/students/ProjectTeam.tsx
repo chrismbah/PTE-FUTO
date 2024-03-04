@@ -14,7 +14,7 @@ export default function ProjectTeam() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
-        <div className="px-3 sm:px-14 pt-[90px] sm:pt-[115px] sm:pb-10">
+        <div className="px-3 py-20 sm:px-10 lg:px-12 sm:py-24">
           <div className="flex items-center justify-center flex-col">
             <h2>
               <div className="bar-style" />
@@ -60,16 +60,14 @@ export default function ProjectTeam() {
                 <p className="text-gray-700 text-ss sm:text-sm font-semibold mb-4">
                   400 Level
                 </p>
-                <div className="flex items-center justify-center mb-2 w-full gap-1.5">
-                  <Lottie
-                    animationData={dev}
-                    loop={false}
-                    className="w-[18px] ss:w-[20px] -mt-1"
-                  />
-                  <p className=" font-semibold text-ss ss:text-sm sm:text-xs">
+                  <p className=" font-semibold text-ss ss:text-sm sm:text-xs mb-2">
+                    <Lottie
+                      animationData={dev}
+                      loop={false}
+                      className="w-[17px] ss:w-[20px] -mb-0.5 inline-block"
+                    />{" "}
                     Software Engineer · Web Developer
                   </p>
-                </div>
                 <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-4 pb-12 sm:pb-8">
                   <Link to="mailto:mbahchris46@gmail.com">
                     <div className="flex gap-1 items-center">

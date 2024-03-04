@@ -34,9 +34,9 @@ export default function Nav() {
     <nav className="">
       <Navbar
         fluid
-        rounded
+        // rounded
         theme={customNavTheme}
-        className="fixed w-full shadow-sm z-[9999]"
+        className="fixed w-full shadow-sm z-[9]"
       >
         <Navbar.Brand href="/" className="md:w-[30%] w-[50%]">
           <div className="flex ">
@@ -45,7 +45,7 @@ export default function Nav() {
               className="mr-1 sm:mr-3 h-10 ss:h-14 sm:h-16"
               alt="PTE Logo"
             />
-            <div className=" w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base lg:text-lg font-[900]">
+            <div className="text-black w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base lg:text-lg font-[900]">
               Polymer and Textile Engineering, FUTO
             </div>
           </div>
@@ -86,10 +86,15 @@ export default function Nav() {
                   </span>
                 </Dropdown.Header>
                 <Link to={"/dashboard"}>
-                  <Dropdown.Item>Dashboard <DashboardIcon className="ml-1 w-5" /></Dropdown.Item>
+                  <Dropdown.Item>
+                    Dashboard <DashboardIcon className="ml-1 w-5" />
+                  </Dropdown.Item>
                 </Link>
                 <Link to="/profile">
-                  <Dropdown.Item> Profile <ProfileIcon className="ml-1 w-3 -mt-0.5" /></Dropdown.Item>
+                  <Dropdown.Item>
+                    {" "}
+                    Profile <ProfileIcon className="ml-1 w-3 -mt-0.5" />
+                  </Dropdown.Item>
                 </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
@@ -117,20 +122,20 @@ export default function Nav() {
                     {studentDetails && email}
                   </span>
                 </Dropdown.Header>
-                <Dropdown.Item>
-                  <Link to={"/dashboard"} className="w-full text-left">
-                    Dashboard
-                  </Link>{" "}
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  {" "}
-                  <Link to={"/profile"} className="w-full text-left">
-                    Profile
-                  </Link>{" "}
-                </Dropdown.Item>
+                <Link to={"/dashboard"}>
+                  <Dropdown.Item>
+                    Dashboard <DashboardIcon className="ml-1 w-5" />
+                  </Dropdown.Item>
+                </Link>
+                <Link to="/profile">
+                  <Dropdown.Item>
+                    {" "}
+                    Profile <ProfileIcon className="ml-1 w-3 -mt-0.5" />
+                  </Dropdown.Item>
+                </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  Sign Out
+                  Sign out <SignOutIcon className="ml-1 w-4" />
                 </Dropdown.Item>
               </Dropdown>
             ) : (

@@ -2,19 +2,19 @@ import Footer from "../../components/footer/Footer";
 export default function PhilosophyAndObjectives() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="2xl:max-w-[1480px] w-full mx-auto">
-        <div className="page-section">
-          <h1 className="text-2xl md:text-3xl font-semibold">
+      <div className="max-w-[1280px] w-full mx-auto flex items-center justify-center px-2">
+        <div className="px-2 sm:px-14 sm:py-10 py-6 my-16 ss:mt-20 sm:my-24 bg-white shadow rounded-lg">
+          <h2 className="">
             {" "}
             <div className="bar-style" />
             Department of Polymer and Textile Engineering, FUTO
-          </h1>
-          <h4 className="mb-6 font-semibold text-md">
+          </h2>
+          <h4 className="mb-4 font-semibold text-base sm:text-md ">
             Philosophy and Objectives
           </h4>
           <div className="mb-5">
-            <h5 className="text-base font-medium text-gray-900">Philosophy</h5>
-            <p className="text-xs text-gray-700 leading-7 mb-5">
+            <h5 className="text-xs sm:text-base font-medium text-green1">Philosophy</h5>
+            <p className="text-sm sm:text-xs text-gray-700 leading-7 mb-5">
               In pursuance of the overall philosophy of the Federal University
               of Technology, Owerri, the Department of Polymer Engineering is
               designed to produce undergraduates who will give a positive thrust
@@ -27,7 +27,7 @@ export default function PhilosophyAndObjectives() {
               human resource development with broader goals of contributing to
               the economic development and growth of the Nation.
             </p>
-            <p className="text-xs text-gray-700 leading-7">
+            <p className="text-sm sm:text-xs text-gray-700 leading-7">
               Finally, the strategy will ensure that the graduate is adequately
               prepared to be socially acceptable and be in a true position to be
               of service to society. The programme of study will be
@@ -42,12 +42,12 @@ export default function PhilosophyAndObjectives() {
             </p>
           </div>
           <div className="mb-5">
-            <h5 className="text-base font-medium text-gray-900">Objectives</h5>
-            <p className="text-xs text-gray-700 leading-7 mb-2">
+            <h5 className="text-xs sm:text-base font-medium text-green1">Objectives</h5>
+            <p className="text-sm sm:text-xs text-gray-700 leading-7 mb-2">
               The principal objectives of the Polymer and Textile Engineering
               Programme include the following:
             </p>
-            <ul className=" space-y-1 text-gray-700 text-xs list-disc list-inside mb-4 leading-7">
+            <ul className=" space-y-2 text-gray-700 text-sm sm:text-xs list-disc list-inside mb-4 leading-7">
               <li>
                 The training of engineers who are capable of meeting the changes
                 of the Nigerian Petrochemical industries, natural gas,
@@ -70,11 +70,11 @@ export default function PhilosophyAndObjectives() {
                 excellence as well as consultancy.
               </li>
             </ul>
-            <p className="text-gray-700 text-xs mb-4 ">
+            <p className="text-gray-700 text-sm sm:text-xs mb-4 leading-7 ">
               The graduate of this programme may expect fulfilling employment
               opportunities in the following Nigerian industrial sectors:
             </p>
-            <ul className=" space-y-1 text-gray-700 text-xs list-disc list-inside mb-4 leading-7">
+            <ul className=" space-y-1 text-gray-700 text-sm sm:text-xs list-disc list-inside mb-4 leading-7">
               <li>Petrochemical/Refineries</li>
               <li>
                 Petroleum and natural gas industries involved in exploration,

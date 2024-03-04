@@ -6,13 +6,13 @@ import AppProvider from "./provider";
 export default function App() {
  
   return (
-    <div className="font-dmSans scroll-smooth">
+    <>
       <ErrorBoundary>
         <AppProvider>
           <AppRoutes />
           <CustomToaster />
         </AppProvider>
       </ErrorBoundary>
-    </div>
+    </>
   );
 }

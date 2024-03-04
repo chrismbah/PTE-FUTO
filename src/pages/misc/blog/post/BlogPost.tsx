@@ -52,7 +52,6 @@ export default function BlogPost() {
     getUserInfo();
   }, []);
 
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width2">
