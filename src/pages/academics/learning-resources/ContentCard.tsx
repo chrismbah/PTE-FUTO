@@ -4,7 +4,7 @@ import { storage } from "../../../config/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Content } from "../../../models/academics/learning-resources";
 import { notifyUser } from "../../../helpers/notifyUser";
-import {Spinner} from "../../../components/loaders/Spinner";
+import { Spinner } from "../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";
 import { FileDownloadIcon } from "../../../components/icons/FileDownloadIcon";
@@ -18,6 +18,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
   const downloadFile = async () => {
     try {
       setFileLoading(true);
+      notifyUser("loading", "Please wait...");
       const url = await getDownloadURL(learningResourcesRef);
       const response = await fetch(url);
       const blob = await response.blob();
@@ -29,19 +30,13 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
       document.body.removeChild(link);
       console.log(blob);
       setFileLoading(false);
+      notifyUser("success", "File Downloading...");
     } catch (error) {
       setFileLoading(false);
       notifyUser("error", "Something went wrong. Pease try again");
     }
   };
 
-  const downloadResources = () => {
-    notifyUser("promise", null, downloadFile(), {
-      loadingMsg: "Please wait...",
-      successMsg: "File Downloading...",
-      errorMsg: "Something went wrong. Please try again",
-    });
-  };
   return (
     <div
       className="w-full h-[100px] sss:h-[140px] border border-gray-300
@@ -63,7 +58,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
               animation="duration-500"
               theme={customTooltipTheme}
             >
-              <button onClick={downloadResources}>
+              <button onClick={downloadFile}>
                 <FileDownloadIcon className="mt-1 w-5 md:w-6" />
               </button>
             </Tooltip>

@@ -3,8 +3,8 @@ import { BlueInfoIcon } from "../components/icons/BlueInfoIcon";
 import { Spinner } from "../components/loaders/Spinner";
 
 export const notifyUser = (
-  state: string | null,
-  message?: string | null,
+  state: "success" | "error" | "info" | "loading",
+  message?: string | null
 ) => {
   if (state === "error") {
     return toast.error(<p className="notification-message">{message}</p>);
