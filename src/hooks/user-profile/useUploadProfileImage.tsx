@@ -26,9 +26,9 @@ export const useUploadProfileImage = () => {
   const [deletingProfileImage, setDeletingProfileImage] = useState(false);
 
   useEffect(() => {
-    if (imageURL) {
-      updateUserProfileLink();
-    }
+    // if (imageURL) {
+    //   updateUserProfileLink();
+    // }
     getUserInfo();
   }, [imageURL]);
 
@@ -63,7 +63,6 @@ export const useUploadProfileImage = () => {
         await uploadBytes(userImageRef, imageFile);
         const downloadURL = await getDownloadURL(userImageRef);
         setImageURL(downloadURL);
-        updateUserProfileLink();
         notifyUser("success", "Image Uploaded");
         console.log("Image Uploaded");
       } catch (error:any) {
@@ -81,7 +80,7 @@ export const useUploadProfileImage = () => {
         });
         console.log("Done");
         console.log(imageURL);
-        notifyUser("success", "Image Updated");
+        // notifyUser("success", "Image Updated");
         setImageFile(null);
       } catch (err) {
         console.log("Error updating doc");
@@ -125,7 +124,7 @@ export const useUploadProfileImage = () => {
     uploadProfileImage,
     handleFileChange,
     updateUserProfileLink,
-    deleteUserProfileImage,
+    deleteUserProfileImage,setImageURL,
     deletingProfileImage,
   };
 };

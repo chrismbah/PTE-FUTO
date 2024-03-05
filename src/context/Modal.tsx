@@ -16,6 +16,7 @@ export default function ModalContextProvider({
   const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
   const [openDeleteProfileImageModal, setOpenDeleteProfileImageModal] =
     useState<boolean>(false);
+  const [openEditProfileModal, setOpenEditProfileModal] = useState<boolean>(false);
 
   const ModalContextValue = {
     openSignOutModal,
@@ -24,6 +25,8 @@ export default function ModalContextProvider({
     setOpenDeleteModal,
     openDeleteProfileImageModal,
     setOpenDeleteProfileImageModal,
+    openEditProfileModal,
+    setOpenEditProfileModal,
   };
   return (
     <ModalContext.Provider value={ModalContextValue}>

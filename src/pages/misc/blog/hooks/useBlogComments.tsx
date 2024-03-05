@@ -57,44 +57,36 @@ export const useBlogComments = () => {
       console.log("Couldnt get comments");
     }
   };
-  const fetchPostComments = async () => {
-    const commentsRef = collection(db, "postsComments");
-    const commentsQuery = query(
-      commentsRef,
-      where("commentPostID", "==", postID)
-    );
-    onSnapshot(commentsQuery, (querySnapshot) => {
-      const updatedComments: IPostComment[] = [];
-      querySnapshot.forEach((doc) => {
-        updatedComments.push({ ...doc.data() } as IPostComment);
-      });
-      setPostComments(updatedComments);
-    });
-  };
-
   const addUserComment = async () => {
     if (userID) {
       if (studentDetails && postID) {
         if (userComment !== "") {
           try {
-            const { firstName, lastName, email } = studentDetails;
+            const {
+              firstName,
+              lastName,
+              email,
+              profileImageID,
+              profileImageURL,
+            } = studentDetails;
             const commentID = uuid();
             const commentInfo: IPostComment = {
               commentPostID: postID,
               commentUserID: userID,
               commentID: commentID,
-              firstName: firstName,
-              lastName: lastName,
-              email: email,
+              firstName,
+              lastName,
+              email,
               comment: userComment,
               time: currentTime,
               date: currentDate,
               timeStamp: new Date(),
+              profileImageID,
+              profileImageURL,
             };
             await setDoc(doc(db, "postsComments", commentID), commentInfo);
             setUserComment("");
-            notifyUser("success", "Comment added successfully!");
-            
+            notifyUser("success", "Comment posted!");
           } catch (err) {
             notifyUser(
               "error",
@@ -102,7 +94,7 @@ export const useBlogComments = () => {
             );
           }
         } else {
-          notifyUser("error", "Please add a comment");
+          notifyUser("info", "Please add a comment");
         }
       } else {
         notifyUser("error", "Something went wrong. Please try again");
@@ -124,7 +116,7 @@ export const useBlogComments = () => {
       try {
         await deleteDoc(doc(commentsRef, commentID));
         notifyUser("success", "Comment deleted.");
-        getPostComments()
+        getPostComments();
         setDeleteCommentLoading(false);
       } catch (err) {
         notifyUser("error", "Could'nt delete comment");
@@ -161,6 +153,5 @@ export const useBlogComments = () => {
     deleteUserComment,
     deleteCommentLoading,
     deleteCommentError,
-    fetchPostComments,
   };
 };

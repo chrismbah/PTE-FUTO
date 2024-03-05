@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from "react";
 import { PostCommentsProp } from "../../../../../models/misc/blog/postComments";
 import userProfile from "../../../../../assets/svg/icons/userProfile.svg";
@@ -27,12 +28,25 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
             date,
             commentUserID,
             commentID,
+            profileImageURL,
           },
           i
         ) => {
           return (
             <div key={i} className="flex items-start pb-1 w-full gap-1 mb-2">
-              <img src={userProfile} alt="profile" className="w-10 sm:w-12" />
+              {profileImageURL && profileImageURL.length > 0 ? (
+                <img
+                  src={profileImageURL}
+                  alt={firstName}
+                  className="w-6 h-6 sm:w-9 sm:h-9 bg-gray-100 rounded-full mr-2 object-cover"
+                />
+              ) : (
+                <img
+                  src={userProfile}
+                  alt={firstName}
+                  className="w-6 h-6 sm:w-9 sm:h-9 mr-2"
+                />
+              )}
               <div className="flex flex-col border-b border-gray-100 pb-2 w-[90%] overflow-x-hidden">
                 <div className="flex items-start justify-between">
                   <div className="flex gap-3 items-center sm:mt-0">
@@ -42,7 +56,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                       </p>
                     </div>
                     <span className="text-xss xxss:text-ss sm:text-sm font-[300] md:text-xss lg:text-ss text-gray-500 sm:pt-0">
-                      • {time}, {date}
+                      • {time} {date}
                     </span>
                   </div>
                   {userID && commentUserID === userID && (

@@ -65,7 +65,7 @@ export default function CTANewsLetter() {
         notifyUser("error", "Something went wrong. Please try again");
       }
     } else {
-      notifyUser("error", "Please login to subscribe to out newsletter");
+      notifyUser("error", "Please login to subscribe to our newsletter");
       navigate("/login");
     }
   };

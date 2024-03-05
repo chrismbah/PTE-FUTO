@@ -89,7 +89,7 @@ h3{
     @apply flex items-center justify-between flex-col-reverse mmd:flex-row gap-6 mmd:gap-12
 }
 .form-error-message{
-    @apply text-xss ss:text-ss text-red-600
+    @apply text-xss ss:text-ss text-red-600 text-left w-full
 }
 .notification-message{
     @apply text-ss ss:text-sm 

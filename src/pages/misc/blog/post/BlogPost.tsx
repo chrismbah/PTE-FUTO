@@ -110,7 +110,7 @@ export default function BlogPost() {
                 {blogPostsError ||
                   (blogPosts &&
                     blogPosts?.length < 1 &&
-                    "Something went wrong. Please try again.")}
+                     <p>Something went wrong. Please try again.</p> )}
                 {!blogPostsLoading &&
                   !blogPostsError &&
                   blogPosts &&

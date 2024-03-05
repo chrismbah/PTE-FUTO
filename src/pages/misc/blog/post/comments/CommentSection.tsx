@@ -30,13 +30,19 @@ export default function CommentSection() {
       <h2 className="text-base sm:text-md md:text-lg font-semibold mb-2 text-green1">
         Comments
       </h2>
-      <div className="flex justify-start items-start gap-1">
-        <img src={userProfile} alt="user" className="w-10 sm:w-12" />
+      <div className="flex justify-between items-start gap-1">
+        <div className="w-10 h-10 sm:w-14 sm:h-14 -ml-1">
+          <img
+            src={userProfile}
+            alt="user"
+            className="h-full w-full "
+          />
+        </div>
         <textarea
           maxLength={180}
           value={userComment}
           onChange={(e) => setUserComment(e.target.value)}
-          className="w-full h-12 sm:h-16 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-[12px]
+          className="w-full h-10 sm:h-12 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-[12px]
              focus:border-green2 border border-gray-400 placeholder:text-gray-300 focus:ring-0  
              placeholder:font-normal placeholder:text-ss sm:placeholder:text-sm rounded-lg resize-none"
           placeholder="Write your thoughts here..."

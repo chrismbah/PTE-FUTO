@@ -48,7 +48,7 @@ export default function useSignUpUser() {
       navigate("/");
       notifyUser(
         "success",
-        "Registeration Successful. Explore and enjoy your stay."
+        "Sign Up Successful. Explore and Learn."
       );
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {

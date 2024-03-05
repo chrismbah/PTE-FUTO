@@ -22,7 +22,7 @@ export const DeleteProfileImage = () => {
       <div
         className={`${
           openDeleteProfileImageModal ? "block" : "hidden"
-        } z-[999999] bg-black/50 backdrop-blur-sm fixed top-0 right-0 left-0  min-h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}
+        } z-[999] bg-black/50 backdrop-blur-sm fixed top-0 right-0 left-0  min-h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}
       >
         <div className="bg-white rounded-lg px-5 py-7 ss:p-7 md:p-16 text-center relative shadow-4">
           <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 xmd:h-16 xmd:w-16  text-gray-400" />

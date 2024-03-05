@@ -6,7 +6,6 @@ import { useFetchBlogPosts } from "../../pages/misc/blog/hooks/useFetchBlogPosts
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import noBlog from "../../assets/svg/no-blog.svg";
-
 import { useEffect } from "react";
 export default function Blog() {
   const {
