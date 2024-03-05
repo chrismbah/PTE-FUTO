@@ -87,18 +87,18 @@ export default function Nav() {
                 </Dropdown.Header>
                 <Link to={"/dashboard"}>
                   <Dropdown.Item>
-                    Dashboard <DashboardIcon className="ml-1 w-5" />
+                    <DashboardIcon className="ml-1 w-5" /> Dashboard
                   </Dropdown.Item>
                 </Link>
                 <Link to="/profile">
                   <Dropdown.Item>
                     {" "}
-                    Profile <ProfileIcon className="ml-1 w-3 -mt-0.5" />
+                    <ProfileIcon className="ml-1 w-3 -mt-0.5" /> Profile
                   </Dropdown.Item>
                 </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  Sign out <SignOutIcon className="ml-1 w-4" />
+                  <SignOutIcon className="ml-1 w-4" /> Sign out
                 </Dropdown.Item>
               </Dropdown>
             ) : studentDetails ? (
@@ -124,18 +124,18 @@ export default function Nav() {
                 </Dropdown.Header>
                 <Link to={"/dashboard"}>
                   <Dropdown.Item>
-                    Dashboard <DashboardIcon className="ml-1 w-5" />
+                    <DashboardIcon className="ml-1 w-5" /> Dashboard
                   </Dropdown.Item>
                 </Link>
                 <Link to="/profile">
                   <Dropdown.Item>
                     {" "}
-                    Profile <ProfileIcon className="ml-1 w-3 -mt-0.5" />
+                    <ProfileIcon className="ml-1 w-3 -mt-0.5" /> Profile
                   </Dropdown.Item>
                 </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  Sign out <SignOutIcon className="ml-1 w-4" />
+                  <SignOutIcon className="ml-1 w-4" /> Sign out
                 </Dropdown.Item>
               </Dropdown>
             ) : (

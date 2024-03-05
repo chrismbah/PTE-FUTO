@@ -18,16 +18,16 @@ import {
 } from "@material-tailwind/react";
 import { DeleteProfileImage } from "../../components/modal/DeleteProfileImage";
 import { useModalContext } from "../../context/Modal";
-import { Spinner } from "../../components/loaders/Spinner";
-import { BadNetworkIcon } from "../../components/icons/BadNetworkIcon";
+// import { Spinner } from "../../components/loaders/Spinner";
+// import { BadNetworkIcon } from "../../components/icons/BadNetworkIcon";
 import { EditProfileModal } from "../../components/modal/EditProfileModal";
 
 export default function StudentProfile() {
   const {
     getUserInfo,
     studentDetails,
-    gettingStudentDetails,
-    gettingStudentDetailsErr,
+    // gettingStudentDetails,
+    // gettingStudentDetailsErr,
   } = useGetUserInfo();
   const { setOpenDeleteProfileImageModal, setOpenEditProfileModal } =
     useModalContext();
@@ -103,115 +103,115 @@ export default function StudentProfile() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
-        {studentDetails ? (
-          <div className="px-3 sm:px-14 sm:py-[105px] py-20">
-            <div className="w-full flex items-center justify-between flex-col mmd:flex-row gap-4">
-              <div className="flex flex-col xss:flex-row items-center gap-3 w-full mmd:w-fit">
-                {renderProfileImage()}
+        {/* {studentDetails ? ( */}
+        <div className="px-3 sm:px-14 sm:py-[105px] py-20">
+          <div className="w-full flex items-center justify-between flex-col mmd:flex-row gap-4">
+            <div className="flex flex-col xss:flex-row items-center gap-3 w-full mmd:w-fit">
+              {renderProfileImage()}
 
-                <div className="flex flex-col justify-center xss:justify-start mmd:w-full ">
-                  <p className="text-xl ss:text-2xl xsm:text-3xl font-bold text-center xss:text-left">
-                    {studentDetails?.firstName} {studentDetails?.lastName}
-                  </p>
-                  <p className="text-gray-900 sm:text-xs xsm:text-base md:text-md font-semibold capitalize  text-center xss:text-left">
-                    Status:{" "}
-                    {studentDetails?.level == "Aspirant"
-                      ? "Aspirant"
-                      : studentDetails?.level === "Visitor"
-                        ? "Visitor"
-                        : "Student"}
-                  </p>
-                  <div className="flex items-center justify-center xss:justify-start gap-1 sm:gap-2 sm:mt-2">
-                    <div className="rounded-lg bg-gray-200 p-1 sm:p-2">
-                      <CalenderIcon className="w-3 sm:w-5" />
-                    </div>
-                    <p className="text-ss xsm:text-sm mmd:text-xs text-gray-700 font-[500] capitalize">
-                      Joined {studentDetails?.registeredDate}
-                    </p>
+              <div className="flex flex-col justify-center xss:justify-start mmd:w-full ">
+                <p className="text-xl ss:text-2xl xsm:text-3xl font-bold text-center xss:text-left">
+                  {studentDetails?.firstName} {studentDetails?.lastName}
+                </p>
+                <p className="text-gray-900 sm:text-xs xsm:text-base md:text-md font-semibold capitalize  text-center xss:text-left">
+                  Status:{" "}
+                  {studentDetails?.level == "Aspirant"
+                    ? "Aspirant"
+                    : studentDetails?.level === "Visitor"
+                      ? "Visitor"
+                      : "Student"}
+                </p>
+                <div className="flex items-center justify-center xss:justify-start gap-1 sm:gap-2 sm:mt-2">
+                  <div className="rounded-lg bg-gray-200 p-1 sm:p-2">
+                    <CalenderIcon className="w-3 sm:w-5" />
                   </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center w-full mmd:w-fit">
-                <div className="flex items-center w-full">
-                  <button
-                    onClick={() => setOpenEditProfileModal(true)}
-                    className="p-3 rounded-lg bg-green1 text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out hover:text-black"
-                  >
-                    Edit Profile
-                  </button>
+                  <p className="text-ss xsm:text-sm mmd:text-xs text-gray-700 font-[500] capitalize">
+                    Joined {studentDetails?.registeredDate}
+                  </p>
                 </div>
               </div>
             </div>
-            <div className=" mt-5">
-              <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3">
-                Contact Information
-              </h1>
-              <div className="flex items-center gap-2 sm:gap-4 ">
-                <div className="rounded-lg bg-gray-200 p-2">
-                  <EmailIcon className="w-5 sm:w-8" />
-                </div>
-                <div className="flex flex-col items-center">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
-                    Email
-                  </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 break-all">
-                    {studentDetails?.email}
-                  </p>
-                </div>
-              </div>{" "}
-              <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3 sm:mt-6 mt-9">
-                Academic Information
-              </h1>
-              <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
-                <div className="rounded-lg bg-gray-200 p-2">
-                  <GraduateCapIcon className="w-5 sm:w-8" />
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
-                    Department
-                  </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600">
-                    Polymer and Textile Engineering
-                  </p>
-                </div>
-              </div>{" "}
-              <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
-                <div className="rounded-lg bg-gray-200 p-2">
-                  <ClockIcon className="w-5 sm:w-8" />
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
-                    Level
-                  </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
-                    {studentDetails.level === "Visitor" ||
-                    studentDetails.level === "Aspirant"
-                      ? "None"
-                      : studentDetails.level}
-                  </p>
-                </div>
-              </div>{" "}
-              <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
-                <div className="rounded-lg bg-gray-200 p-2">
-                  <RegisterIcon className="w-5 sm:w-8" />
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
-                    Matriculation Number
-                  </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
-                    {studentDetails?.regNo || "None"}
-                  </p>
-                </div>
-              </div>{" "}
+            <div className="flex items-center justify-center w-full mmd:w-fit">
+              <div className="flex items-center w-full">
+                <button
+                  onClick={() => setOpenEditProfileModal(true)}
+                  className="p-3 rounded-lg bg-green1 text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out hover:text-black"
+                >
+                  Edit Profile
+                </button>
+              </div>
             </div>
-            {/* <div className="flex items-center w-full justify-end">
+          </div>
+          <div className=" mt-5">
+            <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3">
+              Contact Information
+            </h1>
+            <div className="flex items-center gap-2 sm:gap-4 ">
+              <div className="rounded-lg bg-gray-200 p-2">
+                <EmailIcon className="w-5 sm:w-8" />
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  Email
+                </p>
+                <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 break-all">
+                  {studentDetails?.email}
+                </p>
+              </div>
+            </div>{" "}
+            <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3 sm:mt-6 mt-9">
+              Academic Information
+            </h1>
+            <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
+              <div className="rounded-lg bg-gray-200 p-2">
+                <GraduateCapIcon className="w-5 sm:w-8" />
+              </div>
+              <div className="flex flex-col">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  Department
+                </p>
+                <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600">
+                  Polymer and Textile Engineering
+                </p>
+              </div>
+            </div>{" "}
+            <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
+              <div className="rounded-lg bg-gray-200 p-2">
+                <ClockIcon className="w-5 sm:w-8" />
+              </div>
+              <div className="flex flex-col">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  Level
+                </p>
+                <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
+                  {studentDetails?.level === "Visitor" ||
+                  studentDetails?.level === "Aspirant"
+                    ? "None"
+                    : studentDetails?.level}
+                </p>
+              </div>
+            </div>{" "}
+            <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
+              <div className="rounded-lg bg-gray-200 p-2">
+                <RegisterIcon className="w-5 sm:w-8" />
+              </div>
+              <div className="flex flex-col">
+                <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  Matriculation Number
+                </p>
+                <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
+                  {studentDetails?.regNo || "None"}
+                </p>
+              </div>
+            </div>{" "}
+          </div>
+          {/* <div className="flex items-center w-full justify-end">
               <button className="p-3 rounded-lg bg-green1 text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out hover:text-black">
                 Edit Profile
               </button>
             </div> */}
-          </div>
-        ) : gettingStudentDetails ? (
+        </div>
+        {/* ) : gettingStudentDetails ? (
           <div className="w-full h-screen flex items-center justify-center flex-col">
             <Spinner className="w-4 sm:w-8 md:w-10" />
             <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">
@@ -233,7 +233,7 @@ export default function StudentProfile() {
               </p>
             </div>
           )
-        )}
+        )} */}
       </div>
       <DeleteProfileImage />
       <EditProfileModal />

@@ -68,7 +68,10 @@ const AuthenticatedRoutes = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/students/project-team" element={<ProjectTeam />} />
         <Route path="/about/about-us" element={<AboutUs />} />
-        <Route path="/about/philosophy-and-objectives" element={<PhilosophyAndObjectives />} />
+        <Route
+          path="/about/philosophy-and-objectives"
+          element={<PhilosophyAndObjectives />}
+        />
         <Route path="/about/admission" element={<Admission />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
