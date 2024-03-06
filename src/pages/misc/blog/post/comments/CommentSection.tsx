@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import userProfile from "../../../../../assets/svg/icons/userProfile.svg";
@@ -9,6 +10,7 @@ import { Comments } from "./Comments";
 import { useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useGetUserInfo } from "../../../../../hooks/auth/useGetUserInfo";
 
 export default function CommentSection() {
   const { postID } = useParams();
@@ -21,6 +23,8 @@ export default function CommentSection() {
     postCommentsLoading,
     postCommentsError,
   } = useBlogComments();
+  const { studentDetails, user } = useGetUserInfo();
+
   useEffect(() => {
     getPostComments();
   }, [postID]);
@@ -31,12 +35,27 @@ export default function CommentSection() {
         Comments
       </h2>
       <div className="flex justify-between items-start gap-1">
-        <div className="w-10 h-10 sm:w-14 sm:h-14 -ml-1">
-          <img
-            src={userProfile}
-            alt="user"
-            className="h-full w-full "
-          />
+        <div className="w-10 h-10 sm:w-14 sm:h-14 -ml-1 rounded-full">
+          {!user ||
+          (user &&
+            studentDetails &&
+            studentDetails.profileImageURL.length < 1) ? (
+            <img
+              src={userProfile}
+              alt="user"
+              className="h-full w-full object-cover rounded-full"
+            />
+          ) : user &&
+            studentDetails &&
+            studentDetails.profileImageURL.length > 0 ? (
+            <img
+              src={studentDetails.profileImageURL}
+              alt="user"
+              className="h-full w-full "
+            />
+          ) : (
+            <img src={userProfile} alt="user" className="h-full w-full " />
+          )}
         </div>
         <textarea
           maxLength={180}

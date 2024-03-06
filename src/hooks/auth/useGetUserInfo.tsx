@@ -13,7 +13,8 @@ export const useGetUserInfo = () => {
     null
   );
   const [gettingStudentDetails, setGettingStudentDetails] = useState(true);
-  const [gettingStudentDetailsErr, setGettingStudentDetailsErr] = useState(false);
+  const [gettingStudentDetailsErr, setGettingStudentDetailsErr] =
+    useState(false);
   const [user, loading, error] = useAuthState(auth);
   const userID = user?.uid;
   const userInfoRef = collection(db, "userInfo");
@@ -61,7 +62,7 @@ export const useGetUserInfo = () => {
   useEffect(() => {
     //!Important
     getUserInfo();
-  }, [userID]);
+  }, [user]);
 
   return {
     user,

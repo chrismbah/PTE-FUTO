@@ -216,7 +216,7 @@ export default function StudentProfile() {
           </div>
         ) : gettingStudentDetails ? (
           <div className="w-full h-screen flex items-center justify-center flex-col">
-            <Spinner className="w-4 sm:w-8 md:w-10" />
+            <Spinner className="w-8 sm:w-10" />
             <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">
               Please wait...
             </p>

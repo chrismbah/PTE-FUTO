@@ -71,33 +71,129 @@ export default function Admission() {
               and defended by each student.
             </li>
           </ol>
+          <div className="mb-4">
+            <p className="text-sm sm:text-xs text-gray-700 leading-7">
+              The following standard terminology shall be used for different
+              categories of courses:
+            </p>
+            <p className="text-sm sm:text-xs text-gray-700 leading-7">
+              <span className="font-semibold text-gray-900">Compulsory:</span>{" "}
+              Courses specified by the Department which a student must take and
+              pass;
+            </p>
+            <p className="text-sm sm:text-xs text-gray-700 leading-7">
+              <span className="font-semibold text-gray-900">Required:</span>{" "}
+              Courses specified by the Department which a student must take but
+              not necessarily pass. Where there is a group of such courses, the
+              department must state the minimum number of units to be passed.
+            </p>
+            <p className="text-sm sm:text-xs text-gray-700 leading-7">
+              <span className="font-semibold text-gray-900">Elective:</span>{" "}
+              Courses specified by the Department from which a student can take
+              in order to make up the required additional units for the award of
+              the degree;
+            </p>
+            <p className="text-sm sm:text-xs text-gray-700 leading-7">
+              <span className="font-semibold text-gray-900">
+                Pre-requisite:
+              </span>{" "}
+              A course whose knowledge is essential prior to take other
+              specified courses;
+            </p>
+            <p className="text-sm sm:text-xs text-gray-700 leading-7">
+              <span className="font-semibold text-gray-900">Concurrent:</span>{" "}
+              Specified courses which must be taken within the same semester,
+              usually pre-requisite courses.
+            </p>
+          </div>
+          <div className="mb-4">
+            <ol className=" space-y-2 list-decimal list-inside text-sm sm:text-xs text-gray-700 leading-7 mb-4">
+              <li>
+                Appropriate pre-requisites and/or concurrent requirements may be
+                prescribed for courses. A pre-requisite requirement is fulfilled
+                by completing and passing the pre-requisite, except that a
+                student who fails a course but obtains at least a specified
+                minimum standard on it shall be deemed to possess the course for
+                pre-requisite courses. Pre-requisite course may also be waived
+                for suitably qualified candidates by the senate on the
+                recommendation of the school Board. A concurrent requirement
+                shall be satisfied if the student has either taken the course on
+                a previous occasion or registered for the course within the same
+                semester.
+              </li>
+              <li>
+                To earn a degree all compulsory courses must be taken and
+                passed.
+              </li>
+              <li>
+                All courses taught during each semester shall be examined at the
+                end of the semester, and candidates will be credited with the
+                number of course units assigned to the course for which they
+                have passed the examinations.
+              </li>{" "}
+              <li>
+                Students shall normally be required to register for a prescribed
+                number of units in each academic year, the number of which shall
+                be approved by Senate on the recommendation of the school Board.
+                Withdrawal from a course will only be permitted during the
+                change of registration period. Thereafter a student who
+                withdraws from a course except for reasons acceptable to the
+                Board will be deemed to have failed the course.
+              </li>{" "}
+            </ol>
+          </div>
+          <h3 className="text-md sm:text-xl md:text-xll font-[600] mb-2">
+            Admission Requirements
+          </h3>
+          <div className="mb-4">
+            <ol className=" space-y-2 list-decimal list-inside text-sm sm:text-xs text-gray-700 leading-7 mb-4">
+              <li>
+                <span className="font-semibold text-gray-900 text-xs sm:text-base">
+                  UTME ENTRY REQUIREMENTS:
+                </span>{" "}
+                SC/GCE Level with credit in five (5) appropriate subjects
+                including Mathematics, English Language, Physics and Chemistry
+                obtained in not more than two sittings of the examination Board
+                (WAEC/NECO). In addition to the above, candidates should have an
+                acceptable pass in UTME of the programme.
+              </li>{" "}
+              <li>
+                <span className="font-semibold text-gray-900 text-xs sm:text-base">
+                  DIRECT ENTRY REQUIREMENTS:
+                </span>{" "}
+                <ol className="space-y-1 list-disc list-inside text-sm sm:text-xs text-gray-700 leading-7 mb-4">
+                  <li>
+                    Holders of OND (ND) certificates with a minimum of Upper
+                    Credit pass are eligible for admission in the year 2 course.
+                    Holders of HND with a minimum of Upper Credit pass are
+                    eligible for admission in year 3 depending on the
+                    appropriateness of their requisites academic preparation.
+                  </li>
+                  <li>
+                    In addition to fulfilling the above requirements, a holder
+                    of OND (ND) and/or HND must also have five SC/GCE ‘O’ Level
+                    Credit passes which must include English Language,
+                    Mathematics, Physics and Chemistry.
+                  </li>{" "}
+                  <li>
+                    Holders of A level passes in three papers (Chemistry,
+                    Physics, Mathematics or Further Mathematics) in not more
+                    than two sittings can be admitted into the second year
+                    directly but must also meet the ‘O’ level credit
+                    requirements.
+                  </li>
+                </ol>
+              </li>{" "}
+            </ol>
+          </div>
+          <h3 className="text-md sm:text-xl md:text-xll font-[600] mb-2">
+            Duration of Programme
+          </h3>
           <p className="text-sm sm:text-xs text-gray-700 leading-7">
-            The following standard terminology shall be used for different
-            categories of courses:
-          </p>
-          <p className="text-sm sm:text-xs text-gray-700 leading-7">
-            <span className="font-semibold text-gray-900">Compulsory:</span> Courses specified
-            by the Department which a student must take and pass;
-          </p>
-          <p className="text-sm sm:text-xs text-gray-700 leading-7">
-            <span className="font-semibold text-gray-900">Required:</span> Courses specified
-            by the Department which a student must take but not necessarily
-            pass. Where there is a group of such courses, the department must
-            state the minimum number of units to be passed.
-          </p>
-          <p className="text-sm sm:text-xs text-gray-700 leading-7">
-            <span className="font-semibold text-gray-900">Elective:</span> Courses specified
-            by the Department from which a student can take in order to make up
-            the required additional units for the award of the degree;
-          </p>
-          <p className="text-sm sm:text-xs text-gray-700 leading-7">
-            <span className="font-semibold text-gray-900">Pre-requisite:</span> A course whose
-            knowledge is essential prior to take other specified courses;
-          </p>
-          <p className="text-sm sm:text-xs text-gray-700 leading-7">
-            <span className="font-semibold text-gray-900">Concurrent:</span> Specified courses
-            which must be taken within the same semester, usually pre-requisite
-            courses.
+            Candidates admitted through UTME will spend a minimum of five
+            academic sessions. Direct entry candidates will, however, spend a
+            minimum of four or three academic sessions depending on their entry
+            certificate.
           </p>
         </div>
       </div>
