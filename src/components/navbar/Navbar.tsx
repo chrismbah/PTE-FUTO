@@ -57,7 +57,7 @@ export default function Nav() {
               className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
             />
           ) : user ? (
-            studentDetails && studentDetails.profileImageURL.length > 1 ? (
+            studentDetails && studentDetails.profileImageURL.length > 0 ? (
               <Dropdown
                 arrowIcon={false}
                 inline
@@ -87,18 +87,18 @@ export default function Nav() {
                 </Dropdown.Header>
                 <Link to={"/dashboard"}>
                   <Dropdown.Item>
-                    <DashboardIcon className="ml-1 w-5" /> Dashboard
+                    <DashboardIcon className="mr-1 -ml-0.5 w-5" /> Dashboard
                   </Dropdown.Item>
                 </Link>
                 <Link to="/profile">
                   <Dropdown.Item>
                     {" "}
-                    <ProfileIcon className="ml-1 w-3 -mt-0.5" /> Profile
+                    <ProfileIcon className="mr-1 w-3 -mt-0.5" /> Profile
                   </Dropdown.Item>
                 </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  <SignOutIcon className="ml-1 w-4" /> Sign out
+                  <SignOutIcon className="mr-1 w-4" /> Sign out
                 </Dropdown.Item>
               </Dropdown>
             ) : studentDetails ? (
@@ -124,18 +124,18 @@ export default function Nav() {
                 </Dropdown.Header>
                 <Link to={"/dashboard"}>
                   <Dropdown.Item>
-                    <DashboardIcon className="ml-1 w-5" /> Dashboard
+                    <DashboardIcon className="mr-1 -ml-0.5 w-5" /> Dashboard
                   </Dropdown.Item>
                 </Link>
                 <Link to="/profile">
                   <Dropdown.Item>
                     {" "}
-                    <ProfileIcon className="ml-1 w-3 -mt-0.5" /> Profile
+                    <ProfileIcon className="mr-1 w-3 -mt-0.5" /> Profile
                   </Dropdown.Item>
                 </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  <SignOutIcon className="ml-1 w-4" /> Sign out
+                  <SignOutIcon className="mr-1 w-4" /> Sign out
                 </Dropdown.Item>
               </Dropdown>
             ) : (

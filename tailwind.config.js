@@ -25,6 +25,8 @@ export default {
       'xxss': '300px',
 
       'xss': '358px',
+      
+      'xsss': '390px',
 
       'ss': '450px',
 

@@ -18,22 +18,19 @@ import { IEditProfileForm } from "../../models/student/editProfile";
 import { notifyUser } from "../../helpers/notifyUser";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
+// import { useEditProfile } from "../../hooks/user-profile/useEditProfile";
 
 export const EditProfileModal = () => {
   const { openEditProfileModal, setOpenEditProfileModal } = useModalContext();
   const { studentDetails, getUserInfo, userID } = useGetUserInfo();
-  // const [deletingUserAcct, setDeletingUserAcct] = useState(false);
-  // const [deletingUserAcctError, setDeletingUserAcctError] = useState(false);
   const [editingProfile, setEditingProfile] = useState(false);
-  // const [editingProfileError, setEditingProfileError] = useState(false);
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (openEditProfileModal) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "visible";
-  //   }
-  // }, [openEditProfileModal]);
+  useEffect(() => {
+    if (openEditProfileModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [openEditProfileModal]);
 
   useEffect(() => {
     getUserInfo();
@@ -100,7 +97,7 @@ export const EditProfileModal = () => {
         setImageFile(null);
         reset();
         notifyUser("success", "User profile updated successfully...");
-      } catch (err) {
+      } catch (err: any) {
         console.log(err);
         setEditingProfile(false);
         notifyUser("error", "Something went wrong. Please try again.");
@@ -109,25 +106,6 @@ export const EditProfileModal = () => {
       console.log("error");
     }
   };
-  // const deleteUserAccount = async () => {
-  //   if (!user || !userID) {
-  //     throw new Error("No user currently signed in.");
-  //     return;
-  //   }
-  //   setDeletingUserAcct(true);
-  //   try {
-  //     await deleteUser(user);
-  //     await deleteDoc(doc(db, "userInfo", userID));
-  //     setDeletingUserAcct(false);
-  //     navigate("/");
-  //     notifyUser("success", "Account deleted successfully");
-  //   } catch (err: any) {
-  //     notifyUser("error", "Something went wrong. Please try again");
-  //     setDeletingUserAcct(false);
-  //     setDeletingUserAcctError(err);
-  //     console.log(err);
-  //   }
-  // };
 
   const renderProfileImage = () => {
     if (studentDetails) {
@@ -169,15 +147,13 @@ export const EditProfileModal = () => {
   };
   return (
     <>
-      {/* {studentDetails && ( */}
       <div
         className={`${
           openEditProfileModal ? "block" : "hidden"
-        } z-[99] bg-black/50 backdrop-blur-sm fixed top-0 right-0 left-0  min-h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}
+        } z-[99] bg-black/50 py-10 sss:py-0 backdrop-blur-sm w-full overflow-y-auto min-h-screen fixed top-0 left-0  flex items-center justify-center`}
       >
-        {/* <form onSubmit={handleSubmit(editProfile)}> */}
-        <div className="bg-white rounded-lg  text-center relative shadow-4 w-[90%] xsm:w-[700px]">
-          <div className="w-full flex justify-between items-center p-4 border-b border-b-gray-300">
+        <div className=" bg-white rounded-lg  text-center relative shadow-4 w-[90%] xsm:w-[700px] overflow-y-auto max-h-[85vh]">
+          <div className=" sticky top-0 right-0 z-[999] bg-white rounded-t-lg w-full flex justify-between items-center p-4 border-b border-b-gray-300">
             <h3 className="text-base sm:text-md md:text-lg font-semibold ">
               Edit Your Profile
             </h3>
@@ -185,7 +161,7 @@ export const EditProfileModal = () => {
               className="font-bold p-2 rounded-lg hover:bg-gray-50"
               onClick={closeEditProfileModal}
             >
-              <CancelIcon className="w-4 h-4" />
+              <CancelIcon className="h-3 w-3 xss:w-4 xss:h-4" />
             </button>
           </div>
 
@@ -193,11 +169,8 @@ export const EditProfileModal = () => {
             <div className="flex flex-col sss:flex-row items-center gap-3 w-full mmd:w-fit py-4 px-3 ss:px-5 sss:px-7 ">
               {renderProfileImage()}
               <div className="flex items-center justify-between flex-col w-full ">
-                <p className="w-full text-left block text-xss ss:text-ss sm:text-sm font-medium text-gray-900">
-                  Upload Profile Picture
-                </p>
-                <div className="flex items-center gap-1 ss:gap-4 w-full flex-col ss:flex-row justify-start">
-                  <div className="flex items-center justify-start w-full ss:w-fit">
+                <div className="flex items-center flex-wrap gap-1 ss:gap-1 w-full  justify-center sss:justify-start">
+                  <div className="flex items-center justify-start">
                     <div className="">
                       <input
                         type="file"
@@ -208,38 +181,38 @@ export const EditProfileModal = () => {
                       />
                       <label
                         htmlFor="profile-input"
-                        className="block text-slate-500 py-2 px-4
-                          border border-gray-700 text-ss ss:text-sm font-medium bg-gray-700
-                        text-white hover:bg-gray-700/80 transition hover:border-gray-700/80 cursor-pointer rounded-l-lg"
+                        className="block text-slate-500 p-1.5 xss:py-2 xss:px-4
+                          border border-gray-700 text-sss xss:text-xss sm:text-sm font-medium bg-gray-700
+                        text-white hover:bg-gray-700/80 transition hover:border-gray-700/80 cursor-pointer rounded-l-md xss:rounded-l-lg"
                       >
                         Choose Image
                       </label>
                     </div>
-                    <label className="text-ss ss:text-sm text-slate-500 font-medium py-2 px-4 border border-gray-400 rounded-r-lg">
+                    <label className="text-sss xss:text-xss sm:text-sm text-slate-500 font-medium p-1.5 xss:py-2 xss:px-4 border border-gray-400 rounded-r-md xss:rounded-r-lg">
                       {imageFile ? imageFile.name : "No file chosen"}
                     </label>
                   </div>
-                  <div className="w-full ss:w-fit">
+                  <div className="">
                     <button
                       onClick={uploadProfileImage}
-                      className="xxss:min-w-[110px] ss:min-w-fit  flex items-center justify-center rounded-lg bg-green1
-                       font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out p-2 hover:text-black text-ss sm:text-sm"
+                      className="min-w-fit  flex items-center justify-center rounded-md xss:rounded-lg bg-green1
+                       font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out p-1.5 xss:py-2 xss:px-4 hover:text-black text-sss xss:text-xss sm:text-sm"
                     >
                       <span>Upload</span>
                     </button>
                   </div>
                 </div>
-                <p
+                {/* <p
                   className="my-1 w-full text-left text-sss ss:text-xss text-gray-500 "
                   id="file_input_help"
                 >
                   PNG, JPG or WEBP Potrait Image.
-                </p>
+                </p> */}
               </div>
             </div>
-            <div className="px-3 ss:px-5 sss:px-7 mb-4">
+            <div className="px-3 ss:px-5 sss:px-7 mb-4 sm:mb-7">
               <form onSubmit={handleSubmit(editProfile)}>
-                <div className="flex items-center justify-between flex-col sss:flex-row gap-4 sss:gap-7 mb-2 sss:mb-3">
+                <div className="flex items-center justify-between flex-col ss:flex-row gap-4 sm:gap-7 mb-4 sm:mb-3">
                   <div className="w-full sss:basis-1/2">
                     <label
                       htmlFor="firstName"
@@ -250,7 +223,7 @@ export const EditProfileModal = () => {
                     <input
                       type="text"
                       id=""
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 "
                       placeholder="eg. Chris"
                       {...register("firstName")}
                     />
@@ -270,7 +243,7 @@ export const EditProfileModal = () => {
                     <input
                       type="text"
                       id=""
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 "
                       placeholder="eg. Mbah"
                       {...register("lastName")}
                     />
@@ -281,7 +254,7 @@ export const EditProfileModal = () => {
                     )}
                   </div>
                 </div>
-                <div className="flex items-center justify-between flex-col sss:flex-row gap-4 sss:gap-7 mb-2 sss:mb-3">
+                <div className="flex items-center justify-between flex-col ss:flex-row gap-4 sm:gap-7 mb-4 sm:mb-3">
                   <div className="w-full sss:basis-1/2">
                     <label
                       htmlFor="regNo"
@@ -293,7 +266,7 @@ export const EditProfileModal = () => {
                       type="number"
                       id=""
                       placeholder="eg. 20191129201"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       {...register("regNo")}
                     />
                   </div>
@@ -306,7 +279,7 @@ export const EditProfileModal = () => {
                     </label>
                     <select
                       id="underline_select"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       {...register("level")}
                     >
                       <option selected disabled>
@@ -351,17 +324,17 @@ export const EditProfileModal = () => {
                 </button>
               </div>
             </div> */}
-          <div className="w-full flex items-center flex-col sss:flex-row justify-between gap-2 p-3 ss:p-5 sss:p-7">
+          <div className="w-full flex items-center flex-col sss:flex-row justify-between gap-2 px-3 ss:px-5 sss:px-7 pb-3 ss:pb-5 sss:pb-7">
             <button
               onClick={closeEditProfileModal}
-              className="w-full border border-gray-300 rounded-lg font-semibold font-xs p-2 hover:bg-gray-100"
+              className="w-full border border-gray-300 rounded-lg font-semibold text-sm sm:text-xs p-2 hover:bg-gray-100"
             >
               Close
             </button>
             <button
               type="submit"
               onClick={handleSubmit(editProfile)}
-              className="w-full bg-green1 rounded-lg font-semibold font-xs p-2 text-white"
+              className="w-full bg-green1 rounded-lg font-semibold text-sm sm:text-xs p-2 text-white"
             >
               {editingProfile ? (
                 <Spinner className="w-5 h-5 fill-white" />
@@ -372,7 +345,6 @@ export const EditProfileModal = () => {
           </div>
         </div>
       </div>
-      {/* )} */}
     </>
   );
 };

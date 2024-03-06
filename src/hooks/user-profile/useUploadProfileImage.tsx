@@ -65,9 +65,9 @@ export const useUploadProfileImage = () => {
         setImageURL(downloadURL);
         notifyUser("success", "Image Uploaded");
         console.log("Image Uploaded");
-      } catch (error:any) {
+      } catch (error: any) {
         notifyUser("error", "Failed to upload image. Please try again.");
-        setUploadError(error)
+        setUploadError(error);
       }
     }
   };
@@ -116,6 +116,7 @@ export const useUploadProfileImage = () => {
 
   return {
     setImageFile,
+    setImageFileID,
     imageFile,
     imageURL,
     uploadProgress,
@@ -124,7 +125,8 @@ export const useUploadProfileImage = () => {
     uploadProfileImage,
     handleFileChange,
     updateUserProfileLink,
-    deleteUserProfileImage,setImageURL,
+    deleteUserProfileImage,
+    setImageURL,
     deletingProfileImage,
   };
 };
