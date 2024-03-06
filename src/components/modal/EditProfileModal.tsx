@@ -150,9 +150,9 @@ export const EditProfileModal = () => {
       <div
         className={`${
           openEditProfileModal ? "block" : "hidden"
-        } z-[99] bg-black/50 py-10 sss:py-0 backdrop-blur-sm w-full overflow-y-auto min-h-screen fixed top-0 left-0  flex items-center justify-center`}
+        } z-[99] bg-black/50 sss:py-0 backdrop-blur-sm w-full overflow-y-auto min-h-screen fixed top-0 left-0  flex items-center justify-center`}
       >
-        <div className=" bg-white rounded-lg  text-center relative shadow-4 w-[90%] xsm:w-[700px] overflow-y-auto max-h-[85vh]">
+        <div className=" bg-white rounded-lg  text-center relative shadow-4 w-[95%] xsm:w-[700px] overflow-y-auto max-h-[85vh]">
           <div className=" sticky top-0 right-0 z-[999] bg-white rounded-t-lg w-full flex justify-between items-center p-4 border-b border-b-gray-300">
             <h3 className="text-base sm:text-md md:text-lg font-semibold ">
               Edit Your Profile
@@ -324,7 +324,7 @@ export const EditProfileModal = () => {
                 </button>
               </div>
             </div> */}
-          <div className="w-full flex items-center flex-col sss:flex-row justify-between gap-2 px-3 ss:px-5 sss:px-7 pb-3 ss:pb-5 sss:pb-7">
+          <div className="w-full flex items-center flex-col xxss:flex-row justify-between gap-2 px-3 ss:px-5 sss:px-7 pb-9 ss:pb-7 sss:pb-7">
             <button
               onClick={closeEditProfileModal}
               className="w-full border border-gray-300 rounded-lg font-semibold text-sm sm:text-xs p-2 hover:bg-gray-100"
