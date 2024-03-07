@@ -101,12 +101,12 @@ export default function StudentProfile() {
   };
 
   return (
-    <div className=" bg-gray-50">
+    <div className=" bg-gray-50 min-h-screen">
       <div className="box-width">
         {studentDetails ? (
           <div className="px-3 sm:px-14 sm:py-[105px] py-20">
             <div className="w-full flex items-center justify-between flex-col xsm:flex-row">
-              <div className="flex flex-col xss:flex-row items-center gap-3 w-full ">
+              <div className="flex flex-col xss:flex-row items-center gap-3 w-full xss:basis-2/3 ">
                 {renderProfileImage()}
 
                 <div className="flex flex-col justify-center xss:justify-start xsm:w-full ">
@@ -131,7 +131,7 @@ export default function StudentProfile() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-center mt-2 xss:mt-0 xss:justify-start xsm:justify-end gap-4 w-full xsm:w-full">
+              <div className="xss:basis-1/3 flex items-center justify-center mt-2 xsm:mt-0 xss:justify-start xsm:justify-end gap-4 w-full xsm:w-full">
                 <div className="flex items-center">
                   <button
                     onClick={() => setOpenEditProfileModal(true)}
@@ -217,7 +217,7 @@ export default function StudentProfile() {
         ) : gettingStudentDetails ? (
           <div className="w-full h-screen flex items-center justify-center flex-col">
             <Spinner className="w-8 sm:w-10" />
-            <p className="font-[500] text-sm sm:text-xs md:text-base text-gray-800">
+            <p className=" text-sm sm:text-xs md:text-base font-semibold text-gray-800">
               Please wait...
             </p>
           </div>
@@ -225,7 +225,7 @@ export default function StudentProfile() {
           gettingStudentDetailsErr && (
             <div className="w-full h-[100vh] flex items-center justify-center flex-col">
               <BadNetworkIcon className="w-6 sm:w-10 md:w-16" />
-              <p className="font-[500] text-sm sm:text-xs md:text-xs text-gray-800">
+              <p className=" text-sm sm:text-xs md:text-xs text-gray-800 font-semibold">
                 Something went wrong.{" "}
                 <button
                   className="underline hover:no-underline text-green1"

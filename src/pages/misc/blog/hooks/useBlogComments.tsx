@@ -101,7 +101,7 @@ export const useBlogComments = () => {
       }
     } else {
       navigate("/login");
-      notifyUser("success", "Please login to comment on this post");
+      notifyUser("info", "Please login to comment on this post");
     }
   };
 
