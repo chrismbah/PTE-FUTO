@@ -87,18 +87,25 @@ export default function Nav() {
                 </Dropdown.Header>
                 <Link to={"/dashboard"}>
                   <Dropdown.Item>
-                    <DashboardIcon className="mr-1 -ml-0.5 w-5" /> Dashboard
+                    <div className="flex items-center justify-start">
+                      <DashboardIcon className=" -ml-0.5 w-5" />{" "}
+                      <span>Dashboard</span>
+                    </div>
                   </Dropdown.Item>
                 </Link>
                 <Link to="/profile">
                   <Dropdown.Item>
-                    {" "}
-                    <ProfileIcon className="mr-1 w-3 -mt-0.5" /> Profile
+                    <div className="flex items-center justify-start gap-1">
+                      <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
+                      <span>Profile</span>
+                    </div>{" "}
                   </Dropdown.Item>
                 </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  <SignOutIcon className="mr-1 w-4" /> Sign out
+                  <div className="flex items-center justify-start gap-0.5">
+                    <SignOutIcon className=" w-4" /> <span>Sign Out</span>
+                  </div>
                 </Dropdown.Item>
               </Dropdown>
             ) : studentDetails ? (
@@ -124,18 +131,25 @@ export default function Nav() {
                 </Dropdown.Header>
                 <Link to={"/dashboard"}>
                   <Dropdown.Item>
-                    <DashboardIcon className="mr-1 -ml-0.5 w-5" /> Dashboard
+                    <div className="flex items-center justify-start">
+                      <DashboardIcon className=" -ml-0.5 w-5" />{" "}
+                      <span>Dashboard</span>
+                    </div>
                   </Dropdown.Item>
                 </Link>
                 <Link to="/profile">
                   <Dropdown.Item>
-                    {" "}
-                    <ProfileIcon className="mr-1 w-3 -mt-0.5" /> Profile
+                    <div className="flex items-center justify-start gap-1">
+                      <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
+                      <span>Profile</span>
+                    </div>{" "}
                   </Dropdown.Item>
                 </Link>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                  <SignOutIcon className="mr-1 w-4" /> Sign out
+                  <div className="flex items-center justify-start gap-0.5">
+                    <SignOutIcon className=" w-4" /> <span>Sign Out</span>
+                  </div>
                 </Dropdown.Item>
               </Dropdown>
             ) : (

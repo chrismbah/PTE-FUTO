@@ -9,8 +9,24 @@ import chris from "../../assets/img/team/img6.jpg";
 import { Link } from "react-router-dom";
 import futo from "../../assets/img/gallery/front-gate2.jpg";
 import Footer from "../../components/footer/Footer";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 export default function ProjectTeam() {
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0, },
+  };
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
@@ -25,7 +41,10 @@ export default function ProjectTeam() {
             </h3>
           </div>
           <div className="w-full flex items-center justify-center">
-            <div className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow-xl rounded-lg text-gray-900">
+            <motion.div ref={ref}
+                variants={boxVariant}
+                initial="hidden"
+                animate={control} className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow-xl rounded-lg text-gray-900">
               <div className="rounded-t-lg h-32 w-full overflow-hidden bg-gray-100">
                 <img
                   src={futo}
@@ -119,7 +138,7 @@ export default function ProjectTeam() {
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

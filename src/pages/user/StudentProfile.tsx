@@ -105,8 +105,8 @@ export default function StudentProfile() {
       <div className="box-width">
         {studentDetails ? (
           <div className="px-3 sm:px-14 sm:py-[105px] py-20">
-            <div className="w-full flex items-center justify-between flex-col xsm:flex-row gap-4">
-              <div className="flex flex-col xss:flex-row items-center gap-3 w-full xsm:w-fit">
+            <div className="w-full flex items-center justify-between flex-col xsm:flex-row">
+              <div className="flex flex-col xss:flex-row items-center gap-3 w-full ">
                 {renderProfileImage()}
 
                 <div className="flex flex-col justify-center xss:justify-start xsm:w-full ">
@@ -131,19 +131,19 @@ export default function StudentProfile() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-end w-full xsm:w-fit">
-                <div className="flex items-center w-full">
+              <div className="flex items-center justify-center mt-2 xss:mt-0 xss:justify-start xsm:justify-end gap-4 w-full xsm:w-full">
+                <div className="flex items-center">
                   <button
                     onClick={() => setOpenEditProfileModal(true)}
-                    className="p-3 rounded-lg bg-green1 text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out hover:text-black"
+                    className="p-2 xss:p-3 rounded-lg bg-green1 text-ss xss:text-sm sm:text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out hover:text-black"
                   >
                     Edit Profile
                   </button>
                 </div>
-                <div className="flex items-center w-full">
+                <div className="flex items-center">
                   <button
                     // onClick={() => setOpenEditProfileModal(true)}
-                    className="p-3 w-fu rounded-lg bg-red-500 text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-red-500 transition duration-200 ease-in-out hover:text-red-500"
+                    className="p-2 xss:p-3 rounded-lg bg-red-500 text-ss xss:text-sm sm:text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-red-500 transition duration-200 ease-in-out hover:text-red-500"
                   >
                     Delete Profile
                   </button>
@@ -167,7 +167,7 @@ export default function StudentProfile() {
                   </p>
                 </div>
               </div>{" "}
-              <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3 sm:mt-6 mt-9">
+              <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3 mt-6 sm:mt-9">
                 Academic Information
               </h1>
               <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">

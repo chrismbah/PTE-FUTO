@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function Services() {
   const boxVariant = {
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
     hidden: { opacity: 0, scale: 0, },
   };
   const control = useAnimation();

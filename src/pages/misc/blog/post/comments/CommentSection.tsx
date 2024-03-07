@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import userProfile from "../../../../../assets/svg/icons/userProfile.svg";
 import { PaperPlaneIcon } from "../../../../../components/icons/PaperPlaneIcon";
 import { useBlogComments } from "../../hooks/useBlogComments";
 import { Tooltip } from "flowbite-react";
@@ -11,7 +10,8 @@ import { useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useGetUserInfo } from "../../../../../hooks/auth/useGetUserInfo";
-
+import Lottie from "lottie-react";
+import profile from "../../../../../json/animation/avatar1.json";
 export default function CommentSection() {
   const { postID } = useParams();
   const {
@@ -35,15 +35,15 @@ export default function CommentSection() {
         Comments
       </h2>
       <div className="flex justify-between items-start gap-1">
-        <div className="w-10 h-10 sm:w-14 sm:h-14 -ml-1 rounded-full">
+        <div className="w-10 h-10 sm:w-14 sm:h-14 -ml-1 rounded-full overflow-hidden">
           {!user ||
           (user &&
             studentDetails &&
             studentDetails.profileImageURL.length < 1) ? (
-            <img
-              src={userProfile}
-              alt="user"
-              className="h-full w-full object-cover rounded-full"
+            <Lottie
+              animationData={profile}
+              loop={false}
+              className="w-full h-full"
             />
           ) : user &&
             studentDetails &&
@@ -51,10 +51,14 @@ export default function CommentSection() {
             <img
               src={studentDetails.profileImageURL}
               alt="user"
-              className="h-full w-full "
+              className="w-10 h-10 mt-2 object-cover rounded-full"
             />
           ) : (
-            <img src={userProfile} alt="user" className="h-full w-full " />
+            <Lottie
+              animationData={profile}
+              loop={false}
+              className="w-full h-full"
+            />
           )}
         </div>
         <textarea
