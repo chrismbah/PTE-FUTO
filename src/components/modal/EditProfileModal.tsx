@@ -285,7 +285,7 @@ export const EditProfileModal = () => {
                       <option selected disabled>
                         Select Your Level
                       </option>
-                      <option value="aspirant">Aspirant</option>
+                      <option value="Aspirant">Aspirant</option>
                       <option value="100L">100L</option>
                       <option value="200L">200L</option>
                       <option value="300L">300L</option>
@@ -303,27 +303,6 @@ export const EditProfileModal = () => {
               </form>
             </div>
           </div>
-          {/* <div className="px-3 ss:px-5 sss:px-7 mb-3">
-              <h3 className="text-left text-base sm:text-md md:text-lg font-semibold ">
-                Delete your account
-              </h3>
-              <p className="text-gray-700 text-sss sm:text-xss md:text-ss text-left mb-3">
-                Deleting your account will remove all your access to
-                authenticated users. This action cannot be undone.
-              </p>
-              <div className="w-full text-left">
-                <button
-                  onClick={deleteUserAccount}
-                  className="w-[150px] transition duration-200 ease-in-out rounded-lg text-red-500 hover:text-white border border-red-500 bg-red-100 hover:bg-red-500 p-2 font-semibold text-sm"
-                >
-                  {deletingUserAcct ? (
-                    <Spinner className="w-6 h-6 fill-red-500" />
-                  ) : (
-                    "Delete your account"
-                  )}
-                </button>
-              </div>
-            </div> */}
           <div className="w-full flex items-center flex-col xxss:flex-row justify-between gap-2 px-3 ss:px-5 sss:px-7 pb-9 ss:pb-7 sss:pb-7">
             <button
               onClick={closeEditProfileModal}

@@ -29,8 +29,11 @@ export default function StudentProfile() {
     gettingStudentDetails,
     gettingStudentDetailsErr,
   } = useGetUserInfo();
-  const { setOpenDeleteProfileImageModal, setOpenEditProfileModal } =
-    useModalContext();
+  const {
+    setOpenDeleteProfileImageModal,
+    setOpenEditProfileModal,
+    setOpenSignOutModal,
+  } = useModalContext();
 
   useEffect(() => {
     getUserInfo();
@@ -113,7 +116,7 @@ export default function StudentProfile() {
                   <p className="text-xl ss:text-2xl xsm:text-3xl font-bold text-center xss:text-left break-all max-w-full">
                     {studentDetails?.firstName} {studentDetails?.lastName}
                   </p>
-                  <p className="text-gray-900 sm:text-xs xsm:text-base md:text-md font-semibold capitalize  text-center xss:text-left">
+                  <p className="text-gray-900 text-sm sm:text-xs xsm:text-base md:text-md font-semibold capitalize  text-center xss:text-left">
                     Status:{" "}
                     {studentDetails?.level == "Aspirant"
                       ? "Aspirant"
@@ -142,10 +145,10 @@ export default function StudentProfile() {
                 </div>
                 <div className="flex items-center">
                   <button
-                    // onClick={() => setOpenEditProfileModal(true)}
+                    onClick={() => setOpenSignOutModal(true)}
                     className="p-2 xss:p-3 rounded-lg bg-red-500 text-ss xss:text-sm sm:text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-red-500 transition duration-200 ease-in-out hover:text-red-500"
                   >
-                    Delete Profile
+                    Sign Out
                   </button>
                 </div>
               </div>
