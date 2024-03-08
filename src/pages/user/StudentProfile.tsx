@@ -64,7 +64,7 @@ export default function StudentProfile() {
                     sss:right-1 sm:top-8 sm:right-1 bg-gray-50 hover:bg-gray-100 rounded-full 
                     p-1 border border-gray-100"
                   >
-                    <TrashIcon className="h-3 w-3 sss:h-4 sss:w-4 sm:w-4 sm:h-4" />
+                    <TrashIcon className="w-4 h-4" />
                   </button>
                 </PopoverHandler>
                 <PopoverContent
