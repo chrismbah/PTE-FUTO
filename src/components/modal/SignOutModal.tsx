@@ -19,6 +19,7 @@ export const SignOutModal = () => {
   return (
     <>
       <div
+        onClick={() => setOpenSignOutModal(false)}
         className={`${
           openSignOutModal ? "block" : "hidden"
         } z-[999999] bg-black/50 backdrop-blur-sm fixed top-0 right-0 left-0  min-h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}

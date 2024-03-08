@@ -3,7 +3,7 @@ import DashboardNavbar from "../../../components/navbar/DashboardNavbar";
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../../components/icons/BadNetworkIcon";
 import search from "../../../assets/svg/search.svg";
@@ -62,14 +62,14 @@ export default function Dashboard() {
                         </p>
                       </div>
                     </div>
-                    <Link
+                    <NavLink
                       to="/profile"
                       className="flex items-center justify-center"
                     >
                       <button className="w-full text-sm sm:text-xs transition duration-200 ease-in-out rounded-b-lg bg-gray-100 hover:bg-gray-200 text-gray-600 p-3 font-semibold">
                         Check Profile
                       </button>
-                    </Link>
+                    </NavLink>
                   </div>
                   <div className="details bg-white shadow px-4 py-6 rounded-lg w-full lg:h-fit ">
                     <div className="flex items-center justify-between flex-col h-full">
@@ -126,7 +126,7 @@ export default function Dashboard() {
                 <div className="lg:col-span-5 px-4 h-full">
                   <div className="mb-4">
                     <div className="grid sss:grid-cols-2 lg:grid-cols-3 gap-4 ">
-                      <Link to="/calculate-gpa">
+                      <NavLink to="/dashboard/calculate-gpa">
                         <div className="w-full min-h-[195px] sss:h-[215px] border-2 border-transparent hover:bg-transparent transition duration-200 ease-in-out hover:border-[#f0abfc] rounded-lg p-4 bg-[#f0abfc] flex gap-6 flex-col items-center justify-center">
                           <CalculatorIcon
                             className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
@@ -136,8 +136,8 @@ export default function Dashboard() {
                             GPA Calculator
                           </p>
                         </div>
-                      </Link>
-                      <Link to="/course-outlines">
+                      </NavLink>
+                      <NavLink to="/course-outlines">
                         <div className="w-full min-h-[195px] sss:h-[215px] border-2 border-transparent hover:bg-transparent transition duration-200 ease-in-out hover:border-[#bef264]  rounded-lg p-4 bg-[#bef264] flex gap-6 flex-col items-center justify-center">
                           <BooksIcon
                             className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
@@ -147,8 +147,8 @@ export default function Dashboard() {
                             Course Outlines
                           </p>
                         </div>
-                      </Link>
-                      <Link to="/learning-resources">
+                      </NavLink>
+                      <NavLink to="/learning-resources">
                         <div className="w-full min-h-[195px] sss:h-[215px] border-2 border-transparent hover:bg-transparent transition duration-200 ease-in-out hover:border-[#93c5fd] rounded-lg p-4 bg-[#93c5fd] flex gap-6 flex-col items-center justify-center">
                           <FilesIcon
                             className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
@@ -158,7 +158,7 @@ export default function Dashboard() {
                             Learning Resources
                           </p>
                         </div>
-                      </Link>
+                      </NavLink>
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-2 mmd:gap-4">

@@ -15,6 +15,8 @@ import { SignOutIcon } from "../icons/nav/SignOutIcon";
 import { DashboardIcon } from "../icons/nav/DashboardIcon";
 import { ProfileIcon } from "../icons/nav/ProfileIcon";
 import { useEffect, useState } from "react";
+import { BurgerIcon } from "../icons/nav/BurgerIcon";
+import { NavLink } from "react-router-dom";
 
 export default function DashboardNavbar() {
   const { studentDetails, user, loading, getUserInfo } = useGetUserInfo();
@@ -38,28 +40,15 @@ export default function DashboardNavbar() {
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   return (
     <>
-      <nav className="w-full fixed top-0 left-0 px-2 py-4 xsm:p-4 bg-white shadow-sm z-10">
+      <nav className="dashboard w-full fixed top-0 left-0 px-2 py-4 xsm:p-4 bg-white shadow-sm z-10">
         <div className="max-w-[1720px] w-full mx-auto">
           <div className="flex items-center flex-between">
             <div className="flex items-center justify-start">
               <button
                 onClick={toggleMenu}
-                className="text-gray-500 w-10 h-10 relative focus:outline-none bg-transparent"
+                className="focus:outline-none bg-transparent mr-2"
               >
-                <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <span
-                    aria-hidden="true"
-                    className={`block absolute h-0.5 w-6 bg-black transform transition duration-500 ease-in-out ${isNavOpen ? "rotate-45" : "-translate-y-1.5"}`}
-                  ></span>
-                  <span
-                    aria-hidden="true"
-                    className={`block absolute  h-0.5 w-6 bg-black transform transition duration-500 ease-in-out ${isNavOpen && "opacity-0"}`}
-                  ></span>
-                  <span
-                    aria-hidden="true"
-                    className={`block absolute  h-0.5 w-6 bg-black transform  transition duration-500 ease-in-out ${isNavOpen ? "-rotate-45" : "translate-y-1.5"}`}
-                  ></span>
-                </div>
+                <BurgerIcon className="w-6 h-6" />
               </button>
 
               <a href="/">
@@ -87,29 +76,16 @@ export default function DashboardNavbar() {
             ></div>
 
             <div
-              className={`dashboard-links p-4 fixed top-0 left-0 w-[250px] sm:w-[280px] h-screen bg-white shadow z-[4] transition duration-500 ease-in-out transform ${
+              className={`dashboard-links px-2 py-4 sm:p-4 fixed top-0 left-0 w-[240px] sm:w-[270px] h-screen bg-white shadow z-[6] transition duration-500 ease-in-out transform ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               }`}
             >
-              <div className="flex items-center justfiy-start gap-2">
+              <div className="flex items-center justfiy-start gap-2 mb-6">
                 <button
                   onClick={toggleMenu}
-                  className="text-gray-500 w-10 h-10 relative focus:outline-none bg-transparent z-[5]"
+                  className="focus:outline-none bg-transparent"
                 >
-                  <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span
-                      aria-hidden="true"
-                      className={`block absolute h-0.5 w-6 bg-black transform transition duration-500 ease-in-out ${isNavOpen ? "rotate-45" : "-translate-y-1.5"}`}
-                    ></span>
-                    <span
-                      aria-hidden="true"
-                      className={`block absolute  h-0.5 w-6 bg-black transform transition duration-500 ease-in-out ${isNavOpen && "opacity-0"}`}
-                    ></span>
-                    <span
-                      aria-hidden="true"
-                      className={`block absolute  h-0.5 w-6 bg-black transform  transition duration-500 ease-in-out ${isNavOpen ? "-rotate-45" : "translate-y-1.5"}`}
-                    ></span>
-                  </div>
+                  <BurgerIcon className="w-6 h-6" />
                 </button>
                 <div className="">
                   <a href="/">
@@ -119,16 +95,54 @@ export default function DashboardNavbar() {
                         className="mr-2 w-8 h-8 ss:w-10 ss:h-10"
                         alt="PTE Logo"
                       />
-                      <div className="mr-2 text-black w-[100%] hidden xsss:block sm:block sm:w-[70%] self-center whitespace-wrap text-xss ss:text-ss lg:text-sm font-[900]">
+                      <div className="mr-2 text-black w-[100%] sm:w-[70%] self-center whitespace-wrap text-xss ss:text-ss lg:text-sm font-[900]">
                         Polymer and Textile <br /> Engineering, FUTO
                       </div>
                     </div>
                   </a>
                 </div>
               </div>
-
-              <div className="font-semibold text-gray-700 uppercase text-sm">
-                <p>Links</p>
+              <div className="mb-4">
+                <p className="font-bold text-gray-700 uppercase text-ss ss:text-sm sm:text-xs">
+                  Links
+                </p>
+              </div>
+              <div className="flex flex-col justify-start gap-2 text-ss ss:text-sm sm:text-xs font-bold text-gray-700">
+                <NavLink
+                  onClick={() => setIsNavOpen(false)}
+                  to="/dashboard"
+                  className={"w-full p-3"}
+                >
+                  Dashboard
+                </NavLink>{" "}
+                <NavLink
+                  onClick={() => setIsNavOpen(false)}
+                  to="/calculate-gpa"
+                  className={"w-full p-3"}
+                >
+                  GPA Calculator
+                </NavLink>{" "}
+                <NavLink
+                  onClick={() => setIsNavOpen(false)}
+                  to="/course-outlines"
+                  className={"w-full p-3"}
+                >
+                  Course Outlines
+                </NavLink>
+                <NavLink
+                  onClick={() => setIsNavOpen(false)}
+                  to="/learning-resources"
+                  className={"w-full p-3"}
+                >
+                  Learning Resources
+                </NavLink>{" "}
+                <NavLink
+                  onClick={() => setIsNavOpen(false)}
+                  to="/profile"
+                  className={"w-full p-3"}
+                >
+                  Profile
+                </NavLink>
               </div>
             </div>
 

@@ -50,13 +50,16 @@ const AuthenticatedRoutes = () => {
         <Route path="/course-outlines" element={<CourseOutline />} />
         <Route path="/course-outlines/:level" element={<CoursesOutline />} />
         <Route path="/course-outlines/:level/:id" element={<CourseInfo />} />
-        <Route path="/learning-resources" element={<LearningResources />} />
+        <Route
+          path={"/learning-resources" || "/dashboard/learning-resources"}
+          element={<LearningResources />}
+        />
         <Route
           path="/learning-resources/:level"
           element={<LearningResourcesCourses />}
         />{" "}
         <Route
-          path="/learning-resources/:level/:id/:courseTitle"
+          path={"/learning-resources/:level/:id/:courseTitle"}
           element={<LearningResourcesContent />}
         />
         <Route path="/blog" element={<Blog />} />
@@ -66,6 +69,7 @@ const AuthenticatedRoutes = () => {
         />
         <Route path="/profile" element={<StudentProfile />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/calculate-gpa" element={<CalculateGPA />} />
         <Route path="/students/project-team" element={<ProjectTeam />} />
         <Route path="/about/about-us" element={<AboutUs />} />
         <Route

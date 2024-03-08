@@ -35,6 +35,8 @@ export default {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
       'xsm': '750px',
+      
+      'xssm': '840px',
 
       'md': '890px',
       // => @media (min-width: 768px) { ... }

@@ -9,7 +9,7 @@ import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 
 export default function Hero() {
   const { user, studentDetails } = useGetUserInfo();
-  
+
   return (
     <div className="home-gray-bg">
       <div className="px-3 xsm:px-14 sm:pt-24 mmd:pt-28 sm:pb-36 py-20 box-width">
@@ -27,11 +27,11 @@ export default function Hero() {
               the latest news, <br className="hidden ss:block" /> and join a
               thriving community of fellow learners.
             </p>
-            <Button theme={customButtonTheme} color="primary" size={"lg"}>
-              <Link to={user && studentDetails  ? "/dashboard" : "/signup"}>
+            <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
+              <Button theme={customButtonTheme} color="primary" size={"lg"}>
                 {user && studentDetails ? "Go to Dashboard" : "Get Started"}
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
           <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[800px]">
             <Lottie loop={false} animationData={heroAnimation} />

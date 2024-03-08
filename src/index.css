@@ -52,7 +52,7 @@ h3{
     @apply text-sm xss:text-xs md:text-base text-gray-800
 }
 .box-width{
-    @apply 2xl:max-w-[1420px] w-full mx-auto
+    @apply 2xl:max-w-[1520px] w-full mx-auto
 }
 .box-width2{
     @apply xl:max-w-[1280px] w-full mx-auto
@@ -106,5 +106,11 @@ h3{
 .heading-p{
     @apply text-gray-800 text-center text-sm xsm:text-xs font-[500]
 }
+.dashboard .active{
+    @apply text-green1 bg-gray-100 rounded-md
+}
+.active{
+    @apply text-green1
 
+}
 
