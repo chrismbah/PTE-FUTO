@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Dropdown, Navbar, Button } from "flowbite-react";
+import { Dropdown, Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
-import { customNavTheme } from "../../themes/customNav";
-import { customDropdownTheme } from "../../themes/customDropdown";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
@@ -27,7 +25,7 @@ export default function DashboardNavbar() {
   const { setOpenSignOutModal } = useModalContext();
   useEffect(() => {
     getUserInfo();
-  }, [studentDetails]);
+  }, [studentDetails, user]);
   return (
     <>
       {/* <Navbar

@@ -95,7 +95,7 @@ export default function SignUp() {
                 <option selected value="" disabled>
                   Select Your Level
                 </option>
-                <option value="aspirant">Aspirant</option>
+                <option value="Aspirant">Aspirant</option>
                 <option value="100L">100L</option>
                 <option value="200L">200L</option>
                 <option value="300L">300L</option>
