@@ -5,7 +5,7 @@ export default function Services() {
   return (
     <div className="home-gray-bg">
       <div className="box-width">
-        <div className="section">
+        <div className="px-3 xsm:px-14 xsm:py-10 xsm:pb-32 py-10">
           <div className="mmd:flex items-center justify-center flex-col">
             <h2>
               {" "}

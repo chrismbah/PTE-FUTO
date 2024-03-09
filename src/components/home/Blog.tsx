@@ -59,7 +59,7 @@ export default function Blog() {
                         </p>
                         <Link
                           to={`/blog/posts/${title}/${id}/${postType}`}
-                          className="font-[500] absolute bottom-0 left-0 underline text-ss ss:text-sm md:text-ss xmd:text-ss xl:text-sm hover:text-green1"
+                          className="font-semibold absolute bottom-0 left-0 underline text-ss ss:text-sm md:text-ss xmd:text-ss xl:text-sm hover:text-green1"
                         >
                           Read More...
                         </Link>

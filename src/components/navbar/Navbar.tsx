@@ -19,7 +19,13 @@ import { useState, useEffect } from "react";
 import { BurgerIcon } from "../icons/nav/BurgerIcon";
 
 export default function Nav() {
-  const { studentDetails, user, loading } = useGetUserInfo();
+  const {
+    studentDetails,
+    user,
+    loading,
+    gettingStudentDetails,
+    gettingStudentDetailsErr,
+  } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
@@ -204,7 +210,7 @@ export default function Nav() {
                   Links
                 </p>
               </div>
-              <div className="w-full flex flex-col justify-start gap-2 text-ss xsm:text-sm font-bold text-gray-700">
+              <div className="w-full flex flex-col justify-start gap-2 text-sm font-bold text-gray-700">
                 <NavLink
                   to={"/"}
                   className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 "
@@ -311,23 +317,23 @@ export default function Nav() {
                 </NavLink>
               </div>
             </div>
-
             {loading ? (
               <Skeleton
                 circle={true}
                 className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
               />
             ) : user ? (
-              studentDetails && studentDetails.profileImageURL.length > 0 ? (
-                <Dropdown
-                  arrowIcon={false}
-                  inline
-                  className="z-[9999] "
-                  label={
-                    <>
+              <Dropdown
+                arrowIcon={false}
+                inline
+                className="z-[9999] "
+                label={
+                  <>
+                    {studentDetails &&
+                    studentDetails.profileImageURL.length > 0 ? (
                       <div
-                        className="h-[29px] w-[29px] sm:h-[33px] sm:w-[33px]  md:h-[36px] md:w-[36px]
-                       rounded-full border border-green1 p-[1px] bg-gray-50"
+                        className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px]  md:h-[36px] md:w-[36px]
+                       rounded-full border bg-gray-100"
                       >
                         <img
                           src={studentDetails.profileImageURL}
@@ -337,90 +343,64 @@ export default function Nav() {
                           className="w-full h-full rounded-full object-cover"
                         />
                       </div>
-                    </>
-                  }
-                >
-                  <Dropdown.Header>
-                    <span className="block text-sm font-[600]">
-                      {studentDetails && firstName} {studentDetails && lastName}
-                    </span>
-                    <span className="block truncate text-sm">
-                      {studentDetails && email}
-                    </span>
-                  </Dropdown.Header>
-                  <Link to={"/dashboard"}>
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start">
-                        <DashboardIcon className=" -ml-0.5 w-5" />{" "}
-                        <span>Dashboard</span>
-                      </div>
-                    </Dropdown.Item>
-                  </Link>
-                  <Link to="/profile">
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start gap-1">
-                        <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
-                        <span>Profile</span>
-                      </div>{" "}
-                    </Dropdown.Item>
-                  </Link>
-                  <Dropdown.Divider />
-                  <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                    <div className="flex items-center justify-start gap-0.5">
-                      <SignOutIcon className=" w-4" /> <span>Sign Out</span>
+                    ) : (
+                      studentDetails && (
+                        <Lottie
+                          animationData={avatar}
+                          loop={false}
+                          className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
+                        />
+                      )
+                    )}
+                  </>
+                }
+              >
+                <Dropdown.Header>
+                  <span className="block text-sm sm:text-xs font-bold text-gray-700">
+                    {studentDetails && firstName} {studentDetails && lastName}
+                  </span>
+                  <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
+                    {studentDetails && email}
+                  </span>
+                </Dropdown.Header>
+                <Link to={"/dashboard"}>
+                  <Dropdown.Item className="group transition duration-200 ease-in-out">
+                    <div className="flex items-center justify-start gap-1">
+                      <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                      <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                        Dashboard
+                      </span>
                     </div>
                   </Dropdown.Item>
-                </Dropdown>
-              ) : studentDetails ? (
-                <Dropdown
-                  arrowIcon={false}
-                  inline
-                  className="z-[9999999]"
-                  label={
-                    <Lottie
-                      animationData={avatar}
-                      loop={false}
-                      className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
-                    />
-                  }
-                >
-                  <Dropdown.Header>
-                    <span className="block text-sm font-[600]">
-                      {studentDetails && firstName} {studentDetails && lastName}
-                    </span>
-                    <span className="block truncate text-sm">
-                      {studentDetails && email}
-                    </span>
-                  </Dropdown.Header>
-                  <Link to={"/dashboard"}>
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start">
-                        <DashboardIcon className=" -ml-0.5 w-5" />{" "}
-                        <span>Dashboard</span>
-                      </div>
-                    </Dropdown.Item>
-                  </Link>
-                  <Link to="/profile">
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start gap-1">
-                        <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
-                        <span>Profile</span>
-                      </div>{" "}
-                    </Dropdown.Item>
-                  </Link>
-                  <Dropdown.Divider />
-                  <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                    <div className="flex items-center justify-start gap-0.5">
-                      <SignOutIcon className=" w-4" /> <span>Sign Out</span>
-                    </div>
+                </Link>
+                <Link to="/profile">
+                  <Dropdown.Item className="group transition duration-200 ease-in-out">
+                    <div className="flex items-center justify-start gap-1">
+                      <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                      <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                        Profile
+                      </span>
+                    </div>{" "}
                   </Dropdown.Item>
-                </Dropdown>
-              ) : (
-                <Skeleton
-                  circle={true}
-                  className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-                />
-              )
+                </Link>
+                <Dropdown.Divider />
+                <Dropdown.Item
+                  onClick={() => setOpenSignOutModal(true)}
+                  className="group transition duration-200 ease-in-out"
+                >
+                  <div className="flex items-center justify-start gap-1">
+                    <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                    <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                      Sign Out
+                    </span>
+                  </div>
+                </Dropdown.Item>
+              </Dropdown>
+            ) : gettingStudentDetails || gettingStudentDetailsErr ? (
+              <Skeleton
+                circle={true}
+                className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
+              />
             ) : (
               <Button
                 theme={customButtonTheme}
@@ -436,206 +416,5 @@ export default function Nav() {
       </nav>
       <SignOutModal />
     </>
-
-    // <nav className="">
-    //   <Navbar
-    //     fluid
-    //     // rounded
-    //     theme={customNavTheme}
-    //     className="fixed w-full shadow-sm z-[9]"
-    //   >
-    //     <Navbar.Brand href="/" className="md:w-[30%] w-[50%]">
-    //       <div className="flex ">
-    //         <img
-    //           src={logo}
-    //           className="mr-1 sm:mr-3 h-10 ss:h-14 sm:h-16"
-    //           alt="PTE Logo"
-    //         />
-    //         <div className="text-black w-[100%] sm:w-[70%] self-center whitespace-wrap text-[10px] xss:text-[13px] ss:text-base lg:text-lg font-[900]">
-    //           Polymer and Textile Engineering, FUTO
-    //         </div>
-    //       </div>
-    //     </Navbar.Brand>
-    //     <div className="flex md:order-2">
-    //       {loading ? (
-    //         <Skeleton
-    //           circle={true}
-    //           className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-    //         />
-    //       ) : user ? (
-    //         studentDetails && studentDetails.profileImageURL.length > 0 ? (
-    //           <Dropdown
-    //             arrowIcon={false}
-    //             inline
-    //             className="z-[9999999] "
-    //             label={
-    //               <>
-    //                 <div
-    //                   className="h-[34px] w-[34px] md:h-[36px] md:w-[36px] bg-gray-200
-    //                    rounded-full border border-green1 p-[1px]"
-    //                 >
-    //                   <img
-    //                     src={studentDetails.profileImageURL}
-    //                     alt="Profile"
-    //                     className="w-full h-full rounded-full object-cover"
-    //                   />
-    //                 </div>
-    //               </>
-    //             }
-    //           >
-    //             <Dropdown.Header>
-    //               <span className="block text-sm font-[600]">
-    //                 {studentDetails && firstName} {studentDetails && lastName}
-    //               </span>
-    //               <span className="block truncate text-sm">
-    //                 {studentDetails && email}
-    //               </span>
-    //             </Dropdown.Header>
-    //             <Link to={"/dashboard"}>
-    //               <Dropdown.Item>
-    //                 <div className="flex items-center justify-start">
-    //                   <DashboardIcon className=" -ml-0.5 w-5" />{" "}
-    //                   <span>Dashboard</span>
-    //                 </div>
-    //               </Dropdown.Item>
-    //             </Link>
-    //             <Link to="/profile">
-    //               <Dropdown.Item>
-    //                 <div className="flex items-center justify-start gap-1">
-    //                   <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
-    //                   <span>Profile</span>
-    //                 </div>{" "}
-    //               </Dropdown.Item>
-    //             </Link>
-    //             <Dropdown.Divider />
-    //             <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-    //               <div className="flex items-center justify-start gap-0.5">
-    //                 <SignOutIcon className=" w-4" /> <span>Sign Out</span>
-    //               </div>
-    //             </Dropdown.Item>
-    //           </Dropdown>
-    //         ) : studentDetails ? (
-    //           <Dropdown
-    //             arrowIcon={false}
-    //             inline
-    //             className="z-[9999999]"
-    //             label={
-    //               <Lottie
-    //                 animationData={avatar}
-    //                 loop={false}
-    //                 className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
-    //               />
-    //             }
-    //           >
-    //             <Dropdown.Header>
-    //               <span className="block text-sm font-[600]">
-    //                 {studentDetails && firstName} {studentDetails && lastName}
-    //               </span>
-    //               <span className="block truncate text-sm">
-    //                 {studentDetails && email}
-    //               </span>
-    //             </Dropdown.Header>
-    //             <Link to={"/dashboard"}>
-    //               <Dropdown.Item>
-    //                 <div className="flex items-center justify-start">
-    //                   <DashboardIcon className=" -ml-0.5 w-5" />{" "}
-    //                   <span>Dashboard</span>
-    //                 </div>
-    //               </Dropdown.Item>
-    //             </Link>
-    //             <Link to="/profile">
-    //               <Dropdown.Item>
-    //                 <div className="flex items-center justify-start gap-1">
-    //                   <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
-    //                   <span>Profile</span>
-    //                 </div>{" "}
-    //               </Dropdown.Item>
-    //             </Link>
-    //             <Dropdown.Divider />
-    //             <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-    //               <div className="flex items-center justify-start gap-0.5">
-    //                 <SignOutIcon className=" w-4" /> <span>Sign Out</span>
-    //               </div>
-    //             </Dropdown.Item>
-    //           </Dropdown>
-    //         ) : (
-    //           <Skeleton
-    //             circle={true}
-    //             className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-    //           />
-    //         )
-    //       ) : (
-    //         <Button
-    //           theme={customButtonTheme}
-    //           color="primary"
-    //           size="md"
-    //           className="focus:outline-none"
-    //         >
-    //           <Link to={"/login"}>Login</Link>
-    //         </Button>
-    //       )}
-
-    //       <Navbar.Toggle className="ml-2 focus:outline-green1 w-9 h-9" />
-    //     </div>
-    //     <Navbar.Collapse className="xmd:block xmd:w-auto z-[99999999]">
-    //       <Navbar.Link href="/" active>
-    //         Home
-    //       </Navbar.Link>
-    //       <Navbar.Link>
-    //         <Dropdown
-    //           arrowIcon={true}
-    //           inline
-    //           label={"About"}
-    //           theme={customDropdownTheme}
-    //         >
-    //           <Link to={"/about/about-us"}>
-    //             <Dropdown.Item>About Us</Dropdown.Item>
-    //           </Link>
-    //           <Link to={"/about/philosophy-and-objectives"}>
-    //             <Dropdown.Item>Philosophy and Objectives</Dropdown.Item>
-    //           </Link>
-    //           <Link to={"/about/admission"}>
-    //             <Dropdown.Item>Admission</Dropdown.Item>
-    //           </Link>
-    //         </Dropdown>
-    //       </Navbar.Link>
-    //       <Navbar.Link>
-    //         <Dropdown
-    //           arrowIcon={true}
-    //           inline
-    //           label={"Academics"}
-    //           theme={customDropdownTheme}
-    //         >
-    //           <Link to={"/calculate-gpa"}>
-    //             <Dropdown.Item>GPA Calculator</Dropdown.Item>
-    //           </Link>
-    //           <Link to={"/course-outlines"}>
-    //             <Dropdown.Item>Course Outlines</Dropdown.Item>
-    //           </Link>
-    //           <Link to={"/learning-resources"}>
-    //             <Dropdown.Item>Learning Resources</Dropdown.Item>
-    //           </Link>
-    //         </Dropdown>
-    //       </Navbar.Link>
-    //       <Navbar.Link>
-    //         <Dropdown
-    //           arrowIcon={true}
-    //           inline
-    //           label={"Students"}
-    //           theme={customDropdownTheme}
-    //         >
-    //           <Link to={"students/class-representatives"}>
-    //             <Dropdown.Item>Class Representatives</Dropdown.Item>
-    //           </Link>
-    //           <Link to={"/students/project-team"}>
-    //             <Dropdown.Item>Project Team</Dropdown.Item>
-    //           </Link>
-    //         </Dropdown>
-    //       </Navbar.Link>
-    //       <Navbar.Link href="/blog">Blog</Navbar.Link>
-    //     </Navbar.Collapse>
-    //   </Navbar>
-    //   <SignOutModal />
-    // </nav>
   );
 }

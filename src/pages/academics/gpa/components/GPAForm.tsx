@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import CourseOptions from "./CourseOptions";
 import { CourseSelected } from "./CourseSelected";
 import { CourseGrades } from "../../../../models/academics/gpa";
 import { useComputeGPA } from "../hooks/useComputeGPA";
-import { useEffect } from "react";
+import { useMemo } from "react";
 
 export default function GPAForm() {
   const {
@@ -21,7 +22,7 @@ export default function GPAForm() {
     computeGPA,
     clearCourseGrades,
   } = useComputeGPA();
-  useEffect(() => {
+  useMemo(() => {
     computeGPA();
   }, [courseGrades]);
   return (
@@ -85,7 +86,7 @@ export default function GPAForm() {
             <CourseOptions />
           </select>
           <input
-            className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
+            className="placeholder:text-ss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             type="text"
             placeholder="eg. PTE 304"
             value={course}
@@ -117,7 +118,7 @@ export default function GPAForm() {
             <option value="8">8</option>
           </select>
           <input
-            className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
+            className="placeholder:text-ss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             type="number"
             placeholder="eg. 4"
             value={unit}
@@ -149,7 +150,7 @@ export default function GPAForm() {
             <option value="F">F</option>
           </select>
           <input
-            className="placeholder:text-xss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
+            className="placeholder:text-ss xss:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             type="text"
             value={grade}
             readOnly
@@ -200,3 +201,6 @@ export default function GPAForm() {
     </div>
   );
 }
+// function useMemo(arg0: () => void, arg1: any[]) {
+//   throw new Error("Function not implemented.");
+// }

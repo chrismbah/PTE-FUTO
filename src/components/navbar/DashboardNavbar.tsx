@@ -18,16 +18,19 @@ import { useEffect, useState } from "react";
 import { BurgerIcon } from "../icons/nav/BurgerIcon";
 import { NavLink } from "react-router-dom";
 
-export default function DashboardNavbar() {
-  const { studentDetails, user, loading, getUserInfo } = useGetUserInfo();
+export const DashboardNavbar = () => {
+  const {
+    studentDetails,
+    user,
+    loading,
+    gettingStudentDetails,
+    gettingStudentDetailsErr,
+  } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
 
   const { setOpenSignOutModal } = useModalContext();
-  useEffect(() => {
-    getUserInfo();
-  }, [studentDetails, user]);
   const [isNavOpen, setIsNavOpen] = useState(false);
   useEffect(() => {
     if (isNavOpen) {
@@ -74,7 +77,6 @@ export default function DashboardNavbar() {
               onClick={toggleMenu}
               className={`fixed top-0 left-0 w-full h-screen bg-black/50 backdrop-blur-sm transition duration-500 transform ${isNavOpen ? "block" : "hidden opacity-0"} z-[3]  `}
             ></div>
-
             <div
               className={`dashboard-links px-2 py-4 sm:p-4 fixed top-0 left-0 w-[240px] sm:w-[270px] h-screen bg-white shadow z-[6] transition duration-500 ease-in-out transform ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
@@ -155,23 +157,23 @@ export default function DashboardNavbar() {
                 </NavLink>
               </div>
             </div>
-
             {loading ? (
               <Skeleton
                 circle={true}
                 className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
               />
             ) : user ? (
-              studentDetails && studentDetails.profileImageURL.length > 0 ? (
-                <Dropdown
-                  arrowIcon={false}
-                  inline
-                  className="z-[9999] "
-                  label={
-                    <>
+              <Dropdown
+                arrowIcon={false}
+                inline
+                className="z-[9999] "
+                label={
+                  <>
+                    {studentDetails &&
+                    studentDetails.profileImageURL.length > 0 ? (
                       <div
-                        className="h-[29px] w-[29px] sm:h-[33px] sm:w-[33px]  md:h-[36px] md:w-[36px]
-                       rounded-full border border-green1 p-[1px] bg-gray-50"
+                        className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px]  md:h-[36px] md:w-[36px]
+                       rounded-full border bg-gray-100"
                       >
                         <img
                           src={studentDetails.profileImageURL}
@@ -181,90 +183,64 @@ export default function DashboardNavbar() {
                           className="w-full h-full rounded-full object-cover"
                         />
                       </div>
-                    </>
-                  }
-                >
-                  <Dropdown.Header>
-                    <span className="block text-sm font-[600]">
-                      {studentDetails && firstName} {studentDetails && lastName}
-                    </span>
-                    <span className="block truncate text-sm">
-                      {studentDetails && email}
-                    </span>
-                  </Dropdown.Header>
-                  <Link to={"/dashboard"}>
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start">
-                        <DashboardIcon className=" -ml-0.5 w-5" />{" "}
-                        <span>Dashboard</span>
-                      </div>
-                    </Dropdown.Item>
-                  </Link>
-                  <Link to="/profile">
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start gap-1">
-                        <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
-                        <span>Profile</span>
-                      </div>{" "}
-                    </Dropdown.Item>
-                  </Link>
-                  <Dropdown.Divider />
-                  <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                    <div className="flex items-center justify-start gap-0.5">
-                      <SignOutIcon className=" w-4" /> <span>Sign Out</span>
+                    ) : (
+                      studentDetails && (
+                        <Lottie
+                          animationData={avatar}
+                          loop={false}
+                          className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
+                        />
+                      )
+                    )}
+                  </>
+                }
+              >
+                <Dropdown.Header>
+                  <span className="block text-sm sm:text-xs font-bold text-gray-700">
+                    {studentDetails && firstName} {studentDetails && lastName}
+                  </span>
+                  <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
+                    {studentDetails && email}
+                  </span>
+                </Dropdown.Header>
+                <Link to={"/dashboard"}>
+                  <Dropdown.Item className="group transition duration-200 ease-in-out">
+                    <div className="flex items-center justify-start gap-1">
+                      <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                      <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                        Dashboard
+                      </span>
                     </div>
                   </Dropdown.Item>
-                </Dropdown>
-              ) : studentDetails ? (
-                <Dropdown
-                  arrowIcon={false}
-                  inline
-                  className="z-[9999999]"
-                  label={
-                    <Lottie
-                      animationData={avatar}
-                      loop={false}
-                      className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
-                    />
-                  }
-                >
-                  <Dropdown.Header>
-                    <span className="block text-sm font-[600]">
-                      {studentDetails && firstName} {studentDetails && lastName}
-                    </span>
-                    <span className="block truncate text-sm">
-                      {studentDetails && email}
-                    </span>
-                  </Dropdown.Header>
-                  <Link to={"/dashboard"}>
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start">
-                        <DashboardIcon className=" -ml-0.5 w-5" />{" "}
-                        <span>Dashboard</span>
-                      </div>
-                    </Dropdown.Item>
-                  </Link>
-                  <Link to="/profile">
-                    <Dropdown.Item>
-                      <div className="flex items-center justify-start gap-1">
-                        <ProfileIcon className=" ml-0.5  w-3 -mt-0.5" />{" "}
-                        <span>Profile</span>
-                      </div>{" "}
-                    </Dropdown.Item>
-                  </Link>
-                  <Dropdown.Divider />
-                  <Dropdown.Item onClick={() => setOpenSignOutModal(true)}>
-                    <div className="flex items-center justify-start gap-0.5">
-                      <SignOutIcon className=" w-4" /> <span>Sign Out</span>
-                    </div>
+                </Link>
+                <Link to="/profile">
+                  <Dropdown.Item className="group transition duration-200 ease-in-out">
+                    <div className="flex items-center justify-start gap-1">
+                      <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                      <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                        Profile
+                      </span>
+                    </div>{" "}
                   </Dropdown.Item>
-                </Dropdown>
-              ) : (
-                <Skeleton
-                  circle={true}
-                  className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-                />
-              )
+                </Link>
+                <Dropdown.Divider />
+                <Dropdown.Item
+                  onClick={() => setOpenSignOutModal(true)}
+                  className="group transition duration-200 ease-in-out"
+                >
+                  <div className="flex items-center justify-start gap-1">
+                    <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                    <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                      Sign Out
+                    </span>
+                  </div>
+                </Dropdown.Item>
+              </Dropdown>
+            ) : gettingStudentDetails || gettingStudentDetailsErr ? (
+              <Skeleton
+                circle={true}
+                className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
+              />
             ) : (
               <Button
                 theme={customButtonTheme}
@@ -274,11 +250,11 @@ export default function DashboardNavbar() {
               >
                 <Link to={"/login"}>Login</Link>
               </Button>
-            )}
+            )}{" "}
           </div>
         </div>
       </nav>
       <SignOutModal />
     </>
   );
-}
+};

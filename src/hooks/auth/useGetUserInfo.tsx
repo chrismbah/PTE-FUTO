@@ -62,7 +62,7 @@ export const useGetUserInfo = () => {
   useEffect(() => {
     //!Important
     getUserInfo();
-  }, [user]);
+  }, [user, studentDetails]);
 
   return {
     user,

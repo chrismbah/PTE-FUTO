@@ -6,14 +6,11 @@
 *{
     font-family: "DM Sans", sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-/* *::selection{
-    background: green;
-    color:#fff;
-} */
+
 html{
     scroll-behavior: smooth;
 }
-.shadow-1{
+/* .shadow-1{
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  29px 29px 58px #d9d9d9,-29px -29px 58px #ffffff;
 }
@@ -31,7 +28,7 @@ box-shadow:  -5px 5px 32px #eef0f2,
 background: linear-gradient(145deg, #dfe1e3, #ffffff);
 box-shadow:  20px 20px 60px #d3d5d6,
              -20px -20px 60px #ffffff;
-}
+} */
 .shadow-4{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }

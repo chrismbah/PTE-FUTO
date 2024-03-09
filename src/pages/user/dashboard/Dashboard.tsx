@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import DashboardNavbar from "../../../components/navbar/DashboardNavbar";
+import { DashboardNavbar } from "../../../components/navbar/DashboardNavbar";
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
@@ -27,8 +27,8 @@ export default function Dashboard() {
               <div className="grid lg:grid-cols-7">
                 <div className="w-full lg:col-span-2 px-4 grid sm:grid-cols-2 lg:grid-rows-2 lg:grid-cols-none gap-4 mb-4">
                   <div className="shadow rounded-lg bg-white w-full row-span-1">
-                    <div className="px-4">
-                      <div className="flex items-center justify-center pt-4">
+                    <div className="p-4">
+                      <div className="flex items-center justify-center">
                         {studentDetails &&
                         studentDetails?.profileImageURL.length > 0 ? (
                           <img
@@ -61,15 +61,15 @@ export default function Dashboard() {
                                 ) + " LEVEL"}
                         </p>
                       </div>
+                      <NavLink
+                        to="/profile"
+                        className="flex items-center justify-center"
+                      >
+                        <button className="w-full text-white text-sm sm:text-xs transition duration-200 ease-in-out rounded-lg bg-green5 hover:bg-green5/90 p-3 font-semibold">
+                          Check Profile
+                        </button>
+                      </NavLink>
                     </div>
-                    <NavLink
-                      to="/profile"
-                      className="flex items-center justify-center"
-                    >
-                      <button className="w-full text-sm sm:text-xs transition duration-200 ease-in-out rounded-b-lg bg-gray-100 hover:bg-gray-200 text-gray-600 p-3 font-semibold">
-                        Check Profile
-                      </button>
-                    </NavLink>
                   </div>
                   <div className="details bg-white shadow px-4 py-6 rounded-lg w-full lg:h-fit ">
                     <div className="flex items-center justify-between flex-col h-full">
@@ -170,7 +170,7 @@ export default function Dashboard() {
                         <img
                           src={search}
                           alt="Recent Activities"
-                          className="w-[90%] xxss:w-[220px]"
+                          className="w-[90%] xxss:w-[205px]"
                         />
                         <p className="text-center text-sm sm:text-xs md:text-base text-gray-800 font-bold">
                           No Activities right now.
@@ -185,7 +185,7 @@ export default function Dashboard() {
                         <img
                           src={notif}
                           alt="Notifications"
-                          className="w-[90%] xxss:w-[220px]"
+                          className="w-[90%] xxss:w-[205px]"
                         />
                         <p className="text-center text-sm sm:text-xs md:text-base text-gray-800 font-bold">
                           No Notifications right now.

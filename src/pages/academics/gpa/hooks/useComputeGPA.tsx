@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useGPAContext } from "../../../../context/GPA";
 import { levelCourses } from "../../../../data/academics/cgpa/courses";
@@ -103,7 +104,7 @@ export const useComputeGPA = () => {
         setCourseGrades([...courseGrades, newCourseGrades]);
         notifyUser(
           "success",
-          `${course} with credit unit ${unit} and grade "${grade}" Added Successfully`
+          `${course} with credit unit ${unit} and grade "${grade}" added successfully`
         );
         setCourse("");
         setUnit("");

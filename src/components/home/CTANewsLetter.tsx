@@ -91,7 +91,7 @@ export default function CTANewsLetter() {
                     className="w-full xsm:w-[70%] font-semibold text-white bg-green1 border-0 outline-none p-3 rounded-lg text-sm xss:text-base"
                   >
                     {subscribing ? (
-                      <Spinner className="w-4 sm:w-6" />
+                      <Spinner className="w-4 sm:w-6 fill-white" />
                     ) : (
                       <div className="w-full flex gap-3 justify-center items-center">
                         Subscribe <BellIcon className="w-5 h-5" />
