@@ -23,9 +23,10 @@ export default function Hero() {
             </h2>
             <p className="section-p mb-4">
               Explore detailed course outlines, access engaging learning
-              materials, <br /> Calculate your GPA, stay ahead of the curve with
-              the latest news, <br className="hidden ss:block" /> and join a
-              thriving community of fellow learners.
+              materials, <br className="hidden ss:block" /> Calculate your GPA,
+              stay ahead of the curve with the latest news,{" "}
+              <br className="hidden ss:block" /> and join a thriving community
+              of fellow learners.
             </p>
             <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
               <Button theme={customButtonTheme} color="primary" size={"lg"}>

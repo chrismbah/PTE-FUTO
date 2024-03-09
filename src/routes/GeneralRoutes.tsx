@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../pages/error/404/NotFound";
-import { BounceLoader } from "../components/loaders/FullBounceLoader";
+import LogoSpinner from "../components/loaders/FullLogoSpinner";
 
 const GeneralRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login"));
@@ -21,7 +21,7 @@ const GeneralRoutes = () => {
   );
 
   return (
-    <Suspense fallback={<BounceLoader />}>
+    <Suspense fallback={<LogoSpinner />}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />

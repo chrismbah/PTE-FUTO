@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { DashboardNavbar } from "../../../components/navbar/DashboardNavbar";
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
@@ -18,8 +17,6 @@ export default function Dashboard() {
 
   return (
     <>
-      <DashboardNavbar />
-
       {studentDetails ? (
         <div className="bg-gray-50 min-h-screen">
           <div className="max-w-[1720px] w-full mx-auto">
@@ -65,7 +62,7 @@ export default function Dashboard() {
                         to="/profile"
                         className="flex items-center justify-center"
                       >
-                        <button className="w-full text-white text-sm sm:text-xs transition duration-200 ease-in-out rounded-lg bg-green5 hover:bg-green5/90 p-3 font-semibold">
+                        <button className="w-full text-white text-sm sm:text-xs transition duration-200 ease-in-out rounded-lg bg-green2 hover:bg-green2/95 p-3 font-semibold">
                           Check Profile
                         </button>
                       </NavLink>
@@ -126,35 +123,35 @@ export default function Dashboard() {
                 <div className="lg:col-span-5 px-4 h-full">
                   <div className="mb-4">
                     <div className="grid sss:grid-cols-2 lg:grid-cols-3 gap-4 ">
-                      <NavLink to="/dashboard/calculate-gpa">
-                        <div className="w-full min-h-[195px] sss:h-[215px] border-2 border-transparent hover:bg-transparent transition duration-200 ease-in-out hover:border-[#f0abfc] rounded-lg p-4 bg-[#f0abfc] flex gap-6 flex-col items-center justify-center">
+                      <NavLink to="/dashboard/gpa-calculator">
+                        <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#f0abfc] bg-[#f0abfc]/90 flex gap-6 flex-col items-center justify-center">
                           <CalculatorIcon
                             className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
                             color="#a21caf"
                           />
-                          <p className="  uppercase text-[#a21caf]  text-base sm:text-md md:text-lg lg:text-base font-semibold text-center ">
+                          <p className="  uppercase text-[#a21caf] text-xs lg:text-base font-semibold text-center ">
                             GPA Calculator
                           </p>
                         </div>
                       </NavLink>
                       <NavLink to="/course-outlines">
-                        <div className="w-full min-h-[195px] sss:h-[215px] border-2 border-transparent hover:bg-transparent transition duration-200 ease-in-out hover:border-[#bef264]  rounded-lg p-4 bg-[#bef264] flex gap-6 flex-col items-center justify-center">
+                        <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#bef264] bg-[#bef264]/90 flex gap-6 flex-col items-center justify-center">
                           <BooksIcon
                             className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
                             color="#00875a"
                           />
-                          <p className="  uppercase text-[#00875a] text-base sm:text-md md:text-lg lg:text-base font-semibold text-center ">
+                          <p className="  uppercase text-[#00875a] text-xs lg:text-base font-semibold text-center ">
                             Course Outlines
                           </p>
                         </div>
                       </NavLink>
                       <NavLink to="/learning-resources">
-                        <div className="w-full min-h-[195px] sss:h-[215px] border-2 border-transparent hover:bg-transparent transition duration-200 ease-in-out hover:border-[#93c5fd] rounded-lg p-4 bg-[#93c5fd] flex gap-6 flex-col items-center justify-center">
+                        <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#93c5fd] bg-[#93c5fd]/90 flex gap-6 flex-col items-center justify-center">
                           <FilesIcon
                             className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
                             color="#1d4ed8"
                           />
-                          <p className="  uppercase text-[#1d4ed8] text-base sm:text-md md:text-lg lg:text-base font-semibold text-center ">
+                          <p className="  uppercase text-[#1d4ed8] text-xs lg:text-base font-semibold text-center ">
                             Learning Resources
                           </p>
                         </div>

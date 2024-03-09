@@ -46,7 +46,7 @@ h3{
     @apply text-xl sm:text-2xl font-[500]
 }
 .section-p{
-    @apply text-sm xss:text-xs md:text-base text-gray-700 font-medium
+    @apply text-ss ss:text-sm md:text-xs text-gray-700 font-medium
 }
 .box-width{
     @apply 2xl:max-w-[1520px] w-full mx-auto

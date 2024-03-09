@@ -17,20 +17,20 @@ import { ProfileIcon } from "../icons/nav/ProfileIcon";
 import { useEffect, useState } from "react";
 import { BurgerIcon } from "../icons/nav/BurgerIcon";
 import { NavLink } from "react-router-dom";
-
+import { BellIcon } from "../icons/nav/BellIcon";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+} from "@material-tailwind/react";
 export const DashboardNavbar = () => {
-  const {
-    studentDetails,
-    user,
-    loading,
-    gettingStudentDetails,
-    gettingStudentDetailsErr,
-  } = useGetUserInfo();
+  const { studentDetails, user, loading } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
 
   const { setOpenSignOutModal } = useModalContext();
+  const [openPopover, setOpenPopover] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   useEffect(() => {
     if (isNavOpen) {
@@ -41,6 +41,10 @@ export const DashboardNavbar = () => {
   }, [isNavOpen]);
 
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
+  const triggers = {
+    onMouseEnter: () => setOpenPopover(true),
+    onMouseLeave: () => setOpenPopover(false),
+  };
   return (
     <>
       <nav className="dashboard w-full fixed top-0 left-0 px-2 py-4 xsm:p-4 bg-white shadow-sm z-10">
@@ -106,7 +110,7 @@ export const DashboardNavbar = () => {
               </div>
               <div className="mb-4">
                 <p className="font-bold text-gray-700 uppercase text-ss ss:text-sm sm:text-xs">
-                  Links
+                  Modules
                 </p>
               </div>
               <div className="flex flex-col justify-start gap-2 text-ss ss:text-sm sm:text-xs font-bold text-gray-700">
@@ -121,7 +125,7 @@ export const DashboardNavbar = () => {
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
-                  to="/calculate-gpa"
+                  to="/dashboard/gpa-calculator"
                   className={
                     "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                   }
@@ -157,100 +161,129 @@ export const DashboardNavbar = () => {
                 </NavLink>
               </div>
             </div>
-            {loading ? (
-              <Skeleton
-                circle={true}
-                className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-              />
-            ) : user ? (
-              <Dropdown
-                arrowIcon={false}
-                inline
-                className="z-[9999] "
-                label={
-                  <>
-                    {studentDetails &&
-                    studentDetails.profileImageURL.length > 0 ? (
-                      <div
-                        className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px]  md:h-[36px] md:w-[36px]
-                       rounded-full border bg-gray-100"
-                      >
-                        <img
-                          src={studentDetails.profileImageURL}
-                          alt="Profile"
-                          loading="lazy"
-                          onLoad={() => console.log("Loaded")}
-                          className="w-full h-full rounded-full object-cover"
-                        />
-                      </div>
-                    ) : (
-                      studentDetails && (
-                        <Lottie
-                          animationData={avatar}
-                          loop={false}
-                          className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
-                        />
-                      )
-                    )}
-                  </>
-                }
+            <div className="flex items-center gap-4">
+              <Popover
+                placement="right"
+                animate={{
+                  mount: { scale: 1, y: 0 },
+                  unmount: { scale: 0, y: 25 },
+                }}
+                open={openPopover}
+                handler={setOpenPopover}
               >
-                <Dropdown.Header>
-                  <span className="block text-sm sm:text-xs font-bold text-gray-700">
-                    {studentDetails && firstName} {studentDetails && lastName}
-                  </span>
-                  <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
-                    {studentDetails && email}
-                  </span>
-                </Dropdown.Header>
-                <Link to={"/dashboard"}>
-                  <Dropdown.Item className="group transition duration-200 ease-in-out">
-                    <div className="flex items-center justify-start gap-1">
-                      <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                      <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
-                        Dashboard
-                      </span>
-                    </div>
-                  </Dropdown.Item>
-                </Link>
-                <Link to="/profile">
-                  <Dropdown.Item className="group transition duration-200 ease-in-out">
-                    <div className="flex items-center justify-start gap-1">
-                      <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                      <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
-                        Profile
-                      </span>
-                    </div>{" "}
-                  </Dropdown.Item>
-                </Link>
-                <Dropdown.Divider />
-                <Dropdown.Item
-                  onClick={() => setOpenSignOutModal(true)}
-                  className="group transition duration-200 ease-in-out"
+                <PopoverHandler {...triggers}>
+                  <button>
+                    <BellIcon className="w-6 h-6 mt-1 fill-green1" />
+                  </button>
+                </PopoverHandler>
+                <PopoverContent
+                  className="z-50 p-2"
+                  placeholder={""}
+                  {...triggers}
                 >
-                  <div className="flex items-center justify-start gap-1">
-                    <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                    <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
-                      Sign Out
-                    </span>
-                  </div>
-                </Dropdown.Item>
-              </Dropdown>
-            ) : gettingStudentDetails || gettingStudentDetailsErr ? (
-              <Skeleton
-                circle={true}
-                className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-              />
-            ) : (
-              <Button
-                theme={customButtonTheme}
-                color="primary"
-                size="md"
-                className="focus:outline-none"
-              >
-                <Link to={"/login"}>Login</Link>
-              </Button>
-            )}{" "}
+                  <p className="text-xss sm:text-ss font-semibold text-gray-700">
+                    You have 0 new notifications
+                  </p>
+                </PopoverContent>
+              </Popover>
+              {loading ? (
+                <Skeleton
+                  circle={true}
+                  className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
+                />
+              ) : user ? (
+                studentDetails ? (
+                  <Dropdown
+                    arrowIcon={false}
+                    inline
+                    className="z-[9999] "
+                    label={
+                      <>
+                        {studentDetails &&
+                        studentDetails.profileImageURL.length > 0 ? (
+                          <div
+                            className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[36px] md:w-[36px]
+                       rounded-full p-[1px] sm:p-[2px] border sm:border-2 border-transparent hover:border-green4 transition duration-200 ease-in-out"
+                          >
+                            <img
+                              src={studentDetails.profileImageURL}
+                              alt="Profile"
+                              onLoad={() => console.log("Loaded")}
+                              className="w-full h-full rounded-full object-cover"
+                            />
+                          </div>
+                        ) : (
+                          studentDetails &&
+                          studentDetails.profileImageURL.length < 1 && (
+                            <Lottie
+                              animationData={avatar}
+                              loop={false}
+                              className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
+                            />
+                          )
+                        )}
+                      </>
+                    }
+                  >
+                    <Dropdown.Header>
+                      <span className="block text-sm sm:text-xs font-bold text-gray-700">
+                        {studentDetails && firstName}{" "}
+                        {studentDetails && lastName}
+                      </span>
+                      <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
+                        {studentDetails && email}
+                      </span>
+                    </Dropdown.Header>
+                    <Link to={"/dashboard"}>
+                      <Dropdown.Item className="group transition duration-200 ease-in-out">
+                        <div className="flex items-center justify-start gap-1">
+                          <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                            Dashboard
+                          </span>
+                        </div>
+                      </Dropdown.Item>
+                    </Link>
+                    <Link to="/profile">
+                      <Dropdown.Item className="group transition duration-200 ease-in-out">
+                        <div className="flex items-center justify-start gap-1">
+                          <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                            Profile
+                          </span>
+                        </div>{" "}
+                      </Dropdown.Item>
+                    </Link>
+                    <Dropdown.Divider />
+                    <Dropdown.Item
+                      onClick={() => setOpenSignOutModal(true)}
+                      className="group transition duration-200 ease-in-out"
+                    >
+                      <div className="flex items-center justify-start gap-1">
+                        <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                        <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                          Sign Out
+                        </span>
+                      </div>
+                    </Dropdown.Item>
+                  </Dropdown>
+                ) : (
+                  <Skeleton
+                    circle={true}
+                    className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
+                  />
+                )
+              ) : (
+                <Button
+                  theme={customButtonTheme}
+                  color="primary"
+                  size="md"
+                  className="focus:outline-none"
+                >
+                  <Link to={"/login"}>Login</Link>
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </nav>
