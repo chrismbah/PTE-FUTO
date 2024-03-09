@@ -206,7 +206,7 @@ export default function Nav() {
                 </div>
               </div>
               <div className="mb-4">
-                <p className="font-bold text-gray-700 uppercase text-ss ss:text-sm sm:text-xs">
+                <p className="font-bold text-gray-700 uppercase text-sm">
                   Links
                 </p>
               </div>
