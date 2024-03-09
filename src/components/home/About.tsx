@@ -13,7 +13,7 @@ export default function About() {
           <div className="w-full mmd:basis-2/5">
             <div className="bar-style" />
             <h2>About Us</h2>
-            <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-4">
+            <p className="text-gray-900 font-medium text-ss ss:text-sm xlg:text-xs mb-4">
               Empowering students to achieve academic excellence through
               learning resources and personalized support.
             </p>
@@ -25,7 +25,7 @@ export default function About() {
               />
               <div>
                 <h4 className="text-green1 font-bold text-xs">Our Vision</h4>
-                <p className="text-gray-700 text-xss sm:text-sm mmd:text-ss xlg:text-sm">
+                <p className="text-gray-700 font-medium text-xss sm:text-sm mmd:text-ss xlg:text-sm">
                   We envision graduates not just excelling in their chosen
                   fields, but becoming impactful contributors to society.
                 </p>
@@ -39,7 +39,7 @@ export default function About() {
               />
               <div>
                 <h4 className="text-green1 font-bold text-xs">Our Mission</h4>
-                <p className="text-gray-700 text-xss sm:text-sm mmd:text-ss xlg:text-sm">
+                <p className="text-gray-700 font-medium text-xss sm:text-sm mmd:text-ss xlg:text-sm">
                   We fuel academic pursuits through diverse resources,
                   interactive tools and tailored support systems.
                 </p>

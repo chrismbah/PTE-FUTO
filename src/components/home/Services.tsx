@@ -12,8 +12,8 @@ export default function Services() {
               <div className="bar-style" />
               Our Services
             </h2>
-            <h3 className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3">
-              What We Offer Our Students
+            <h3 className="text-gray-700 font-medium text-ss ss:text-sm xlg:text-xs mb-3">
+              What we offer our students
             </h3>
           </div>
 

@@ -18,7 +18,7 @@ export default function Hero() {
             <h1 className="text-green1 xl:text-5xl lg:text-4xl text-3xl  font-[700]">
               Polymer and Textile Engineering Department
             </h1>
-            <h2 className="mb-2 xl:text-4xl lg:text-3xl md:text-2xl text-xl font-[500]">
+            <h2 className="mb-2 xl:text-4xl lg:text-3xl md:text-2xl text-xl font-semibold">
               Federal University of Technology, Owerri
             </h2>
             <p className="section-p mb-4">

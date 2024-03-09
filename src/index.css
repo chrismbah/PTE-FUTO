@@ -49,7 +49,7 @@ h3{
     @apply text-xl sm:text-2xl font-[500]
 }
 .section-p{
-    @apply text-sm xss:text-xs md:text-base text-gray-800
+    @apply text-sm xss:text-xs md:text-base text-gray-700 font-medium
 }
 .box-width{
     @apply 2xl:max-w-[1520px] w-full mx-auto
@@ -67,14 +67,14 @@ h3{
     @apply px-3 sm:px-14 sm:py-24 py-20
 }
 .blog-section{
-    @apply px-3 py-20 sm:px-8 md:px-14 sm:py-24 
+    @apply px-3 py-[58px] ss:py-[70px] sm:px-8 md:px-14 sm:py-[85px] 
 
 }
 .course-outline-section{
     @apply px-3 xxss:px-6 ss:px-8 sm:px-14 sm:py-24 py-20
 }
 .section{
-    @apply px-3 xsm:px-14 xsm:py-12 py-8
+    @apply px-3 xsm:px-14 xsm:py-10 py-8
 }
 .flex-between{
     @apply flex items-center justify-between
@@ -110,7 +110,6 @@ h3{
     @apply text-green1 bg-gray-100 rounded-md
 }
 .active{
-    @apply text-green1
-
+    @apply text-green1 bg-gray-100 xsm:bg-transparent
 }
 

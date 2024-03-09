@@ -18,7 +18,7 @@ import {
 import { notifyUser } from "../../helpers/notifyUser";
 import { Spinner } from "../loaders/Spinner";
 import { useNavigate } from "react-router-dom";
-
+import { BellIcon } from "../icons/BellIcon";
 export default function CTANewsLetter() {
   const [subscribing, setSubscribing] = useState(false);
 
@@ -36,10 +36,7 @@ export default function CTANewsLetter() {
 
         const uniqueDocId = `sub-${userID}`;
         const querySnapshot = await getDocs(
-          query(
-            collection(db, "suscribedUsers"),
-            where("userID", "==", userID)
-          )
+          query(collection(db, "suscribedUsers"), where("userID", "==", userID))
         );
         if (querySnapshot.empty) {
           const suscribedUserInfo: ISuscribedUser = {
@@ -84,8 +81,8 @@ export default function CTANewsLetter() {
                 <h2 className="text-center text-lg sm:text-xl md:text-2xl font-[600]">
                   Get involved and stay informed
                 </h2>
-                <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3 text-center">
-                  Subscribe to our newletter and never miss and update from us
+                <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3 text-center flex gap-2">
+                  Subscribe to our newletter and never miss an update from us{" "}
                 </p>
 
                 <div className="flex items-center flex-col gap-6 w-full">
@@ -96,7 +93,9 @@ export default function CTANewsLetter() {
                     {subscribing ? (
                       <Spinner className="w-4 sm:w-6" />
                     ) : (
-                      "Suscribe"
+                      <div className="w-full flex gap-3 justify-center items-center">
+                        Subscribe <BellIcon className="w-5 h-5" />
+                      </div>
                     )}
                   </button>
                 </div>

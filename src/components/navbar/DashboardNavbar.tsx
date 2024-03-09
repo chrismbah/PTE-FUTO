@@ -111,35 +111,45 @@ export default function DashboardNavbar() {
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to="/dashboard"
-                  className={"w-full p-3"}
+                  className={
+                    "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
+                  }
                 >
                   Dashboard
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to="/calculate-gpa"
-                  className={"w-full p-3"}
+                  className={
+                    "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
+                  }
                 >
                   GPA Calculator
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to="/course-outlines"
-                  className={"w-full p-3"}
+                  className={
+                    "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
+                  }
                 >
                   Course Outlines
                 </NavLink>
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to="/learning-resources"
-                  className={"w-full p-3"}
+                  className={
+                    "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
+                  }
                 >
                   Learning Resources
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to="/profile"
-                  className={"w-full p-3"}
+                  className={
+                    "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
+                  }
                 >
                   Profile
                 </NavLink>

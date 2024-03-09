@@ -64,117 +64,107 @@ export default function Nav() {
               <div
                 className={`inline-nav border-l-2 border-gray-500 items-center gap-2 hidden xsm:flex ${isNavOpen && "xsm:hidden"}`}
               >
-                <div>
-                  <NavLink
-                    to={"/"}
-                    className=" text-sm md:text-xs ml-2 font-semibold text-gray-700 px-2"
-                  >
-                    Home
+                <NavLink
+                  to={"/"}
+                  className=" text-sm md:text-xs ml-2 font-semibold text-gray-700 px-2"
+                >
+                  Home
+                </NavLink>
+                <Dropdown
+                  arrowIcon={false}
+                  inline
+                  label={
+                    <p className="pt-1 md:pt-0.5 text-sm md:text-xs ml-0 font-semibold text-gray-700 px-2">
+                      About
+                    </p>
+                  }
+                  theme={customDropdownTheme}
+                >
+                  <NavLink to={"/about/about-us"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        About Us
+                      </p>
+                    </Dropdown.Item>
                   </NavLink>
-                </div>
-                <div>
-                  <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                      <p className="pt-1 md:pt-0.5 text-sm md:text-xs ml-0 font-semibold text-gray-700 px-2">
-                        About
+                  <NavLink to={"/about/philosophy-and-objectives"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        Philosophy and Objectives
                       </p>
-                    }
-                    theme={customDropdownTheme}
-                  >
-                    <NavLink to={"/about/about-us"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          About Us
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/about/philosophy-and-objectives"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Philosophy and Objectives
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/about/admission"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Admission
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                  </Dropdown>
-                </div>
-                <div>
-                  <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                      <p className="pt-1 md:pt-0.5 text-sm md:text-xs ml-0 font-semibold text-gray-700 px-2">
-                        Academics
-                      </p>
-                    }
-                    theme={customDropdownTheme}
-                  >
-                    <NavLink to={"/calculate-gpa"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          GPA Calculator
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/learning-resources"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Learning Resources
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/course-outlines"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Course Outlines
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                  </Dropdown>
-                </div>
-                <div>
-                  <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                      <p className="pt-1 md:pt-0.5 text-sm md:text-xs font-semibold text-gray-700">
-                        Students
-                      </p>
-                    }
-                    theme={customDropdownTheme}
-                  >
-                    <NavLink to={"/students/class-representatives"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Class Representatives
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/students/project-team"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Project Team
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                  </Dropdown>
-                </div>
-                <div>
-                  <NavLink
-                    to={"/blog"}
-                    className=" text-sm md:text-xs font-semibold text-gray-700 px-2 pt-0.5 md:pt-0"
-                  >
-                    Blog
+                    </Dropdown.Item>
                   </NavLink>
-                </div>
+                  <NavLink to={"/about/admission"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        Admission
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                </Dropdown>
+                <Dropdown
+                  arrowIcon={false}
+                  inline
+                  label={
+                    <p className="pt-1 md:pt-0.5 text-sm md:text-xs ml-0 font-semibold text-gray-700 px-2">
+                      Academics
+                    </p>
+                  }
+                  theme={customDropdownTheme}
+                >
+                  <NavLink to={"/calculate-gpa"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        GPA Calculator
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                  <NavLink to={"/learning-resources"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        Learning Resources
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                  <NavLink to={"/course-outlines"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        Course Outlines
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                </Dropdown>
+                <Dropdown
+                  arrowIcon={false}
+                  inline
+                  label={
+                    <p className="pt-1 md:pt-0.5 text-sm md:text-xs font-semibold text-gray-700">
+                      Students
+                    </p>
+                  }
+                  theme={customDropdownTheme}
+                >
+                  <NavLink to={"/students/class-representatives"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        Class Representatives
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                  <NavLink to={"/students/project-team"}>
+                    <Dropdown.Item>
+                      <p className="text-ss md:text-sm font-semibold text-gray-700">
+                        Project Team
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                </Dropdown>
+                <NavLink
+                  to={"/blog"}
+                  className=" text-sm md:text-xs font-semibold text-gray-700 px-2 pt-0.5 md:pt-1"
+                >
+                  Blog
+                </NavLink>
               </div>
             </div>
             <div
@@ -214,118 +204,111 @@ export default function Nav() {
                   Links
                 </p>
               </div>
-              <div className="w-full flex flex-col justify-start gap-2 text-ss ss:text-sm sm:text-xs font-bold text-gray-700">
-                <div className="w-full">
-                  <NavLink
-                    to={"/"}
-                    className=" text-sm md:text-xs px-2 py-3 rounded-md hover:bg-gray-100 w-full font-semibold text-gray-700"
-                  >
-                    Home
+              <div className="w-full flex flex-col justify-start gap-2 text-ss xsm:text-sm font-bold text-gray-700">
+                <NavLink
+                  to={"/"}
+                  className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 "
+                >
+                  Home
+                </NavLink>
+                <Dropdown
+                  arrowIcon={false}
+                  inline
+                  label={
+                    <p className="text-left rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 ">
+                      About
+                    </p>
+                  }
+                  theme={customDropdownTheme}
+                >
+                  <NavLink to={"/about/about-us"}>
+                    <Dropdown.Item>
+                      <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
+                        About Us
+                      </p>
+                    </Dropdown.Item>
                   </NavLink>
-                </div>
-                <div className="w-full">
-                  <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                      <p className=" text-sm md:text-xs ml-0 font-semibold text-gray-700">
-                        About
+                  <NavLink to={"/about/philosophy-and-objectives"}>
+                    <Dropdown.Item>
+                      <p className=" rounded-md hover:bg-gray-100 w-full text-left hover:text-green1 ">
+                        Philosophy and Objectives
                       </p>
-                    }
-                    theme={customDropdownTheme}
-                  >
-                    <NavLink to={"/about/about-us"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          About Us
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/about/philosophy-and-objectives"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Philosophy and Objectives
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/about/admission"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Admission
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                  </Dropdown>
-                </div>
-                <div className="w-full">
-                  <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                      <p className=" text-sm md:text-xs ml-0 font-semibold text-gray-700">
-                        Academics
-                      </p>
-                    }
-                    theme={customDropdownTheme}
-                  >
-                    <NavLink to={"/calculate-gpa"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          GPA Calculator
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/learning-resources"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Learning Resources
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/course-outlines"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Course Outlines
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                  </Dropdown>
-                </div>
-                <div className="w-full">
-                  <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                      <p className="pt-1 md:pt-0.5 text-sm md:text-xs font-semibold text-gray-700">
-                        Students
-                      </p>
-                    }
-                    theme={customDropdownTheme}
-                  >
-                    <NavLink to={"/students/class-representatives"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Class Representatives
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                    <NavLink to={"/students/project-team"}>
-                      <Dropdown.Item>
-                        <p className="text-sm md:text-xs font-semibold text-gray-700">
-                          Project Team
-                        </p>
-                      </Dropdown.Item>
-                    </NavLink>
-                  </Dropdown>
-                </div>
-                <div className="w-full">
-                  <NavLink
-                    to={"/blog"}
-                    className=" text-sm md:text-xs font-semibold text-gray-700 pt-0.5 md:pt-0"
-                  >
-                    Blog
+                    </Dropdown.Item>
                   </NavLink>
-                </div>
+                  <NavLink to={"/about/admission"}>
+                    <Dropdown.Item>
+                      <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
+                        Admission
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                </Dropdown>
+
+                <Dropdown
+                  arrowIcon={false}
+                  inline
+                  label={
+                    <p className="text-left rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1">
+                      Academics
+                    </p>
+                  }
+                  theme={customDropdownTheme}
+                >
+                  <NavLink to={"/calculate-gpa"}>
+                    <Dropdown.Item>
+                      <p className=" rounded-md hover:bg-gray-100 w-full text-left hover:text-green1 ">
+                        GPA Calculator
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                  <NavLink to={"/learning-resources"}>
+                    <Dropdown.Item>
+                      <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
+                        Learning Resources
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                  <NavLink to={"/course-outlines"}>
+                    <Dropdown.Item>
+                      <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
+                        Course Outlines
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                </Dropdown>
+
+                <Dropdown
+                  arrowIcon={false}
+                  inline
+                  label={
+                    <p className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 text-left ">
+                      Students
+                    </p>
+                  }
+                  theme={customDropdownTheme}
+                >
+                  <NavLink to={"/students/class-representatives"}>
+                    <Dropdown.Item>
+                      <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
+                        Class Representatives
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                  <NavLink to={"/students/project-team"}>
+                    <Dropdown.Item>
+                      <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1 ">
+                        Project Team
+                      </p>
+                    </Dropdown.Item>
+                  </NavLink>
+                </Dropdown>
+
+                <NavLink
+                  to={"/blog"}
+                  className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 "
+                >
+                  Blog
+                </NavLink>
               </div>
             </div>
 

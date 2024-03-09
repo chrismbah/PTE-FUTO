@@ -72,7 +72,7 @@ export default function Blog() {
             <div className="w-full flex items-center justify-center mt-12">
               <Link to={"/blog"}>
                 <Button theme={customButtonTheme} size={"lg"} color="primary">
-                  View All Blogs
+                  View All Articles
                 </Button>
               </Link>
             </div>
