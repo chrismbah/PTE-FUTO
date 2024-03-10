@@ -36,7 +36,6 @@ export const useFetchBlogPosts = () => {
       setBlogPostsError(true);
       notifyUser("error", "An error occured. Please try again");
       setBlogPostsLoading(false);
-
     }
   };
   const fetchHomeBlogPosts = async () => {

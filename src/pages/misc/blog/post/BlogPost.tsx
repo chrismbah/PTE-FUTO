@@ -18,23 +18,14 @@ import PostSkeleton from "./skeleton/PostSkeleton";
 export default function BlogPost() {
   const {
     fetchBlogPost,
-    // fetchPopularPosts,
-    // fetchRelatedPosts,
     blogPost,
     fetchBlogPosts,
     blogPosts,
     blogPostsLoading,
     blogPostsError,
-    // popularPosts,
-    // relatedPosts,
     blogPostLoading,
     blogPostError,
-    // popularPostsLoading,
-    // popularPostsError,
-    // relatedPostsLoading,
-    // relatedPostsError,
   } = useFetchBlogPosts();
-  // const { getUserInfo } = useGetUserInfo();
   const { postID, postType } = useParams();
   const { getPostComments } = useBlogComments();
 
@@ -42,20 +33,13 @@ export default function BlogPost() {
     if (postID && postType) {
       try {
         fetchBlogPost(postID);
-        fetchBlogPosts()
-        // fetchPopularPosts(postID, postType);
-        // fetchRelatedPosts(postID, postType);
         getPostComments();
+        fetchBlogPosts();
       } finally {
         window.scroll(0, 0);
       }
     }
-    // getPostComments();
   }, [postID]);
-
-  // useEffect(() => {
-  //   getUserInfo();
-  // }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -108,9 +92,9 @@ export default function BlogPost() {
                   />
                 )}
                 {blogPostsError ||
-                  (blogPosts &&
-                    blogPosts?.length < 1 &&
-                     <p>Something went wrong. Please try again.</p> )}
+                  (blogPosts && blogPosts?.length < 1 && (
+                    <p>Something went wrong. Please try again.</p>
+                  ))}
                 {!blogPostsLoading &&
                   !blogPostsError &&
                   blogPosts &&

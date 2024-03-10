@@ -159,7 +159,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-2 mmd:gap-4">
-                    <div className="shadow rounded-lg w-full py-2 bg-white h-[350px]">
+                    <div className="shadow rounded-lg w-full py-2 bg-white h-[340px]">
                       <div className=" text-sm sm:text-xs md:text-base p-2 border-b border-gray-300 font-bold text-gray-800">
                         Recent Activities
                       </div>

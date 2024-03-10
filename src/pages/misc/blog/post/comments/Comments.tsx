@@ -33,17 +33,12 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
         ) => {
           return (
             <div key={i} className="flex items-start pb-1 w-full gap-1 mb-2">
-              {/* <img
-                src={userProfile}
-                alt={firstName}
-                className="w-6 h-6 sm:w-9 sm:h-9 mr-2"
-              /> */}
               <Lottie animationData={profile} loop={false} className="w-6 h-6 sm:w-9 sm:h-9 mr-2" />
               <div className="flex flex-col border-b border-gray-100 pb-2 w-[90%] overflow-x-hidden">
                 <div className="flex items-start justify-between">
                   <div className="flex gap-3 items-center sm:mt-0">
                     <div className="">
-                      <p className="text-xss xxss:text-ss sm:text-xs md:text-[12px]  text-green1">
+                      <p className="text-xss xxss:text-ss sm:text-xs md:text-[12px] font-medium text-green1">
                         {firstName} {lastName}
                       </p>
                     </div>

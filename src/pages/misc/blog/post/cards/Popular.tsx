@@ -8,7 +8,6 @@ export const PopularPosts: FC<BlogPostProp> = ({ blogPosts, postID, postType }) 
     <div>
       {blogPosts
         .filter((post) => post.id !== postID && post.postType !== postType)
-        .sort(() => 0.5 - Math.random())
         .slice(0, 3)
         .map(({ title, sampleImg, date, author, postType, id }, i) => {
           return (
