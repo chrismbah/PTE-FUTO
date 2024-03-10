@@ -13,16 +13,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { editProfileSchema } from "../../validation";
 import { IEditProfileForm } from "../../models/student/editProfile";
-// import { deleteUser } from "firebase/auth";
-// import { useNavigate } from "react-router-dom";
 import { notifyUser } from "../../helpers/notifyUser";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
-// import { useEditProfile } from "../../hooks/user-profile/useEditProfile";
 
 export const EditProfileModal = () => {
   const { openEditProfileModal, setOpenEditProfileModal } = useModalContext();
-  const { studentDetails, getUserInfo, userID } = useGetUserInfo();
+  const { studentDetails, userID } = useGetUserInfo();
   const [editingProfile, setEditingProfile] = useState(false);
   useEffect(() => {
     if (openEditProfileModal) {
@@ -31,10 +28,6 @@ export const EditProfileModal = () => {
       document.body.style.overflow = "visible";
     }
   }, [openEditProfileModal]);
-
-  useEffect(() => {
-    getUserInfo();
-  }, [studentDetails]);
 
   const {
     imageFile,

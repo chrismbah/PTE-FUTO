@@ -8,14 +8,20 @@ import { Spinner } from "../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../themes/customTooltip";
 import { FileDownloadIcon } from "../../../components/icons/FileDownloadIcon";
+import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 
 export const ContentCard: FC<Content> = ({ name, size, path }) => {
   const [fileLoading, setFileLoading] = useState(false);
   const storageRef = ref(storage);
   const learningResourcesRef = ref(storageRef, path);
   const dataSize = convertBytes(size);
+  const { user } = useGetUserInfo();
 
   const downloadFile = async () => {
+    if (!user) {
+      notifyUser("info", "Please login to access this feature.");
+      return;
+    }
     try {
       setFileLoading(true);
       notifyUser("loading", "Please wait...");

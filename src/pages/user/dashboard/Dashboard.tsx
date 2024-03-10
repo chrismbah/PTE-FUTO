@@ -20,7 +20,7 @@ export default function Dashboard() {
       {studentDetails ? (
         <div className="bg-gray-50 min-h-screen">
           <div className="max-w-[1720px] w-full mx-auto">
-            <div className="pt-[80px] ss:pt-[90px] sm:pt-[105px] pb-6">
+            <div className="pt-[80px] ss:pt-[90px] sm:pt-[105px] pb-0">
               <div className="grid lg:grid-cols-7">
                 <div className="w-full lg:col-span-2 px-4 grid sm:grid-cols-2 lg:grid-rows-2 lg:grid-cols-none gap-4 mb-4 lg:mb-0">
                   <div className="shadow rounded-lg bg-white w-full row-span-1">
