@@ -22,7 +22,7 @@ export default function Dashboard() {
           <div className="max-w-[1720px] w-full mx-auto">
             <div className="pt-[80px] ss:pt-[90px] sm:pt-[105px] pb-6">
               <div className="grid lg:grid-cols-7">
-                <div className="w-full lg:col-span-2 px-4 grid sm:grid-cols-2 lg:grid-rows-2 lg:grid-cols-none gap-4 mb-4">
+                <div className="w-full lg:col-span-2 px-4 grid sm:grid-cols-2 lg:grid-rows-2 lg:grid-cols-none gap-4 mb-4 lg:mb-0">
                   <div className="shadow rounded-lg bg-white w-full row-span-1">
                     <div className="p-4">
                       <div className="flex items-center justify-center">
@@ -75,7 +75,7 @@ export default function Dashboard() {
                           <p className="uppercase text-gray-500 font-bold text-ss ss:text-sm">
                             Registered Date
                           </p>
-                          <p className="text-gray-800 text-sm ss:text-xs font-medium">
+                          <p className="text-gray-800 text-ss sm:text-sm ss:text-xs font-medium">
                             {studentDetails?.registeredDate}
                           </p>
                         </div>
@@ -83,7 +83,7 @@ export default function Dashboard() {
                           <p className="uppercase  text-gray-500 font-bold text-ss ss:text-sm">
                             Registered Time
                           </p>
-                          <p className="text-gray-800 text-sm ss:text-xs font-medium">
+                          <p className="text-gray-800 text-ss sm:text-sm ss:text-xs font-medium">
                             {studentDetails?.registeredTime}
                           </p>
                         </div>
@@ -92,7 +92,7 @@ export default function Dashboard() {
                         <p className="uppercase text-gray-500 font-bold text-ss ss:text-sm">
                           Email
                         </p>
-                        <p className="text-gray-800 text-sm ss:text-xs font-medium">
+                        <p className="text-gray-800 text-ss sm:text-sm ss:text-xs font-medium">
                           {studentDetails?.email}
                         </p>
                       </div>
@@ -100,7 +100,7 @@ export default function Dashboard() {
                         <p className="uppercase text-gray-500 font-bold text-ss ss:text-sm">
                           Department
                         </p>
-                        <p className="text-gray-800 text-sm ss:text-xs font-medium">
+                        <p className="text-gray-800 text-ss sm:text-sm ss:text-xs font-medium">
                           {studentDetails?.level !== "Aspirant" &&
                           studentDetails?.level !== "Visitor"
                             ? "Polymer and Textile Engineering "
@@ -111,7 +111,7 @@ export default function Dashboard() {
                         <p className="uppercase text-gray-500 font-bold text-ss ss:text-sm">
                           Matric No.
                         </p>
-                        <p className="text-gray-800 text-sm ss:text-xs font-medium">
+                        <p className="text-gray-800 text-ss sm:text-sm ss:text-xs font-medium">
                           {studentDetails?.regNo
                             ? studentDetails?.regNo
                             : "None"}
@@ -126,7 +126,7 @@ export default function Dashboard() {
                       <NavLink to="/gpa-calculator">
                         <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#f0abfc] bg-[#f0abfc]/90 flex gap-6 flex-col items-center justify-center">
                           <CalculatorIcon
-                            className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+                            className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
                             color="#a21caf"
                           />
                           <p className="  uppercase text-[#a21caf] text-xs lg:text-base font-semibold text-center ">
@@ -137,7 +137,7 @@ export default function Dashboard() {
                       <NavLink to="/course-outlines">
                         <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#bef264] bg-[#bef264]/90 flex gap-6 flex-col items-center justify-center">
                           <BooksIcon
-                            className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+                            className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
                             color="#00875a"
                           />
                           <p className="  uppercase text-[#00875a] text-xs lg:text-base font-semibold text-center ">
@@ -148,7 +148,7 @@ export default function Dashboard() {
                       <NavLink to="/learning-resources">
                         <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#93c5fd] bg-[#93c5fd]/90 flex gap-6 flex-col items-center justify-center">
                           <FilesIcon
-                            className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+                            className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
                             color="#1d4ed8"
                           />
                           <p className="  uppercase text-[#1d4ed8] text-xs lg:text-base font-semibold text-center ">
@@ -159,7 +159,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-2 mmd:gap-4">
-                    <div className="shadow rounded-lg w-full py-2 bg-white">
+                    <div className="shadow rounded-lg w-full py-2 bg-white h-[350px]">
                       <div className=" text-sm sm:text-xs md:text-base p-2 border-b border-gray-300 font-bold text-gray-800">
                         Recent Activities
                       </div>
