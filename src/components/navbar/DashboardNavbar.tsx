@@ -176,15 +176,17 @@ export const DashboardNavbar = () => {
                     <BellIcon className="w-6 h-6 mt-1 fill-green1" />
                   </button>
                 </PopoverHandler>
-                <PopoverContent
-                  className="z-50 p-2"
-                  placeholder={""}
-                  {...triggers}
-                >
-                  <p className="text-xss sm:text-ss font-semibold text-gray-700">
-                    You have 0 new notifications
-                  </p>
-                </PopoverContent>
+                {user && (
+                  <PopoverContent
+                    className="z-50 p-2"
+                    placeholder={""}
+                    {...triggers}
+                  >
+                    <p className="text-xss sm:text-ss font-semibold text-gray-700">
+                      You have 0 new notifications
+                    </p>
+                  </PopoverContent>
+                )}
               </Popover>
               {loading ? (
                 <Skeleton
