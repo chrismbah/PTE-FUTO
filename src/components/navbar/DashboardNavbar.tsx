@@ -42,7 +42,6 @@ export const DashboardNavbar = () => {
 
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   const triggers = {
-    onMouseEnter: () => setOpenPopover(true),
     onMouseLeave: () => setOpenPopover(false),
   };
   return (
