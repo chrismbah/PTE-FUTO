@@ -4,7 +4,7 @@ import { storage } from "../../../config/firebase";
 import { ref, listAll, getMetadata } from "firebase/storage";
 import { useParams } from "react-router-dom";
 import { useLearningResourcesContext } from "../../../context/LearningResources";
-import { BounceLoader } from "../../../components/loaders/BounceLoader";
+import { Spinner } from "../../../components/loaders/Spinner";
 import { ContentCard } from "./ContentCard";
 import fileSearch from "../../../assets/svg/fileSearch.svg";
 import { FileMetadata } from "../../../models/academics/learning-resources";
@@ -24,7 +24,7 @@ export default function Content() {
 
   const fetchFiles = async () => {
     try {
-      setError(false)
+      setError(false);
       setLoading(true);
       const res = await listAll(learningResourcesRef);
       const fileList = await Promise.all(
@@ -55,7 +55,7 @@ export default function Content() {
   if (loading) {
     return (
       <div className="mt-10 flex items-center justify-center ">
-        <BounceLoader />
+        <Spinner className="fill-green1 w-8 " />
       </div>
     );
   } else if (files.length === 0) {

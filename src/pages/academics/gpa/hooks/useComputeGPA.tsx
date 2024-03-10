@@ -84,7 +84,7 @@ export const useComputeGPA = () => {
   };
 
   const addCourseGrade = () => {
-    if (course && unit > 0 && grade) {
+    if (course && unit > 0 && unit <= 8 && grade) {
       if (editing) {
         const updatedCourseGrades: CourseGrades[] = courseGrades.map(
           (courseGrade: CourseGrades) => {
@@ -119,8 +119,11 @@ export const useComputeGPA = () => {
         case unit === "":
           notifyUser("error", "Please specify the course unit.");
           break;
-        case unit < 0:
-          notifyUser("error", "Unit must be greater than 0.");
+        case unit > 0 || unit < 8:
+          notifyUser(
+            "error",
+            "A valid unit must be greater than 0 and less than or equal to 8"
+          );
           break;
         case grade === "":
           notifyUser(
