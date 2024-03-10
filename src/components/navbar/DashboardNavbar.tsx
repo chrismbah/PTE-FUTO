@@ -82,7 +82,7 @@ export const DashboardNavbar = () => {
               className={`fixed top-0 left-0 w-full h-screen bg-black/50 backdrop-blur-sm transition duration-500 transform ${isNavOpen ? "block" : "hidden opacity-0"} z-[3]  `}
             ></div>
             <div
-              className={`dashboard-links px-2 py-4 sm:p-4 fixed top-0 left-0 w-[240px] sm:w-[270px] h-screen bg-white shadow z-[6] transition duration-500 ease-in-out transform ${
+              className={`dashboard-links px-2 py-4 sm:p-4 fixed top-0 left-0 w-[240px] sm:w-[270px] h-screen bg-white shadow z-[6] transition duration-300 ease-in-out transform ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               }`}
             >
@@ -91,21 +91,19 @@ export const DashboardNavbar = () => {
                   onClick={toggleMenu}
                   className="focus:outline-none bg-transparent"
                 >
-                  <BurgerIcon className="w-6 h-6" />
+                  <BurgerIcon className="w-6 h-6 mr-1" />
                 </button>
                 <div className="">
-                  <a href="/">
-                    <div className="logo flex">
-                      <img
-                        src={logo}
-                        className="mr-2 w-8 h-8 ss:w-10 ss:h-10"
-                        alt="PTE Logo"
-                      />
-                      <div className="mr-2 text-black w-[100%] sm:w-[70%] self-center whitespace-wrap text-xss ss:text-ss lg:text-sm font-[900]">
-                        Polymer and Textile <br /> Engineering, FUTO
-                      </div>
+                  <div className="logo flex">
+                    <img
+                      src={logo}
+                      className="mr-2 w-8 h-8 ss:w-10 ss:h-10"
+                      alt="PTE Logo"
+                    />
+                    <div className="mr-2 text-black w-[100%] sm:w-[70%] self-center whitespace-wrap text-xss ss:text-ss lg:text-sm font-[900]">
+                      Polymer and Textile <br /> Engineering, FUTO
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
               <div className="mb-4">
@@ -114,6 +112,15 @@ export const DashboardNavbar = () => {
                 </p>
               </div>
               <div className="flex flex-col justify-start gap-2 text-ss ss:text-sm sm:text-xs font-bold text-gray-700">
+                <NavLink
+                  onClick={() => setIsNavOpen(false)}
+                  to="/"
+                  className={
+                    "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
+                  }
+                >
+                  Home
+                </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to="/dashboard"
@@ -125,7 +132,7 @@ export const DashboardNavbar = () => {
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
-                  to="/dashboard/gpa-calculator"
+                  to="/gpa-calculator"
                   className={
                     "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                   }
@@ -204,7 +211,7 @@ export const DashboardNavbar = () => {
                         {studentDetails &&
                         studentDetails.profileImageURL.length > 0 ? (
                           <div
-                            className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[36px] md:w-[36px]
+                            className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[38px] md:w-[38px]
                        rounded-full p-[1px] sm:p-[2px] border sm:border-2 border-transparent hover:border-green4 transition duration-200 ease-in-out"
                           >
                             <img

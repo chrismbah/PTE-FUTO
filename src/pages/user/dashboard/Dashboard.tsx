@@ -123,7 +123,7 @@ export default function Dashboard() {
                 <div className="lg:col-span-5 px-4 h-full">
                   <div className="mb-4">
                     <div className="grid sss:grid-cols-2 lg:grid-cols-3 gap-4 ">
-                      <NavLink to="/dashboard/gpa-calculator">
+                      <NavLink to="/gpa-calculator">
                         <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#f0abfc] bg-[#f0abfc]/90 flex gap-6 flex-col items-center justify-center">
                           <CalculatorIcon
                             className=" w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"

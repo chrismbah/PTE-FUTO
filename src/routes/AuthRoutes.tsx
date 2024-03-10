@@ -41,7 +41,6 @@ const AuthenticatedRoutes = () => {
   const AboutUs = lazy(() => import("../pages/about/AboutUs"));
   const PhilosophyAndObjectives = lazy(() => import("../pages/about/P&A"));
   const Admission = lazy(() => import("../pages/about/Admission"));
-  // const currentPath = window.location.pathname;
 
   return (
     <>
@@ -82,7 +81,7 @@ const AuthenticatedRoutes = () => {
           <Route path="/about/admission" element={<Admission />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/gpa-calculator" element={<CalculateGPA />} />
+          <Route path="/gpa-calculator" element={<CalculateGPA />} />
           <Route path="/profile" element={<StudentProfile />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>

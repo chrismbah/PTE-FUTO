@@ -169,7 +169,7 @@ export const GeneralNavbar = () => {
             </div>
             <div
               onClick={toggleMenu}
-              className={`fixed top-0 left-0 w-full h-screen bg-black/50 backdrop-blur-sm transition duration-500 transform ${isNavOpen ? "block" : "hidden opacity-0"} z-[3]  `}
+              className={`fixed top-0 left-0 w-full h-screen bg-black/50 backdrop-blur-sm transition duration-300 transform ${isNavOpen ? "block" : "hidden opacity-0"} z-[3]  `}
             ></div>
 
             <div
@@ -327,7 +327,7 @@ export const GeneralNavbar = () => {
                       {studentDetails &&
                       studentDetails.profileImageURL.length > 0 ? (
                         <div
-                          className="h-[32px] w-[32px] sm:h-[34px] sm:w-[34px]  md:h-[37px] md:w-[37px]
+                          className="h-[32px] w-[32px] sm:h-[34px] sm:w-[34px] md:h-[38px] md:w-[38px]
                             rounded-full p-[1px] sm:p-[2px] border sm:border-2 border-transparent hover:border-green4 transition duration-200 ease-in-out"
                         >
                           <img

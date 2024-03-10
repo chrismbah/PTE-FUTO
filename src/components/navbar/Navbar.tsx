@@ -9,7 +9,11 @@ export const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   let navbarComponent;
-  if (currentPath.startsWith("/dashboard") || currentPath === "/profile") {
+  if (
+    currentPath === "/dashboard" ||
+    currentPath === "/profile" ||
+    currentPath === "/gpa-calculator"
+  ) {
     navbarComponent = <DashboardNavbar />;
   } else {
     navbarComponent = <GeneralNavbar />;
