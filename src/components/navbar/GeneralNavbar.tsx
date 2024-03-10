@@ -328,7 +328,7 @@ export const GeneralNavbar = () => {
                       studentDetails.profileImageURL.length > 0 ? (
                         <div
                           className="h-[32px] w-[32px] sm:h-[34px] sm:w-[34px] md:h-[38px] md:w-[38px]
-                            rounded-full p-[1px] sm:p-[2px] border sm:border-2 border-transparent hover:border-green4 transition duration-200 ease-in-out"
+                            rounded-full  border sm:border-2 border-transparent hover:border-green4 transition duration-200 ease-in-out"
                         >
                           <img
                             src={studentDetails.profileImageURL}
