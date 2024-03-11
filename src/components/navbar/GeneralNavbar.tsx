@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Dropdown, Button } from "flowbite-react";
-import { customButtonTheme } from "../../themes/customButtton";
+import { Dropdown } from "flowbite-react";
 import { customDropdownTheme } from "../../themes/customDropdown";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
@@ -399,14 +398,11 @@ export const GeneralNavbar = () => {
                 />
               )
             ) : (
-              <Button
-                theme={customButtonTheme}
-                color="primary"
-                size="md"
-                className="focus:outline-none"
-              >
-                <Link to={"/login"}>Login</Link>
-              </Button>
+              <Link to={"/login"}>
+                <button className="rounded-lg bg-green1 hover:bg-green1/95 transition duration-200 ease-in-out py-2 px-3.5 font-semibold text-white">
+                  Login
+                </button>
+              </Link>
             )}
           </div>
         </div>

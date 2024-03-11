@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from "react";
-import AuthenticatedRoutes from "./AuthRoutes";
-import GeneralRoutes from "./GeneralRoutes";
+// import { useState } from "react";
+import AuthenticatedRoutes from "./AuthenticatedRoutes";
+// import GeneralRoutes from "./GeneralRoutes";
 // import { Navbar } from "../components/navbar/Navbar";
 
 // import DashboardRoutes from "./DashboardRoutes";
@@ -12,10 +12,7 @@ import GeneralRoutes from "./GeneralRoutes";
 // import { GeneralNavbar } from "../components/navbar/GeneralNavbar";
 
 const AppRoutes = () => {
-  // const [user] = useAuthState(auth);
-  // const isDashboardRoute = location.pathname.startsWith("/dashboard");
-  const [user] = useState(true);
 
-  return <>{user ? <AuthenticatedRoutes /> : <GeneralRoutes />}</>;
+  return  <AuthenticatedRoutes />;
 };
 export default AppRoutes;

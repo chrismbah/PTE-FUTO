@@ -2,7 +2,7 @@
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../../components/icons/BadNetworkIcon";
 import search from "../../../assets/svg/search.svg";
@@ -12,9 +12,15 @@ import { BooksIcon } from "../../../components/icons/dashboard/BooksIcon";
 import { FilesIcon } from "../../../components/icons/dashboard/FilesIcon";
 
 export default function Dashboard() {
-  const { studentDetails, gettingStudentDetails, gettingStudentDetailsErr } =
-    useGetUserInfo();
-
+  const {
+    user,
+    studentDetails,
+    gettingStudentDetails,
+    gettingStudentDetailsErr,
+  } = useGetUserInfo();
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
   return (
     <>
       {studentDetails ? (
@@ -123,7 +129,7 @@ export default function Dashboard() {
                 <div className="lg:col-span-5 px-4 h-full">
                   <div className="mb-4">
                     <div className="grid sss:grid-cols-2 lg:grid-cols-3 gap-4 ">
-                      <NavLink to="/gpa-calculator">
+                      <NavLink to="/u/gpa-calculator">
                         <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#f0abfc] bg-[#f0abfc]/90 flex gap-6 flex-col items-center justify-center">
                           <CalculatorIcon
                             className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
@@ -134,7 +140,7 @@ export default function Dashboard() {
                           </p>
                         </div>
                       </NavLink>
-                      <NavLink to="/course-outlines">
+                      <NavLink to="/u/course-outlines">
                         <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#bef264] bg-[#bef264]/90 flex gap-6 flex-col items-center justify-center">
                           <BooksIcon
                             className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
@@ -145,7 +151,7 @@ export default function Dashboard() {
                           </p>
                         </div>
                       </NavLink>
-                      <NavLink to="/learning-resources">
+                      <NavLink to="/u/learning-resources">
                         <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#93c5fd] bg-[#93c5fd]/90 flex gap-6 flex-col items-center justify-center">
                           <FilesIcon
                             className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"

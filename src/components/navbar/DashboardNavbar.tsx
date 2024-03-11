@@ -118,7 +118,7 @@ export const DashboardNavbar = () => {
                     "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                   }
                 >
-                  Home
+                  Go Home
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
@@ -131,7 +131,7 @@ export const DashboardNavbar = () => {
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
-                  to="/gpa-calculator"
+                  to="/u/gpa-calculator"
                   className={
                     "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                   }
@@ -140,7 +140,7 @@ export const DashboardNavbar = () => {
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
-                  to="/course-outlines"
+                  to="/u/course-outlines"
                   className={
                     "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                   }

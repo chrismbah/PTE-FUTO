@@ -30,7 +30,7 @@ export default function Login() {
                 />
               </a>
               <h1 className="text-md font-[800] leading-tight tracking-tight text-gray-900 md:text-[21px] dark:text-white">
-                Login into your account
+                Login to your account
               </h1>
             </div>
 

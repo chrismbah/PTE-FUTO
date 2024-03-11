@@ -195,12 +195,6 @@ export const EditProfileModal = () => {
                     </button>
                   </div>
                 </div>
-                {/* <p
-                  className="my-1 w-full text-left text-sss ss:text-xss text-gray-500 "
-                  id="file_input_help"
-                >
-                  PNG, JPG or WEBP Potrait Image.
-                </p> */}
               </div>
             </div>
             <div className="px-3 ss:px-5 sss:px-7 mb-4 sm:mb-7">

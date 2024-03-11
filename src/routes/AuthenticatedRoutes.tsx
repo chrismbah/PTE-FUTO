@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../pages/error/404/NotFound";
 import LogoSpinner from "../components/loaders/FullLogoSpinner";
-// import { DashboardNavbar } from "../components/navbar/DashboardNavbar";
-// import { GeneralNavbar } from "../components/navbar/GeneralNavbar";
 import { Navbar } from "../components/navbar/Navbar";
+// import ProtectedRoute from "./ProtectedRoute";
+// import { PrivateRoute } from "./PrivateRoute";
 
 const AuthenticatedRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login"));
@@ -35,12 +36,21 @@ const AuthenticatedRoutes = () => {
   );
   const Blog = lazy(() => import("../pages/misc/blog/Blog"));
   const BlogPost = lazy(() => import("../pages/misc/blog/post/BlogPost"));
-  const StudentProfile = lazy(() => import("../pages/user/StudentProfile"));
-  const Dashboard = lazy(() => import("../pages/user/dashboard/Dashboard"));
   const ProjectTeam = lazy(() => import("../pages/students/ProjectTeam"));
   const AboutUs = lazy(() => import("../pages/about/AboutUs"));
   const PhilosophyAndObjectives = lazy(() => import("../pages/about/P&A"));
   const Admission = lazy(() => import("../pages/about/Admission"));
+  const Dashboard = lazy(() => import("../pages/user/dashboard/Dashboard"));
+  const StudentProfile = lazy(() => import("../pages/user/StudentProfile"));
+  const GPACalculator = lazy(
+    () => import("../pages/user/dashboard/components/GPACalculator")
+  );
+  const CourseOutlines = lazy(
+    () =>
+      import(
+        "../pages/user/dashboard/components/course-outlines/CourseOutlines"
+      )
+  );
 
   return (
     <>
@@ -82,8 +92,20 @@ const AuthenticatedRoutes = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/gpa-calculator" element={<CalculateGPA />} />
-          <Route path="/profile" element={<StudentProfile />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route element={<PrivateRoute />}> */}
+          <Route path="/dasboard" element={<Dashboard />} />
+          <Route path="/u/profile" element={<StudentProfile />} />
+          <Route path="/u/gpa-calculator" element={<GPACalculator />} />
+          <Route path="/u/course-outlines" element={<CourseOutlines />} />
+          {/* </Route> */}
+          {/* <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />{" "}
+              </ProtectedRoute>
+            }
+          /> */}
         </Routes>
       </Suspense>
     </>
