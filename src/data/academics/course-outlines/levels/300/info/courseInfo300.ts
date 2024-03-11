@@ -340,6 +340,20 @@ export const courseInfo300: CourseInfo = {
         },
       ],
     },
+    ENG308: {
+      courseCode: "ENG 308",
+      courseTitle: "ENGINEERING MATHEMATICS II",
+      creditUnit: 3,
+      creditUnits: "(2, 1, 0)",
+      preRequisite: "MTH 202, ENG 203",
+      info: [
+        {
+          heading: "General",
+          content:
+            "Numerical methods and digital computer methods applied to various engoneering problems including ,atrix inversion. Approximation of functions, integration, differentiation ordinary and partial and optimization, Applications in engineering; Fast Fourier analysis. Introduction to optimization eg Transportation problems, Dynamic programming, Design and simulation of smple engineering components and applications. Introduction to state space formulation analysis and applications. Monte Carlo simulation.",
+        },
+      ],
+    },
     PTE308: {
       courseCode: "PTE 308",
       courseTitle: "WEAVING MECHANISMS",

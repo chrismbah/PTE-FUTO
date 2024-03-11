@@ -1,7 +1,6 @@
 import Lottie from "lottie-react";
 import consultation from "../../json/animation/consultation.json";
 import glasses from "../../json/animation/glasses.json";
-// import img2 from "../../assets/img/gallery/login.webp";
 import img2 from "../../assets/img/gallery/senate-building.webp";
 import img3 from "../../assets/img/gallery/senate.jpg";
 import img4 from "../../assets/img/gallery/statue.jpg";
@@ -88,50 +87,4 @@ export default function About() {
       </div>
     </>
   );
-}
-{
-  /* <div className="section section-flex-between-reverse">
-          <div className="max-w-[500px] mmd:max-w-[900px]  mmd:w-[800px] mmd:min-w-[450px]">
-          </div>
-          <div className="flex flex-col items-start gap-8 xlg:gap-12">
-            <div>
-              <div className="bar-style" />
-              <h3>Our Mission</h3>p
-              <p className="section-p">
-                Empowering students to achieve academic excellence through
-                innovative learning resources and personalized support.
-                <br />
-                We fuel academic pursuits through diverse resources, interactive
-                tools and tailored support systems.
-              </p>
-            </div>
-            <div>
-              <div className="bar-style" />
-              <h3>Our Vision</h3>
-              <p className="section-p">
-                Nurturing a vibrant community of curious learners equipped to
-                thrive in an ever-evolving world. We envision graduates not just
-                excelling in their chosen fields, <br /> but embracing lifelong
-                learning and becoming impactful contributors to society.
-              </p>
-            </div>
-          </div>
-        </div> */
-  // <div className="grid grid-cols-2 gap-3">
-  //       <div className="grid">
-  //         <img
-  //           src={img2}
-  //           alt="about"
-  //           className="w-full h-full object-cover rounded-lg bg-gray-100"
-  //         />
-  //       </div>
-  //       <div className="grid grid-row-3 gap-3">
-  //         <div className="row-span-2">
-  //           <img src={img4} alt="" className="rounded-lg " />
-  //         </div>
-  //         <div className="row-span-2">
-  //           <img src={img3} alt="" className="rounded-lg " />
-  //         </div>
-  //       </div>
-  //     </div>
 }

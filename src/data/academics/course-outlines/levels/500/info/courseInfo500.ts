@@ -416,7 +416,7 @@ export const courseInfo500: CourseInfo = {
       ],
     },
     PTE532: {
-      courseCode: "PTE 321",
+      courseCode: "PTE 532",
       courseTitle: "DESIGN",
       creditUnit: 2,
       creditUnits: "(2, 0, 1)",
