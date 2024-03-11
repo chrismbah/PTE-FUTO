@@ -31,7 +31,7 @@ export default function CourseOutlines() {
         console.log(courseInfo);
       }
     }
-  }, [level, course, semester]);
+  }, [level, course, semester, courseInfo]);
   return (
     <div className="min-h-screen w-full bg-gray-50">
       <div className="box-width">
