@@ -1,10 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CourseOptions } from "./CourseOptions";
-
+import { ICourseInfo } from "../../../../../models/academics/course-outline/courseInfo";
+import { courseInfo100 } from "../../../../../data/academics/course-outlines/levels/100/info/courseInfo100";
+import { courseInfo200 } from "../../../../../data/academics/course-outlines/levels/200/info/courseInfo200";
+import { courseInfo300 } from "../../../../../data/academics/course-outlines/levels/300/info/courseInfo300";
+import { courseInfo400 } from "../../../../../data/academics/course-outlines/levels/400/info/courseInfo400";
+import { courseInfo500 } from "../../../../../data/academics/course-outlines/levels/500/info/courseInfo500";
 export default function CourseOutlines() {
-  const [semester, setSemester] = useState<string | null>();
-  const [level, setLevel] = useState<string | null>();
+  const [semester, setSemester] = useState<string>();
+  const [level, setLevel] = useState<string>();
+  const [course, setCourse] = useState<string>();
+  const [courseInfo, setCourseInfo] = useState<ICourseInfo | null>();
 
+  useEffect(() => {
+    if (semester && course) {
+      if (level === "100") {
+        setCourseInfo(courseInfo100[semester][course]);
+        console.log(courseInfo);
+      } else if (level === "200") {
+        setCourseInfo(courseInfo200[semester][course]);
+        console.log(courseInfo);
+      } else if (level === "300") {
+        setCourseInfo(courseInfo300[semester][course]);
+        console.log(courseInfo);
+      } else if (level === "400") {
+        setCourseInfo(courseInfo400[semester][course]);
+        console.log(courseInfo);
+      } else if (level === "500") {
+        setCourseInfo(courseInfo500[semester][course]);
+        console.log(courseInfo);
+      }
+    }
+  }, [level, course, semester]);
   return (
     <div className="min-h-screen w-full bg-gray-50">
       <div className="box-width">
@@ -25,7 +52,7 @@ export default function CourseOutlines() {
                 <select
                   onChange={(e) => setLevel(e.target.value)}
                   id="underline_select"
-                  className="bg-white border-none shadow text-gray-900 text-sm font-medium rounded-lg border border-transparent focus:ring-green1 focus:border-gray-500 block w-full p-1.5 sm:p-2 "
+                  className="bg-white cursor-pointer border-none shadow text-gray-900 text-sm font-medium rounded-lg border border-transparent focus:ring-green1 focus:border-gray-500 block w-full p-1.5 sm:p-2 "
                 >
                   <option selected disabled>
                     Select Level
@@ -41,25 +68,26 @@ export default function CourseOutlines() {
                 <select
                   onChange={(e) => setSemester(e.target.value)}
                   id="underline_select"
-                  className="bg-white border-none shadow text-gray-900 text-sm font-medium rounded-lg border border-transparent focus:ring-green1 focus:border-gray-500 block w-full p-1.5 sm:p-2 "
+                  className="bg-white cursor-pointer border-none shadow text-gray-900 text-sm font-medium rounded-lg border border-transparent focus:ring-green1 focus:border-gray-500 block w-full p-1.5 sm:p-2 "
                 >
                   <option selected disabled>
                     Select Semester
                   </option>
-                  <option value="1st">First Semester</option>
-                  <option value="2nd">Second Semester</option>
+                  <option value="First">First Semester</option>
+                  <option value="Second">Second Semester</option>
                 </select>
               </div>{" "}
               <div>
                 <select
                   id="underline_select"
-                  className="bg-white border-none shadow text-gray-900 text-sm font-medium rounded-lg border border-transparent focus:ring-green1 focus:border-gray-500 block w-full p-1.5 sm:p-2 "
+                  onChange={(e) => setCourse(e.target.value)}
+                  className="bg-white cursor-pointer border-none shadow text-gray-900 text-sm font-medium rounded-lg border border-transparent focus:ring-green1 focus:border-gray-500 block w-full p-1.5 sm:p-2 "
                 >
                   <option selected disabled>
                     Select Course
                   </option>
                   {level && semester && (
-                    <CourseOptions semester={level} level={level} />
+                    <CourseOptions semester={semester} level={level} />
                   )}
                 </select>
               </div>

@@ -1,9 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState } from "react";
 import type {
   GPAContextProviderProps,
   CourseGrades,
 } from "../models/academics/gpa";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const GPAContext = createContext<any | null>(null);
 
 export function useGPAContext() {

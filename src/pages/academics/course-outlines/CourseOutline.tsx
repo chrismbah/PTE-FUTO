@@ -1,12 +1,8 @@
-import {useEffect} from "react"
 import { CourseOutlineCard } from "./CourseOutlineCard";
 import { courseOutlineLevels } from "../../../data/academics/course-outlines";
 import Footer from "../../../components/footer/Footer";
 
 export default function CourseOutline() {
-  useEffect(()=>{
-    window.scroll(0, 0)
-  }, [])
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { courseInfo100 } from "../../../data/academics/course-outlines/levels/100/info/courseInfo100";
 import { courseInfo200 } from "../../../data/academics/course-outlines/levels/200/info/courseInfo200";

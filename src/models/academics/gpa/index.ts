@@ -18,9 +18,16 @@ export type LevelCourses = {
     };
   };
 };
+export type LevelCoursesOutline = {
+  [level: string]: {
+    [semester: string]: {
+      courses: { course: string; courseID:string, unit: number }[];
+    };
+  };
+};
 
 export interface CourseGrades {
-  id:string;
+  id: string;
   course: string;
   unit: number;
   grade: string;
