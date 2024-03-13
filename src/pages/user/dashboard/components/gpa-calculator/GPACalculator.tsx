@@ -1,6 +1,6 @@
-import { GPAMessage } from "../../../../pages/academics/gpa/components/GPAMessage";
-import { useComputeGPA } from "../../../../pages/academics/gpa/hooks/useComputeGPA";
-import GPAForm from "../../../../pages/academics/gpa/components/GPAForm";
+import { GPAMessage } from "../../../../academics/gpa/components/GPAMessage";
+import { useComputeGPA } from "../../../../academics/gpa/hooks/useComputeGPA";
+import GPAForm from "../../../../academics/gpa/components/GPAForm";
 
 export default function GPACalculator() {
   const { studentGPA } = useComputeGPA();

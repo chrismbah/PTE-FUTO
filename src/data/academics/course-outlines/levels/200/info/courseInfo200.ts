@@ -181,7 +181,7 @@ export const courseInfo200: CourseInfo = {
     },
     ENG203: {
       courseCode: "ENG 203",
-      courseTitle: "ENGINEERING DARWING II",
+      courseTitle: "ENGINEERING DRAWING II",
       creditUnit: 1,
       creditUnits: "(0, 0, 1)",
       preRequisite: "ENG 103, ENG 104",

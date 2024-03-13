@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Dropdown, Button } from "flowbite-react";
 import { customButtonTheme } from "../../themes/customButtton";
 import { Link } from "react-router-dom";
@@ -211,7 +209,7 @@ export const DashboardNavbar = () => {
                         {studentDetails &&
                         studentDetails.profileImageURL.length > 0 ? (
                           <div
-                            className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[38px] md:w-[38px]
+                            className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[38px] md:w-[38px] bg-gray-200
                              rounded-full border sm:border-2 border-transparent hover:border-green4 transition duration-200 ease-in-out"
                           >
                             <img

@@ -2,7 +2,7 @@
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../../components/icons/BadNetworkIcon";
 import search from "../../../assets/svg/search.svg";
@@ -13,14 +13,14 @@ import { FilesIcon } from "../../../components/icons/dashboard/FilesIcon";
 
 export default function Dashboard() {
   const {
-    user,
+    // user,
     studentDetails,
     gettingStudentDetails,
     gettingStudentDetailsErr,
   } = useGetUserInfo();
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+  // if (!user) {
+  //   return <Navigate to="/login" />;
+  // }
   return (
     <>
       {studentDetails ? (
@@ -202,15 +202,15 @@ export default function Dashboard() {
           </div>
         </div>
       ) : gettingStudentDetails ? (
-        <div className="w-full h-screen flex items-center justify-center flex-col">
+        <div className="w-full h-screen flex items-center justify-center flex-col gap-3">
           <Spinner className="w-8 sm:w-10" />
-          <p className=" text-sm sm:text-xs md:text-base font-semibold text-gray-800">
+          <p className=" text-ss sm:text-sm md:text-xs font-semibold text-gray-800">
             Please wait...
           </p>
         </div>
       ) : (
         gettingStudentDetailsErr && (
-          <div className="w-full h-[100vh] flex items-center justify-center flex-col">
+          <div className="w-full h-[100vh] flex items-center justify-center flex-col gap-3">
             <BadNetworkIcon className="w-6 sm:w-10 md:w-16" />
             <p className=" text-sm sm:text-xs md:text-xs text-gray-800 font-semibold">
               Something went wrong.{" "}

@@ -10,7 +10,7 @@ import { GraduateCapIcon } from "../../components/icons/GraduateCapIcon";
 import { ClockIcon } from "../../components/icons/ClockIcon";
 import { RegisterIcon } from "../../components/icons/RegisterIcon";
 import { TrashIcon } from "../../components/icons/TrashIcon";
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 import {
   Popover,
   PopoverHandler,
@@ -28,7 +28,7 @@ export default function StudentProfile() {
     studentDetails,
     gettingStudentDetails,
     gettingStudentDetailsErr,
-    user,
+    // user,
   } = useGetUserInfo();
   const {
     setOpenDeleteProfileImageModal,
@@ -40,9 +40,9 @@ export default function StudentProfile() {
     getUserInfo();
   }, [studentDetails]);
 
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+  // if (!user) {
+  //   return <Navigate to="/login" />;
+  // }
   const renderProfileImage = () => {
     if (studentDetails) {
       if (studentDetails.profileImageURL.length > 1) {
@@ -222,15 +222,15 @@ export default function StudentProfile() {
             </div>
           </div>
         ) : gettingStudentDetails ? (
-          <div className="w-full h-screen flex items-center justify-center flex-col">
+          <div className="w-full h-screen flex items-center justify-center flex-col gap-3">
             <Spinner className="w-8 sm:w-10" />
-            <p className=" text-sm sm:text-xs md:text-base font-semibold text-gray-800">
+            <p className=" text-ss sm:text-sm md:text-xs font-semibold text-gray-800">
               Please wait...
             </p>
           </div>
         ) : (
           gettingStudentDetailsErr && (
-            <div className="w-full h-[100vh] flex items-center justify-center flex-col">
+            <div className="w-full h-[100vh] flex items-center justify-center flex-col gap-3">
               <BadNetworkIcon className="w-6 sm:w-10 md:w-16" />
               <p className=" text-sm sm:text-xs md:text-xs text-gray-800 font-semibold">
                 Something went wrong.{" "}

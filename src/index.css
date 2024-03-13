@@ -10,25 +10,7 @@
 html{
     scroll-behavior: smooth;
 }
-/* .shadow-1{
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  29px 29px 58px #d9d9d9,-29px -29px 58px #ffffff;
-}
-.shadow-1a{
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  0px 0px 0px #d9d9d9,-29px -29px 58px #ffffff;
-}
 
-.shadow-2{
-background: linear-gradient(225deg, #dfe1e3, #ffffff);
-box-shadow:  -5px 5px 32px #eef0f2,
-             5px -5px 32px #ffffff;
-}
-.shadow-3{
-background: linear-gradient(145deg, #dfe1e3, #ffffff);
-box-shadow:  20px 20px 60px #d3d5d6,
-             -20px -20px 60px #ffffff;
-} */
 .shadow-4{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
@@ -46,7 +28,7 @@ h3{
     @apply text-xl sm:text-2xl font-[500]
 }
 .section-p{
-    @apply text-ss ss:text-sm md:text-xs text-gray-700 font-medium
+    @apply text-ss ss:text-sm md:text-xs text-gray-700 font-semibold
 }
 .box-width{
     @apply 2xl:max-w-[1520px] w-full mx-auto

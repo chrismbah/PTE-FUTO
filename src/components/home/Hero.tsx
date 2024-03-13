@@ -28,11 +28,18 @@ export default function Hero() {
               <br className="hidden ss:block" /> and join a thriving community
               of fellow learners.
             </p>
-            <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
+            {/* <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
               <Button theme={customButtonTheme} color="primary" size={"lg"}>
                 {user && studentDetails ? "Go to Dashboard" : "Get Started"}
               </Button>
-            </Link>
+            </Link> */}
+            <div className="w-full flex items-center mt-6">
+              <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
+                <Button theme={customButtonTheme} size={"lg"} color="primary">
+                  {user && studentDetails ? "Go to Dashboard" : "Get Started"}
+                </Button>
+              </Link>
+            </div>
           </div>
           <div className="max-w-[500px] mmd:max-w-[700px] xlg:w-[800px]">
             <Lottie loop={false} animationData={heroAnimation} />

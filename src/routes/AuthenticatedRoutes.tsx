@@ -42,13 +42,20 @@ const AuthenticatedRoutes = () => {
   const Admission = lazy(() => import("../pages/about/Admission"));
   const Dashboard = lazy(() => import("../pages/user/dashboard/Dashboard"));
   const StudentProfile = lazy(() => import("../pages/user/StudentProfile"));
-  const GPACalculator = lazy(
-    () => import("../pages/user/dashboard/components/GPACalculator")
+  const DashboardGPACalculator = lazy(
+    () =>
+      import("../pages/user/dashboard/components/gpa-calculator/GPACalculator")
   );
-  const CourseOutlines = lazy(
+  const DashboardCourseOutlines = lazy(
     () =>
       import(
         "../pages/user/dashboard/components/course-outlines/CourseOutlines"
+      )
+  );
+  const DashboardLearningResources = lazy(
+    () =>
+      import(
+        "../pages/user/dashboard/components/learning-resources/LearningResources"
       )
   );
 
@@ -95,8 +102,18 @@ const AuthenticatedRoutes = () => {
           {/* <Route element={<PrivateRoute />}> */}
           <Route path="/dasboard" element={<Dashboard />} />
           <Route path="/u/profile" element={<StudentProfile />} />
-          <Route path="/u/gpa-calculator" element={<GPACalculator />} />
-          <Route path="/u/course-outlines" element={<CourseOutlines />} />
+          <Route
+            path="/u/gpa-calculator"
+            element={<DashboardGPACalculator />}
+          />
+          <Route
+            path="/u/course-outlines"
+            element={<DashboardCourseOutlines />}
+          />
+          <Route
+            path="/u/learning-resources"
+            element={<DashboardLearningResources />}
+          />
           {/* </Route> */}
           {/* <Route
             path="/dashboard"
