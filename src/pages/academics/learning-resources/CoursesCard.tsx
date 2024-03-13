@@ -23,7 +23,7 @@ export const CoursesCard: FC<CourseCard> = ({
   return (
     <div
       onClick={checkCourseResources}
-      className="w-full h-[160px] p-4 flex items-center justify-center flex-col rounded-lg
+      className="w-full h-[170px] p-4 flex items-center justify-center flex-col gap-2 rounded-lg
         hover:bg-gray-100 border-2 border-transparent hover:border-green1 cursor-pointer"
     >
       <div className="h-2/3 mb-1 flex flex-col items-center justify-center">

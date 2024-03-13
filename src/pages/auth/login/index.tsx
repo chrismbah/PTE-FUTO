@@ -17,9 +17,9 @@ export default function Login() {
   } = useForm<ILoginForm>({ resolver: yupResolver(logInSchema) });
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
+    <section className="bg-gray-50">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
-        <div className="w-full bg-white rounded-lg shadow dark:border mt-16 sm:max-w-lg xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full bg-white rounded-lg shadow dark:border mt-16 sm:max-w-lg xl:p-0 ">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <div className="flex items-center justify-center flex-col">
               <a className="flex items-center mb-3 text-xl font-semibold text-gray-900 dark:text-white">
@@ -86,12 +86,12 @@ export default function Login() {
               </Button>
             </form>
           </div>
-          <div className="border border-t-gray-300 px-6 py-4 sm:px-8">
-            <p className="text-sm font-semibold text-gray-500">
+          <div className="border-t border-t-gray-300 px-6 py-4 sm:px-8">
+            <p className="text-sm font-semibold text-gray-700">
               New Student ?{" "}
               <a
                 href="/signup"
-                className="font-medium text-green1 hover:underline dark:text-primary-500"
+                className="font-semibold text-green1 hover:underline "
               >
                 Sign Up
               </a>

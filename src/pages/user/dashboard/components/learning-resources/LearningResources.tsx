@@ -7,6 +7,7 @@ import fileSearch from "../../../../../assets/svg/fileSearch.svg";
 import checkResources from "../../../../../assets/svg/search-files.svg";
 import { notifyUser } from "../../../../../helpers/notifyUser";
 import { FileCard } from "./FileCard";
+import { Content } from "./Content";
 
 export default function LearningResources() {
   const [semester, setSemester] = useState<string | null>();
@@ -24,7 +25,7 @@ export default function LearningResources() {
       getLearningResources(level, course, resourcesType);
       console.log(files);
     }
-  }, [resourcesType, course ]);
+  }, [resourcesType, course]);
 
   const getCourseResources = async () => {
     if (level && course && resourcesType) {
@@ -136,6 +137,9 @@ export default function LearningResources() {
                   Past Questions
                 </button>
               </div>
+            </div>
+            <div className="w-full h-full mt-6 px-5 md:px-3 ">
+              <Content />
             </div>
             <div className="mt-5">
               {!files && !gettingResources && !error && (

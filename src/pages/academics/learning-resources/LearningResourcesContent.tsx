@@ -12,7 +12,7 @@ export default function LearningResourcesContent() {
       <div className="box-width2">
         <div className="page-section">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
-            <h5 className="text-green1 text-center font-bold text-xl ss:text-xll w-full">
+            <h5 className="text-center font-bold text-xl ss:text-xll w-full uppercase text-gray-900">
               {id} E-Book Download
             </h5>
             <p className="heading-p">

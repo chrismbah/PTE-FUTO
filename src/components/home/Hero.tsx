@@ -15,10 +15,10 @@ export default function Hero() {
       <div className="px-3 xsm:px-14 sm:pt-24 mmd:pt-28 sm:pb-36 py-20 box-width">
         <div className="section-flex-between gap-4">
           <div className="w-full">
-            <h1 className="text-green1 xl:text-5xl lg:text-4xl text-3xl  font-[700]">
+            <h1 className="text-green1 text-3xl sm:text-4xl mmd:text-5xl lg:text-4xl xl:text-5xl font-[700]">
               Polymer and Textile Engineering Department
             </h1>
-            <h2 className="mb-2 xl:text-4xl lg:text-3xl md:text-2xl text-xl font-semibold">
+            <h2 className="mb-2 xl:text-4xl lg:text-3xl sm:text-2xl text-xl font-semibold text-gray-800">
               Federal University of Technology, Owerri
             </h2>
             <p className="section-p mb-4">
@@ -28,11 +28,7 @@ export default function Hero() {
               <br className="hidden ss:block" /> and join a thriving community
               of fellow learners.
             </p>
-            {/* <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
-              <Button theme={customButtonTheme} color="primary" size={"lg"}>
-                {user && studentDetails ? "Go to Dashboard" : "Get Started"}
-              </Button>
-            </Link> */}
+            
             <div className="w-full flex items-center mt-6">
               <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
                 <Button theme={customButtonTheme} size={"lg"} color="primary">

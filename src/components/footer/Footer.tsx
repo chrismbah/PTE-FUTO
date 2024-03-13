@@ -1,7 +1,7 @@
 import logo from "../../assets/logo/logo.png";
-import { WebIcon } from "../icons/socials/WebIcon";
-import { XIcon } from "../icons/socials/XIcon";
-import { FacebookIcon } from "../icons/socials/FacebookIcon";
+import { WebIcon } from "../icons/footer/WebIcon";
+import { XIcon } from "../icons/footer/XIcon";
+import { FacebookIcon } from "../icons/footer/FacebookIcon";
 
 export default function Footer() {
   return (
@@ -17,12 +17,12 @@ export default function Footer() {
               </span>
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3">
+          <div className="grid xxss:grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm font-semibold text-white uppercase">
+              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm md:text-xs font-semibold text-white uppercase">
                 Resources
               </h2>
-              <ul className="text-white font-medium text-xss sm:text-ss">
+              <ul className="text-white font-medium text-xss sm:text-ss md:text-sm ">
                 <li className=" mb-1 sm:mb-2">
                   <a href="https://futo.edu.ng/" className="hover:underline">
                     FUTO Portal
@@ -36,41 +36,54 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm font-semibold text-white uppercase">
-                Alumini
+              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm md:text-xs font-semibold text-white uppercase">
+                Academics
               </h2>
-              <ul className="text-white font-medium text-xss sm:text-ss">
+              <ul className="text-white font-medium text-xss sm:text-ss md:text-sm">
                 <li className=" mb-1 sm:mb-2">
                   <a
                     href="https://github.com/themesberg/flowbite"
                     className="hover:underline"
                   >
-                    Blog
+                    GPA Calculator
                   </a>
                 </li>
+                <li className=" mb-1 sm:mb-2">
+                  <a
+                    href="https://discord.gg/4eeurUVvTy"
+                    className="hover:underline"
+                  >
+                    Course Outlines
+                  </a>
+                </li>{" "}
                 <li>
                   <a
                     href="https://discord.gg/4eeurUVvTy"
                     className="hover:underline"
                   >
-                    Events
+                    Learning Resources
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm font-semibold text-white uppercase">
-                Legal
+              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm md:text-xs font-semibold text-white uppercase">
+                Useful Links
               </h2>
-              <ul className="text-white font-medium text-xss sm:text-ss">
+              <ul className="text-white font-medium text-xss sm:text-ss md:text-sm">
                 <li className=" mb-1 sm:mb-2">
                   <a href="#" className="hover:underline">
-                    Privacy Policy
+                    About Us
+                  </a>
+                </li>
+                <li className=" mb-1 sm:mb-2">
+                  <a href="#" className="hover:underline">
+                    Blog
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:underline">
-                    Terms &amp; Conditions
+                    Class Representatives
                   </a>
                 </li>
               </ul>
@@ -104,20 +117,20 @@ export default function Footer() {
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
-              <FacebookIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+              <FacebookIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 fill-white" />
             </a>
 
             <a
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-2"
             >
-              <XIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+              <XIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" />
             </a>
             <a
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-2"
             >
-              <WebIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+              <WebIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" />
             </a>
           </div>
         </div>

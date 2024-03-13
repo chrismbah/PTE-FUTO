@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import newsLetter from "../../json/animation/newsletter.json";
 import Lottie from "lottie-react";
@@ -17,13 +15,11 @@ import {
 } from "firebase/firestore";
 import { notifyUser } from "../../helpers/notifyUser";
 import { Spinner } from "../loaders/Spinner";
-import { useNavigate } from "react-router-dom";
 import { BellIcon } from "../icons/BellIcon";
 export default function CTANewsLetter() {
   const [subscribing, setSubscribing] = useState(false);
 
   const { getUserInfo, studentDetails, userID, user } = useGetUserInfo();
-  const navigate = useNavigate();
   useEffect(() => {
     getUserInfo();
   }, [user]);
@@ -59,11 +55,12 @@ export default function CTANewsLetter() {
           notifyUser("info", "You are already subscribed");
         }
       } catch (err) {
+        setSubscribing(false);
         notifyUser("error", "Something went wrong. Please try again");
       }
     } else {
+      setSubscribing(false);
       notifyUser("error", "Please login to subscribe to our newsletter");
-      navigate("/login");
     }
   };
   return (

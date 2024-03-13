@@ -5,7 +5,7 @@ import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import avatar from "../../json/animation/avatar1.json";
 import { CalenderIcon } from "../../components/icons/CalenderIcon";
-import { EmailIcon } from "../../components/icons/socials/EmailIcon";
+import { EmailIcon } from "../../components/icons/footer/EmailIcon";
 import { GraduateCapIcon } from "../../components/icons/GraduateCapIcon";
 import { ClockIcon } from "../../components/icons/ClockIcon";
 import { RegisterIcon } from "../../components/icons/RegisterIcon";
