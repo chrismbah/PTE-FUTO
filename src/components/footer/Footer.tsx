@@ -19,11 +19,11 @@ export default function Footer() {
           </div>
           <div className="grid xxss:grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm md:text-xs font-semibold text-white uppercase">
+              <h2 className="mb-2 sm:mb-3 text-sm md:text-xs font-semibold text-white uppercase">
                 Resources
               </h2>
-              <ul className="text-white font-medium text-xss sm:text-ss md:text-sm ">
-                <li className=" mb-1 sm:mb-2">
+              <ul className="text-white font-medium text-ss md:text-sm ">
+                <li className=" mb-2 sm:mb-4">
                   <a href="https://futo.edu.ng/" className="hover:underline">
                     FUTO Portal
                   </a>
@@ -36,11 +36,11 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm md:text-xs font-semibold text-white uppercase">
+              <h2 className="mb-2 sm:mb-3 text-sm md:text-xs font-semibold text-white uppercase">
                 Academics
               </h2>
-              <ul className="text-white font-medium text-xss sm:text-ss md:text-sm">
-                <li className=" mb-1 sm:mb-2">
+              <ul className="text-white font-medium text-ss md:text-sm">
+                <li className=" mb-2 sm:mb-4">
                   <a
                     href="https://github.com/themesberg/flowbite"
                     className="hover:underline"
@@ -48,7 +48,7 @@ export default function Footer() {
                     GPA Calculator
                   </a>
                 </li>
-                <li className=" mb-1 sm:mb-2">
+                <li className=" mb-2 sm:mb-4">
                   <a
                     href="https://discord.gg/4eeurUVvTy"
                     className="hover:underline"
@@ -67,16 +67,16 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-2 sm:mb-3 text-ss sm:text-sm md:text-xs font-semibold text-white uppercase">
+              <h2 className="mb-2 sm:mb-3 text-sm md:text-xs font-semibold text-white uppercase">
                 Useful Links
               </h2>
-              <ul className="text-white font-medium text-xss sm:text-ss md:text-sm">
-                <li className=" mb-1 sm:mb-2">
+              <ul className="text-white font-medium text-ss md:text-sm">
+                <li className=" mb-2 sm:mb-4">
                   <a href="#" className="hover:underline">
                     About Us
                   </a>
                 </li>
-                <li className=" mb-1 sm:mb-2">
+                <li className=" mb-2 sm:mb-4">
                   <a href="#" className="hover:underline">
                     Blog
                   </a>
@@ -99,7 +99,7 @@ export default function Footer() {
                 PTE-FUTO.
               </a>
             </span>
-            <span className="text-xss ss:text-ss md:text-sm text-white sm:text-center">
+            <span className="text-ss md:text-sm text-white sm:text-center">
               Created and Designed by{" "}
               <a
                 href="https://chrismbah.vercel.app/"

@@ -8,7 +8,7 @@ import { courseInfo300 } from "../../../../../data/academics/course-outlines/lev
 import { courseInfo400 } from "../../../../../data/academics/course-outlines/levels/400/info/courseInfo400";
 import { courseInfo500 } from "../../../../../data/academics/course-outlines/levels/500/info/courseInfo500";
 import { OutlineIcon } from "../../../../../components/icons/dashboard/Outline";
-import reading from "../../../../../assets/svg/reading.svg";
+import reading from "../../../../../assets/svg/illustrations/reading.svg";
 export default function CourseOutlines() {
   const [semester, setSemester] = useState<string | null>();
   const [level, setLevel] = useState<string | null>();

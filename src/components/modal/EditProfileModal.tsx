@@ -145,16 +145,16 @@ export const EditProfileModal = () => {
           openEditProfileModal ? "block" : "hidden"
         } z-[99] bg-black/50 sss:py-0 backdrop-blur-sm w-full overflow-y-auto min-h-screen fixed top-0 left-0  flex items-center justify-center`}
       >
-        <div className=" bg-white rounded-lg  text-center relative shadow-4 w-[95%] xsm:w-[700px] overflow-y-auto max-h-[85vh]">
+        <div className=" bg-white rounded-lg text-center relative shadow w-[95%] xsm:w-[700px] overflow-y-auto max-h-[85vh]">
           <div className=" sticky top-0 right-0 z-[999] bg-white rounded-t-lg w-full flex justify-between items-center p-4 border-b border-b-gray-300">
-            <h3 className="text-base sm:text-md md:text-lg font-semibold ">
+            <h3 className="font-bold text-base sm:text-md ">
               Edit Your Profile
             </h3>
             <button
               className="font-bold p-2 rounded-lg hover:bg-gray-50"
               onClick={closeEditProfileModal}
             >
-              <CancelIcon className="h-3 w-3 xss:w-4 xss:h-4" />
+              <CancelIcon className="h-3 w-3 xss:w-3 xss:h-3" />
             </button>
           </div>
 
@@ -189,7 +189,7 @@ export const EditProfileModal = () => {
                     <button
                       onClick={uploadProfileImage}
                       className="min-w-fit  flex items-center justify-center rounded-md xss:rounded-lg bg-green1
-                       font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out p-1.5 xss:py-2 xss:px-4 hover:text-black text-sss xss:text-xss sm:text-sm"
+                       font-semibold text-white border-2 border-transparent hover:bg-green1/90 transition duration-200 ease-in-out p-1.5 xss:py-2 xss:px-4 text-sss xss:text-xss sm:text-sm"
                     >
                       <span>Upload</span>
                     </button>
@@ -290,23 +290,23 @@ export const EditProfileModal = () => {
               </form>
             </div>
           </div>
-          <div className="w-full flex items-center flex-col xxss:flex-row justify-between gap-2 px-3 ss:px-5 sss:px-7 pb-9 ss:pb-7 sss:pb-7">
-            <button
-              onClick={closeEditProfileModal}
-              className="w-full border border-gray-300 rounded-lg font-semibold text-sm sm:text-xs p-3 hover:bg-gray-100"
-            >
-              Close
-            </button>
+          <div className="w-full flex items-center flex-col xxss:flex-row justify-end gap-2 px-3 ss:px-5 sss:px-7 pb-9 ss:pb-7 sss:pb-7">
             <button
               type="submit"
               onClick={handleSubmit(editProfile)}
-              className="w-full bg-green1 rounded-lg font-semibold text-sm sm:text-xs p-3 text-white"
+              className=" bg-green1 rounded-lg font-semibold text-ss sm:text-sm px-3 py-2 text-white"
             >
               {editingProfile ? (
                 <Spinner className="w-5 h-5 fill-white" />
               ) : (
                 "Save Changes"
               )}
+            </button>
+            <button
+              onClick={closeEditProfileModal}
+              className=" text-gray-900 bg-gray-50 border border-gray-300 hover:bg-gray-200/90 rounded-lg font-semibold text-ss sm:text-sm px-3 py-2 "
+            >
+              Close
             </button>
           </div>
         </div>

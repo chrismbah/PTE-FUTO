@@ -27,14 +27,14 @@ export default function LearningResourcesContent() {
             <button
               onClick={() => setResourcesType("handouts")}
               className={`${resourcesType === "handouts" ? "bg-green1 text-white" : "bg-gray-100"} 
-                sss:p-3 p-2 text-ss  sss:text-sm xsm:text-base rounded-md font-semibold hover:bg-green1 hover:text-white transition duration-100`}
+                text-gray-800 sss:p-3 p-2 text-ss  sss:text-sm xsm:text-base rounded-md font-semibold hover:bg-green1 hover:text-white transition duration-100`}
             >
               Handouts
             </button>
             <button
               onClick={() => setResourcesType("textbooks")}
               className={`${resourcesType === "textbooks" ? "bg-green1 text-white" : "bg-gray-100"} 
-                sss:p-3 p-2 text-ss  sss:text-sm xsm:text-base rounded-md  font-semibold hover:bg-green1 hover:text-white transition duration-100`}
+                text-gray-800 sss:p-3 p-2 text-ss  sss:text-sm xsm:text-base rounded-md  font-semibold hover:bg-green1 hover:text-white transition duration-100`}
             >
               Textbooks
             </button>
@@ -42,7 +42,7 @@ export default function LearningResourcesContent() {
               <button
                 onClick={() => setResourcesType("pastquestions")}
                 className={`${resourcesType === "pastquestions" ? "bg-green1 text-white" : "bg-gray-100"} 
-                relative sss:p-3 p-2 text-ss  sss:text-sm xsm:text-base rounded-md  font-semibold hover:bg-green1 hover:text-white transition duration-100`}
+                relative text-gray-800 sss:p-3 p-2 text-ss  sss:text-sm xsm:text-base rounded-md  font-semibold hover:bg-green1 hover:text-white transition duration-100`}
               >
                 Past Questions
               </button>

@@ -205,6 +205,7 @@ export const GeneralNavbar = () => {
               </div>
               <div className="w-full flex flex-col justify-start gap-2 text-sm font-bold text-gray-700">
                 <NavLink
+                  onClick={() => setIsNavOpen(false)}
                   to={"/"}
                   className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 "
                 >
@@ -220,21 +221,30 @@ export const GeneralNavbar = () => {
                   }
                   theme={customDropdownTheme}
                 >
-                  <NavLink to={"/about/about-us"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/about/about-us"}
+                  >
                     <Dropdown.Item>
                       <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
                         About Us
                       </p>
                     </Dropdown.Item>
                   </NavLink>
-                  <NavLink to={"/about/philosophy-and-objectives"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/about/philosophy-and-objectives"}
+                  >
                     <Dropdown.Item>
                       <p className=" rounded-md hover:bg-gray-100 w-full text-left hover:text-green1 ">
                         Philosophy and Objectives
                       </p>
                     </Dropdown.Item>
                   </NavLink>
-                  <NavLink to={"/about/admission"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/about/admission"}
+                  >
                     <Dropdown.Item>
                       <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
                         Admission
@@ -253,21 +263,30 @@ export const GeneralNavbar = () => {
                   }
                   theme={customDropdownTheme}
                 >
-                  <NavLink to={"/calculate-gpa"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/calculate-gpa"}
+                  >
                     <Dropdown.Item>
                       <p className=" rounded-md hover:bg-gray-100 w-full text-left hover:text-green1 ">
                         GPA Calculator
                       </p>
                     </Dropdown.Item>
                   </NavLink>
-                  <NavLink to={"/learning-resources"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/learning-resources"}
+                  >
                     <Dropdown.Item>
                       <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
                         Learning Resources
                       </p>
                     </Dropdown.Item>
                   </NavLink>
-                  <NavLink to={"/course-outlines"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/course-outlines"}
+                  >
                     <Dropdown.Item>
                       <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
                         Course Outlines
@@ -286,14 +305,20 @@ export const GeneralNavbar = () => {
                   }
                   theme={customDropdownTheme}
                 >
-                  <NavLink to={"/students/class-representatives"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/students/class-representatives"}
+                  >
                     <Dropdown.Item>
                       <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1  ">
                         Class Representatives
                       </p>
                     </Dropdown.Item>
                   </NavLink>
-                  <NavLink to={"/students/project-team"}>
+                  <NavLink
+                    onClick={() => setIsNavOpen(false)}
+                    to={"/students/project-team"}
+                  >
                     <Dropdown.Item>
                       <p className="rounded-md hover:bg-gray-100 w-full text-left hover:text-green1 ">
                         Project Team
@@ -303,6 +328,7 @@ export const GeneralNavbar = () => {
                 </Dropdown>
 
                 <NavLink
+                  onClick={() => setIsNavOpen(false)}
                   to={"/blog"}
                   className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 "
                 >

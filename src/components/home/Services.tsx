@@ -12,9 +12,9 @@ export default function Services() {
               <div className="bar-style" />
               What we offer
             </h2>
-            {/* <h3 className="text-gray-700 font-medium text-ss ss:text-sm xlg:text-xs mb-3">
-              What we offer our students
-            </h3> */}
+            <h3 className="text-gray-700 font-medium text-ss ss:text-sm xlg:text-xs mb-3">
+              The services offered to students and non-students
+            </h3>
           </div>
 
           <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5">

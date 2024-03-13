@@ -27,7 +27,7 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                       </p>
                     </div>
 
-                    <p className="font-[600] text-gray-600 text-ss lg:text-[10px] flex items-end">
+                    <p className="font-medium text-gray-700 text-ss lg:text-[10px] flex items-end">
                       {author} on {date}
                     </p>
                   </div>

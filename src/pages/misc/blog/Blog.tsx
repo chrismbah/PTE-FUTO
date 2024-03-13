@@ -17,7 +17,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
-        <div className="blog-section">
+        <div className="px-3 py-[70px] sm:px-8 md:px-14 sm:py-[85px]">
           <h2 className="py-3 text-green2 border-b border-b-gray-200 w-full font-semibold text-lg ss:text-xll md:text-2xl mb-4">
             Top Articles
           </h2>

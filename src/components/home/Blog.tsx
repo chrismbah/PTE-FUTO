@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 import { useFetchBlogPosts } from "../../pages/misc/blog/hooks/useFetchBlogPosts";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import noBlog from "../../assets/svg/no-blog.svg";
+import noBlog from "../../assets/svg/illustrations/no-blog2.svg";
 import { useEffect } from "react";
 export default function Blog() {
   const {
     homeBlogPosts,
     homeBlogPostsLoading,
-    homeBlogPostsError,
     fetchHomeBlogPosts,
   } = useFetchBlogPosts();
   useEffect(() => {
@@ -99,14 +98,10 @@ export default function Blog() {
               </div>
             </div>
           )}
-          {homeBlogPostsError && !homeBlogPostsLoading && (
+          {/* {homeBlogPostsError && !homeBlogPostsLoading && (
             <div className="w-full pb-4 flex flex-col items-center justify-center">
-              <img
-                src={noBlog}
-                alt=""
-                className="max-h-[200px] sm:max-h-[260px]"
-              />
-              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+              <img src={noBlog} alt="No Blogs" className="xss w-[550px]" />
+              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center text-gray-700">
                 Sorry, Could'nt load posts at the moment.{" "}
                 <button
                   className="underline hover:no-underline text-green1"
@@ -116,16 +111,16 @@ export default function Blog() {
                 </button>
               </p>
             </div>
-          )}{" "}
-          {homeBlogPosts && homeBlogPosts.length < 1 && (
+          )}{" "} */}
+          {homeBlogPosts && homeBlogPosts.length < 1 && !homeBlogPostsLoading && (
             <div className="w-full pb-4 flex flex-col items-center justify-center">
               <img
                 src={noBlog}
                 alt=""
-                className="max-h-[200px] sm:max-h-[260px]"
+                className="w-[80%] xss:w-[320px]"
               />
-              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
-                Sorry, Could'nt load posts at the moment.{" "}
+              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center text-gray-700">
+                Oops, Could'nt get posts at the moment.{" "}
                 <button
                   className="underline hover:no-underline text-green1"
                   onClick={() => fetchHomeBlogPosts()}

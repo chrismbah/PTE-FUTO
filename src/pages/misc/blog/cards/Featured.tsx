@@ -43,7 +43,7 @@ export const FeaturedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                           ...
                         </p>{" "}
                       </div>
-                      <p className="font-[600] text-gray-600 text-sss sm:text-xss lg:text-sm flex items-end">
+                      <p className="font-medium text-gray-700 text-sss sm:text-xss lg:text-sm flex items-end">
                         {author} on {date}
                       </p>
                     </div>

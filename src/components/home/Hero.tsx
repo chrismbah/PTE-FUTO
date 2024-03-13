@@ -21,14 +21,14 @@ export default function Hero() {
             <h2 className="mb-2 xl:text-4xl lg:text-3xl sm:text-2xl text-xl font-semibold text-gray-800">
               Federal University of Technology, Owerri
             </h2>
-            <p className="section-p mb-4">
+            <p className="text-ss ss:text-sm md:text-xs text-gray-700 font-medium mb-4">
               Explore detailed course outlines, access engaging learning
-              materials, <br className="hidden ss:block" /> Calculate your GPA,
-              stay ahead of the curve with the latest news,{" "}
-              <br className="hidden ss:block" /> and join a thriving community
-              of fellow learners.
+              materials, <br className="hidden ss:block" /> Track your academic
+              progress with our GPA calculator , stay ahead of the curve with the
+              latest news and articles, <br className="hidden ss:block" /> and join a
+              thriving community of fellow learners.
             </p>
-            
+
             <div className="w-full flex items-center mt-6">
               <Link to={user && studentDetails ? "/dashboard" : "/signup"}>
                 <Button theme={customButtonTheme} size={"lg"} color="primary">

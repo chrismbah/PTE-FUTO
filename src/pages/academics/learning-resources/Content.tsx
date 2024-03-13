@@ -6,9 +6,9 @@ import { useParams } from "react-router-dom";
 import { useLearningResourcesContext } from "../../../context/LearningResources";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { ContentCard } from "./ContentCard";
-import fileSearch from "../../../assets/svg/fileSearch.svg";
+import fileSearch from "../../../assets/svg/illustrations/fileSearch.svg";
 import { FileMetadata } from "../../../models/academics/learning-resources";
-
+import book from "../../../assets/svg/illustrations/reading.svg";
 export default function Content() {
   const { level, id } = useParams();
   const { resourcesType } = useLearningResourcesContext();
@@ -61,7 +61,12 @@ export default function Content() {
     if (error) {
       return (
         <div className="flex items-center justfiy-center flex-col">
-          <p className="text-sm ss:text-base text-gray-500 font-[500] text-center ">
+          <img
+            src={book}
+            alt="File not available"
+            className=" w-full ss:w-[300px]"
+          />
+          <p className="text-sm ss:text-xs text-gray-700 font-[500] text-center ">
             Oops, something went wrong. Please try again.
           </p>
         </div>

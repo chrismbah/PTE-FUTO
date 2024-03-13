@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { CourseOptions } from "./CourseOptions";
 import { useLearningResources } from "../../../../../hooks/academics/useLearningResources";
 import { Spinner } from "../../../../../components/loaders/Spinner";
-import fileSearch from "../../../../../assets/svg/fileSearch.svg";
-import checkResources from "../../../../../assets/svg/search-files.svg";
+import fileSearch from "../../../../../assets/svg/illustrations/fileSearch.svg";
+import checkResources from "../../../../../assets/svg/illustrations/search-files.svg";
 import { FileCard } from "./FileCard";
 
 export default function LearningResources() {

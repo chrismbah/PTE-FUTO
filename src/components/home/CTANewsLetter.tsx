@@ -72,10 +72,10 @@ export default function CTANewsLetter() {
               <Lottie
                 loop={true}
                 animationData={newsLetter}
-                className="w-full ss:max-w-[300px]"
+                className="w-[80%] xss:w-[320px] ss:w-[350px]"
               />
               <div className="flex items-center flex-col w-full p-0 xsm:p-4">
-                <h2 className="text-center text-lg sm:text-xl md:text-2xl font-[600]">
+                <h2 className="text-center text-md xss:text-lg sm:text-xl md:text-2xl font-[600]">
                   Get involved and stay informed
                 </h2>
                 <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3 text-center flex gap-2">
