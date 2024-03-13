@@ -1,5 +1,5 @@
 import AppRoutes from "./routes";
-import ErrorBoundary from "./pages/error/error-boundries/ErrorBoundary";
+import ErrorBoundary from "./pages/error/error-boundry/ErrorBoundary";
 import { CustomToaster } from "./components/toast/CustomToaster";
 import AppProvider from "./provider";
 
