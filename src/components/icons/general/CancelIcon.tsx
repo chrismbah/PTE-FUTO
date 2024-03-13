@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { StyleProp } from "../../models/style";
+import { StyleProp } from "../../../models/style";
 
-export const CancelIcon:FC<StyleProp> = ({className}) => {
+export const CancelIcon: FC<StyleProp> = ({ className }) => {
   return (
     <svg
       className={className}

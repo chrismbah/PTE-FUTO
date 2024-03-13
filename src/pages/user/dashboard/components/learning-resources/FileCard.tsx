@@ -7,7 +7,7 @@ import { notifyUser } from "../../../../../helpers/notifyUser";
 import { Spinner } from "../../../../../components/loaders/Spinner";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../../../themes/customTooltip";
-import { FileDownloadIcon } from "../../../../../components/icons/FileDownloadIcon";
+import { FileDownloadIcon } from "../../../../../components/icons/general/FileDownloadIcon";
 import { useGetUserInfo } from "../../../../../hooks/auth/useGetUserInfo";
 
 export const FileCard: FC<Content> = ({ name, size, path }) => {

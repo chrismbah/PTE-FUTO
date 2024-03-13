@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
 import { NavLink } from "react-router-dom";
 import { Spinner } from "../../../components/loaders/Spinner";
-import { BadNetworkIcon } from "../../../components/icons/BadNetworkIcon";
+import { BadNetworkIcon } from "../../../components/icons/general/BadNetworkIcon";
 import search from "../../../assets/svg/illustrations/search.svg";
 import notif from "../../../assets/svg/illustrations/notifications.svg";
 import { CalculatorIcon } from "../../../components/icons/dashboard/CalculatorIcon";

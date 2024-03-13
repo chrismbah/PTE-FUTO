@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { StyleProp } from "../../models/style";
+import { StyleProp } from "../../../models/style";
 
 export const UploadIcon: FC<StyleProp> = ({ className }) => {
   return (

@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useModalContext } from "../../context/Modal";
 import SignOutSpinner from "../loaders/SignOutSpinner";
-import { CancelIcon } from "../icons/CancelIcon";
+import { CancelIcon } from "../icons/general/CancelIcon";
 import { useUploadProfileImage } from "../../hooks/user-profile/useUploadProfileImage";
 
 export const DeleteProfileImage = () => {

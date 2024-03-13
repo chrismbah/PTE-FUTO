@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from "react";
 import { PostCommentsProp } from "../../../../../models/misc/blog/postComments";
-import { ThreeVerticalDotsIcon } from "../../../../../components/icons/ThreeVerticalDotsIcon";
+import { ThreeVerticalDotsIcon } from "../../../../../components/icons/general/ThreeVerticalDotsIcon";
 import { useGetUserInfo } from "../../../../../hooks/auth/useGetUserInfo";
 import {
   Popover,
@@ -33,7 +33,11 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
         ) => {
           return (
             <div key={i} className="flex items-start pb-1 w-full gap-1 mb-2">
-              <Lottie animationData={profile} loop={false} className="w-6 h-6 sm:w-9 sm:h-9 mr-2" />
+              <Lottie
+                animationData={profile}
+                loop={false}
+                className="w-6 h-6 sm:w-9 sm:h-9 mr-2"
+              />
               <div className="flex flex-col border-b border-gray-100 pb-2 w-[90%] overflow-x-hidden">
                 <div className="flex items-start justify-between">
                   <div className="flex gap-3 items-center sm:mt-0">

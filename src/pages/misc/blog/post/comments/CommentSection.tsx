@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { PaperPlaneIcon } from "../../../../../components/icons/PaperPlaneIcon";
+import { PaperPlaneIcon } from "../../../../../components/icons/general/PaperPlaneIcon";
 import { useBlogComments } from "../../hooks/useBlogComments";
 import { Tooltip } from "flowbite-react";
 import { customTooltipTheme } from "../../../../../themes/customTooltip";

@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { BlueInfoIcon } from "../components/icons/BlueInfoIcon";
+import { BlueInfoIcon } from "../components/icons/general/BlueInfoIcon";
 import { Spinner } from "../components/loaders/Spinner";
 
 export const notifyUser = (

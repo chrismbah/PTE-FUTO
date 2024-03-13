@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from "react";
-import { StyleProp } from "../../models/style";
+import { StyleProp } from "../../../models/style";
 export const EditProfileIcon: FC<StyleProp> = ({ className, color }) => {
   return (
     <svg

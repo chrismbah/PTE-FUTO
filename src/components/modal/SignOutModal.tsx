@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useModalContext } from "../../context/Modal";
 import { useSignOutUser } from "../../hooks/auth/useSignOutUser";
 import SignOutSpinner from "../loaders/SignOutSpinner";
-import { CancelIcon } from "../icons/CancelIcon";
+import { CancelIcon } from "../icons/general/CancelIcon";
 
 export const SignOutModal = () => {
   const { openSignOutModal, setOpenSignOutModal } = useModalContext();

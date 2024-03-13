@@ -6,7 +6,7 @@ import { OthersPosts } from "./cards/Others";
 import { FeaturedPosts } from "./cards/Featured";
 import Footer from "../../../components/footer/Footer";
 import { Spinner } from "../../../components/loaders/Spinner";
-import { BadNetworkIcon } from "../../../components/icons/BadNetworkIcon";
+import { BadNetworkIcon } from "../../../components/icons/general/BadNetworkIcon";
 
 export default function Blog() {
   const { blogPosts, blogPostsLoading, blogPostsError, fetchBlogPosts } =

@@ -1,13 +1,13 @@
 import { FC } from "react";
-import { StyleProp } from "../../models/style";
+import { StyleProp } from "../../../models/style";
 
-export const WriteIcon:FC<StyleProp> = ({className}) => {
+export const WriteIcon: FC<StyleProp> = ({ className }) => {
   return (
     <svg
       className={className}
       fill="#00875a"
-    //   height="200px"
-    //   width="200px"
+      //   height="200px"
+      //   width="200px"
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"

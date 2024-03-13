@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { StyleProp } from "../../models/style";
+import { StyleProp } from "../../../models/style";
 
-export const BlueInfoIcon:FC<StyleProp> = ({className}) => {
+export const BlueInfoIcon: FC<StyleProp> = ({ className }) => {
   return (
     <svg
       width="123px"

@@ -2,7 +2,7 @@ import GPAForm from "./components/GPAForm";
 import { useComputeGPA } from "./hooks/useComputeGPA";
 import { GPAMessage } from "./components/GPAMessage";
 import { Link } from "react-router-dom";
-import { ArrowLeftIcon } from "../../../components/icons/ArrowLeftIcon";
+import { ArrowLeftIcon } from "../../../components/icons/general/ArrowLeftIcon";
 export default function CalculateGPA() {
   const { studentGPA } = useComputeGPA();
   return (

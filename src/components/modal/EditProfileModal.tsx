@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { useModalContext } from "../../context/Modal";
-import { CancelIcon } from "../icons/CancelIcon";
+import { CancelIcon } from "../icons/general/CancelIcon";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import { Spinner } from "../../components/loaders/Spinner";

@@ -15,7 +15,7 @@ import {
 } from "firebase/firestore";
 import { notifyUser } from "../../helpers/notifyUser";
 import { Spinner } from "../loaders/Spinner";
-import { BellIcon } from "../icons/BellIcon";
+import { BellIcon } from "../icons/general/BellIcon";
 export default function CTANewsLetter() {
   const [subscribing, setSubscribing] = useState(false);
 

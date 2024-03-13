@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { InfoIcon } from "../../../components/icons/InfoIcon";
+import { InfoIcon } from "../../../components/icons/general/InfoIcon";
 import { useLocalStorage } from "../../../hooks/misc/storage/useLocalStorage";
 
 export default function StudyTip() {
