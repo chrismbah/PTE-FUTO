@@ -425,7 +425,7 @@ export const GeneralNavbar = () => {
               )
             ) : (
               <Link to={"/login"}>
-                <button className="rounded-lg bg-green1 hover:bg-green1/95 transition duration-200 ease-in-out py-2 px-3.5 font-semibold text-white">
+                <button className="rounded-lg bg-green1 hover:bg-green1/95 transition duration-200 ease-in-out py-2 px-2.5 sm:px-3.5 font-semibold text-white text-sm sm:text-xs">
                   Login
                 </button>
               </Link>

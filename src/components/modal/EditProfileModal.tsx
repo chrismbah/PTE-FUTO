@@ -199,18 +199,18 @@ export const EditProfileModal = () => {
             </div>
             <div className="px-3 ss:px-5 sss:px-7 mb-4 sm:mb-7">
               <form onSubmit={handleSubmit(editProfile)}>
-                <div className="flex items-center justify-between flex-col ss:flex-row gap-4 sm:gap-7 mb-4 sm:mb-3">
+                <div className="flex items-center justify-between flex-col xxss:flex-row gap-4 sm:gap-7 mb-4 sm:mb-3">
                   <div className="w-full sss:basis-1/2">
                     <label
                       htmlFor="firstName"
-                      className="block text-sm text-left font-semibold text-gray-900 "
+                      className="block text-xss ss:text-ss sm:text-sm text-left font-semibold text-gray-900 "
                     >
                       First Name
                     </label>
                     <input
                       type="text"
                       id=""
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 "
                       placeholder="eg. Chris"
                       {...register("firstName")}
                     />
@@ -223,14 +223,14 @@ export const EditProfileModal = () => {
                   <div className="w-full sss:basis-1/2">
                     <label
                       htmlFor="lastName"
-                      className="block text-sm text-left font-semibold text-gray-900 "
+                      className="block text-xss ss:text-ss sm:text-sm text-left font-semibold text-gray-900 "
                     >
                       Last Name
                     </label>
                     <input
                       type="text"
                       id=""
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 "
                       placeholder="eg. Mbah"
                       {...register("lastName")}
                     />
@@ -241,11 +241,11 @@ export const EditProfileModal = () => {
                     )}
                   </div>
                 </div>
-                <div className="flex items-center justify-between flex-col ss:flex-row gap-4 sm:gap-7 mb-4 sm:mb-3">
+                <div className="flex items-center justify-between flex-col xxss:flex-row gap-4 sm:gap-7 mb-4 sm:mb-3">
                   <div className="w-full sss:basis-1/2">
                     <label
                       htmlFor="regNo"
-                      className="text-left block text-sm font-semibold text-gray-900 "
+                      className="text-left block text-xss ss:text-ss sm:text-sm font-semibold text-gray-900 "
                     >
                       Matric No.
                     </label>
@@ -253,20 +253,20 @@ export const EditProfileModal = () => {
                       type="number"
                       id=""
                       placeholder="eg. 20191129201"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       {...register("regNo")}
                     />
                   </div>
                   <div className="w-full sss:basis-1/2">
                     <label
                       htmlFor="level"
-                      className="text-left block text-sm font-semibold text-gray-900 "
+                      className="text-left block text-xss ss:text-ss sm:text-sm font-semibold text-gray-900 "
                     >
                       Level
                     </label>
                     <select
                       id="underline_select"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       {...register("level")}
                     >
                       <option selected disabled>
@@ -290,11 +290,11 @@ export const EditProfileModal = () => {
               </form>
             </div>
           </div>
-          <div className="w-full flex items-center flex-col xxss:flex-row justify-end gap-2 px-3 ss:px-5 sss:px-7 pb-9 ss:pb-7 sss:pb-7">
+          <div className="w-full flex items-center flex-row justify-end gap-2 px-3 ss:px-5 sss:px-7 pb-9 ss:pb-7 sss:pb-7">
             <button
               type="submit"
               onClick={handleSubmit(editProfile)}
-              className=" bg-green1 rounded-lg font-semibold text-ss sm:text-sm px-3 py-2 text-white"
+              className=" bg-green1 rounded-lg font-semibold text-ss sm:text-sm px-4 py-2 text-white"
             >
               {editingProfile ? (
                 <Spinner className="w-5 h-5 fill-white" />
@@ -304,7 +304,8 @@ export const EditProfileModal = () => {
             </button>
             <button
               onClick={closeEditProfileModal}
-              className=" text-gray-900 bg-gray-50 border border-gray-300 hover:bg-gray-200/90 rounded-lg font-semibold text-ss sm:text-sm px-3 py-2 "
+              className=" text-gray-900 bg-gray-50 border border-gray-300 hover:bg-gray-200/90 rounded-lg 
+                font-semibold text-ss sm:text-sm px-4 py-2"
             >
               Close
             </button>

@@ -1,5 +1,4 @@
-import { Dropdown, Button } from "flowbite-react";
-import { customButtonTheme } from "../../themes/customButtton";
+import { Dropdown } from "flowbite-react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
@@ -281,14 +280,11 @@ export const DashboardNavbar = () => {
                   />
                 )
               ) : (
-                <Button
-                  theme={customButtonTheme}
-                  color="primary"
-                  size="md"
-                  className="focus:outline-none"
-                >
-                  <Link to={"/login"}>Login</Link>
-                </Button>
+                <Link to={"/login"}>
+                  <button className="rounded-lg bg-green1 hover:bg-green1/95 transition duration-200 ease-in-out py-2 px-2.5 sm:px-3.5 font-semibold text-white text-sm sm:text-xs">
+                    Login
+                  </button>
+                </Link>
               )}
             </div>
           </div>
