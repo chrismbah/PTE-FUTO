@@ -8,7 +8,7 @@ import { FileMetadata } from "../../models/academics/learning-resources";
 export const useLearningResources = () => {
   const storageRef = ref(storage);
 
-  const [files, setFiles] = useState<FileMetadata[] | null>(null);
+  const [files, setFiles] = useState<FileMetadata[]>([]);
   const [gettingResources, setGettingResources] = useState(false);
   const [error, setError] = useState(false);
 
@@ -17,6 +17,7 @@ export const useLearningResources = () => {
     course: string,
     resourcesType: string
   ) => {
+    // setFiles([]);
     const learningResourcesRef = ref(
       storageRef,
       `learning-resources/levels/${level}/${course}/${resourcesType}`

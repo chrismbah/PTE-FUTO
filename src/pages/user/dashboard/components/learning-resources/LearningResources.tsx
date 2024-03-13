@@ -5,9 +5,7 @@ import { useLearningResources } from "../../../../../hooks/academics/useLearning
 import { Spinner } from "../../../../../components/loaders/Spinner";
 import fileSearch from "../../../../../assets/svg/fileSearch.svg";
 import checkResources from "../../../../../assets/svg/search-files.svg";
-import { notifyUser } from "../../../../../helpers/notifyUser";
 import { FileCard } from "./FileCard";
-import { Content } from "./Content";
 
 export default function LearningResources() {
   const [semester, setSemester] = useState<string | null>();
@@ -27,25 +25,11 @@ export default function LearningResources() {
     }
   }, [resourcesType, course]);
 
-  const getCourseResources = async () => {
-    if (level && course && resourcesType) {
-      getLearningResources(level, course, resourcesType);
-    } else {
-      if (!level && !course) {
-        notifyUser("info", "Please select a level and a course");
-        return;
-      }
-      if (!level) {
-        notifyUser("info", "Please select a level");
-        return;
-      }
-    }
-  };
   return (
     <div className="min-h-screen w-full bg-gray-50">
       <div className="box-width">
-        <div className="px-3 ss:px-8 sm:px-14 sm:py-24 py-20">
-          <div className="w-full flex items-center justify-center mb-6 flex-col">
+        <div className="py-20 sm:py-24">
+          <div className="w-full flex items-center justify-center mb-6 flex-col px-3 ss:px-8 sm:px-14">
             <div className="mb-4">
               <h1 className="text-md sm:text-xll md:text-2xl font-semibold uppercase text-gray-900 text-center">
                 {" "}
@@ -108,20 +92,18 @@ export default function LearningResources() {
               <button
                 onClick={() => {
                   setResourcesType("handouts");
-                  getCourseResources();
                 }}
                 className={`${resourcesType === "handouts" ? "bg-green1 text-white" : "bg-white shadow"} 
-                sss:p-2 p-1 text-gray-900 text-xss xss:text-ss ss:text-sm rounded-md font-medium hover:bg-green1 hover:text-white transition duration-100`}
+                  p-2 text-gray-900 text-xss xss:text-ss ss:text-sm rounded-md font-medium hover:bg-green1 hover:text-white transition duration-100`}
               >
                 Handouts
               </button>
               <button
                 onClick={() => {
                   setResourcesType("textbooks");
-                  getCourseResources();
                 }}
                 className={`${resourcesType === "textbooks" ? "bg-green1 text-white" : "bg-white shadow"} 
-                sss:p-2 p-1 text-gray-900 text-xss xss:text-ss ss:text-sm rounded-md font-medium hover:bg-green1 hover:text-white transition duration-100`}
+                  p-2 text-gray-900 text-xss xss:text-ss ss:text-sm rounded-md font-medium hover:bg-green1 hover:text-white transition duration-100`}
               >
                 Textbooks
               </button>
@@ -129,102 +111,66 @@ export default function LearningResources() {
                 <button
                   onClick={() => {
                     setResourcesType("pastquestions");
-                    getCourseResources();
                   }}
                   className={`${resourcesType === "pastquestions" ? "bg-green1 text-white" : "bg-white shadow"} 
-                    sss:p-2 p-1 text-gray-900 text-xss xss:text-ss ss:text-sm rounded-md font-medium hover:bg-green1 hover:text-white transition duration-100`}
+                    p-2 text-gray-900 text-xss xss:text-ss ss:text-sm rounded-md font-medium hover:bg-green1 hover:text-white transition duration-100`}
                 >
                   Past Questions
                 </button>
               </div>
             </div>
-            <div className="w-full h-full mt-6 px-5 md:px-3 ">
-              <Content />
-            </div>
-            <div className="mt-5">
-              {!files && !gettingResources && !error && (
-                <div className="flex items-center justify-center flex-col gap-3">
-                  <img
-                    src={checkResources}
-                    alt="Check out your learning resources"
-                    className=" w-full ss:w-[250px]"
-                  />
-                  <p className="text-sm ss:text-xs text-gray-700 font-medium text-center">
-                    Select a level, course and resource type to get learning
-                    resources.
-                  </p>
-                </div>
-              )}
-              {gettingResources && !error && (
-                <div className="mt-10 flex items-center justify-center ">
-                  <Spinner className="fill-green1 w-8 " />
-                </div>
-              )}
-              {error && !gettingResources && (
-                <div className="flex items-center justfiy-center flex-col mt-3">
-                  <p className="text-sm ss:text-xs text-gray-700 font-medium text-center ">
-                    Oops, something went wrong. Please try again.
-                  </p>
-                </div>
-              )}
-              {files && files.length === 0 && !gettingResources && !error && (
-                <div className="flex items-center justify-center flex-col">
-                  <img
-                    src={fileSearch}
-                    alt="File not available"
-                    className=" w-full ss:w-[400px]"
-                  />
-                  <p className="text-sm ss:text-xs text-gray-700 font-medium text-center ">
-                    Sorry, {course}{" "}
-                    {resourcesType === "textbooks"
-                      ? "Textbooks"
-                      : resourcesType === "pastquestions"
-                        ? "Past Questions"
-                        : "Handouts"}{" "}
-                    are not available.
-                  </p>
-                </div>
-              )}
-              {files && files.length > 0 && !gettingResources && !error && (
-                <div className="grid items-center xss:grid-cols-2 sm:grid-cols-3 gap-4">
+          </div>
+          <div className="mt-5 px-2 ss:px-4 w-full flex items-center justify-center">
+            {files.length === 0 &&
+            !gettingResources &&
+            (!resourcesType || !course) ? (
+              <div className="flex items-center justify-center flex-col gap-3">
+                <img
+                  src={checkResources}
+                  alt="Check out your learning resources"
+                  className=" w-full ss:w-[250px]"
+                />
+                <p className="text-sm ss:text-xs text-gray-700 font-medium text-center">
+                  Select a level, course and resource type to get learning
+                  resources.
+                </p>
+              </div>
+            ) : gettingResources ? (
+              <div className="mt-10 flex items-center justify-center ">
+                <Spinner className="fill-green1 w-8 " />
+              </div>
+            ) : error && files.length === 0 && !gettingResources ? (
+              <div className="flex items-center justfiy-center flex-col mt-3">
+                <p className="text-sm ss:text-xs text-gray-700 font-medium text-center ">
+                  Oops, something went wrong. Please try again.
+                </p>
+              </div>
+            ) : files.length === 0 && course && level && resourcesType ? (
+              <div className="flex items-center justify-center flex-col">
+                <img
+                  src={fileSearch}
+                  alt="File not available"
+                  className=" w-full ss:w-[400px]"
+                />
+                <p className="text-sm ss:text-xs text-gray-700 font-medium text-center ">
+                  Sorry, {course}{" "}
+                  {resourcesType === "textbooks"
+                    ? "Textbooks"
+                    : resourcesType === "pastquestions"
+                      ? "Past Questions"
+                      : "Handouts"}{" "}
+                  are not available.
+                </p>
+              </div>
+            ) : (
+              files.length > 0 && (
+                <div className="grid items-center w-full grid-cols-1 xss:grid-cols-2 md:grid-cols-3 gap-4 max-w-[1200px] xl:w-[1200px]">
                   {files.map((info, i) => (
                     <FileCard key={i} {...info} />
                   ))}
                 </div>
-              )}
-              {/* {gettingResources ? (
-                <div className="mt-10 flex items-center justify-center ">
-                  <Spinner className="fill-green1 w-8 " />
-                </div>
-              ) : files && files.length === 0 ? (
-                error ? (
-                  <div className="flex items-center justfiy-center flex-col">
-                    <p className="text-sm ss:text-xs text-gray-700 font-medium text-center ">
-                      Oops, something went wrong. Please try again.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center flex-col">
-                    <img
-                      src={fileSearch}
-                      alt="File not available"
-                      className=" w-full ss:w-[400px]"
-                    />
-                    <p className="text-sm ss:text-base text-gray-700 font-medium text-center ">
-                      Sorry, {course}{" "}
-                      {resourcesType === "textbooks"
-                        ? "Textbooks"
-                        : resourcesType === "pastquestions"
-                          ? "Past Questions"
-                          : "Handouts"}{" "}
-                      are not available.
-                    </p>
-                  </div>
-                )
-              ) : (
-                files && files.length > 0 && "Files fetced"
-              )} */}
-            </div>
+              )
+            )}
           </div>
         </div>
       </div>

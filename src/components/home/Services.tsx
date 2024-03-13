@@ -6,15 +6,15 @@ export default function Services() {
     <div className="home-gray-bg">
       <div className="box-width">
         <div className="px-3 xsm:px-14 xsm:py-10 xsm:pb-32 py-10">
-          <div className="mmd:flex items-center justify-center flex-col">
+          <div className="mmd:flex items-center justify-center flex-col capitalize mb-3">
             <h2>
               {" "}
               <div className="bar-style" />
-              Our Services
+              What we offer
             </h2>
-            <h3 className="text-gray-700 font-medium text-ss ss:text-sm xlg:text-xs mb-3">
+            {/* <h3 className="text-gray-700 font-medium text-ss ss:text-sm xlg:text-xs mb-3">
               What we offer our students
-            </h3>
+            </h3> */}
           </div>
 
           <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5">

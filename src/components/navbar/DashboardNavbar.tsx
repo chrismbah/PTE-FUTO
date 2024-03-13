@@ -148,7 +148,7 @@ export const DashboardNavbar = () => {
                 </NavLink>
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
-                  to="/learning-resources"
+                  to="/u/learning-resources"
                   className={
                     "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                   }

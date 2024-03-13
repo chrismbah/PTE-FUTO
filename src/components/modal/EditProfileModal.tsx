@@ -293,14 +293,14 @@ export const EditProfileModal = () => {
           <div className="w-full flex items-center flex-col xxss:flex-row justify-between gap-2 px-3 ss:px-5 sss:px-7 pb-9 ss:pb-7 sss:pb-7">
             <button
               onClick={closeEditProfileModal}
-              className="w-full border border-gray-300 rounded-lg font-semibold text-sm sm:text-xs p-2 hover:bg-gray-100"
+              className="w-full border border-gray-300 rounded-lg font-semibold text-sm sm:text-xs p-3 hover:bg-gray-100"
             >
               Close
             </button>
             <button
               type="submit"
               onClick={handleSubmit(editProfile)}
-              className="w-full bg-green1 rounded-lg font-semibold text-sm sm:text-xs p-2 text-white"
+              className="w-full bg-green1 rounded-lg font-semibold text-sm sm:text-xs p-3 text-white"
             >
               {editingProfile ? (
                 <Spinner className="w-5 h-5 fill-white" />

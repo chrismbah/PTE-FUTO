@@ -42,6 +42,7 @@ export const ContentCard: FC<Content> = ({ name, size, path }) => {
       notifyUser("error", "Something went wrong. Pease try again");
     }
   };
+  
 
   return (
     <div

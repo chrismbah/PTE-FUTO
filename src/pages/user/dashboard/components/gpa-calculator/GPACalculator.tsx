@@ -7,7 +7,7 @@ export default function GPACalculator() {
   return (
     <div className="min-h-screen w-full bg-gray-50">
       <div className="  w-full min-h-[95vh] flex items-center justify-center px-3 sm:px-10 py-10 pt-20 sm:pt-28">
-        <div className="relative bg-white p-5 sm:p-8 shadow-4 rounded-lg max-w-[700px] ">
+        <div className="relative bg-white p-5 sm:p-8 shadow rounded-lg max-w-[700px] ">
           <div className="flex justify-between items-center mb-2 flex-col xxss:flex-row xxss:gap-2 mt-4 sm:mt-2">
             <h3 className=" w-full ss:w-fit flex items-center justify-start font-semibold ">
               GPA Calculator

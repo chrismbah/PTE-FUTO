@@ -38,7 +38,7 @@ export default function CourseOutlines() {
   return (
     <div className="min-h-screen w-full bg-gray-50">
       <div className="box-width">
-        <div className="px-3 ss:px-8 sm:px-14 sm:py-24 py-20">
+        <div className="px-3 ss:px-8 sm:px-14 sm:py-24 pt-20">
           <div className="w-full flex items-center justify-center mb-6 flex-col">
             <div className="mb-4">
               <h1 className="text-md sm:text-xll md:text-2xl font-semibold uppercase text-gray-900 text-center">
@@ -51,7 +51,6 @@ export default function CourseOutlines() {
             </div>
             <div className="flex gap-1 ss:gap-5 mb-4">
               <div>
-                {/* <label className="font-semibold text-gray-700 text-ss sm:text-sm text-green1 ml-1">Level</label> */}
                 <select
                   onChange={(e) => {
                     setLevel(e.target.value);
@@ -70,7 +69,6 @@ export default function CourseOutlines() {
                 </select>
               </div>{" "}
               <div>
-                {/* <label className="font-semibold text-gray-700 text-ss sm:text-sm text-green1 ml-1">Semester</label> */}
                 <select
                   onChange={(e) => {
                     setSemester(e.target.value);
@@ -86,7 +84,6 @@ export default function CourseOutlines() {
                 </select>
               </div>{" "}
               <div>
-                {/* <label className="font-semibold text-gray-700 text-ss sm:text-sm text-green1 ml-1">Course</label> */}
                 <select
                   id="underline_select"
                   onChange={(e) => setCourse(e.target.value)}
@@ -102,7 +99,7 @@ export default function CourseOutlines() {
               </div>
             </div>
             {courseInfo ? (
-              <div className="course-info rounded-lg bg-white shadow p-6 max-w-2xl relative">
+              <div className="course-info rounded-lg bg-white shadow p-3 sm:p-6 max-w-2xl relative">
                 <div className="relative">
                   <OutlineIcon className="fill-green1 w-4 h-4 xss:w-6 xss:h-6 absolute top-0 right-0" />
                   <div className="mb-4">
@@ -140,9 +137,9 @@ export default function CourseOutlines() {
                 <img
                   src={reading}
                   alt={"Choose a level, semester and course code"}
-                  className="w-52"
+                  className="w-full xxss:w-[220px]"
                 />
-                <p className="text-sm sm:text-xs font-semibold text-gray-700">
+                <p className="text-sm ss:text-xs text-gray-700 font-medium">
                   Select a level, semester and course respectively.
                 </p>
               </div>

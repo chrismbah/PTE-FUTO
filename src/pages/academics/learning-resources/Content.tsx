@@ -43,7 +43,6 @@ export default function Content() {
     } catch (error) {
       setError(true);
       setLoading(false);
-      // setError(true);
       console.error("Error fetching files:", error);
     }
   };
