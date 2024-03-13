@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // ErrorBoundary.js
-import{ Component, ErrorInfo, ReactNode } from 'react';
 
+import{ Component, ErrorInfo, ReactNode } from 'react';
+import ErrorPage from './ErrorPage';
 interface ErrorBoundaryProps {
   children: ReactNode;
 }
@@ -25,7 +27,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render(): ReactNode {
     if (this.state.hasError) {
-      return <div>Something went wrong!</div>;
+      return <ErrorPage />;
     }
 
     return this.props.children;

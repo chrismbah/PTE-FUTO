@@ -1,7 +1,7 @@
 import logo from "../../assets/logo/logo.png";
-import { WebIcon } from "../icons/footer/WebIcon";
-import { XIcon } from "../icons/footer/XIcon";
-import { FacebookIcon } from "../icons/footer/FacebookIcon";
+import { WebIcon } from "../icons/socials/WebIcon";
+import { XIcon } from "../icons/socials/XIcon";
+import { FacebookIcon } from "../icons/socials/FacebookIcon";
 
 export default function Footer() {
   return (
