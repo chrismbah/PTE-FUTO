@@ -9,6 +9,9 @@ import { ContentCard } from "./ContentCard";
 import fileSearch from "../../../assets/svg/illustrations/fileSearch.svg";
 import { FileMetadata } from "../../../models/academics/learning-resources";
 import book from "../../../assets/svg/illustrations/reading.svg";
+import { motion } from "framer-motion";
+import { fadeInVariants1 } from "../../../animation/variants";
+
 export default function Content() {
   const { level, id } = useParams();
   const { resourcesType } = useLearningResourcesContext();
@@ -95,7 +98,17 @@ export default function Content() {
     return (
       <div className="grid items-center xss:grid-cols-2 sm:grid-cols-3 gap-4">
         {files.map((info, i) => (
-          <ContentCard key={i} {...info} />
+          <motion.div
+            variants={fadeInVariants1}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={i}
+          >
+            <ContentCard key={i} {...info} />
+          </motion.div>
         ))}
       </div>
     );

@@ -56,7 +56,6 @@ export default function LearningResourcesContent() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }

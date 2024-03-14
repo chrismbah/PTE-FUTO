@@ -50,7 +50,7 @@ export const fadeInVariants4 = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.3 * index,
+      delay: 0.2 * index,
       duration: 0.2,
     },
   }),
@@ -66,6 +66,20 @@ export const fadeInVariants5 = {
     transition: {
       delay: 0.1 * index,
       duration: 0.3,
+    },
+  }),
+};
+export const fadeInVariants6 = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 0.4,
     },
   }),
 };

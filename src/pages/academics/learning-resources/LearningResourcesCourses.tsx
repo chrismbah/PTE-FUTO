@@ -2,6 +2,8 @@ import { courses } from "../../../data/academics/learning-resources/courses";
 import { useParams } from "react-router-dom";
 import { CoursesCard } from "./CoursesCard";
 import Footer from "../../../components/footer/Footer";
+import { motion } from "framer-motion";
+import { fadeInVariants1 } from "../../../animation/variants";
 
 export default function LearningResourcesCourses() {
   const { level } = useParams();
@@ -23,7 +25,17 @@ export default function LearningResourcesCourses() {
           <div className="mb-16  grid items-center grid-cols-2 xss:grid-cols-3 sss:grid-cols-4 mmd:grid-cols-5 gap-4">
             {level &&
               courses[level]["First"].courseInfo.map((info, i) => (
-                <CoursesCard key={i} {...info} />
+                <motion.div
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={i}
+                >
+                  <CoursesCard key={i} {...info} />
+                </motion.div>
               ))}
           </div>
           {level && courses[level]["Second"].courseInfo.length > 0 ? (
@@ -33,7 +45,17 @@ export default function LearningResourcesCourses() {
               </h4>
               <div className="mb-16 grid items-center grid-cols-2 xss:grid-cols-3 sss:grid-cols-4 mmd:grid-cols-5 gap-4 ">
                 {courses[level]["Second"].courseInfo.map((info, i) => (
-                  <CoursesCard key={i} {...info} />
+                  <motion.div
+                    variants={fadeInVariants1}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{
+                      once: true,
+                    }}
+                    custom={i}
+                  >
+                    <CoursesCard key={i} {...info} />
+                  </motion.div>
                 ))}
               </div>
             </>

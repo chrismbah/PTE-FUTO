@@ -6,11 +6,11 @@ import { courseInfo300 } from "../../../data/academics/course-outlines/levels/30
 import { courseInfo400 } from "../../../data/academics/course-outlines/levels/400/info/courseInfo400";
 import { courseInfo500 } from "../../../data/academics/course-outlines/levels/500/info/courseInfo500";
 import { useParams } from "react-router-dom";
-// import file from "/icons/course-outline/levels/file.png";
 import { useCourseOutlineContext } from "../../../context/CourseOutline";
 import { ICourseInfo } from "../../../models/academics/course-outline/courseInfo";
 import { OutlineIcon } from "../../../components/icons/dashboard/Outline";
-
+import { motion } from "framer-motion";
+import { fadeInVariants1 } from "../../../animation/variants";
 export default function CourseInfo() {
   const { id, level } = useParams<string>();
   const { semester } = useCourseOutlineContext();
@@ -37,10 +37,17 @@ export default function CourseInfo() {
       <div className="flex items-center justify-center min-h-screen">
         {courseInfo && (
           <div className="max-w-[950px] px-3 pt-20 pb-8 xsm:px-10 xsm:pt-24 xsm:pb-10 ">
-            <div className=" shadow-4 px-3 pt-10 pb-8 xsm:px-10 rounded-lg">
+            <motion.div
+              variants={fadeInVariants1}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              className="bg-white shadow-4 px-3 pt-10 pb-8 xsm:px-10 rounded-lg"
+            >
               <div className="flex-center gap-0 ss:gap-3 flex-wrap">
                 <div className="flex-center">
-                  {/* <img src={file} alt="Book" className="" /> */}
                   <OutlineIcon className="w-6 sm:w-8 fill-green1" />
                   <h3 className="text-lg xss:text-xl sm:text-2xl font-[600] text-center">
                     {courseInfo.courseTitle}
@@ -87,7 +94,7 @@ export default function CourseInfo() {
                   <div className="text-sm sm:text-base"> {content}</div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         )}
       </div>

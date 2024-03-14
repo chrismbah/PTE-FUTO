@@ -15,7 +15,7 @@ export const CourseOutlineCard: FC<CourseInfo> = ({
   return (
     <Link to={`/course-outlines/${level}/${id}`}>
       <div
-        className="bg-gray-50 hover:shadow-md transition duration-200 ease-in py-6 
+        className="bg-white hover:shadow-md transition duration-200 ease-in py-6 
           px-4 h-[230px] sm:max-w-full mmd:max-w-[360px] relative shadow-4 rounded-lg"
       >
         <div className="">
@@ -25,9 +25,7 @@ export const CourseOutlineCard: FC<CourseInfo> = ({
               Course Code:{" "}
               <span className="capitalize font-semibold">{courseCode}</span>{" "}
             </h4>
-            <span className=" text-green1 text-xss font-[900] ">
-              {option}
-            </span>
+            <span className=" text-green1 text-xss font-[900] ">{option}</span>
           </div>
 
           <Button

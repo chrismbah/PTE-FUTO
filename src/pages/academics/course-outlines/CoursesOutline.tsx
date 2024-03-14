@@ -7,6 +7,8 @@ import { courseOutline500 } from "../../../data/academics/course-outlines/levels
 import { CourseOutlineCard } from "./CoursesOutlineCard";
 import { useParams } from "react-router-dom";
 import Footer from "../../../components/footer/Footer";
+import { motion } from "framer-motion";
+import { fadeInVariants1 } from "../../../animation/variants";
 
 export default function CoursesOutline() {
   const { level } = useParams();
@@ -45,26 +47,88 @@ export default function CoursesOutline() {
           <div className="grid items-center ss:px-8 sm:px-0 sm:grid-cols-2 mmd:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
             {level === "100"
               ? courseOutline100[semester].courseInfo.map((info, index) => (
-                  <CourseOutlineCard key={index} {...info} />
+                  <motion.div
+                    variants={fadeInVariants1}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{
+                      once: true,
+                    }}
+                    custom={index}
+                  >
+                    <CourseOutlineCard key={index} {...info} index={index} />
+                  </motion.div>
                 ))
               : level === "200"
                 ? courseOutline200[semester].courseInfo.map((info, index) => (
-                    <CourseOutlineCard key={index} {...info} />
+                    <motion.div
+                      variants={fadeInVariants1}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: true,
+                      }}
+                      custom={index}
+                    >
+                      <CourseOutlineCard key={index} {...info} index={index} />
+                    </motion.div>
                   ))
                 : level === "300"
                   ? courseOutline300[semester].courseInfo.map((info, index) => (
-                      <CourseOutlineCard key={index} {...info} />
+                      <motion.div
+                        variants={fadeInVariants1}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{
+                          once: true,
+                        }}
+                        custom={index}
+                      >
+                        <CourseOutlineCard
+                          key={index}
+                          {...info}
+                          index={index}
+                        />
+                      </motion.div>
                     ))
                   : level === "400"
                     ? courseOutline400[semester].courseInfo.map(
                         (info, index) => (
-                          <CourseOutlineCard key={index} {...info} />
+                          <motion.div
+                            variants={fadeInVariants1}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{
+                              once: true,
+                            }}
+                            custom={index}
+                          >
+                            <CourseOutlineCard
+                              key={index}
+                              {...info}
+                              index={index}
+                            />
+                          </motion.div>
                         )
                       )
                     : level === "500"
                       ? courseOutline500[semester].courseInfo.map(
                           (info, index) => (
-                            <CourseOutlineCard key={index} {...info} />
+                            <motion.div
+                              variants={fadeInVariants1}
+                              initial="initial"
+                              whileInView="animate"
+                              viewport={{
+                                once: true,
+                              }}
+                              custom={index}
+                            >
+                              <CourseOutlineCard
+                                key={index}
+                                {...info}
+                                index={index}
+                              />
+                            </motion.div>
                           )
                         )
                       : ""}

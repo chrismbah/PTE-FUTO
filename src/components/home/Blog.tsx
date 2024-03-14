@@ -11,8 +11,12 @@ import { fadeInVariants1 } from "../../animation/variants";
 import { fadeInVariants3 } from "../../animation/variants";
 import { motion } from "framer-motion";
 export default function Blog() {
-  const { homeBlogPosts, homeBlogPostsLoading, fetchHomeBlogPosts } =
-    useFetchBlogPosts();
+  const {
+    homeBlogPosts,
+    homeBlogPostsLoading,
+    fetchHomeBlogPosts,
+    homeBlogPostsError,
+  } = useFetchBlogPosts();
   useEffect(() => {
     fetchHomeBlogPosts();
   }, []);
@@ -124,9 +128,13 @@ export default function Blog() {
               </div>
             </div>
           )}
-          {/* {homeBlogPostsError && !homeBlogPostsLoading && (
+          {homeBlogPostsError && !homeBlogPostsLoading && (
             <div className="w-full pb-4 flex flex-col items-center justify-center">
-              <img src={noBlog} alt="No Blogs" className="xss w-[550px]" />
+              <img
+                src={noBlog}
+                alt="No Blogs"
+                className="w-[80%] xss:w-[350px]"
+              />
               <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center text-gray-700">
                 Sorry, Could'nt load posts at the moment.{" "}
                 <button
@@ -137,12 +145,12 @@ export default function Blog() {
                 </button>
               </p>
             </div>
-          )}{" "} */}
+          )}{" "}
           {homeBlogPosts &&
             homeBlogPosts.length < 1 &&
             !homeBlogPostsLoading && (
               <div className="w-full pb-4 flex flex-col items-center justify-center">
-                <img src={noBlog} alt="" className="w-[80%] xss:w-[320px]" />
+                <img src={noBlog} alt="" className="w-[80%] xss:w-[350px]" />
                 <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center text-gray-700">
                   Oops, Could'nt get posts at the moment.{" "}
                   <button

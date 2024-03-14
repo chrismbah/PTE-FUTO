@@ -1,6 +1,9 @@
 import Footer from "../../../components/footer/Footer";
 import { LevelsCard } from "./LevelsCard";
 import { learningResourcesLevels } from "../../../data/academics/learning-resources/levels";
+import { motion } from "framer-motion";
+import { fadeInVariants1 } from "../../../animation/variants";
+
 export default function LearningResources() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -17,7 +20,17 @@ export default function LearningResources() {
           </div>
           <div className="grid items-center ss:grid-cols-2 md:grid-cols-3 gap-6">
             {learningResourcesLevels.map((info, index) => (
-              <LevelsCard key={index} {...info} />
+              <motion.div
+                variants={fadeInVariants1}
+                initial="initial"
+                whileInView="animate"
+                viewport={{
+                  once: true,
+                }}
+                custom={index}
+              >
+                <LevelsCard key={index} {...info} />
+              </motion.div>
             ))}
           </div>
         </div>
