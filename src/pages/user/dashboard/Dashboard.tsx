@@ -10,6 +10,8 @@ import notif from "../../../assets/svg/illustrations/notifications.svg";
 import { CalculatorIcon } from "../../../components/icons/dashboard/CalculatorIcon";
 import { BooksIcon } from "../../../components/icons/dashboard/BooksIcon";
 import { FilesIcon } from "../../../components/icons/dashboard/FilesIcon";
+import { motion } from "framer-motion";
+import { fadeInVariants5 } from "../../../animation/variants";
 
 export default function Dashboard() {
   const {
@@ -29,7 +31,16 @@ export default function Dashboard() {
             <div className="pt-[80px] ss:pt-[90px] sm:pt-[105px] pb-0">
               <div className="grid lg:grid-cols-7">
                 <div className="w-full lg:col-span-2 px-4 grid sm:grid-cols-2 lg:grid-rows-2 lg:grid-cols-none gap-4 mb-4 lg:mb-0">
-                  <div className="shadow rounded-lg bg-white w-full row-span-1">
+                  <motion.div
+                    variants={fadeInVariants5}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{
+                      once: true,
+                    }}
+                    custom={1}
+                    className="shadow rounded-lg bg-white w-full row-span-1"
+                  >
                     <div className="p-4">
                       <div className="flex items-center justify-center">
                         {studentDetails &&
@@ -75,8 +86,17 @@ export default function Dashboard() {
                         </button>
                       </NavLink>
                     </div>
-                  </div>
-                  <div className="details bg-white shadow px-4 py-6 rounded-lg w-full lg:h-fit ">
+                  </motion.div>
+                  <motion.div
+                    variants={fadeInVariants5}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{
+                      once: true,
+                    }}
+                    custom={3}
+                    className="details bg-white shadow px-4 py-6 rounded-lg w-full lg:h-fit "
+                  >
                     <div className="flex items-center justify-between flex-col h-full">
                       <div className="flex items-center justify-between gap-4 xxss:gap-2 mb-4 w-full flex-col xxss:flex-row">
                         <div className="w-full">
@@ -126,13 +146,22 @@ export default function Dashboard() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
                 <div className="lg:col-span-5 px-4 h-full mb-5 lg:mb-0">
                   <div className="mb-4">
                     <div className="grid sss:grid-cols-2 lg:grid-cols-3 gap-4 ">
                       <NavLink to="/u/gpa-calculator">
-                        <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#f0abfc] bg-[#f0abfc]/90 flex gap-6 flex-col items-center justify-center">
+                        <motion.div
+                          variants={fadeInVariants5}
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{
+                            once: true,
+                          }}
+                          custom={5}
+                          className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#f0abfc] bg-[#f0abfc]/90 flex gap-6 flex-col items-center justify-center"
+                        >
                           <CalculatorIcon
                             className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
                             color="#a21caf"
@@ -140,10 +169,19 @@ export default function Dashboard() {
                           <p className="  uppercase text-[#a21caf] text-xs lg:text-base font-semibold text-center ">
                             GPA Calculator
                           </p>
-                        </div>
+                        </motion.div>
                       </NavLink>
                       <NavLink to="/u/course-outlines">
-                        <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#bef264] bg-[#bef264]/90 flex gap-6 flex-col items-center justify-center">
+                        <motion.div
+                          variants={fadeInVariants5}
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{
+                            once: true,
+                          }}
+                          custom={7}
+                          className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#bef264] bg-[#bef264]/90 flex gap-6 flex-col items-center justify-center"
+                        >
                           <BooksIcon
                             className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
                             color="#00875a"
@@ -151,10 +189,19 @@ export default function Dashboard() {
                           <p className="  uppercase text-[#00875a] text-xs lg:text-base font-semibold text-center ">
                             Course Outlines
                           </p>
-                        </div>
+                        </motion.div>
                       </NavLink>
                       <NavLink to="/u/learning-resources">
-                        <div className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#93c5fd] bg-[#93c5fd]/90 flex gap-6 flex-col items-center justify-center">
+                        <motion.div
+                          variants={fadeInVariants5}
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{
+                            once: true,
+                          }}
+                          custom={9}
+                          className="w-full min-h-[195px] sss:h-[215px] transition duration-200 ease-in-out rounded-lg p-4 hover:bg-[#93c5fd] bg-[#93c5fd]/90 flex gap-6 flex-col items-center justify-center"
+                        >
                           <FilesIcon
                             className=" w-[52px] h-[52px] sm:w-[72px] sm:h-[72px] mmd:h-16 mmd:w-16 xl:w-20 xl:h-20"
                             color="#1d4ed8"
@@ -162,12 +209,21 @@ export default function Dashboard() {
                           <p className="  uppercase text-[#1d4ed8] text-xs lg:text-base font-semibold text-center ">
                             Learning Resources
                           </p>
-                        </div>
+                        </motion.div>
                       </NavLink>
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-2 mmd:gap-4">
-                    <div className="shadow rounded-lg w-full py-2 bg-white h-[340px]">
+                    <motion.div
+                      variants={fadeInVariants5}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: true,
+                      }}
+                      custom={11}
+                      className="shadow rounded-lg w-full py-2 bg-white h-[340px]"
+                    >
                       <div className=" text-sm sm:text-xs md:text-base p-2 border-b border-gray-300 font-bold text-gray-800">
                         Recent Activities
                       </div>
@@ -181,8 +237,17 @@ export default function Dashboard() {
                           No Activities right now.
                         </p>
                       </div>
-                    </div>{" "}
-                    <div className="shadow rounded-lg w-full py-2 bg-white h-[340px]">
+                    </motion.div>{" "}
+                    <motion.div
+                      variants={fadeInVariants5}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: true,
+                      }}
+                      custom={13}
+                      className="shadow rounded-lg w-full py-2 bg-white h-[340px]"
+                    >
                       <div className=" text-sm sm:text-xs md:text-base p-2 border-b border-gray-300 font-bold text-gray-800">
                         Notifications
                       </div>
@@ -196,7 +261,7 @@ export default function Dashboard() {
                           No Notifications right now.
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
