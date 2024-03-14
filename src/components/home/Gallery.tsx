@@ -186,7 +186,6 @@ export default function Gallery() {
             </div>
           </div>
           <div className=" basis-1/2">
-            <div className="bar-style" />
             <motion.h2
               variants={fadeInVariants3}
               initial="initial"
@@ -196,6 +195,7 @@ export default function Gallery() {
               }}
               custom={1}
             >
+              <div className="bar-style" />
               Gallery
             </motion.h2>
             <motion.h3
