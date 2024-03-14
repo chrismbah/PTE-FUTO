@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <a href="/" className="flex items-center">
               <img src={logo} className="w-8 sm:w-10 mr-2" alt="PTE Logo" />
-              <span className="self-center text-xs xsm:text-base font-semibold whitespace-wrap">
+              <span className="self-center text-xs xsm:text-base font-bold whitespace-wrap">
                 Polymer and Textile Engineering,{" "}
                 <br className="hidden md:block" /> FUTO
               </span>
@@ -22,15 +22,18 @@ export default function Footer() {
               <h2 className="mb-2 sm:mb-3 text-sm md:text-xs font-semibold text-white uppercase">
                 Resources
               </h2>
-              <ul className="text-white font-medium text-ss md:text-sm ">
-                <li className=" mb-2 sm:mb-4">
-                  <a href="https://futo.edu.ng/" className="hover:underline">
-                    FUTO Portal
-                  </a>
-                </li>
+              <ul className="text-white font-medium text-ss md:text-sm flex flex-col gap-2 sm:gap-4 ">
                 <li>
                   <a href="https://futo.edu.ng/" className="hover:underline">
                     FUTO Website
+                  </a>
+                </li>
+                <li className="">
+                  <a
+                    href="https://portal.futo.edu.ng/"
+                    className="hover:underline"
+                  >
+                    FUTO Portal
                   </a>
                 </li>
               </ul>
@@ -39,28 +42,19 @@ export default function Footer() {
               <h2 className="mb-2 sm:mb-3 text-sm md:text-xs font-semibold text-white uppercase">
                 Academics
               </h2>
-              <ul className="text-white font-medium text-ss md:text-sm">
-                <li className=" mb-2 sm:mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
-                    className="hover:underline"
-                  >
+              <ul className="text-white font-medium text-ss md:text-sm flex flex-col gap-2 sm:gap-4">
+                <li className="">
+                  <a href="/calculate-gpa" className="hover:underline">
                     GPA Calculator
                   </a>
                 </li>
-                <li className=" mb-2 sm:mb-4">
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
-                  >
+                <li className="">
+                  <a href="/course-outlines" className="hover:underline">
                     Course Outlines
                   </a>
                 </li>{" "}
                 <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
-                  >
+                  <a href="/learning-resources" className="hover:underline">
                     Learning Resources
                   </a>
                 </li>
@@ -70,20 +64,20 @@ export default function Footer() {
               <h2 className="mb-2 sm:mb-3 text-sm md:text-xs font-semibold text-white uppercase">
                 Useful Links
               </h2>
-              <ul className="text-white font-medium text-ss md:text-sm">
-                <li className=" mb-2 sm:mb-4">
-                  <a href="#" className="hover:underline">
+              <ul className="text-white font-medium text-ss md:text-sm flex flex-col gap-2 sm:gap-4">
+                <li className="">
+                  <a href="/about/about-us" className="hover:underline">
                     About Us
                   </a>
                 </li>
-                <li className=" mb-2 sm:mb-4">
-                  <a href="#" className="hover:underline">
+                <li className="">
+                  <a href="/blog" className="hover:underline">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
-                    Class Representatives
+                  <a href="/students/project-team" className="hover:underline">
+                    Project Team
                   </a>
                 </li>
               </ul>
@@ -114,20 +108,20 @@ export default function Footer() {
 
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a
-              href="#"
+              href="https://www.facebook.com/F.U.T.O.Nigeria/"
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
               <FacebookIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 fill-white" />
             </a>
 
             <a
-              href="#"
+              href="/"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-2"
             >
               <XIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" />
             </a>
             <a
-              href="#"
+              href="https://futo.edu.ng/"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-2"
             >
               <WebIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" />

@@ -128,7 +128,7 @@ export default function LearningResources() {
                 <img
                   src={checkResources}
                   alt="Check out your learning resources"
-                  className=" w-full ss:w-[250px]"
+                  className=" w-[70%] xss:w-[200px] sm:w-[230px]"
                 />
                 <p className="text-sm ss:text-xs text-gray-700 font-medium text-center">
                   Select a level, course and resource type to get learning

@@ -9,24 +9,10 @@ import chris from "../../assets/img/team/img6.jpg";
 import { Link } from "react-router-dom";
 import futo from "../../assets/img/gallery/front-gate2.jpg";
 import Footer from "../../components/footer/Footer";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { fadeInVariants3 } from "../../animation/variants";
 
 export default function ProjectTeam() {
-  const boxVariant = {
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-    hidden: { opacity: 0, scale: 0, },
-  };
-  const control = useAnimation();
-  const [ref, inView] = useInView();
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    } else {
-      control.start("hidden");
-    }
-  }, [control, inView]);
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
@@ -41,10 +27,15 @@ export default function ProjectTeam() {
             </h3>
           </div>
           <div className="w-full flex items-center justify-center">
-            <motion.div ref={ref}
-                variants={boxVariant}
-                initial="hidden"
-                animate={control} className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow-xl rounded-lg text-gray-900">
+            <motion.div
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow-xl rounded-lg text-gray-900"
+            >
               <div className="rounded-t-lg h-32 w-full overflow-hidden bg-gray-100">
                 <img
                   src={futo}
@@ -79,14 +70,14 @@ export default function ProjectTeam() {
                 <p className="text-gray-700 text-ss sm:text-sm font-semibold mb-4">
                   400 Level
                 </p>
-                  <p className=" font-semibold text-ss ss:text-sm sm:text-xs mb-2">
-                    <Lottie
-                      animationData={dev}
-                      loop={false}
-                      className="w-[17px] ss:w-[20px] -mb-0.5 inline-block"
-                    />{" "}
-                    Software Engineer · Web Developer
-                  </p>
+                <p className=" font-semibold text-ss ss:text-sm sm:text-xs mb-2">
+                  <Lottie
+                    animationData={dev}
+                    loop={false}
+                    className="w-[17px] ss:w-[20px] -mb-0.5 inline-block"
+                  />{" "}
+                  Software Engineer · Web Developer
+                </p>
                 <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-4 pb-12 sm:pb-8">
                   <Link to="mailto:mbahchris46@gmail.com">
                     <div className="flex gap-1 items-center">

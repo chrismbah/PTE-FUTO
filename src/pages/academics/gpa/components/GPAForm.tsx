@@ -80,7 +80,7 @@ export default function GPAForm() {
             className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 xss:p-2.5"
             onChange={handleCourseChange}
           >
-            <option disabled selected>
+            <option value="" disabled selected>
               Select Course
             </option>
             <CourseOptions />

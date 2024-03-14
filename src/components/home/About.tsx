@@ -4,6 +4,10 @@ import glasses from "../../json/animation/glasses.json";
 import img2 from "../../assets/img/gallery/senate-building.webp";
 import img3 from "../../assets/img/gallery/senate.jpg";
 import img4 from "../../assets/img/gallery/statue.jpg";
+import { motion } from "framer-motion";
+import { fadeInVariants1 } from "../../animation/variants";
+import { fadeInVariants2 } from "../../animation/variants";
+
 export default function About() {
   return (
     <>
@@ -16,7 +20,16 @@ export default function About() {
               Empowering students to achieve academic excellence through
               learning resources and personalized support.
             </p>
-            <div className="bg-white shadow-4 rounded-lg p-6 flex items-center mb-4 justify-start gap-3">
+            <motion.div
+              variants={fadeInVariants1}
+              initial="initial"
+              whileInView="animate"
+              custom={1}
+              viewport={{
+                once: true,
+              }}
+              className="bg-white shadow-4 rounded-lg p-6 flex items-center mb-4 justify-start gap-3"
+            >
               <Lottie
                 loop={true}
                 animationData={glasses}
@@ -29,8 +42,17 @@ export default function About() {
                   fields, but becoming impactful contributors to society.
                 </p>
               </div>
-            </div>
-            <div className="bg-white shadow-4 basis-2/5 rounded-lg p-6 flex items-center justify-start gap-3">
+            </motion.div>
+            <motion.div
+              variants={fadeInVariants1}
+              initial="initial"
+              whileInView="animate"
+              custom={3}
+              viewport={{
+                once: true,
+              }}
+              className="bg-white shadow-4 basis-2/5 rounded-lg p-6 flex items-center justify-start gap-3"
+            >
               <Lottie
                 loop={true}
                 animationData={consultation}
@@ -43,42 +65,69 @@ export default function About() {
                   interactive tools and tailored support systems.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div className="mmd:basis-3/5">
             <div className="flex gap-1 sm:gap-3">
               <div className="basis-1/2 flex items-center justify-center flex-col">
                 <div className="basis-2/3">
-                  <div className="relative">
+                  <motion.div
+                    variants={fadeInVariants2}
+                    viewport={{
+                      once: true,
+                    }}
+                    initial="initial"
+                    whileInView="animate"
+                    custom={1}
+                    className="relative"
+                  >
                     <img
                       src={img2}
                       alt=""
                       className="h-[50%] bg-gray-100 w-full object-cover rounded-lg"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
               <div className="basis-1/2 flex items-start flex-col gap-1 sm:gap-3">
                 <div className="basis-2/5">
-                  <div className="relative">
+                  <motion.div
+                    variants={fadeInVariants2}
+                    viewport={{
+                      once: true,
+                    }}
+                    initial="initial"
+                    whileInView="animate"
+                    custom={3}
+                    className="relative"
+                  >
                     <img
                       src={img4}
                       alt=""
                       className="h-[50%] bg-gray-200 w-full sm:w-[80%] object-cover rounded-lg "
                     />
                     <div className="absolute w-full sm:w-[80%] inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
-                  </div>
+                  </motion.div>
                 </div>
                 <div className="basis-3/5">
-                  <div className="relative">
+                  <motion.div
+                    variants={fadeInVariants2}
+                    viewport={{
+                      once: true,
+                    }}
+                    initial="initial"
+                    whileInView="animate"
+                    custom={4}
+                    className="relative"
+                  >
                     <img
                       src={img3}
                       alt=""
                       className="h-[50%] bg-gray-200 w-full sm:w-[80%] object-cover rounded-lg "
                     />
                     <div className="absolute w-full sm:w-[80%] inset-0 bg-gradient-to-b from-transparent via-transparent to-green4/30 rounded-lg"></div>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>

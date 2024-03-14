@@ -12,6 +12,22 @@ import img11 from "../../assets/img/gallery/senate2.jpg";
 import img12 from "../../assets/img/gallery/office.jpg";
 import Lottie from "lottie-react";
 import gallery from "../../json/animation/gallery.json";
+import { motion } from "framer-motion";
+
+const fadeInVariants1 = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 0.4,
+    },
+  }),
+};
 
 export default function Gallery() {
   return (
@@ -21,33 +37,150 @@ export default function Gallery() {
           <div className="basis-1/2">
             <div className="p-0 sm:p-6">
               <div className="columns-1 gap-2 xxss:columns-2 sm:gap-4 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-4 sm:[&>img:not(:first-child)]:mt-8">
-                <img
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={1}
                   className="rounded-lg min-h-[100px] object-cover mt-7"
                   src={img1}
+                  alt="Image"
                 />
-                <img className="rounded-lg object-cover" src={img2} />
-                <img className="rounded-lg object-cover min-h-[110px]" src={img3} />
-                <img
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={2}
+                  className="rounded-lg object-cover"
+                  src={img2}
+                  alt="Image"
+                />
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={3}
+                  className="rounded-lg object-cover min-h-[110px]"
+                  src={img3}
+                  alt="Image"
+                />
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={4}
                   className="rounded-lg object-cover min-h-[90px]"
                   src={img4}
+                  alt="Image"
                 />
-                <img
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={5}
                   className="rounded-lg object-cover min-h-[200px]"
                   src={img5}
+                  alt="Image"
                 />
-                <img className="rounded-lg object-cover" src={img6} />
-                <img className="rounded-lg object-cover" src={img7} />
-                <img
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={6}
+                  className="rounded-lg object-cover"
+                  src={img6}
+                  alt="Image"
+                />
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={7}
+                  className="rounded-lg object-cover"
+                  src={img7}
+                  alt="Image"
+                />
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={8}
                   className="rounded-lg object-cover min-h-[110px]"
                   src={img8}
+                  alt="Image"
                 />
-                <img className="rounded-lg object-cover" src={img9} />
-                <img className="rounded-lg object-cover min-h-[120px]" src={img10} />
-                <img
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={9}
+                  className="rounded-lg object-cover"
+                  src={img9}
+                  alt="Image"
+                />
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={10}
+                  className="rounded-lg object-cover min-h-[120px]"
+                  src={img10}
+                  alt="Image"
+                />
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={11}
                   className="rounded-lg object-cover min-h-[130px]"
                   src={img11}
+                  alt="Image"
                 />
-                <img className="rounded-lg object-cover min-h-[90px]" src={img12} alt="" />
+                <motion.img
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={12}
+                  className="rounded-lg object-cover min-h-[90px]"
+                  src={img12}
+                  alt="Image"
+                />
               </div>
             </div>
           </div>

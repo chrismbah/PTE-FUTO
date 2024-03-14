@@ -20,6 +20,9 @@ import {
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
+import { fadeInVariants4 } from "../../animation/variants";
+import { motion } from "framer-motion";
+
 export const DashboardNavbar = () => {
   const { studentDetails, user, loading } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
@@ -69,9 +72,18 @@ export const DashboardNavbar = () => {
               </a>
 
               <div className="border-l-2 border-gray-500">
-                <p className=" text-ss sm:text-xs ml-2 font-semibold text-black">
+                <motion.p
+                  variants={fadeInVariants4}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={1}
+                  className=" text-ss sm:text-xs ml-2 font-semibold text-black"
+                >
                   Dashboard
-                </p>
+                </motion.p>
               </div>
             </div>
             <div
@@ -176,9 +188,17 @@ export const DashboardNavbar = () => {
                 handler={setOpenPopover}
               >
                 <PopoverHandler {...triggers}>
-                  <button>
+                  <motion.button
+                    variants={fadeInVariants4}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{
+                      once: true,
+                    }}
+                    custom={3}
+                  >
                     <BellIcon className="w-6 h-6 mt-1 fill-green1" />
-                  </button>
+                  </motion.button>
                 </PopoverHandler>
                 {user && (
                   <PopoverContent
@@ -192,100 +212,110 @@ export const DashboardNavbar = () => {
                   </PopoverContent>
                 )}
               </Popover>
-              {loading ? (
-                <Skeleton
-                  circle={true}
-                  className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
-                />
-              ) : user ? (
-                studentDetails ? (
-                  <Dropdown
-                    arrowIcon={false}
-                    inline
-                    className="z-[9999] "
-                    label={
-                      <>
-                        {studentDetails &&
-                        studentDetails.profileImageURL.length > 0 ? (
-                          <div
-                            className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[38px] md:w-[38px] bg-gray-200
-                             rounded-full border sm:border-2 border-transparent hover:border-green4 transition duration-200 ease-in-out"
-                          >
-                            <img
-                              src={studentDetails.profileImageURL}
-                              alt="Profile"
-                              onLoad={() => console.log("Loaded")}
-                              className="w-full h-full rounded-full object-cover"
-                            />
-                          </div>
-                        ) : (
-                          studentDetails &&
-                          studentDetails.profileImageURL.length < 1 && (
-                            <Lottie
-                              animationData={avatar}
-                              loop={false}
-                              className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
-                            />
-                          )
-                        )}
-                      </>
-                    }
-                  >
-                    <Dropdown.Header>
-                      <span className="block text-sm sm:text-xs font-bold text-gray-700">
-                        {studentDetails && firstName}{" "}
-                        {studentDetails && lastName}
-                      </span>
-                      <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
-                        {studentDetails && email}
-                      </span>
-                    </Dropdown.Header>
-                    <Link to={"/dashboard"}>
-                      <Dropdown.Item className="group transition duration-200 ease-in-out">
-                        <div className="flex items-center justify-start gap-1">
-                          <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
-                            Dashboard
-                          </span>
-                        </div>
-                      </Dropdown.Item>
-                    </Link>
-                    <Link to="/profile">
-                      <Dropdown.Item className="group transition duration-200 ease-in-out">
-                        <div className="flex items-center justify-start gap-1">
-                          <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
-                            Profile
-                          </span>
-                        </div>{" "}
-                      </Dropdown.Item>
-                    </Link>
-                    <Dropdown.Divider />
-                    <Dropdown.Item
-                      onClick={() => setOpenSignOutModal(true)}
-                      className="group transition duration-200 ease-in-out"
-                    >
-                      <div className="flex items-center justify-start gap-1">
-                        <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                        <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
-                          Sign Out
-                        </span>
-                      </div>
-                    </Dropdown.Item>
-                  </Dropdown>
-                ) : (
+              <motion.div
+                variants={fadeInVariants4}
+                initial="initial"
+                whileInView="animate"
+                viewport={{
+                  once: true,
+                }}
+                custom={5}
+              >
+                {loading ? (
                   <Skeleton
                     circle={true}
                     className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
                   />
-                )
-              ) : (
-                <Link to={"/login"}>
-                  <button className="rounded-lg bg-green1 hover:bg-green1/95 transition duration-200 ease-in-out py-2 px-2.5 sm:px-3.5 font-semibold text-white text-sm sm:text-xs">
-                    Login
-                  </button>
-                </Link>
-              )}
+                ) : user ? (
+                  studentDetails ? (
+                    <Dropdown
+                      arrowIcon={false}
+                      inline
+                      className="z-[9999] "
+                      label={
+                        <>
+                          {studentDetails &&
+                          studentDetails.profileImageURL.length > 0 ? (
+                            <div
+                              className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[38px] md:w-[38px] bg-gray-200
+                             rounded-full border sm:border-[3px] border-gray-300 hover:border-green4 transition duration-200 ease-in-out"
+                            >
+                              <img
+                                src={studentDetails.profileImageURL}
+                                alt="Profile"
+                                onLoad={() => console.log("Loaded")}
+                                className="w-full h-full rounded-full object-cover"
+                              />
+                            </div>
+                          ) : (
+                            studentDetails &&
+                            studentDetails.profileImageURL.length < 1 && (
+                              <Lottie
+                                animationData={avatar}
+                                loop={false}
+                                className="h-[32px] w-[32px] md:h-[34px] md:w-[34px]"
+                              />
+                            )
+                          )}
+                        </>
+                      }
+                    >
+                      <Dropdown.Header>
+                        <span className="block text-sm sm:text-xs font-bold text-gray-700">
+                          {studentDetails && firstName}{" "}
+                          {studentDetails && lastName}
+                        </span>
+                        <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
+                          {studentDetails && email}
+                        </span>
+                      </Dropdown.Header>
+                      <Link to={"/dashboard"}>
+                        <Dropdown.Item className="group transition duration-200 ease-in-out">
+                          <div className="flex items-center justify-start gap-1">
+                            <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                            <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                              Dashboard
+                            </span>
+                          </div>
+                        </Dropdown.Item>
+                      </Link>
+                      <Link to="/profile">
+                        <Dropdown.Item className="group transition duration-200 ease-in-out">
+                          <div className="flex items-center justify-start gap-1">
+                            <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                            <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                              Profile
+                            </span>
+                          </div>{" "}
+                        </Dropdown.Item>
+                      </Link>
+                      <Dropdown.Divider />
+                      <Dropdown.Item
+                        onClick={() => setOpenSignOutModal(true)}
+                        className="group transition duration-200 ease-in-out"
+                      >
+                        <div className="flex items-center justify-start gap-1">
+                          <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
+                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-semibold">
+                            Sign Out
+                          </span>
+                        </div>
+                      </Dropdown.Item>
+                    </Dropdown>
+                  ) : (
+                    <Skeleton
+                      circle={true}
+                      className="h-[34px] w-[34px] md:h-[36px] md:w-[36px]"
+                    />
+                  )
+                ) : (
+                  <Link to={"/login"}>
+                    <button className="rounded-lg bg-green1 hover:bg-green1/95 transition duration-200 ease-in-out py-2 px-2.5 sm:px-3.5 font-semibold text-white text-sm sm:text-xs">
+                      Login
+                    </button>
+                  </Link>
+                )}
+              </motion.div>
             </div>
           </div>
         </div>

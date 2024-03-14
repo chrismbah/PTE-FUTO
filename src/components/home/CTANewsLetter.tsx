@@ -16,6 +16,9 @@ import {
 import { notifyUser } from "../../helpers/notifyUser";
 import { Spinner } from "../loaders/Spinner";
 import { BellIcon } from "../icons/general/BellIcon";
+import { motion } from "framer-motion";
+import { fadeInVariants1 } from "../../animation/variants";
+
 export default function CTANewsLetter() {
   const [subscribing, setSubscribing] = useState(false);
 
@@ -66,9 +69,17 @@ export default function CTANewsLetter() {
   return (
     <div>
       <div className="box-width">
-        <div className="px-3 xsm:px-14 xsm:py-32 py-8">
+        <div className="px-3 xsm:px-14 xsm:py-24 py-8">
           <div className="flex items-center justify-center flex-col">
-            <div className="flex items-center justify-center flex-col xsm:flex-row gap-4 shadow-4 mt-4 rounded-lg border border-gray-100 bg-white py-3 px-4 xsm:px-8 xss:py-4 w-full max-w-[900px]">
+            <motion.div
+              variants={fadeInVariants1}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              className="flex items-center justify-center flex-col xsm:flex-row gap-4 shadow-4 mt-4 rounded-lg border border-gray-100 bg-white py-3 px-4 xsm:px-8 xss:py-4 w-full max-w-[900px]"
+            >
               <Lottie
                 loop={true}
                 animationData={newsLetter}
@@ -97,7 +108,7 @@ export default function CTANewsLetter() {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

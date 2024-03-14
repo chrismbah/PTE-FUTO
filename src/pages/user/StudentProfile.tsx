@@ -8,7 +8,7 @@ import { CalenderIcon } from "../../components/icons/general/CalenderIcon";
 import { EmailIcon } from "../../components/icons/socials/EmailIcon";
 import { GraduateCapIcon } from "../../components/icons/general/GraduateCapIcon";
 import { ClockIcon } from "../../components/icons/general/ClockIcon";
-// import { RegisterIcon } from "../../components/icons/general/RegisterIcon";
+import { RegisterIcon } from "../../components/icons/general/RegisterIcon";
 import { TrashIcon } from "../../components/icons/general/TrashIcon";
 // import { Navigate } from "react-router-dom";
 import {
@@ -208,7 +208,7 @@ export default function StudentProfile() {
               </div>{" "}
               <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
                 <div className="rounded-lg bg-gray-200 p-2">
-                  {/* <RegisterIcon className="w-5 sm:w-8" /> */}
+                  <RegisterIcon className="w-5 sm:w-8 fill-green1" />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">

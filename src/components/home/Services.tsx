@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { services } from "../../data/home/services";
 import { Link } from "react-router-dom";
+import { fadeInVariants1 } from "../../animation/variants";
 
 export default function Services() {
   return (
@@ -18,9 +20,18 @@ export default function Services() {
           </div>
 
           <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5">
-            {services.map(({ link, desc, icon, color, title }, i) => (
-              <Link to={link} key={i} className="w-full">
-                <div className="bg-white rounded-lg shadow-4 hover:shadow-md transition-shadow duration-250 ease-in-out p-12 h-[270px] sm:h-[300px] flex flex-col justify-center items-center">
+            {services.map(({ link, desc, icon, color, title }, index) => (
+              <Link to={link} key={index} className="w-full">
+                <motion.div
+                  variants={fadeInVariants1}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={index}
+                  className="bg-white rounded-lg shadow-4 hover:shadow-md transition-shadow duration-250 ease-in-out p-12 h-[270px] sm:h-[300px] flex flex-col justify-center items-center"
+                >
                   <div
                     className={`${color === "dark-green" ? "bg-green1" : "bg-green5"} bg-green1 rounded-full p-3 mb-2`}
                   >
@@ -32,7 +43,7 @@ export default function Services() {
                   <p className="text-gray-700 text-xss ss:text-ss sm:text-sm text-center font-medium">
                     {desc}
                   </p>
-                </div>
+                </motion.div>
               </Link>
             ))}
           </div>

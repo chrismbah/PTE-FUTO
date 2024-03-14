@@ -7,12 +7,11 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import noBlog from "../../assets/svg/illustrations/no-blog2.svg";
 import { useEffect } from "react";
+import { fadeInVariants1 } from "../../animation/variants";
+import { motion } from "framer-motion";
 export default function Blog() {
-  const {
-    homeBlogPosts,
-    homeBlogPostsLoading,
-    fetchHomeBlogPosts,
-  } = useFetchBlogPosts();
+  const { homeBlogPosts, homeBlogPostsLoading, fetchHomeBlogPosts } =
+    useFetchBlogPosts();
   useEffect(() => {
     fetchHomeBlogPosts();
   }, []);
@@ -37,7 +36,16 @@ export default function Blog() {
                 .map(({ title, sampleImg, contents, postType, id }, i) => {
                   return (
                     <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
-                      <div className="w-full flex flex-col justify-start h-[300px] ss:h-[360px] md:h-[340px] relative">
+                      <motion.div
+                        variants={fadeInVariants1}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{
+                          once: true,
+                        }}
+                        custom={i}
+                        className="w-full flex flex-col justify-start h-[300px] ss:h-[360px] md:h-[340px] relative"
+                      >
                         <div className="w-full h-[180px] ss:h-[210px] md:h-[230px] rounded-lg overflow-hidden mb-4 bg-gray-100">
                           <img
                             src={sampleImg}
@@ -62,7 +70,7 @@ export default function Blog() {
                         >
                           Read More...
                         </Link>
-                      </div>
+                      </motion.div>
                     </Link>
                   );
                 })}
@@ -112,24 +120,22 @@ export default function Blog() {
               </p>
             </div>
           )}{" "} */}
-          {homeBlogPosts && homeBlogPosts.length < 1 && !homeBlogPostsLoading && (
-            <div className="w-full pb-4 flex flex-col items-center justify-center">
-              <img
-                src={noBlog}
-                alt=""
-                className="w-[80%] xss:w-[320px]"
-              />
-              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center text-gray-700">
-                Oops, Could'nt get posts at the moment.{" "}
-                <button
-                  className="underline hover:no-underline text-green1"
-                  onClick={() => fetchHomeBlogPosts()}
-                >
-                  Retry
-                </button>
-              </p>
-            </div>
-          )}
+          {homeBlogPosts &&
+            homeBlogPosts.length < 1 &&
+            !homeBlogPostsLoading && (
+              <div className="w-full pb-4 flex flex-col items-center justify-center">
+                <img src={noBlog} alt="" className="w-[80%] xss:w-[320px]" />
+                <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center text-gray-700">
+                  Oops, Could'nt get posts at the moment.{" "}
+                  <button
+                    className="underline hover:no-underline text-green1"
+                    onClick={() => fetchHomeBlogPosts()}
+                  >
+                    Retry
+                  </button>
+                </p>
+              </div>
+            )}
         </div>
       </div>
     </div>

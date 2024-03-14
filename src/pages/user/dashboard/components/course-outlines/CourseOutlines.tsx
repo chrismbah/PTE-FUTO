@@ -137,9 +137,9 @@ export default function CourseOutlines() {
                 <img
                   src={reading}
                   alt={"Choose a level, semester and course code"}
-                  className="w-full xxss:w-[220px]"
+                  className=" w-[70%] xss:w-[200px] sm:w-[230px]"
                 />
-                <p className="text-sm ss:text-xs text-gray-700 font-medium">
+                <p className="text-sm ss:text-xs text-gray-700 font-medium text-center">
                   Select a level, semester and course respectively.
                 </p>
               </div>

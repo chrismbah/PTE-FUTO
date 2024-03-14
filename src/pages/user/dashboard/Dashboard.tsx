@@ -128,7 +128,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="lg:col-span-5 px-4 h-full">
+                <div className="lg:col-span-5 px-4 h-full mb-5 lg:mb-0">
                   <div className="mb-4">
                     <div className="grid sss:grid-cols-2 lg:grid-cols-3 gap-4 ">
                       <NavLink to="/u/gpa-calculator">
@@ -182,7 +182,7 @@ export default function Dashboard() {
                         </p>
                       </div>
                     </div>{" "}
-                    <div className="shadow rounded-lg w-full py-2 bg-white">
+                    <div className="shadow rounded-lg w-full py-2 bg-white h-[340px]">
                       <div className=" text-sm sm:text-xs md:text-base p-2 border-b border-gray-300 font-bold text-gray-800">
                         Notifications
                       </div>
@@ -213,7 +213,7 @@ export default function Dashboard() {
       ) : (
         gettingStudentDetailsErr && (
           <div className="w-full h-[100vh] flex items-center justify-center flex-col gap-3">
-            <BadNetworkIcon className="w-6 sm:w-10 md:w-16" />
+            <BadNetworkIcon className="w-8 sm:w-10 md:w-16" />
             <p className=" text-sm sm:text-xs md:text-xs text-gray-800 font-semibold">
               Something went wrong.{" "}
               <button
