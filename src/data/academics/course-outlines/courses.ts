@@ -251,8 +251,8 @@ export const courses: LevelCoursesOutline = {
           unit: 2,
         },
         {
-          courseID: "ENG313",
-          course: "ENG 313",
+          courseID: "ENG317",
+          course: "ENG 317",
           unit: 2,
         },
         {

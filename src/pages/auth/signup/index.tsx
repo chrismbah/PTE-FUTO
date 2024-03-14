@@ -18,7 +18,7 @@ export default function SignUp() {
   return (
     <div className="bg-gray-50">
       <div className=" w-full min-h-screen flex items-center justify-center px-3 sm:px-10 pt-10">
-        <div className=" bg-white rounded-lg shadow min-w-[600px]">
+        <div className=" bg-white rounded-lg shadow sm:min-w-[600px]">
           <form
             onSubmit={handleSubmit(signUpUser)}
             className=" px-6 py-4 sm:px-8 sm:py-4"
@@ -32,12 +32,12 @@ export default function SignUp() {
                 <p className="font-bold text-xs">FUTO</p>
               </div>
             </div>
-            <div className="grid md:grid-cols-2 md:gap-6">
+            <div className="grid xxss:grid-cols-2 xxss:gap-6">
               <div className="relative z-0 w-full mb-4 group">
                 <input
                   type="text"
                   id="floating_first_name"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
+                  className="block py-2.5 px-1.5 w-full font-semibold text-ss sm:text-sm text-gray-900  bg-transparent border rounded-lg border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-green1 peer"
                   placeholder=""
                   {...register("firstName")}
                 />
@@ -48,7 +48,7 @@ export default function SignUp() {
                 )}
                 <label
                   htmlFor="floating_first_name"
-                  className="peer-focus:font-semibold font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-semibold font-semibold absolute text-ss sm:text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 left-1.5 -z-10 origin-[0] peer-focus:start-1.5 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   First Name
                 </label>
@@ -57,7 +57,7 @@ export default function SignUp() {
                 <input
                   type="text"
                   id="floating_last_name"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
+                  className="block py-2.5 px-1.5 w-full font-semibold text-ss sm:text-sm text-gray-900  bg-transparent border rounded-lg border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-green1 peer"
                   placeholder=" "
                   {...register("lastName")}
                 />
@@ -69,24 +69,24 @@ export default function SignUp() {
 
                 <label
                   htmlFor="floating_last_name"
-                  className="peer-focus:font-semibold font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-semibold font-semibold absolute  text-ss sm:text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 left-1.5 -z-10 origin-[0] peer-focus:start-1.5 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   Last Name
                 </label>
               </div>
             </div>
-            <div className="grid md:grid-cols-2 md:gap-6">
+            <div className="grid xxss:grid-cols-2 xxss:gap-6">
               <div className="relative z-0 w-full mb-4 group">
                 <input
                   type="number"
                   id="floating_phone"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
+                  className="block py-2.5 px-1.5 w-full font-semibold text-ss sm:text-sm text-gray-900  bg-transparent border rounded-lg border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-green1 peer"
                   placeholder=" "
                   {...register("regNo")}
                 />
                 <label
                   htmlFor="floating_regNo"
-                  className="peer-focus:font-semibold font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-semibold font-semibold absolute  text-ss sm:text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 left-1.5 -z-10 origin-[0] peer-focus:start-1.5 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   Matric No. ( optional )
                 </label>
@@ -97,10 +97,10 @@ export default function SignUp() {
                 </label>
                 <select
                   id="underline_select"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-green1 peer"
+                  className="block py-2.5 px-1.5 w-full font-semibold text-ss sm:text-sm text-gray-900  bg-transparent border rounded-lg border-gray-300 appearance-none dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-green1 peer"
                   {...register("level")}
                 >
-                  <option selected value="" disabled>
+                  <option selected disabled>
                     Select Your Level
                   </option>
                   <option value="Aspirant">Aspirant</option>
@@ -120,7 +120,7 @@ export default function SignUp() {
               <input
                 type="email"
                 id="floating_email"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
+                className="block py-2.5 px-1.5 w-full font-semibold text-ss sm:text-sm text-gray-900  bg-transparent border rounded-lg border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-green1 peer"
                 placeholder=" "
                 {...register("email")}
               />
@@ -130,17 +130,17 @@ export default function SignUp() {
 
               <label
                 htmlFor="floating_email"
-                className="peer-focus:font-semibold font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-semibold font-semibold absolute  text-ss sm:text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 left-1.5 -z-10 origin-[0] peer-focus:start-1.5 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Email address
               </label>
             </div>
-            <div className="grid md:grid-cols-2 md:gap-6">
+            <div className="grid xxss:grid-cols-2 xxss:gap-6">
               <div className="relative z-0 w-full mb-4 group">
                 <input
                   type="password"
                   id="floating_password"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
+                  className="block py-2.5 px-1.5 w-full font-semibold text-ss sm:text-sm text-gray-900  bg-transparent border rounded-lg border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-green1 peer"
                   placeholder=" "
                   {...register("password")}
                 />
@@ -152,7 +152,7 @@ export default function SignUp() {
 
                 <label
                   htmlFor="floating_password"
-                  className="peer-focus:font-semibold font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-semibold font-semibold absolute  text-ss sm:text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 left-1.5 -z-10 origin-[0] peer-focus:start-1.5 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   Password
                 </label>
@@ -161,7 +161,7 @@ export default function SignUp() {
                 <input
                   type="password"
                   id="floating_repeat_password"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-green1 peer"
+                  className="block py-2.5 px-1.5 w-full font-semibold text-ss sm:text-sm text-gray-900  bg-transparent border rounded-lg border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-green1 peer"
                   placeholder=" "
                   {...register("confirmPassword")}
                 />
@@ -173,7 +173,7 @@ export default function SignUp() {
 
                 <label
                   htmlFor="floating_repeat_password"
-                  className="peer-focus:font-semibold font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-semibold font-semibold absolute  text-ss sm:text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 left-1.5 -z-10 origin-[0] peer-focus:start-1.5 rtl:peer-focus:translate-x-1/4 peer-focus:text-green1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   Confirm password
                 </label>
@@ -181,16 +181,16 @@ export default function SignUp() {
             </div>
             <button
               type="submit"
-              className="mb-4 text-white bg-green1 hover:bg-green2  font-semibold rounded-lg text-xs w-full md:w-auto px-5 py-2.5 text-center"
+              className="mb-3 text-white bg-green1 hover:bg-green1/90  font-semibold rounded-lg text-sm sm:text-xs w-fit px-5 py-2.5"
             >
               {loading ? <ButtonSpinner /> : "Sign Up"}
             </button>
           </form>
           <div className="border-t border-t-gray-300 px-6 py-4 sm:px-8">
-            <p className="text-sm font-semibold text-gray-700">
+            <p className=" text-ss sm:text-sm font-semibold text-gray-700">
               Already have an account ?{" "}
               <Link
-                className="text-sm font-semibold text-green1 hover:underline "
+                className=" text-ss sm:text-sm font-semibold text-green1 hover:underline "
                 to="/login"
               >
                 Login

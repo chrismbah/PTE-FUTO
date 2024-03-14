@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { StyleProp } from "../../../models/style";
-
 export const RegisterIcon: FC<StyleProp> = ({ className }) => {
   return (
     <svg

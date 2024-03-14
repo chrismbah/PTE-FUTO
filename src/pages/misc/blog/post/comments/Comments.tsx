@@ -8,7 +8,6 @@ import {
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
-import { DeleteCommentModal } from "../../../../../components/modal/DeleteCommentModal";
 import { useBlogComments } from "../../hooks/useBlogComments";
 import Lottie from "lottie-react";
 import profile from "../../../../../json/animation/avatar1.json";
@@ -82,10 +81,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                   </p>
                 </div>
               </div>
-              <DeleteCommentModal
-                commentID={commentID}
-                commentUserID={commentUserID}
-              />
+             
             </div>
           );
         }

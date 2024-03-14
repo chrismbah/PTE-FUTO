@@ -34,11 +34,13 @@ export default function Dashboard() {
                       <div className="flex items-center justify-center">
                         {studentDetails &&
                         studentDetails?.profileImageURL.length > 0 ? (
-                          <img
-                            src={studentDetails?.profileImageURL}
-                            alt={studentDetails?.firstName}
-                            className="border-[2px] border-green1 p-0.5 w-24 h-24 xxss:h-28 xxss:w-28 sm:w-36 sm:h-36 md:w-32 md:h-32 rounded-full object-cover"
-                          />
+                          <div className="border-[3px] overflow-hidden bg-gray-200 border-green1 w-24 h-24 xxss:h-28 xxss:w-28 sm:w-36 sm:h-36 md:w-32 md:h-32 rounded-full">
+                            <img
+                              src={studentDetails?.profileImageURL}
+                              alt={studentDetails?.firstName}
+                              className="w-full h-full object-cover rounded-full"
+                            />
+                          </div>
                         ) : (
                           <Lottie
                             animationData={profile}

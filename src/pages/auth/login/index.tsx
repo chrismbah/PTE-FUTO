@@ -18,18 +18,18 @@ export default function Login() {
 
   return (
     <section className="bg-gray-50">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
-        <div className="w-full bg-white rounded-lg shadow dark:border mt-16 sm:max-w-lg xl:p-0 ">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+      <div className="flex items-center justify-center px-4 sm:px-6 py-8 mx-auto h-screen lg:py-0">
+        <div className="w-full bg-white rounded-lg shadow dark:border mt-16 max-w-md sm:max-w-lg xl:p-0 ">
+          <div className=" space-y-4 md:space-y-6 p-3 ss:p-6 sm:p-8">
             <div className="flex items-center justify-center flex-col">
               <a className="flex items-center mb-3 text-xl font-semibold text-gray-900 dark:text-white">
                 <img
-                  className="w-14 h-14 sm:w-20 sm:h-20"
+                  className="w-16 h-16 sm:w-20 sm:h-20"
                   src={logo}
                   alt="logo"
                 />
               </a>
-              <h1 className="text-md font-[800] leading-tight tracking-tight text-gray-900 md:text-[21px] dark:text-white">
+              <h1 className="text-base sm:text-md font-bold leading-tight tracking-tight text-gray-900 md:text-[21px] dark:text-white">
                 Login to your account
               </h1>
             </div>
@@ -41,14 +41,14 @@ export default function Login() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm sm:text-xs font-bold text-gray-900 dark:text-white"
+                  className="block mb-2 text-ss ss:text-sm sm:text-xs font-bold text-gray-900 dark:text-white"
                 >
                   Your Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-sm sm:text-xs rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 "
+                  className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-ss ss:text-sm sm:text-xs rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 "
                   placeholder="eg. name@gmail.com"
                   {...register("email")}
                 />
@@ -59,7 +59,7 @@ export default function Login() {
               <div>
                 <label
                   htmlFor="password"
-                  className="block mb-2 text-sm sm:text-xs font-bold text-gray-900 dark:text-white"
+                  className="block mb-2 text-ss ss:text-sm sm:text-xs font-bold text-gray-900 dark:text-white"
                 >
                   Password
                 </label>
@@ -67,7 +67,7 @@ export default function Login() {
                   type="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border font-medium border-gray-300 text-gray-700 sm text-sm sm:text-xs rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border font-medium border-gray-300 text-gray-700 sm text-ss ss:text-sm sm:text-xs rounded-lg focus:ring-green1 focus:border-green1 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   {...register("password")}
                 />
                 {errors.password && (
@@ -87,7 +87,7 @@ export default function Login() {
             </form>
           </div>
           <div className="border-t border-t-gray-300 px-6 py-4 sm:px-8">
-            <p className="text-sm font-semibold text-gray-700">
+            <p className="text-ss sm:text-sm font-semibold text-gray-700">
               New Student ?{" "}
               <a
                 href="/signup"
