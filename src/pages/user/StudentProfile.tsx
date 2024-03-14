@@ -16,7 +16,6 @@ import {
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
-import { DeleteProfileImage } from "../../components/modal/DeleteProfileImage";
 import { useModalContext } from "../../context/Modal";
 import { Spinner } from "../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../components/icons/general/BadNetworkIcon";
@@ -245,7 +244,6 @@ export default function StudentProfile() {
           )
         )}
       </div>
-      <DeleteProfileImage />
       <EditProfileModal />
     </div>
   );
