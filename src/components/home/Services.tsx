@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { services } from "../../data/home/services";
 import { Link } from "react-router-dom";
-import { fadeInVariants1 } from "../../animation/variants";
+import { fadeInVariants1, fadeInVariants3 } from "../../animation/variants";
 
 export default function Services() {
   return (
@@ -9,14 +9,31 @@ export default function Services() {
       <div className="box-width">
         <div className="px-3 xsm:px-14 xsm:py-10 xsm:pb-32 py-10">
           <div className="mmd:flex items-center justify-center flex-col capitalize mb-3">
-            <h2>
+            <motion.h2
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={1}
+            >
               {" "}
               <div className="bar-style" />
               What we offer
-            </h2>
-            <h3 className="text-gray-700 font-medium text-ss ss:text-sm xlg:text-xs mb-3">
+            </motion.h2>
+            <motion.h3
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={2}
+              className="text-gray-700 font-medium text-ss ss:text-sm xlg:text-xs mb-3"
+            >
               The services offered to students and non-students
-            </h3>
+            </motion.h3>
           </div>
 
           <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5">

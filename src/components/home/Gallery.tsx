@@ -13,6 +13,7 @@ import img12 from "../../assets/img/gallery/office.jpg";
 import Lottie from "lottie-react";
 import gallery from "../../json/animation/gallery.json";
 import { motion } from "framer-motion";
+import { fadeInVariants3 } from "../../animation/variants";
 
 const fadeInVariants1 = {
   initial: {
@@ -186,10 +187,29 @@ export default function Gallery() {
           </div>
           <div className=" basis-1/2">
             <div className="bar-style" />
-            <h2 className="">Gallery</h2>
-            <h3 className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs">
+            <motion.h2
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={1}
+            >
+              Gallery
+            </motion.h2>
+            <motion.h3
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={2}
+              className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs"
+            >
               Explore the view
-            </h3>
+            </motion.h3>
             <Lottie animationData={gallery} className="md:w-[80%] w-full" />
           </div>
         </div>

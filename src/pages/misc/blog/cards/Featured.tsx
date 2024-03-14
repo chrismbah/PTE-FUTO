@@ -15,7 +15,7 @@ export const FeaturedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                 i
               ) => (
                 <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
-                  <div className="group overflow-hidden h-[150px] flex items-center flex-row md:flex-col md:h-[500px] w-full bg-white border border-gray-200 rounded-lg shadow">
+                  <div className="group overflow-hidden h-[150px] flex items-center flex-row md:flex-col md:h-[500px] w-full bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
                     <img
                       className="object-cover rounded-none rounded-l-lg md:rounded-t-lg md:rounded-none h-full w-1/3 md:h-3/5 md:w-full duration-300 ease-in-out transform group-hover:scale-105"
                       src={sampleImg}

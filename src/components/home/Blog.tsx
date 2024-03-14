@@ -8,6 +8,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import noBlog from "../../assets/svg/illustrations/no-blog2.svg";
 import { useEffect } from "react";
 import { fadeInVariants1 } from "../../animation/variants";
+import { fadeInVariants3 } from "../../animation/variants";
 import { motion } from "framer-motion";
 export default function Blog() {
   const { homeBlogPosts, homeBlogPostsLoading, fetchHomeBlogPosts } =
@@ -20,12 +21,29 @@ export default function Blog() {
       <div className="box-width">
         <div className="section">
           <div className="mmd:flex items-center justify-center flex-col mb-3">
-            <h2>
+            <motion.h2
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={1}
+            >
               <div className="bar-style" /> Blog
-            </h2>
-            <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs">
+            </motion.h2>
+            <motion.p
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={2}
+              className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs"
+            >
               Check out our Latest Articles and Blogs.
-            </p>
+            </motion.p>
           </div>
           <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5 mb-4">
             {homeBlogPosts &&

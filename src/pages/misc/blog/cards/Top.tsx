@@ -16,7 +16,7 @@ export const TopPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                   { title, sampleImg, contents, date, author, postType, id },
                   i
                 ) => (
-                  <div key={i} className="h-full">
+                  <div key={i} className="h-full hover:bg-gray-100">
                     <Link to={`/blog/posts/${title}/${id}/${postType}`}>
                       <img
                         className="object-cover rounded-t-lg h-3/5 w-full"

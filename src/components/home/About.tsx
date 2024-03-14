@@ -7,6 +7,7 @@ import img4 from "../../assets/img/gallery/statue.jpg";
 import { motion } from "framer-motion";
 import { fadeInVariants1 } from "../../animation/variants";
 import { fadeInVariants2 } from "../../animation/variants";
+import { fadeInVariants3 } from "../../animation/variants";
 
 export default function About() {
   return (
@@ -14,12 +15,31 @@ export default function About() {
       <div className="box-width">
         <div className="section flex items-center justify-between flex-col mmd:flex-row gap-6 py-10">
           <div className="w-full mmd:basis-2/5">
-            <div className="bar-style" />
-            <h2>About Us</h2>
-            <p className="text-gray-900 font-medium text-ss ss:text-sm xlg:text-xs mb-4">
+            <motion.h2
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={1}
+            >
+              <div className="bar-style" />
+              About Us
+            </motion.h2>
+            <motion.p
+              variants={fadeInVariants3}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={2}
+              className="text-gray-900 font-medium text-ss ss:text-sm xlg:text-xs mb-4"
+            >
               Empowering students to achieve academic excellence through
               learning resources and personalized support.
-            </p>
+            </motion.p>
             <motion.div
               variants={fadeInVariants1}
               initial="initial"
