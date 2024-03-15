@@ -12,7 +12,6 @@ import Footer from "../../components/footer/Footer";
 import { motion } from "framer-motion";
 import { fadeInVariants3 } from "../../animation/variants";
 import { useEffect } from "react";
-
 export default function ProjectTeam() {
   useEffect(() => {
     window.scroll(0, 0);
@@ -38,7 +37,7 @@ export default function ProjectTeam() {
               viewport={{
                 once: true,
               }}
-              className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow rounded-lg text-gray-900"
+              className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow hover:shadow-xl rounded-lg text-gray-900"
             >
               <div className="rounded-t-lg h-32 w-full overflow-hidden bg-gray-100">
                 <img
@@ -55,10 +54,28 @@ export default function ProjectTeam() {
                 />
               </div>
               <div className="text-center mt-2 rounded-lg px-4">
-                <h4 className="font-bold text-md ss:text-xl sm:text-2xl">
+                <motion.h4
+                  variants={fadeInVariants3}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={2}
+                  className="font-bold text-md ss:text-xl sm:text-2xl"
+                >
                   Christian Endwell Mbah
-                </h4>
-                <div className="flex items-center justify-center w-full gap-1 -mt-1.5 mb-2">
+                </motion.h4>
+                <motion.div
+                  variants={fadeInVariants3}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={3}
+                  className="flex items-center justify-center w-full gap-1 -mt-1.5 mb-2"
+                >
                   <Lottie
                     animationData={location}
                     loop={false}
@@ -67,24 +84,60 @@ export default function ProjectTeam() {
                   <p className="text-gray-700 text-ss font-semibold ">
                     Owerri · Imo State
                   </p>
-                </div>
-                <p className="text-gray-700 text-ss sm:text-sm font-semibold">
+                </motion.div>
+                <motion.p
+                  variants={fadeInVariants3}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={4}
+                  className="text-black text-ss sm:text-sm font-semibold"
+                >
                   Polymer and Textile Engineering Department
-                </p>
-                <p className="text-gray-700 text-ss sm:text-sm font-semibold mb-4">
+                </motion.p>
+                <motion.p
+                  variants={fadeInVariants3}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={5}
+                  className="text-black text-ss sm:text-sm font-semibold mb-4"
+                >
                   400 Level
-                </p>
-                <p className=" font-semibold text-ss ss:text-sm sm:text-xs mb-2">
+                </motion.p>
+                <motion.p
+                  variants={fadeInVariants3}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={6}
+                  className=" font-semibold text-ss ss:text-sm sm:text-xs mb-2"
+                >
                   <Lottie
                     animationData={dev}
                     loop={false}
                     className="w-[17px] ss:w-[20px] -mb-1 inline-block"
                   />{" "}
                   Software Engineer · Web Developer
-                </p>
+                </motion.p>
                 <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-4 pb-12 sm:pb-8">
                   <Link to="mailto:mbahchris46@gmail.com">
-                    <div className="flex gap-1 items-center">
+                    <motion.div
+                      variants={fadeInVariants3}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: true,
+                      }}
+                      custom={8}
+                      className="flex gap-1 items-center"
+                    >
                       <Lottie
                         loop={false}
                         animationData={mail}
@@ -93,10 +146,19 @@ export default function ProjectTeam() {
                       <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         Email
                       </p>
-                    </div>
+                    </motion.div>
                   </Link>
                   <Link to="https://chrismbah.vercel.app">
-                    <div className="flex gap-1 items-center">
+                    <motion.div
+                      variants={fadeInVariants3}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: true,
+                      }}
+                      custom={9}
+                      className="flex gap-1 items-center"
+                    >
                       <Lottie
                         loop={false}
                         animationData={link}
@@ -105,10 +167,19 @@ export default function ProjectTeam() {
                       <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         Portfolio
                       </p>
-                    </div>
+                    </motion.div>
                   </Link>
                   <Link to="https://github.com/chrismbah">
-                    <div className="flex gap-1 items-center">
+                    <motion.div
+                      variants={fadeInVariants3}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: true,
+                      }}
+                      custom={10}
+                      className="flex gap-1 items-center"
+                    >
                       <Lottie
                         loop={false}
                         animationData={git}
@@ -117,10 +188,19 @@ export default function ProjectTeam() {
                       <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         Github
                       </p>
-                    </div>
+                    </motion.div>
                   </Link>{" "}
                   <Link to="https://linkedin.com/in/mbah-chris">
-                    <div className="flex gap-1 items-center">
+                    <motion.div
+                      variants={fadeInVariants3}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: true,
+                      }}
+                      custom={11}
+                      className="flex gap-1 items-center"
+                    >
                       <Lottie
                         loop={false}
                         animationData={work}
@@ -129,7 +209,7 @@ export default function ProjectTeam() {
                       <p className=" font-semibold text-xss ss:text-ss sm:text-sm">
                         LinkedIn
                       </p>
-                    </div>
+                    </motion.div>
                   </Link>
                 </div>
               </div>

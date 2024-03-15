@@ -36,7 +36,7 @@ export default function ClassReps() {
                 }}
                 custom={i}
                 key={i}
-                className="w-full h-[450px] shadow rounded-lg overflow-hidden bg-white"
+                className="w-full h-[400px] sss:h-[420px] shadow hover:shadow-xl cursor-pointer transition-shadow duration-200 ease-in-out rounded-lg overflow-hidden bg-white"
               >
                 <img
                   src={img}
@@ -44,7 +44,7 @@ export default function ClassReps() {
                   className="w-full h-2/3 object-cover"
                 />
                 <div className="h-1/3 p-3 flex flex-col justify-between">
-                  <p className="font-bold text-sm uppercase flex gap-1.5 items-center text-gray-900">
+                  <p className="font-bold text-sm md:text-xs uppercase flex gap-1.5 items-center text-gray-900">
                     <ProfileIcon className="w-6 h-6" /> {name}
                   </p>
                   <p className="font-semibold text-ss flex gap-1.5 items-center text-gray-900">

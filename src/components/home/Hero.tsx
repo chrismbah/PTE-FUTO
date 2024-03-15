@@ -53,7 +53,7 @@ export default function Hero() {
               materials, <br className="hidden ss:block" /> Track your academic
               progress with our GPA calculator , stay ahead of the curve with
               the latest news and articles, <br className="hidden ss:block" />{" "}
-              and join a thriving community of fellow learners.
+              and join a thriving community of fellow students and learners.
             </motion.p>
             <motion.div
               variants={fadeInVariants3}
