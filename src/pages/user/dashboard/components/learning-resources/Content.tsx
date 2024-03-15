@@ -101,7 +101,5 @@ export const Content: FC<ContentProp> = ({ course, resourcesType, level }) => {
         <FileCard key={i} {...info} />
       ))}
     </div>;
-  } else {
-    <p>Buggg</p>;
   }
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Dropdown } from "flowbite-react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
@@ -24,7 +25,7 @@ import { fadeInVariants4 } from "../../animation/variants";
 import { motion } from "framer-motion";
 
 export const DashboardNavbar = () => {
-  const { studentDetails, user, loading } = useGetUserInfo();
+  const { studentDetails, user, loading, getUserInfo } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
@@ -39,7 +40,9 @@ export const DashboardNavbar = () => {
       document.body.style.overflow = "visible";
     }
   }, [isNavOpen]);
-
+  useEffect(() => {
+    getUserInfo();
+  }, [user, studentDetails]);
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   const triggers = {
     onMouseLeave: () => setOpenPopover(false),

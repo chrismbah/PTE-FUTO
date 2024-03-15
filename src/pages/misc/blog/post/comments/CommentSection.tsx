@@ -23,11 +23,15 @@ export default function CommentSection() {
     postCommentsLoading,
     postCommentsError,
   } = useBlogComments();
-  const { studentDetails, user } = useGetUserInfo();
+  const { studentDetails, user, getUserInfo } = useGetUserInfo();
 
   useEffect(() => {
     getPostComments();
   }, [postID]);
+
+  useEffect(() => {
+    getUserInfo();
+  }, [user, studentDetails]);
 
   return (
     <div className="mb-4 bg-white shadow rounded-lg p-4 md:sticky md:top-24">

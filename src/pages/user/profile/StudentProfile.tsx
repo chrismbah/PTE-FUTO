@@ -10,7 +10,7 @@ import { GraduateCapIcon } from "../../../components/icons/general/GraduateCapIc
 import { ClockIcon } from "../../../components/icons/general/ClockIcon";
 import { RegisterIcon } from "../../../components/icons/general/RegisterIcon";
 import { TrashIcon } from "../../../components/icons/general/TrashIcon";
-// import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import {
   Popover,
   PopoverHandler,
@@ -27,7 +27,7 @@ export default function StudentProfile() {
     studentDetails,
     gettingStudentDetails,
     gettingStudentDetailsErr,
-    // user,
+    user,
   } = useGetUserInfo();
   const {
     setOpenDeleteProfileImageModal,
@@ -39,9 +39,9 @@ export default function StudentProfile() {
     getUserInfo();
   }, [studentDetails]);
 
-  // if (!user) {
-  //   return <Navigate to="/login" />;
-  // }
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
   const renderProfileImage = () => {
     if (studentDetails) {
       if (studentDetails.profileImageURL.length > 1) {

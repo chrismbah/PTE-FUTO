@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../config/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -12,7 +12,7 @@ export const useGetUserInfo = () => {
   const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(
     null
   );
-  const [gettingStudentDetails, setGettingStudentDetails] = useState(true);
+  const [gettingStudentDetails, setGettingStudentDetails] = useState(false);
   const [gettingStudentDetailsErr, setGettingStudentDetailsErr] =
     useState(false);
   const [user, loading, error] = useAuthState(auth);

@@ -20,7 +20,7 @@ import { motion } from "framer-motion";
 import { fadeInVariants4 } from "../../animation/variants";
 
 export const GeneralNavbar = () => {
-  const { studentDetails, user, loading } = useGetUserInfo();
+  const { studentDetails, user, loading, getUserInfo } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
@@ -34,6 +34,10 @@ export const GeneralNavbar = () => {
       document.body.style.overflow = "visible";
     }
   }, [isNavOpen]);
+
+  useEffect(()=>{
+    getUserInfo()
+  },[user, studentDetails])
 
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   return (
