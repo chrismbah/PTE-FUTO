@@ -31,7 +31,7 @@ export default function CourseOutline() {
                   }}
                   custom={index}
                 >
-                  <CourseOutlineCard key={index} {...levelInfo} />;
+                  <CourseOutlineCard key={index} {...levelInfo} />
                 </motion.div>
               );
             })}

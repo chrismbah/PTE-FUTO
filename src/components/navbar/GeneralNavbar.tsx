@@ -248,11 +248,11 @@ export const GeneralNavbar = () => {
                 </div>
               </div>
               <div className="mb-4">
-                <p className="font-bold text-gray-700 uppercase text-ss ss:text-sm sm:text-xs">
+                <p className="font-bold text-gray-700 uppercase text-sm ss:text-xs">
                   Links
                 </p>
               </div>
-              <div className="w-full flex flex-col justify-start gap-2 text-ss ss:text-sm sm:text-xs font-bold text-gray-700">
+              <div className="w-full flex flex-col justify-start gap-2 text-sm ss:text-xs font-bold text-gray-700">
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to={"/"}

@@ -37,7 +37,7 @@ export default function ProjectTeam() {
               viewport={{
                 once: true,
               }}
-              className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow hover:shadow-xl rounded-lg text-gray-900"
+              className=" w-[400px] sss:w-[450px] mt-6 bg-white shadow-4 rounded-lg text-gray-900"
             >
               <div className="rounded-t-lg h-32 w-full overflow-hidden bg-gray-100">
                 <img

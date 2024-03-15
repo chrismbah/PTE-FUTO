@@ -44,7 +44,7 @@ export const fadeInVariants3 = {
 export const fadeInVariants4 = {
   initial: {
     opacity: 0,
-    y: -10,
+    y: 10, //minus
   },
   animate: (index: number) => ({
     opacity: 1,
@@ -58,7 +58,7 @@ export const fadeInVariants4 = {
 export const fadeInVariants5 = {
   initial: {
     opacity: 0,
-    y: -10,
+    y: 10, //minus
   },
   animate: (index: number) => ({
     opacity: 1,
@@ -86,7 +86,7 @@ export const fadeInVariants6 = {
 export const fadeInVariants7 = {
   initial: {
     opacity: 0,
-    y: -30,
+    y: 30, //minus
   },
   animate: (index: number) => ({
     opacity: 1,

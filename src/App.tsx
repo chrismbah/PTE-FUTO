@@ -2,9 +2,7 @@ import AppRoutes from "./routes";
 import ErrorBoundary from "./pages/error/error-boundry/ErrorBoundary";
 import { CustomToaster } from "./components/toast/CustomToaster";
 import AppProvider from "./provider";
-
 export default function App() {
- 
   return (
     <>
       <ErrorBoundary>
