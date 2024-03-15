@@ -36,7 +36,7 @@ export default function ClassReps() {
                 }}
                 custom={i}
                 key={i}
-                className="w-full h-[400px] sss:h-[420px] shadow hover:shadow-xl cursor-pointer transition-shadow duration-200 ease-in-out rounded-lg overflow-hidden bg-white"
+                className="w-full h-[400px] sss:h-[420px] shadow-4 transition-shadow duration-200 ease-in-out rounded-lg overflow-hidden bg-white"
               >
                 <img
                   src={img}
