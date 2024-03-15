@@ -1,25 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
+import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
-import avatar from "../../json/animation/avatar1.json";
-import { CalenderIcon } from "../../components/icons/general/CalenderIcon";
-import { EmailIcon } from "../../components/icons/socials/EmailIcon";
-import { GraduateCapIcon } from "../../components/icons/general/GraduateCapIcon";
-import { ClockIcon } from "../../components/icons/general/ClockIcon";
-import { RegisterIcon } from "../../components/icons/general/RegisterIcon";
-import { TrashIcon } from "../../components/icons/general/TrashIcon";
+import avatar from "../../../json/animation/avatar1.json";
+import { CalenderIcon } from "../../../components/icons/general/CalenderIcon";
+import { EmailIcon } from "../../../components/icons/socials/EmailIcon";
+import { GraduateCapIcon } from "../../../components/icons/general/GraduateCapIcon";
+import { ClockIcon } from "../../../components/icons/general/ClockIcon";
+import { RegisterIcon } from "../../../components/icons/general/RegisterIcon";
+import { TrashIcon } from "../../../components/icons/general/TrashIcon";
 // import { Navigate } from "react-router-dom";
 import {
   Popover,
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
-import { useModalContext } from "../../context/Modal";
-import { Spinner } from "../../components/loaders/Spinner";
-import { BadNetworkIcon } from "../../components/icons/general/BadNetworkIcon";
-import { EditProfileModal } from "../../components/modal/EditProfileModal";
+import { useModalContext } from "../../../context/Modal";
+import { Spinner } from "../../../components/loaders/Spinner";
+import { BadNetworkIcon } from "../../../components/icons/general/BadNetworkIcon";
+import { EditProfileModal } from "../../../components/modal/EditProfileModal";
 
 export default function StudentProfile() {
   const {

@@ -37,11 +37,14 @@ const AuthenticatedRoutes = () => {
   const Blog = lazy(() => import("../pages/misc/blog/Blog"));
   const BlogPost = lazy(() => import("../pages/misc/blog/post/BlogPost"));
   const ProjectTeam = lazy(() => import("../pages/students/ProjectTeam"));
+  const ClassReps = lazy(() => import("../pages/students/ClassReps"));
   const AboutUs = lazy(() => import("../pages/about/AboutUs"));
   const PhilosophyAndObjectives = lazy(() => import("../pages/about/P&A"));
   const Admission = lazy(() => import("../pages/about/Admission"));
   const Dashboard = lazy(() => import("../pages/user/dashboard/Dashboard"));
-  const StudentProfile = lazy(() => import("../pages/user/StudentProfile"));
+  const StudentProfile = lazy(
+    () => import("../pages/user/profile/StudentProfile")
+  );
   const DashboardGPACalculator = lazy(
     () =>
       import("../pages/user/dashboard/components/gpa-calculator/GPACalculator")
@@ -90,13 +93,16 @@ const AuthenticatedRoutes = () => {
           />
           <Route path="/profile" element={<StudentProfile />} />
           <Route path="/students/project-team" element={<ProjectTeam />} />
+          <Route
+            path="/students/class-representatives"
+            element={<ClassReps />}
+          />
           <Route path="/about/about-us" element={<AboutUs />} />
           <Route
             path="/about/philosophy-and-objectives"
             element={<PhilosophyAndObjectives />}
           />
           <Route path="/about/admission" element={<Admission />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/gpa-calculator" element={<CalculateGPA />} />
           {/* <Route element={<PrivateRoute />}> */}
@@ -123,6 +129,7 @@ const AuthenticatedRoutes = () => {
               </ProtectedRoute>
             }
           /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </>

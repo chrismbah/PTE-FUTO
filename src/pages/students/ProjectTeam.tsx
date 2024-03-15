@@ -11,8 +11,12 @@ import futo from "../../assets/img/gallery/front-gate2.jpg";
 import Footer from "../../components/footer/Footer";
 import { motion } from "framer-motion";
 import { fadeInVariants3 } from "../../animation/variants";
+import { useEffect } from "react";
 
 export default function ProjectTeam() {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="box-width">
@@ -34,7 +38,7 @@ export default function ProjectTeam() {
               viewport={{
                 once: true,
               }}
-              className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow-xl rounded-lg text-gray-900"
+              className=" w-[400px] sss:w-[450px] mt-6  bg-white shadow rounded-lg text-gray-900"
             >
               <div className="rounded-t-lg h-32 w-full overflow-hidden bg-gray-100">
                 <img
@@ -74,7 +78,7 @@ export default function ProjectTeam() {
                   <Lottie
                     animationData={dev}
                     loop={false}
-                    className="w-[17px] ss:w-[20px] -mb-0.5 inline-block"
+                    className="w-[17px] ss:w-[20px] -mb-1 inline-block"
                   />{" "}
                   Software Engineer · Web Developer
                 </p>
