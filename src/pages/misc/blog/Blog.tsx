@@ -43,7 +43,7 @@ export default function Blog() {
           )}{" "}
           {blogPostsError && !blogPostsLoading && !blogPosts && (
             <div className="w-full h-[70vh] flex items-center justify-center flex-col">
-              <BadNetworkIcon className="w-10 sm:w-12 md:w-16" />
+              <BadNetworkIcon className="w-8 sm:w-8 md:w-10" />
               <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
                 Sorry, could'nt load posts at the moment.{" "}
                 <button

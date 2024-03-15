@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { BlogPostProp } from "../../../../models/misc/blog/blogPosts";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeInVariants7 } from "../../../../animation/variants";
 
 export const FeaturedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
   return (
@@ -15,7 +17,16 @@ export const FeaturedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                 i
               ) => (
                 <Link to={`/blog/posts/${title}/${id}/${postType}`} key={i}>
-                  <div className="group overflow-hidden h-[150px] flex items-center flex-row md:flex-col md:h-[500px] w-full bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+                  <motion.div
+                    variants={fadeInVariants7}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{
+                      once: true,
+                    }}
+                    custom={i}
+                    className="group overflow-hidden h-[150px] flex items-center flex-row md:flex-col md:h-[500px] w-full bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
+                  >
                     <img
                       className="object-cover rounded-none rounded-l-lg md:rounded-t-lg md:rounded-none h-full w-1/3 md:h-3/5 md:w-full duration-300 ease-in-out transform group-hover:scale-105"
                       src={sampleImg}
@@ -47,7 +58,7 @@ export const FeaturedPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                         {author} on {date}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </Link>
               )
             )}

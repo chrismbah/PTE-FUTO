@@ -56,7 +56,7 @@ export default function CoursesOutline() {
                     }}
                     custom={index}
                   >
-                    <CourseOutlineCard key={index} {...info} index={index} />
+                    <CourseOutlineCard key={index} {...info} />
                   </motion.div>
                 ))
               : level === "200"
@@ -70,7 +70,7 @@ export default function CoursesOutline() {
                       }}
                       custom={index}
                     >
-                      <CourseOutlineCard key={index} {...info} index={index} />
+                      <CourseOutlineCard key={index} {...info} />
                     </motion.div>
                   ))
                 : level === "300"
@@ -84,11 +84,7 @@ export default function CoursesOutline() {
                         }}
                         custom={index}
                       >
-                        <CourseOutlineCard
-                          key={index}
-                          {...info}
-                          index={index}
-                        />
+                        <CourseOutlineCard key={index} {...info} />
                       </motion.div>
                     ))
                   : level === "400"
@@ -103,11 +99,7 @@ export default function CoursesOutline() {
                             }}
                             custom={index}
                           >
-                            <CourseOutlineCard
-                              key={index}
-                              {...info}
-                              index={index}
-                            />
+                            <CourseOutlineCard key={index} {...info} />
                           </motion.div>
                         )
                       )
@@ -123,11 +115,7 @@ export default function CoursesOutline() {
                               }}
                               custom={index}
                             >
-                              <CourseOutlineCard
-                                key={index}
-                                {...info}
-                                index={index}
-                              />
+                              <CourseOutlineCard key={index} {...info} />
                             </motion.div>
                           )
                         )

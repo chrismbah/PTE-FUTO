@@ -83,3 +83,17 @@ export const fadeInVariants6 = {
     },
   }),
 };
+export const fadeInVariants7 = {
+  initial: {
+    opacity: 0,
+    y: -30,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 0.3,
+    },
+  }),
+};

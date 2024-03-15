@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { BlogPostProp } from "../../../../models/misc/blog/blogPosts";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeInVariants7 } from "../../../../animation/variants";
 
 export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
   return (
@@ -11,7 +13,14 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
           .map(
             ({ title, sampleImg, contents, date, postType, author, id }, i) => (
               <Link to={`/blog/posts/${title}/${id}/${postType}`}>
-                <div
+                <motion.div
+                  variants={fadeInVariants7}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={i}
                   key={i}
                   className="overflow-hidden cursor-pointer group mb-4 max-h-[400px] md:h-[160px] flex flex-col-reverse items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 "
                 >
@@ -36,7 +45,7 @@ export const OthersPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                     src={sampleImg}
                     alt={title}
                   />
-                </div>
+                </motion.div>
               </Link>
             )
           )}

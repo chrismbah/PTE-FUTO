@@ -3,11 +3,22 @@ import { Carousel } from "flowbite-react";
 import { FC } from "react";
 import { BlogPostProp } from "../../../../models/misc/blog/blogPosts";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeInVariants7 } from "../../../../animation/variants";
+
 export const TopPosts: FC<BlogPostProp> = ({ blogPosts }) => {
   return (
     <>
       {blogPosts && (
-        <div className=" overflow-hidden h-[520px] md:h-[513px] w-full bg-white border border-gray-200 rounded-lg shadow">
+        <motion.div
+          variants={fadeInVariants7}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          className=" overflow-hidden h-[520px] md:h-[513px] w-full bg-white border border-gray-200 rounded-lg shadow"
+        >
           <Carousel slideInterval={2000} indicators={false}>
             {blogPosts
               .filter((post) => post.postType === "top")
@@ -46,7 +57,7 @@ export const TopPosts: FC<BlogPostProp> = ({ blogPosts }) => {
                 )
               )}
           </Carousel>
-        </div>
+        </motion.div>
       )}
     </>
   );
