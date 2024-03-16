@@ -23,7 +23,6 @@ export const EditProfileModal = () => {
   const [editingProfile, setEditingProfile] = useState(false);
 
   useEffect(() => {
-    //!Important
     getUserInfo();
   }, [user, studentDetails]);
 

@@ -31,8 +31,6 @@ export const useBlogComments = () => {
   const [deleteCommentLoading, setDeleteCommentLoading] =
     useState<boolean>(false);
   const [deleteCommentError, setDeleteCommentError] = useState<boolean>(false);
-  const currentTime = getCurrentTime();
-  const currentDate = getCurrentDateInShortFormat();
   const { userID, studentDetails, getUserInfo, user } = useGetUserInfo();
 
   useEffect(()=>{
@@ -82,8 +80,8 @@ export const useBlogComments = () => {
               lastName,
               email,
               comment: userComment,
-              time: currentTime,
-              date: currentDate,
+              time: getCurrentTime(),
+              date: getCurrentDateInShortFormat(),
               timeStamp: new Date(),
               profileImageID,
               profileImageURL,
