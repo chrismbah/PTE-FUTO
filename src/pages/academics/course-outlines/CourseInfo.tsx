@@ -74,7 +74,7 @@ export default function CourseInfo() {
                     {" "}
                     Pre-requisite: <div className="bar-style2" />
                   </h4>
-                  <p className="mb-1 sm:mb-3 font-[300] text-ss sm:text-sm text-gray-600">
+                  <p className="mb-1 sm:mb-3 text-ss sm:text-sm text-gray-700 font-medium">
                     {courseInfo.preRequisite}
                   </p>
                 </>
