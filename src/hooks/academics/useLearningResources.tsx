@@ -17,7 +17,6 @@ export const useLearningResources = () => {
     course: string,
     resourcesType: string
   ) => {
-    // setFiles([]);
     const learningResourcesRef = ref(
       storageRef,
       `learning-resources/levels/${level}/${course}/${resourcesType}`

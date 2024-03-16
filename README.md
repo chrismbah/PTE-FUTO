@@ -14,25 +14,25 @@ PTE-FUTO is an E-Learning platform designed to assists students in Polymer and T
 - GPA Calculator (with predetermined courses and credit units for all levels )
 - Course Outlines of all courses in all levels in the department.
 - Learning Resources ( Including handouts, textbooks, and past questions ) of all courses in all levels in the department.
-- Student Dashboard and Personalized Easy Select Learning Resources, Course Outline.
+- Student Dashboard and Personalized Easy-Select Learning Resources and Course Outline.
 - Blog section on articles related and non-related to the department.
 - Create and delete comments and replies on each blog.
-- About Department Section
+- About Department section including its history, philosophy, objectives and a timeline of the head of departments.
 - Department Image Gallery Section
 
 ## Screenshots
 
 ![Screenshot 1](</public/img/screenshots/Screenshot (4).png>)
-_Caption: Home page_
+_Home page_
 
 ![Screenshot 2](</public/img/screenshots/Screenshot (5).png>)
-_Caption: About Section_
+_About Section_
 
 ![Screenshot 3](</public/img/screenshots/Screenshot (11).png>)
-_Caption: Student's Dashboard with personalized learning resources, gpa calculator and course outlines_
+_Student's Dashboard with personalized learning resources, gpa calculator and course outlines_
 
 ![Screenshot 3](</public/img/screenshots/Screenshot (13).png>)
-_Caption: Login page_
+_Login page_
 
 ## Installation
 
@@ -51,15 +51,14 @@ _Caption: Login page_
 - Typescript
 - Tailwind CSS
 - Firebase (Backend)
-- Flowbite UI Component Library
+- Flowbite Tailwind UI Component Library
 - React Framer Motion (Animations)
 - Vite
 
 ## Environent Variables
 
-
 ## Live Demo
 
+You can check out the live demo of the platform: [Live Demo](https://pte-futo.vercel.app)
 
 ## Contact
-

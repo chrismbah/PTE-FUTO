@@ -83,14 +83,14 @@ export default function CTANewsLetter() {
               <Lottie
                 loop={true}
                 animationData={newsLetter}
-                className="w-[80%] xss:w-[320px] ss:w-[350px]"
+                className="w-[80%] xss:w-[280px] ss:w-[320px] sm:[350px]"
               />
               <div className="flex items-center flex-col w-full p-0 xsm:p-4">
                 <h2 className="text-center text-md xss:text-lg sm:text-xl md:text-2xl font-[600]">
                   Get involved and stay informed
                 </h2>
                 <p className="text-gray-700 font-[500] text-ss ss:text-sm xlg:text-xs mb-3 text-center flex gap-2">
-                  Subscribe to our newletter and never miss an update from us{" "}
+                  Subscribe to our newsletter and never miss an update from us!{" "}
                 </p>
 
                 <div className="flex items-center flex-col gap-6 w-full">
@@ -101,8 +101,8 @@ export default function CTANewsLetter() {
                     {subscribing ? (
                       <Spinner className="w-4 sm:w-6 fill-white" />
                     ) : (
-                      <div className="w-full flex gap-3 justify-center items-center">
-                        Subscribe <BellIcon className="w-5 h-5" />
+                      <div className="w-full flex gap-3 justify-center items-center text-xs md:text-base">
+                        Subscribe <BellIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                     )}
                   </button>

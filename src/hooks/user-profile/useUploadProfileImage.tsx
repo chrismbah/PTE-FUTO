@@ -26,9 +26,6 @@ export const useUploadProfileImage = () => {
   const [deletingProfileImage, setDeletingProfileImage] = useState(false);
 
   useEffect(() => {
-    // if (imageURL) {
-    //   updateUserProfileLink();
-    // }
     getUserInfo();
   }, [imageURL]);
 
