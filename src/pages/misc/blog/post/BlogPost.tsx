@@ -11,7 +11,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Footer from "../../../../components/footer/Footer";
 import CommentSection from "./comments/CommentSection";
 import { WriteIcon } from "../../../../components/icons/general/WriteIcon";
-// import { useGetUserInfo } from "../../../../hooks/auth/useGetUserInfo";
 import { useBlogComments } from "../hooks/useBlogComments";
 import PostSkeleton from "./skeleton/PostSkeleton";
 

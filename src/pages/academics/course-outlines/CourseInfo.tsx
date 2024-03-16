@@ -49,15 +49,15 @@ export default function CourseInfo() {
               <div className="flex-center gap-0 ss:gap-3 flex-wrap">
                 <div className="flex-center">
                   <OutlineIcon className="w-6 sm:w-8 fill-green1" />
-                  <h3 className="text-lg xss:text-xl sm:text-2xl font-[600] text-center">
+                  <h3 className="text-base xss:text-lg sm:text-xl font-semibold text-center">
                     {courseInfo.courseTitle}
                   </h3>{" "}
                 </div>
-                <h3 className="text-md xss:text-lg sm:text-2xl font-[600]">
+                <h3 className="text-xs xss:text-md sm:text-xl font-semibold">
                   ({courseInfo.courseCode})
                 </h3>
               </div>
-              <div className="flex-center gap-3 font-[400] text-xs sm:text-lg mb-1 sm:mb-2">
+              <div className="flex-center gap-3 font-[400] text-sm sm:text-md mb-1 sm:mb-2">
                 <p>
                   Credit Unit - {courseInfo.creditUnit}{" "}
                   {Number(courseInfo.creditUnit) > 1 ? "Units" : "Unit"}
@@ -65,16 +65,16 @@ export default function CourseInfo() {
                 {"  "}
                 <span>{courseInfo.creditUnits}</span>
               </div>
-              <h4 className="text-center font-semibold text-md xss:text-lg sm:text-2xl">
+              <h4 className="text-center font-semibold text-xs xss:text-base sm:text-lg">
                 COURSE OUTLINE
               </h4>
               {courseInfo.preRequisite && (
                 <>
-                  <h4 className="text-base sm:text-md font-semibold">
+                  <h4 className="text-xs sm:text-base font-semibold">
                     {" "}
                     Pre-requisite: <div className="bar-style2" />
                   </h4>
-                  <p className="mb-1 sm:mb-3 font-[300] text-sm sm:text-xs text-gray-600">
+                  <p className="mb-1 sm:mb-3 font-[300] text-ss sm:text-sm text-gray-600">
                     {courseInfo.preRequisite}
                   </p>
                 </>
@@ -82,16 +82,19 @@ export default function CourseInfo() {
               {courseInfo.info.map(({ heading, content }, index) => (
                 <div key={index} className="py-2 mb-2 border-b border-gray-200">
                   {heading && heading === "General" ? (
-                    <div className="text-base sm:text-md font-semibold">
+                    <div className="text-xs sm:text-base font-semibold">
                       {heading}
                       <div className="bar-style2 mb-2 font-normal" />
                     </div>
                   ) : (
-                    <div className="text-base sm:text-md font-semibold">
+                    <div className="text-xs sm:text-base font-semibold">
                       {heading}
                     </div>
                   )}
-                  <div className="text-sm sm:text-base"> {content}</div>
+                  <div className="text-ss sm:text-xs font-medium text-gray-600">
+                    {" "}
+                    {content}
+                  </div>
                 </div>
               ))}
             </motion.div>
