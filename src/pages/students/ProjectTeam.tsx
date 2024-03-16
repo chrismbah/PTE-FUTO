@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import location from "../../json/animation/location.json";
+// import location from "../../json/animation/location.json";
 import work from "../../json/animation/work.json";
 import link from "../../json/animation/link.json";
 import git from "../../json/animation/git.json";
@@ -66,7 +66,7 @@ export default function ProjectTeam() {
                 >
                   Christian Endwell Mbah
                 </motion.h4>
-                <motion.div
+                {/* <motion.div
                   variants={fadeInVariants3}
                   initial="initial"
                   whileInView="animate"
@@ -84,7 +84,7 @@ export default function ProjectTeam() {
                   <p className="text-gray-700 text-ss font-semibold ">
                     Owerri · Imo State
                   </p>
-                </motion.div>
+                </motion.div> */}
                 <motion.p
                   variants={fadeInVariants3}
                   initial="initial"
