@@ -1,22 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { ReactNode, FC } from "react";
 import { Navigate } from "react-router-dom";
-// import { useGetUserInfo } from "../hooks/auth/useGetUserInfo";
+import { useGetUserInfo } from "../hooks/auth/useGetUserInfo";
+import LogoSpinner from "../components/loaders/FullLogoSpinner";
 
 interface ProtectedRouteProps {
   children: ReactNode;
 }
 
 const ProtectedRoute: FC<ProtectedRouteProps> = ({ children }) => {
-  // const { user, loading } = useGetUserInfo();
-  const user = false
+  const { user, loading } = useGetUserInfo();
 
-  if (!user) {
-    console.log("User exists");
+  if (!user && !loading) {
     return <Navigate to="/login" />;
+  } else if (loading) {
+    return <LogoSpinner />;
   } else {
     console.log("User dont exist");
-    return children
+    return children;
   }
 };
 

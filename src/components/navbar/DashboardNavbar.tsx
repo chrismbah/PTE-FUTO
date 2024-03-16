@@ -173,7 +173,7 @@ export const DashboardNavbar = () => {
                 </NavLink>{" "}
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
-                  to="/profile"
+                  to="/u/profile"
                   className={
                     "w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                   }
@@ -270,7 +270,7 @@ export const DashboardNavbar = () => {
                           {studentDetails && firstName}{" "}
                           {studentDetails && lastName}
                         </span>
-                        <span className="block truncate text-ss sm:text-sm text-gray-700 font-semibold">
+                        <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
                           {studentDetails && email}
                         </span>
                       </Dropdown.Header>
@@ -278,17 +278,17 @@ export const DashboardNavbar = () => {
                         <Dropdown.Item className="group transition duration-200 ease-in-out">
                           <div className="flex items-center justify-start gap-1">
                             <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                            <span className="text-ss sm:text-sm font-semibold text-gray-700 group-hover:font-bold">
+                            <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-bold">
                               Dashboard
                             </span>
                           </div>
                         </Dropdown.Item>
                       </Link>
-                      <Link to="/profile">
+                      <Link to="/u/profile">
                         <Dropdown.Item className="group transition duration-200 ease-in-out">
                           <div className="flex items-center justify-start gap-1">
                             <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                            <span className="text-ss sm:text-sm font-semibold text-gray-700 group-hover:font-bold">
+                            <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-bold">
                               Profile
                             </span>
                           </div>{" "}
@@ -301,7 +301,7 @@ export const DashboardNavbar = () => {
                       >
                         <div className="flex items-center justify-start gap-1">
                           <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                          <span className="text-ss sm:text-sm font-semibold text-gray-700 group-hover:font-bold">
+                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-bold">
                             Sign Out
                           </span>
                         </div>

@@ -8,7 +8,6 @@ export const Navbar = () => {
   let navbarComponent;
   if (
     currentPath === "/dashboard" ||
-    currentPath === "/profile" ||
     currentPath.startsWith("/u")
   ) {
     navbarComponent = <DashboardNavbar />;

@@ -18,7 +18,6 @@ import { useState, useEffect } from "react";
 import { BurgerIcon } from "../icons/nav/BurgerIcon";
 import { motion } from "framer-motion";
 import { fadeInVariants4 } from "../../animation/variants";
-
 export const GeneralNavbar = () => {
   const { studentDetails, user, loading, getUserInfo } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
@@ -445,7 +444,7 @@ export const GeneralNavbar = () => {
                         {studentDetails && firstName}{" "}
                         {studentDetails && lastName}
                       </span>
-                      <span className="block truncate text-ss sm:text-sm text-gray-700 font-semibold">
+                      <span className="block truncate text-ss sm:text-sm text-gray-700 font-medium">
                         {studentDetails && email}
                       </span>
                     </Dropdown.Header>
@@ -453,17 +452,17 @@ export const GeneralNavbar = () => {
                       <Dropdown.Item className="group transition duration-200 ease-in-out">
                         <div className="flex items-center justify-start gap-1">
                           <DashboardIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                          <span className="text-ss sm:text-sm font-semibold text-gray-700 group-hover:font-bold">
+                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-bold">
                             Dashboard
                           </span>
                         </div>
                       </Dropdown.Item>
                     </Link>
-                    <Link to="/profile">
+                    <Link to="/u/profile">
                       <Dropdown.Item className="group transition duration-200 ease-in-out">
                         <div className="flex items-center justify-start gap-1">
                           <ProfileIcon className="w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                          <span className="text-ss sm:text-sm font-semibold text-gray-700 group-hover:font-bold">
+                          <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-bold">
                             Profile
                           </span>
                         </div>{" "}
@@ -476,7 +475,7 @@ export const GeneralNavbar = () => {
                     >
                       <div className="flex items-center justify-start gap-1">
                         <SignOutIcon className=" w-5 group-hover:scale-110 transition duration-200 ease-in-out " />{" "}
-                        <span className="text-ss sm:text-sm font-semibold text-gray-700 group-hover:font-bold">
+                        <span className="text-ss sm:text-sm font-medium text-gray-700 group-hover:font-bold">
                           Sign Out
                         </span>
                       </div>

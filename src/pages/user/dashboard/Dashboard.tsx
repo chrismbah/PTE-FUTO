@@ -15,22 +15,14 @@ import { FilesIcon } from "../../../components/icons/dashboard/FilesIcon";
 import { motion } from "framer-motion";
 import { fadeInVariants5 } from "../../../animation/variants";
 import { useEffect } from "react";
-// import LogoSpinner from "../../../components/loaders/FullLogoSpinner";
-
 export default function Dashboard() {
   const {
     user,
-    // loading,
     studentDetails,
     getUserInfo,
     gettingStudentDetails,
     gettingStudentDetailsErr,
   } = useGetUserInfo();
-  // if (loading) {
-  //   return <LogoSpinner />;
-  // } else if (!user) {
-  //   return <Navigate to="/login" />;
-  // }
   useEffect(() => {
     getUserInfo();
   }, [studentDetails, user]);
@@ -89,7 +81,7 @@ export default function Dashboard() {
                         </p>
                       </div>
                       <NavLink
-                        to="/profile"
+                        to="/u/profile"
                         className="flex items-center justify-center"
                       >
                         <button className="w-full text-white text-sm sm:text-xs transition duration-200 ease-in-out rounded-lg bg-green2 hover:bg-green2/95 p-3 font-semibold">
