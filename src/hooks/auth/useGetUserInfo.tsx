@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import {  useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../config/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { StudentDetails } from "../../models/auth/studentDetails";
-import { getCurrentDate } from "../../helpers/formatDate";
-import { getCurrentTime } from "../../helpers/getCurrentTime";
 export const useGetUserInfo = () => {
   const [studentDetails, setStudentDetails] = useState<StudentDetails | null>(
     null
@@ -32,10 +30,13 @@ export const useGetUserInfo = () => {
           regNo,
           email,
           level,
-          registeredDate,
-          registeredTime,
           profileImageURL,
           profileImageID,
+          registeredTimeStamp,
+          registeredDate,
+          registeredTime,
+          loginDate,
+          loginTime,
         } = userFields;
         setStudentDetails({
           userID,
@@ -44,12 +45,13 @@ export const useGetUserInfo = () => {
           regNo,
           email,
           level,
-          loginDate: getCurrentDate(),
-          loginTime: getCurrentTime(),
-          registeredDate,
-          registeredTime,
           profileImageURL,
           profileImageID,
+          registeredDate,
+          registeredTime,
+          registeredTimeStamp,
+          loginDate,
+          loginTime,
         });
         setGettingStudentDetails(false);
       } catch (err: any) {
@@ -59,10 +61,10 @@ export const useGetUserInfo = () => {
     }
   };
 
-  useEffect(() => {
-    //!Important
-    getUserInfo();
-  }, [user, studentDetails]);
+  // useEffect(() => {
+  //   //!Important
+  //   getUserInfo();
+  // }, [user, studentDetails]);
 
   return {
     user,

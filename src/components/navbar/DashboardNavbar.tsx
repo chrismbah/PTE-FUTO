@@ -40,9 +40,11 @@ export const DashboardNavbar = () => {
       document.body.style.overflow = "visible";
     }
   }, [isNavOpen]);
+  
   useEffect(() => {
     getUserInfo();
   }, [user, studentDetails]);
+
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   const triggers = {
     onMouseLeave: () => setOpenPopover(false),

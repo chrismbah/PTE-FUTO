@@ -9,6 +9,7 @@ export interface StudentDetails{
     loginTime: string;
     registeredDate: string,
     registeredTime: string,
+    registeredTimeStamp: Date,
     profileImageURL: string
     profileImageID: string
 }

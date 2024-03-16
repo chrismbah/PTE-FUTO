@@ -19,8 +19,14 @@ import { db } from "../../config/firebase";
 
 export const EditProfileModal = () => {
   const { openEditProfileModal, setOpenEditProfileModal } = useModalContext();
-  const { studentDetails, userID } = useGetUserInfo();
+  const { studentDetails, userID, user, getUserInfo } = useGetUserInfo();
   const [editingProfile, setEditingProfile] = useState(false);
+
+  useEffect(() => {
+    //!Important
+    getUserInfo();
+  }, [user, studentDetails]);
+
   useEffect(() => {
     if (openEditProfileModal) {
       document.body.style.overflow = "hidden";

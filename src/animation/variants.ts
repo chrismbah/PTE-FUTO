@@ -44,13 +44,13 @@ export const fadeInVariants3 = {
 export const fadeInVariants4 = {
   initial: {
     opacity: 0,
-    y: 10, //minus
+    y: -10, //minus
   },
   animate: (index: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.2 * index,
+      delay: 0.1 * index,
       duration: 0.2,
     },
   }),
