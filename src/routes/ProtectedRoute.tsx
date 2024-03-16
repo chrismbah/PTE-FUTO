@@ -16,7 +16,6 @@ const ProtectedRoute: FC<ProtectedRouteProps> = ({ children }) => {
   } else if (loading) {
     return <LogoSpinner />;
   } else {
-    console.log("User dont exist");
     return children;
   }
 };
