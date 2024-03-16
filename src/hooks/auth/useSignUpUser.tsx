@@ -48,7 +48,7 @@ export default function useSignUpUser() {
       navigate("/");
       notifyUser(
         "success",
-        "Sign In successful. Welcome to Polymer and Textile Engineering Department, FUTO."
+        "Sign in successful. Welcome to Polymer and Textile Engineering Department."
       );
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {

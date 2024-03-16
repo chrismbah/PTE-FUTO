@@ -24,7 +24,7 @@ export default function Blog() {
     <div className="home-gray-bg">
       <div className="box-width">
         <div className="section">
-          <div className="mmd:flex items-center justify-center flex-col mb-3">
+          <div className="mmd:flex items-center justify-center flex-col mb-5">
             <motion.h2
               variants={fadeInVariants3}
               initial="initial"

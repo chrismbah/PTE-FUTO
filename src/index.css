@@ -69,7 +69,7 @@ h3{
     @apply text-xss ss:text-ss text-red-600 text-left w-full
 }
 .notification-message{
-    @apply text-ss ss:text-sm 
+    @apply text-ss ss:text-sm font-medium text-gray-900
 }
 .bar-style{
     @apply h-[3px] w-10 bg-green1

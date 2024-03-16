@@ -4,13 +4,13 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
   return contents.map(({ type, content }, i) => {
     if (type === "h1" && typeof content === "string") {
       return (
-        <h1 key={i} className="text-md sm:text-lg md:text-xl font-semibold">
+        <h1 key={i} className="text-base sm:text-md md:text-lg font-semibold">
           {content}
         </h1>
       );
     } else if (type === "h2" && typeof content === "string") {
       return (
-        <h2 key={i} className="text-base font-semibold">
+        <h2 key={i} className="text-xs sm:text-base font-semibold">
           {content}
         </h2>
       );
@@ -18,17 +18,14 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
       return (
         <p
           key={i}
-          className="leading-relaxed text-gray-700  text-sm sm:text-base mb-2"
+          className=" text-gray-600 leading-relaxed text-sm sm:text-xs font-medium mb-2"
         >
           {content}
         </p>
       );
     } else if (type === "p-bold" && typeof content === "string") {
       return (
-        <p
-          key={i}
-          className=" font-semibold  text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <p key={i} className=" text-gray-800 text-sm sm:text-xs font-bold mb-2">
           {content}
         </p>
       );
@@ -50,11 +47,11 @@ export const PostContent: FC<ContentBlockProp> = ({ contents }) => {
             return (
               <li key={i}>
                 {type === "h2" ? (
-                  <h2 className="text-xs sm:text-md font-semibold">
-                    -{content}
+                  <h2 className="text-xs sm:text-base font-semibold">
+                    {content}
                   </h2>
                 ) : type === "p" ? (
-                  <p className=" text-gray-700 text-sm sm:text-base mb-2">
+                  <p className=" text-gray-600 leading-relaxed text-sm sm:text-xs font-medium mb-2">
                     {content}
                   </p>
                 ) : (
