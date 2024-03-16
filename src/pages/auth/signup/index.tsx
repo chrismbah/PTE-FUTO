@@ -42,7 +42,7 @@ export default function SignUp() {
                   </label>
                   <input
                     type="text"
-                    id="text"
+                    id="firstName"
                     className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2 "
                     placeholder="eg. Chris"
                     {...register("firstName")}
@@ -62,7 +62,7 @@ export default function SignUp() {
                   </label>
                   <input
                     type="text"
-                    id="text"
+                    id="lastName"
                     className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2 "
                     placeholder="eg. Mbah"
                     {...register("lastName")}
@@ -84,7 +84,7 @@ export default function SignUp() {
                   </label>
                   <input
                     type="number"
-                    id="number"
+                    id="regNo"
                     className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2 "
                     placeholder="eg. 20191189227"
                     {...register("regNo")}
@@ -101,7 +101,7 @@ export default function SignUp() {
                     Level
                   </label>
                   <select
-                    id="underline_select"
+                    id="level"
                     className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2 "
                     {...register("level")}
                   >
@@ -169,7 +169,7 @@ export default function SignUp() {
                   </label>
                   <input
                     type="password"
-                    id="password"
+                    id="confirmPassword"
                     className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2 "
                     placeholder="••••••••"
                     {...register("confirmPassword")}

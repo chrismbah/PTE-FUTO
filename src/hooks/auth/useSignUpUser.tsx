@@ -40,7 +40,7 @@ export default function useSignUpUser() {
         loginTime: getCurrentTime(),
         profileImageURL: "",
         profileImageID: "",
-        registeredTimeStamp: new Date()
+        registeredTimeStamp: new Date(),
       };
       await setDoc(doc(db, "userInfo", userID), userInfo);
       setLoading(false);
@@ -48,7 +48,7 @@ export default function useSignUpUser() {
       navigate("/");
       notifyUser(
         "success",
-        "Sign Up Successful. Explore and Learn."
+        "Sign In successful. Welcome to Polymer and Textile Engineering Department, FUTO."
       );
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {
