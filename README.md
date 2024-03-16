@@ -4,7 +4,7 @@
 
 ## Overview
 
-PTE-FUTO is an E-Learning platform designed to assists students in Polymer and Textile Engineering Department with
+PTE-FUTO is an E-Learning platform that offers a centralized hub for students providing easy access to course syllabi and structures, downloadable PDFs, files, materials, and textbooks relevant to their studies, A gpa calculator to track and calculate their academic performance and a blog filled with educational content, and updates for students.
 
 ## Features
 
@@ -14,7 +14,7 @@ PTE-FUTO is an E-Learning platform designed to assists students in Polymer and T
 - GPA Calculator (with predetermined courses and credit units for all levels )
 - Course Outlines of all courses in all levels in the department.
 - Learning Resources ( Including handouts, textbooks, and past questions ) of all courses in all levels in the department.
-- Student Dashboard and Personalized Easy-Select Learning Resources and Course Outline.
+- Student Dashboard and Personalized workspace.
 - Blog section on articles related and non-related to the department.
 - Create and delete comments and replies on each blog.
 - About Department section including its history, philosophy, objectives and a timeline of the head of departments.

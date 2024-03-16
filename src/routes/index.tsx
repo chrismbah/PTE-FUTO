@@ -4,6 +4,8 @@ import NotFound from "../pages/error/404/NotFound";
 import LogoSpinner from "../components/loaders/FullLogoSpinner";
 import { Navbar } from "../components/navbar/Navbar";
 import ProtectedRoute from "./ProtectedRoute";
+
+
 const AppRoutes = () => {
   const Login = lazy(() => import("../pages/auth/login"));
   const SignUp = lazy(() => import("../pages/auth/signup"));
