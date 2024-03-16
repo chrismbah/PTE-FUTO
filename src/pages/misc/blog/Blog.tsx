@@ -43,8 +43,8 @@ export default function Blog() {
           )}{" "}
           {blogPostsError && !blogPostsLoading && !blogPosts && (
             <div className="w-full h-[70vh] flex items-center justify-center flex-col">
-              <BadNetworkIcon className="w-8 sm:w-8 md:w-10" />
-              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+              <BadNetworkIcon className="w-10 sm:w-12 md:w-20" />
+              <p className=" font-medium text-gray-700 text-ss sm:text-sm mmd:text-xs text-center">
                 Sorry, could'nt load posts at the moment.{" "}
                 <button
                   className="underline hover:no-underline text-green1"
@@ -57,8 +57,8 @@ export default function Blog() {
           )}
           {blogPosts && blogPosts.length < 1 && (
             <div className="w-full h-[70vh] flex items-center justify-center flex-col">
-              <BadNetworkIcon className="w-10 sm:w-12 md:w-16" />
-              <p className=" font-[500] text-ss sm:text-sm mmd:text-xs text-center">
+              <BadNetworkIcon className="w-10 sm:w-12 md:w-20" />
+              <p className=" font-medium text-gray-700 text-ss sm:text-sm mmd:text-xs text-center">
                 Sorry, could'nt load posts at the moment.{" "}
                 <button
                   className="underline hover:no-underline text-green1"

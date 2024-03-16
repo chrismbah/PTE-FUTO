@@ -8,7 +8,7 @@ PTE-FUTO is an E-Learning platform designed to assists students in Polymer and T
 
 ## Features
 
-- Authentication (Custom Student's Registeration).
+- User Authentication (Custom Student's Registeration).
 - Student Profile and Update Student Profile.
 - Notification System.
 - GPA Calculator (with predetermined courses and credit units for all levels )
