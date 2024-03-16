@@ -61,11 +61,6 @@ export const useGetUserInfo = () => {
     }
   };
 
-  // useEffect(() => {
-  //   //!Important
-  //   getUserInfo();
-  // }, [user, studentDetails]);
-
   return {
     user,
     userID,

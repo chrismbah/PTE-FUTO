@@ -20,7 +20,7 @@ import { useModalContext } from "../../../context/Modal";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../../components/icons/general/BadNetworkIcon";
 import { EditProfileModal } from "../../../components/modal/EditProfileModal";
-
+// import LogoSpinner from "../../../components/loaders/FullLogoSpinner";
 export default function StudentProfile() {
   const {
     getUserInfo,
@@ -28,6 +28,7 @@ export default function StudentProfile() {
     gettingStudentDetails,
     gettingStudentDetailsErr,
     user,
+    // loading,
   } = useGetUserInfo();
   const {
     setOpenDeleteProfileImageModal,
@@ -38,6 +39,10 @@ export default function StudentProfile() {
   useEffect(() => {
     getUserInfo();
   }, [studentDetails]);
+
+  // if (loading) {
+  //   return <LogoSpinner />;
+  // }
 
   if (!user) {
     return <Navigate to="/login" />;

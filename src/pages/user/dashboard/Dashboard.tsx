@@ -4,7 +4,7 @@
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../../components/icons/general/BadNetworkIcon";
 import search from "../../../assets/svg/illustrations/search.svg";
@@ -15,18 +15,22 @@ import { FilesIcon } from "../../../components/icons/dashboard/FilesIcon";
 import { motion } from "framer-motion";
 import { fadeInVariants5 } from "../../../animation/variants";
 import { useEffect } from "react";
+// import LogoSpinner from "../../../components/loaders/FullLogoSpinner";
 
 export default function Dashboard() {
   const {
     user,
+    // loading,
     studentDetails,
     getUserInfo,
     gettingStudentDetails,
     gettingStudentDetailsErr,
   } = useGetUserInfo();
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+  // if (loading) {
+  //   return <LogoSpinner />;
+  // } else if (!user) {
+  //   return <Navigate to="/login" />;
+  // }
   useEffect(() => {
     getUserInfo();
   }, [studentDetails, user]);
