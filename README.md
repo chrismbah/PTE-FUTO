@@ -66,6 +66,7 @@ Login page
 ## Tech Stack
 
 ### Client
+
 - React
 - Typescript
 - Tailwind CSS
@@ -74,21 +75,20 @@ Login page
 - Vite
 
 ### Server
+
 - Firebase
-
-
 
 ## Environent Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`REACT_APP_FIREBASE_API_KEY`
-`REACT_APP_FIREBASE_AUTH_DOMAIN`
-`REACT_APP_FIREBASE_PROJECT_ID`
-`REACT_APP_FIREBASE_STORAGE_BUCKET`
-`REACT_APP_FIREBASE_MESSAGING_SENDER_ID`
-`REACT_APP_FIREBASE_APP_ID`
-`REACT_APP_MEASUREMENT_ID`
+`REACT_APP_FIREBASE_API_KEY` <br/>
+`REACT_APP_FIREBASE_AUTH_DOMAIN` <br/>
+`REACT_APP_FIREBASE_PROJECT_ID` <br/>
+`REACT_APP_FIREBASE_STORAGE_BUCKET` <br/>
+`REACT_APP_FIREBASE_MESSAGING_SENDER_ID` <br/>
+`REACT_APP_FIREBASE_APP_ID` <br/>
+`REACT_APP_MEASUREMENT_ID` <br/>
 
 ## Live Demo
 
