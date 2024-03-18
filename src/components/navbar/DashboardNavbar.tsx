@@ -23,6 +23,7 @@ import {
 } from "@material-tailwind/react";
 import { fadeInVariants4 } from "../../animation/variants";
 import { motion } from "framer-motion";
+import { useLoadImage } from "../../hooks/user-profile/useLoadImage";
 
 export const DashboardNavbar = () => {
   const { studentDetails, user, loading } = useGetUserInfo();
@@ -33,6 +34,7 @@ export const DashboardNavbar = () => {
   const { setOpenSignOutModal } = useModalContext();
   const [openPopover, setOpenPopover] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const { isImageLoading, setIsImageLoading, LoadingPlaceholder } = useLoadImage()
   useEffect(() => {
     if (isNavOpen) {
       document.body.style.overflow = "hidden";
@@ -241,12 +243,12 @@ export const DashboardNavbar = () => {
                               className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] md:h-[38px] md:w-[38px] bg-gray-200
                              rounded-full border sm:border-[3px] border-gray-300 hover:border-green4 transition duration-200 ease-in-out"
                             >
-                              <img
+                             { isImageLoading? <LoadingPlaceholder /> : <img
                                 src={studentDetails.profileImageURL}
                                 alt="Profile"
-                                onLoad={() => console.log("Loaded")}
+                                onLoad={() => setIsImageLoading(false)}
                                 className="w-full h-full rounded-full object-cover"
-                              />
+                              />}
                             </div>
                           ) : (
                             studentDetails &&

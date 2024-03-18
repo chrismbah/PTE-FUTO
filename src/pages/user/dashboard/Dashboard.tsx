@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// import { useEffect, useState } from "react";
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import profile from "../../../json/animation/avatar1.json";
@@ -14,10 +15,20 @@ import { BooksIcon } from "../../../components/icons/dashboard/BooksIcon";
 import { FilesIcon } from "../../../components/icons/dashboard/FilesIcon";
 import { motion } from "framer-motion";
 import { fadeInVariants5 } from "../../../animation/variants";
-// import { useEffect } from "react";
+import { useLoadImage } from "../../../hooks/user-profile/useLoadImage";
+
 export default function Dashboard() {
   const { studentDetails, gettingStudentDetails, gettingStudentDetailsErr } =
     useGetUserInfo();
+  // const [isImageLoading, setIsImageLoading] = useState(false);
+  const { isImageLoading, setIsImageLoading, LoadingPlaceholder } =
+    useLoadImage();
+
+  // useEffect(() => {
+  //   if (studentDetails && studentDetails.profileImageURL.length > 0) {
+  //     setIsImageLoading(true);
+  //   }
+  // }, []);
 
   return (
     <>
@@ -41,12 +52,19 @@ export default function Dashboard() {
                       <div className="flex items-center justify-center">
                         {studentDetails &&
                         studentDetails?.profileImageURL.length > 0 ? (
-                          <div className="border-[3px] overflow-hidden bg-gray-200 border-green1 w-24 h-24 xxss:h-28 xxss:w-28 sm:w-36 sm:h-36 md:w-32 md:h-32 rounded-full">
-                            <img
-                              src={studentDetails?.profileImageURL}
-                              alt={studentDetails?.firstName}
-                              className="w-full h-full object-cover rounded-full"
-                            />
+                          <div className=" overflow-hidden w-24 h-24 xxss:h-28 xxss:w-28 sm:w-36 sm:h-36 md:w-32 md:h-32 rounded-full">
+                            {isImageLoading ? (
+                              <LoadingPlaceholder />
+                            ) : (
+                              !isImageLoading && (
+                                <img
+                                  src={studentDetails?.profileImageURL}
+                                  alt={studentDetails?.firstName}
+                                  className="w-full h-full object-cover rounded-full"
+                                  onLoad={() => setIsImageLoading(false)}
+                                />
+                              )
+                            )}
                           </div>
                         ) : (
                           <Lottie
