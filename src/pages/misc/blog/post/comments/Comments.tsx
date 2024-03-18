@@ -67,7 +67,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                             deleteUserComment(commentID, commentUserID)
                           }
                           placeholder={""}
-                          className={` cursor-pointer shadow font-dmSans p-2 md:p-3 text-[10px] sm:text-sm hover:bg-gray-100 rounded-lg`}
+                          className={` cursor-pointer shadow font-medium text-black font-dmSans p-2 text-[10px] sm:text-ss hover:bg-gray-100 rounded-lg`}
                         >
                           Delete
                         </PopoverContent>
@@ -81,7 +81,6 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                   </p>
                 </div>
               </div>
-             
             </div>
           );
         }

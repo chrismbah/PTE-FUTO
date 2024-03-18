@@ -18,6 +18,8 @@ import { useModalContext } from "../../../context/Modal";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../../components/icons/general/BadNetworkIcon";
 import { EditProfileModal } from "../../../components/modal/EditProfileModal";
+import { DeleteProfileImage } from "../../../components/modal/DeleteProfileImage";
+
 export default function StudentProfile() {
   const {
     studentDetails,
@@ -64,7 +66,7 @@ export default function StudentProfile() {
                 <PopoverContent
                   onClick={() => setOpenDeleteProfileImageModal(true)}
                   placeholder={""}
-                  className={` cursor-pointer shadow font-dmSans p-2 text-[10px] bg-gray-50 sm:text-ss hover:bg-gray-100 rounded-lg`}
+                  className={` cursor-pointer shadow font-dmSans font-medium p-2 text-[10px] bg-gray-50 sm:text-ss hover:bg-gray-100 rounded-lg`}
                 >
                   Delete Photo
                 </PopoverContent>
@@ -232,6 +234,7 @@ export default function StudentProfile() {
         )}
       </div>
       <EditProfileModal />
+      <DeleteProfileImage />
     </div>
   );
 }

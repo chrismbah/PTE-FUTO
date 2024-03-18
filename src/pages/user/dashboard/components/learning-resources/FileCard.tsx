@@ -45,14 +45,14 @@ export const FileCard: FC<Content> = ({ name, size, path }) => {
 
   return (
     <div
-      className="w-full h-[100px] sss:h-[120px] shadow bg-white cursor-pointer
+      className="w-full h-[80px] ss:h-[100px] sss:h-[120px] shadow bg-white cursor-pointer
        hover:shadow-lg transition duration-150 rounded-md p-2 ss:p-4 "
     >
       <div className="relative h-full w-full">
         <p className="text-xss sss:text-ss xsm:text-sm font-semibold text-wrap text-gray-800">
           {name}
         </p>
-        <span className="text-ss font-[500] absolute bottom-0 left-0 text-gray-600">
+        <span className="text-sss sss:text-xss xsm:text-ss font-[500] absolute bottom-0 left-0 text-gray-600">
           {dataSize}
         </span>
         <div className="absolute bottom-0 right-0">

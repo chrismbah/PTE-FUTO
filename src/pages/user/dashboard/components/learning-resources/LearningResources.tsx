@@ -164,7 +164,7 @@ export default function LearningResources() {
               </div>
             ) : (
               files.length > 0 && (
-                <div className="grid items-center w-full grid-cols-1 xss:grid-cols-2 md:grid-cols-3 gap-4 max-w-[1200px] xl:w-[1200px]">
+                <div className="grid items-center w-full ss:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 px-0 xxss:px-6 ss:px-4 max-w-[1200px] xl:w-[1200px]">
                   {files.map((info, i) => (
                     <FileCard key={i} {...info} />
                   ))}

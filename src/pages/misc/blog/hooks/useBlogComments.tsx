@@ -33,10 +33,6 @@ export const useBlogComments = () => {
   const [deleteCommentError, setDeleteCommentError] = useState<boolean>(false);
   const { userID, studentDetails } = useGetUserInfo();
 
-  // useEffect(()=>{
-  //   getUserInfo()
-  // },[user, studentDetails])
-
   const getPostComments = async () => {
     setPostCommentsLoading(true);
     try {

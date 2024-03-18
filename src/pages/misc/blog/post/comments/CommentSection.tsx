@@ -66,9 +66,9 @@ export default function CommentSection() {
           value={userComment}
           onChange={(e) => setUserComment(e.target.value)}
           className="w-full h-10 sm:h-12 p-1 sm:px-2 focus:outline-none leading-relaxed text-gray-800 my-2 text-[12px]
-             focus:border-green2 border border-gray-400 placeholder:text-gray-300 focus:ring-0  
-             placeholder:font-normal placeholder:text-ss sm:placeholder:text-sm rounded-lg resize-none"
-          placeholder="Write your thoughts here..."
+             focus:border-green2 border border-gray-400 placeholder:text-gray-400 focus:ring-0  
+             placeholder:font-normal placeholder:text-ss sm:placeholder:text-ss rounded-lg resize-none"
+          placeholder="Leave your thoughts here..."
         ></textarea>
 
         <Tooltip
@@ -79,7 +79,7 @@ export default function CommentSection() {
           <button
             onClick={addUserComment}
             type="submit"
-            className=" inline-flex justify-center mt-2 p-1 sm:p-2 text-green1 rounded-md cursor-pointer hover:bg-green1/10 pr-1"
+            className="inline-flex justify-center mt-2 p-1 sm:p-2 text-green1 rounded-md cursor-pointer hover:bg-green1/10 pr-1"
           >
             <PaperPlaneIcon className="w-[15px] sm:w-5 sm:h-5 ml-1" />
           </button>
