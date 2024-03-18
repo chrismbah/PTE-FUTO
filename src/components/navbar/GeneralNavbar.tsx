@@ -19,7 +19,7 @@ import { BurgerIcon } from "../icons/nav/BurgerIcon";
 import { motion } from "framer-motion";
 import { fadeInVariants4 } from "../../animation/variants";
 export const GeneralNavbar = () => {
-  const { studentDetails, user, loading, getUserInfo } = useGetUserInfo();
+  const { studentDetails, user, loading } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
@@ -34,9 +34,9 @@ export const GeneralNavbar = () => {
     }
   }, [isNavOpen]);
 
-  useEffect(() => {
-    getUserInfo();
-  }, [user, studentDetails]);
+  // useEffect(() => {
+  //   getUserInfo();
+  // }, [user, studentDetails]);
 
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   return (

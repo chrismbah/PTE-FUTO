@@ -20,6 +20,7 @@ export default function Blog() {
   useEffect(() => {
     fetchHomeBlogPosts();
   }, []);
+  const items = [1, 2, 3];
   return (
     <div className="home-gray-bg">
       <div className="box-width">
@@ -51,29 +52,20 @@ export default function Blog() {
           </div>
           {homeBlogPostsLoading ? (
             <div className="grid items-center sm:grid-cols-2 mmd:grid-cols-3 gap-5 mb-4">
-              <div>
-                <Skeleton className="h-[180px] ss:h-[210px] md:h-[230px] mb-3 rounded-lg w-full" />
-                <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
-                <Skeleton className="h-[8px] md:h-[12px] w-[80%] md:w-[65%] mb-1 sm:mb-3" />
-                <Skeleton className="h-[6px] md:h-[10px] w-[100px]" />
-              </div>{" "}
-              <div>
-                <Skeleton className="h-[180px] ss:h-[210px] md:h-[230px] mb-3 rounded-lg w-full" />
-                <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
-                <Skeleton className="h-[8px] md:h-[12px] w-[80%] md:w-[65%] mb-1 sm:mb-3" />
-                <Skeleton className="h-[6px] md:h-[10px] w-[100px]" />
-              </div>{" "}
-              <div>
-                <Skeleton className="h-[180px] ss:h-[210px] md:h-[230px] mb-3 rounded-lg w-full" />
-                <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
-                <Skeleton className="h-[8px] md:h-[12px] w-[80%] md:w-[65%] mb-1 sm:mb-3" />
-                <Skeleton className="h-[6px] md:h-[10px] w-[100px]" />
-              </div>
+              {items.map((i) => (
+                <div key={i}>
+                  <Skeleton className="h-[180px] ss:h-[210px] md:h-[230px] mb-3 rounded-lg w-full" />
+                  <Skeleton className="h-[10px] md:h-[16px] w-full md:w-[85%]" />
+                  <Skeleton className="h-[8px] md:h-[12px] w-[80%] md:w-[65%] mb-1 sm:mb-3" />
+                  <Skeleton className="h-[6px] md:h-[10px] w-[100px]" />
+                </div>
+              ))}{" "}
             </div>
-          ) : (homeBlogPostsError && !homeBlogPostsLoading) ||
-            (homeBlogPosts &&
-              homeBlogPosts.length < 1 &&
-              !homeBlogPostsLoading) ? (
+          ) : homeBlogPostsError && !homeBlogPostsLoading ? (
+            // ||
+            //   (homeBlogPosts &&
+            //     homeBlogPosts.length < 1 &&
+            //     !homeBlogPostsLoading)
             <div className="w-full pb-4 flex flex-col items-center justify-center">
               <img
                 src={noBlog}

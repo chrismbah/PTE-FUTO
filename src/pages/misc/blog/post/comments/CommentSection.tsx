@@ -23,15 +23,11 @@ export default function CommentSection() {
     postCommentsLoading,
     postCommentsError,
   } = useBlogComments();
-  const { studentDetails, user, getUserInfo } = useGetUserInfo();
+  const { studentDetails, user } = useGetUserInfo();
 
   useEffect(() => {
     getPostComments();
   }, [postID]);
-
-  useEffect(() => {
-    getUserInfo();
-  }, [user, studentDetails]);
 
   return (
     <div className="mb-4 bg-white shadow rounded-lg p-4 md:sticky md:top-24">
@@ -39,7 +35,7 @@ export default function CommentSection() {
         Comments
       </h2>
       <div className="flex justify-between items-start gap-1">
-        <div className="w-10 h-10 sm:w-14 sm:h-14 -ml-1 rounded-full overflow-hidden">
+        <div className="w-9 h-9 sm:w-12 sm:h-12 -ml-1 rounded-full overflow-hidden">
           {!user ||
           (user &&
             studentDetails &&
@@ -95,7 +91,10 @@ export default function CommentSection() {
         postComments.length > 0 && <Comments postComments={postComments} />}
       {postCommentsLoading && (
         <div className="flex items-start pb-1 w-full gap-2 mb-2 px-1 sm:px-2">
-          <Skeleton circle={true} className="h-7 w-7 sm:h-9 sm:w-9" />
+          <Skeleton
+            circle={true}
+            className="h-7 w-7 sm:h-9 sm:w-9 sm:-ml-2.5"
+          />
           <div className="flex flex-col border-b border-gray-100 pb-2 w-[90%] overflow-x-hidden">
             <div className="flex gap-4 items-center justify-start">
               <Skeleton className="w-[60px] h-[6px] sm:w-[100px] md:h-[8px]" />

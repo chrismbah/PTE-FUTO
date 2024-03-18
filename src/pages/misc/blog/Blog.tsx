@@ -48,7 +48,7 @@ export default function Blog() {
                 Sorry, could'nt load posts at the moment.{" "}
                 <button
                   className="underline hover:no-underline text-green1"
-                  onClick={() => window.location.reload()}
+                  onClick={() => fetchBlogPosts()}
                 >
                   Retry
                 </button>

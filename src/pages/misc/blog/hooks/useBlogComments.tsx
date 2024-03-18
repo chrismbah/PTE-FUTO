@@ -31,11 +31,11 @@ export const useBlogComments = () => {
   const [deleteCommentLoading, setDeleteCommentLoading] =
     useState<boolean>(false);
   const [deleteCommentError, setDeleteCommentError] = useState<boolean>(false);
-  const { userID, studentDetails, getUserInfo, user } = useGetUserInfo();
+  const { userID, studentDetails } = useGetUserInfo();
 
-  useEffect(()=>{
-    getUserInfo()
-  },[user, studentDetails])
+  // useEffect(()=>{
+  //   getUserInfo()
+  // },[user, studentDetails])
 
   const getPostComments = async () => {
     setPostCommentsLoading(true);
@@ -86,8 +86,8 @@ export const useBlogComments = () => {
               profileImageID,
               profileImageURL,
             };
-            await setDoc(doc(db, "postsComments", commentID), commentInfo);
             setUserComment("");
+            await setDoc(doc(db, "postsComments", commentID), commentInfo);
             notifyUser("success", "Comment posted!");
           } catch (err) {
             notifyUser(

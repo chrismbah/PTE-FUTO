@@ -7,13 +7,13 @@ import Lottie from "lottie-react";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { motion } from "framer-motion";
 import { fadeInVariants3 } from "../../animation/variants";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 export default function Hero() {
-  const { user, studentDetails, getUserInfo } = useGetUserInfo();
-  useEffect(() => {
-    getUserInfo();
-  }, [user, studentDetails]);
+  const { user, studentDetails } = useGetUserInfo();
+  // useEffect(() => {
+  //   getUserInfo();
+  // }, [user, studentDetails]);
   return (
     <div className="home-gray-bg">
       <div className="px-3 xsm:px-14 sm:pt-24 mmd:pt-28 sm:pb-36 py-20 box-width">

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { notifyUser } from "../../helpers/notifyUser";
 import {
   ref,
@@ -15,7 +15,7 @@ import { updateDoc, doc } from "firebase/firestore";
 import { useModalContext } from "../../context/Modal";
 
 export const useUploadProfileImage = () => {
-  const { getUserInfo, studentDetails, userID } = useGetUserInfo();
+  const { studentDetails, userID } = useGetUserInfo();
   const { setOpenDeleteProfileImageModal } = useModalContext();
 
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -24,10 +24,6 @@ export const useUploadProfileImage = () => {
   const [imageURL, setImageURL] = useState<string | null>(null);
   const [imageFileID, setImageFileID] = useState<string | null>(null);
   const [deletingProfileImage, setDeletingProfileImage] = useState(false);
-
-  useEffect(() => {
-    getUserInfo();
-  }, [imageURL]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files && e.target.files[0];

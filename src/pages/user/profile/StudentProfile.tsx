@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
 import { useGetUserInfo } from "../../../hooks/auth/useGetUserInfo";
 import Lottie from "lottie-react";
 import avatar from "../../../json/animation/avatar1.json";
@@ -10,7 +9,6 @@ import { GraduateCapIcon } from "../../../components/icons/general/GraduateCapIc
 import { ClockIcon } from "../../../components/icons/general/ClockIcon";
 import { RegisterIcon } from "../../../components/icons/general/RegisterIcon";
 import { TrashIcon } from "../../../components/icons/general/TrashIcon";
-import { Navigate } from "react-router-dom";
 import {
   Popover,
   PopoverHandler,
@@ -20,15 +18,11 @@ import { useModalContext } from "../../../context/Modal";
 import { Spinner } from "../../../components/loaders/Spinner";
 import { BadNetworkIcon } from "../../../components/icons/general/BadNetworkIcon";
 import { EditProfileModal } from "../../../components/modal/EditProfileModal";
-// import LogoSpinner from "../../../components/loaders/FullLogoSpinner";
 export default function StudentProfile() {
   const {
-    getUserInfo,
     studentDetails,
     gettingStudentDetails,
     gettingStudentDetailsErr,
-    user,
-    // loading,
   } = useGetUserInfo();
   const {
     setOpenDeleteProfileImageModal,
@@ -36,17 +30,6 @@ export default function StudentProfile() {
     setOpenSignOutModal,
   } = useModalContext();
 
-  useEffect(() => {
-    getUserInfo();
-  }, [studentDetails]);
-
-  // if (loading) {
-  //   return <LogoSpinner />;
-  // }
-
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
   const renderProfileImage = () => {
     if (studentDetails) {
       if (studentDetails.profileImageURL.length > 1) {
@@ -119,7 +102,6 @@ export default function StudentProfile() {
             <div className="w-full flex items-center justify-between flex-col xsm:flex-row">
               <div className="flex flex-col xss:flex-row items-center gap-3 w-full xss:basis-2/3 ">
                 {renderProfileImage()}
-
                 <div className="flex flex-col justify-center xss:justify-start xsm:w-full ">
                   <p className="text-xl ss:text-2xl xsm:text-3xl font-bold text-center xss:text-left break-all max-w-full">
                     {studentDetails?.firstName} {studentDetails?.lastName}

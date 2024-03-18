@@ -25,7 +25,7 @@ import { fadeInVariants4 } from "../../animation/variants";
 import { motion } from "framer-motion";
 
 export const DashboardNavbar = () => {
-  const { studentDetails, user, loading, getUserInfo } = useGetUserInfo();
+  const { studentDetails, user, loading } = useGetUserInfo();
   const firstName = studentDetails?.firstName;
   const lastName = studentDetails?.lastName;
   const email = studentDetails?.email;
@@ -40,10 +40,6 @@ export const DashboardNavbar = () => {
       document.body.style.overflow = "visible";
     }
   }, [isNavOpen]);
-
-  useEffect(() => {
-    getUserInfo();
-  }, [user, studentDetails]);
 
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   const triggers = {

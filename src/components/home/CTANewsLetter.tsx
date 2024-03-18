@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import newsLetter from "../../json/animation/newsletter.json";
 import Lottie from "lottie-react";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
@@ -21,11 +20,7 @@ import { fadeInVariants1 } from "../../animation/variants";
 
 export default function CTANewsLetter() {
   const [subscribing, setSubscribing] = useState(false);
-
-  const { getUserInfo, studentDetails, userID, user } = useGetUserInfo();
-  useEffect(() => {
-    getUserInfo();
-  }, [user]);
+  const { studentDetails, userID } = useGetUserInfo();
 
   const suscribeUser = async () => {
     setSubscribing(true);
