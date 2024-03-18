@@ -1,7 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDoc,
+  doc,
+  query,
+  onSnapshot,
+} from "firebase/firestore";
 import { IBlogPost, TBlogPost } from "../../../../models/misc/blog/blogPosts";
 import { db } from "../../../../config/firebase";
 import { notifyUser } from "../../../../helpers/notifyUser";
@@ -20,41 +25,44 @@ export const useFetchBlogPosts = () => {
   const postsRef = collection(db, "blogPosts");
 
   const fetchBlogPosts = async () => {
+    const postsQuery = query(postsRef);
     setBlogPostsLoading(true);
-    try {
-      const data = await getDocs(postsRef);
-      const list = data.docs
-        .sort(() => 0.5 - Math.random())
-        .map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        })) as IBlogPost[];
-      setBlogPostsLoading(false);
-      setBlogPosts(list);
-      console.log("Blogs fetched");
-    } catch (err) {
-      setBlogPostsError(true);
-      notifyUser("error", "An error occured. Please try again");
-      setBlogPostsLoading(false);
-    }
+    onSnapshot(
+      postsQuery,
+      (querySnapshot) => {
+        const list: IBlogPost[] = [];
+        querySnapshot.forEach((doc) => {
+          list.push({ ...doc.data(), id: doc.id } as IBlogPost);
+        });
+        setBlogPosts(list);
+        setBlogPostsLoading(false);
+      },
+      (error: any) => {
+        setBlogPostsLoading(false);
+        setBlogPostsError(error);
+      }
+    );
   };
   const fetchHomeBlogPosts = async () => {
+    const postsQuery = query(postsRef);
     setHomeBlogPostsLoading(true);
-    try {
-      const data = await getDocs(postsRef);
-      const list = data.docs
-        .sort(() => 0.5 - Math.random())
-        .map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        })) as IBlogPost[];
-      setHomeBlogPostsLoading(false);
-      setHomeBlogPosts(list);
-
-    } catch (err) {
-      setHomeBlogPostsLoading(false);
-      setHomeBlogPostsError(true);
-    }
+    onSnapshot(
+      postsQuery,
+      (querySnapshot) => {
+        const list: IBlogPost[] = [];
+        querySnapshot.forEach((doc) => {
+          list
+            .sort(() => 0.5 - Math.random())
+            .push({ ...doc.data(), id: doc.id } as IBlogPost);
+        });
+        setHomeBlogPosts(list);
+        setHomeBlogPostsLoading(false);
+      },
+      (error: any) => {
+        setHomeBlogPostsLoading(false);
+        setHomeBlogPostsError(error);
+      }
+    );
   };
   const fetchBlogPost = async (id: string) => {
     const postRef = doc(db, "blogPosts", id);
@@ -76,7 +84,7 @@ export const useFetchBlogPosts = () => {
       console.log(error);
     }
   };
-  
+
   return {
     blogPosts,
     blogPost,

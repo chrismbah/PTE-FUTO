@@ -21,11 +21,8 @@ import { EditProfileModal } from "../../../components/modal/EditProfileModal";
 import { DeleteProfileImage } from "../../../components/modal/DeleteProfileImage";
 
 export default function StudentProfile() {
-  const {
-    studentDetails,
-    gettingStudentDetails,
-    gettingStudentDetailsErr,
-  } = useGetUserInfo();
+  const { studentDetails, gettingStudentDetails, gettingStudentDetailsErr } =
+    useGetUserInfo();
   const {
     setOpenDeleteProfileImageModal,
     setOpenEditProfileModal,
@@ -100,7 +97,7 @@ export default function StudentProfile() {
     <div className=" bg-gray-50 min-h-screen">
       <div className="box-width">
         {studentDetails ? (
-          <div className="px-3 sm:px-14 sm:py-[105px] py-20">
+          <div className="px-3 sm:px-6  xsm:py-[110px] py-[85px]">
             <div className="w-full flex items-center justify-between flex-col xsm:flex-row">
               <div className="flex flex-col xss:flex-row items-center gap-3 w-full xss:basis-2/3 ">
                 {renderProfileImage()}
@@ -130,7 +127,7 @@ export default function StudentProfile() {
                 <div className="flex items-center">
                   <button
                     onClick={() => setOpenEditProfileModal(true)}
-                    className="p-2 xss:p-3 rounded-lg bg-green1 text-ss xss:text-sm sm:text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out hover:text-black"
+                    className="p-1.5 xss:p-2 sm:p-3 rounded-lg bg-green1 text-xss xss:text-ss sm:text-sm font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-green1 transition duration-200 ease-in-out hover:text-black"
                   >
                     Edit Profile
                   </button>
@@ -138,7 +135,7 @@ export default function StudentProfile() {
                 <div className="flex items-center">
                   <button
                     onClick={() => setOpenSignOutModal(true)}
-                    className="p-2 xss:p-3 rounded-lg bg-red-500 text-ss xss:text-sm sm:text-xs font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-red-500 transition duration-200 ease-in-out hover:text-red-500"
+                    className="p-1.5 xss:p-2 sm:p-3 rounded-lg bg-red-500 text-xss xss:text-ss sm:text-sm font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-red-500 transition duration-200 ease-in-out hover:text-red-500"
                   >
                     Sign Out
                   </button>
@@ -146,7 +143,7 @@ export default function StudentProfile() {
               </div>
             </div>
             <div className=" mt-5">
-              <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3">
+              <h1 className="text-xs xsm:text-base  mmd:text-md text-gray-800 font-bold mb-2 sm:mb-3">
                 Contact Information
               </h1>
               <div className="flex items-center gap-2 sm:gap-4 ">
@@ -154,15 +151,15 @@ export default function StudentProfile() {
                   <EmailIcon className="w-5 sm:w-8" />
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-semibold text-left w-full">
                     Email
                   </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 break-all">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-[500] text-gray-600 break-all">
                     {studentDetails?.email}
                   </p>
                 </div>
               </div>{" "}
-              <h1 className="text-base xsm:text-mmd mmd:text-lg font-bold mb-2 sm:mb-3 mt-6 sm:mt-9">
+              <h1 className="text-xs xsm:text-base  mmd:text-md text-gray-800 font-bold mb-2 sm:mb-3 mt-6 sm:mt-9">
                 Academic Information
               </h1>
               <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-5">
@@ -170,10 +167,10 @@ export default function StudentProfile() {
                   <GraduateCapIcon className="w-5 sm:w-8" />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-semibold text-left w-full">
                     Department
                   </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-[500] text-gray-600">
                     Polymer and Textile Engineering
                   </p>
                 </div>
@@ -183,10 +180,10 @@ export default function StudentProfile() {
                   <ClockIcon className="w-5 sm:w-8" />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-semibold text-left w-full">
                     Level
                   </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-[500] text-gray-600 text-left">
                     {studentDetails?.level === "Visitor" ||
                     studentDetails?.level === "Aspirant"
                       ? "None"
@@ -199,10 +196,10 @@ export default function StudentProfile() {
                   <RegisterIcon className="w-5 sm:w-8 fill-green1" />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xs sm:text-base mmd:text-md font-semibold text-left w-full">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-semibold text-left w-full">
                     Matriculation Number
                   </p>
-                  <p className="text-sm sm:text-xs mmd:text-base font-[500] text-gray-600 text-left">
+                  <p className="text-ss sm:text-sm mmd:text-xs font-[500] text-gray-600 text-left">
                     {studentDetails?.regNo || "None"}
                   </p>
                 </div>

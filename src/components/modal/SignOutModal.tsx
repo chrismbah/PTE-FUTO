@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useModalContext } from "../../context/Modal";
 import { useSignOutUser } from "../../hooks/auth/useSignOutUser";
-import SignOutSpinner from "../loaders/SignOutSpinner";
+import { Spinner } from "../loaders/Spinner";
 import { CancelIcon } from "../icons/general/CancelIcon";
 import { scaleInVariants1 } from "../../animation/variants";
 import { motion } from "framer-motion";
@@ -41,7 +41,11 @@ export const SignOutModal = () => {
                 className="bg-green4 hover:green1 font-semibold py-2 px-2.5  rounded-md text-ss sm:text-sm text-white"
                 onClick={signOutUser}
               >
-                {signOutLoading ? <SignOutSpinner /> : "Sign Out"}
+                {signOutLoading ? (
+                  <Spinner className="w-4 h-4 md:w-5 md:h-5 text-transparent animate-spin fill-white" />
+                ) : (
+                  "Sign Out"
+                )}
               </button>
               <button
                 className="bg-gray-200 font-semibold py-2 px-2.5  rounded-md text-ss sm:text-sm text-black"

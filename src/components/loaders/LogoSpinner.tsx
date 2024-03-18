@@ -1,13 +1,13 @@
-import logo3 from "../../assets/svg/logo/logo3.svg";
+import logo from "../../assets/logo/logo.png";
 
 export default function LogoSpinner() {
   return (
     <div className="relative flex justify-center items-center w-full">
-      <div className="absolute animate-spin rounded-full h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 border-t-4 border-b-4 border-green2"></div>
-      <img
-        src={logo3}
-        className="rounded-full h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24"
-      />
-    </div>
+    <div className="absolute animate-spin rounded-full h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 border-[3px] border-solid border-current border-e-transparent border-green1"></div>
+    <img
+      src={logo}
+      className="rounded-full h-[56px] w-[56px] sm:h-[80px] sm:w-[80px] md:h-[90px] md:w-[90px]"
+    />
+  </div>
   );
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from "react";
 import { useModalContext } from "../../context/Modal";
-import SignOutSpinner from "../loaders/SignOutSpinner";
+import { Spinner } from "../loaders/Spinner";
 import { CancelIcon } from "../icons/general/CancelIcon";
 import { useUploadProfileImage } from "../../hooks/user-profile/useUploadProfileImage";
 import { motion } from "framer-motion";
@@ -44,7 +44,11 @@ export const DeleteProfileImage = () => {
                 className="bg-green4 hover:green1 font-semibold py-2 px-2.5  rounded-md text-ss sm:text-sm text-white"
                 onClick={deleteUserProfileImage}
               >
-                {deletingProfileImage ? <SignOutSpinner /> : "Delete"}
+                {deletingProfileImage ? (
+                  <Spinner className="w-4 h-4 md:w-5 md:h-5 text-transparent animate-spin fill-white" />
+                ) : (
+                  "Delete"
+                )}
               </button>
               <button
                 className="bg-gray-200 font-semibold py-2 px-2.5  rounded-md text-ss sm:text-sm text-black"
