@@ -1,14 +1,14 @@
 # PTE-FUTO
 
-- Polymer and Textile Engineering Department, FUTO
+- Polymer and Textile Engineering Department, Federal University of Technology, Owerri.
 
 ## Overview
 
-PTE-FUTO is an E-Learning platform I have built to solve certain problems college students face in their day to day life.
+<b>PTE-FUTO </b> is an <b>E-Learning platform</b> built to solve certain problems college students face in their day to day life.
 
 <b>Problem:</b> Students often struggle to find all the resources they need for success in one place. Course outlines, learning materials, textbooks, and GPA calculators can be scattered across different websites or physical locations.
 
-<b>Solution:</b> My E-learning platform offers a centralized hub for students, providing:
+<b>Solution:</b> The E-learning platform offers a centralized hub for students, providing:
 
 - <b> Course Outlines: </b> Easy access to course syllabi and structures.
 - <b> Learning Resources: </b> Downloadable PDFs, files, materials, manuals and textbooks relevant to their studies.
