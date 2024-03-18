@@ -52,6 +52,9 @@ Student's Dashboard with personalized learning resources, gpa calculator and cou
 ![Screenshot 3](</public/img/screenshots/Screenshot (13).png>)
 Login page
 
+![Screenshot 4](</public/img/screenshots/Screenshot (14).png>)
+E-Book Download Page where users can download textbooks, past questions and handouts.
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/chrismbah/PTE-FUTO.git`
