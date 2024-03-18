@@ -1,5 +1,5 @@
 import logo from "../../../assets/logo/logo.png";
-import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
+import { Spinner } from "../../../components/loaders/Spinner";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ISignUpForm } from "../../../models/auth/form";
@@ -186,7 +186,11 @@ export default function SignUp() {
               type="submit"
               className=" text-white bg-green1 hover:bg-green1/90  font-semibold rounded-lg text-ss xss:text-sm sm:text-xs w-fit px-3 ss:px-4 sm:px-5 py-2 ss:py-2.5"
             >
-              {loading ? <ButtonSpinner /> : "Sign Up"}
+              {loading ? (
+                <Spinner className="w-4 h-4 md:w-5 md:h-5 text-transparent animate-spin fill-white" />
+              ) : (
+                "Sign Up"
+              )}
             </button>
           </form>
           <div className="border-t border-t-gray-300 px-3 py-4 sm:px-6">

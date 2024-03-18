@@ -52,7 +52,7 @@ export const DashboardNavbar = () => {
     <>
       <nav className="dashboard w-full fixed top-0 left-0 px-2 py-4 xsm:p-4 bg-white shadow-sm z-10">
         <div className="max-w-[1720px] w-full mx-auto">
-          <div className="flex items-center flex-between">
+          <div className="flex items-center flex-between flex-wrap">
             <div className="flex items-center justify-start">
               <button
                 onClick={toggleMenu}

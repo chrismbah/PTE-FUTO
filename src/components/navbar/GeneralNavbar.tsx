@@ -34,16 +34,12 @@ export const GeneralNavbar = () => {
     }
   }, [isNavOpen]);
 
-  // useEffect(() => {
-  //   getUserInfo();
-  // }, [user, studentDetails]);
-
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
   return (
     <>
       <nav className="w-full fixed top-0 left-0 px-2 py-4 xsm:p-4 bg-white shadow-sm z-10">
         <div className="max-w-[1520px] w-full mx-auto">
-          <div className="flex items-center flex-between">
+          <div className="flex items-center flex-between flex-wrap">
             <div className="flex items-center justify-start">
               <button
                 onClick={toggleMenu}
