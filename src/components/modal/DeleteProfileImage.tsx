@@ -1,26 +1,29 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from "react";
 import { useModalContext } from "../../context/Modal";
-import { useSignOutUser } from "../../hooks/auth/useSignOutUser";
 import SignOutSpinner from "../loaders/SignOutSpinner";
 import { CancelIcon } from "../icons/general/CancelIcon";
-import { scaleInVariants1 } from "../../animation/variants";
+import { useUploadProfileImage } from "../../hooks/user-profile/useUploadProfileImage";
 import { motion } from "framer-motion";
+import { scaleInVariants1 } from "../../animation/variants";
 
-export const SignOutModal = () => {
-  const { openSignOutModal, setOpenSignOutModal } = useModalContext();
-  const { signOutUser, signOutLoading } = useSignOutUser();
+export const DeleteProfileImage = () => {
+  const { openDeleteProfileImageModal, setOpenDeleteProfileImageModal } =
+    useModalContext();
+  const { deleteUserProfileImage, deletingProfileImage } =
+    useUploadProfileImage();
   useEffect(() => {
-    if (openSignOutModal) {
+    if (openDeleteProfileImageModal) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
-  }, [openSignOutModal]);
+  }, [openDeleteProfileImageModal]);
   return (
     <>
       <div
         className={`${
-          openSignOutModal ? "block" : "hidden"
+          openDeleteProfileImageModal ? "block" : "hidden"
         } z-[99] bg-black/50 backdrop-blur-sm fixed top-0 right-0 left-0  min-h-screen overflow-y-auto overflow-x-hidden flex items-center justify-center`}
       >
         <motion.div
@@ -31,28 +34,28 @@ export const SignOutModal = () => {
         >
           <div className="w-full flex flex-col justify-start">
             <h4 className="font-bold text-base sm:text-md text-left px-0 py-2 sm:p-3 border-b border-b-gray-300">
-              Sign Out
+              Delete Profile Picture
             </h4>
             <h3 className=" mb-5 text-ss ss:text-sm font-medium sm:text-xs text-gray-600 py-3 sm:px-3 sm:py-6  border-b border-b-gray-300">
-              Are you sure you want to sign out?
+              Are you sure you want to delete your profile picture?
             </h3>
             <div className="flex justify-end gap-4">
               <button
                 className="bg-green4 hover:green1 font-semibold py-2 px-2.5  rounded-md text-ss sm:text-sm text-white"
-                onClick={signOutUser}
+                onClick={deleteUserProfileImage}
               >
-                {signOutLoading ? <SignOutSpinner /> : "Sign Out"}
+                {deletingProfileImage ? <SignOutSpinner /> : "Delete"}
               </button>
               <button
                 className="bg-gray-200 font-semibold py-2 px-2.5  rounded-md text-ss sm:text-sm text-black"
-                onClick={() => setOpenSignOutModal(false)}
+                onClick={() => setOpenDeleteProfileImageModal(false)}
               >
                 Cancel
               </button>
             </div>
             <button
               className="font-bold p-2 rounded-md absolute top-1 right-1 xsm:top-2 xsm:right-2 hover:bg-gray-50"
-              onClick={() => setOpenSignOutModal(false)}
+              onClick={() => setOpenDeleteProfileImageModal(false)}
             >
               <CancelIcon className="w-3 h-3" />
             </button>

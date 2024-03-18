@@ -16,6 +16,8 @@ import { IEditProfileForm } from "../../models/student/editProfile";
 import { notifyUser } from "../../helpers/notifyUser";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
+import { motion } from "framer-motion";
+import { scaleInVariants1 } from "../../animation/variants";
 
 export const EditProfileModal = () => {
   const { openEditProfileModal, setOpenEditProfileModal } = useModalContext();
@@ -145,7 +147,12 @@ export const EditProfileModal = () => {
           openEditProfileModal ? "block" : "hidden"
         } z-[99] bg-black/50 sss:py-0 backdrop-blur-sm w-full overflow-y-auto min-h-screen fixed top-0 left-0  flex items-center justify-center`}
       >
-        <div className=" bg-white rounded-lg text-center relative shadow w-[95%] xsm:w-[700px] overflow-y-auto max-h-[85vh]">
+        <motion.div
+          variants={scaleInVariants1}
+          initial="initial"
+          whileInView="animate"
+          className=" bg-white rounded-lg text-center relative shadow w-[95%] xsm:w-[700px] overflow-y-auto max-h-[85vh]"
+        >
           <div className=" sticky top-0 right-0 z-[999] bg-white rounded-t-lg w-full flex justify-between items-center p-4 border-b border-b-gray-300">
             <h3 className="font-bold text-base sm:text-md ">
               Edit Your Profile
@@ -310,7 +317,7 @@ export const EditProfileModal = () => {
               Close
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
