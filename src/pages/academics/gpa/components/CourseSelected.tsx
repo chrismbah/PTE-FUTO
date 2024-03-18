@@ -11,7 +11,7 @@ export const CourseSelected: FC<CourseSelectedProps> = ({ courseInfo }) => {
     <tr className="bg-white border-b">
       <th
         scope="row"
-        className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap text-ss sm:text-sm"
       >
         {course}
       </th>

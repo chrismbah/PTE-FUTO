@@ -31,13 +31,13 @@ export default function GPAForm() {
         <div>
           <label
             htmlFor="level"
-            className="block mb-2 text-xss ss:text-ss sm:text-sm font-semibold text-gray-900 "
+            className="block mb-2 text-ss sm:text-sm font-semibold text-gray-900 "
           >
             Choose Level
           </label>
           <select
             id="level"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2.5"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2.5"
             onChange={(e) => setLevel(e.target.value)}
           >
             <option defaultValue="">Select Level</option>
@@ -51,13 +51,13 @@ export default function GPAForm() {
         <div>
           <label
             htmlFor=""
-            className="block mb-2 text-xss ss:text-ss sm:text-sm font-semibold text-gray-900 "
+            className="block mb-2 text-ss sm:text-sm font-semibold text-gray-900 "
           >
             Choose Semester
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2.5"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2.5"
             onChange={(e) => setSemester(e.target.value)}
           >
             <option defaultValue="">Select Semester</option>
@@ -71,13 +71,13 @@ export default function GPAForm() {
         <div>
           <label
             htmlFor=""
-            className="block mb-2 text-xss ss:text-ss sm:text-sm font-semibold text-gray-900 "
+            className="block mb-2 text-ss sm:text-sm font-semibold text-gray-900 "
           >
             Course
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
+            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             onChange={handleCourseChange}
           >
             <option value="" disabled selected>
@@ -86,9 +86,9 @@ export default function GPAForm() {
             <CourseOptions />
           </select>
           <input
-            className="placeholder:text-xss ss:placeholder:text-ss sm:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
+            className="placeholder:text-ss sm:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-ss sm:text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             type="text"
-            placeholder="eg. PTE 304"
+            placeholder="PTE 304"
             value={course}
             onChange={(e) => setCourse(e.target.value)}
           />
@@ -96,13 +96,13 @@ export default function GPAForm() {
         <div>
           <label
             htmlFor=""
-            className="block mb-2 text-xss ss:text-ss sm:text-sm font-semibold text-gray-900 "
+            className="block mb-2 text-ss sm:text-sm font-semibold text-gray-900 "
           >
             Unit
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
+            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             onChange={handleUnitChange}
           >
             <option value="" disabled selected>
@@ -118,7 +118,7 @@ export default function GPAForm() {
             <option value="8">8</option>
           </select>
           <input
-            className="placeholder:text-xss ss:placeholder:text-ss sm:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
+            className="placeholder:text-ss sm:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-ss sm:text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             type="number"
             placeholder="eg. 4"
             value={unit}
@@ -130,13 +130,13 @@ export default function GPAForm() {
         <div className="mb-2 xxss:mb-0 ">
           <label
             htmlFor=""
-            className="block mb-2 text-xss ss:text-ss sm:text-sm font-semibold text-gray-900 "
+            className="block mb-2 text-ss sm:text-sm font-semibold text-gray-900 "
           >
             Grade
           </label>
           <select
             id=""
-            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
+            className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             onChange={handleGradeChange}
           >
             <option value="" disabled selected>
@@ -150,13 +150,13 @@ export default function GPAForm() {
             <option value="F">F</option>
           </select>
           <input
-            className="placeholder:text-xss ss:placeholder:text-ss sm:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-xss ss:text-ss sm:text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
+            className="placeholder:text-ss sm:placeholder:text-sm bg-gray-50 border border-gray-300 border-t-0 text-gray-900 text-ss sm:text-sm rounded-b-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             type="text"
             value={grade}
             readOnly
           />
         </div>
-        <div className="pt-3 xxss:pt-5 ss:pt-[26px] sm:pt-7 flex flex-col justify-between gap-[5px] xss:gap-[5px] sm:gap-[3px]">
+        <div className="pt-3 xxss:pt-[26px] sm:pt-7 flex flex-col justify-between gap-[5px] xss:gap-[5px] sm:gap-[3px]">
           <button
             className="text-ss sm:text-sm px-3  py-2 xxss:h-full  text-white font-semibold w-full rounded-lg bg-green1 hover:bg-green1/90"
             onClick={addCourseGrade}
@@ -174,7 +174,7 @@ export default function GPAForm() {
       {courseGrades.length > 0 && (
         <div className="relative overflow-x-auto sm:rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
-            <thead className="text-sm ss:text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-ss sm:text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="pl-2 py-3">
                   COURSE

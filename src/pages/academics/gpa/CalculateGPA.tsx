@@ -19,7 +19,7 @@ export default function CalculateGPA() {
           }}
           className="relative bg-white p-4 sm:p-8 shadow-4 rounded-lg max-w-[650px] w-full"
         >
-          <div className="flex justify-between items-center mb-2 flex-col xxss:flex-row xxss:gap-2 mt-4 sm:mt-2">
+          <div className="flex justify-between items-center mb-8 flex-col xxss:flex-row xxss:gap-2 mt-4 sm:mt-2">
             <h3 className=" w-full ss:w-fit flex items-center justify-start font-semibold text-md sm:text-xl md:text-2xl">
               {" "}
               <Link to="/">
