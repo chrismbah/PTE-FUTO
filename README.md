@@ -6,9 +6,9 @@
 
 <b>PTE-FUTO </b> is an <b>E-Learning platform</b> built to solve certain problems college students face in their day to day life.
 
-<b>Problem:</b> Students often struggle to find all the resources they need for success in one place. Course outlines, learning materials, textbooks, and GPA calculators can be scattered across different websites or physical locations.
+<b>Problem:</b> Students often struggle to find all the resources they need for success in one place. Course outlines, learning materials, textbooks, past questions and even GPA calculators can be scattered across different websites or physical locations. Which could pose as an obstacle for students making them have little or no access to these resources and information.
 
-<b>Solution:</b> The E-learning platform offers a centralized hub for students, providing:
+<b>Solution:</b> The E-learning platform basically offers a centralized hub for students, providing:
 
 - <b> Course Outlines: </b> Easy access to course syllabi and structures.
 - <b> Learning Resources: </b> Downloadable PDFs, files, materials, manuals and textbooks relevant to their studies.
@@ -92,4 +92,4 @@ To run this project, you will need to add the following environment variables to
 
 ## Live Demo
 
-Check out the live demo of this platform : [Live Demo](https://pte-futo.vercel.app)
+Check out the live demo of this platform : [PTE-FUTO](https://pte-futo.vercel.app)
