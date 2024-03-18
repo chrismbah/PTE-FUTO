@@ -1,6 +1,4 @@
 import logo from "../../../assets/logo/logo.png";
-import { Button } from "flowbite-react";
-import { customButtonTheme } from "../../../themes/customButtton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { logInSchema } from "../../../validation";
@@ -76,14 +74,12 @@ export default function Login() {
                   </p>
                 )}
               </div>
-              <Button
-                theme={customButtonTheme}
-                color="primary"
-                size={"md"}
+              <button
                 type="submit"
+                className=" text-white bg-green1 hover:bg-green1/90  font-semibold rounded-lg text-sm sm:text-xs w-fit px-3 ss:px-4 sm:px-5 py-2 ss:py-2.5"
               >
                 {loading ? <ButtonSpinner /> : "Login"}
-              </Button>
+              </button>
             </form>
           </div>
           <div className="border-t border-t-gray-300 px-6 py-4 sm:px-8">

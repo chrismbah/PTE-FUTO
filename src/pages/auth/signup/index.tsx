@@ -182,10 +182,9 @@ export default function SignUp() {
                 </div>
               </div>
             </div>
-
             <button
               type="submit"
-              className=" text-white bg-green1 hover:bg-green1/90  font-semibold rounded-lg text-sm sm:text-xs w-fit px-5 py-2.5"
+              className=" text-white bg-green1 hover:bg-green1/90  font-semibold rounded-lg text-ss xss:text-sm sm:text-xs w-fit px-3 ss:px-4 sm:px-5 py-2 ss:py-2.5"
             >
               {loading ? <ButtonSpinner /> : "Sign Up"}
             </button>

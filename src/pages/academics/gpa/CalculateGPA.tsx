@@ -8,8 +8,8 @@ import { fadeInVariants1 } from "../../../animation/variants";
 export default function CalculateGPA() {
   const { studentGPA } = useComputeGPA();
   return (
-    <div className="min-h-screen w-full bg-gray-50">
-      <div className="  w-full min-h-[95vh] flex items-center justify-center px-3 sm:px-10 py-10 pt-20 sm:pt-28">
+    <div className="w-full bg-gray-50">
+      <div className="  w-full min-h-screen flex items-center justify-center px-3 sm:px-10 py-10 pt-20 sm:pt-28">
         <motion.div
           variants={fadeInVariants1}
           initial="initial"
@@ -17,10 +17,10 @@ export default function CalculateGPA() {
           viewport={{
             once: true,
           }}
-          className="relative bg-white p-5 sm:p-8 shadow-4 rounded-lg max-w-[700px]"
+          className="relative bg-white p-4 sm:p-8 shadow-4 rounded-lg max-w-[650px] w-full"
         >
           <div className="flex justify-between items-center mb-2 flex-col xxss:flex-row xxss:gap-2 mt-4 sm:mt-2">
-            <h3 className=" w-full ss:w-fit flex items-center justify-start font-semibold ">
+            <h3 className=" w-full ss:w-fit flex items-center justify-start font-semibold text-md sm:text-xl md:text-2xl">
               {" "}
               <Link to="/">
                 <ArrowLeftIcon className="w-5 sm:w-7 -ml-2" />

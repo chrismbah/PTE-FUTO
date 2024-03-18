@@ -11,9 +11,6 @@ import { fadeInVariants3 } from "../../animation/variants";
 
 export default function Hero() {
   const { user, studentDetails } = useGetUserInfo();
-  // useEffect(() => {
-  //   getUserInfo();
-  // }, [user, studentDetails]);
   return (
     <div className="home-gray-bg">
       <div className="px-3 xsm:px-14 sm:pt-24 mmd:pt-28 sm:pb-36 py-20 box-width">
@@ -53,9 +50,9 @@ export default function Hero() {
               custom={5}
               className="text-ss ss:text-sm md:text-xs text-gray-700 font-medium mb-4"
             >
-              Explore detailed course outlines, access engaging learning
-              materials, <br className="hidden ss:block" /> Track your academic
-              progress with our GPA calculator , stay ahead of the curve with
+              Explore detailed course outlines, access learning
+              materials, past questions and handouts <br className="hidden ss:block" /> Track your academic
+              progress with our GPA calculator, stay informed with
               the latest news and articles, <br className="hidden ss:block" />{" "}
               and join a thriving community of fellow students and learners.
             </motion.p>
