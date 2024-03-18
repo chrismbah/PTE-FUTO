@@ -4,7 +4,25 @@
 
 ## Overview
 
-PTE-FUTO is an E-Learning platform that offers a centralized hub for students providing easy access to course syllabi and structures, downloadable PDFs, files, materials, and textbooks relevant to their studies, A gpa calculator to track and calculate their academic performance and a blog filled with educational content, and updates for students.
+PTE-FUTO is an E-Learning platform I have built to solve certain problems college students face in their day to day life.
+
+<b>Problem:</b> Students often struggle to find all the resources they need for success in one place. Course outlines, learning materials, textbooks, and GPA calculators can be scattered across different websites or physical locations.
+
+<b>Solution:</b> My E-learning platform offers a centralized hub for students, providing:
+
+- <b> Course Outlines </b> Easy access to course syllabi and structures.
+- <b> Learning Resources: </b> Downloadable PDFs, files, materials, manuals and textbooks relevant to their studies.
+- <b> GPA Calculator: </b> A tool to track and calculate their academic performance.
+- <b> Blog: </b> Educational and Informative content, tips, and updates for students.
+- <b> Student Dashboard: </b> A personalized workspace for managing their learning journey.
+
+<b>Overall Benefits: </b>
+
+- Improved organization and accessibility of learning materials.
+- Streamlined study process and easier tracking of academic progress.
+- Access to valuable educational content and resources.
+
+This platform has the potential to be a valuable resource for students, saving them time and effort in finding the information they need to succeed.
 
 ## Features
 
@@ -23,16 +41,24 @@ PTE-FUTO is an E-Learning platform that offers a centralized hub for students pr
 ## Screenshots
 
 ![Screenshot 1](</public/img/screenshots/Screenshot (4).png>)
-_Home page_
+Home Page
+
+<!-- _Home page_ -->
 
 ![Screenshot 2](</public/img/screenshots/Screenshot (5).png>)
-_About Section_
+About Section
+
+<!-- _About Section_ -->
 
 ![Screenshot 3](</public/img/screenshots/Screenshot (11).png>)
-_Student's Dashboard with personalized learning resources, gpa calculator and course outlines_
+Student's Dashboard with personalized learning resources, gpa calculator and course outlines
+
+<!-- _Student's Dashboard with personalized learning resources, gpa calculator and course outlines_ -->
 
 ![Screenshot 3](</public/img/screenshots/Screenshot (13).png>)
-_Login page_
+Login page
+
+<!-- _Login page_ -->
 
 ## Installation
 
@@ -59,6 +85,4 @@ _Login page_
 
 ## Live Demo
 
-You can check out the live demo of the platform: [Live Demo](https://pte-futo.vercel.app)
-
-## Contact
+Check out the live demo of this platform : [Live Demo](https://pte-futo.vercel.app)
