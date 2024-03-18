@@ -97,7 +97,7 @@ export default function StudentProfile() {
     <div className=" bg-gray-50 min-h-screen">
       <div className="box-width">
         {studentDetails ? (
-          <div className="px-3 sm:px-6  xsm:py-[110px] py-[85px]">
+          <div className="px-3 sm:px-10 md:px-16 xsm:py-[110px] py-[85px]">
             <div className="w-full flex items-center justify-between flex-col xsm:flex-row">
               <div className="flex flex-col xss:flex-row items-center gap-3 w-full xss:basis-2/3 ">
                 {renderProfileImage()}
