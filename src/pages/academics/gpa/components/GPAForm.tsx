@@ -156,15 +156,15 @@ export default function GPAForm() {
             readOnly
           />
         </div>
-        <div className="pt-3 xxss:pt-5 ss:pt-[26px] sm:pt-7 flex flex-col gap-[5px] xss:gap-[7px]">
+        <div className="pt-3 xxss:pt-5 ss:pt-[26px] sm:pt-7 flex flex-col justify-between gap-[5px] xss:gap-[5px] sm:gap-[3px]">
           <button
-            className="text-ss sm:text-sm px-3 py-2 xss:py-3 sm:py-2.5  text-white font-semibold w-full rounded-lg bg-green1 hover:bg-green1/90"
+            className="text-ss sm:text-sm px-3  py-2 xxss:h-full  text-white font-semibold w-full rounded-lg bg-green1 hover:bg-green1/90"
             onClick={addCourseGrade}
           >
             Add
           </button>
           <button
-            className="text-ss sm:text-sm px-3 py-2 xss:py-3 sm:py-2.5  text-white font-semibold w-full rounded-lg bg-red-600 hover:bg-red-700"
+            className="text-ss sm:text-sm px-3 py-2 xxss:h-full  text-white font-semibold w-full rounded-lg bg-red-600 hover:bg-red-700"
             onClick={clearCourseGrades}
           >
             Clear
