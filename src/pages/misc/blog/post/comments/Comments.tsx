@@ -76,7 +76,7 @@ export const Comments: FC<PostCommentsProp> = ({ postComments }) => {
                   )}
                 </div>
                 <div className="w-full">
-                  <p className="text-xss xxss:text-sm sm:text-xs md:text-[12px] break-all ">
+                  <p className="text-xss xxss:text-ss sm:text-sm md:text-[12px] break-all ">
                     {comment}
                   </p>
                 </div>
