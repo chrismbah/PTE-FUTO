@@ -7,7 +7,6 @@ import Lottie from "lottie-react";
 import { useGetUserInfo } from "../../hooks/auth/useGetUserInfo";
 import { motion } from "framer-motion";
 import { fadeInVariants3 } from "../../animation/variants";
-// import { useEffect } from "react";
 
 export default function Hero() {
   const { user, studentDetails } = useGetUserInfo();

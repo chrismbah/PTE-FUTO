@@ -5,9 +5,11 @@ import img2 from "../../assets/img/gallery/senate-building.webp";
 import img3 from "../../assets/img/gallery/senate.jpg";
 import img4 from "../../assets/img/gallery/statue.jpg";
 import { motion } from "framer-motion";
-import { fadeInVariants1 } from "../../animation/variants";
-import { fadeInVariants2 } from "../../animation/variants";
-import { fadeInVariants3 } from "../../animation/variants";
+import {
+  fadeInVariants1,
+  fadeInVariants2,
+  fadeInVariants3,
+} from "../../animation/variants";
 
 export default function About() {
   return (
