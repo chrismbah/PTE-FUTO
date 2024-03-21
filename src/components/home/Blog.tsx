@@ -62,10 +62,6 @@ export default function Blog() {
               ))}{" "}
             </div>
           ) : homeBlogPostsError && !homeBlogPostsLoading ? (
-            // ||
-            //   (homeBlogPosts &&
-            //     homeBlogPosts.length < 1 &&
-            //     !homeBlogPostsLoading)
             <div className="w-full pb-4 flex flex-col items-center justify-center">
               <img
                 src={noBlog}
