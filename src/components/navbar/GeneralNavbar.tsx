@@ -255,7 +255,7 @@ export const GeneralNavbar = () => {
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to={"/"}
-                  className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 "
+                  className="w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition"
                 >
                   Home
                 </NavLink>
@@ -263,7 +263,7 @@ export const GeneralNavbar = () => {
                   arrowIcon={false}
                   inline
                   label={
-                    <p className="text-left rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 ">
+                    <p className="w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition text-left">
                       About
                     </p>
                   }
@@ -305,7 +305,7 @@ export const GeneralNavbar = () => {
                   arrowIcon={false}
                   inline
                   label={
-                    <p className="text-left rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1">
+                    <p className="w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition text-left">
                       Academics
                     </p>
                   }
@@ -347,7 +347,7 @@ export const GeneralNavbar = () => {
                   arrowIcon={false}
                   inline
                   label={
-                    <p className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 text-left ">
+                    <p className="w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition text-left ">
                       Students
                     </p>
                   }
@@ -378,7 +378,7 @@ export const GeneralNavbar = () => {
                 <NavLink
                   onClick={() => setIsNavOpen(false)}
                   to={"/blog"}
-                  className="rounded-md hover:bg-gray-100 w-full p-2 hover:text-green1 "
+                  className="w-full p-3 hover:text-green1 hover:bg-gray-100 rounded-md transition "
                 >
                   Blog
                 </NavLink>
