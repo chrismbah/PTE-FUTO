@@ -40,7 +40,9 @@ export default function GPAForm() {
             className="bg-gray-50 border border-gray-300 text-gray-900 text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2.5"
             onChange={(e) => setLevel(e.target.value)}
           >
-            <option defaultValue="">Select Level</option>
+            <option defaultValue="" hidden>
+              Select Level
+            </option>
             <option value="100">100 Level</option>
             <option value="200">200 Level</option>
             <option value="300">300 Level</option>
@@ -60,7 +62,9 @@ export default function GPAForm() {
             className="bg-gray-50 border border-gray-300 text-gray-900 text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2.5"
             onChange={(e) => setSemester(e.target.value)}
           >
-            <option defaultValue="">Select Semester</option>
+            <option defaultValue="" hidden>
+              Select Semester
+            </option>
             <option value="1st">1st Semester</option>
             <option value="2nd">2nd Semester</option>
           </select>
@@ -80,7 +84,7 @@ export default function GPAForm() {
             className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             onChange={handleCourseChange}
           >
-            <option value="" disabled selected>
+            <option value="" hidden selected>
               Select Course
             </option>
             <CourseOptions />
@@ -105,7 +109,7 @@ export default function GPAForm() {
             className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             onChange={handleUnitChange}
           >
-            <option value="" disabled selected>
+            <option value="" hidden selected>
               Select Unit
             </option>
             <option value="1">1</option>
@@ -139,7 +143,7 @@ export default function GPAForm() {
             className="bg-gray-50 border border-gray-300 border-b-0 text-gray-900 text-ss sm:text-sm rounded-t-lg focus:ring-gray-50 focus:border-gray-300 block w-full p-1.5 ss:p-2.5"
             onChange={handleGradeChange}
           >
-            <option value="" disabled selected>
+            <option value="" hidden selected>
               Select Grade
             </option>
             <option value="A">A</option>

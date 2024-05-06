@@ -105,7 +105,7 @@ export default function SignUp() {
                     className="bg-gray-50 font-medium text-gray-700 border border-gray-300  text-ss sm:text-sm rounded-lg focus:ring-green1 focus:border-green1 block w-full p-1.5 ss:p-2 "
                     {...register("level")}
                   >
-                    <option selected disabled value={""}>
+                    <option selected hidden value={""}>
                       Select Your Level
                     </option>
                     <option value="Aspirant">Aspirant</option>
