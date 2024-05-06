@@ -66,25 +66,6 @@ export default function ProjectTeam() {
                 >
                   Christian Endwell Mbah
                 </motion.h4>
-                {/* <motion.div
-                  variants={fadeInVariants3}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{
-                    once: true,
-                  }}
-                  custom={3}
-                  className="flex items-center justify-center w-full gap-1 -mt-1.5 mb-2"
-                >
-                  <Lottie
-                    animationData={location}
-                    loop={false}
-                    className="w-3"
-                  />
-                  <p className="text-gray-700 text-ss font-semibold ">
-                    Owerri · Imo State
-                  </p>
-                </motion.div> */}
                 <motion.p
                   variants={fadeInVariants3}
                   initial="initial"
@@ -124,7 +105,7 @@ export default function ProjectTeam() {
                     loop={false}
                     className="w-[17px] ss:w-[20px] -mb-1 inline-block"
                   />{" "}
-                  Software Engineer · Web Developer
+                  Software Engineer · Front-End Developer
                 </motion.p>
                 <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-4 pb-12 sm:pb-8">
                   <Link to="mailto:mbahchris46@gmail.com">
