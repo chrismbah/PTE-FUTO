@@ -56,50 +56,49 @@ export const useBlogComments = () => {
     }
   };
   const addUserComment = async () => {
-    if (userID) {
-      if (studentDetails && postID) {
-        if (userComment !== "") {
-          try {
-            const {
-              firstName,
-              lastName,
-              email,
-              profileImageID,
-              profileImageURL,
-            } = studentDetails;
-            const commentID = uuid();
-            const commentInfo: IPostComment = {
-              commentPostID: postID,
-              commentUserID: userID,
-              commentID: commentID,
-              firstName,
-              lastName,
-              email,
-              comment: userComment,
-              time: getCurrentTime(),
-              date: getCurrentDateInShortFormat(),
-              timeStamp: new Date(),
-              profileImageID,
-              profileImageURL,
-            };
-            setUserComment("");
-            await setDoc(doc(db, "postsComments", commentID), commentInfo);
-            notifyUser("success", "Comment posted!");
-          } catch (err) {
-            notifyUser(
-              "error",
-              "Couldn't post comment. Please check your network connection and try again."
-            );
-          }
-        } else {
-          notifyUser("info", "Please add a comment");
-        }
-      } else {
-        notifyUser("error", "Something went wrong. Please try again");
-      }
-    } else {
+    if (!userID) {
       navigate("/login");
       notifyUser("info", "Please login to comment on this post");
+      return;
+    }
+
+    if (!studentDetails || !postID) {
+      notifyUser("error", "Something went wrong. Please try again");
+      return;
+    }
+
+    if (!userComment.trim()) {
+      notifyUser("info", "Please add a comment");
+      return;
+    }
+
+    try {
+      const { firstName, lastName, email, profileImageID, profileImageURL } =
+        studentDetails;
+      const commentID = uuid();
+      const commentInfo: IPostComment = {
+        commentPostID: postID,
+        commentUserID: userID,
+        commentID,
+        firstName,
+        lastName,
+        email,
+        comment: userComment,
+        time: getCurrentTime(),
+        date: getCurrentDateInShortFormat(),
+        timeStamp: new Date(),
+        profileImageID,
+        profileImageURL,
+      };
+
+      await setDoc(doc(db, "postsComments", commentID), commentInfo);
+      setUserComment("");
+      notifyUser("success", "Comment posted!");
+    } catch (err) {
+      notifyUser(
+        "error",
+        "Couldn't post comment. Please check your network connection and try again."
+      );
     }
   };
 
